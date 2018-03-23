@@ -31,7 +31,7 @@ $ cat dev.planx-pla.net/manifest.json
 
 * Never release :master or :latest docker tags to production.
 * `{DOMAIN}/manifest.json` is the manifest for a particular commons - ex: `manifest_dev.planx-pla.net_.json` 
-* `prod/manifest.json` is the fall-through default manifest if `{DOMAIN}/manifest.json` does not exist
+* `default/manifest.json` is the fall-through default manifest if `{DOMAIN}/manifest.json` does not exist
 
 ## Deployment workflow
 
