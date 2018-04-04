@@ -6,11 +6,15 @@ pipeline {
   stages {
     stage('FetchCode') {
       steps {
-        checkout scm
-         git(
+        dir('cdis-manifest') {
+          checkout scm
+        }
+        dir('cloud-automation') {
+          git(
             url: 'https://github.com/uc-cdis/cloud-automation.git',
             branch: 'chore/jenkins-qa'
           )
+        }
       }
     }
     stage('k8sDeploy') {
@@ -19,6 +23,7 @@ pipeline {
             echo "GIT_COMMIT is $env.GIT_COMMIT"
             echo "WORKSPACE is $env.WORKSPACE"
             sh "find ."
+            sh "bash cloud-automation/tf_files/configs/kube-roll-qa.sh"
         }
     }
   }
