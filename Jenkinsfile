@@ -18,13 +18,14 @@ pipeline {
       }
     }
     stage('k8sDeploy') {
+      withEnv(['GEN3_NOPROXY=true']) {
         steps {
             echo "GIT_BRANCH is $env.GIT_BRANCH"
             echo "GIT_COMMIT is $env.GIT_COMMIT"
             echo "WORKSPACE is $env.WORKSPACE"
-            sh "find ."
             sh "bash cloud-automation/tf_files/configs/kube-roll-qa.sh"
         }
+      }
     }
   }
   post {
