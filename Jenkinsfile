@@ -12,7 +12,7 @@ pipeline {
         dir('cloud-automation') {
           git(
             url: 'https://github.com/uc-cdis/cloud-automation.git',
-            branch: 'chore/jenkins-qa'
+            branch:  'master'
           )
         }
       }
