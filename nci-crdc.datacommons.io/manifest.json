@@ -1,14 +1,14 @@
 {
   "notes": [
-    "This is the dev environment manifest",
-    "That's all I have to say"
+    "DCF Production Manifest. Clients hit endpoints in fence and indexd. ",
+    "Other services are left running to showcase the front-end."
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:master",
-    "indexd": "quay.io/cdis/indexd:master",
+    "fence": "quay.io/cdis/fence:2.2.1",
+    "indexd": "quay.io/cdis/indexd:1.0.2",
     "peregrine": "quay.io/cdis/peregrine:master",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "portal": "quay.io/cdis/data-portal:master",
