@@ -11,11 +11,11 @@
     "indexd": "quay.io/cdis/indexd:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:feat_ga",
+    "portal": "quay.io/cdis/data-portal:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   },
   "jupyterhub": {
-    "enabled": "no"
+    "enabled": "yes"
   }
 }
