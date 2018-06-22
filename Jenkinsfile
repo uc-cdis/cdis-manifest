@@ -19,11 +19,12 @@ pipeline {
     }
     stage('k8sDeploy') {
       steps {
-        withEnv(['GEN3_NOPROXY=true']) {
+        withEnv(['GEN3_NOPROXY=true', "GEN3_HOME=$env.WORKSAPCE/cloud-automation"]) {
+          echo "GEN3_HOME is $env.GEN3_HOME"
           echo "GIT_BRANCH is $env.GIT_BRANCH"
           echo "GIT_COMMIT is $env.GIT_COMMIT"
           echo "WORKSPACE is $env.WORKSPACE"
-          sh "bash cloud-automation/tf_files/configs/kube-roll-qa.sh"
+          sh "bash cloud-automation/gen3/bin/kube-roll-qa.sh"
         }
       }
     }
