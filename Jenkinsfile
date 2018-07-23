@@ -28,12 +28,16 @@ pipeline {
       steps {
         script {
           def changeLogSets = currentBuild.changeSets
+          println changeLogSets
           for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
+            println entries
             for (int j = 0; j < entries.length; j++) {
                 def entry = entries[j]
+                println entry
                 println entry.commitId+" by "+entry.author+" on "+entry.timestamp+": "+entry.msg
                 def files = new ArrayList(entry.affectedFiles)
+                println files
                 for (int k = 0; k < files.size(); k++) {
                     def file = files[k]
                     println file.editType.name+file.path
