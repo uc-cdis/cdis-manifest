@@ -3,8 +3,8 @@
 pipeline {
   agent any
 
-  // /environment {
-  //   QUAY_API = 'https://quay.io/api/v1/repository/cdis/'
+  // environment {
+  //   ABORT_SUCCESS = 'false'
   // }
 
   stages {
@@ -38,7 +38,9 @@ pipeline {
                 if(path != 'qa.dcf.planx-pla.net/manifest.json') {
                   println "dcf stuff was not affected, aborting"
                   currentBuild.result = 'SUCCESS'
-                  error("aborting build because DCF manifest was not chagned")
+                  env.ABORT_SUCCESS = 'true';
+                } else {
+                  env.ABORT_SUCCESS = 'false';
                 }
               }
             }
@@ -46,37 +48,48 @@ pipeline {
         }
       }
     }
+    stage('test environment var') {
+      steps {
+        echo "$env.ABORT_SUCCESS"
+      }
+    }
     stage('ModifyManifest') {
+      when {
+        environment name: 'ABORT_SUCCESS', value: 'true'
+      }
       steps {
         script {
           String[] namespaces = ['qa-bloodpac', 'qa-brain', 'qa-kidsfirst', 'qa-niaid']
           randNum = new Random().nextInt() % namespaces.length
           env.KUBECTL_NAMESPACE = namespaces[randNum]
-
+          println "hi I'm in modify manifest"
           dirname="$env.KUBECTL_NAMESPACE"+'.planx-pla.net'
           service = "$env.JOB_NAME".split('/')[1]
           quaySuffix = "$env.GIT_BRANCH".replaceAll("/", "_")
         }
-        dir("cdis-manifest/$dirname") {
-          withEnv(["masterBranch=$service:master", "targetBranch=$service:$quaySuffix"]) {
-            sh 'sed -i -e "s,'+"$env.masterBranch,$env.targetBranch"+',g" manifest.json'
-          }
+        // dir("cdis-manifest/$dirname") {
+        //   withEnv(["masterBranch=$service:master", "targetBranch=$service:$quaySuffix"]) {
+        //     sh 'sed -i -e "s,'+"$env.masterBranch,$env.targetBranch"+',g" manifest.json'
+        //   }
+        // }
+      }
+    }
+    stage('K8sDeploy') {
+      when {
+        environment name: 'ABORT_SUCCESS', value: 'true'
+      }
+      steps {
+        withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
+          echo "GEN3_HOME is $env.GEN3_HOME"
+          echo "GIT_BRANCH is $env.GIT_BRANCH"
+          echo "GIT_COMMIT is $env.GIT_COMMIT"
+          echo "KUBECTL_NAMESPACE is $env.KUBECTL_NAMESPACE"
+          echo "WORKSPACE is $env.WORKSPACE"
+          // sh "bash cloud-automation/gen3/bin/kube-roll-all.sh"
+          // sh "bash cloud-automation/gen3/bin/kube-wait4-pods.sh || true"
         }
       }
     }
-    // stage('K8sDeploy') {
-    //   steps {
-    //     withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
-    //       echo "GEN3_HOME is $env.GEN3_HOME"
-    //       echo "GIT_BRANCH is $env.GIT_BRANCH"
-    //       echo "GIT_COMMIT is $env.GIT_COMMIT"
-    //       echo "KUBECTL_NAMESPACE is $env.KUBECTL_NAMESPACE"
-    //       echo "WORKSPACE is $env.WORKSPACE"
-    //       sh "bash cloud-automation/gen3/bin/kube-roll-all.sh"
-    //       sh "bash cloud-automation/gen3/bin/kube-wait4-pods.sh || true"
-    //     }
-    //   }
-    // }
     // stage('RunInstall') {
     //   steps {
     //     dir('gen3-qa') {
@@ -95,7 +108,9 @@ pipeline {
     //     }
     //   }
     // }
+      // }
   }
+    
   post {
     success {
       echo "https://jenkins.planx-pla.net/ $env.JOB_NAME pipeline succeeded"
