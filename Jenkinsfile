@@ -36,8 +36,8 @@ pipeline {
               for (String path in affectedPaths) {
                 println path+" was affected"
                 if(path != 'qa.dcf.planx-pla.net/manifest.json') {
-                  println "dct stuff was not affected, aborting"
-                  currentBuild.result = 'ABORTED'
+                  println "dcf stuff was not affected, aborting"
+                  currentBuild.result = 'SUCCESS'
                   error("aborting build because DCF manifest was not chagned")
                 }
               }
