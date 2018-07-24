@@ -3,9 +3,9 @@
 pipeline {
   agent any
 
-  environment {
-    QUAY_API = 'https://quay.io/api/v1/repository/cdis/'
-  }
+  // /environment {
+  //   QUAY_API = 'https://quay.io/api/v1/repository/cdis/'
+  // }
 
   stages {
     stage('FetchCode') {
@@ -30,73 +30,40 @@ pipeline {
           def changeLogSets = currentBuild.changeSets
           for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
-            println("at changeset #"+i)
             for (int j = 0; j < entries.length; j++) {
-                def entry = entries[j]
-                println "at entry # "+j+": "+entry.commitId+" by "+entry.author+" on "+entry.timestamp+": "+entry.msg
-                def affectedPaths = entry.getAffectedPaths()
-                for (String path in affectedPaths) {
-                  println path+" was affected"
+              // def entry = entries[j]
+              def affectedPaths = entries[j].getAffectedPaths()
+              for (String path in affectedPaths) {
+                println path+" was affected"
+                if(path != 'qa.dcf.planx-pla.net/manifest.json') {
+                  println "dct stuff was not affected, aborting"
+                  currentBuild.result = 'ABORTED'
+                  error("aborting build because DCF manifest was not chagned")
                 }
-                // def files = new ArrayList(entry.affectedFiles)
-                // println files
-                // for (int k = 0; k < files.size(); k++) {
-                //     def file = files[k]
-                //     println file
-                //     println file.editType.name+file.path
-                // }
+              }
             }
           }
         }
       }
     }
-    // stage('WaitForQuayBuild') {
-    //   steps {
-    //     script {
-    //       service = "$env.JOB_NAME".split('/')[1]
-    //       def timestamp = (("${currentBuild.timeInMillis}".substring(0, 10) as Integer) - 60)
-    //       curlUrl = "$env.QUAY_API"+service+"/build/?since="+timestamp
-    //       fullQuery = "curl -s "+curlUrl+/ | jq '.builds[] | "\(.tags[]),\(.display_name),\(.phase)"'/
-          
-    //       def testBool = false
-    //       while(testBool != true) {
-    //         sleep(30)
-    //         resList = sh(script: fullQuery, returnStdout: true).trim().split('"\n"')
-    //         for (String res in resList) {
-    //           fields = res.replaceAll('"', "").split(',')
+    stage('ModifyManifest') {
+      steps {
+        script {
+          String[] namespaces = ['qa-bloodpac', 'qa-brain', 'qa-kidsfirst', 'qa-niaid']
+          randNum = new Random().nextInt() % namespaces.length
+          env.KUBECTL_NAMESPACE = namespaces[randNum]
 
-    //           if(fields[0].startsWith("$env.GIT_BRANCH".replaceAll("/", "_"))) {
-    //             if("$env.GIT_COMMIT".startsWith(fields[1])) {
-    //               testBool = fields[2].endsWith("complete")
-    //               break
-    //             } else {
-    //               currentBuild.result = 'ABORTED'
-    //               error("aborting build due to out of date git hash\npipeline: $env.GIT_COMMIT\nquay: "+fields[1])
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-    // stage('ModifyManifest') {
-    //   steps {
-    //     script {
-    //       String[] namespaces = ['qa-bloodpac', 'qa-brain', 'qa-kidsfirst', 'qa-niaid']
-    //       randNum = new Random().nextInt() % namespaces.length
-    //       env.KUBECTL_NAMESPACE = namespaces[randNum]
-
-    //       dirname="$env.KUBECTL_NAMESPACE"+'.planx-pla.net'
-    //       service = "$env.JOB_NAME".split('/')[1]
-    //       quaySuffix = "$env.GIT_BRANCH".replaceAll("/", "_")
-    //     }
-    //     dir("cdis-manifest/$dirname") {
-    //       withEnv(["masterBranch=$service:master", "targetBranch=$service:$quaySuffix"]) {
-    //         sh 'sed -i -e "s,'+"$env.masterBranch,$env.targetBranch"+',g" manifest.json'
-    //       }
-    //     }
-    //   }
-    // }
+          dirname="$env.KUBECTL_NAMESPACE"+'.planx-pla.net'
+          service = "$env.JOB_NAME".split('/')[1]
+          quaySuffix = "$env.GIT_BRANCH".replaceAll("/", "_")
+        }
+        dir("cdis-manifest/$dirname") {
+          withEnv(["masterBranch=$service:master", "targetBranch=$service:$quaySuffix"]) {
+            sh 'sed -i -e "s,'+"$env.masterBranch,$env.targetBranch"+',g" manifest.json'
+          }
+        }
+      }
+    }
     // stage('K8sDeploy') {
     //   steps {
     //     withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
