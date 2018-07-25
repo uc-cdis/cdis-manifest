@@ -120,10 +120,12 @@ pipeline {
   post {
     success {
       echo "https://jenkins.planx-pla.net/ $env.JOB_NAME pipeline succeeded"
+      junit "gen3-qa/output/*.xml"
     }
     failure {
       echo "Failure!"
       archiveArtifacts artifacts: '**/output/*.png', fingerprint: true
+      junit "gen3-qa/output/*.xml"
       //slackSend color: 'bad', message: "https://jenkins.planx-pla.net $env.JOB_NAME pipeline failed"
     }
     unstable {
@@ -132,7 +134,6 @@ pipeline {
     }
     always {
       echo "done"
-      junit "gen3-qa/output/*.xml"
     }
   }
 }
