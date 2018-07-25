@@ -3,13 +3,12 @@
 pipeline {
   agent any
 
-  // environment {
-  //   ABORT_SUCCESS = 'false'
-  // }
-
   stages {
     stage('FetchCode') {
       steps {
+        dir('cdis-manifest') {
+          checkout scm
+        }
         dir('gen3-qa') {
           git(
             url: 'https://github.com/uc-cdis/gen3-qa.git',
@@ -31,52 +30,54 @@ pipeline {
           for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
             for (int j = 0; j < entries.length; j++) {
-              // def entry = entries[j]
               def affectedPaths = entries[j].getAffectedPaths()
-              for (String path in affectedPaths) {
-                println path+" was affected"
-                if(path != 'qa.dcf.planx-pla.net/manifest.json') {
-                  println "dcf stuff was not affected, aborting"
-                  currentBuild.result = 'SUCCESS'
-                  env.ABORT_SUCCESS = 'true';
-                } else {
-                  env.ABORT_SUCCESS = 'false';
-                }
+              env.ABORT_SUCCESS = 'false';
+              env.KUBECTL_NAMESPACE = 'qa-bloodpac'
+              if (affectedPaths.contains('nci-crdc.datacommons.io/manifest.json')) {
+                env.AFFECTED_PATH = 'nci-crdc.datacommons.io/manifest.json'
+              } else if (affectedPaths.contains('nci-crdc-staging.datacommons.io/manifest.json')) {
+                env.AFFECTED_PATH = 'nci-crdc-staging.datacommons.io/manifest.json'
+              } else if (affectedPaths.contains('nci-crdc-demo.datacommons.io/manifest.json')) {
+                env.AFFECTED_PATH = 'nci-crdc-demo.datacommons.io/manifest.json'
+              } else if (affectedPaths.contains('data.bloodpac.org/manifest.json')) {
+                env.AFFECTED_PATH = 'data.bloodpac.org/manifest.json'
+              } else if (affectedPaths.contains('data.braincommons.org/manifest.json')) {
+                env.AFFECTED_PATH = 'data.braincommons.org/manifest.json'
+                env.KUBECTL_NAMESPACE = 'qa-brain'
+              } else if (affectedPaths.contains('data.kidsfirstdrc.org/manifest.json')) {
+                env.AFFECTED_PATH = 'data.kidsfirstdrc.org/manifest.json'                
+                env.KUBECTL_NAMESPACE = 'qa-kidsfirst'
+              } else if (affectedPaths.contains('niaid.bionimbus.org/manifest.json')) {
+                env.AFFECTED_PATH = 'niaid.bionimbus.org/manifest.json'               
+                env.KUBECTL_NAMESPACE = 'qa-niaid'
+              } else {
+                println "dcf stuff was not affected, aborting"
+                currentBuild.result = 'SUCCESS'
+                env.ABORT_SUCCESS = 'true';
               }
             }
           }
         }
       }
     }
-    stage('test environment var') {
-      steps {
-        echo "$env.ABORT_SUCCESS"
-      }
-    }
-    stage('ModifyManifest') {
+    stage('SubstituteManifest') {
       when {
-        environment name: 'ABORT_SUCCESS', value: 'true'
+        environment name: 'ABORT_SUCCESS', value: 'false'
       }
       steps {
         script {
-          String[] namespaces = ['qa-bloodpac', 'qa-brain', 'qa-kidsfirst', 'qa-niaid']
-          randNum = new Random().nextInt() % namespaces.length
-          env.KUBECTL_NAMESPACE = namespaces[randNum]
-          println "hi I'm in modify manifest"
-          dirname="$env.KUBECTL_NAMESPACE"+'.planx-pla.net'
-          service = "$env.JOB_NAME".split('/')[1]
-          quaySuffix = "$env.GIT_BRANCH".replaceAll("/", "_")
+          dirname = sh(script: "kubectl -n $env.KUBECTL_NAMESPACE get configmap global -o jsonpath='{.data.hostname}'", returnStdout: true)
         }
-        // dir("cdis-manifest/$dirname") {
-        //   withEnv(["masterBranch=$service:master", "targetBranch=$service:$quaySuffix"]) {
-        //     sh 'sed -i -e "s,'+"$env.masterBranch,$env.targetBranch"+',g" manifest.json'
-        //   }
-        // }
+        dir('cdis-manifest') {
+          withEnv(["fromPath=$env.AFFECTED_PATH", "toPath=$dirname/manifest.json"]) {
+            sh "cp $env.fromPath $env.toPath"
+          }
+        }    
       }
     }
     stage('K8sDeploy') {
       when {
-        environment name: 'ABORT_SUCCESS', value: 'true'
+        environment name: 'ABORT_SUCCESS', value: 'false'
       }
       steps {
         withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
@@ -85,30 +86,35 @@ pipeline {
           echo "GIT_COMMIT is $env.GIT_COMMIT"
           echo "KUBECTL_NAMESPACE is $env.KUBECTL_NAMESPACE"
           echo "WORKSPACE is $env.WORKSPACE"
-          // sh "bash cloud-automation/gen3/bin/kube-roll-all.sh"
-          // sh "bash cloud-automation/gen3/bin/kube-wait4-pods.sh || true"
+          sh "bash cloud-automation/gen3/bin/kube-roll-all.sh"
+          sh "bash cloud-automation/gen3/bin/kube-wait4-pods.sh || true"
         }
       }
     }
-    // stage('RunInstall') {
-    //   steps {
-    //     dir('gen3-qa') {
-    //       withEnv(['GEN3_NOPROXY=true']) {
-    //         sh "bash ./run-install.sh"
-    //       }
-    //     }
-    //   }
-    // }
-    // stage('RunTests') {
-    //   steps {
-    //     dir('gen3-qa') {
-    //       withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
-    //         sh "bash ./run-tests.sh $env.KUBECTL_NAMESPACE"
-    //       }
-    //     }
-    //   }
-    // }
-      // }
+    stage('RunInstall') {
+      when {
+        environment name: 'ABORT_SUCCESS', value: 'false'
+      }
+      steps {
+        dir('gen3-qa') {
+          withEnv(['GEN3_NOPROXY=true']) {
+            sh "bash ./run-install.sh"
+          }
+        }
+      }
+    }
+    stage('RunTests') {
+      when {
+        environment name: 'ABORT_SUCCESS', value: 'false'
+      }
+      steps {
+        dir('gen3-qa') {
+          withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation"]) {
+            sh "bash ./run-tests.sh $env.KUBECTL_NAMESPACE"
+          }
+        }
+      }
+    }
   }
     
   post {
@@ -126,7 +132,7 @@ pipeline {
     }
     always {
       echo "done"
-      // junit "gen3-qa/output/*.xml"
+      junit "gen3-qa/output/*.xml"
     }
   }
 }
