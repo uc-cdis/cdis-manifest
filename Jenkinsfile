@@ -120,7 +120,6 @@ pipeline {
   post {
     success {
       echo "https://jenkins.planx-pla.net/ $env.JOB_NAME pipeline succeeded"
-      junit "gen3-qa/output/*.xml"
     }
     failure {
       echo "Failure!"
