@@ -6,6 +6,7 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "arborist": "quay.io/cdis/arborist:master",
     "arranger": "quay.io/cdis/arranger:master",
     "fence": "quay.io/cdis/fence:2.0.2",
     "indexd": "quay.io/cdis/indexd:0.4.2",

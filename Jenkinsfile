@@ -35,10 +35,13 @@ pipeline {
               env.KUBECTL_NAMESPACE = 'qa-bloodpac'
               if (affectedPaths.contains('nci-crdc.datacommons.io/manifest.json')) {
                 env.AFFECTED_PATH = 'nci-crdc.datacommons.io/manifest.json'
+                env.KUBECTL_NAMESPACE = 'default'
               } else if (affectedPaths.contains('nci-crdc-staging.datacommons.io/manifest.json')) {
                 env.AFFECTED_PATH = 'nci-crdc-staging.datacommons.io/manifest.json'
+                env.KUBECTL_NAMESPACE = 'default'
               } else if (affectedPaths.contains('nci-crdc-demo.datacommons.io/manifest.json')) {
                 env.AFFECTED_PATH = 'nci-crdc-demo.datacommons.io/manifest.json'
+                env.KUBECTL_NAMESPACE = 'default'
               } else if (affectedPaths.contains('data.bloodpac.org/manifest.json')) {
                 env.AFFECTED_PATH = 'data.bloodpac.org/manifest.json'
               } else if (affectedPaths.contains('data.braincommons.org/manifest.json')) {

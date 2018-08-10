@@ -1,16 +1,15 @@
 {
   "notes": [
-    "DCF Production Manifest. Clients hit endpoints in fence and indexd. ",
-    "Other services are left running to showcase the front-end."
+    "This is the dev environment manifest",
+    "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:master",
     "arranger": "quay.io/cdis/arranger:master",
-    "fence": "quay.io/cdis/fence:2.2.3",
-    "indexd": "quay.io/cdis/indexd:1.0.4",
+    "fence": "quay.io/cdis/fence:master",
+    "indexd": "quay.io/cdis/indexd:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
     "sheepdog": "quay.io/cdis/sheepdog:master",
