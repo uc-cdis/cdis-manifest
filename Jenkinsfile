@@ -53,8 +53,11 @@ pipeline {
               } else if (affectedPaths.contains('niaid.bionimbus.org/manifest.json')) {
                 env.AFFECTED_PATH = 'niaid.bionimbus.org/manifest.json'               
                 env.KUBECTL_NAMESPACE = 'qa-niaid'
+              } else if (affectedPaths.contains('dcp.bionimbus.org/manifest.json')) {
+                env.AFFECTED_PATH = 'dcp.bionimbus.org/manifest.json'               
+                env.KUBECTL_NAMESPACE = 'qa-dcp'
               } else {
-                println "dcf stuff was not affected, aborting"
+                println "production stuff was not affected, aborting"
                 currentBuild.result = 'SUCCESS'
                 env.ABORT_SUCCESS = 'true';
               }
