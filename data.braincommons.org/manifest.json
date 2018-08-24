@@ -21,6 +21,9 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   },
+  "arranger": {
+    "project_id": "brain"
+  },
   "jupyterhub": {
     "enabled": "yes"
   }
