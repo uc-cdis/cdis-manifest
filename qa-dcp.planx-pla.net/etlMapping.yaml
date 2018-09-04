@@ -2,6 +2,7 @@ case:
   _props:
     - submitter_id
     - project_id
+    - consent_codes
   _flatten_props:
     - path: demographics
       _props:
