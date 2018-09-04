@@ -11,6 +11,8 @@ case:
         - ethnicity
     - path: diagnoses
       _props:
+        - primary_diagnosis
+        - demopd_ageassess_age_at_pd
         - alcohol_use_score
         - depression_diagnosis
         - depression_severity
@@ -18,6 +20,26 @@ case:
         - total_tbi
         - childhood_trauma_diagnosis
         - childhood_trauma_score
+    - path: exposure
+      _props:
+        - CHWREG_lifetime_smokeless_tobacco
+        - alclfreg_lifetime_alcohol
+    - path: head_injury
+      _props:
+        - hinj_ever_had_a_head_injury_or_concussion
+    - path: image_exam
+      _props:
+        - mriyn_mri_completed
+    - path: medication
+      _props:
+        - ASPREG_regular_aspirin
+        - IBUREG_regular_ibuprofen_based_non_aspirin
+    - path: biomarker
+      _props:
+        - lrrk2sub_does_subject_carry_lrrk2_mutation
+    - path: motor_assessment
+      _props:
+        - NP1DPRS_depressed_moods
   _aggregated_props:
     - name: _mri_images_count
       path: mri_exams.mri_images
