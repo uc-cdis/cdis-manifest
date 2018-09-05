@@ -9,6 +9,7 @@ case:
         - race
         - ethnicity
         - age_at_index
+        - bmi
     - path: medical_histories
       _props:
         - diabetes
@@ -16,6 +17,33 @@ case:
         - cerebrovascular_disease
         - chronic_respiratory_disease
         - coronary_artery_disease
+        - asthma
+        - cabg_presence
+        - copd
+        - emphysema
+        - heart_failure
+        - myocardial_infarction
+        - stroke
+    - path: diagnoses
+      _props:
+        - metabolic_syndrome_diagnosis
+    - path: blood_pressure_tests
+      _props:
+        - diastolic_blood_pressure
+        - systolic_blood_pressure
+    - path: exposures
+      _props:
+        - smoking_status
+        - years_smoked
+    - path: medications
+      _props:
+        - hypertension_meds
+    - path: samples
+      _props:
+        - biospecimen_anatomic_site
+    - path: aliquots
+      _props:
+        - analyte_type
   _aggregated_props:
     - name: _samples_count
       path: samples
