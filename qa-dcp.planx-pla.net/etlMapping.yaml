@@ -42,9 +42,6 @@ case:
     - path: samples
       _props:
         - biospecimen_anatomic_site
-    - path: aliquots
-      _props:
-        - analyte_type
   _aggregated_props:
     - name: _samples_count
       path: samples
