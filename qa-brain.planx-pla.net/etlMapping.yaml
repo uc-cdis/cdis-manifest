@@ -20,10 +20,6 @@ case:
         - total_tbi
         - childhood_trauma_diagnosis
         - childhood_trauma_score
-    - path: exposures
-      _props:
-        - CHWREG_lifetime_smokeless_tobacco
-        - alclfreg_lifetime_alcohol
     - path: head_injuries
       _props:
         - hinj_ever_had_a_head_injury_or_concussion
