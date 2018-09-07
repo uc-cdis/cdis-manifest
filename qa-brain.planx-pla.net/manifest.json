@@ -21,7 +21,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
-    "tube": "quay.io/cdis/tube:feat_parser"
+    "tube": "quay.io/cdis/tube:master"
   },
   "arranger": {
     "project_id": "brain"
