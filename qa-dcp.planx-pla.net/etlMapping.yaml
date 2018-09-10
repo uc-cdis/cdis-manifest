@@ -2,6 +2,7 @@ case:
   _props:
     - submitter_id
     - project_id
+    - consent_codes
   _flatten_props:
     - path: demographics
       _props:
@@ -9,6 +10,7 @@ case:
         - race
         - ethnicity
         - age_at_index
+        - bmi
     - path: medical_histories
       _props:
         - diabetes
@@ -16,6 +18,30 @@ case:
         - cerebrovascular_disease
         - chronic_respiratory_disease
         - coronary_artery_disease
+        - asthma
+        - cabg_presence
+        - copd
+        - emphysema
+        - heart_failure
+        - myocardial_infarction
+        - stroke
+    - path: diagnoses
+      _props:
+        - metabolic_syndrome_diagnosis
+    - path: blood_pressure_test
+      _props:
+        - diastolic_blood_pressure
+        - systolic_blood_pressure
+    - path: exposures
+      _props:
+        - smoking_status
+        - years_smoked
+    - path: medication_records
+      _props:
+        - hypertension_meds
+    - path: samples
+      _props:
+        - biospecimen_anatomic_site
   _aggregated_props:
     - name: _samples_count
       path: samples
