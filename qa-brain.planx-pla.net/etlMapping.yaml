@@ -12,7 +12,6 @@ case:
     - path: diagnoses
       _props:
         - primary_diagnosis
-        - demopd_ageassess_age_at_pd
         - alcohol_use_score
         - depression_diagnosis
         - depression_severity
@@ -26,16 +25,6 @@ case:
     - path: image_exams
       _props:
         - mriyn_mri_completed
-    - path: medications
-      _props:
-        - ASPREG_regular_aspirin
-        - IBUREG_regular_ibuprofen_based_non_aspirin
-    - path: biomarkers
-      _props:
-        - lrrk2sub_does_subject_carry_lrrk2_mutation
-    - path: motor_assessments
-      _props:
-        - NP1DPRS_depressed_moods
   _aggregated_props:
     - name: _mri_images_count
       path: mri_exams.mri_images
