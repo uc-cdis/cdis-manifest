@@ -11,6 +11,7 @@
     "arranger": "quay.io/cdis/arranger:master",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy",
     "fence": "quay.io/cdis/fence:master",
     "indexd": "quay.io/cdis/indexd:master",
     "peregrine": "quay.io/cdis/peregrine:master",
@@ -24,10 +25,10 @@
     "tube": "quay.io/cdis/tube:master"
   },
   "arranger": {
-    "project_id": "brain"
+    "project_id": "brain_1"
   },
   "tube": {
-    "es_index_name": "brain"
+    "es_index_name": "etl_1"
   },
   "jupyterhub": {
     "enabled": "yes"
