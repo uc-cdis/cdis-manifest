@@ -27,7 +27,9 @@
     "enabled": "no"
   },
   "arranger": {
-    "project_id": "niaid_1"
+    "project_id": "niaid_1",
+    "auth_filter_field": "auth_resource_path",
+    "auth_filter_node_type": "subject"
   },
   "tube": {
     "es_index_name": "subject"
