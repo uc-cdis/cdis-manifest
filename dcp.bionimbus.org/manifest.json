@@ -31,5 +31,16 @@
   },
   "jupyterhub": {
     "enabled": "yes"
+  },
+  "global": {
+    "environment": "gtexprod",
+    "hostname": "dcp.bionimbus.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/b4fa52e9-7c8e-4499-b5d9-3d6decc448b3",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.0.9/schema.json",
+    "portal_app": "gtex",
+    "kube_bucket": "kube-gtexprod-gen3",
+    "logs_bucket": "logs-gtexprod-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/dcp/user.yaml"
   }
 }
