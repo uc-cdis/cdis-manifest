@@ -25,5 +25,16 @@
   },
   "jupyterhub": {
     "enabled": "yes"
+  },
+  "global": {
+    "environment": "kfqa",
+    "hostname": "dcf-interop.kidsfirstdrc.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:222487244010:certificate/1d90c400-8210-4443-ac79-4a6f2535e464",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/kf-dictionary/1.0.10/schema.json",
+    "portal_app": "kfDcfInterop",
+    "kube_bucket": "kube-kfqa-gen3",
+    "logs_bucket": "logs-kfqa-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/kfqa/user.yaml"
   }
 }

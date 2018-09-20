@@ -25,5 +25,16 @@
   },
   "jupyterhub": {
     "enabled": "yes"
+  }, 
+  "global": {
+    "environment": "vadcprod",
+    "hostname": "va.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:663707118480:certificate/092a9df9-6b43-4e4f-bf37-2189a58f8478",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/vadictionary/master/schema.json",
+    "portal_app": "va",
+    "kube_bucket": "kube-vadcprod-gen3",
+    "logs_bucket": "logs-vadcprod-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/vadcprod/user.yaml"
   }
 }

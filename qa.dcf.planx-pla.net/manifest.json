@@ -25,5 +25,14 @@
   },
   "jupyterhub": {
     "enabled": "no"
+  },
+  "global": {
+    "environment": "dcfqav1",
+    "hostname": "qa.dcf.planx-pla.net",
+    "revproxy_arn": "arn:aws:acm:us-east-1:733512436101:certificate/2137c4c4-3513-4f89-b763-7b6edf2f229f",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "portal_app": "dev",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/dcfqa/user.yaml"
   }
 }
