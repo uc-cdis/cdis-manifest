@@ -1,0 +1,33 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "fence": "quay.io/cdis/fence:master",
+    "indexd": "quay.io/cdis/indexd:feat_hs",
+    "peregrine": "quay.io/cdis/peregrine:master",
+    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "portal": "quay.io/cdis/dataguids:master",
+    "revproxy": "nginx:1.13.9-perl",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+  },
+  "jupyterhub": {
+    "enabled": "yes"
+  },
+"global": {
+  "environment": "dataguids",
+  "hostname": "dataguids.org",
+  "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/742b0502-bcd6-45b9-8a18-921560be4432",
+  "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+  "portal_app": "dev",
+  "kube_bucket": "kube-dataguids-gen3",
+  "logs_bucket": "logs-dataguids-gen3",
+  "sync_from_dbgap": "False",
+  "useryaml_s3path": "s3://cdis-gen3-users/dataguids/user.yaml"
+}
+}
