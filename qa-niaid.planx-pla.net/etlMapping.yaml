@@ -2,9 +2,6 @@ subject:
   _props:
     - submitter_id
   _flatten_props:
-    - path: virus_infections
-      _props:
-        - virus_type
     - path: demographics
       _props:
         - gender
@@ -12,6 +9,9 @@ subject:
         - ethnicity
         - vital_status
         - year_of_birth
+    - path: virus_infections
+      _props:
+        - virus_type
   _aggregated_props:
     - name: _follow_ups_count
       path: follow_ups
