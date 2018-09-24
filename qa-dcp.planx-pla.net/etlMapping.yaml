@@ -25,9 +25,6 @@ case:
         - heart_failure
         - myocardial_infarction
         - stroke
-    - path: diagnoses
-      _props:
-        - metabolic_syndrome_diagnosis
     - path: blood_pressure_test
       _props:
         - diastolic_blood_pressure
@@ -35,9 +32,6 @@ case:
     - path: medication_records
       _props:
         - hypertension_meds
-    - path: samples
-      _props:
-        - biospecimen_anatomic_site
   _aggregated_props:
     - name: _samples_count
       path: samples

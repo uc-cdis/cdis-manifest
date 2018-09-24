@@ -2,9 +2,6 @@ subject:
   _props:
     - submitter_id
   _flatten_props:
-    - path: virus_infections
-      _props:
-        - virus_type
     - path: demographics
       _props:
         - gender
