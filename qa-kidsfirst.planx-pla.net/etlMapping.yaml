@@ -9,14 +9,6 @@ participant:
         - gender
         - race
         - ethnicity
-    - path: aliquots
-      _props:
-        - analyte_type
-    - path: submitted_aligned_reads_files
-      _props:
-        - data_format
-        - data_type
-        - experimental_strategy
   _aggregated_props:
     - name: _samples_count
       path: samples
