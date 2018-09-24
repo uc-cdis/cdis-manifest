@@ -9,9 +9,6 @@ participant:
         - gender
         - race
         - ethnicity
-    - path: samples
-      _props:
-        - composition
     - path: aliquots
       _props:
         - analyte_type
@@ -25,5 +22,11 @@ participant:
       path: samples
       fn: count
     - name: _aliquots_count
-      path: aliquots
+      path: samples.aliquots
+      fn: count
+    - name: _read_groups_count
+      path: samples.aliquots.read_groups
+      fn: count
+    - name: _submitted_aligned_reads_files_count
+      path: samples.aliquots.read_groups.submitted_aligned_reads_files
       fn: count
