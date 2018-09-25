@@ -13,11 +13,14 @@ case:
     - name: _samples_count
       path: samples
       fn: count
+    - name: _mri_exams_count
+      path: mri_exams
+      fn: count
     - name: _mri_images_count
       path: mri_exams.mri_images
       fn: count
-    - name: _samples_count
-      path: biospecimens.samples
+    - name: _biospecimens_count
+      path: biospecimens
       fn: count
     - name: _aliquots_count
       path: biospecimens.samples.aliquots
