@@ -10,6 +10,9 @@ case:
         - race
         - ethnicity
   _aggregated_props:
+    - name: _samples_count
+      path: samples
+      fn: count
     - name: _mri_images_count
       path: mri_exams.mri_images
       fn: count
