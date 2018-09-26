@@ -52,3 +52,46 @@ mappings:
       - name: _metabolite_mass_spectrometries_count
         path: samples.aliquots.metabolite_mass_spectrometries
         fn: count
+  - name: niaid_file
+    doc_type: file
+    type: collector
+    root: None
+    _props:
+      - object_id
+      - md5sum
+      - file_name
+      - file_size
+      - state
+    _injecting_props:
+      subject:
+        _props:
+          - id
+          - project_id
+    _target_nodes:
+      - name: mutation_panel
+        path: subjects
+      - name: bgm_simulation
+        path: mutation_panels.subjects
+      - name: mrna_microarray
+        path: aliquots.samples.subjects
+      - name: mirna_microarray
+        path: aliquots.samples.subjects
+      - name: lipid_mass_spectrometry
+        path: aliquots.samples.subjects
+      - name: protein_mass_spectrometry
+        path: aliquots.samples.subjects
+      - name: metabolite_mass_spectrometry
+        path: aliquots.samples.subjects
+      - name: submitted_copy_number
+        path: aliquots.samples.subjects
+      - name: submitted_methylation
+        path: aliquots.samples.subjects
+      - name: submitted_aligned_reads
+        path: read_groups.aliquots.samples.subjects
+      - name: submitted_unaligned_reads
+        path: read_groups.aliquots.samples.subjects
+      - name: submitted_genomic_profile
+        path: read_groups.aliquots.samples.subjects
+      - name: submitted_somatic_mutation
+        path: read_groups.aliquots.samples.subjects
+
