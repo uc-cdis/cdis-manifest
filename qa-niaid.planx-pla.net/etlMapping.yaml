@@ -17,6 +17,14 @@ mappings:
       - path: virus_infections
         _props:
           - virus_type
+          - virus_subtype
+      - path: hiv_history_records
+        _props:
+          - arthxbase
+          - bshbvstat
+          - cd4nadir
+          - frstdthd
+          - status
     _aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
@@ -94,4 +102,3 @@ mappings:
         path: read_groups.aliquots.samples.subjects
       - name: submitted_somatic_mutation
         path: read_groups.aliquots.samples.subjects
-
