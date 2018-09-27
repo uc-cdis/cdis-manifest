@@ -1,0 +1,48 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:master",
+    "arranger": "quay.io/cdis/arranger:master",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
+    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "fence": "quay.io/cdis/fence:master",
+    "indexd": "quay.io/cdis/indexd:master",
+    "peregrine": "quay.io/cdis/peregrine:feat_bagit",
+    "pidgin": "quay.io/cdis/pidgin:master",
+    "revproxy": "nginx:1.13.9-perl",
+    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "portal": "quay.io/cdis/data-portal:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "spark": "quay.io/cdis/gen3-spark:feat_init",
+    "tube": "quay.io/cdis/tube:master"
+  },
+  "arranger": {
+    "project_id": "mickey_0",
+    "auth_filter_field": "auth_resource_path",
+    "auth_filter_node_type": "case"
+  },
+  "tube": {
+    "es_index_name": "mickey"
+  },
+  "jupyterhub": {
+    "enabled": "no"
+  },
+  "global": {
+    "environment": "qaplanetv1",
+    "hostname": "qa-mickey.planx-pla.net",
+    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/master/schema.json",
+    "portal_app": "va",
+    "kube_bucket": "kube-qaplanetv1-gen3",
+    "logs_bucket": "logs-qaplanetv1-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml"
+  }
+}
