@@ -2,7 +2,6 @@ case:
   _props:
     - submitter_id
     - project_id
-    - experimental_group
   _flatten_props:
     - path: demographics
       _props:
@@ -12,33 +11,9 @@ case:
     - path: diagnoses
       _props:
         - primary_diagnosis
-        - demopd_ageassess_age_at_pd
-        - alcohol_use_score
-        - depression_diagnosis
-        - depression_severity
-        - tbi_diagnosis
-        - total_tbi
-        - childhood_trauma_diagnosis
-        - childhood_trauma_score
-    - path: head_injuries
-      _props:
-        - hinj_ever_had_a_head_injury_or_concussion
-    - path: image_exams
-      _props:
-        - mriyn_mri_completed
-    - path: medications
-      _props:
-        - ASPREG_regular_aspirin
-        - IBUREG_regular_ibuprofen_based_non_aspirin
-    - path: biomarkers
-      _props:
-        - lrrk2sub_does_subject_carry_lrrk2_mutation
-    - path: motor_assessments
-      _props:
-        - NP1DPRS_depressed_moods
   _aggregated_props:
-    - name: _mri_images_count
-      path: mri_exams.mri_images
+    - name: _biospecimens_count
+      path: biospecimens
       fn: count
     - name: _samples_count
       path: biospecimens.samples
@@ -49,6 +24,33 @@ case:
     - name: _analytes_count
       path: biospecimens.samples.aliquots.analytes
       fn: count
+    - name: _cell_images_count
+      path: biospecimens.samples.aliquots.analytes.cell_images
+      fn: count
+    - name: _mass_cytometry_assays_count
+      path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+    - name: __count
+      path: biospecimens.samples.aliquots.analytes.
+      fn: count
+
+
+
     - name: _submitted_expression_array_files_count
       path: biospecimens.samples.aliquots.analytes.submitted_expression_array_files
       fn: count
