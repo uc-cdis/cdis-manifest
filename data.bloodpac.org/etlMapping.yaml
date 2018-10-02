@@ -11,6 +11,12 @@ case:
     - path: diagnoses
       _props:
         - primary_diagnosis
+    - path: treatment
+      _props:
+        - treatment_type
+    - path: family_history
+      _props:
+        - relative_with_cancer_history
   _aggregated_props:
     - name: _biospecimens_count
       path: biospecimens
@@ -30,32 +36,32 @@ case:
     - name: _mass_cytometry_assays_count
       path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
       fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
+    - name: _mass_cytometry_images_count
+      path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
       fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
-      fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
-      fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
-      fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
-      fn: count
-    - name: __count
-      path: biospecimens.samples.aliquots.analytes.
-      fn: count
-
-
-
-    - name: _submitted_expression_array_files_count
-      path: biospecimens.samples.aliquots.analytes.submitted_expression_array_files
+    - name: _quantification_assay_qcs_count
+      path: biospecimens.samples.aliquots.analytes.quantification_assays.quantification_assay_qcs
       fn: count
     - name: _read_groups_count
       path: biospecimens.samples.aliquots.analytes.read_groups
+      fn: count
+    - name: _slide_images_count
+      path: biospecimens.samples.aliquots.slide_images
+      fn: count
+    - name: _submitted_aligned_reads_files_count
+      path: biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
+      fn: count
+    - name: _submitted_copy_numbers_count
+      path: biospecimens.samples.aliquots.analytes.read_groups.submitted_copy_numbers
+      fn: count
+    - name: _submitted_expression_array_files_count
+      path: biospecimens.samples.aliquots.analytes.submitted_expression_array_files
+      fn: count
+    - name: _submitted_methylations_count
+      path: biospecimens.samples.aliquots.analytes.submitted_methylations
+      fn: count
+    - name: _submitted_somatic_mutations_count
+      path: biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
       fn: count
     - name: _submitted_unaligned_reads_files_count
       path: biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
