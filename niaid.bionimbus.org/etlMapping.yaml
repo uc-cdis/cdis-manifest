@@ -1,5 +1,5 @@
 mappings:
-  - name: niaid
+  - name: niaid_beta
     doc_type: subject
     type: aggregator
     root: subject
@@ -61,7 +61,7 @@ mappings:
       - name: _metabolite_mass_spectrometries_count
         path: samples.aliquots.metabolite_mass_spectrometries
         fn: count
-  - name: niaid_file
+  - name: niaid_file_beta
     doc_type: file
     type: collector
     root: None
