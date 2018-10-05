@@ -35,14 +35,15 @@
     "es_index_name": "dcf_0"
   },
   "global": {
-    "environment": "qaplanetv1",
-    "hostname": "qa-dcfdemo.planx-pla.net",
-    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "environment": "ncicrdcdemo",
+    "hostname": "nci-crdc-demo.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:662843554732:certificate/98e9b832-077a-4fdc-8f0a-06e9279f7359",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/dcfdictionary/master/schema.json",
     "portal_app": "ncrdc-demo",
-    "kube_bucket": "kube-qaplanetv1-gen3",
-    "logs_bucket": "logs-qaplanetv1-gen3",
+    "kube_bucket": "kube-ncicrdcdemo-gen3",
+    "logs_bucket": "logs-ncicrdcdemo-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/ncicrdcdemo/user.yaml",
+    "GEN3_DEBUG": "False"
   }
 }
