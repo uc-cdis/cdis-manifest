@@ -26,6 +26,14 @@
   "jupyterhub": {
     "enabled": "yes"
   },
+  "arranger": {
+    "project_id": "bloodpac_0",
+    "auth_filter_field": "auth_resource_path",
+    "auth_filter_node_type": "case"
+  },
+  "tube": {
+    "es_index_name": "blood"
+  },
   "global": {
     "environment": "bloodv2",
     "hostname": "data.bloodpac.org",
