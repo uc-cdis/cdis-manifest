@@ -1,4 +1,8 @@
-case:
+mappings:
+  name: etl_4
+  doc_type: case
+  type: aggregator
+  root: case
   _props:
     - submitter_id
     - project_id
