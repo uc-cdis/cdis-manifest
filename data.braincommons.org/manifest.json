@@ -13,7 +13,7 @@
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "fence": "quay.io/cdis/fence:master",
     "indexd": "quay.io/cdis/indexd:master",
-    "peregrine": "quay.io/cdis/peregrine:fix_timers",
+    "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
@@ -27,21 +27,16 @@
     "project_id": "brain_2",
     "auth_filter_field": "auth_resource_path"
   },
-  "tube": {
-    "es_index_name": "etl_beta"
-  },
   "jupyterhub": {
-    "enabled": "no"
+    "enabled": "yes"
   },
   "global": {
-    "environment": "qaplanetv1",
-    "hostname": "qa-brain.planx-pla.net",
-    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "environment": "bhcprodv2",
+    "hostname": "data.braincommons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/master/schema.json",
-    "portal_app": "gitops",
-    "kube_bucket": "kube-qaplanetv1-gen3",
-    "logs_bucket": "logs-qaplanetv1-gen3",
-    "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml"
+    "portal_app": "bhc",
+    "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
+    "sync_from_dbgap": "False"
   }
 }
