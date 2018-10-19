@@ -1,0 +1,31 @@
+mappings:
+  - name: etl_beta
+    doc_type: case
+    type: aggregator
+    root: case
+    _props:
+      - submitter_id
+      - project_id
+      - experimental_group
+    _flatten_props:
+      - path: demographics
+        _props:
+          - gender
+          - race
+          - ethnicity
+    _aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _aliquots_count
+        path: samples.aliquots
+        fn: count
+      - name: _read_group_count
+        path: samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_expression_arrays_count
+        path: samples.aliquots.submitted_expression_array_files
+        fn: count
+      - name: _submitted_unaligned_reads_count
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
