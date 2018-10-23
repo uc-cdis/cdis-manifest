@@ -13,7 +13,7 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "portal": "quay.io/cdis/dataguids:master",
     "revproxy": "nginx:1.13.9-perl",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   },
   "jupyterhub": {
