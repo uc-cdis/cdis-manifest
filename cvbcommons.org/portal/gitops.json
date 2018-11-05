@@ -1,5 +1,5 @@
 {
-  "gaTrackingId": "undefined",
+  "gaTrackingId": "UA-119127212-4",
   "graphql": {
     "boardCounts": [
       {
@@ -8,9 +8,9 @@
         "plural": "Cases"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment",
-        "plural": "Experiments"
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
       },
       {
         "graphql": "_aliquot_count",
@@ -24,12 +24,8 @@
         "name": "Case"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot"
+        "graphql": "_study_count",
+        "name": "Study"
       }
     ],
     "projectDetails": "boardCounts"
@@ -38,15 +34,15 @@
     "appName": "Generic Data Commons Portal",
     "index": {
       "introduction": {
-        "heading": "Data Commons",
-        "text": "The Generic Data Commons supports the management, analysis and sharing of data for the research community.",
+        "heading": "Brain Commons",
+        "text": "The Brain Commons supports the management, analysis and sharing of brain health data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for treatment and prevention of diseases impacting the brain. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
       "buttons": [
-        {
+       {
           "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The Generic Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "The Brain Commons define the data in a general way. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
         },
@@ -58,34 +54,34 @@
           "label": "Query data"
         },
         {
-          "name": "Submit Data",
-          "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
-          "link": "/submission",
-          "label": "Submit data"
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "link": "#hostname#workspace/",
+          "label": "Run analysis"
         }
       ]
     },
     "navigation": {
       "title": "CVB Commons",
       "items": [
-        {
+      {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
           "name": "Dictionary"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#a2a2a2",
-          "name": "Files"
-        },
-        {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
           "name": "Query"
+        },
+        {
+          "icon": "files",
+          "link": "/files",
+          "color": "#a2a2a2",
+          "name": "Files"
         },
         {
           "icon": "workspace",
@@ -98,19 +94,6 @@
           "link": "/identity",
           "color": "#a2a2a2",
           "name": "Profile"
-        }
-      ]
-    },
-    "topBar": {
-      "items": [
-        {
-          "icon": "upload",
-          "link": "/submission",
-          "name": "Data Submission"
-        },
-        {
-          "link": "https://uc-cdis.github.io/gen3-user-doc/user-guide/guide-overview",
-          "name": "Documentation"
         }
       ]
     },
@@ -127,63 +110,42 @@
   },
   "arrangerConfig": {
     "charts": {
-      "project": {
+      "project_id": {
         "chartType": "count",
         "title": "Projects"
       },
-      "study": {
+      "node_id": {
         "chartType": "count",
-        "title": "Studies"
-      },
-      "file_type": {
-        "chartType": "count",
-        "title": "File Types"
-      },
-      "ethnicity": {
-        "chartType": "stackedBar",
-        "title": "Ethnicity"
+        "title": "Cases"
       },
       "gender": {
         "chartType": "pie",
         "title": "Gender"
       },
       "race": {
-        "chartType": "pie",
+        "chartType": "bar",
         "title": "Race"
       },
-      "vital_status": {
+      "ethnicity": {
         "chartType": "bar",
-        "title": "Vital Status"
+        "title": "Ethnicity"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Project",
-          "fields": [
-            "project",
-            "study"
-          ]
-        },
-        {
-          "title": "Subject",
+          "title": "Case",
           "fields": [
             "race",
             "ethnicity",
             "gender",
-            "vital_status"
-          ]
-        },
-        {
-          "title": "File",
-          "fields": [
-            "file_type"
+            "project_id"
           ]
         }
       ]
     },
     "projectId": "search",
-    "graphqlField": "subject",
+    "graphqlField": "case",
     "index": "",
     "table": {
       "buttons": [
