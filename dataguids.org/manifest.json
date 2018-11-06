@@ -7,10 +7,10 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:master",
+    "fence": "quay.io/cdis/fence:2.3.2",
     "indexd": "quay.io/cdis/indexd:feat_hs",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
     "portal": "quay.io/cdis/dataguids:master",
     "revproxy": "nginx:1.13.9-perl",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
