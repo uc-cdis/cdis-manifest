@@ -24,7 +24,8 @@
     "tube": "quay.io/cdis/tube:0.1.3"
   },
   "arranger": {
-    "project_id": "dcp_1"
+    "project_id": "dcp_1",
+    "auth_filter_node_types": ["case"]
   },
   "tube": {
     "es_index_name": "dcp_1"
