@@ -15,6 +15,12 @@ pipeline {
             branch: 'master'
           )
         }
+        dir('gitops-qa') {
+          git(
+            url: 'https://github.com/uc-cdis/gitops-qa.git',
+            branch: 'master'
+          )
+        }
         dir('cloud-automation') {
           git(
             url: 'https://github.com/uc-cdis/cloud-automation.git',
@@ -71,6 +77,9 @@ pipeline {
         environment name: 'ABORT_SUCCESS', value: 'false'
       }
       steps {
+        dir('gitops-qa') {
+          sh "cp -R * ../cdis-manifest/"
+        }
         script {
           dirname = sh(script: "kubectl -n $env.KUBECTL_NAMESPACE get configmap global -o jsonpath='{.data.hostname}'", returnStdout: true)
         }
