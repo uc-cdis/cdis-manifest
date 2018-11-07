@@ -27,6 +27,12 @@ pipeline {
             branch: 'master'
           )
         }
+        dir('data-simulator') {
+          git(
+            url: 'https://github.com/occ-data/data-simulator.git',
+            branch: 'master'
+          )
+        }
       }
     }
     stage('DetectChanges') {
