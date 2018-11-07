@@ -49,19 +49,15 @@ pipeline {
           env.ABORT_SUCCESS = 'true'
           env.KUBECTL_NAMESPACE = 'qa-bloodpac'
 
-          // get all sub directories in this branch (ie folders containing a commons manifest)
+          // get all paths to commons manifests
           def manifestFiles = findFiles(glob: 'cdis-manifest/*/manifest.json')
           for (int i = 0; i < manifestFiles.length; i++) {
-            print manifestFiles[i].name
-            print manifestFiles[i].path
-            // check if folder is in the master branch
+            // check if master branch also has the manifest
             def master_path = manifestFiles[i].path.replaceAll('cdis-manifest', 'cdis-manifest-master')
-            print master_path
-            print fileExists(manifestFiles[i].path)
             if (fileExists(master_path)) {
               // check if the manifest files are the same
               def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path} || true", returnStdout: true )
-              // if cmpRes is not empty then the files are different, use
+              // if the comparison result is not empty then the files are different, use this manifest for testing!
               if (cmpRes != '') {
                 env.ABORT_SUCCESS = 'false'
                 env.AFFECTED_PATH = manifestFiles[i].path.replaceAll('cdis-manifest/', '')
@@ -78,14 +74,12 @@ pipeline {
         environment name: 'ABORT_SUCCESS', value: 'false'
       }
       steps {
-        dir('gitops-qa') {
-          sh "cp -R * ../cdis-manifest/"
-        }
         script {
           dirname = sh(script: "kubectl -n $env.KUBECTL_NAMESPACE get configmap global -o jsonpath='{.data.hostname}'", returnStdout: true)
         }
         dir('cdis-manifest') {
           withEnv(["fromPath=$env.AFFECTED_PATH", "toPath=$dirname/manifest.json"]) {
+            sh "mkdir -p $dirname"
             sh "cp $env.fromPath $env.toPath"
           }
         }    
