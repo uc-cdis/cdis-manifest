@@ -60,7 +60,7 @@ pipeline {
             print fileExists(manifestFiles[i].path)
             if (fileExists(master_path)) {
               // check if the manifest files are the same
-              def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path}", returnStdout: true )
+              def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path} || true", returnStdout: true )
               // if cmpRes is not empty then the files are different, use
               if (cmpRes != '') {
                 env.ABORT_SUCCESS = 'false'
