@@ -9,6 +9,12 @@ pipeline {
         dir('cdis-manifest') {
           checkout scm
         }
+        dir('gitops-qa') {
+          git(
+            url: 'https://github.com/uc-cdis/gitops-qa.git',
+            branch: 'master'
+          )
+        }
         dir('gen3-qa') {
           git(
             url: 'https://github.com/uc-cdis/gen3-qa.git',
@@ -73,6 +79,10 @@ pipeline {
       steps {
         script {
           dirname = sh(script: "kubectl -n $env.KUBECTL_NAMESPACE get configmap global -o jsonpath='{.data.hostname}'", returnStdout: true)
+        }
+        dir('gitops-qa') {
+          // copy contents of gitops-qa into cdis-manifest
+          sh "cp -R * ../cdis-manifest/"
         }
         dir('cdis-manifest') {
           withEnv(["fromPath=$env.AFFECTED_PATH", "toPath=$dirname/manifest.json"]) {
