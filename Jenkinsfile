@@ -64,7 +64,7 @@ pipeline {
               // if cmpRes is not empty then the files are different, use
               if (cmpRes != '') {
                 env.ABORT_SUCCESS = 'false'
-                env.AFFECTED_PATH = '${manifestFiles[i].directory}/manifest.json'
+                env.AFFECTED_PATH = manifestFiles[i].path.replaceAll('cdis-manifest/', '')
                 env.KUBECTL_NAMESPACE = 'default'
                 break
               }
