@@ -7,7 +7,15 @@ pipeline {
     stage('FetchCode') {
       steps {
         dir('cdis-manifest') {
+          // checkout this branch
           checkout scm
+        }
+        dir('cdis-manifest-master') {
+          // checkout master branch of cdis-manifest - used for comparing files to determine if a manifest was edited
+          git(
+            url: 'https://github.com/uc-cdis/cdis-manifest.git',
+            branch: 'master'
+          )
         }
         dir('gen3-qa') {
           git(
@@ -38,40 +46,26 @@ pipeline {
     stage('DetectChanges') {
       steps {
         script {
-          def changeLogSets = currentBuild.changeSets
-          for (int i = 0; i < changeLogSets.size(); i++) {
-            def entries = changeLogSets[i].items
-            for (int j = 0; j < entries.length; j++) {
-              def affectedPaths = entries[j].getAffectedPaths()
-              env.ABORT_SUCCESS = 'false';
-              env.KUBECTL_NAMESPACE = 'qa-bloodpac'
-              if (affectedPaths.contains('nci-crdc.datacommons.io/manifest.json')) {
-                env.AFFECTED_PATH = 'nci-crdc.datacommons.io/manifest.json'
+          env.ABORT_SUCCESS = 'true'
+          env.KUBECTL_NAMESPACE = 'qa-bloodpac'
+
+          // get all sub directories in this branch (ie folders containing a commons manifest)
+          def dirs = findFiles(glob: 'cdis-manifest/*/')
+          for (int i = 0; i < dirs.length; i++) {
+            print dirs[i].name
+            print dirs[i].path
+            print dirs[i].directory
+            // check if folder is in the master branch
+            def master_path = "cdis-manifest-master/${dirs[i].name}"
+            if (fileExists(master_path)) {
+              // check if the manifest files are the same
+              def cmpRes = sh( script: "cmp ${dirs[i].path} ${master_path}", returnStdout: true )
+              // if cmpRes is not empty then the files are different, use
+              if (cmpRes != '') {
+                env.ABORT_SUCCESS = 'false'
+                env.AFFECTED_PATH = '${dirs[i].directory}/manifest.json'
                 env.KUBECTL_NAMESPACE = 'default'
-              } else if (affectedPaths.contains('nci-crdc-staging.datacommons.io/manifest.json')) {
-                env.AFFECTED_PATH = 'nci-crdc-staging.datacommons.io/manifest.json'
-                env.KUBECTL_NAMESPACE = 'default'
-              } else if (affectedPaths.contains('nci-crdc-demo.datacommons.io/manifest.json')) {
-                env.AFFECTED_PATH = 'nci-crdc-demo.datacommons.io/manifest.json'
-                env.KUBECTL_NAMESPACE = 'default'
-              } else if (affectedPaths.contains('data.bloodpac.org/manifest.json')) {
-                env.AFFECTED_PATH = 'data.bloodpac.org/manifest.json'
-              } else if (affectedPaths.contains('data.braincommons.org/manifest.json')) {
-                env.AFFECTED_PATH = 'data.braincommons.org/manifest.json'
-                env.KUBECTL_NAMESPACE = 'qa-brain'
-              } else if (affectedPaths.contains('data.kidsfirstdrc.org/manifest.json')) {
-                env.AFFECTED_PATH = 'data.kidsfirstdrc.org/manifest.json'                
-                env.KUBECTL_NAMESPACE = 'qa-kidsfirst'
-              } else if (affectedPaths.contains('niaid.bionimbus.org/manifest.json')) {
-                env.AFFECTED_PATH = 'niaid.bionimbus.org/manifest.json'               
-                env.KUBECTL_NAMESPACE = 'qa-niaid'
-              } else if (affectedPaths.contains('dcp.bionimbus.org/manifest.json')) {
-                env.AFFECTED_PATH = 'dcp.bionimbus.org/manifest.json'               
-                env.KUBECTL_NAMESPACE = 'qa-dcp'
-              } else {
-                println "production stuff was not affected, aborting"
-                currentBuild.result = 'SUCCESS'
-                env.ABORT_SUCCESS = 'true';
+                break
               }
             }
           }
