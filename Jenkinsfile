@@ -55,7 +55,7 @@ pipeline {
             print manifestFiles[i].name
             print manifestFiles[i].path
             // check if folder is in the master branch
-            def master_path = manifestFiles[i].directory.replaceAll('cdis-manifest', 'cdis-manifest-master')
+            def master_path = manifestFiles[i].path.replaceAll('cdis-manifest', 'cdis-manifest-master')
             print master_path
             print fileExists(manifestFiles[i].path)
             if (fileExists(master_path)) {
