@@ -33,15 +33,10 @@ pipeline {
       steps {
         script {
           def changeLogSets = currentBuild.changeSets
-          print changeLogSets
           for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
-            print entries
-            print entries.length
             for (int j = 0; j < entries.length; j++) {
               def affectedPaths = entries[j].getAffectedPaths()
-              print affectedPaths
-              print entries[j].getMsg()
               env.ABORT_SUCCESS = 'false';
               env.KUBECTL_NAMESPACE = 'qa-bloodpac'
               if (affectedPaths.contains('nci-crdc.datacommons.io/manifest.json')) {
@@ -117,8 +112,9 @@ pipeline {
       }
       steps {
         dir('gen3-qa') {
-          withEnv(['GEN3_NOPROXY=true']) {
-            sh "bash ./run-install.sh"
+          withEnv(['GEN3_NOPROXY=true', "vpc_name=$env.KUBECTL_NAMESPACE", "GEN3_HOME=$env.WORKSPACE/cloud-automation", "NAMESPACE=$env.KUBECTL_NAMESPACE", "TEST_DATA_PATH=$env.WORKSPACE/testData/"]) {
+            sh "bash ./jenkins-simulate-data.sh $env.KUBECTL_NAMESPACE"
+            sh "bash ./run-tests.sh $env.KUBECTL_NAMESPACE"
           }
         }
       }
