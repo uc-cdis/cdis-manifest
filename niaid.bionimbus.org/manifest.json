@@ -9,21 +9,21 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.0.0",
     "arranger": "quay.io/cdis/arranger:1.0.1",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "fence": "quay.io/cdis/fence:2.3.2",
     "fence-canary": "quay.io/cdis/fence:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "indexd": "quay.io/cdis/indexd:1.0.10",
     "indexd-canary": "quay.io/cdis/indexd:master",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:feat_bagit",
     "peregrine-canary": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
     "sheepdog-canary": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:2.0.1",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "shiny": "quay.io/cdis/shiny-ndh:feat_shiny-ndh",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.1.3"
@@ -34,7 +34,9 @@
   "arranger": {
     "project_id": "niaid_3",
     "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": ["subject"]
+    "auth_filter_node_types": [
+      "subject"
+    ]
   },
   "tube": {
     "es_index_name": "niaid_beta"
