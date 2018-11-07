@@ -9,17 +9,21 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.0.0",
     "arranger": "quay.io/cdis/arranger:1.0.2",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "fence": "quay.io/cdis/fence:2.3.2",
+    "fence-canary": "quay.io/cdis/fence:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "indexd": "quay.io/cdis/indexd:1.0.10",
+    "indexd-canary": "quay.io/cdis/indexd:master",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "peregrine-canary": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
-    "portal": "quay.io/cdis/data-portal:2.0.1",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "sheepdog-canary": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
     "tube": "quay.io/cdis/tube:0.1.1"
   },
@@ -38,5 +42,8 @@
     "portal_app": "bhc",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
     "sync_from_dbgap": "False"
+  },
+  "canary": {
+    "default": 0
   }
 }
