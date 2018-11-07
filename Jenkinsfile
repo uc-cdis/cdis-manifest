@@ -36,8 +36,12 @@ pipeline {
           print changeLogSets
           for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
+            print entries
+            print entries.length
             for (int j = 0; j < entries.length; j++) {
               def affectedPaths = entries[j].getAffectedPaths()
+              print affectedPaths
+              print entries[j].getMsg()
               env.ABORT_SUCCESS = 'false';
               env.KUBECTL_NAMESPACE = 'qa-bloodpac'
               if (affectedPaths.contains('nci-crdc.datacommons.io/manifest.json')) {
