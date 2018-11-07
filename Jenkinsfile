@@ -54,9 +54,10 @@ pipeline {
           for (int i = 0; i < manifestFiles.length; i++) {
             print manifestFiles[i].name
             print manifestFiles[i].path
-            print manifestFiles[i].directory
             // check if folder is in the master branch
-            def master_path = "cdis-manifest-master/${manifestFiles[i].directory}/manifest.json"
+            def master_path = manifestFiles[i].directory.replaceAll('cdis-manifest', 'cdis-manifest-master')
+            print master_path
+            print fileExists(manifestFiles[i].path)
             if (fileExists(master_path)) {
               // check if the manifest files are the same
               def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path}", returnStdout: true )
