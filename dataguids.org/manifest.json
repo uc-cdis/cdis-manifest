@@ -8,9 +8,13 @@
   },
   "versions": {
     "fence": "quay.io/cdis/fence:2.3.2",
+    "fence-canary": "quay.io/cdis/fence:master",
     "indexd": "quay.io/cdis/indexd:feat_hs",
+    "indexd-canary": "quay.io/cdis/indexd:master",
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "peregrine-canary": "quay.io/cdis/peregrine:master",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "sheepdog-canary": "quay.io/cdis/sheepdog:master",
     "portal": "quay.io/cdis/dataguids:master",
     "revproxy": "nginx:1.13.9-perl",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
@@ -18,6 +22,9 @@
   },
   "jupyterhub": {
     "enabled": "yes"
+  },
+  "canary": {
+    "default": 0
   },
 "global": {
   "environment": "dataguids",
