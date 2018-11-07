@@ -50,20 +50,20 @@ pipeline {
           env.KUBECTL_NAMESPACE = 'qa-bloodpac'
 
           // get all sub directories in this branch (ie folders containing a commons manifest)
-          def dirs = findFiles(glob: 'cdis-manifest/*/')
-          for (int i = 0; i < dirs.length; i++) {
-            print dirs[i].name
-            print dirs[i].path
-            print dirs[i].directory
+          def manifestFiles = findFiles(glob: 'cdis-manifest/*/manifest.json')
+          for (int i = 0; i < manifestFiles.length; i++) {
+            print manifestFiles[i].name
+            print manifestFiles[i].path
+            print manifestFiles[i].directory
             // check if folder is in the master branch
-            def master_path = "cdis-manifest-master/${dirs[i].name}"
+            def master_path = "cdis-manifest-master/${manifestFiles[i].directory}/manifest.json"
             if (fileExists(master_path)) {
               // check if the manifest files are the same
-              def cmpRes = sh( script: "cmp ${dirs[i].path} ${master_path}", returnStdout: true )
+              def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path}", returnStdout: true )
               // if cmpRes is not empty then the files are different, use
               if (cmpRes != '') {
                 env.ABORT_SUCCESS = 'false'
-                env.AFFECTED_PATH = '${dirs[i].directory}/manifest.json'
+                env.AFFECTED_PATH = '${manifestFiles[i].directory}/manifest.json'
                 env.KUBECTL_NAMESPACE = 'default'
                 break
               }
