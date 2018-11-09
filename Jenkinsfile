@@ -1,12 +1,11 @@
 #!groovy
 
-@NonCPS
+// Returns true if a file path includes a name from the production domains array
+// Used to determine if a manifest edit should be tested
 def isProduction(filePath) {
   String[] prodDomains = ["nci-crdc", "nci-crdc-staging", "nci-crdc-demo", "bloodpac", "braincommons", "kidsfirstdrc", "niaid", "dcp.bionimbus"]
   for (int k=0; k < prodDomains.length; ++k) {
-    echo "Checking if ${prodDomains[k]} is in ${filePath}"
     if (filePath.contains(prodDomains[k])) {
-      echo "IT DOES CONTAIN IT!"
       return true
     }
   }
