@@ -4,7 +4,7 @@
 def isProduction(filePath) {
   String[] prodDomains = ["nci-crdc", "nci-crdc-staging", "nci-crdc-demo", "bloodpac", "braincommons", "kidsfirstdrc", "niaid", "dcp.bionimbus"]
   prodDomains.each { item ->
-    if (filePath.contains(item)) {
+    if (filePath.contains(${item})) {
       return true
     }
   }
