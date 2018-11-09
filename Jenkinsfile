@@ -1,5 +1,15 @@
 #!groovy
 
+def isProduction(filePath) {
+  String[] prodDomains = ["nci-crdc", "nci-crdc-staging", "nci-crdc-demo", "bloodpac", "braincommons", "kidsfirstdrc", "niaid", "dcp.bionimbus"]
+  prodDomains.each() {
+    if (filePath.contains(${it})) {
+      return true
+    }
+  }
+  return false
+}
+
 pipeline {
   agent any
 
@@ -54,7 +64,7 @@ pipeline {
           for (int i = 0; i < manifestFiles.length; i++) {
             // check if master branch also has the manifest
             def master_path = manifestFiles[i].path.replaceAll('cdis-manifest', 'cdis-manifest-master')
-            if (fileExists(master_path)) {
+            if (fileExists(master_path) && isProduction(manifestFiles[i].path)) {
               // check if the manifest files are the same
               def cmpRes = sh( script: "cmp ${manifestFiles[i].path} ${master_path} || true", returnStdout: true )
               // if the comparison result is not empty then the files are different, use this manifest for testing!
