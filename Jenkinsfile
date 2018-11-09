@@ -4,7 +4,7 @@
 def isProduction(filePath) {
   String[] prodDomains = ["nci-crdc", "nci-crdc-staging", "nci-crdc-demo", "bloodpac", "braincommons", "kidsfirstdrc", "niaid", "dcp.bionimbus"]
   for (int k=0; k < prodDomains.length; ++k) {
-    echo "Checking if ${item} is in ${filePath}"
+    echo "Checking if ${prodDomains[k]} is in ${filePath}"
     if (filePath.contains(prodDomains[k])) {
       echo "IT DOES CONTAIN IT!"
       return true
