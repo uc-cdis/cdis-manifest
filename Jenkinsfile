@@ -7,7 +7,7 @@ def isProduction(filePath) {
           sh "echo Hello ${item}"
       }
   prodDomains.each { item ->
-    if (filePath.contains(${item})) {
+    if (filePath.contains(item)) {
       return true
     }
   }
