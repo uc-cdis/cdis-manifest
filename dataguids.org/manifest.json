@@ -12,7 +12,7 @@
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
     "portal": "quay.io/cdis/dataguids:master",
-    "revproxy": "nginx:1.13.9-perl",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   },
