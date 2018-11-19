@@ -13,7 +13,7 @@ $ cat dev.planx-pla.net/manifest.json
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:2.3.2",
+    "fence": "quay.io/cdis/fence:2.4.0",
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
     "portal": "quay.io/cdis/data-portal:2.0.1",
