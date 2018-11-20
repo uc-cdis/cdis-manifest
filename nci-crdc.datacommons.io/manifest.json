@@ -8,7 +8,8 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.0.0",
-    "fence": "quay.io/cdis/fence:2.2.7",
+    "fence": "quay.io/cdis/fence:2.3.4.1",
+    "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.0.4",
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -20,9 +21,11 @@
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.1.3"
   },
+  "google": {
+    "enabled": "yes"
+  },
   "jupyterhub": {
     "enabled": "no"
-  
   },
   "global": {
     "environment": "dcfprod",
