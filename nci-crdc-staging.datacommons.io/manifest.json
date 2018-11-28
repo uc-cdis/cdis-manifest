@@ -1,13 +1,17 @@
 {
   "notes": [
-    "This is the dev environment manifest",
-    "That's all I have to say"
+    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of "
+    "syncing authZ information from dbGap, there is a manual whitelist. "
+    "Environment is configured for Google data access methods including service account "
+    "registration. Data is in multiple Google buckets with both public and *controlled* "
+    "data. The controlled data is actually just public data so there's no sensitive "
+    "data in this env."
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:2.3.4.2",
+    "fence": "quay.io/cdis/fence:2.3.4.4",
     "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.0.10",
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
