@@ -34,5 +34,8 @@
     "portal_app": "ibdgc",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3"
+  },
+  "canary": {
+    "default": 0
   }
 }

@@ -1,10 +1,10 @@
 {
   "notes": [
-    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of "
-    "syncing authZ information from dbGap, there is a manual whitelist. "
-    "Environment is configured for Google data access methods including service account "
-    "registration. Data is in multiple Google buckets with both public and *controlled* "
-    "data. The controlled data is actually just public data so there's no sensitive "
+    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
+    "syncing authZ information from dbGap, there is a manual whitelist. ",
+    "Environment is configured for Google data access methods including service account ",
+    "registration. Data is in multiple Google buckets with both public and *controlled* ",
+    "data. The controlled data is actually just public data so there's no sensitive ",
     "data in this env."
   ],
   "jenkins": {
@@ -38,5 +38,8 @@
     "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging/user.yaml"
+  },
+  "canary": {
+    "default": 0
   }
 }
