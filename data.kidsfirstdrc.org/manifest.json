@@ -30,5 +30,8 @@
     "useryaml_s3path": "s3://kf-gen3-user/user.yaml",
     "portal_app": "kf",
     "sync_from_dbgap": "True"
+  },
+  "canary": {
+    "default": 0
   }
 }
