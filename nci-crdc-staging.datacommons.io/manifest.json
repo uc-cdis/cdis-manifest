@@ -1,27 +1,29 @@
 {
   "notes": [
-    "This is the dev environment manifest",
-    "That's all I have to say"
+    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
+    "syncing authZ information from dbGap, there is a manual whitelist. ",
+    "Environment is configured for Google data access methods including service account ",
+    "registration. Data is in multiple Google buckets with both public and *controlled* ",
+    "data. The controlled data is actually just public data so there's no sensitive ",
+    "data in this env."
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:master",
-    "arranger": "quay.io/cdis/arranger:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "fence": "quay.io/cdis/fence:master",
-    "indexd": "quay.io/cdis/indexd:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
-    "revproxy": "nginx:1.13.9-perl",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master"
+    "fence": "quay.io/cdis/fence:2.3.4.7",
+    "google-sa-validation": "placeholder",
+    "indexd": "quay.io/cdis/indexd:1.0.10",
+    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+  },
+  "google": {
+    "enabled": "yes"
   },
   "jupyterhub": {
     "enabled": "no"
@@ -36,5 +38,8 @@
     "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging/user.yaml"
+  },
+  "canary": {
+    "default": 0
   }
 }

@@ -13,11 +13,11 @@ $ cat dev.planx-pla.net/manifest.json
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
+    "fence": "quay.io/cdis/fence:2.4.0",
+    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   }
   "jupyterhub": {

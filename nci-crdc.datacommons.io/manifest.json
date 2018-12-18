@@ -7,25 +7,22 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:master",
-    "arranger": "quay.io/cdis/arranger:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "fence": "quay.io/cdis/fence:2.2.7",
+    "fence": "quay.io/cdis/fence:2.3.4.7",
+    "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.0.4",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
-    "revproxy": "nginx:1.13.9-perl",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master"
+    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+  },
+  "google": {
+    "enabled": "yes"
   },
   "jupyterhub": {
     "enabled": "no"
-  
   },
   "global": {
     "environment": "dcfprod",
@@ -36,6 +33,9 @@
     "kube_bucket": "kube-dcfprod-gen3",
     "logs_bucket": "logs-dcfprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": ""
+    "useryaml_s3path": "none"
+  },
+  "canary": {
+    "default": 0
   }
 }
