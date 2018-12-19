@@ -7,24 +7,26 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:master",
-    "arranger": "quay.io/cdis/arranger:master",
+    "arborist": "quay.io/cdis/arborist:1.0.0",
+    "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "fence": "quay.io/cdis/fence:master",
-    "indexd": "quay.io/cdis/indexd:master",
-    "peregrine": "quay.io/cdis/peregrine:feat_bagit",
-    "pidgin": "quay.io/cdis/pidgin:master",
-    "revproxy": "nginx:1.13.9-perl",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:cloudwatch",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:2.4.0",
+    "indexd": "quay.io/cdis/indexd:1.0.10",
+    "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "portal": "quay.io/cdis/data-portal:2.0.1",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master"
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.1.3"
   },
   "arranger": {
-    "project_id": "dcp"
+    "project_id": "dcp_1",
+    "auth_filter_node_types": ["case"]
   },
   "tube": {
     "es_index_name": "dcp_1"
@@ -36,11 +38,14 @@
     "environment": "gtexprod",
     "hostname": "dcp.bionimbus.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/b4fa52e9-7c8e-4499-b5d9-3d6decc448b3",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.0.11/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.0.13/schema.json",
     "portal_app": "gtex",
     "kube_bucket": "kube-gtexprod-gen3",
     "logs_bucket": "logs-gtexprod-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/dcp/user.yaml"
+  },
+  "canary": {
+    "default": 0
   }
 }
