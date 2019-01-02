@@ -11,9 +11,10 @@
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.4.0",
     "indexd": "quay.io/cdis/indexd:1.0.10",
-    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "peregrine": "quay.io/cdis/peregrine:1.0.4",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
@@ -30,6 +31,9 @@
   "jupyterhub": {
     "enabled": "yes"
   },
+  "peregrine": {
+    "sidecar": "True"
+  },
   "global": {
     "environment": "cvbcommons",
     "hostname": "cvbcommons.org",
@@ -38,6 +42,8 @@
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/cvb/user.yaml",
     "sync_from_dbgap": "False"
-
+  },
+  "canary": {
+    "default": 0
   }
 }

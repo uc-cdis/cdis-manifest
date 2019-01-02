@@ -11,9 +11,10 @@
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.4.0",
     "indexd": "quay.io/cdis/indexd:1.0.10",
-    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "peregrine": "quay.io/cdis/peregrine:1.0.4",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
@@ -26,6 +27,9 @@
   "jupyterhub": {
     "enabled": "yes"
   },
+  "peregrine": {
+    "sidecar": "True"
+  },
   "arranger": {
     "project_id": "kidsfirst_1",
     "auth_filter_field": "auth_resource_path",
@@ -35,11 +39,14 @@
     "environment": "kfqa",
     "hostname": "dcf-interop.kidsfirstdrc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:222487244010:certificate/1d90c400-8210-4443-ac79-4a6f2535e464",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/kf-dictionary/1.1.0/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/kf-dictionary/1.1.1/schema.json",
     "portal_app": "kfDcfInterop",
     "kube_bucket": "kube-kfqa-gen3",
     "logs_bucket": "logs-kfqa-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/kfqa/user.yaml"
+  },
+  "canary": {
+    "default": 0
   }
 }

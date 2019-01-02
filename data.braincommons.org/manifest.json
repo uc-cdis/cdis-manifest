@@ -11,13 +11,14 @@
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.4.0",
     "indexd": "quay.io/cdis/indexd:1.0.10",
-    "peregrine": "quay.io/cdis/peregrine:1.0.2",
+    "peregrine": "quay.io/cdis/peregrine:1.0.4",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
-    "portal": "quay.io/cdis/data-portal:2.0.1",
+    "portal": "quay.io/cdis/data-portal:2.1.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
@@ -27,6 +28,9 @@
     "project_id": "brain_2",
     "auth_filter_field": "auth_resource_path"
   },
+  "peregrine": {
+    "sidecar": "True"
+  },
   "jupyterhub": {
     "enabled": "yes"
   },
@@ -34,9 +38,12 @@
     "environment": "bhcprodv2",
     "hostname": "data.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.4.3/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.4.7/schema.json",
     "portal_app": "bhc",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
     "sync_from_dbgap": "False"
+  },
+  "canary": {
+    "default": 0
   }
 }
