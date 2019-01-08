@@ -1,0 +1,44 @@
+mappings:
+  - name: jenkins-genomel_etl
+    doc_type: case
+    type: aggregator
+    root: case
+    props:
+      - name: project_id
+      - name: submitter_id
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+          - name: vital_status
+          - name: year_of_birth
+    aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _aliquots_count
+        path: samples.aliquots
+        fn: count
+  - name: jenkins-genomel_file
+    doc_type: file
+    type: collector
+    root: None
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: state
+    injecting_props:
+      case:
+        props:
+          - name: case_id
+            src: id
+          - name: project_id
+    target_nodes:
+      - name: submitted_aligned_reads
+        path: read_groups.aliquots.samples.cases
+      - name: submitted_unaligned_reads
+        path: read_groups.aliquots.samples.cases
