@@ -1,62 +1,60 @@
-case:
-  _props:
-    - submitter_id
-    - project_id
-    - consent_codes
-  _flatten_props:
-    - path: demographics
-      _props:
-        - gender
-        - race
-        - ethnicity
-        - age_at_index
-        - bmi
-    - path: medical_histories
-      _props:
-        - diabetes
-        - hypertension
-        - cerebrovascular_disease
-        - chronic_respiratory_disease
-        - coronary_artery_disease
-        - asthma
-        - cabg_presence
-        - copd
-        - emphysema
-        - heart_failure
-        - myocardial_infarction
-        - stroke
-    - path: diagnoses
-      _props:
-        - metabolic_syndrome_diagnosis
-    - path: blood_pressure_test
-      _props:
-        - diastolic_blood_pressure
-        - systolic_blood_pressure
-    - path: medication_records
-      _props:
-        - hypertension_meds
-    - path: samples
-      _props:
-        - biospecimen_anatomic_site
-  _aggregated_props:
-    - name: _samples_count
-      path: samples
-      fn: count
-    - name: _aliquots_count
-      path: samples.aliquots
-      fn: count
-    - name: _submitted_snp_array_files_count
-      path: samples.aliquots.submitted_snp_array_files
-      fn: count
-    - name: _read_groups_count
-      path: samples.aliquots.read_groups
-      fn: count
-    - name: _submitted_unaligned_reads_files_count
-      path: samples.aliquots.read_groups.submitted_unaligned_reads_files
-      fn: count
-    - name: _submitted_aligned_reads_files_count
-      path: samples.aliquots.read_groups.submitted_aligned_reads_files
-      fn: count
-    - name: _simple_germline_variations_count
-      path: samples.aliquots.read_groups.simple_germline_variations
-      fn: count
+mappings:
+  - name: dcp_1
+    doc_type: case
+    type: aggregator
+    root: case
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: consent_codes
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+          - name: age_at_index
+          - name: bmi
+      - path: medical_histories
+        props:
+          - name: diabetes
+          - name: hypertension
+          - name: cerebrovascular_disease
+          - name: chronic_respiratory_disease
+          - name: coronary_artery_disease
+          - name: asthma
+          - name: cabg_presence
+          - name: copd
+          - name: emphysema
+          - name: heart_failure
+          - name: myocardial_infarction
+          - name: stroke
+      - path: blood_pressure_test
+        props:
+          - name: diastolic_blood_pressure
+          - name: systolic_blood_pressure
+      - path: medication_records
+        props:
+          - name: hypertension_meds
+    aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _aliquots_count
+        path: samples.aliquots
+        fn: count
+      - name: _submitted_snp_array_files_count
+        path: samples.aliquots.submitted_snp_array_files
+        fn: count
+      - name: _read_groups_count
+        path: samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_unaligned_reads_files_count
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
+      - name: _submitted_aligned_reads_files_count
+        path: samples.aliquots.read_groups.submitted_aligned_reads_files
+        fn: count
+      - name: _simple_germline_variations_count
+        path: samples.aliquots.read_groups.simple_germline_variations
+        fn: count
