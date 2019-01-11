@@ -3,17 +3,18 @@ mappings:
     doc_type: case
     type: aggregator
     root: case
-    _props:
-      - submitter_id
-      - project_id
-      - experimental_group
-    _flatten_props:
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: experimental_group
+    flatten_props:
       - path: demographics
-        _props:
-          - gender
-          - race
-          - ethnicity
-    _aggregated_props:
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+        sorted_by: updated_datetime, desc
+    aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
