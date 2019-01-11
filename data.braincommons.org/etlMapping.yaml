@@ -11,9 +11,6 @@ mappings:
       - path: demographics
         props:
           - name: gender
-            value_mappings:
-              - female: F
-              - male: M
           - name: race
           - name: ethnicity
         sorted_by: updated_datetime, desc
