@@ -18,11 +18,11 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
-    "portal": "quay.io/cdis/data-portal:2.1.1",
+    "portal": "quay.io/cdis/data-portal:2.2.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
-    "tube": "quay.io/cdis/tube:0.1.1"
+    "tube": "quay.io/cdis/tube:0.1.4"
   },
   "arranger": {
     "project_id": "brain_2",
@@ -38,7 +38,7 @@
     "environment": "bhcprodv2",
     "hostname": "data.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.4.7/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.5.0/schema.json",
     "portal_app": "bhc",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
     "sync_from_dbgap": "False"
