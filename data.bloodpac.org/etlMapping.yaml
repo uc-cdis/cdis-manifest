@@ -8,7 +8,7 @@ mappings:
       - name: project_id
     flatten_props:
       - path: demographics
-        _props:
+        props:
           - name: gender
           - name: race
           - name: ethnicity
