@@ -1,6 +1,6 @@
 # TL;DR
 
-Centrally manage and log which versions of which services get deployed where.  Ex:
+Centrally manage and log configuration including which versions of which services get deployed where.  Ex:
 
 ```
 $ cat dev.planx-pla.net/manifest.json 
