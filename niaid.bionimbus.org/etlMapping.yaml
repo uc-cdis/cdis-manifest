@@ -4,13 +4,21 @@ mappings:
     type: aggregator
     root: subject
     props:
-      - name: project_id
       - name: submitter_id
+      - name: project_id
+      - name: study_center
     flatten_props:
       - path: demographics
         props:
           - name: gender
+            value_mappings:
+              - female: F
+              - male: M
           - name: race
+            value_mappings:
+              - Asian/Pacific Islander: APAC
+              - American Indian or Alaskan Native: Indian
+              - Multi-racial: Multi
           - name: ethnicity
           - name: vital_status
           - name: year_of_birth
@@ -45,10 +53,10 @@ mappings:
       - name: _summary_lab_results_on_sample_count
         path: samples.summary_lab_results
         fn: count
-      - name: _mRNA_microarrays_count
+      - name: _mrna_microarrays_count
         path: samples.aliquots.mrna_microarrays
         fn: count
-      - name: _miRNA_microarrays_count
+      - name: _mirna_microarrays_count
         path: samples.aliquots.mirna_microarrays
         fn: count
       - name: _lipid_mass_spectrometries_count
@@ -60,6 +68,34 @@ mappings:
       - name: _metabolite_mass_spectrometries_count
         path: samples.aliquots.metabolite_mass_spectrometries
         fn: count
+      - name: _regimen_or_line_of_therapies
+        src: regimen_or_line_of_therapy
+        path: diagnoses.treatments
+        fn: set
+      - name: _type_of_resistances
+        src: type_of_resistance
+        path: diagnoses
+        fn: set
+      - name: _x_ray_count
+        src: x_ray_count
+        path: imaging_studies
+        fn: sum
+      - name: _ct_count
+        src: ct_count
+        path: imaging_studies
+        fn: sum
+      - name: _summary_tb_culture_result
+        src: culture
+        path: samples.tb_results
+        fn: set
+      - name: _summary_tb_microscopy_result
+        src: microscopy
+        path: samples.tb_results
+        fn: set
+      - name: _summary_tb_specimen_result
+        src: test_type
+        path: samples.tb_results
+        fn: set
   - name: niaid_file_beta
     doc_type: file
     type: collector
@@ -99,7 +135,6 @@ mappings:
         path: read_groups.aliquots.samples.subjects
       - name: submitted_unaligned_reads
         path: read_groups.aliquots.samples.subjects
-      - name: submitted_genomic_profile
-        path: read_groups.aliquots.samples.subjects
       - name: submitted_somatic_mutation
         path: read_groups.aliquots.samples.subjects
+        

@@ -34,9 +34,6 @@
     "auth_filter_field": "auth_resource_path",
     "auth_filter_node_types": ["subject"]
   },
-  "tube": {
-    "es_index_name": "niaid_beta"
-  },
   "global": {
     "environment": "niaidprod",
     "hostname": "niaid.bionimbus.org",
