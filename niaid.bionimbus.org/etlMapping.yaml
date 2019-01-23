@@ -1,5 +1,5 @@
 mappings:
-  - name: niaid_beta
+  - name: etl_niaid
     doc_type: subject
     type: aggregator
     root: subject
@@ -96,7 +96,7 @@ mappings:
         src: test_type
         path: samples.tb_results
         fn: set
-  - name: niaid_file_beta
+  - name: file_niaid
     doc_type: file
     type: collector
     root: None
