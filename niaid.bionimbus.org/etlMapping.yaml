@@ -11,14 +11,7 @@ mappings:
       - path: demographics
         props:
           - name: gender
-            value_mappings:
-              - female: F
-              - male: M
           - name: race
-            value_mappings:
-              - Asian/Pacific Islander: APAC
-              - American Indian or Alaskan Native: Indian
-              - Multi-racial: Multi
           - name: ethnicity
           - name: vital_status
           - name: year_of_birth
