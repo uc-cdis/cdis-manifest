@@ -61,6 +61,9 @@ mappings:
       - name: _metabolite_mass_spectrometries_count
         path: samples.aliquots.metabolite_mass_spectrometries
         fn: count
+      - name: _submitted_unaligned_reads_count
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
       - name: _regimen_or_line_of_therapies
         src: regimen_or_line_of_therapy
         path: diagnoses.treatments
