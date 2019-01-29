@@ -1,0 +1,51 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:1.0.0",
+    "arranger": "quay.io/cdis/arranger:1.0.3",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
+    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:2.4.0",
+    "indexd": "quay.io/cdis/indexd:1.0.10",
+    "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
+    "portal": "quay.io/cdis/data-portal:2.2.3",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.1.4"
+  },
+  "arranger": {
+    "project_id": "dcp_1",
+    "auth_filter_node_types": ["case"]
+  },
+  "tube": {
+    "es_index_name": "dcp_1"
+  },
+  "jupyterhub": {
+    "enabled": "yes"
+  },
+  "global": {
+    "environment": "stageprod",
+    "hostname": "gen3.datastage.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.1.1/schema.json",
+    "portal_app": "gtex",
+    "kube_bucket": "kube-stageprod-gen3",
+    "logs_bucket": "logs-stageprod-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/dcp/user.yaml"
+  },
+  "canary": {
+    "default": 0
+  }
+}
