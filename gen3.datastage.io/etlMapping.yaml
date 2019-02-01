@@ -29,9 +29,10 @@ mappings:
           - name: heart_failure
           - name: myocardial_infarction
           - name: stroke
-      - path: diagnoses
-        props:
-          - name: metabolic_syndrome_diagnosis
+      # ETL error: as multiplicity 'many_to_one' that cannot be used on in 'flatten_props'
+      #- path: diagnoses
+      #  props:
+      #    - name: metabolic_syndrome_diagnosis
       - path: blood_pressure_test
         props:
           - name: diastolic_blood_pressure
@@ -39,9 +40,10 @@ mappings:
       - path: medication_records
         props:
           - name: hypertension_meds
-      - path: samples
-        props:
-          - name: biospecimen_anatomic_site
+      # ETL error: as multiplicity 'many_to_one' that cannot be used on in 'flatten_props'
+      #- path: samples
+      #  props:
+      #    - name: biospecimen_anatomic_site
     aggregated_props:
       - name: _samples_count
         path: samples
