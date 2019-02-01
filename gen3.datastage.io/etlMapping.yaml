@@ -32,6 +32,7 @@ mappings:
       - path: diagnoses
         props:
           - name: metabolic_syndrome_diagnosis
+        sorted_by: updated_datetime, desc
       - path: blood_pressure_test
         props:
           - name: diastolic_blood_pressure
@@ -42,6 +43,7 @@ mappings:
       - path: samples
         props:
           - name: biospecimen_anatomic_site
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
