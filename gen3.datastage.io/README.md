@@ -6,8 +6,9 @@ This environment is phase 2 of dcp.bionimbus.org (soon to be deprecated)
 ## Google
 
 The `datastage` commons mediates access to GCP buckets owned by the cloud
-partners.  The commons (`fence`) provides access to objects via 
-signed URL's and temporary access tokens.
+partners.  The commons (`fence`) provides access to objects via
+signed URL's and temporary Google service account keys.
+
 
 ## Configuration Details
 
