@@ -4,5 +4,5 @@
 runPipeline {
   pipeline = 'gitops'
   serviceTesting = [name: 'fence', branch: 'master']
-  MANIFEST = false
+  MANIFEST = true
 }
