@@ -3,5 +3,5 @@
 @Library('cdis-jenkins-lib@refactor/all') _
 
 testPipeline {
-  MANIFEST = true
+  MANIFEST = "True"
 }
