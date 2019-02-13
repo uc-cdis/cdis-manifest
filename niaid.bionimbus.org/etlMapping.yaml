@@ -6,7 +6,6 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
-      - name: study_center
     flatten_props:
       - path: demographics
         props:
@@ -15,6 +14,8 @@ mappings:
           - name: ethnicity
           - name: vital_status
           - name: year_of_birth
+          - name: study_center 
+            src: country_of_birth
       - path: virus_infections
         props:
           - name: virus_type
@@ -75,11 +76,11 @@ mappings:
       - name: _x_ray_count
         src: x_ray_count
         path: imaging_studies
-        fn: sum
+        fn: count
       - name: _ct_count
         src: ct_count
         path: imaging_studies
-        fn: sum
+        fn: count
       - name: _summary_tb_culture_result
         src: culture
         path: samples.tb_results
