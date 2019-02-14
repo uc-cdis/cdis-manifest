@@ -8,24 +8,35 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.1.2",
+    "arranger": "quay.io/cdis/arranger:master",
+    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.5.6",
-    "indexd": "quay.io/cdis/indexd:1.1.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.5",
+    "fence": "quay.io/cdis/fence:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "indexd": "quay.io/cdis/indexd:master",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.7",
     "portal": "quay.io/cdis/data-portal:2.2.7",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.6"
+    "spark": "quay.io/cdis/gen3-spark:master",
+    "tube": "quay.io/cdis/tube:0.1.9"
   },
   "peregrine": {
     "sidecar": "True"
   },
   "jupyterhub": {
     "enabled": "no"
+  },
+    "arranger":{
+    "project_id": "etl_anvil",
+    "auth_filter_field": "auth_resource_path",
+    "auth_filter_node_types": [
+      "case",
+      "file"
+    ]
   },
   "global": {
     "environment": "anvilstaging",
