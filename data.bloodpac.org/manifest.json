@@ -12,7 +12,7 @@
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.5.1",
+    "fence": "quay.io/cdis/fence:2.5.11",
     "indexd": "quay.io/cdis/indexd:1.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -42,7 +42,7 @@
     "environment": "bloodv2",
     "hostname": "data.bloodpac.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:562749638216:certificate/2af3ddb5-0629-4581-ab07-fa482af124f3",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.3.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.3.1/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bpa/user.yaml",
     "sync_from_dbgap": "False"
