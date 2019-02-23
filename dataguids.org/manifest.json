@@ -28,5 +28,39 @@
   },
   "canary": {
     "default": 0
+  },
+ "indexd": {
+    "dist": [
+    {
+        "name": "DataSTAGE",
+        "host": "https://gen3.datastage.io/index/",
+        "hints": [".*dg\\.4503.*"],
+        "type": "indexd"
+    },
+    {
+        "name": "OCC Environmental DC",
+        "host": "https://portal.occ-data.org/index/",
+        "hints": [".*dg\\.7C5B.*"],
+        "type": "indexd"
+    },
+    {
+        "name": "Kids First",
+        "host": "https://data.kidsfirstdrc.org/index/",
+        "hints": [".*dg\\.F82A1A.*"],
+        "type": "indexd"
+    },
+    {
+        "name": "DX DOI",
+        "host": "https://dx.doi.org/",
+        "hints": ["10\\..*"],
+        "type": "doi"
+    },
+    {
+        "name": "NCI CRDC",
+        "host": "https://nci-crdc.datacommons.io/index/",
+        "hints": [],
+        "type": "indexd"
+    }
+   ]
   }
 }
