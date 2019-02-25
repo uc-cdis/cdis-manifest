@@ -12,7 +12,7 @@
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.4.0",
+    "fence": "quay.io/cdis/fence:2.5.14",
     "indexd": "quay.io/cdis/indexd:1.0.10",
     "peregrine": "quay.io/cdis/peregrine:1.0.4",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -22,7 +22,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
-    "tube": "quay.io/cdis/tube:0.1.2"
+    "tube": "quay.io/cdis/tube:0.1.10",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.2"
   },
   "arranger": {
     "project_id": "brain_2",
@@ -41,6 +42,7 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/cvb0.4.3/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/cvb/user.yaml",
+    "dispatcher_job_num": "5",
     "sync_from_dbgap": "False"
   },
   "canary": {
