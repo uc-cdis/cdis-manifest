@@ -7,21 +7,22 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.1.1",
+    "arborist": "quay.io/cdis/arborist:1.1.2",
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.5.1",
+    "fence": "quay.io/cdis/fence:2.5.14",
     "indexd": "quay.io/cdis/indexd:1.1.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.6",
+    "peregrine": "quay.io/cdis/peregrine:1.0.7",
     "peregrine-canary": "quay.io/cdis/peregrine:fix_promise",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
-    "portal": "quay.io/cdis/data-portal:2.2.5",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
+    "portal": "quay.io/cdis/data-portal:2.5.4",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.4",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
     "tube": "quay.io/cdis/tube:0.1.9"
   },
@@ -42,6 +43,7 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.6.0/schema.json",
     "portal_app": "bhc",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
+    "dispatcher_job_num": "10",
     "sync_from_dbgap": "False"
   },
   "canary": {
