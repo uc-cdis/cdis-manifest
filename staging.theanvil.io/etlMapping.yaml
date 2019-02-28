@@ -1,5 +1,5 @@
 mappings:
-  - name: etl_qa-anvil
+  - name: etl_anvil
     doc_type: case
     type: aggregator
     root: case
@@ -35,7 +35,7 @@ mappings:
       - name: _submitted_somatic_mutations_count
         path: samples.aliquots.read_groups.submitted_somatic_mutations
         fn: count
-  - name: file_qa-anvil
+  - name: file_anvil
     doc_type: file
     type: collector
     root: None
