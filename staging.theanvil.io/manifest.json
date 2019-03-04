@@ -20,7 +20,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
-    "portal": "quay.io/cdis/data-portal:2.5.4",
+    "portal": "quay.io/cdis/data-portal:2.5.5",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:0.1.9"
   },
@@ -47,7 +47,8 @@
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/anvilstaging/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/anvilstaging/user.yaml",
+    "public_datasets": "true"
   },
   "canary": {
     "default": 0
