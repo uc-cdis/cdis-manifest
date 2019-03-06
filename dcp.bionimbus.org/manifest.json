@@ -12,7 +12,7 @@
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.4.0",
+    "fence": "quay.io/cdis/fence:2.6.0",
     "indexd": "quay.io/cdis/indexd:1.0.10",
     "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -22,7 +22,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.4"
+    "tube": "quay.io/cdis/tube:0.1.9"
   },
   "arranger": {
     "project_id": "dcp_1",
