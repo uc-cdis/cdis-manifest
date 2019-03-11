@@ -25,8 +25,12 @@
     "tube": "quay.io/cdis/tube:0.1.9"
   },
   "arranger": {
-    "project_id": "dcp_1",
-    "auth_filter_node_types": ["case"]
+    "project_id": "dcp_etl",
+    "auth_filter_field": "auth_resource_path",
+    "auth_filter_node_types": [
+      "case",
+      "file"
+    ]
   },
   "tube": {
     "es_index_name": "dcp_1"
