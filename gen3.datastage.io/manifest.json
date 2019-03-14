@@ -22,10 +22,10 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.2.1"
+    "tube": "quay.io/cdis/tube:0.2.2"
   },
   "arranger": {
-    "project_id": "dcp_etl",
+    "project_id": "dcp_2",
     "auth_filter_field": "auth_resource_path",
     "auth_filter_node_types": [
       "case",
