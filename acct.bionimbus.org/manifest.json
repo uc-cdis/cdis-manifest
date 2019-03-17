@@ -7,18 +7,19 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.0.0",
+    "arborist": "quay.io/cdis/arborist:1.1.2",
     "fence": "quay.io/cdis/fence:2.6.0",
-    "indexd": "quay.io/cdis/indexd:1.0.10",
-    "peregrine": "quay.io/cdis/peregrine:1.0.4",
+    "indexd": "quay.io/cdis/indexd:1.1.0",
+    "peregrine": "quay.io/cdis/peregrine:1.0.9",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
-    "portal": "quay.io/cdis/data-portal:2.2.1",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
+    "portal": "quay.io/cdis/data-portal:2.5.4",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.9"
+    "tube": "quay.io/cdis/tube:0.1.9",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.4"
   },
   "jupyterhub": {
     "enabled": "yes"
@@ -30,11 +31,12 @@
     "environment": "accountprod",
     "hostname": "acct.bionimbus.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:830067555646:certificate/ada3ae0c-0e2b-4c97-aeac-7f0923e03312",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/acctdictionary/0.2.1/schema.json",
-    "portal_app": "acct",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/acctdictionary/0.2.2/schema.json",
+    "portal_app": "gitops",
     "kube_bucket": "kube-accountprod-gen3",
     "logs_bucket": "logs-accountprod-gen3",
     "sync_from_dbgap": "False",
+    "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/accountprod/user.yaml"
   },
   "canary": {
