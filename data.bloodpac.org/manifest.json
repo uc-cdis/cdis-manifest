@@ -13,8 +13,8 @@
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.6.0",
-    "indexd": "quay.io/cdis/indexd:1.1.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.5",
+    "indexd": "quay.io/cdis/indexd:1.1.1",
+    "peregrine": "quay.io/cdis/peregrine:1.0.9",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
@@ -22,7 +22,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:fix_add_auth"
+    "tube": "quay.io/cdis/tube:fix_add_auth",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.4"
   },
   "jupyterhub": {
     "enabled": "yes"
@@ -45,6 +46,7 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.3.3/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bpa/user.yaml",
+    "dispatcher_job_num": "10",
     "sync_from_dbgap": "False"
   },
   "canary": {
