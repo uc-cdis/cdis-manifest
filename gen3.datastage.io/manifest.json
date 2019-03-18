@@ -22,7 +22,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.2.4"
+    "tube": "quay.io/cdis/tube:fix_file_index"
   },
   "arranger": {
     "project_id": "dcp_3",
