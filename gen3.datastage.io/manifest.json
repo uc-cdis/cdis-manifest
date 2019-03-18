@@ -34,7 +34,7 @@
   },
   "jupyterhub": {
     "enabled": "yes",
-    "profiles": [
+    "containers": [
                   {
                     "name": "Bioinfo - Python/R",
                     "cpu": 0.5,
