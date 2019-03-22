@@ -7,7 +7,7 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.0.0",
+    "arborist": "quay.io/cdis/arborist:1.2.0",
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
@@ -22,7 +22,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.2.4"
+    "tube": "quay.io/cdis/tube:fix_file_index"
   },
   "arranger": {
     "project_id": "dcp_3",
@@ -33,7 +33,21 @@
     ]
   },
   "jupyterhub": {
-    "enabled": "yes"
+    "enabled": "yes",
+    "containers": [
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 0.5,
+                    "memory": "256M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+                  },
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 1.0,
+                    "memory": "1024M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+                  }
+                ]
   },
   "global": {
     "environment": "stageprod",
