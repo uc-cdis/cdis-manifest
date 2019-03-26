@@ -38,7 +38,7 @@ $ cat dev.planx-pla.net/manifest.json
 <img src="Gen3CICD.svg" width="100%" />
 
 We run a *dev* kubernetes cluster and a *qa* cluster.  The dev cluster allows each developer to run her own
-gen3 stack in its own namespace.  A develper can manipulate
+gen3 stack in its own namespace.  A developer can manipulate
 the cluster directly (with `kubectl`) from the cluster's admin vm:
 ```
 $ ssh reuben@k8s.devplanetv1
@@ -71,6 +71,8 @@ To update a production environment such as *data.bloodpac.org*
 * submit a pull request (PR)
 * after the PR is approved and merged, then kickoff a deployment script (details TBD) - production deployment automation pulls manifests from the `master` git branch
 * run gen3's integration test suite against the new production deployment (this happens automatically)
+
+Note that the Google Data Access integration tests are NOT ran when changes are made to environments that do not use Google Data Access features. The list of environments that do run these tests can be updated in [this file](https://github.com/uc-cdis/gen3-qa/blob/master/run-tests.sh).
 
 ## Automation
 
