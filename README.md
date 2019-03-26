@@ -72,6 +72,8 @@ To update a production environment such as *data.bloodpac.org*
 * after the PR is approved and merged, then kickoff a deployment script (details TBD) - production deployment automation pulls manifests from the `master` git branch
 * run gen3's integration test suite against the new production deployment (this happens automatically)
 
+Note that the Google Data Access integration tests are NOT ran when changes are made to environments that do not use Google Data Access features. The list of environments that do run these tests can be updated in [this file](https://github.com/uc-cdis/gen3-qa/blob/master/run-tests.sh).
+
 ## Automation
 
 We implement manifest based versioning of our services in kubernetes via the `g3k` helper scripts in [cloud-automation](https://github.com/uc-cdis/cloud-automation).  The `-deployment.yaml` template defining each service's k8s deployment includes `GEN3` variables that `g3k roll` replaces.  For example:
