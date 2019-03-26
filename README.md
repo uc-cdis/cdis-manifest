@@ -38,7 +38,7 @@ $ cat dev.planx-pla.net/manifest.json
 <img src="Gen3CICD.svg" width="100%" />
 
 We run a *dev* kubernetes cluster and a *qa* cluster.  The dev cluster allows each developer to run her own
-gen3 stack in its own namespace.  A develper can manipulate
+gen3 stack in its own namespace.  A developer can manipulate
 the cluster directly (with `kubectl`) from the cluster's admin vm:
 ```
 $ ssh reuben@k8s.devplanetv1
