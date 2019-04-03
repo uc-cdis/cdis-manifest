@@ -1,5 +1,5 @@
 mappings:
-  - name: etl_niaid
+  - name: niaid
     doc_type: subject
     type: aggregator
     root: subject
@@ -101,7 +101,7 @@ mappings:
         path: follow_ups.summary_lab_results
         src: viral_load
         fn: min
-    joining:
+    joining_props:
       - index: file
         join_on: subject_id
         props:
@@ -114,11 +114,7 @@ mappings:
           - name: file_id
             src: file_id
             fn: set
-    special_props:
-      - name: _maintain_viral_load_less_than
-        path: follow_ups[visit_number].summary_lab_results[viral_load]
-        fn: sliding, 3, max, min
-  - name: follow_up_niaid
+  - name: niaid_follow_up
     doc_type: follow_up
     type: aggregator
     root: follow_up
@@ -142,18 +138,18 @@ mappings:
       - name: tint
       - name: days_to_follow_up
     parent_props:
-      - path: subjects[subject_id:id,project_id]
+      - path: subjects[subject_id:id,project_id,hiv_status]
     flatten_props:
       - path: summary_drug_uses
         props:
           - name: thrpy
           - name: thrpyv
     aggregated_props:
-      - name: VLOAD
+      - name: viral_load
         path: summary_lab_results
         src: viral_load
         fn: min
-  - name: file_niaid
+  - name: niaid_file
     doc_type: file
     type: collector
     root: None
