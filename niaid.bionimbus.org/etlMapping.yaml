@@ -6,6 +6,10 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: hiv_status
+        value_mappings:
+          - true: positive
+          - false: negative
     flatten_props:
       - path: demographics
         props:
@@ -14,7 +18,7 @@ mappings:
           - name: ethnicity
           - name: vital_status
           - name: year_of_birth
-          - name: study_center 
+          - name: study_center
             src: country_of_birth
       - path: virus_infections
         props:
@@ -73,14 +77,6 @@ mappings:
         src: type_of_resistance
         path: diagnoses
         fn: set
-      - name: _x_ray_count
-        src: x_ray_count
-        path: imaging_studies
-        fn: count
-      - name: _ct_count
-        src: ct_count
-        path: imaging_studies
-        fn: count
       - name: _summary_tb_culture_result
         src: culture
         path: samples.tb_results
@@ -93,45 +89,87 @@ mappings:
         src: test_type
         path: samples.tb_results
         fn: set
+      - name: therapy
+        path: follow_ups.summary_drug_uses
+        src: thrpy
+        fn: set
+      - name: therapyv
+        path: follow_ups.summary_drug_uses
+        src: thrpyv
+        fn: set
+      - name: _min_viral_load
+        path: follow_ups.summary_lab_results
+        src: viral_load
+        fn: min
+    joining:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: file_id
+            src: file_id
+            fn: set
+    special_props:
+      - name: _maintain_viral_load_less_than
+        path: follow_ups[visit_number].summary_lab_results[viral_load]
+        fn: sliding, 3, max, min
+  - name: follow_up_niaid
+    doc_type: follow_up
+    type: aggregator
+    root: follow_up
+    props:
+      - name: submitter_id
+      - name: age_at_visit
+      - name: age_at_visit_gt89
+      - name: bmi
+      - name: drug_used
+      - name: ever_transferred
+      - name: health_insurance
+      - name: height
+      - name: pregnancy_status
+      - name: version_data
+      - name: visit_name
+      - name: visit_type
+      - name: visit_number
+      - name: visit_date
+      - name: weight
+      - name: weight_percentage
+      - name: tint
+      - name: days_to_follow_up
+    parent_props:
+      - path: subjects[subject_id:id,project_id]
+    flatten_props:
+      - path: summary_drug_uses
+        props:
+          - name: thrpy
+          - name: thrpyv
+    aggregated_props:
+      - name: VLOAD
+        path: summary_lab_results
+        src: viral_load
+        fn: min
   - name: file_niaid
     doc_type: file
     type: collector
     root: None
+    category: data_file
     props:
       - name: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
+      - name: data_format
+      - name: data_type
       - name: state
     injecting_props:
       subject:
         props:
           - name: subject_id
             src: id
+            fn: set
           - name: project_id
-    target_nodes:
-      - name: mutation_panel
-        path: subjects
-      - name: bgm_simulation
-        path: mutation_panels.subjects
-      - name: mrna_microarray
-        path: aliquots.samples.subjects
-      - name: mirna_microarray
-        path: aliquots.samples.subjects
-      - name: lipid_mass_spectrometry
-        path: aliquots.samples.subjects
-      - name: protein_mass_spectrometry
-        path: aliquots.samples.subjects
-      - name: metabolite_mass_spectrometry
-        path: aliquots.samples.subjects
-      - name: submitted_copy_number
-        path: aliquots.samples.subjects
-      - name: submitted_methylation
-        path: aliquots.samples.subjects
-      - name: submitted_aligned_reads
-        path: read_groups.aliquots.samples.subjects
-      - name: submitted_unaligned_reads
-        path: read_groups.aliquots.samples.subjects
-      - name: submitted_somatic_mutation
-        path: read_groups.aliquots.samples.subjects
-        

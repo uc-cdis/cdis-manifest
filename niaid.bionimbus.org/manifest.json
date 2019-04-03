@@ -24,7 +24,7 @@
     "shiny": "quay.io/cdis/shiny-ndh:feat_shiny-ndh",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.2",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.10"
+    "tube": "quay.io/cdis/tube:0.3.2"
   },
   "jupyterhub": {
     "enabled": "yes"
@@ -32,7 +32,7 @@
   "arranger": {
     "project_id": "etl_niaid",
     "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": ["subject", "file"]
+    "auth_filter_node_types": ["subject", "follow_up", "file"]
   },
   "global": {
     "environment": "niaidprod",
