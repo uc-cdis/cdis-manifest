@@ -134,7 +134,7 @@
     "explorer": true,
     "noIndex": true
   },
-  "dataExplorerConfig": {
+"arrangerConfig": {
     "charts": {
       "project_id": {
         "chartType": "count",
@@ -170,24 +170,20 @@
         }
       ]
     },
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "case",
-      "index": "",
-      "nodeCountField": "node_id"
-    },
+    "projectId": "search",
+    "graphqlField": "case",
+    "index": "",
     "table": {
-      "enabled": true
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "data",
-        "title": "Download All Data",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "data.json"
-      }
-    ]
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data",
+          "title": "Download Data",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "data.json"
+        }
+      ]
+    }
   }
 }
