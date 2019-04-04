@@ -7,9 +7,6 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: hiv_status
-        value_mappings:
-          - true: positive
-          - false: negative
     flatten_props:
       - path: demographics
         props:
