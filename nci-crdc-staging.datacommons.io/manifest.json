@@ -36,7 +36,7 @@
     "hostname": "nci-crdc-staging.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:584476192960:certificate/b1f41138-54c0-4d5f-b2f3-7c5ebb20b555",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
-    "portal_app": "dev",
+    "portal_app": "gitops",
     "kube_bucket": "kube-dcf-staging-gen3",
     "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "False",
