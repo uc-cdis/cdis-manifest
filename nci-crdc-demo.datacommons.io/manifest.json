@@ -26,7 +26,21 @@
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.5"
   },
   "jupyterhub": {
-    "enabled": "no"
+    "enabled": "yes",
+    "containers": [
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 0.5,
+                    "memory": "256M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
+                  },
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 1.0,
+                    "memory": "1024M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
+                  }
+                ]
   },
   "peregrine": {
     "sidecar": "True"
