@@ -46,6 +46,12 @@
                     "cpu": 1.0,
                     "memory": "1024M",
                     "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+                  },
+                  {
+                    "name": "Helium COPD Demo",
+                    "cpu": 1.0,
+                    "memory": "1024M",
+                    "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
                   }
                 ]
   },
