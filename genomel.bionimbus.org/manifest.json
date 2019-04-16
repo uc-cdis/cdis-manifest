@@ -18,7 +18,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.9"
+    "tube": "quay.io/cdis/tube:0.1.9",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master"
   },
   "jupyterhub": {
     "enabled": "yes",
@@ -56,7 +57,8 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/genomel-dictionary/0.3.2/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/genomel/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/genomel/user.yaml",
+    "dispatcher_job_num": "10"
   },
   "canary": {
     "default": 0
