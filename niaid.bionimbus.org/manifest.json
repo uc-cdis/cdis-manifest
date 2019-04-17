@@ -27,7 +27,27 @@
     "tube": "quay.io/cdis/tube:0.3.3"
   },
   "jupyterhub": {
-    "enabled": "yes"
+    "enabled": "yes",
+    "containers": [
+        {
+          "name": "Bioinfo - Python/R",
+          "cpu": 0.5,
+          "memory": "256M",
+          "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+        },
+        {
+          "name": "Bioinfo - Python/R",
+          "cpu": 1.0,
+          "memory": "1024M",
+          "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+        },
+       {
+         "name": "Bioinfo - Ariba and Mykrobe",
+         "cpu": 1,
+         "memory": "1G",
+         "image": "quay.io/cdis/niaid-jupyterhub:feat_ariba-docker"
+       }
+    ]
   },
   "arranger": {
     "project_id": "niaid_4",
