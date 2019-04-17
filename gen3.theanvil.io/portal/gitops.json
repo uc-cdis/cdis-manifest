@@ -8,9 +8,9 @@
         "plural": "Cases"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment",
-        "plural": "Experiments"
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
       },
       {
         "graphql": "_aliquot_count",
@@ -67,8 +67,8 @@
           "name": "Cases"
         },
         {
-          "node": "experiment",
-          "name": "Experiments"
+          "node": "study",
+          "name": "Studies"
         },
         {
           "node": "aliquot",
