@@ -27,7 +27,15 @@
     "tube": "quay.io/cdis/tube:0.3.3"
   },
   "jupyterhub": {
-    "enabled": "yes"
+    "enabled": "yes",
+    "containers": [
+       {
+         "name": "niaid-jupyter-notebook",
+         "cpu": 1,
+         "memory": "1G",
+         "image": "quay.io/cdis/niaid-jupyterhub:feat_ariba-docker"
+       }
+    ]
   },
   "arranger": {
     "project_id": "niaid_4",
