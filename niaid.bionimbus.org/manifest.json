@@ -21,12 +21,12 @@
     "portal": "quay.io/cdis/data-portal:2.8.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
+    "manifestservice": "quay.io/cdis/manifestservice:0.1.0",
     "shiny": "quay.io/cdis/shiny-ndh:feat_shiny-ndh",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.5",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.3",
-    "wts": "quay.io/cdis/workspace-token-service:master"
+    "wts": "quay.io/cdis/workspace-token-service:0.10"
   },
   "jupyterhub": {
     "enabled": "yes",
