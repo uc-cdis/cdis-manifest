@@ -30,6 +30,7 @@
   },
   "jupyterhub": {
     "enabled": "yes",
+    "sidecar": "quay.io/cdis/gen3fuse-sidecar:0.1.1",
     "containers": [
         {
           "name": "Bioinfo - Python/R",
