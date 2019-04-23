@@ -18,7 +18,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
-    "portal": "quay.io/cdis/data-portal:2.8.0",
+    "portal": "quay.io/cdis/data-portal:2.10.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "shiny": "quay.io/cdis/shiny-ndh:feat_shiny-ndh",
@@ -26,7 +26,7 @@
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.0",
-    "tube": "quay.io/cdis/tube:0.3.3"
+    "tube": "quay.io/cdis/tube:0.3.4"
   },
   "jupyterhub": {
     "enabled": "yes",
