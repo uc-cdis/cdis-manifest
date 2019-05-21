@@ -18,7 +18,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
-    "portal": "quay.io/cdis/data-portal:2.7.3",
+    "portal": "quay.io/cdis/data-portal:2.11.4",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
@@ -52,7 +52,7 @@
     "sidecar": "True"
   },
     "arranger": {
-    "project_id": "dcf_1",
+    "project_id": "canine_0",
     "auth_filter_field": "auth_resource_path",
     "auth_filter_node_types": ["subject"]
   },
@@ -65,7 +65,7 @@
     "kube_bucket": "kube-canineprod-gen3",
     "logs_bucket": "logs-canineprod-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/canineprod/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/canine/user.yaml",
     "GEN3_DEBUG": "False",
     "dispatcher_job_num": "10"
   },
