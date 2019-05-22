@@ -22,7 +22,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.7"
+    "tube": "quay.io/cdis/tube:0.3.7",
+    "guppy": "quay.io/cdis/guppy:0.1.0"
   },
   "arranger": {
     "project_id": "dcp_3",
@@ -65,9 +66,24 @@
     "logs_bucket": "logs-stageprod-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/dcp/user.yaml",
-    "public_datasets": true
+    "public_datasets": true,
+    "tier_access_level": "regular"
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "dcp_etl",
+        "type": "case"
+      },
+      {
+        "index": "dcp_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "dcp_array-config",
+    "auth_filter_field": "auth_resource_path"
   }
 }
