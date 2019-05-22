@@ -7,44 +7,72 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.2.0",
+    "arborist": "quay.io/cdis/arborist:1.2.1",
     "arranger": "quay.io/cdis/arranger:1.0.3",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.5.14",
     "indexd": "quay.io/cdis/indexd:1.1.0",
-    "peregrine": "quay.io/cdis/peregrine:feat_bagit",
+    "peregrine": "quay.io/cdis/peregrine:1.2.0",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.5.4",
+    "portal": "quay.io/cdis/data-portal:2.11.4",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "shiny": "quay.io/cdis/shiny-ndh:feat_shiny-ndh",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.2",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.10"
+    "wts": "quay.io/cdis/workspace-token-service:0.1.0",
+    "manifestservice": "quay.io/cdis/manifestservice:0.1.0",
+    "tube": "quay.io/cdis/tube:0.3.5"
   },
   "jupyterhub": {
-    "enabled": "yes"
+    "enabled": "yes",
+    "sidecar": "quay.io/cdis/gen3fuse-sidecar:0.1.2",
+    "containers": [
+        {
+          "name": "Bioinfo - Python/R",
+          "cpu": 0.5,
+          "memory": "256M",
+          "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+        },
+        {
+          "name": "Bioinfo - Python/R",
+          "cpu": 1.0,
+          "memory": "1024M",
+          "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+        },
+       {
+         "name": "Bioinfo - Ariba and Mykrobe",
+         "cpu": 4,
+         "memory": "15512M",
+         "image": "quay.io/cdis/niaid-jupyterhub:0.1.1"
+       }
+    ]
   },
   "arranger": {
-    "project_id": "etl_niaid",
+    "project_id": "niaid_5",
     "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": ["subject", "file"]
+    "auth_filter_node_types": ["subject", "follow_up", "file"]
   },
   "global": {
     "environment": "niaidprod",
     "hostname": "niaid.bionimbus.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/3.3.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/3.4.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaidprod-gen3",
     "logs_bucket": "logs-niaidprod-gen3",
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/ndh/user.yaml"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:0.0.3"
+    }
   },
   "canary": {
     "default": 0

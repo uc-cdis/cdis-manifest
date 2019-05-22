@@ -99,7 +99,7 @@
     },
     "login": {
       "title": "CVB Commons",
-      "subTitle": "search, compare, and download data",
+      "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
@@ -108,7 +108,7 @@
   "featureFlags": {
     "explorer": false
   },
-  "arrangerConfig": {
+  "dataExplorerConfig": {
     "charts": {
       "project_id": {
         "chartType": "count",
@@ -144,20 +144,24 @@
         }
       ]
     },
-    "projectId": "search",
-    "graphqlField": "case",
-    "index": "",
+    "arrangerConfig": {
+      "projectId": "search",
+      "graphqlField": "case",
+      "index": "",
+      "nodeCountField": "node_id"
+    },
     "table": {
-      "buttons": [
-        {
-          "enabled": true,
-          "type": "data",
-          "title": "Download Data",
-          "leftIcon": "user",
-          "rightIcon": "download",
-          "fileName": "data.json"
-        }
-      ]
-    }
+      "enabled": true
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download Data",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "data.json"
+      }
+    ]
   }
 }
