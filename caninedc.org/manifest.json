@@ -76,11 +76,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "dcf_2",
+        "index": "canine_etl",
         "type": "subject"
+      },
+      {
+        "index": "canine_file",
+        "type": "file"
       }
     ],
-    "config_index": "dcf_2-array-config",
+    "config_index": "canine_array-config",
     "auth_filter_field": "auth_resource_path"
   }
 }
