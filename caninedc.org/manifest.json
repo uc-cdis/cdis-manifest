@@ -76,8 +76,12 @@
   "guppy": {
     "indices": [
       {
-        "index": "canine_0",
+        "index": "canine_etl",
         "type": "subject"
+      },
+      {
+        "index": "canine_file",
+        "type": "file"
       }
     ],
     "config_index": "canine_array-config",
