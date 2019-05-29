@@ -98,7 +98,7 @@
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "query"
+          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -135,17 +135,17 @@
         "chartType": "count",
         "title": "Subjects"
       },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
+      "breed": {
         "chartType": "bar",
-        "title": "Race"
+        "title": "Breed"
       },
-      "ethnicity": {
+      "disease_type": {
         "chartType": "bar",
-        "title": "Ethnicity"
+        "title": "Disease Type"
+      },
+      "data_format": {
+        "chartType": "bar",
+        "title": "Data Format"
       }
     },
     "filters": {
@@ -155,14 +155,24 @@
           "fields":[
             "project_id",
             "gender",
-            "race",
-            "ethnicity"
+            "breed",
+            "disease_type",
+            "data_format",
+            "data_type"
           ]
         }
       ]
     },
     "table": {
-      "enabled": true
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "disease_type",
+        "breed",
+        "gender",
+        "data_format",
+        "data_type"
+      ]
     },
     "buttons": [
       {
@@ -174,12 +184,11 @@
         "fileName": "clinical.json"
       },
       {
-        "enabled": false,
-        "type": "manifest",
-        "title": "Download Manifest",
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
         "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
+        "rightIcon": "external-link"
       }
     ],
     "arrangerConfig": {
@@ -187,6 +196,18 @@
       "graphqlField": "subject",
       "index": "",
       "nodeCountField": "node_id"
+    },
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      }
     }
   }
 }
