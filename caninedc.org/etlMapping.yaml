@@ -8,6 +8,7 @@ mappings:
       - name: project_id
       - name: breed
       - name: disease_type
+      - name: primary_site
     flatten_props:
       - path: demographics
         props:
