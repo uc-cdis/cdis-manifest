@@ -98,7 +98,7 @@
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "query"
+          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -135,17 +135,17 @@
         "chartType": "count",
         "title": "Subjects"
       },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
+      "breed": {
         "chartType": "bar",
-        "title": "Race"
+        "title": "Breed"
       },
-      "ethnicity": {
+      "disease_type": {
         "chartType": "bar",
-        "title": "Ethnicity"
+        "title": "Disease Type"
+      },
+      "data_format": {
+        "chartType": "bar",
+        "title": "Data Format"
       }
     },
     "filters": {
@@ -155,14 +155,31 @@
           "fields":[
             "project_id",
             "gender",
-            "race",
-            "ethnicity"
+            "breed",
+            "data_format",
+            "data_type"
+          ]
+        },
+        {
+          "title": "Diagnosis",
+          "fields":[
+            "disease_type",
+            "primary_site"
           ]
         }
       ]
     },
     "table": {
-      "enabled": true
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "disease_type",
+        "primary_site",
+        "breed",
+        "gender",
+        "data_format",
+        "data_type"
+      ]
     },
     "buttons": [
       {
@@ -174,19 +191,24 @@
         "fileName": "clinical.json"
       },
       {
-        "enabled": false,
-        "type": "manifest",
-        "title": "Download Manifest",
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
         "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
+        "rightIcon": "external-link"
       }
     ],
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "subject",
-      "index": "",
-      "nodeCountField": "node_id"
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      }
     }
   }
 }
