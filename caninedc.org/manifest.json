@@ -1,0 +1,82 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:1.2.1",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:2.8.2",
+    "indexd": "quay.io/cdis/indexd:1.1.0",
+    "peregrine": "quay.io/cdis/peregrine:1.0.9",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
+    "portal": "quay.io/cdis/data-portal:2.12.1",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.3.7",
+    "guppy": "quay.io/cdis/guppy:0.1.2",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.5"
+  },
+  "jupyterhub": {
+    "enabled": "yes",
+    "containers": [
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 0.5,
+                    "memory": "256M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
+                  },
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 1.0,
+                    "memory": "1024M",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
+                  },
+                  {
+                    "name": "Bioinfo - Python/R",
+                    "cpu": 1.0,
+                    "memory": "2.0G",
+                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
+                  }
+                ]
+  },
+  "peregrine": {
+    "sidecar": "True"
+  },
+  "global": {
+    "environment": "canineprod",
+    "hostname": "caninedc.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:662843554732:certificate/5874502e-5b67-415f-80ee-dcb814d2883f",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/dcfdictionary/3.1.4/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-canineprod-gen3",
+    "logs_bucket": "logs-canineprod-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/canine/user.yaml",
+    "GEN3_DEBUG": "False",
+    "dispatcher_job_num": "10"
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "canine_etl",
+        "type": "subject"
+      },
+      {
+        "index": "canine_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "canine_array-config",
+    "auth_filter_field": "auth_resource_path"
+  }
+}

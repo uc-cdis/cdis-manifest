@@ -11,7 +11,7 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:2.5.14.1",
+    "fence": "quay.io/cdis/fence:2.8.0",
     "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
@@ -40,7 +40,7 @@
     "kube_bucket": "kube-dcf-staging-gen3",
     "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging-users/user.yaml"
   },
   "canary": {
     "default": 0

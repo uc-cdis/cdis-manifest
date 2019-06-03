@@ -8,9 +8,9 @@
         "plural": "Cases"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment",
-        "plural": "Experiments"
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
       },
       {
         "graphql": "_aliquot_count",
@@ -24,8 +24,8 @@
         "name": "Case"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment"
+        "graphql": "_study_count",
+        "name": "Study"
       }
     ],
     "projectDetails": "boardCounts"
@@ -67,8 +67,8 @@
           "name": "Cases"
         },
         {
-          "node": "experiment",
-          "name": "Experiments"
+          "node": "study",
+          "name": "Studies"
         },
         {
           "node": "aliquot",
@@ -161,7 +161,8 @@
     "arrangerConfig": {
       "projectId": "search",
       "graphqlField": "case",
-      "index": ""
+      "index": "",
+      "nodeCountField": "node_id"
     },
     "table": {
       "enabled": true
