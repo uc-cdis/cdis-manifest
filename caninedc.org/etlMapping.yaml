@@ -1,11 +1,14 @@
 mappings:
-  - name: dcf_2
+  - name: canine_etl
     doc_type: subject
     type: aggregator
     root: subject
     props:
       - name: submitter_id
       - name: project_id
+      - name: breed
+      - name: disease_type
+      - name: primary_site
     flatten_props:
       - path: demographics
         props:
@@ -52,3 +55,36 @@ mappings:
       - name: _tangent_copy_numbers_count
         path: samples.aliquots.tangent_copy_numbers
         fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: file_id
+            src: file_id
+            fn: set
+  - name: canine_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
