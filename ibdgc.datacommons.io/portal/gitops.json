@@ -3,28 +3,23 @@
     "boardCounts": [
       {
         "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "name": "Participant",
+        "plural": "Participants"
       },
       {
-        "graphql": "_study_count",
-        "name": "Study",
-        "plural": "Studies"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot",
-        "plural": "Aliquots"
+        "graphql": "_sample_count",
+        "name": "Sample",
+        "plural": "Samples"
       }
     ],
     "chartCounts": [
       {
         "graphql": "_case_count",
-        "name": "Case"
+        "name": "Participant"
       },
       {
-        "graphql": "_study_count",
-        "name": "Study"
+        "graphql": "_sample_count",
+        "name": "Sample"
       }
     ],
     "projectDetails": "boardCounts"
@@ -44,6 +39,16 @@
           "body": "The data are defined in a generic way by the dictionary. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
+        }
+      ],
+      "homepageChartNodes": [
+        {
+          "node": "case",
+          "name": "Participants"
+        },
+        {
+          "node": "sample",
+          "name": "Samples"
         }
       ]
     },

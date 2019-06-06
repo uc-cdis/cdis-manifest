@@ -9,7 +9,7 @@
   "versions": {
     "fence": "quay.io/cdis/fence:2.7.1",
     "indexd": "quay.io/cdis/indexd:1.1.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.6",
+    "peregrine": "quay.io/cdis/peregrine:1.0.8",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.7",
@@ -29,7 +29,7 @@
     "environment": "ibdgc-prod",
     "hostname": "ibdgc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:980870151884:certificate/d4bc881b-b404-4bef-912f-ed67785f953c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/0.0.3/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/v1.0.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3",
