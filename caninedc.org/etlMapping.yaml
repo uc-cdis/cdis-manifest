@@ -13,8 +13,6 @@ mappings:
       - path: demographics
         props:
           - name: gender
-          - name: race
-          - name: ethnicity
     aggregated_props:
       - name: _samples_count
         path: samples
