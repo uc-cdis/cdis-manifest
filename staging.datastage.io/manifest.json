@@ -57,15 +57,15 @@
                 ]
   },
   "global": {
-    "environment": "stageprod",
-    "hostname": "gen3.datastage.io",
+    "environment": "stagingdatastage",
+    "hostname": "staging.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.1.8/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.1.7/schema.json",
     "portal_app": "gitops",
-    "kube_bucket": "kube-stageprod-gen3",
-    "logs_bucket": "logs-stageprod-gen3",
+    "kube_bucket": "kube-stagingdatastage-gen3",
+    "logs_bucket": "logs-stagingdatastage-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/dcp/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
     "tier_access_level": "regular"
   },

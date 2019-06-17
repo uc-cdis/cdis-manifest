@@ -1,5 +1,5 @@
 mappings:
-  - name: dcp_1
+  - name: dcp_etl
     doc_type: case
     type: aggregator
     root: case
@@ -32,6 +32,7 @@ mappings:
       - path: diagnoses
         props:
           - name: metabolic_syndrome_diagnosis
+        sorted_by: updated_datetime, desc
       - path: blood_pressure_test
         props:
           - name: diastolic_blood_pressure
@@ -42,6 +43,7 @@ mappings:
       - path: samples
         props:
           - name: biospecimen_anatomic_site
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
@@ -64,3 +66,32 @@ mappings:
       - name: _simple_germline_variations_count
         path: samples.aliquots.read_groups.simple_germline_variations
         fn: count
+    joining_props:
+      - index: file
+        join_on: case_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+  - name: dcp_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+    injecting_props:
+      case:
+        props:
+          - name: case_id
+            src: id
+          - name: project_id
