@@ -23,7 +23,7 @@
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.7",
     "guppy": "quay.io/cdis/guppy:0.1.0",
-    "hatchery": "quay.io/cdis/hatchery:master",
+    "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3"
   },
   "arranger": {
@@ -53,7 +53,7 @@
       "memory-limit": "512Mi",
       "name": "R Studio",
       "image": "heliumdatastage/rstudio-server:1",
-      "env": {"PASSWORD": "gen3"},
+      "env": {"DISABLE_AUTH": "true"},
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
