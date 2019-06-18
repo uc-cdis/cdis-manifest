@@ -21,7 +21,7 @@
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0",
-    "manifestservice": "quay.io/cdis/manifestservice:0.1.0",
+    "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "tube": "quay.io/cdis/tube:0.3.5"
   },
   "jupyterhub": {
@@ -37,7 +37,8 @@
     "logs_bucket": "logs-niaiddata-gen3",
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
-    "useryaml_s3path": "s3://cdis-gen3-users/ndh/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/ndh/user.yaml",
+    "netpolicy": "on"
   },
   "ssjdispatcher": {
     "job_images": {
