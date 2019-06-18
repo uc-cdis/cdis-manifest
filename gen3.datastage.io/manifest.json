@@ -24,7 +24,9 @@
     "tube": "quay.io/cdis/tube:0.3.7",
     "guppy": "quay.io/cdis/guppy:0.1.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
-    "ambassador": "quay.io/datawire/ambassador:0.60.3"
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "wts": "quay.io/cdis/workspace-token-service:master",
+    "manifestservice": "quay.io/cdis/manifestservice:master",
   },
   "arranger": {
     "project_id": "dcp_3",
@@ -57,8 +59,6 @@
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
-      "lifecycle-post-start": ["/bin/sh", "-c", "echo test"],
-      "lifecycle-pre-stop": ["/bin/sh", "-c", "echo test"],
       "ready-probe": "/"
     },{
       "target-port": 8888,
