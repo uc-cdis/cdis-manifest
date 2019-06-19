@@ -10,11 +10,11 @@
     "arborist": "quay.io/cdis/arborist:1.2.1",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.8.2",
-    "indexd": "quay.io/cdis/indexd:1.1.0",
+    "indexd": "quay.io/cdis/indexd:1.1.1",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.12",
     "portal": "quay.io/cdis/data-portal:2.12.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
@@ -60,7 +60,8 @@
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/canine/user.yaml",
     "GEN3_DEBUG": "False",
-    "dispatcher_job_num": "10"
+    "dispatcher_job_num": "10",
+    "netpolicy": "on"
   },
   "canary": {
     "default": 0
