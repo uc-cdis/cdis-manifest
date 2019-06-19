@@ -249,6 +249,13 @@
       },
       {
         "enabled": true,
+        "type": "export-to-pfb",
+        "title": "Export to PFB",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      },
+      {
+        "enabled": true,
         "type": "export-to-workspace",
         "title": "Export To Workspace",
         "leftIcon": "datafile",
@@ -266,6 +273,7 @@
         "referenceIdFieldInDataIndex": "case_id"
       },
       "nodeCountField": "case_id"
-    }
+    },
+    "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/"
   }
 }
