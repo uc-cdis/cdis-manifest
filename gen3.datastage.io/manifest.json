@@ -22,7 +22,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.7",
-    "guppy": "quay.io/cdis/guppy:0.1.0",
+    "guppy": "quay.io/cdis/guppy:0.2.0",
+    "sower": "quay.io/cdis/sower:0.2.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:master",
@@ -35,6 +36,16 @@
       "case",
       "file"
     ]
+  },
+  "sower": {
+    "name": "pelican-export",
+    "container": {
+      "name": "job-task",
+      "image": "quay.io/cdis/pelican:0.1.0",
+      "pull_policy": "always",
+      "env": []
+    },
+    "restart_policy": "never"
   },
   "hatchery": {
     "user-namespace": "jupyter-pods",
@@ -142,7 +153,7 @@
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
     "public_datasets": true,
-    "tier_access_level": "regular"
+    "tier_access_level": "private"
   },
   "canary": {
     "default": 0
