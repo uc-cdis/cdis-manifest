@@ -24,6 +24,9 @@
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "tube": "quay.io/cdis/tube:0.3.5"
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "jupyterhub": {
     "enabled": "no"
   },
