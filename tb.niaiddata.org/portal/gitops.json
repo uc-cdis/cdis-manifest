@@ -13,9 +13,9 @@
         "plural": "Studies"
       },
       {
-        "graphql": "_summary_lab_result_count",
-        "name": "Lab record",
-        "plural": "Lab records"
+        "graphql": "_tb_result_count",
+        "name": "TB Result",
+        "plural": "TB Results"
       }
     ],
     "chartCounts": [
@@ -31,11 +31,11 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NIAID Data Hub",
+    "appName": "NIAID TB Data Commons",
     "index": {
       "introduction": {
-        "heading": "NIAID Data Hub",
-        "text": "The NIAID Data Hub supports the management, analysis and sharing of immunologic data for the research community and aims to accelerate discovery and development of therapies, vaccines, diagnostic tests, and other technologies for the treatment and prevention of infectious, immunologic, and allergic diseases. The data hub supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "heading": "NIAID TB Data Commons",
+        "text": "The NIAID TB Data Commons supports the management, analysis and sharing of immunologic data for the research community and aims to accelerate discovery and development of therapies, vaccines, diagnostic tests, and other technologies for the treatment and prevention of infectious, immunologic, and allergic diseases. The data hub supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
       "buttons": [
@@ -116,7 +116,7 @@
       ]
     },
     "login": {
-      "title": "NIAID Data Hub",
+      "title": "NIAID TB Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "The website combines government datasets from 3 divisions of NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -144,7 +144,7 @@
     "explorer": true,
     "analysis": true
   },
-  "analysisTools": [ "ndhHIV" ],
+  "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
       "project_id": {
