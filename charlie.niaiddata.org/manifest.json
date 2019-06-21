@@ -33,6 +33,9 @@
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/ndh/user.yaml",
+    "fence_url": "https://niaiddata.org/user",
+    "indexd_url": "https://niaiddata.org/index/",
+    "arborist_url": "http://arborist-service.default.svc.cluster.local",
     "netpolicy": "on"
   },
   "canary": {
