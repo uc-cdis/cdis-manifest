@@ -44,8 +44,8 @@
       "image": "quay.io/cdis/pelican:0.1.0",
       "pull_policy": "always",
       "env": [],
-      "cpu_limit": "1",
-      "memory_limit": "12Gi"
+      "cpu-limit": "1",
+      "memory-limit": "12Gi"
     },
     "restart_policy": "never"
   },
