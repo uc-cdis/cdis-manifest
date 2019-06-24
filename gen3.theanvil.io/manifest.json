@@ -9,10 +9,10 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.2.1",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.5.14",
+    "fence": "quay.io/cdis/fence:2.8.2",
     "indexd": "quay.io/cdis/indexd:1.0.10",
     "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "portal": "quay.io/cdis/data-portal:2.8.0",
@@ -35,6 +35,7 @@
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilprod-gen3",
     "logs_bucket": "logs-anvilprod-gen3",
+    "netpolicy": "on",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/anvil/user.yaml",
     "public_datasets": "true"
