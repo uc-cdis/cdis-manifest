@@ -72,7 +72,10 @@
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
-      "ready-probe": "/"
+      "ready-probe": "/",
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/rstudio/pd"
     },{
       "target-port": 8888,
       "cpu-limit": "1.0",
