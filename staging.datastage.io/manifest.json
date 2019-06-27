@@ -8,9 +8,6 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.2.1",
-    "arranger": "quay.io/cdis/arranger:1.0.3",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.8.2.1",
     "indexd": "quay.io/cdis/indexd:1.0.10",
@@ -18,20 +15,12 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.9.0",
+    "portal": "quay.io/cdis/data-portal:2.13.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.7",
-    "guppy": "quay.io/cdis/guppy:0.1.0"
-  },
-  "arranger": {
-    "project_id": "dcp_3",
-    "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": [
-      "case",
-      "file"
-    ]
+    "guppy": "quay.io/cdis/guppy:0.2.0"
   },
   "jupyterhub": {
     "enabled": "yes",
@@ -68,7 +57,8 @@
     "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
     "netpolicy": "on",
-    "tier_access_level": "regular"
+    "tier_access_level": "regular",
+    "tier_access_limit": "50"
   },
   "canary": {
     "default": 0

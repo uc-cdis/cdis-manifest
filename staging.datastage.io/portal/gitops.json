@@ -266,6 +266,23 @@
         "referenceIdFieldInDataIndex": "case_id"
       },
       "nodeCountField": "case_id"
-    }
+    },
+    "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [
+        { "field": "consent_codes", "name": "Data Use Restriction" },
+        { "field": "bmi", "name": "BMI" }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    },
+    "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/"
   }
 }
