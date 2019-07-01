@@ -46,12 +46,14 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "R Studio",
-      "image": "heliumdatastage/rstudio-server:1",
+      "image": "quay.io/cdis/rstudio:master",
       "env": {"DISABLE_AUTH": "true"},
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
-      "ready-probe": "/"
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
     },{
       "target-port": 8888,
       "cpu-limit": "1.0",
