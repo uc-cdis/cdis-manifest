@@ -172,20 +172,6 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
-          "fields": [
-            "project_id",
-            "consent_codes",
-            "data_type",
-            "data_format",
-            "race",
-            "ethnicity",
-            "gender",
-            "bmi",
-            "age_at_index"
-          ]
-        },
-        {
           "title": "Family History",
           "fields": [
             "diabetes",
@@ -201,6 +187,20 @@
             "myocardial_infarction",
             "stroke",
             "hypertension_meds"
+          ]
+        },
+        {
+          "title": "Case",
+          "fields": [
+            "project_id",
+            "consent_codes",
+            "data_type",
+            "data_format",
+            "race",
+            "ethnicity",
+            "gender",
+            "bmi",
+            "age_at_index"
           ]
         },
         {
