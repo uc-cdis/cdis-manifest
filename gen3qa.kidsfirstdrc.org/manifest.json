@@ -32,6 +32,7 @@
     "kube_bucket": "kube-kfqa2-gen3",
     "logs_bucket": "logs-kfqa2-gen3",
     "sync_from_dbgap": "False",
+    "netpolicy": "on",
     "useryaml_s3path": "s3://cdis-gen3-users/kfqa2/user.yaml"
   },
   "canary": {
