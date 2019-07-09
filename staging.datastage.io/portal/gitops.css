@@ -63,14 +63,20 @@
 
 /* Data Explorer */
 
-.filter-group__tab {
+.filter-group__tab,
+.g3-filter-group__tab {
   border-top: 1px solid var(--primary-color);
   border-right: 1px solid var(--primary-color);
   border-left: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
 
-.filter-group__tab--selected {
+.tier-access-selector__radio-input:checked + .tier-access-selector__customized-radio-input::after {
+  background-color: var(--primary-color);
+}
+
+.filter-group__tab--selected,
+.g3-filter-group__tab--selected {
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -95,7 +101,9 @@
   color: var(--primary-color);
 }
 
-.input-range__track--active {
+.input-range__track--active,
+.rc-slider-track,
+.g3-single-select-filter__count .g3-icon--under {
   background-color: var(--primary-color);
 }
 
@@ -103,7 +111,8 @@
 
 tspan.special-number,
 .special-number,
-.form-special-number {
+.form-special-number,
+.g3-single-select-filter__count {
   color: var(--primary-color);
 }
 
