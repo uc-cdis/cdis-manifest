@@ -89,6 +89,10 @@
   background: var(--secondary-color);
 }
 
+.g3-single-select-filter__checkbox:checked {
+  background: var(--primary-color);
+}
+
 .sqon-clear {
   background-color: var(--primary-color);
 }
