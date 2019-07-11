@@ -26,7 +26,29 @@
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6"
   },
   "jupyterhub": {
-    "enabled": "yes"
+    "enabled": "yes",
+    "nb_storage_size": "250Gi",
+    "sidecar": "quay.io/cdis/gen3fuse-sidecar:feat_c8",
+    "containers": [
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 0.5,
+        "memory": "256M",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+      },
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 1.0,
+        "memory": "1024M",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+      },
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 6.0,
+        "memory": "15512M",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+      }
+    ]
   },
   "peregrine": {
     "sidecar": "True"
