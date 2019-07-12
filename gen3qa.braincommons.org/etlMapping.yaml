@@ -1,0 +1,32 @@
+mappings:
+  - name: etl
+    doc_type: case
+    type: aggregator
+    root: case
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: experimental_group
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+        sorted_by: updated_datetime, desc
+    aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _aliquots_count
+        path: samples.aliquots
+        fn: count
+      - name: _read_group_count
+        path: samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_expression_arrays_count
+        path: samples.aliquots.submitted_expression_array_files
+        fn: count
+      - name: _submitted_unaligned_reads_count
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
