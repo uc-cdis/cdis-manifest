@@ -58,8 +58,8 @@
                 ]
   },
   "global": {
-    "environment": "bhcprodv2",
-    "hostname": "data.braincommons.org",
+    "environment": "bhcqa",
+    "hostname": "gen3qa.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.6.1/schema.json",
     "portal_app": "gitops",
