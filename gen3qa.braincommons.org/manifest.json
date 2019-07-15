@@ -19,12 +19,13 @@
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.11",
-    "portal": "quay.io/cdis/data-portal:2.12.3",
+    "portal": "quay.io/cdis/data-portal:2.12.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "spark": "quay.io/cdis/gen3-spark:feat_init",
     "tube": "quay.io/cdis/tube:0.3.6",
+    "guppy": "quay.io/cdis/guppy:0.2.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0"
   },
   "arranger": {
@@ -65,7 +66,9 @@
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
     "dispatcher_job_num": "10",
-    "sync_from_dbgap": "False"
+    "sync_from_dbgap": "False",
+    "public_datasets": true,
+    "tier_access_level": "regular"
   },
   "ssjdispatcher": {
     "job_images": {
@@ -74,5 +77,14 @@
   },
   "canary": {
     "default": 0
-  }
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "bhcqa_etl",
+        "type": "case"
+      }
+    ],
+    "auth_filter_field": "auth_resource_path"
+ }
 }
