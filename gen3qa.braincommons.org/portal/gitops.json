@@ -175,6 +175,22 @@
       "index": "",
       "nodeCountField": "node_id"
     },
+  "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [
+        { "field": "consent_codes", "name": "Data Use Restriction" },
+        { "field": "bhc", "name": "BHC" }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    },
     "table": {
       "enabled": true
     },
