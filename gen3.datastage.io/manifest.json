@@ -75,8 +75,8 @@
       "ready-probe": "/"
     },{
       "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
+      "cpu-limit": "4.0",
+      "memory-limit": "15512Mi",
       "name": "Jupyter Notebook Bio Python",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
       "env": {},
