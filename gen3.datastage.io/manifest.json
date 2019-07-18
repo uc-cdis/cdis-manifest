@@ -41,7 +41,7 @@
     "name": "pelican-export",
     "container": {
       "name": "job-task",
-      "image": "quay.io/cdis/pelican:0.1.0",
+      "image": "quay.io/cdis/pelican:0.1.1",
       "pull_policy": "always",
       "env": [],
       "cpu-limit": "1",
