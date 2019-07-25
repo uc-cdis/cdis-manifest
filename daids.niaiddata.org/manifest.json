@@ -4,26 +4,20 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.0.2",
-    "fence": "quay.io/cdis/fence:4.0.0",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "peregrine": "quay.io/cdis/peregrine:1.3.0",
+    "arborist": "quay.io/cdis/arborist:1.2.1",
+    "fence": "quay.io/cdis/fence:2.8.2",
+    "indexd": "quay.io/cdis/indexd:1.1.2",
+    "peregrine": "quay.io/cdis/peregrine:1.2.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.13",
-    "portal": "quay.io/cdis/data-portal:2.15.0",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.12",
+    "portal": "quay.io/cdis/data-portal:2.13.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "tube": "quay.io/cdis/tube:0.3.7"
-  },
-  "arborist": {
-    "deployment_version": "2"
-  },
-  "indexd": {
-      "arborist": "true"
   },
   "jupyterhub": {
     "enabled": "no"
