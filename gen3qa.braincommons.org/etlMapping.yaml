@@ -8,7 +8,7 @@ mappings:
       - name: project_id
       - name: experimental_group
     flatten_props:
-      - path: demographics
+      - path: visits.demographics
         props:
           - name: gender
           - name: race
