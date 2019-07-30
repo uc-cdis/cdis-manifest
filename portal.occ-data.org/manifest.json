@@ -28,13 +28,19 @@
                     "name": "Earth - Python",
                     "cpu": 0.5,
                     "memory": "256M",
-                    "image": "quay.io/occ_data/jupyter-geo:1.6"
+                    "image": "quay.io/occ_data/jupyter-geo:1.8.1"
                   },
                   {
                     "name": "Earth - Python",
                     "cpu": 1.0,
                     "memory": "10024M",
-                    "image": "quay.io/occ_data/jupyter-geo:1.6"
+                    "image": "quay.io/occ_data/jupyter-geo:1.8.1"
+                  },
+                  {
+                    "name": "Earth - Python",
+                    "cpu": 1.0,
+                    "memory": "15512M",
+                    "image": "quay.io/occ_data/jupyter-geo:1.8.1"
                   },
                   {
                     "name": "Swirlnet - Python",
