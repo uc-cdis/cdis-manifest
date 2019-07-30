@@ -76,7 +76,7 @@ Note that the Google Data Access integration tests are NOT ran when changes are 
 
 ## Automation
 
-We implement manifest based versioning of our services in kubernetes via the `g3k` helper scripts in [cloud-automation](https://github.com/uc-cdis/cloud-automation).  The `-deployment.yaml` template defining each service's k8s deployment includes `GEN3` variables that `g3k roll` replaces.  For example:
+We implement manifest based versioning of our services in kubernetes via the `gen3` helper scripts in [cloud-automation](https://github.com/uc-cdis/cloud-automation).  The `-deployment.yaml` template defining each service's k8s deployment includes `GEN3` variables that `gen3 roll` replaces.  For example:
 ```
 $ cat cloud-automation/kube/services/peregrine/peregrine-deploy.yaml 
 apiVersion: extensions/v1beta1
@@ -104,7 +104,7 @@ spec:
           livenessProbe:
             httpGet:
 
-$ g3k roll peregrine
+$ gen3 roll peregrine
 ...
 ```
 
