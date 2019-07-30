@@ -145,6 +145,7 @@ mappings:
       - name: visit_name
       - name: visit_type
       - name: visit_number
+      - name: harmonized_visit_number
       - name: visit_date
       - name: weight
       - name: weight_percentage
@@ -155,8 +156,23 @@ mappings:
     flatten_props:
       - path: summary_drug_uses
         props:
+          - name: abc
+          - name: abcv
+          - name: drug_used
           - name: thrpy
           - name: thrpyv
+          - name: trz
+          - name: trzv
+      - path: summary_socio_demographics
+        props:
+          - name: cocuse
+          - name: drinkcat
+          - name: eductn
+          - name: emotl
+          - name: employ
+          - name: income
+          - name: insurance
+          - name: paidsex
     aggregated_props:
       - name: viral_load
         path: summary_lab_results
@@ -165,6 +181,18 @@ mappings:
       - name: leu3n
         path: summary_lab_results
         src: leu3n
+        fn: min
+      - name: leu2n
+        path: summary_lab_results
+        src: leu2n
+        fn: min
+      - name: chol
+        path: summary_lab_results
+        src: chol
+        fn: min
+      - name: cd4dt
+        path: summary_lab_results
+        src: cd4dt
         fn: min
     joining:
       - index: subject
