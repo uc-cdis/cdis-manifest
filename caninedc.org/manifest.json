@@ -23,21 +23,75 @@
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "tube": "quay.io/cdis/tube:0.3.7",
     "guppy": "quay.io/cdis/guppy:0.2.0",
-    "sower": "quay.io/cdis/sower:0.2.2",
+    "sower": "quay.io/cdis/sower:feat_conf",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.5"
   },
-  "sower": {
-    "name": "pelican-export",
-    "container": {
-      "name": "job-task",
-      "image": "quay.io/cdis/pelican:0.1.1",
-      "pull_policy": "always",
-      "env": [],
-      "cpu-limit": "1",
-      "memory-limit": "12Gi"
-    },
-    "restart_policy": "never"
-  },
+  "sower": [
+    {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican:feat_conf",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "subject"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "12Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "jupyterhub": {
     "enabled": "yes",
     "sidecar": "quay.io/cdis/gen3fuse-sidecar:0.1.2",
