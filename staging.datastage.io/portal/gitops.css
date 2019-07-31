@@ -89,6 +89,10 @@
   background: var(--secondary-color);
 }
 
+.g3-single-select-filter__checkbox:checked {
+  background: var(--primary-color);
+}
+
 .sqon-clear {
   background-color: var(--primary-color);
 }
@@ -130,4 +134,8 @@ tspan.special-number,
   .special-number {
     fill: var(--secondary-color);
   }
+}
+
+.explorer-button-group__dropdown {
+  margin-right: 10px;
 }
