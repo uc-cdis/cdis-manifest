@@ -28,6 +28,12 @@
   "jupyterhub": {
     "enabled": "no"
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+      "arborist": "true"
+  },
   "global": {
     "environment": "dcfprod",
     "hostname": "nci-crdc.datacommons.io",
