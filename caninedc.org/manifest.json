@@ -33,7 +33,7 @@
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/pelican:feat_conf",
-        "pull_policy": "always",
+        "pull_policy": "Always",
         "env": [
           {
             "name": "DICTIONARY_URL",
@@ -55,7 +55,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "case"
+            "value": "subject"
           }
         ],
         "volumeMounts": [
@@ -89,7 +89,7 @@
           }
         }
       ],
-      "restart_policy": "never"
+      "restart_policy": "Never"
     }
   ],
   "jupyterhub": {
