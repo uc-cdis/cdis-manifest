@@ -48,7 +48,7 @@
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
     },
-    {
+    "containers": [{
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
