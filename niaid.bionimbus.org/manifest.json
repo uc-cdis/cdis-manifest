@@ -73,7 +73,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "15512Mi",
       "name": "Jupyter - Ariba and Mykrobe",
-      "image": "quay.io/cdis/niaid-jupyterhub:0.1.1",
+      "image": "quay.io/cdis/niaid-jupyterhub:0.1.2",
       "env": {},
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
