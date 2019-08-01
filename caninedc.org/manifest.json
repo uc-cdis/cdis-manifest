@@ -123,7 +123,7 @@
     "environment": "canineprod",
     "hostname": "caninedc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:662843554732:certificate/5874502e-5b67-415f-80ee-dcb814d2883f",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/dcfdictionary/3.1.5/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/canine_dictionary/1.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-canineprod-gen3",
     "logs_bucket": "logs-canineprod-gen3",
