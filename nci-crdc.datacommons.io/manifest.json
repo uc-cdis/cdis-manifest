@@ -7,9 +7,10 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:2.8.0",
+    "fence": "quay.io/cdis/fence:3.2.4",
+    "arborist": "quay.io/cdis/arborist:2.0.1",
     "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:1.1.0",
+    "indexd": "quay.io/cdis/indexd:1.1.4",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
@@ -26,6 +27,12 @@
   },
   "jupyterhub": {
     "enabled": "no"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+      "arborist": "true"
   },
   "global": {
     "environment": "dcfprod",
