@@ -43,7 +43,7 @@
     "kube_bucket": "kube-dcfprod-gen3",
     "logs_bucket": "logs-dcfprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "none"
+    "useryaml_s3path": "s3://cdis-gen3-users/ncicrdc/user.yaml"
   },
   "canary": {
     "default": 0
