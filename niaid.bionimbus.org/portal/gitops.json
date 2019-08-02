@@ -288,7 +288,7 @@
         {
           "title": "File",
           "fields": [
-            "subject_id",
+            "project_id",
             "data_type",
             "data_format"
           ]
@@ -298,7 +298,7 @@
     "table": {
       "enabled": true,
       "fields": [
-        "subject_id",
+        "project_id",
         "file_name",
         "file_size",
         "object_id"
