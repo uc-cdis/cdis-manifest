@@ -115,7 +115,9 @@
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/ncicrdcdemo/user.yaml",
     "GEN3_DEBUG": "False",
-    "dispatcher_job_num": "10"
+    "dispatcher_job_num": "10",
+    "public_datasets": true,
+    "tier_access_level": "regular"
   },
   "ssjdispatcher": {
     "job_images": {
