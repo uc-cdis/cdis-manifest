@@ -4,15 +4,15 @@ mappings:
     type: aggregator
     root: subject
     props:
-      - submitter_id
-      - project_id
+      - name: submitter_id
+      - name: project_id
     flatten_props:
       - path: demographics
-        _props:
-          - gender
-          - race
-          - ethnicity
-    _aggregated_props:
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+    aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
@@ -32,10 +32,10 @@ mappings:
         path: samples.aliquots.genotyping_arrays
         fn: count
       - name: _mRNA_microarrays_count
-        path: samples.aliquots.mRNA_microarrays
+        path: samples.aliquots.mrna_microarrays
         fn: count
       - name: _miRNA_microarrays_count
-        path: samples.aliquots.miRNA_microarrays
+        path: samples.aliquots.mirna_microarrays
         fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
@@ -55,7 +55,7 @@ mappings:
       - name: _tangent_copy_numbers_count
         path: samples.aliquots.tangent_copy_numbers
         fn: count
-  - name: niaid_file
+  - name: dcf_file
     doc_type: file
     type: collector
     root: None
