@@ -3,16 +3,16 @@ mappings:
     doc_type: subject
     type: aggregator
     root: subject
-    _props:
-      - submitter_id
-      - project_id
-    _flatten_props:
+    props:
+      - name: submitter_id
+      - name: project_id
+    flatten_props:
       - path: demographics
-        _props:
-          - gender
-          - race
-          - ethnicity
-    _aggregated_props:
+        props:
+          - name: gender
+          - name: race
+          - name: ethnicity
+    aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
@@ -32,10 +32,10 @@ mappings:
         path: samples.aliquots.genotyping_arrays
         fn: count
       - name: _mRNA_microarrays_count
-        path: samples.aliquots.mRNA_microarrays
+        path: samples.aliquots.mrna_microarrays
         fn: count
       - name: _miRNA_microarrays_count
-        path: samples.aliquots.miRNA_microarrays
+        path: samples.aliquots.mirna_microarrays
         fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
@@ -55,3 +55,23 @@ mappings:
       - name: _tangent_copy_numbers_count
         path: samples.aliquots.tangent_copy_numbers
         fn: count
+  - name: dcf_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
