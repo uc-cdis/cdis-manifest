@@ -3,10 +3,10 @@ mappings:
     doc_type: subject
     type: aggregator
     root: subject
-    _props:
+    props:
       - submitter_id
       - project_id
-    _flatten_props:
+    flatten_props:
       - path: demographics
         _props:
           - gender
@@ -55,3 +55,23 @@ mappings:
       - name: _tangent_copy_numbers_count
         path: samples.aliquots.tangent_copy_numbers
         fn: count
+  - name: niaid_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
