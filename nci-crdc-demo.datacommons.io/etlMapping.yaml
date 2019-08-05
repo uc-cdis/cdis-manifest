@@ -6,6 +6,7 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: primary_site
     flatten_props:
       - path: demographics
         props:
@@ -25,7 +26,7 @@ mappings:
       - name: _copy_number_estimates_count
         path: samples.aliquots.tangent_copy_numbers.copy_number_estimates
         fn: count
-      - name: _copy_numer_segments_count
+      - name: _copy_numer_segments_countcs
         path: samples.aliquots.tangent_copy_numbers.copy_number_segments
         fn: count
       - name: _genotyping_arrays_count
