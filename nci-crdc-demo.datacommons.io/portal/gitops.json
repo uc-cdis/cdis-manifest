@@ -36,6 +36,22 @@
   },
   "components": {
     "appName": "DCF Sandbox",
+    "index": {
+      "homepageChartNodes": [
+        {
+          "node": "subject",
+          "name": "Subjects"
+        },
+        {
+          "node": "study",
+          "name": "Studies"
+        },
+        {
+          "node": "aliquot",
+          "name": "Aliquots"
+        }
+      ]
+    },
     "buttons": [
       {
         "name": "Define Data Field",
