@@ -6,6 +6,7 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: primary_site
     flatten_props:
       - path: demographics
         props:
@@ -25,16 +26,16 @@ mappings:
       - name: _copy_number_estimates_count
         path: samples.aliquots.tangent_copy_numbers.copy_number_estimates
         fn: count
-      - name: _copy_numer_segments_count
+      - name: _copy_number_segments_count
         path: samples.aliquots.tangent_copy_numbers.copy_number_segments
         fn: count
       - name: _genotyping_arrays_count
         path: samples.aliquots.genotyping_arrays
         fn: count
-      - name: _mRNA_microarrays_count
+      - name: _mrna_microarrays_count
         path: samples.aliquots.mrna_microarrays
         fn: count
-      - name: _miRNA_microarrays_count
+      - name: _mirna_microarrays_count
         path: samples.aliquots.mirna_microarrays
         fn: count
       - name: _read_groups_count
@@ -68,6 +69,7 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+      - name: data_category
     injecting_props:
       subject:
         props:
