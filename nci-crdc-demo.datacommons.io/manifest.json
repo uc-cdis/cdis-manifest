@@ -34,7 +34,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "image": "quay.io/cdis/gen3fuse-sidecar:fix_nci-demo",
       "env": {"NAMESPACE":"default", "HOSTNAME": "gen3.datastage.io"},
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
