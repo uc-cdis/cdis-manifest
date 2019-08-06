@@ -56,6 +56,19 @@ mappings:
       - name: _tangent_copy_numbers_count
         path: samples.aliquots.tangent_copy_numbers
         fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: file_id
+            src: file_id
+            fn: set
   - name: dcf_file
     doc_type: file
     type: collector
