@@ -187,6 +187,12 @@
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
       ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
     }
