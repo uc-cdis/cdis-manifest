@@ -13,7 +13,6 @@
     "peregrine": "quay.io/cdis/peregrine:1.3.0",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.13",
     "portal": "quay.io/cdis/data-portal:2.17.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
@@ -24,7 +23,6 @@
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0",
-    "guppy": "quay.io/cdis/guppy:0.2.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1"
   },
   "hatchery": {
@@ -153,26 +151,9 @@
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/edc/user.yaml",
-    "public_datasets": true,
-    "tier_access_level": "libre",
-    "tier_access_limit": "50",
     "netpolicy": "on"
   },
   "canary": {
     "default": 0
-  },
-  "guppy": {
-    "indices": [
-      {
-        "index": "edc_etl",
-        "type": "case"
-      },
-      {
-        "index": "edc_etl",
-        "type": "file"
-      }
-    ],
-    "config_index": "edc_array-config",
-    "auth_filter_field": "auth_resource_path"
   }
 }
