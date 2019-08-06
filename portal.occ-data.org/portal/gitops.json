@@ -102,7 +102,7 @@
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "query"
+          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -128,5 +128,93 @@
   },
   "featureFlags": {
     "explorer": true
+  },
+  "dataExplorerConfig": {
+    "charts": {
+      "data_category": {
+        "chartType": "count",
+        "title": "Data Categories"
+      },
+      "data_format": {
+        "chartType": "count",
+        "title": "Data Formats"
+      },
+      "data_type": {
+        "chartType": "count",
+        "title": "Data Types"
+      },
+      "fileCounts": false
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Files",
+          "fields": [
+            "project_id",
+            "data_format",
+            "data_category",
+            "data_type"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "data_format",
+        "data_category",
+        "data_type",
+        "datetime"
+      ]
+    },
+    "dropdowns": {
+      "download": {
+        "title": "Download"
+      }
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download All",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "clinical.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+    "guppyConfig": {
+      "dataType": "spatiotemporal_file",
+      "nodeCountTitle": "Files",
+      "fieldMapping": [],
+      "manifestMapping": {
+        "resourceIndexType": "spatiotemporal_file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    },
+    "getAccessButtonLink": ""
   }
 }
