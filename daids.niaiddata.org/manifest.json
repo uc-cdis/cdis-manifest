@@ -36,7 +36,8 @@
     "fence_url": "https://niaiddata.org/user",
     "indexd_url": "https://niaiddata.org/index/",
     "arborist_url": "http://arborist-service.default.svc.cluster.local",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "cookie_domain": "niaiddata.org"
   },
   "canary": {
     "default": 0
