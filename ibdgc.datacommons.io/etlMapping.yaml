@@ -1,0 +1,17 @@
+mappings:
+  - name: ibdgc_etl
+    doc_type: case
+    type: aggregator
+    root: case
+    props:
+      - name: submitter_id
+      - name: project_id
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
+    aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count

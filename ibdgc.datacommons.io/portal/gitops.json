@@ -62,10 +62,22 @@
           "name": "Dictionary"
         },
         {
+          "icon": "exploration",
+          "link": "/explorer",
+          "color": "#a2a2a2",
+          "name": "Exploration"
+        },
+        {
           "icon": "files",
           "link": "/files",
           "color": "#a2a2a2",
           "name": "Files"
+        },
+        {
+          "icon": "workspace",
+          "link": "#hostname#workspace/",
+          "color": "#a2a2a2",
+          "name": "Workspace"
         },
         {
           "icon": "profile",
@@ -91,6 +103,61 @@
     ]
   },
   "featureFlags": {
-    "explorer": false
+    "explorer": true
+  },
+  "dataExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "count",
+        "title": "Projects"
+      },
+      "disease_type": {
+        "chartType": "bar",
+        "title": "Disease Type"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Case",
+          "fields":[
+            "project_id",
+            "gender"
+          ]
+        },
+        {
+          "title": "Diagnosis",
+          "fields":[
+            "disease_type",
+            "primary_site"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "disease_type",
+        "primary_site",
+        "gender"
+      ]
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "external-link"
+      }
+    ],
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+      ]
+    }
   }
+}
 }
