@@ -15,7 +15,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.11",
-    "portal": "quay.io/cdis/data-portal:2.16.0",
+    "portal": "quay.io/cdis/data-portal:2.18.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
@@ -24,7 +24,7 @@
     "tube": "quay.io/cdis/tube:0.3.7",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "guppy": "quay.io/cdis/guppy:0.2.1"
+    "guppy": "quay.io/cdis/guppy:0.3.0"
   },
   "hatchery": {
     "user-namespace": "jupyter-pods",
