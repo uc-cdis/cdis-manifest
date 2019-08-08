@@ -81,7 +81,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
       "name": "Jupyter Notebook Bio Python",
-      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "image": "quay.io/occ_data/jupyternotebook:1.9.0",
       "env": {},
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
@@ -162,13 +162,13 @@
                     "name": "Bioinfo - Python/R",
                     "cpu": 0.5,
                     "memory": "256M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+                    "image": "quay.io/occ_data/jupyternotebook:1.9.0"
                   },
                   {
                     "name": "Bioinfo - Python/R",
                     "cpu": 1.0,
                     "memory": "1024M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+                    "image": "quay.io/occ_data/jupyternotebook:1.9.0"
                   },
                   {
                     "name": "Helium COPD Demo",
