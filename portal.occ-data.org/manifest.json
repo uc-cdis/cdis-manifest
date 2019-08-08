@@ -81,7 +81,7 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "4.0",
+        "cpu-limit": "3.0",
         "memory-limit": "15512Mi",
         "name": "Earth - Python | Large",
         "image": "quay.io/occ_data/jupyter-geo:1.9.0",
@@ -108,7 +108,7 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "4.0",
+        "cpu-limit": "3.0",
         "memory-limit": "15512Mi",
         "name": "Swirlnet - Python | Medium",
         "image": "djgagne/swirlnet:latest",
