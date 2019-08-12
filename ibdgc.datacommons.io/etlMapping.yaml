@@ -38,9 +38,3 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
-    injecting_props:
-      case:
-        props:
-          - name: case_id
-            src: id
-          - name: project_id
