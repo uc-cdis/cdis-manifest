@@ -30,7 +30,21 @@
     ],
     "projectDetails": "boardCounts"
   },
+  "requiredCerts":[],
   "components": {
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ]
+    },
     "appName": "NIAID Data Hub",
     "index": {
       "introduction": {
@@ -348,7 +362,6 @@
       "mainFieldIsNumeric": true,
       "aggFields": [
         "age_at_visit",
-        "abc",
         "abcv",
         "thrpyv",
         "trzv",
@@ -361,8 +374,6 @@
         "emotl",
         "employ",
         "income",
-        "bmi",
-        "weight",
         "insurance"
       ],
       "fieldMapping": [
@@ -371,7 +382,7 @@
         {"field": "leu2n", "name": "CD8 Counts"},
         {"field": "cocuse", "name": "Cocaine Use"},
         {"field": "employ", "name": "Employment Status"},
-        { "field": "thrpyv", "name": "therapy_type_at_visit" },
+        { "field": "thrpyv", "name": "Therapy Type" },
         { "field": "trzv", "name": "Terazol Use" },
         { "field": "chol", "name": "Cholesterol" },
         {"field": "leu3n", "name": "CD4 Counts"},
