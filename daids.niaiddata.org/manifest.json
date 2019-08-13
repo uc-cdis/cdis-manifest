@@ -37,7 +37,8 @@
     "indexd_url": "https://niaiddata.org/index/",
     "arborist_url": "http://arborist-service.default.svc.cluster.local",
     "netpolicy": "off",
-    "cookie_domain": "niaiddata.org"
+    "cookie_domain": "niaiddata.org",
+    "des_namespace": "default"
   },
   "canary": {
     "default": 0
