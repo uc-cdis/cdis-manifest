@@ -40,5 +40,23 @@
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "daids",
+        "type": "subject"
+      },
+      {
+        "index": "daids_follow_up",
+        "type": "follow_up"
+      },
+      {
+        "index": "daids_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "daids_array-config",
+    "auth_filter_field": "auth_resource_path"
   }
 }
