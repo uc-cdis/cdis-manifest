@@ -20,10 +20,6 @@ mappings:
           - name: year_of_birth
           - name: study_center
             src: country_of_birth
-      - path: virus_infections
-        props:
-          - name: virus_type
-          - name: virus_subtype
       - path: hiv_history_records
         props:
           - name: arthxbase
@@ -38,9 +34,6 @@ mappings:
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
-        fn: count
-      - name: _summary_drug_uses_count
-        path: follow_ups.summary_drug_uses
         fn: count
       - name: _summary_lab_results_on_follow_up_count
         path: follow_ups.summary_lab_results
@@ -71,14 +64,6 @@ mappings:
         src: type_of_resistance
         path: diagnoses
         fn: set
-      - name: therapy
-        path: follow_ups.summary_drug_uses
-        src: thrpy
-        fn: set
-      - name: therapyv
-        path: follow_ups.summary_drug_uses
-        src: thrpyv
-        fn: set
       - name: _min_viral_load
         path: follow_ups.summary_lab_results
         src: viral_load
@@ -104,7 +89,6 @@ mappings:
       - name: submitter_id
       - name: age_at_visit
       - name: bmi
-      - name: drug_used
       - name: ever_transferred
       - name: health_insurance
       - name: height
@@ -119,14 +103,6 @@ mappings:
     parent_props:
       - path: subjects[subject_id:id,project_id,hiv_status]
     flatten_props:
-      - path: summary_drug_uses
-        props:
-          - name: abc
-          - name: abcv
-          - name: thrpy
-          - name: thrpyv
-          - name: trz
-          - name: trzv
       - path: summary_socio_demographics
         props:
           - name: cocuse

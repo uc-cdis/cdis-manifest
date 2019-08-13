@@ -179,7 +179,6 @@
             "ethnicity",
             "vital_status",
             "frstdthd",
-            "species",
             "data_type",
             "data_format"
           ]
@@ -191,23 +190,7 @@
             "bshcvstat",
             "cd4nadir",
             "status",
-            "virus_type",
-            "virus_subtype",
             "hiv_status"
-          ]
-        },
-        {
-          "title": "Drug Resistance",
-          "fields": [
-            "amikacin_res_phenotype",
-            "capreomycin_res_phenotype",
-            "isoniazid_res_phenotype",
-            "kanamycin_res_phenotype",
-            "ofloxacin_res_phenotype",
-            "pyrazinamide_res_phenotype",
-            "rifampicin_res_phenotype",
-            "rifampin_res_phenotype",
-            "streptomycin_res_phenotype"
           ]
         }
       ]
@@ -247,34 +230,20 @@
         "rightIcon": "download"
       }
     ],
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "subject",
-      "index": "",
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
         "referenceIdFieldInResourceIndex": "subject_id",
         "referenceIdFieldInDataIndex": "node_id"
       },
-      "nodeCountField": "subject_id"
-    },
-    "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
-      "fieldMapping": [
-        { "field": "consent_codes", "name": "Data Use Restriction" },
-        { "field": "bmi", "name": "BMI" }
-      ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
-    },
+      "accessibleFieldCheckList": ["subject_id"],
+      "accessibleValidationField": "subject_id"
+    }
+  },
   "fileExplorerConfig": {
     "charts": {
       "data_type": {
@@ -291,7 +260,7 @@
         {
           "title": "File",
           "fields": [
-            "project_id",
+            "subject_id",
             "data_type",
             "data_format"
           ]
@@ -301,28 +270,13 @@
     "table": {
       "enabled": true,
       "fields": [
-        "project_id",
+        "subject_id",
         "file_name",
         "file_size",
         "object_id"
       ]
     },
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
-      ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
-    },
+    "dropdowns": {},
     "buttons": [
       {
         "enabled": true,
@@ -341,6 +295,21 @@
         "rightIcon": "download"
       }
     ],
-    "dropdowns": {}
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["subject_id"],
+      "accessibleValidationField": "subject_id",
+      "downloadAccessor": "object_id"
+    }
   }
 }
