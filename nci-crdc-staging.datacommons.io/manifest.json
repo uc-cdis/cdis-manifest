@@ -11,7 +11,7 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:3.2.4.2",
+    "fence": "quay.io/cdis/fence:fix_migrate-check",
     "arborist": "quay.io/cdis/arborist:2.0.6",
     "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.1.4",
