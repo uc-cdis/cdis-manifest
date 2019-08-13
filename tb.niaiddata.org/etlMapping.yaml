@@ -113,14 +113,6 @@ mappings:
           - name: income
           - name: insurance
           - name: paidsex
-    joining:
-      - index: subject
-        join_on: subject_id
-        props:
-          - name: frstdthd
-            src: frstdthd
-          - name: fposdate
-            src: fposdate
   - name: tb_file
     doc_type: file
     type: collector
