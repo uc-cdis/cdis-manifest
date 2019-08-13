@@ -7,13 +7,13 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: experimental_group
-    flatten_props:
-      - path: demographics
-        props:
-          - name: gender
-          - name: race
-          - name: ethnicity
-        sorted_by: updated_datetime, desc
+      - name: age_pd_diagnosis
+      - name: days_to_birth
+      - name: ethnicity
+      - name: gender
+      - name: race
+      - name: military_branch
+      - name: year_of_birth
     aggregated_props:
       - name: _samples_count
         path: samples
@@ -40,6 +40,9 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+          - name: data_category
+            src: data_category
+            fn: set
   - name: bhcqa_file
     doc_type: file
     type: collector
@@ -52,6 +55,7 @@ mappings:
       - name: file_size
       - name: data_format
       - name: data_type
+      - name: data_category
       - name: state
     injecting_props:
       case:
