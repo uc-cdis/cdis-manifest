@@ -57,7 +57,7 @@
         "cpu-limit": "1.0",
         "memory-limit": "256Mi",
         "name": "Earth - Python | Tiny",
-        "image": "quay.io/occ_data/jupyter-geo:1.9.0",
+        "image": "quay.io/occ_data/jupyter-geo:1.9.1",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -84,7 +84,7 @@
         "cpu-limit": "2.0",
         "memory-limit": "12000Mi",
         "name": "Earth - Python | Large",
-        "image": "quay.io/occ_data/jupyter-geo:1.9.0",
+        "image": "quay.io/occ_data/jupyter-geo:1.9.1",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
