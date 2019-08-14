@@ -5,7 +5,7 @@
   ],
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.2.1",
-    "fence": "quay.io/cdis/fence:2.8.2",
+    "fence": "quay.io/cdis/fence:fix_niaddata",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "indexd": "quay.io/cdis/indexd:1.1.2",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
@@ -38,7 +38,12 @@
     "fence_url": "https://niaiddata.org/user",
     "indexd_url": "https://niaiddata.org/index/",
     "arborist_url": "http://arborist-service.default.svc.cluster.local",
-    "netpolicy": "off"
+    "workspace_url": "https://niaiddata.org/lw-workspace",
+    "manifest_service_url": "https://niaiddata.org/manifests",
+    "wts_url": "https://niaiddata.org/wts/oauth2/",
+    "netpolicy": "off",
+    "cookie_domain": "niaiddata.org",
+    "des_namespace": "default"
   },
   "canary": {
     "default": 0
