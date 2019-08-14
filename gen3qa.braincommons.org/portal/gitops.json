@@ -165,18 +165,6 @@
       "node_id": {
         "chartType": "count",
         "title": "Cases"
-      },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
-      },
-      "ethnicity": {
-        "chartType": "bar",
-        "title": "Ethnicity"
       }
     },
     "filters": {
@@ -184,9 +172,6 @@
         {
           "title": "Case",
           "fields": [
-            "race",
-            "ethnicity",
-            "gender",
             "project_id"
           ]
         }
@@ -197,9 +182,6 @@
       "fields": [
         "project_id",
         "submitter_id",
-        "race",
-        "ethnicity",
-        "gender",
         "experimental_group"
       ]
     },
