@@ -5,6 +5,7 @@
   ],
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.2.1",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.8.2",
     "indexd": "quay.io/cdis/indexd:1.1.4",
     "peregrine": "quay.io/cdis/peregrine:1.3.0",
@@ -15,8 +16,11 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.7",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6"
+    "tube": "quay.io/cdis/tube:0.3.8",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
+    "hatchery": "quay.io/cdis/hatchery:0.1.0",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "guppy": "quay.io/cdis/guppy:0.2.1"
   },
   "jupyterhub": {
     "enabled": "no"
@@ -39,7 +43,68 @@
     "netpolicy": "on",
     "useryaml_s3path": "s3://ibdgc-gen3-users/ibdgc/user.yaml"
   },
+  "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "10Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "env": {"NAMESPACE":"default", "HOSTNAME": "ibdgc.datacommons.io"},
+      "args": [],
+      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+    },
+    "containers": [{
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio",
+      "image": "quay.io/cdis/rstudio:master",
+      "env": {"DISABLE_AUTH": "true"},
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
+    },{
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Jupyter - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    }]
+  },
   "canary": {
     "default": 0
-  }
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "ibdgc_etl",
+        "type": "case"
+      },
+      {
+        "index": "ibdgc_file",
+        "type": "file"
+      },
+      {
+        "index": "ibdgc_file-explorer",
+        "type": "all-files"
+      }
+    ],
+    "auth_filter_field": "auth_resource_path"
+ }
 }

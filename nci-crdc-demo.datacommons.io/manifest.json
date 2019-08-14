@@ -8,9 +8,6 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:1.2.1",
-    "arranger": "quay.io/cdis/arranger:1.0.3",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2.7.1",
     "indexd": "quay.io/cdis/indexd:1.1.0",
@@ -18,56 +15,109 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
-    "portal": "quay.io/cdis/data-portal:2.7.3",
+    "portal": "quay.io/cdis/data-portal:2.17.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.1.9",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6"
+    "tube": "quay.io/cdis/tube:0.3.7",
+    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "hatchery": "quay.io/cdis/hatchery:0.1.0",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "wts": "quay.io/cdis/workspace-token-service:master",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
+    "manifestservice": "quay.io/cdis/manifestservice:master"
   },
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 0.5,
-                    "memory": "256M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-                  },
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 1.0,
-                    "memory": "1024M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-                  },
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 1.0,
-                    "memory": "2.0G",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-                  }
-                ]
+    "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "500Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:fix_nci-demo",
+      "env": {"NAMESPACE":"default", "HOSTNAME": "nci-crdc-demo.datacommons.io"},
+      "args": [],
+      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+    },
+    "containers": [{
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "512Mi",
+      "name": "R Studio",
+      "image": "heliumdatastage/rstudio-server:1",
+      "env": {"DISABLE_AUTH": "true"},
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/"
+    },{
+      "target-port": 8888,
+      "cpu-limit": "0.5",
+      "memory-limit": "256Mi",
+      "name": "Bioinfo - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.3",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },{
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Bioinfo - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.3",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },{
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "2048Mi",
+      "name": "Bioinfo - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.3",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    }]
   },
   "peregrine": {
     "sidecar": "True"
-  },
-    "arranger": {
-    "project_id": "dcf_1",
-    "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": ["subject"]
   },
   "global": {
     "environment": "ncicrdcdemo",
     "hostname": "nci-crdc-demo.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:662843554732:certificate/98e9b832-077a-4fdc-8f0a-06e9279f7359",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/dcfdictionary/4.0.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/dcfdictionary/4.1.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ncicrdcdemo-gen3",
     "logs_bucket": "logs-ncicrdcdemo-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/ncicrdcdemo/user.yaml",
     "GEN3_DEBUG": "False",
-    "dispatcher_job_num": "10"
+    "dispatcher_job_num": "10",
+    "public_datasets": true,
+    "tier_access_level": "regular"
   },
   "ssjdispatcher": {
     "job_images": {
@@ -76,5 +126,18 @@
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "dcf_2",
+        "type": "subject"
+      },
+      {
+        "index": "dcf_file",
+        "type": "file"
+      }
+    ],
+    "auth_filter_field": "auth_resource_path"
   }
 }

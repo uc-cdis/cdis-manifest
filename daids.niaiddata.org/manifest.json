@@ -36,10 +36,11 @@
     "fence_url": "https://niaiddata.org/user",
     "indexd_url": "https://niaiddata.org/index/",
     "arborist_url": "http://arborist-service.default.svc.cluster.local",
-    "netpolicy": "on",
     "workspace_url": "https://niaiddata.org/lw-workspace",
     "manifest_service_url": "https://niaiddata.org/manifests",
     "wts_url": "https://niaiddata.org/wts/oauth2/"
+    "netpolicy": "off",
+    "cookie_domain": "niaiddata.org"
   },
   "canary": {
     "default": 0

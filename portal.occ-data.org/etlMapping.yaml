@@ -1,0 +1,15 @@
+mappings:
+  - name: edc_etl
+    doc_type: spatiotemporal_file
+    type: collector
+    root: spatiotemporal_file
+    props:
+      - name: object_id
+      - name: project_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_category
+      - name: data_type
+      - name: datetime

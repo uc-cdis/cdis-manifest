@@ -7,8 +7,8 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:3.2.4",
-    "arborist": "quay.io/cdis/arborist:2.0.1",
+    "fence": "quay.io/cdis/fence:3.2.4.2",
+    "arborist": "quay.io/cdis/arborist:2.0.6",
     "google-sa-validation": "placeholder",
     "indexd": "quay.io/cdis/indexd:1.1.4",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
@@ -43,7 +43,7 @@
     "kube_bucket": "kube-dcfprod-gen3",
     "logs_bucket": "logs-dcfprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "none"
+    "useryaml_s3path": "s3://cdis-gen3-users/ncicrdc/user.yaml"
   },
   "canary": {
     "default": 0
