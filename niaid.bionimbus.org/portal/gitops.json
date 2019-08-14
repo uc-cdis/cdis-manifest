@@ -348,40 +348,32 @@
       "mainFieldIsNumeric": true,
       "aggFields": [
         "age_at_visit",
-        "abc",
         "abcv",
-        "adh",
-        "thrpy",
         "thrpyv",
-        "trz",
         "trzv",
-        "cd4dt",
         "chol",
         "leu2n",
+        "leu3n",
         "viral_load",
         "cocuse",
         "drinkcat",
-        "eductn",
         "emotl",
         "employ",
         "income",
-        "insurance",
-        "paidsex"
+        "insurance"
       ],
       "fieldMapping": [
-        { "field": "abc", "name": "Abcavir_since_last_visit" },
-        { "field": "abcv", "name": "Abcavir_at_visit" },
-        { "field": "adh", "name": "drug_taken_frequency_6mons" },
-        { "field": "thrpy", "name": "therapy_type_since_last_visit" },
-        { "field": "thrpyv", "name": "therapy_type_at_visit" },
-        { "field": "trz", "name": "Terazol_since_last_visit" },
-        { "field": "trzv", "name": "Terazol_at_visit" },
-        { "field": "cd4dt", "name": "year_CD4_collected" },
-        { "field": "chol", "name": "Cholesterol(mg/dL)" },
-        { "field": "leu2n", "name": "CD8_positive_cells" },
-        { "field": "drinkcat", "name": "drink_category" },
-        { "field": "eductn", "name": "highest_education" },
-        { "field": "emotl", "name": "emotion_wellness" }
+        {"field": "abcv", "name": "Abcavir Use"},
+        {"field": "age_at_visit", "name": "Age"},
+        {"field": "leu2n", "name": "CD8 Counts"},
+        {"field": "cocuse", "name": "Cocaine Use"},
+        {"field": "employ", "name": "Employment Status"},
+        { "field": "thrpyv", "name": "Therapy Type" },
+        { "field": "trzv", "name": "Terazol Use" },
+        { "field": "chol", "name": "Cholesterol" },
+        {"field": "leu3n", "name": "CD4 Counts"},
+        { "field": "drinkcat", "name": "Alcohol Use" },
+        { "field": "emotl", "name": "Emotional Wellness" }
       ]
     }
   }
