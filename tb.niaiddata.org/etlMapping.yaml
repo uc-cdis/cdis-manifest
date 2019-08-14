@@ -113,6 +113,11 @@ mappings:
           - name: income
           - name: insurance
           - name: paidsex
+    aggregated_props:
+      - name: _drug_results
+        path: samples.tb_results
+        src: drug
+        fn: set
   - name: tb_file
     doc_type: file
     type: collector
