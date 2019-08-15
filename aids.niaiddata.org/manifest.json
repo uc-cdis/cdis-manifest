@@ -12,7 +12,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.12",
-    "portal": "quay.io/cdis/data-portal:feat_configurable-workspace-and-manifest-urls",
+    "portal": "quay.io/cdis/data-portal:2.18.3",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
@@ -26,7 +26,7 @@
   },
   "global": {
     "environment": "niaiddata",
-    "hostname": "daids.niaiddata.org",
+    "hostname": "aids.niaiddata.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/1.2.5/schema.json",
     "portal_app": "gitops",
