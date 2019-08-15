@@ -7,6 +7,7 @@
     "arborist": "quay.io/cdis/arborist:1.2.1",
     "fence": "quay.io/cdis/fence:fix_niaddata",
     "indexd": "quay.io/cdis/indexd:1.1.2",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
@@ -17,7 +18,8 @@
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
-    "tube": "quay.io/cdis/tube:0.3.7"
+    "tube": "quay.io/cdis/tube:0.3.7",
+    "guppy": "quay.io/cdis/guppy:0.3.2"
   },
   "jupyterhub": {
     "enabled": "no"
@@ -26,7 +28,7 @@
     "environment": "niaiddata",
     "hostname": "daids.niaiddata.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/1.2.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/1.2.4/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "logs-niaiddata-gen3",
@@ -45,5 +47,23 @@
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "daids",
+        "type": "subject"
+      },
+      {
+        "index": "daids_follow_up",
+        "type": "follow_up"
+      },
+      {
+        "index": "daids_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "daids-array-config",
+    "auth_filter_field": "auth_resource_path"
   }
 }
