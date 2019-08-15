@@ -8,6 +8,7 @@
   },
   "versions": {
     "fenceshib": "quay.io/cdis/fence-shib:2.7.1",
+    "fenceshib-canary": "quay.io/cdis/fence-shib:2.7.2",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds"
   },
   "jupyterhub": {
@@ -23,6 +24,7 @@
     "useryaml_s3path": "s3://cdis-gen3-users/loginbionimbus/user.yaml"
   },
   "canary": {
-    "default": 0
+    "default": 0,
+    "fenceshib": 10
   }
 }
