@@ -42,19 +42,23 @@
     "tier_access_limit": 50,
     "public_datasets": true
   },
-  "peregrine": {
-    "sidecar": "True"
+  "arborist": {
+    "deployment_version": "2"
   },
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
+  "guppy": {
+    "indices": [
       {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
+        "index": "anvil_case",
+        "type": "case"
+      },
+      {
+        "index": "anvil_file",
+        "type": "file"
       }
-    ]
+    ],
+    "config_index": "anvil_array-config",
+    "auth_filter_field": "auth_resource_path",
+    "enable_encrypt_whitelist": false
   },
   "hatchery": {
     "user-namespace": "jupyter-pods",
@@ -83,24 +87,86 @@
       }
     ]
   },
-  "arborist": {
-    "deployment_version": "2"
-  },
-  "guppy": {
-    "indices": [
+  "jupyterhub": {
+    "enabled": "yes",
+    "containers": [
       {
-        "index": "anvil_case",
-        "type": "case"
-      },
-      {
-        "index": "anvil_file",
-        "type": "file"
+        "name": "Bioinfo - Python/R",
+        "cpu": 0.5,
+        "memory": "256M",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
       }
-    ],
-    "config_index": "anvil_array-config",
-    "auth_filter_field": "auth_resource_path",
-    "enable_encrypt_whitelist": false
+    ]
   },
+  "peregrine": {
+    "sidecar": "True"
+  },
+  "sower": [
+    {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican:0.1.3",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "case"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "12Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "canary": {
     "default": 0
   }
