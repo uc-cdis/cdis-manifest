@@ -136,9 +136,9 @@
         "chartType": "bar",
         "title": "Race"
       },
-      "ethnicity": {
+      "primary_site": {
         "chartType": "bar",
-        "title": "Ethnicity"
+        "title": "Tissue Type"
       }
     },
     "filters": {
@@ -147,6 +147,7 @@
           "title": "Subject",
           "fields":[
             "project_id",
+            "primary_site",
             "gender",
             "race",
             "ethnicity"
@@ -167,12 +168,19 @@
         "fileName": "clinical.json"
       },
       {
-        "enabled": false,
+        "enabled": true,
         "type": "manifest",
         "title": "Download Manifest",
         "leftIcon": "datafile",
         "rightIcon": "download",
         "fileName": "manifest.json"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
       }
     ],
     "guppyConfig": {
@@ -180,6 +188,12 @@
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
       ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
     }
@@ -202,7 +216,8 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "data_category"
           ]
         }
       ]

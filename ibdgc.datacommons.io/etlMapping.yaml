@@ -1,27 +1,19 @@
 mappings:
-  - name: bhcqa_etl
+  - name: ibdgc_etl
     doc_type: case
     type: aggregator
     root: case
     props:
       - name: submitter_id
       - name: project_id
-      - name: experimental_group
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
     aggregated_props:
       - name: _samples_count
         path: samples
-        fn: count
-      - name: _aliquots_count
-        path: samples.aliquots
-        fn: count
-      - name: _read_group_count
-        path: samples.aliquots.read_groups
-        fn: count
-      - name: _submitted_expression_arrays_count
-        path: samples.aliquots.submitted_expression_array_files
-        fn: count
-      - name: _submitted_unaligned_reads_count
-        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
         fn: count
     joining_props:
       - index: file
@@ -33,7 +25,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: bhcqa_file
+  - name: ibdgc_file
     doc_type: file
     type: collector
     root: None
@@ -52,3 +44,16 @@ mappings:
           - name: case_id
             src: id
           - name: project_id
+  - name: ibdgc_file-explorer
+    doc_type: all-files
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
