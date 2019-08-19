@@ -24,6 +24,9 @@
   "jupyterhub": {
     "enabled": "no"
   },
+  "peregrine": {
+    "peregrine_timeout": 60
+  },
   "global": {
     "environment": "niaiddata",
     "hostname": "aids.niaiddata.org",
