@@ -41,6 +41,12 @@ mappings:
           - name: fposdate
           - name: frstdthd
           - name: status
+          - name: frstaidd
+          - name: lnegdate
+          - name: frsthaad
+          - name: lastnohd
+          - name: frstartd
+          - name: lastnoad
       - path: comorbidities
         props:
           - name: bshbvstat
@@ -202,6 +208,18 @@ mappings:
             src: frstdthd
           - name: fposdate
             src: fposdate
+          - name: frstaidd
+            src: frstaidd
+          - name: lnegdate
+            src: lnegdate
+          - name: frsthaad
+            src: frsthaad
+          - name: lastnohd
+            src: lastnohd
+          - name: frstartd
+            src: frstartd
+          - name: lastnoad
+            src: lastnoad
   - name: niaid_file
     doc_type: file
     type: collector
