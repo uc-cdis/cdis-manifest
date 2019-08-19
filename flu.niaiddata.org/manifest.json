@@ -26,7 +26,7 @@
   },
   "global": {
     "environment": "niaiddata",
-    "hostname": "aids.niaiddata.org",
+    "hostname": "flu.niaiddata.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/1.2.5/schema.json",
     "portal_app": "gitops",
@@ -51,19 +51,19 @@
   "guppy": {
     "indices": [
       {
-        "index": "daids",
+        "index": "flu",
         "type": "subject"
       },
       {
-        "index": "daids_follow_up",
+        "index": "flu_follow_up",
         "type": "follow_up"
       },
       {
-        "index": "daids_file",
+        "index": "flu_file",
         "type": "file"
       }
     ],
-    "config_index": "daids-array-config",
+    "config_index": "flu-array-config",
     "auth_filter_field": "auth_resource_path"
   }
 }

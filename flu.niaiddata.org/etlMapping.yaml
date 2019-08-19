@@ -1,5 +1,5 @@
 mappings:
-  - name: daids
+  - name: flu
     doc_type: subject
     type: aggregator
     root: subject
@@ -81,7 +81,7 @@ mappings:
           - name: file_id
             src: file_id
             fn: set
-  - name: daids_follow_up
+  - name: flu_follow_up
     doc_type: follow_up
     type: aggregator
     root: follow_up
@@ -142,7 +142,7 @@ mappings:
             src: frstdthd
           - name: fposdate
             src: fposdate
-  - name: daids_file
+  - name: flu_file
     doc_type: file
     type: collector
     root: None
