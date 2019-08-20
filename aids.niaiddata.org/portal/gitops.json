@@ -304,42 +304,42 @@
       "accessibleFieldCheckList": ["subject_id"],
       "accessibleValidationField": "subject_id",
       "downloadAccessor": "object_id"
-    }
-  },
-  "dataAvailabilityToolConfig": {
-    "guppyConfig": {
-      "dataType": "follow_up",
-      "mainField": "harmonized_visit_number",
-      "mainFieldTitle": "Visit number",
-      "mainFieldIsNumeric": true,
-      "aggFields": [
-        "age_at_visit",
-        "abcv",
-        "thrpyv",
-        "trzv",
-        "chol",
-        "leu2n",
-        "leu3n",
-        "viral_load",
-        "cocuse",
-        "drinkcat",
-        "emotl",
-        "employ",
-        "income",
-        "insurance"
-      ],
-      "fieldMapping": [
-        {"field": "abcv", "name": "Abcavir Use"},
-        {"field": "age_at_visit", "name": "Age"},
-        {"field": "leu2n", "name": "CD8 Counts"},
-        {"field": "employ", "name": "Employment Status"},
-        { "field": "thrpyv", "name": "Therapy Type" },
-        { "field": "trzv", "name": "Terazol Use" },
-        { "field": "chol", "name": "Cholesterol" },
-        {"field": "leu3n", "name": "CD4 Counts"},
-        { "field": "drinkcat", "name": "Alcohol Use" },
-        { "field": "emotl", "name": "Emotional Wellness" }
-      ]
+    },
+    "dataAvailabilityToolConfig": {
+      "guppyConfig": {
+        "dataType": "follow_up",
+        "mainField": "harmonized_visit_number",
+        "mainFieldTitle": "Visit number",
+        "mainFieldIsNumeric": true,
+        "aggFields": [
+          "age_at_visit",
+          "abcv",
+          "thrpyv",
+          "trzv",
+          "chol",
+          "leu2n",
+          "leu3n",
+          "viral_load",
+          "cocuse",
+          "drinkcat",
+          "emotl",
+          "employ",
+          "income",
+          "insurance"
+        ],
+        "fieldMapping": [
+          {"field": "abcv", "name": "Abcavir Use"},
+          {"field": "age_at_visit", "name": "Age"},
+          {"field": "leu2n", "name": "CD8 Counts"},
+          {"field": "employ", "name": "Employment Status"},
+          { "field": "thrpyv", "name": "Therapy Type" },
+          { "field": "trzv", "name": "Terazol Use" },
+          { "field": "chol", "name": "Cholesterol" },
+          {"field": "leu3n", "name": "CD4 Counts"},
+          { "field": "drinkcat", "name": "Alcohol Use" },
+          { "field": "emotl", "name": "Emotional Wellness" }
+        ]
+      }
     }
   }
 }
