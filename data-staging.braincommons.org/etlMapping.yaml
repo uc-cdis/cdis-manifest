@@ -1,5 +1,5 @@
 mappings:
-  - name: bhcqa_etl
+  - name: bhcdatastaging_etl
     doc_type: case
     type: aggregator
     root: case
@@ -33,7 +33,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: bhcqa_file
+  - name: bhcdatastaging_file
     doc_type: file
     type: collector
     root: None
