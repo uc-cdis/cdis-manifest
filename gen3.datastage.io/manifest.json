@@ -18,21 +18,13 @@
     "portal": "quay.io/cdis/data-portal:2.17.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.9",
+    "tube": "quay.io/cdis/tube:0.3.8",
     "guppy": "quay.io/cdis/guppy:0.3.0",
     "sower": "quay.io/cdis/sower:0.3.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.2.0"
-  },
-  "arranger": {
-    "project_id": "dcp_3",
-    "auth_filter_field": "auth_resource_path",
-    "auth_filter_node_types": [
-      "case",
-      "file"
-    ]
   },
   "arborist": {
     "deployment_version": "2"
@@ -230,15 +222,15 @@
                 ]
   },
   "global": {
-    "environment": "stageprod",
-    "hostname": "gen3.datastage.io",
+    "environment": "stagingdatastage",
+    "hostname": "staging.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.2.3/schema.json",
     "portal_app": "gitops",
-    "kube_bucket": "kube-stageprod-gen3",
-    "logs_bucket": "logs-stageprod-gen3",
+    "kube_bucket": "kube-stagingdatastage-gen3",
+    "logs_bucket": "logs-stagingdatastage-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
     "tier_access_level": "private"
   },
