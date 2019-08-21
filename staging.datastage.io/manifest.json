@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.0.6",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.2.1",
+    "fence": "quay.io/cdis/fence:4.2.2",
     "indexd": "quay.io/cdis/indexd:2.0.0",
     "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -225,7 +225,7 @@
     "environment": "stagingdatastage",
     "hostname": "staging.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.2.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.2.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stagingdatastage-gen3",
     "logs_bucket": "logs-stagingdatastage-gen3",
