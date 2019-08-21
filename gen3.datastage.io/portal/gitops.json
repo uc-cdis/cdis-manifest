@@ -193,7 +193,28 @@
           "title": "Diagnosis",
           "fields": [
             "diastolic_blood_pressure",
-            "systolic_blood_pressure"
+            "systolic_blood_pressure",
+            "lymphocyte_ncnc_bld",
+            "mch_entmass_rbc",
+            "mcv_entvol_rbc",
+            "mchc_mcnc_rbc",
+            "monocyte_ncnc_bld",
+            "neutrophil_ncnc_bld",
+            "pmv_entvol_bld",
+            "rbc_ncnc_bld",
+            "rdw_ratio_rbc",
+            "hemoglobin_mcnc_bld",
+            "platelet_ncnc_bld",
+            "hematocrit_vfr_bld",
+            "wbc_ncnc_bld",
+            "basophil_ncnc_bld",
+            "eosinophil_ncnc_bld",
+            "chol1",
+            "trig1",
+            "unit_triglycerides1",
+            "hdl1",
+            "unit_hdl1",
+            "ldl1"
           ]
         },
         {
@@ -364,7 +385,24 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
-    "buttons": [],
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
     "dropdowns": {}
   }
 }
