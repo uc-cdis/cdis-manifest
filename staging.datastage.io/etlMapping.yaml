@@ -30,7 +30,7 @@ mappings:
           - name: myocardial_infarction
           - name: stroke
       - path: diagnoses
-        props:
+        props: 
           - name: metabolic_syndrome_diagnosis
         sorted_by: updated_datetime, desc
       - path: blood_pressure_test
@@ -44,6 +44,29 @@ mappings:
         props:
           - name: biospecimen_anatomic_site
         sorted_by: updated_datetime, desc
+      - path: lab_results
+        - name: lymphocyte_ncnc_bld
+        - name: mch_entmass_rbc
+        - name: mcv_entvol_rbc
+        - name: mchc_mcnc_rbc
+        - name: monocyte_ncnc_bld
+        - name: neutrophil_ncnc_bld
+        - name: pmv_entvol_bld
+        - name: rbc_ncnc_bld
+        - name: rdw_ratio_rbc
+        - name: hemoglobin_mcnc_bld
+        - name: platelet_ncnc_bld
+        - name: hematocrit_vfr_bld
+        - name: wbc_ncnc_bld
+        - name: basophil_ncnc_bld
+        - name: eosinophil_ncnc_bld
+        - name: chol1
+        - name: trig1
+        - name: unit_triglycerides1
+        - name: hdl1
+        - name: unit_hdl1
+        - name: ldl1
+
     aggregated_props:
       - name: _samples_count
         path: samples
