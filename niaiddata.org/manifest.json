@@ -65,6 +65,20 @@
       "user-uid": 1000,
       "fs-gid": 100,
       "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio",
+      "image": "quay.io/cdis/rstudio:master",
+      "env": {"WWW_FRAME_ORIGIN": "https://aids.niaiddata.org https://tb.niaiddata.org","DISABLE_AUTH": "true"},
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
     }]
   },
   "arborist": {
