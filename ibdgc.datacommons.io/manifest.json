@@ -16,7 +16,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.10",
+    "tube": "quay.io/cdis/tube:0.3.9",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
@@ -99,8 +99,9 @@
       {
         "index": "ibdgc_file",
         "type": "file"
-      },
+      }
     ],
+    "config_index": "ibdgc_array-config",
     "auth_filter_field": "auth_resource_path"
  }
 }
