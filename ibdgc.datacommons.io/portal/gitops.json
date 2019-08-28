@@ -153,8 +153,8 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
+      "dataType": "case",
+      "nodeCountTitle": "Participants",
       "fieldMapping": [
       ]
     }
@@ -192,7 +192,7 @@
       ]
     },
     "guppyConfig": {
-      "dataType": "all-files",
+      "dataType": "file",
       "fieldMapping": [
         { "field": "object_id", "name": "GUID" }
       ],
