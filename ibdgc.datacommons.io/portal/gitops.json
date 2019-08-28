@@ -110,10 +110,6 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
-      },
-      "disease_type": {
-        "chartType": "bar",
-        "title": "Disease Type"
       }
     },
     "filters": {
@@ -122,14 +118,8 @@
           "title": "Case",
           "fields":[
             "project_id",
-            "gender"
-          ]
-        },
-        {
-          "title": "Diagnosis",
-          "fields":[
-            "disease_type",
-            "primary_site"
+            "gender",
+            "race"
           ]
         }
       ]
@@ -138,9 +128,9 @@
       "enabled": true,
       "fields": [
         "project_id",
-        "disease_type",
-        "primary_site",
-        "gender"
+        "gender",
+        "race",
+        "_samples_count"
       ]
     },
     "buttons": [
