@@ -36,7 +36,9 @@
     "useryaml_s3path": "s3://cdis-gen3-users/nde/user.yaml",
     "origins_allow_credentials": ["https://tb.niaiddata.org", "https://aids.niaiddata.org", "https://flu.niaiddata.org"],
     "netpolicy": "off",
-    "cookie_domain": "niaiddata.org"
+    "cookie_domain": "niaiddata.org",
+    "public_datasets": true,
+    "tier_access_level": "libre"
   },
   "hatchery": {
     "user-namespace": "jupyter-pods-niaiddata",
@@ -100,6 +102,7 @@
         "type": "subject"
       }
     ],
-    "auth_filter_field": "auth_resource_path"
+    "auth_filter_field": "auth_resource_path",
+    "enable_encrypt_whitelist": false
   }
 }
