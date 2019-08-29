@@ -38,7 +38,8 @@
     "netpolicy": "off",
     "cookie_domain": "niaiddata.org",
     "public_datasets": true,
-    "tier_access_level": "libre"
+    "tier_access_level": "libre",
+    "enable_encrypt_whitelist": false
   },
   "hatchery": {
     "user-namespace": "jupyter-pods-niaiddata",
