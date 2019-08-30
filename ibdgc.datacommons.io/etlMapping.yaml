@@ -16,7 +16,7 @@ mappings:
       - path: diagnoses
         props:
           - name: ibd_affection_status
-          - name: diagnoses
+          - name: diagnosis
           - name: population_control
     aggregated_props:
       - name: _samples_count
