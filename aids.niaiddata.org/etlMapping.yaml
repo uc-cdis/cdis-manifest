@@ -104,6 +104,15 @@ mappings:
     parent_props:
       - path: subjects[subject_id:id,project_id,hiv_status]
     flatten_props:
+      - path: treatment
+        props:
+          - name: abc
+          - name: abcv
+          - name: adh
+          - name: thrpy
+          - name: thrpyv
+          - name: trz
+          - name: trzv
       - path: summary_socio_demographics
         props:
           - name: cocuse
