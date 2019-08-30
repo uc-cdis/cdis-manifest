@@ -2,7 +2,7 @@ mappings:
   - name: ibdgc_etl
     doc_type: case
     type: aggregator
-    root: case
+    root: particpant
     props:
       - name: submitter_id
       - name: project_id
@@ -11,6 +11,13 @@ mappings:
         props:
           - name: gender
           - name: race
+          - name: jewish
+          - name: hispanic
+      - path: diagnosis
+        props:
+          - name: ibd_affection_status
+          - name: diagnosis
+          - name: population_control
     aggregated_props:
       - name: _samples_count
         path: samples
