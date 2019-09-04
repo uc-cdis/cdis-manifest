@@ -13,7 +13,7 @@
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:4.2.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "guppy": "quay.io/cdis/guppy:0.3.3",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "indexd": "quay.io/cdis/indexd:2.0.0",
     "manifestservice": "quay.io/cdis/manifestservice:master",
@@ -55,11 +55,11 @@
   "guppy": {
     "indices": [
       {
-        "index": "anvil_case",
+        "index": "etl_anvil",
         "type": "case"
       },
       {
-        "index": "anvil_file",
+        "index": "file_anvil",
         "type": "file"
       }
     ],

@@ -10,13 +10,14 @@
 .g3-button--primary,
 .g3-dropdown-button__button--primary,
 .data-dictionary__switch-button--active,
-.popup__title {
+.popup__title, .button-primary-orange {
   background-color: var(--blue);
 }
 
 .g3-button--primary:hover,
 .g3-dropdown-button__button--primary:hover,
-.data-dictionary__switch-button:hover {
+.data-dictionary__switch-button:hover,
+.button-primary-orange:hover {
   background-color: var(--teal)
 }
 
@@ -39,7 +40,8 @@
 }
 
 .nav-button:hover,
-.button-active {
+.button-active,
+.nav-bar__link--home:hover {
   border-bottom: 3px solid var(--blue);
 }
 
