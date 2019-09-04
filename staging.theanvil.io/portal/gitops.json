@@ -8,11 +8,6 @@
         "plural": "Cases"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment",
-        "plural": "Experiments"
-      },
-      {
         "graphql": "_aliquot_count",
         "name": "Aliquot",
         "plural": "Aliquots"
@@ -22,10 +17,6 @@
       {
         "graphql": "_case_count",
         "name": "Case"
-      },
-      {
-        "graphql": "_experiment_count",
-        "name": "Experiment"
       }
     ],
     "projectDetails": "boardCounts"
@@ -72,10 +63,6 @@
         {
           "node": "case",
           "name": "Cases"
-        },
-        {
-          "node": "experiment",
-          "name": "Experiments"
         },
         {
           "node": "aliquot",
