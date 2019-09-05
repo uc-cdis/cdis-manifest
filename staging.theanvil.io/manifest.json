@@ -13,13 +13,13 @@
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:4.2.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "guppy": "quay.io/cdis/guppy:0.3.3",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "indexd": "quay.io/cdis/indexd:2.0.0",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
-    "portal": "quay.io/cdis/data-portal:2.17.0",
+    "portal": "quay.io/cdis/data-portal:2.19.2",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:0.3.0",
@@ -32,7 +32,7 @@
     "environment": "anvilstaging",
     "hostname": "staging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.0.2/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.0.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
@@ -55,15 +55,14 @@
   "guppy": {
     "indices": [
       {
-        "index": "anvil_case",
+        "index": "etl_anvil",
         "type": "case"
       },
       {
-        "index": "anvil_file",
+        "index": "file_anvil",
         "type": "file"
       }
     ],
-    "config_index": "anvil_array-config",
     "auth_filter_field": "auth_resource_path",
     "enable_encrypt_whitelist": false
   },
@@ -82,11 +81,14 @@
     },
     "containers": [
       {
-        "target-port": 8888,
+        "target-port": 8787,
         "cpu-limit": "1.0",
         "memory-limit": "512Mi",
         "name": "R Studio",
         "image": "heliumdatastage/rstudio-server:1",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
         "args": [],
         "path-rewrite": "/",
         "use-tls": "false",
