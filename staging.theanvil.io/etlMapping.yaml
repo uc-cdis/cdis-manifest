@@ -29,12 +29,6 @@ mappings:
       - name: _submitted_aligned_reads_count
         path: samples.aliquots.read_groups.submitted_aligned_reads_files
         fn: count
-      - name: _submitted_copy_number_files_on_read_groups_count
-        path: samples.aliquots.read_groups.submitted_copy_number_files
-        fn: count
-      - name: _submitted_somatic_mutations_count
-        path: samples.aliquots.read_groups.submitted_somatic_mutations
-        fn: count
     joining_props:
       - index: file
         join_on: case_id
