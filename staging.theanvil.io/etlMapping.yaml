@@ -20,9 +20,6 @@ mappings:
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
-      - name: _submitted_methylations_count
-        path: samples.aliquots.submitted_methylation_files
-        fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
         fn: count
