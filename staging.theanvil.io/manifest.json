@@ -86,6 +86,9 @@
         "memory-limit": "512Mi",
         "name": "R Studio",
         "image": "heliumdatastage/rstudio-server:1",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
         "args": [],
         "path-rewrite": "/",
         "use-tls": "false",
