@@ -1,5 +1,5 @@
 mappings:
-  - name: etl_anvil
+  - name: etl_staging-anvil
     doc_type: case
     type: aggregator
     root: case
@@ -36,7 +36,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: file_anvil
+  - name: file_staging-anvil
     doc_type: file
     type: collector
     root: None
