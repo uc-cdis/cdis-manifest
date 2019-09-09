@@ -151,7 +151,18 @@
       "nodeCountField": "node_id"
     },
     "table": {
-      "enabled": true
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "ethnicity",
+        "race",
+        "gender",
+        "year_of_birth",
+        "_aliquots_count",
+        "_read_groups_count",
+        "_samples_count",
+        "_submitted_aligned_reads_count"
+      ]
     },
     "dropdowns": {
       "download": {
