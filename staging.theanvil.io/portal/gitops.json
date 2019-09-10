@@ -134,7 +134,8 @@
           "fields":[
             "gender",
             "race",
-            "ethnicity"
+            "ethnicity",
+            "primary_diagnosis"
           ]
         }, {
           "title": "Projects",
@@ -158,6 +159,7 @@
         "race",
         "gender",
         "year_of_birth",
+        "primary_diagnosis",
         "_aliquots_count",
         "_read_groups_count",
         "_samples_count",
