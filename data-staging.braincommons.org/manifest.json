@@ -12,9 +12,11 @@
     "fence": "quay.io/cdis/fence:2.8.2",
     "indexd": "quay.io/cdis/indexd:1.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
+    "peregrine-canary": "quay.io/cdis/peregrine:1.2.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.11",
+    "sheepdog-canary": "quay.io/cdis/sheepdog:1.1.11",
     "portal": "quay.io/cdis/data-portal:2.12.3",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
@@ -22,7 +24,8 @@
     "spark": "quay.io/cdis/gen3-spark:feat_init",
     "tube": "quay.io/cdis/tube:0.3.6",
     "guppy": "quay.io/cdis/guppy:0.2.0",
-    "wts": "quay.io/cdis/workspace-token-service:0.1.0"
+    "wts": "quay.io/cdis/workspace-token-service:0.1.0",
+    "manifestservice": "quay.io/cdis/manifestservice:0.1.1"
   },
   "peregrine": {
     "sidecar": "True"
