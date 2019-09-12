@@ -16,7 +16,6 @@
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.11",
-    "sheepdog-canary": "quay.io/cdis/sheepdog:1.1.11",
     "portal": "quay.io/cdis/data-portal:2.12.3",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
@@ -87,4 +86,3 @@
     "auth_filter_field": "auth_resource_path"
  }
 }
-
