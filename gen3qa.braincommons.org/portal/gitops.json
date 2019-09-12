@@ -182,12 +182,15 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Demographics",
           "fields": [
             "race",
             "ethnicity",
             "gender",
-            "project_id"
+            "project_id",
+            "age_at_enrollment",
+            "age_at_onset",
+            "education_years"
           ]
         }
       ]
