@@ -104,7 +104,7 @@ mappings:
     parent_props:
       - path: subjects[subject_id:id,project_id,hiv_status]
     flatten_props:
-      - path: treatment
+      - path: treatments
         props:
           - name: abc
           - name: abcv
