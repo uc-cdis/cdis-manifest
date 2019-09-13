@@ -11,10 +11,10 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:3.2.4.2",
-    "arborist": "quay.io/cdis/arborist:2.0.6",
+    "fence": "quay.io/cdis/fence:4.4.1",
+    "arborist": "quay.io/cdis/arborist:2.2.0",
     "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:1.1.4",
+    "indexd": "quay.io/cdis/indexd:2.0.1",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
