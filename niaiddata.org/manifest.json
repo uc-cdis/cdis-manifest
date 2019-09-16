@@ -13,7 +13,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.12",
-    "portal": "quay.io/cdis/data-ecosystem-portal:0.0.1",
+    "portal": "quay.io/cdis/data-ecosystem-portal:0.0.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
@@ -48,7 +48,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
-      "env": {"NAMESPACE":"niaiddata", "HOSTNAME": "niaiddata.org"},
+      "env": {"NAMESPACE":"default", "HOSTNAME": "niaiddata.org"},
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
