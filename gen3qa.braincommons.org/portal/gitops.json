@@ -184,10 +184,10 @@
         {
           "title": "Demographics",
           "fields": [
+            "project_id",
             "race",
             "ethnicity",
             "gender",
-            "project_id",
             "age_at_enrollment",
             "age_at_onset",
             "education_years"
@@ -202,7 +202,10 @@
         "submitter_id",
         "race",
         "ethnicity",
-        "gender"
+        "gender",
+        "age_at_enrollment",
+        "age_at_onset",
+        "education_years"
       ]
     },
     "arrangerConfig": {
