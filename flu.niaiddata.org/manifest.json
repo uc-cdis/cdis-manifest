@@ -28,7 +28,7 @@
     "environment": "niaiddata",
     "hostname": "flu.niaiddata.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/1.2.5/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/flu-datadictionary/1.0.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "logs-niaiddata-gen3",
