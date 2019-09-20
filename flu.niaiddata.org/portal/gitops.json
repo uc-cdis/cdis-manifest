@@ -149,17 +149,13 @@
         "chartType": "count",
         "title": "Subjects"
       },
-      "gender": {
+      "virus_subtype": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Virus Subtype"
       },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
-      },
-      "species": {
-        "chartType": "bar",
-        "title": "Species"
+      "strain": {
+        "chartType": "pie",
+        "title": "Virus Strain"
       }
     },
     "filters": {
@@ -172,19 +168,19 @@
             "race",
             "ethnicity",
             "vital_status",
-            "frstdthd",
             "data_type",
             "data_format"
           ]
         }, {
-          "title": "Diagnosis",
+          "title": "Experiment",
           "fields": [
-            "arthxbase",
-            "bshbvstat",
-            "bshcvstat",
-            "cd4nadir",
-            "status",
-            "hiv_status"
+            "virus_type",
+            "virus_subtype",
+            "analyte_type",
+            "biospecimen_anatomic_site",
+            "cell_line",
+            "sample_type",
+            "composition"
           ]
         }
       ]
