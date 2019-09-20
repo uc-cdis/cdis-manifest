@@ -20,12 +20,6 @@ mappings:
         props:
           - name: virus_type
           - name: virus_subtype
-      - path: samples
-        props: 
-          - name: biospecimen_anatomic_site
-          - name: cell_line
-          - name: sample_type
-          - name: composition
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
@@ -74,6 +68,22 @@ mappings:
       - name: analyte_type
         path: samples.aliquots
         src: analyte_type
+        fn: set
+      - name: biospecimen_anatomic_site
+        path: samples
+        src: biospecimen_anatomic_site
+        fn: set
+      - name: cell_line
+        path: samples
+        src: cell_line
+        fn: set
+      - name: sample_type
+        path: samples
+        src: sample_type
+        fn: set
+      - name: composition
+        path: samples
+        src: composition
         fn: set
     joining_props:
       - index: file
