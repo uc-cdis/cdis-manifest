@@ -313,26 +313,17 @@
   "dataAvailabilityToolConfig": {
     "guppyConfig": {
       "dataType": "follow_up",
-      "mainField": "visit_id",
-      "mainFieldTitle": "",
+      "mainField": "visit_date",
+      "mainFieldTitle": "Visit year",
       "mainFieldIsNumeric": true,
       "aggFields": [
-        "age_at_visit",
         "bmi",
-        "cocuse",
-        "drinkcat",
-        "health_insurance",
         "weight",
         "height"
       ],
       "fieldMapping": [
-        {"field": "age_at_visit", "name": "Age"},
         { "field": "bmi", "name": "BMI" },
-        {"field": "cocuse", "name": "Cocaine Use"},
-        { "field": "drinkcat", "name": "Alcohol Use" },
-        {"field": "health_insurance", "name": "Health Insurance"},
-        {"field": "weight", "name": "Weight"},
-        { "field": "height", "name": "Height" }
+        { "field": "subject_id", "name": "Subject" }
       ]
     }
   }
