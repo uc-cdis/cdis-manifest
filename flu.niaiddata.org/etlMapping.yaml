@@ -7,7 +7,7 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: species
-
+      - name: strain
     flatten_props:
       - path: demographics
         props:
@@ -20,7 +20,7 @@ mappings:
         props:
           - name: virus_type
           - name: virus_subtype
-      - path: sample
+      - path: samples
         props: 
           - name: biospecimen_anatomic_site
           - name: cell_line
