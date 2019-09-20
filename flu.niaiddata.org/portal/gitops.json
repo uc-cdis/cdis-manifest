@@ -301,5 +301,23 @@
       "accessibleValidationField": "subject_id",
       "downloadAccessor": "object_id"
     }
+  },
+  "dataAvailabilityToolConfig": {
+    "guppyConfig": {
+      "dataType": "subject",
+      "mainField": "virus_subtype",
+      "mainFieldTitle": "Virus subtype",
+      "mainFieldIsNumeric": false,
+      "aggFields": [
+        "biospecimen_anatomic_site",
+        "sample_type",
+        "composition",
+        "strain",
+        "species"
+      ],
+      "fieldMapping": [
+        { "field": "subject_id", "name": "Subject" }
+      ]
+    }
   }
 }
