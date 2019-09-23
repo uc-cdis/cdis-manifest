@@ -10,6 +10,8 @@ mappings:
         value_mappings:
           - true: positive
           - false: negative
+    parent_props:
+      - path: studies[study_objective]
     flatten_props:
       - path: demographics
         props:

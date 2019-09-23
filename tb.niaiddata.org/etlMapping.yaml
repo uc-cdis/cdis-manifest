@@ -16,6 +16,8 @@ mappings:
       - name: rifampicin_res_phenotype
       - name: rifampin_res_phenotype
       - name: streptomycin_res_phenotype
+    parent_props:
+      - path: studies[study_objective]
     flatten_props:
       - path: demographics
         props:
