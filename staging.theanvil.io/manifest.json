@@ -116,7 +116,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.5",
+        "image": "quay.io/cdis/pelican:0.1.6",
         "pull_policy": "Always",
         "env": [
           {
