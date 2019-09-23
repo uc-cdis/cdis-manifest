@@ -174,17 +174,55 @@
             "vital_status",
             "frstdthd",
             "data_type",
-            "data_format"
+            "data_format",
+            "bsdate"
           ]
         }, {
           "title": "Diagnosis",
           "fields": [
-            "arthxbase",
+            "primary_diagnosis",
+            "comorbidity_anemia",
+            "comorbidity_diabetes",
+            "comorbidity_hepatic_disease",
+            "comorbidity_hiv",
+            "comorbidity_renal_disease",
+            "prior_treatment",
+            "year_of_diagnosis"
+          ]
+        }, {
+          "title": "Comorbidity",
+          "fields": [
             "bshbvstat",
             "bshcvstat",
+            "frstcncrd",
+            "frstdmd",
+            "frstdmmd",
+            "frsthtnd",
+            "frsthtnmd"
+          ]
+        }, {
+          "title": "HIV History",
+          "fields": [
             "cd4nadir",
-            "status",
-            "hiv_status"
+            "fcd4lowd",
+            "fposdate",
+            "frstaidd",
+            "lastafrd",
+            "lastcond",
+            "lastcontact",
+            "lcd4higd",
+            "lnegdate",
+            "status"
+          ]
+        }, {
+          "title": "Treatment",
+          "fields": [
+            "arthxbase",
+            "ehaart",
+            "frstartd",
+            "frsthaad",
+            "lastnoad",
+            "lastnohd",
           ]
         }
       ]
@@ -228,14 +266,32 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
+        { "field": "bsdate", "name": "Year of Baseline visit" },
+        { "field": "ehaart", "name": "Ever HAART use" },
+        { "field": "fcd4lowd", "name": "First year seen CD4N < 200 or CD4% < 14" },
+        { "field": "fposdate", "name": "First year seen seropositive" },
+        { "field": "frstaidd", "name": "First reported AIDS year" },
+        { "field": "frstartd", "name": "First reported ART year" },
         { "field": "frstdthd", "name": "Year of Death" },
+        { "field": "frsthaad", "name": "First reported HAART year" },
+        { "field": "lastafrd", "name": "Last reported AIDS free year" },
+        { "field": "lastcond", "name": "Year of last study visit attended" },
+        { "field": "lastcontact", "name": "Last year of contact" },
+        { "field": "lastnoad", "name": "Last reported ART free" },
+        { "field": "lastnohd", "name": "Last reported HAART free year" },
+        { "field": "lcd4higd", "name": "Last year seen with CD4N >= 200 and CD4% >= 14" },
+        { "field": "lnegdate", "name": "Last year seen seronegative" },
         { "field": "arthxbase", "name": "ART Use Prior to Baseline"},
         { "field": "bshbvstat", "name": "Baseline HBV Sero-status"},
         { "field": "bshcvstat", "name": "Baseline HCV Sero-status"},
         { "field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
         { "field": "status", "name": "Summarized HIV Sero-status"},
         {"field": "project_id", "name": "Project ID"},
-        { "field": "hiv_status", "name": "HIV Status"}
+        {"field": "frstcncrd", "name": "First confirmed cancer year"},
+        {"field": "frstdmd", "name": "First visit year with diabetes"},
+        {"field": "frstdmmd", "name": "First visit year with all necessary components to determine diabetes"},
+        {"field": "frsthtnd", "name": "First visit year with hypertension"},
+        {"field": "frsthtnmd", "name": "First visit year with all necessary components to determine hypertension"},
       ],
       "manifestMapping": {
         "resourceIndexType": "file",

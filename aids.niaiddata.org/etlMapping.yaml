@@ -25,14 +25,43 @@ mappings:
       - path: hiv_history_records
         props:
           - name: arthxbase
+          - name: bsdate
           - name: cd4nadir
+          - name: ehaart
+          - name: fcd4lowd
           - name: fposdate
+          - name: frstaidd
+          - name: frstartd
           - name: frstdthd
+          - name: frsthaad
+          - name: lastafrd
+          - name: lastcond
+          - name: lastcontact
+          - name: lastnoad
+          - name: lastnohd
+          - name: lcd4higd
+          - name: lnegdate
           - name: status
       - path: comorbidities
         props:
           - name: bshbvstat
           - name: bshcvstat
+          - name: frstcncrd
+          - name: frstdmd
+          - name: frstdmmd
+          - name: frsthtnd
+          - name: frsthtnmd
+      - path: diagnoses
+        props:
+          - name: primary_diagnosis
+          - name: comorbidity
+          - name: comorbidity_anemia
+          - name: comorbidity_diabetes
+          - name: comorbidity_hepatic_disease
+          - name: comorbidity_hiv
+          - name: comorbidity_renal_disease
+          - name: prior_treatment
+          - name: year_of_diagnosis
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
