@@ -10,6 +10,7 @@ mappings:
       - name: race
       - name: ethnicity
       - name: age_at_enrollment
+      - name: age_at_onset
     aggregated_props:
       - name: veteran_status
         path: visits.demographics
@@ -19,10 +20,6 @@ mappings:
         path: visits.demographics
         src: education_years
         fn: max
-      - name: age_at_onset
-        path: visits.diagnoses
-        src: age_at_onset
-        fn: min
     joining_props:
       - index: file
         join_on: case_id
