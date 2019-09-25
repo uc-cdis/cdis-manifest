@@ -25,14 +25,32 @@ mappings:
       - path: hiv_history_records
         props:
           - name: arthxbase
+          - name: bsdate
           - name: cd4nadir
           - name: fposdate
           - name: frstdthd
           - name: status
+          - name: fcd4lowd
+          - name: frstaidd
+          - name: lastafrd
+          - name: lastcond
+          - name: lastcontact
+          - name: lcd4higd
+          - name: lnegdate
+          - name: ehaart
+          - name: frstartd
+          - name: frsthaad
+          - name: lastnoad
+          - name: lastnohd
       - path: comorbidities
         props:
           - name: bshbvstat
           - name: bshcvstat
+          - name: frstcncrd
+          - name: frstdmd
+          - name: frstdmmd
+          - name: frsthtnd
+          - name: frsthtnmd
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
@@ -111,10 +129,177 @@ mappings:
           - name: abc
           - name: abcv
           - name: adh
+          - name: acvv
+          - name: amb
+          - name: ambv
+          - name: apn
+          - name: apnv
+          - name: apv
+          - name: apvv
+          - name: atp
+          - name: atpv
+          - name: atz
+          - name: atzv
+          - name: azi
+          - name: aziv
+          - name: azt
+          - name: aztv
+          - name: cbv
+          - name: cbvv
+          - name: cip
+          - name: cipv
+          - name: cla
+          - name: clav
+          - name: cob
+          - name: cobv
+          - name: cpr
+          - name: cprv
+          - name: d4t
+          - name: d4tv
+          - name: dcv
+          - name: dcvv
+          - name: ddc
+          - name: ddcv
+          - name: ddi
+          - name: ddiv
+          - name: dgt
+          - name: dgtv
+          - name: dlv
+          - name: dlvv
+          - name: dps
+          - name: dpsv
+          - name: drv
+          - name: drvv
+          - name: ecft
+          - name: ecftv
+          - name: efv
+          - name: efvv
+          - name: ei
+          - name: eiv
+          - name: elv
+          - name: elvv
+          - name: enf
+          - name: enfv
+          - name: epo
+          - name: epov
+          - name: epz
+          - name: epzv
+          - name: eth
+          - name: ethv
+          - name: etv
+          - name: etvv
+          - name: evo
+          - name: evov
+          - name: fcv
+          - name: fcvv
+          - name: flz
+          - name: flzv
+          - name: fpv
+          - name: fpvv
+          - name: fsc
+          - name: fscv
+          - name: ftc
+          - name: ftcv
+          - name: gcv
+          - name: gcvv
+          - name: hor
+          - name: horv
+          - name: hxu
+          - name: hxuv
+          - name: idv
+          - name: idvv
+          - name: ii
+          - name: iiv
+          - name: ist
+          - name: istv
+          - name: isz
+          - name: iszv
+          - name: itf
+          - name: itfv
+          - name: itz
+          - name: itzv
+          - name: ktz
+          - name: ktzv
+          - name: lam
+          - name: lamdv
+          - name: lpv
+          - name: lpvv
+          - name: mb
+          - name: mcx
+          - name: mcxv
+          - name: mep
+          - name: mepv
+          - name: mon
+          - name: monv
+          - name: mpl
+          - name: mplv
+          - name: nan
+          - name: nanv
+          - name: neu
+          - name: neuv
+          - name: nfv
+          - name: nfvv
+          - name: nnrti
+          - name: nnrtiv
+          - name: nrti
+          - name: nrtiv
+          - name: nvp
+          - name: nvpv
+          - name: nys
+          - name: nysv
+          - name: odf
+          - name: odfv
+          - name: pdl
+          - name: pdlv
+          - name: peg
+          - name: pegv
+          - name: pi
+          - name: piv
+          - name: prd
+          - name: prdv
+          - name: prz
+          - name: przv
+          - name: pyz
+          - name: pyzv
+          - name: reb
+          - name: rebv
+          - name: rfm
+          - name: rfmv
+          - name: rif
+          - name: rifv
+          - name: rpv
+          - name: rpvv
+          - name: rtv
+          - name: rtvv
+          - name: sbd
+          - name: sbdv
+          - name: slz
+          - name: slzv
+          - name: sqv
+          - name: sqvv
+          - name: taf
+          - name: tafv
+          - name: tdf
+          - name: tdfv
           - name: thrpy
           - name: thrpyv
+          - name: tmp
+          - name: tmpv
+          - name: tpv
+          - name: tpvv
+          - name: trd
+          - name: tru
+          - name: truv
           - name: trz
           - name: trzv
+          - name: tum
+          - name: tumv
+          - name: tzv
+          - name: tzvv
+          - name: vcv
+          - name: vcvv
+          - name: vcz
+          - name: vczv
       - path: summary_socio_demographics
         props:
           - name: cocuse
@@ -125,6 +310,73 @@ mappings:
           - name: income
           - name: insurance
           - name: paidsex
+          - name: ageatbl
+          - name: ageatbl_gt89
+          - name: basecch
+          - name: basecoc
+          - name: basecrack
+          - name: basefhiv
+          - name: basefinj
+          - name: basefsex
+          - name: baseher
+          - name: baseidu
+          - name: basemdon
+          - name: basemdonrx
+          - name: basemhem
+          - name: basemhiv
+          - name: baseminj
+          - name: basemman
+          - name: basemsex
+          - name: basenidu
+          - name: basepot
+          - name: basesbxnrx
+          - name: basesex
+          - name: basetran
+          - name: eductn
+          - name: paidsex
+          - name: riskcat
+          - name: sexident
+          - name: cesd
+          - name: cocuse
+          - name: cognf
+          - name: crackuse
+          - name: drink_status
+          - name: drinkcat
+          - name: emotl
+          - name: employ
+          - name: enfat
+          - name: ex_prisoner
+          - name: fsex6mo
+          - name: heruse
+          - name: hlthp
+          - name: hlthr
+          - name: homeless
+          - name: idu
+          - name: income
+          - name: insurance
+          - name: marstat
+          - name: mdonrxuse
+          - name: mdonuse
+          - name: msex6mo
+          - name: mthause
+          - name: ndrnkwk
+          - name: nidu
+          - name: odrguse
+          - name: pain
+          - name: physf
+          - name: potuse
+          - name: qlindx
+          - name: recrxuse
+          - name: resid
+          - name: rolef
+          - name: sbxnrxuse
+          - name: smkgrp
+          - name: smkhist
+          - name: smoke_status
+          - name: soclf
+          - name: v17idu
+          - name: v20evndl
+          - name: v24idu
     aggregated_props:
       - name: viral_load
         path: summary_lab_results
