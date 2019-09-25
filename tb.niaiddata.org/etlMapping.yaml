@@ -107,14 +107,41 @@ mappings:
     flatten_props:
       - path: summary_socio_demographics
         props:
+          - name: basenidu
           - name: cocuse
+          - name: cokmtc
           - name: drinkcat
+          - name: drink_status
           - name: eductn
           - name: emotl
           - name: employ
+          - name: ex_prisoner
           - name: income
           - name: insurance
+          - name: homeless
           - name: paidsex
+          - name: smoke_status
+          - name: tb_care_worker
+          - name: worked_abroad
+      - path: summary_drug_uses
+        props:
+          - name: am
+          - name: amx_clv
+          - name: cm
+          - name: cs
+          - name: e
+          - name: eto
+          - name: ipm_cln
+          - name: km
+          - name: lzd
+          - name: lfx
+          - name: mfx
+          - name: ofx
+          - name: pas
+          - name: pto
+          - name: s
+          - name: r
+          - name: z
     aggregated_props:
       - name: _drug_results
         path: samples.tb_results
