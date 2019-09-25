@@ -221,7 +221,7 @@ mappings:
           - name: ktz
           - name: ktzv
           - name: lam
-          - name: lamdv
+          - name: lamv
           - name: lpv
           - name: lpvv
           - name: mb
@@ -377,6 +377,46 @@ mappings:
           - name: v17idu
           - name: v20evndl
           - name: v24idu
+      - path: summary_lab_results
+        props:
+          - name: baff
+          - name: bca1
+          - name: ccr5
+          - name: cd4dt
+          - name: chol
+          - name: chol_hdl_ration
+          - name: crp
+          - name: eotaxin
+          - name: gmcsf
+          - name: gp130
+          - name: hdlchol
+          - name: hsrat
+          - name: ifng
+          - name: il10
+          - name: il12
+          - name: il17
+          - name: il1b
+          - name: il2
+          - name: il4
+          - name: il6
+          - name: il8
+          - name: ldlcholc
+          - name: ldlchold
+          - name: ldlchold_ratio
+          - name: leu2n
+          - name: leu2p
+          - name: leu3n
+          - name: leu3p
+          - name: leu4n
+          - name: leu4p
+          - name: llq_vl
+          - name: mcp1
+          - name: tnfa
+          - name: triglyc
+          - name: ud_vl
+          - name: viral_load
+          - name: viral_load_kit
+          - name: vldt
     aggregated_props:
       - name: viral_load
         path: summary_lab_results
