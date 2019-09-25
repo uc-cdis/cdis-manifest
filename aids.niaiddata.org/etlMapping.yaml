@@ -417,6 +417,7 @@ mappings:
           - name: viral_load
           - name: viral_load_kit
           - name: vldt
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: viral_load
         path: summary_lab_results
