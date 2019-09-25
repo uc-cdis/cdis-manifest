@@ -210,12 +210,6 @@
         "education_years"
       ]
     },
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "case",
-      "index": "",
-      "nodeCountField": "node_id"
-    },
   "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
@@ -229,9 +223,6 @@
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
     },
-    "table": {
-      "enabled": true
-    },
     "buttons": [
       {
         "enabled": true,
@@ -240,6 +231,15 @@
         "leftIcon": "user",
         "rightIcon": "download",
         "fileName": "data.json"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
       }
     ]
   },
@@ -291,7 +291,17 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
-    "buttons": [],
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      }
+    ],
     "dropdowns": {}
   }
 }
