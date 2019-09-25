@@ -19,8 +19,8 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "spark": "quay.io/cdis/gen3-spark:feat_init",
-    "tube": "quay.io/cdis/tube:0.3.6",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.3.15",
     "guppy": "quay.io/cdis/guppy:0.2.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0"
   },
