@@ -234,11 +234,11 @@
       },
       {
         "enabled": true,
-        "type": "file-manifest",
+        "type": "manifest",
         "title": "Download Manifest",
         "leftIcon": "datafile",
         "rightIcon": "download",
-        "fileName": "file-manifest.json"
+        "fileName": "manifest.json"
       }
     ]
   },
@@ -293,11 +293,11 @@
     "buttons": [
       {
         "enabled": true,
-        "type": "manifest",
+        "type": "file-manifest",
         "title": "Download Manifest",
         "leftIcon": "datafile",
         "rightIcon": "download",
-        "fileName": "manifest.json"
+        "fileName": "file-manifest.json"
       }
     ],
     "dropdowns": {}
