@@ -12,15 +12,15 @@ mappings:
       - name: age_at_enrollment
     aggregated_props:
       - name: veteran_status
-        path: visits.demographics
+        path: cases.demographics
         src: veteran_status
         fn: set
       - name: education_years
-        path: visits.demographics
+        path: cases.demographics
         src: education_years
         fn: max
       - name: age_at_onset
-        path: visits.diagnoses
+        path: cases.diagnoses
         src: age_at_onset
         fn: min
     joining_props:
