@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-1",
+  "homepageHref": "https://niaiddata.org/",
   "graphql": {
     "boardCounts": [
       {
@@ -106,6 +107,23 @@
           "link": "/identity",
           "color": "#a2a2a2",
           "name": "Profile"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "/",
+          "name": "TB Environment"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
         }
       ]
     },
