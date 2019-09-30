@@ -330,19 +330,18 @@
   },
   "dataAvailabilityToolConfig": {
     "guppyConfig": {
-      "dataType": "follow_up",
-      "mainField": "visit_date",
-      "mainFieldTitle": "Visit year",
-      "mainFieldIsNumeric": true,
+      "dataType": "subject",
+      "mainField": "_type_of_resistances",
+      "mainFieldTitle": "Type of Resistance",
+      "mainFieldIsNumeric": false,
       "aggFields": [
-        "bmi",
-        "weight",
-        "height"
+        "gender",
+        "race",
+        "ethnicity",
+        "vital_status",
+        "year_of_birth"
       ],
-      "fieldMapping": [
-        { "field": "bmi", "name": "BMI" },
-        { "field": "subject_id", "name": "Subject" }
-      ]
+      "fieldMapping": []
     }
   }
 }
