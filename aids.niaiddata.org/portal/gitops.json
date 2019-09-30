@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-1",
+  "homepageHref": "https://aids.niaiddata.org/",
   "graphql": {
     "boardCounts": [
       {
@@ -109,6 +110,23 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "link": "/",
+          "name": "AIDS Environment"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ]
+    },
     "login": {
       "title": "NIAID Data Ecosystem AIDS Environment",
       "subTitle": "Explore, Analyze, and Share Data",
@@ -141,7 +159,7 @@
   "analysisTools": [ "ndhHIV" ],
   "dataExplorerConfig": {
     "charts": {
-      "project_id": {
+      "study_submitter_id": {
         "chartType": "count",
         "title": "Studies"
       },
@@ -167,7 +185,7 @@
         {
           "title": "Subject",
           "fields":[
-            "project_id",
+            "study_submitter_id",
             "gender",
             "race",
             "ethnicity",
@@ -185,6 +203,29 @@
             "cd4nadir",
             "status",
             "hiv_status"
+          ]
+        }, {
+          "title": "Comorbidity",
+          "fields": [
+            "frstcncrd",
+            "frstdmd",
+            "frstdmmd",
+            "frsthtnd",
+            "frsthtnmd"
+          ]
+        }, {
+          "title": "HIV History",
+          "fields": [
+            "cd4nadir",
+            "fcd4lowd",
+            "fposdate",
+            "frstaidd",
+            "lastafrd",
+            "lastcond",
+            "lastcontact",
+            "lcd4higd",
+            "lnegdate",
+            "status"
           ]
         }
       ]
@@ -228,6 +269,7 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
+        { "field": "study_submitter_id", "name": "Study" },
         { "field": "frstdthd", "name": "Year of Death" },
         { "field": "arthxbase", "name": "ART Use Prior to Baseline"},
         { "field": "bshbvstat", "name": "Baseline HBV Sero-status"},
@@ -235,7 +277,22 @@
         { "field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
         { "field": "status", "name": "Summarized HIV Sero-status"},
         {"field": "project_id", "name": "Project ID"},
-        { "field": "hiv_status", "name": "HIV Status"}
+        { "field": "hiv_status", "name": "HIV Status"},
+        {"field": "frstcncrd", "name": "First Confirmed Cancer Year"},
+        {"field": "frstdmd", "name": "First Visit Year with Diabetes"},
+        {"field": "frstdmmd", "name": "First Visit Year with All Necessary Components to Determine Diabetes"},
+        {"field": "frsthtnd", "name": "First Visit Year with Hypertension"},
+        {"field": "frsthtnmd", "name": "First Visit Year with All Necessary Components to Determine Hypertension"},
+        {"field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
+        {"field": "fcd4lowd", "name": "First Year Seen CD4N < 200 or CD4% < 14"},
+        {"field": "fposdate", "name": "First Year Seen Seropositive"},
+        {"field": "frstaidd", "name": "First Reported AIDS Year"},
+        {"field": "lastafrd", "name": "Last Reported AIDS Free Year"},
+        {"field": "lastcond", "name": "Year of Last Study Visit Attended"},
+        {"field": "lastcontact", "name": "Last Year of Contact"},
+        {"field": "lcd4higd", "name": "Last Year Seen with CD4N >= 200 and CD4% >= 14"},
+        {"field": "lnegdate", "name": "Last Year Seen Seronegative"},
+        {"field": "status", "name":"Summarized HIV Sero-status"}
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
