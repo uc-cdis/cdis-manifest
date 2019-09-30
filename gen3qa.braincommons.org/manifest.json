@@ -4,11 +4,11 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.2.1",
+    "arborist": "quay.io/cdis/arborist:2.2.1",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
-    "fence": "quay.io/cdis/fence:2.8.2",
-    "indexd": "quay.io/cdis/indexd:1.1.0",
+    "fence": "quay.io/cdis/fence:4.5.0",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
     "peregrine-canary": "quay.io/cdis/peregrine:fix_promise",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
@@ -22,6 +22,12 @@
     "tube": "quay.io/cdis/tube:0.3.15",
     "guppy": "quay.io/cdis/guppy:0.2.0",
     "wts": "quay.io/cdis/workspace-token-service:0.1.0"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+      "arborist": "true"
   },
   "arranger": {
     "project_id": "brain_2",
