@@ -14,6 +14,12 @@ mappings:
       - path: demographics
         props:
           - name: gender
+            value_mappings:
+              - female: Female
+              - male: Male
+              - unspecified: Not Specified
+              - not reported: Not Specified
+              - unknown: Unknown
           - name: race
           - name: ethnicity
           - name: vital_status
