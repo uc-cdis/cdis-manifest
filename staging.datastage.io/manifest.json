@@ -35,7 +35,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.4",
+        "image": "quay.io/cdis/pelican:0.1.7",
         "pull_policy": "Always",
         "env": [
           {
