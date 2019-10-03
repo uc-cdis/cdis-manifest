@@ -246,6 +246,11 @@
         "title": "Resource",
         "fields": ["dataset", "research_focus"]
       }]
+    },
+    "phenotypeNameMapping": {
+      "NDE: TB": "_type_of_resistances",
+      "NDE: Flu": "virus_subtype",
+      "NDE: AIDS": "status"
     }
   }
 }
