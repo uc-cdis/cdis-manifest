@@ -58,7 +58,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "case"
+            "value": "subject"
           }
         ],
         "volumeMounts": [
@@ -241,7 +241,7 @@
     "indices": [
       {
         "index": "internalstaging_etl",
-        "type": "case"
+        "type": "subject"
       },
       {
         "index": "internalstaging_file",
