@@ -3,9 +3,9 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       },
       {
         "graphql": "_study_count",
@@ -20,8 +20,8 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_subject_count",
+        "name": "Subject"
       },
       {
         "graphql": "_study_count",
@@ -70,8 +70,8 @@
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
-          "name": "Cases"
+          "node": "subject",
+          "name": "Subjects"
         },
         {
           "node": "study",
@@ -155,9 +155,9 @@
         "chartType": "count",
         "title": "Projects"
       },
-      "case_id": {
+      "subject_id": {
         "chartType": "count",
-        "title": "Cases"
+        "title": "Subjects"
       },
       "gender": {
         "chartType": "pie",
@@ -192,29 +192,7 @@
         {
           "title": "Diagnosis",
           "fields": [
-            "diastolic_blood_pressure",
-            "systolic_blood_pressure",
-            "lymphocyte_ncnc_bld",
-            "mch_entmass_rbc",
-            "mcv_entvol_rbc",
-            "mchc_mcnc_rbc",
-            "monocyte_ncnc_bld",
-            "neutrophil_ncnc_bld",
-            "pmv_entvol_bld",
-            "rbc_ncnc_bld",
-            "rdw_ratio_rbc",
-            "hemoglobin_mcnc_bld",
-            "platelet_ncnc_bld",
-            "hematocrit_vfr_bld",
-            "wbc_ncnc_bld",
-            "basophil_ncnc_bld",
-            "eosinophil_ncnc_bld",
-            "chol1",
-            "trig1",
-            "unit_triglycerides1",
-            "hdl1",
-            "unit_hdl1",
-            "ldl1"
+            "diastolic_blood_pressure"
           ]
         },
         {
@@ -309,19 +287,19 @@
     ],
     "arrangerConfig": {
       "projectId": "search",
-      "graphqlField": "case",
+      "graphqlField": "subject",
       "index": "",
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
       },
-      "nodeCountField": "case_id"
+      "nodeCountField": "subject_id"
     },
     "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
+      "dataType": "subject",
+      "nodeCountTitle": "Subjectss",
       "fieldMapping": [
         { "field": "consent_codes", "name": "Data Use Restriction" },
         { "field": "bmi", "name": "BMI" }
@@ -329,8 +307,8 @@
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -377,8 +355,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
