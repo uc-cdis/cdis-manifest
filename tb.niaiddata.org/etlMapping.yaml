@@ -17,7 +17,7 @@ mappings:
       - name: rifampin_res_phenotype
       - name: streptomycin_res_phenotype
     parent_props:
-      - path: studies[study_objective]
+      - path: studies[study_objective,study_submitter_id:submitter_id]
     flatten_props:
       - path: demographics
         props:
@@ -34,6 +34,27 @@ mappings:
           - name: year_of_birth
           - name: study_center
             src: country_of_birth
+      - path: diagnoses
+        props:
+          - name: comorbidity_anemia
+          - name: comorbidity_renal_disease
+          - name: primary_diagnosis
+          - name: type_of_resistance
+          - name: lung_localization
+          - name: comorbidity_hiv
+          - name: comorbidity_diabetes
+          - name: comorbidity_hepatic_disease
+        sorted_by: updated_datetime, desc
+      - path: summary_socio_demographics
+        props:
+          - name: homeless
+          - name: basenidu
+          - name: smoke_status
+          - name: ex_prisoner
+          - name: worked_abroad
+          - name: cokmtc
+          - name: drink_status
+          - name: tb_care_worker
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
@@ -73,6 +94,34 @@ mappings:
         src: test_type
         path: samples.tb_results
         fn: set
+      - name: _x_ray_count
+        src: x_ray_count
+        path: imaging_studies
+        fn: sum
+      - name: _ct_count
+        src: ct_count
+        path: imaging_studies
+        fn: sum
+      - name: library_strategy
+        src: library_strategy
+        path: samples.aliquots.read_groups
+        fn: list
+      - name: platform
+        src: platform
+        path: samples.aliquots.read_groups
+        fn: list
+      - name: experimental_strategies
+        src: experimental_strategy
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: list
+      - name: treatment_outcome
+        src: treatment_outcome
+        path: follow_ups.treatments
+        fn: list
+      - name: treatment_status
+        src: treatment_status
+        path: follow_ups.treatments
+        fn: list
     joining_props:
       - index: file
         join_on: subject_id
