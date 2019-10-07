@@ -150,13 +150,27 @@
         "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json"
       }
     ],
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
-      ]
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      }
     }
   },
   "fileExplorerConfig": {
@@ -191,6 +205,16 @@
         "object_id"
       ]
     },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json"
+      }
+    ],
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
@@ -203,11 +227,8 @@
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
-    "buttons": [],
     "dropdowns": {}
   }
 }
