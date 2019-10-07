@@ -50,5 +50,6 @@ mappings:
       case:
         props:
           - name: case_id
+            fn: set
             src: id
           - name: project_id
