@@ -150,13 +150,27 @@
         "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json"
       }
     ],
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
-      ]
+      ],
+    "manifestMapping": {
+        "resourceIndexType": "case",
+        "resourceIdField": "case_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
     }
   },
   "fileExplorerConfig": {
@@ -191,6 +205,22 @@
         "object_id"
       ]
     },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json"
+      },
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
