@@ -40,30 +40,30 @@
       },
       "buttons": [
         {
-          "name": "Define Data Field",
+          "name": "Data Dictionary",
           "icon": "data-field-define",
-          "body": "The BRAIN Commons define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "Browse the nodes and properties of the graph data model used in the BRAIN Commons",
           "link": "/DD",
-          "label": "Learn more"
+          "label": "Explore Data Model"
         },
         {
           "name": "Explore Data",
           "icon": "data-explore",
-          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "body": "Search and download subsets of data from the BRAIN Commons using intuitive navigation tools",
           "link": "/explorer",
-          "label": "Explore data"
+          "label": "Explore Data"
         },
         {
-          "name": "Access Data",
+          "name": "Query Data",
           "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
+          "body": "Search and download subsets of data from the BRAIN Commons using GraphQL queries",
           "link": "/query",
-          "label": "Query data"
+          "label": "Query Data"
         },
         {
           "name": "Analyze Data",
           "icon": "data-analyze",
-          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "body": "Perform analysis on the BRAIN Commons data using Jupyter Notebooks",
           "link": "#hostname#workspace/",
           "label": "Run analysis"
         }
