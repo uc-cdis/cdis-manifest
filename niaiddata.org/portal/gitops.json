@@ -55,7 +55,7 @@
       "buttons": [
         {
           "name": "ImmPort",
-          "body": "Explore ImmPort, a resource funded by the NIH, NIAID, and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
+          "body": "Visit ImmPort, a resource funded by the NIH, NIAID, and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
           "external_link": "https://www.immport.org/home",
           "external_link_text": "Visit Website",
           "logo": "/custom/logo/immport-main-icon.png"
@@ -63,23 +63,20 @@
         {
           "name": "NIAID TB Environment",
           "icon": "data-explore",
-          "body": "Explore data from the NIAID TB Portals Program and PATRIC, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
-          "external_link": "https://tb.niaiddata.org",
-          "internal_link_text": "Explore cohorts"
+          "body": "Explore data from the NIAID <a href='https://tbportals.niaid.nih.gov/'>TB Portals</a> Program and <a href='https://tbportals.niaid.nih.gov/'>PATRIC</a>, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
+          "external_link": "https://tb.niaiddata.org"
         },
         {
           "name": "NIAID AIDS Environment",
           "icon": "data-explore",
-          "body": "Explore the NIAID's Multicenter Acquired Immunodeficiency Syndrome Cohort Study (MACS) and Women's Interagency HIV Study (WIHS).",
-          "external_link": "https://aids.niaiddata.org",
-          "internal_link_text": "Explore cohorts"
+          "body": "Explore data from the NIAID Multicenter Acquired Immunodeficiency Syndrome Cohort Study (MACS) and Women's Interagency HIV Study (WIHS).",
+          "external_link": "https://aids.niaiddata.org"
         },
         {
           "name": "NIAID Flu Environment",
           "icon": "data-explore",
-          "body": "Explore a collection of Influenza related studies from the NIAID Divison of Microbiology & Infectious Diseases.",
-          "external_link": "https://flu.niaiddata.org",
-          "internal_link_text": "Explore cohorts"
+          "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID).",
+          "external_link": "https://flu.niaiddata.org"
         }
       ]
     },
@@ -192,41 +189,50 @@
       },
       "dataset": {
         "chartType": "pie",
-        "title": "Dataset"
+        "title": "Resources",
+        "chartRow": 0
+      },
+      "data_format": {
+        "chartType": "bar",
+        "title": "Data Format",
+        "chartRow": 0
+      },
+      "data_type": {
+        "chartType": "pie",
+        "title": "Data Type",
+        "chartRow": 0
+      },
+      "experimental_strategies": {
+        "chartType": "bar",
+        "title": "Experimental Strategies",
+        "chartRow": 0
       },
       "species": {
         "chartType": "bar",
-        "title": "Genus species"
+        "title": "Genus species",
+        "chartRow": 0
       },
       "gender": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Gender",
+        "chartRow": 1
+      },
+      "race": {
+        "chartType": "pie",
+        "title": "Race",
+        "chartRow": 1
+      },
+      "ethnicity": {
+        "chartType": "pie",
+        "title": "Ethnicity",
+        "chartRow": 1
+      },
+      "biospecimen_anatomic_site": {
+        "chartType": "pie",
+        "title": "Biospecimen Anatomic Site",
+        "chartRow": 1
       }
     },
-    "projectSections": [
-      { 
-        "title": "Resource",
-        "field": "dataset",
-        "options": []
-      }
-    ], 
-    "subjectSections": [
-      { 
-        "title": "Ethnicity", 
-        "field": "ethnicity",
-        "options": []
-      },
-      { 
-        "title": "Gender",
-        "field": "gender",
-        "options": []
-      },
-      { 
-        "title": "Genus species",
-        "field": "species",
-        "options": []
-      }
-    ],
     "fieldMapping" : [
       { "field": "dataset", "name": "Resource" },
       { "field": "studyAccession", "name": "Study" },
@@ -234,23 +240,103 @@
       { "field": "gender", "name": "Gender" },
       { "field": "ethnicity", "name": "Ethnicity" },
       { "field": "strain", "name": "Strain" },
-      { "field": "species", "name": "Genus species" },
-      { "field": "submitter_id", "name": "Submitter ID" }
+      { "field": "species", "name": "Genus Species" },
+      { "field": "submitter_id", "name": "Submitter ID" },
+      { "field": "race", "name": "Race" },
+      { "field": "hiv_status", "name": "HIV Status" },
+      { "field": "study_submitter_id", "name": "Study"},
+      { "field": "frstdthd", "name": "Year of Death" },
+      { "field": "arthxbase", "name": "ART Use Prior to Baseline"},
+      { "field": "bshbvstat", "name": "Baseline HBV Sero-status"},
+      { "field": "bshcvstat", "name": "Baseline HCV Sero-status"},
+      { "field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
+      { "field": "status", "name": "Summarized HIV Sero-status"},
+      {"field": "project_id", "name": "Project ID"},
+      {"field": "frstcncrd", "name": "First Confirmed Cancer Year"},
+      {"field": "frstdmd", "name": "First Visit Year with Diabetes"},
+      {"field": "frstdmmd", "name": "First Visit Year with All Necessary Components to Determine Diabetes"},
+      {"field": "frsthtnd", "name": "First Visit Year with Hypertension"},
+      {"field": "frsthtnmd", "name": "First Visit Year with All Necessary Components to Determine Hypertension"},
+      {"field": "fcd4lowd", "name": "First Year Seen CD4N < 200 or CD4% < 14"},
+      {"field": "fposdate", "name": "First Year Seen Seropositive"},
+      {"field": "frstaidd", "name": "First Reported AIDS Year"},
+      {"field": "lastafrd", "name": "Last Reported AIDS Free Year"},
+      {"field": "lastcond", "name": "Year of Last Study Visit Attended"},
+      {"field": "lastcontact", "name": "Last Year of Contact"},
+      {"field": "lcd4higd", "name": "Last Year Seen with CD4N >= 200 and CD4% >= 14"},
+      {"field": "lnegdate", "name": "Last Year Seen Seronegative"}
     ],
     "filterConfig": {
       "tabs": [{
-        "title": "Subject",
-        "fields": ["ethnicity", "gender", "species"]
+        "title": "Resource",
+        "fields": ["dataset", "data_format", "data_type"]
       },
       {
-        "title": "Resource",
-        "fields": ["dataset", "research_focus"]
+        "title": "Subject",
+        "fields": ["ethnicity", "gender", "species", "race", "experimental_strategies"]
+      },
+      {
+        "title": "Diagnosis",
+        "fields": [
+          "arthxbase",
+          "bshbvstat",
+          "bshcvstat",
+          "cd4nadir",
+          "status",
+          "hiv_status"
+        ]
+      },
+      {
+        "title": "Comorbidity",
+        "fields": [
+          "frstcncrd",
+          "frstdmd",
+          "frstdmmd",
+          "frsthtnd",
+          "frsthtnmd"
+        ]
+      }, {
+        "title": "HIV History",
+        "fields": [
+          "cd4nadir",
+          "fcd4lowd",
+          "fposdate",
+          "frstaidd",
+          "lastafrd",
+          "lastcond",
+          "lastcontact",
+          "lcd4higd",
+          "lnegdate",
+          "status"
+        ]
+      },
+      {
+        "title": "Drug Resistance",
+        "fields": [
+          "amikacin_res_phenotype",
+          "capreomycin_res_phenotype",
+          "isoniazid_res_phenotype",
+          "kanamycin_res_phenotype",
+          "ofloxacin_res_phenotype",
+          "pyrazinamide_res_phenotype",
+          "rifampicin_res_phenotype",
+          "rifampin_res_phenotype",
+          "streptomycin_res_phenotype"
+        ]
+      },
+      {
+        "title": "Experiment",
+        "fields": [
+          "virus_type",
+          "virus_subtype",
+          "analyte_type",
+          "biospecimen_anatomic_site",
+          "cell_line",
+          "sample_type",
+          "composition",
+          "strain"
+        ]
       }]
-    },
-    "phenotypeNameMapping": {
-      "NDE: TB": "_type_of_resistances",
-      "NDE: Flu": "virus_subtype",
-      "NDE: AIDS": "status"
     }
   }
 }
