@@ -114,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "AIDS Environment"
+          "name": "AIDS Environment Home"
         },
         {
           "icon": "upload",
@@ -190,9 +190,7 @@
             "race",
             "ethnicity",
             "vital_status",
-            "frstdthd",
-            "data_type",
-            "data_format"
+            "frstdthd"
           ]
         }, {
           "title": "Diagnosis",
@@ -307,11 +305,11 @@
   "fileExplorerConfig": {
     "charts": {
       "data_type": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Type"
       },
       "data_format": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Format"
       }
     },
