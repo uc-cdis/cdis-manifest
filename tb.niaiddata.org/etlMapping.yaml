@@ -122,6 +122,26 @@ mappings:
         src: treatment_status
         path: follow_ups.treatments
         fn: list
+      - name: genexpert
+        src: genexpert
+        path: summary_mutation_panels
+        fn: set
+      - name: hain
+        src: hain
+        path: summary_mutation_panels
+        fn: set
+      - name: high_confidence
+        src: high_confidence
+        path: summary_mutation_panels
+        fn: set
+      - name: snp
+        src: snp
+        path: summary_mutation_panels
+        fn: set
+      - name: gene_name
+        src: gene_name
+        path: summary_mutation_panels
+        fn: set
     joining_props:
       - index: file
         join_on: subject_id
