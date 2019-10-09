@@ -240,7 +240,7 @@
       { "field": "gender", "name": "Gender" },
       { "field": "ethnicity", "name": "Ethnicity" },
       { "field": "strain", "name": "Strain" },
-      { "field": "species", "name": "Genus Species" },
+      { "field": "species", "name": "Genus species" },
       { "field": "submitter_id", "name": "Submitter ID" },
       { "field": "race", "name": "Race" },
       { "field": "hiv_status", "name": "HIV Status" },
@@ -264,7 +264,16 @@
       {"field": "lastcond", "name": "Year of Last Study Visit Attended"},
       {"field": "lastcontact", "name": "Last Year of Contact"},
       {"field": "lcd4higd", "name": "Last Year Seen with CD4N >= 200 and CD4% >= 14"},
-      {"field": "lnegdate", "name": "Last Year Seen Seronegative"}
+      {"field": "lnegdate", "name": "Last Year Seen Seronegative"},
+      {"field": "amikacin_res_phenotype", "name": "Amikacin Phenotype" },
+      {"field": "capreomycin_res_phenotype", "name": "Capreomycin Phenotype" },
+      {"field": "isoniazid_res_phenotype", "name": "Isoniazid Phenotype" },
+      {"field": "kanamycin_res_phenotype", "name": "Kanamycin Phenotype" },
+      {"field": "ofloxacin_res_phenotype", "name": "Ofloxacin Phenotype" },
+      {"field": "pyrazinamide_res_phenotype", "name": "Pyrazinamide Phenotype" },
+      {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
+      {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
+      {"field": "streptomycin_res_phenotype", "name": "streptomycin Phenotype" }
     ],
     "filterConfig": {
       "tabs": [{
@@ -273,7 +282,7 @@
       },
       {
         "title": "Subject",
-        "fields": ["ethnicity", "gender", "species", "race", "experimental_strategies"]
+        "fields": ["ethnicity", "gender", "species", "race"]
       },
       {
         "title": "Diagnosis",
@@ -327,6 +336,7 @@
       {
         "title": "Experiment",
         "fields": [
+          "experimental_strategies",
           "virus_type",
           "virus_subtype",
           "analyte_type",
