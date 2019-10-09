@@ -200,7 +200,15 @@
             "vital_status",
             "species",
             "treatment_outcome",
-            "type_of_resistance"
+            "type_of_resistance",
+            "homeless",
+            "basenidu",
+            "smoke_status",
+            "ex_prisoner",
+            "worked_abroad",
+            "cokmtc",
+            "drink_status",
+            "tb_care_worker"
           ]
         },
         {
@@ -215,6 +223,41 @@
             "rifampicin_res_phenotype",
             "rifampin_res_phenotype",
             "streptomycin_res_phenotype"
+          ]
+        },
+        {
+          "title": "Comorbidity",
+          "fields": [
+            "comorbidity_anemia",
+            "comorbidity_renal_disease",
+            "primary_diagnosis",
+            "type_of_resistance",
+            "comorbidity_hiv",
+            "comorbidity_diabetes",
+            "comorbidity_hepatic_disease"
+          ]
+        },
+        {
+          "title": "Diagnosis",
+          "fields": [
+            "_x_ray_count",
+            "_ct_count"
+          ]
+        },
+        {
+          "title": "Treatment",
+          "fields": [
+            "treatment_outcome",
+            "treatment_status"
+          ]
+        },
+        {
+          "title": "Experiment",
+          "fields": [
+            "library_strategy",
+            "platform",
+            "data_format",
+            "experimental_strategies"
           ]
         }
       ]
@@ -267,7 +310,30 @@
         {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
         {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
         {"field": "streptomycin_res_phenotype", "name": "Streptomycin Phenotype" },
-        { "field": "study_submitter_id", "name": "Study" }
+        { "field": "study_submitter_id", "name": "Study" },
+        { "field": "comorbidity_anemia", "name": "Anemia" },
+        { "field": "comorbidity_renal_disease", "name": "Renal Disease" },
+        { "field": "primary_diagnosis", "name": "Primary Diagnosis" },
+        { "field": "type_of_resistance", "name": "TB Resistance Type" },
+        { "field": "comorbidity_hiv", "name": "HIV" },
+        { "field": "comorbidity_diabetes", "name": "Diabetes" },
+        { "field": "comorbidity_hepatic_disease", "name": "Hepatic Disease" },
+        { "field": "treatment_outcome", "name": "Treatment Outcome" },
+        { "field": "treatment_status", "name": "Treatment Status" },
+        { "field": "_x_ray_count", "name": "X-Rays" },
+        { "field": "_ct_count", "name": "CT Scans" },
+        { "field": "homeless", "name": "Homeless" },
+        { "field": "basenidu", "name": "Used Recreational Drugs" },
+        { "field": "smoke_status", "name": "Smoker" },
+        { "field": "ex_prisoner", "name": "Ex-Prisoner" },
+        { "field": "worked_abroad", "name": "Worked Abroad" },
+        { "field": "cokmtc", "name": "Exposed to MDR TB Case" },
+        { "field": "drink_status", "name": "Used Alchohol" },
+        { "field": "tb_care_worker", "name": "TB Care Worker" },
+        { "field": "library_strategy", "name": "Library Preparation" },
+        { "field": "platform", "name": "Sequencing Platform" },
+        { "field": "data_format", "name": "Sequencing Data Format" },
+        { "field": "experimental_strategy", "name": "Experimental Stategy" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
