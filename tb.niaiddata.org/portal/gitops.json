@@ -114,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "TB Environment"
+          "name": "TB Environment Home"
         },
         {
           "icon": "upload",
@@ -159,9 +159,9 @@
   "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
-      "project_id": {
+      "study_submitter_id": {
         "chartType": "count",
-        "title": "Projects"
+        "title": "Studies"
       },
       "subject_id": {
         "chartType": "count",
@@ -178,6 +178,14 @@
       "species": {
         "chartType": "bar",
         "title": "Species"
+      },
+      "treatment_outcome": {
+        "chartType": "pie",
+        "title": "Treatment Outcome"
+      },
+      "type_of_resistance": {
+        "chartType": "pie",
+        "title": "Type of Resistance"
       }
     },
     "filters": {
@@ -185,14 +193,14 @@
         {
           "title": "Subject",
           "fields":[
-            "project_id",
+            "study_submitter_id",
             "gender",
             "race",
             "ethnicity",
             "vital_status",
             "species",
-            "data_type",
-            "data_format"
+            "treatment_outcome",
+            "type_of_resistance"
           ]
         },
         {
@@ -249,7 +257,18 @@
   "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
-      "fieldMapping": [],
+      "fieldMapping": [
+        {"field": "amikacin_res_phenotype", "name": "Amikacin Phenotype" },
+        {"field": "capreomycin_res_phenotype", "name": "Capreomycin Phenotype" },
+        {"field": "isoniazid_res_phenotype", "name": "Isoniazid Phenotype" },
+        {"field": "kanamycin_res_phenotype", "name": "Kanamycin Phenotype" },
+        {"field": "ofloxacin_res_phenotype", "name": "Ofloxacin Phenotype" },
+        {"field": "pyrazinamide_res_phenotype", "name": "Pyrazinamide Phenotype" },
+        {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
+        {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
+        {"field": "streptomycin_res_phenotype", "name": "Streptomycin Phenotype" },
+        { "field": "study_submitter_id", "name": "Study" }
+      ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
@@ -263,11 +282,11 @@
   "fileExplorerConfig": {
     "charts": {
       "data_type": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Type"
       },
       "data_format": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Format"
       }
     },
@@ -286,7 +305,6 @@
     "table": {
       "enabled": true,
       "fields": [
-        "subject_id",
         "file_name",
         "file_size",
         "object_id"
