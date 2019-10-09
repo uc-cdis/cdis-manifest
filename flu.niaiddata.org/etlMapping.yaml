@@ -9,7 +9,7 @@ mappings:
       - name: species
       - name: strain
     parent_props:
-      - path: studies[study_objective]
+      - path: studies[study_objective,study_submitter_id:submitter_id]
     flatten_props:
       - path: demographics
         props:
