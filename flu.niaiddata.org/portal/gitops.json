@@ -114,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "Flu Environment"
+          "name": "Flu Environment Home"
         },
         {
           "icon": "upload",
@@ -159,9 +159,9 @@
   "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
-      "project_id": {
+      "study_submitter_id": {
         "chartType": "count",
-        "title": "Projects"
+        "title": "Studies"
       },
       "subject_id": {
         "chartType": "count",
@@ -181,13 +181,11 @@
         {
           "title": "Subject",
           "fields":[
-            "project_id",
+            "study_submitter_id",
             "gender",
             "race",
             "ethnicity",
-            "vital_status",
-            "data_type",
-            "data_format"
+            "vital_status"
           ]
         }, {
           "title": "Experiment",
@@ -242,7 +240,9 @@
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
-      "fieldMapping": [],
+      "fieldMapping": [
+        { "field": "study_submitter_id", "name": "Study" }
+      ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
@@ -256,11 +256,11 @@
   "fileExplorerConfig": {
     "charts": {
       "data_type": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Type"
       },
       "data_format": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Format"
       }
     },
