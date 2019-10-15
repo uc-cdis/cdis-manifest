@@ -24,10 +24,38 @@ mappings:
               - unknown: Unknown
           - name: race
           - name: ethnicity
-          - name: vital_status
+          - name: dominant_hand
           - name: year_of_birth
           - name: study_center
             src: country_of_birth
+      - path: exposures
+        props:
+          - name: ageatbl
+          - name: ageatbl_gt89
+          - name: basecch
+          - name: basecoc
+          - name: basecrack
+          - name: baseher
+          - name: baseidu
+          - name: basefhiv
+          - name: basefinj
+          - name: basefsex
+          - name: basemdonrx
+          - name: basemhem
+          - name: basemhiv
+          - name: baseminj
+          - name: basemman
+          - name: basemsex
+          - name: basenidu
+          - name: basepot
+          - name: basesbxnrx
+          - name: basesex
+          - name: basetran
+          - name: drug_used
+          - name: eductn
+          - name: paidsex
+          - name: riskcat
+          - name: sexident
       - path: hiv_history_records
         props:
           - name: arthxbase
@@ -58,11 +86,11 @@ mappings:
           - name: frsthtnd
           - name: frsthtnmd
     aggregated_props:
-      - name: _follow_ups_count
-        path: follow_ups
+      - name: _visits_count
+        path: visits
         fn: count
       - name: _summary_lab_results_on_follow_up_count
-        path: follow_ups.summary_lab_results
+        path: visits.summary_lab_results
         fn: count
       - name: _samples_count
         path: samples
@@ -82,16 +110,8 @@ mappings:
       - name: _submitted_unaligned_reads_count
         path: samples.aliquots.read_groups.submitted_unaligned_reads_files
         fn: count
-      - name: _regimen_or_line_of_therapies
-        src: regimen_or_line_of_therapy
-        path: diagnoses.treatments
-        fn: set
-      - name: _type_of_resistances
-        src: type_of_resistance
-        path: diagnoses
-        fn: set
       - name: _min_viral_load
-        path: follow_ups.summary_lab_results
+        path: visits.summary_lab_results
         src: viral_load
         fn: min
     joining_props:
@@ -107,10 +127,10 @@ mappings:
           - name: file_id
             src: file_id
             fn: set
-  - name: daids_follow_up
-    doc_type: follow_up
+  - name: daids_visit
+    doc_type: visit
     type: aggregator
-    root: follow_up
+    root: visit
     props:
       - name: submitter_id
       - name: age_at_visit
@@ -128,7 +148,7 @@ mappings:
       - name: weight_percentage
       - name: days_to_follow_up
     parent_props:
-      - path: subjects[subject_id:id,project_id,hiv_status]
+      - path: subjects[subject_id:id,project_id,hiv_status].studies[study_id:id]
     flatten_props:
       - path: treatments
         props:
@@ -308,46 +328,12 @@ mappings:
           - name: vczv
       - path: summary_socio_demographics
         props:
-          - name: cocuse
-          - name: drinkcat
-          - name: eductn
-          - name: emotl
-          - name: employ
-          - name: income
-          - name: insurance
-          - name: paidsex
-          - name: ageatbl
-          - name: ageatbl_gt89
-          - name: basecch
-          - name: basecoc
-          - name: basecrack
-          - name: basefhiv
-          - name: basefinj
-          - name: basefsex
-          - name: baseher
-          - name: baseidu
-          - name: basemdon
-          - name: basemdonrx
-          - name: basemhem
-          - name: basemhiv
-          - name: baseminj
-          - name: basemman
-          - name: basemsex
-          - name: basenidu
-          - name: basepot
-          - name: basesbxnrx
-          - name: basesex
-          - name: basetran
-          - name: eductn
-          - name: paidsex
-          - name: riskcat
-          - name: sexident
           - name: cesd
           - name: cocuse
           - name: cognf
           - name: crackuse
-          - name: drink_status
           - name: drinkcat
+          - name: drink_status
           - name: emotl
           - name: employ
           - name: enfat
