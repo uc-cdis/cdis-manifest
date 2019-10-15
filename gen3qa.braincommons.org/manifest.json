@@ -7,6 +7,8 @@
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "fence": "quay.io/cdis/fence:4.6.2",
     "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
@@ -16,7 +18,6 @@
     "sheepdog": "quay.io/cdis/sheepdog:1.1.11",
     "portal": "quay.io/cdis/data-portal:2.21.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.15",
@@ -29,32 +30,102 @@
   "indexd": {
       "arborist": "true"
   },
-  "arranger": {
-    "project_id": "brain_2",
-    "auth_filter_field": "auth_resource_path"
-  },
-  "jupyterhub": {
-    "enabled": "yes",
+  "hatchery": {
+    "user-namespace": "jupyter-pods-bhcqa",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "10Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:master",
+      "env": {
+        "NAMESPACE": "bhcqa",
+        "HOSTNAME": "gen3qa.braincommons.org"
+      },
+      "args": [],
+      "command": [
+        "/bin/bash",
+        "/sidecarDockerrun.sh"
+      ],
+      "lifecycle-pre-stop": [
+        "su",
+        "-c",
+        "echo test",
+        "-s",
+        "/bin/sh",
+        "root"
+      ]
+    },
     "containers": [
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 0.5,
-                    "memory": "256M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
-                  },
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 1.0,
-                    "memory": "1024M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
-                  },
-                  {
-                    "name": "Brain - Python/R/Freesurfer",
-                    "cpu": 1.0,
-                    "memory": "1.5G",
-                    "image": "quay.io/cdis/jupyterbrain:1.1"
-                  }
-                ]
+      {
+        "target-port": 8787,
+        "cpu-limit": "1.0",
+        "memory-limit": "1.5Gi",
+        "name": "Brain - Python/R/Freesurfer",
+        "image": "quay.io/cdis/jupyterbrain:1.1",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/"
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "0.5",
+        "memory-limit": "256Mi",
+        "name": "Bioinfo - Python/R",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8989,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "Bioinfo - Python/R",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      }
+    ]
   },
   "global": {
     "environment": "bhcqa",
