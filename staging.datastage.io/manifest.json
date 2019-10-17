@@ -35,7 +35,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.7",
+        "image": "quay.io/cdis/pelican:0.1.8",
         "pull_policy": "Always",
         "env": [
           {
@@ -75,8 +75,8 @@
             "subPath": "creds.json"
           }
         ],
-        "cpu-limit": "1",
-        "memory-limit": "12Gi"
+        "cpu-limit": "2",
+        "memory-limit": "6Gi"
       },
       "volumes": [
         {
