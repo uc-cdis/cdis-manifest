@@ -347,6 +347,10 @@
   },
   "fileExplorerConfig": {
     "charts": {
+      "subject_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      },
       "data_type": {
         "chartType": "pie",
         "title": "File Type"
@@ -371,6 +375,7 @@
     "table": {
       "enabled": true,
       "fields": [
+        "subject_id",
         "file_name",
         "file_size",
         "object_id"
