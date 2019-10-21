@@ -7,11 +7,12 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:4.5.0",
-    "arborist": "quay.io/cdis/arborist:2.2.1",
+    "fence": "quay.io/cdis/fence:4.7.0",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:2.0.1",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
     "portal": "quay.io/cdis/data-portal:2.2.5",
