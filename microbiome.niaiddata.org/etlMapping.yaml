@@ -1,0 +1,84 @@
+mappings:
+  - name: microbiome
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: cohort_name
+      - name: species
+    parent_props:
+      - path: studies[study_submitter_id:submitter_id,study_organization,study_doi,is_clinical_trial,study_setup]
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+            value_mappings:
+              - female: Female
+              - male: Male
+              - unspecified: Not Specified
+              - not reported: Not Specified
+              - unknown: Unknown
+          - name: race
+          - name: ethnicity
+          - name: vital_status
+          - name: year_of_birth
+          - name: study_center
+            src: country_of_birth
+    aggregated_props:
+      - name: _follow_ups_count
+        path: follow_ups
+        fn: count
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: compositions
+        src: composition
+        path: samples
+        fn: set
+      - name: biospecimen_anatomic_sites
+        src: biospecimen_anatomic_site
+        path: samples
+        fn: set
+      - name: experiment_type
+        src: culture
+        path: samples.aliquots.experiments
+        fn: set
+      - name: experimental_strategy
+        src: experimental_strategy
+        path: samples.aliquots.experiments.sequencing_results
+        fn: set
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: file_id
+            src: file_id
+            fn: set
+  - name: microbiome_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
