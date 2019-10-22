@@ -360,7 +360,9 @@
         "ethnicity",
         "human_age_at_index"
       ],
-      "fieldMapping": []
+      "fieldMapping": [
+        { "field": "human_age_at_index", "name": "Age at Index" }
+      ]
     }
   }
 }
