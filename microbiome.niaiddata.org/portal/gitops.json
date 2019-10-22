@@ -278,12 +278,16 @@
   },
   "fileExplorerConfig": {
     "charts": {
+      "subject_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      },
       "data_type": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Type"
       },
       "data_format": {
-        "chartType": "stackedBar",
+        "chartType": "pie",
         "title": "File Format"
       }
     },
