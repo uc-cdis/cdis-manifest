@@ -15,6 +15,10 @@ mappings:
           - name: ethnicity
           - name: age_at_index
           - name: bmi
+          - name: height
+          - name: hispanic_subgroup
+          - name: subcohort
+          - name: weight_baseline
       - path: medical_histories
         props:
           - name: diabetes
@@ -29,6 +33,15 @@ mappings:
           - name: heart_failure
           - name: myocardial_infarction
           - name: stroke
+          - name: cac_score
+          - name: cac_volume
+          - name: carotid_plaque
+          - name: carotid_stenosis
+          - name: cimt_1
+          - name: cimt_2
+          - name: vte_case_status
+          - name: vte_followup_start_age
+          - name: vte_prior_history
       - path: diagnoses
         props:
           - name: metabolic_syndrome_diagnosis
@@ -37,9 +50,13 @@ mappings:
         props:
           - name: diastolic_blood_pressure
           - name: systolic_blood_pressure
+          - name: bp_diastolic       
       - path: medication_records
         props:
           - name: hypertension_meds
+          - name: antihypertensive_meds
+          - name: fasting_lipids
+          - name: lipid_lowering_medication
       - path: samples
         props:
           - name: biospecimen_anatomic_site
@@ -67,6 +84,13 @@ mappings:
           - name: hdl1
           - name: unit_hdl1
           - name: ldl1
+      - path: exposure
+        props:
+          - name: current_smoker_baseline
+          - name: ever_smoker_baseline
+      - path: sample
+        props:
+          - name: biospecimen_anatomic_site 
     aggregated_props:
       - name: _samples_count
         path: samples
