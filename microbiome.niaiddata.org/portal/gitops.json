@@ -14,9 +14,9 @@
         "plural": "Studies"
       },
       {
-        "graphql": "_summary_lab_result_count",
-        "name": "Lab record",
-        "plural": "Lab records"
+        "graphql": "_sample_count",
+        "name": "Sample",
+        "plural": "Samples"
       }
     ],
     "chartCounts": [
@@ -114,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "Microbiome Environment"
+          "name": "Microbiome Environment Home"
         },
         {
           "icon": "upload",
