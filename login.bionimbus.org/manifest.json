@@ -1,14 +1,13 @@
 {
   "notes": [
-    "!!!ONLY one fenceshib replica!!!!",
+    "!!!ONLY one fenceshib replica and no canary!!!!",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "fenceshib": "quay.io/cdis/fence-shib:2.7.1",
-    "fenceshib-canary": "quay.io/cdis/fence-shib:2.7.2",
+    "fenceshib": "quay.io/cdis/fence-shib:2.7.2",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds"
   },
   "jupyterhub": {
@@ -22,8 +21,5 @@
     "portal_app": "dev",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/loginbionimbus/user.yaml"
-  },
-  "canary": {
-    "default": 0
   }
 }
