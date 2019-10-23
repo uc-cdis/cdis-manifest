@@ -26,6 +26,7 @@ mappings:
           - name: year_of_birth
           - name: study_center
             src: country_of_birth
+          - name: human_age_at_index
     aggregated_props:
       - name: _follow_ups_count
         path: follow_ups
