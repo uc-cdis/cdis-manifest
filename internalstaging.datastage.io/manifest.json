@@ -7,19 +7,19 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.1.0",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.4.1",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
+    "fence": "quay.io/cdis/fence:4.9.0",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.19.1",
+    "portal": "quay.io/cdis/data-portal:2.22.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.15",
-    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "tube": "quay.io/cdis/tube:0.3.18",
+    "guppy": "quay.io/cdis/guppy:0.3.9",
     "sower": "quay.io/cdis/sower:0.3.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
@@ -38,7 +38,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.4",
+        "image": "quay.io/cdis/pelican:0.1.8",
         "pull_policy": "Always",
         "env": [
           {
