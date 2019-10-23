@@ -11,6 +11,10 @@
     {
       "URL": "https://flu.niaiddata.org/",
       "name": "NDE: FLU"
+    },
+    {
+      "URL": "https://microbiome.niaiddata.org/",
+      "name": "NDE: Microbiome"
     }
   ],
   "gaTrackingId": "undefined",
@@ -77,6 +81,12 @@
           "icon": "data-explore",
           "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID).",
           "external_link": "https://flu.niaiddata.org"
+        },
+        {
+          "name": "NIAID Microbiome Environment",
+          "icon": "data-explore",
+          "body": "NIAID Data Ecosystem Microbiome Environment",
+          "external_link": "https://microbiome.niaiddata.org"
         }
       ]
     },
@@ -142,7 +152,8 @@
           { "text": "ImmPort", "filterType": "singleSelect"},
           { "text": "NDE: TB", "filterType": "singleSelect"},
           { "text": "NDE: AIDS", "filterType": "singleSelect"},
-          { "text": "NDE: Flu", "filterType": "singleSelect"}
+          { "text": "NDE: Flu", "filterType": "singleSelect"},
+          { "text": "NDE: Microbiome", "filterType": "singleSelect"}
         ]
       },
       { 
