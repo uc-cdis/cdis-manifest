@@ -6,20 +6,35 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
-      - name: gender
-      - name: race
-      - name: ethnicity
-      - name: age_at_enrollment
-      - name: age_at_onset
     aggregated_props:
       - name: veteran_status
-        path: visits.demographics
+        path: demographics
         src: veteran_status
         fn: set
       - name: education_years
-        path: visits.demographics
+        path: demographics
         src: education_years
         fn: max
+      - name: age_at_onset
+        path: diagnoses
+        src: age_at_onset
+        fn: min
+      - name: gender
+        path: demographics
+        src: gender
+        fn: set
+      - name: race
+        path: demographics
+        src: race
+        fn: set
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
+        fn: set
+      - name: age_at_enrollment
+        path: demographics
+        src: age_at_enrollment
+        fn: set
     joining_props:
       - index: file
         join_on: case_id
