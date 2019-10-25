@@ -71,6 +71,23 @@
       "user-volume-location": "/home/jovyan/pd"
     },
     {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Jupyter Notebook Bio Python",
+      "image": "quay.io/occ_data/jupyternotebook:fix_niaid-test",
+      "env": {"FRAME_ANCESTORS": "https://aids.niaiddata.org https://tb.niaiddata.org https://microbiome.niaiddata.org https://flu.niaiddata.org"},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
@@ -83,6 +100,23 @@
       "ready-probe": "/",
       "user-volume-location": "/home/rstudio/pd",
       "fs-gid": 100
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "15512Mi",
+      "name": "Jupyter - Ariba and Mykrobe",
+      "image": "quay.io/cdis/niaid-jupyterhub:0.1.2",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
     }]
   },
   "arborist": {
