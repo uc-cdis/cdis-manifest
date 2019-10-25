@@ -35,7 +35,7 @@
     "index": {
       "introduction": {
         "heading": "",
-        "text": "DataSTAGE supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "text": "DataSTAGE supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies. Transferring data through the DataSTAGE security boundary may or may not be supported by your Data Use Agreement(s), Limitation(s), or your Institutional Review Board policies and guidelines. As a DataSTAGE user, you are solely responsible for adhering to the terms of these policies.",
         "link": "/submission"
       },
       "buttons": [
@@ -192,13 +192,13 @@
           "title": "Diagnosis",
           "fields": [
             "bp_diastolic",
-            "systolic_blood_pressure",
+            "bp_systolic",
             "basophil_ncnc_bld",
             "eosinophil_ncnc_bld",
-            "hdl1",
+            "hdl",
             "hematocrit_vfr_bld",
             "hemoglobin_mcnc_bld",
-            "ldl1",
+            "ldl",
             "lymphocyte_ncnc_bld",
             "mch_entmass_rbc",
             "mchc_mcnc_rbc",
@@ -209,8 +209,8 @@
             "pmv_entvol_bld",
             "rbc_ncnc_bld",
             "rdw_ratio_rbc",
-            "chol1",
-            "trig1",
+            "total_cholesterol",
+            "triglycerides",
             "wbc_ncnc_bld"
           ]
         },
@@ -224,10 +224,10 @@
             "race",
             "hispanic_subgroup",
             "ethnicity",
-            "gender",
-            "bmi",
-            "biospecimen_anatomic_site",
-            "height",
+            "annotated_sex",
+            "bmi_baseline",
+            "geographic_site",
+            "height_baseline",
             "subcohort",
             "weight_baseline",
             "current_smoker_baseline",
@@ -243,14 +243,14 @@
         "data_format",
         "race",
         "ethnicity",
-        "gender",
-        "bmi",
+        "annotated_sex",
+        "bmi_baseline",
         "bp_diastolic",
-        "systolic_blood_pressure",
-        "hdl1",
-        "ldl1",
-        "chol1",
-        "trig1"
+        "bp_systolic",
+        "hdl",
+        "ldl",
+        "total_cholesterol",
+        "triglycerides"
         
       ]
     },
@@ -316,7 +316,7 @@
       "nodeCountTitle": "Subjectss",
       "fieldMapping": [
         { "field": "consent_codes", "name": "Data Use Restriction" },
-        { "field": "bmi", "name": "BMI" },
+        { "field": "bmi_baseline", "name": "BMI" },
         { "field": "cac_score", "name": "CAC Score" },
         { "field": "cac_volume", "name": "CAC Volume" },
         { "field": "cimt_1", "name": "CIMT 1" },
@@ -325,13 +325,13 @@
         { "field": "vte_followup_start_age", "name": "VTE Followup Start Age" },
         { "field": "vte_prior_history", "name": "VTE Prior History" },
         { "field": "bp_diastolic", "name": "BP Diastolic" },
-        { "field": "systolic_blood_pressure", "name": "BP Systolic" },
+        { "field": "bp_systolic", "name": "BP Systolic" },
         { "field": "basophil_ncnc_bld", "name": "Basophils Number Concentration Bld" },
         { "field": "eosinophil_ncnc_bld", "name": "Eosinophils Number Concentration Bld" },
-        { "field": "hdl1", "name": "HDL" },
+        { "field": "hdl", "name": "HDL" },
         { "field": "hematocrit_vfr_bld", "name": "Hematocrit Fraction of Volume Bld" },
         { "field": "hemoglobin_mcnc_bld", "name": "Hemoglobin Mass Concentration Bld" },
-        { "field": "ldl1", "name": "LDL" },
+        { "field": "ldl", "name": "LDL" },
         { "field": "lymphocyte_ncnc_bld", "name": "Lymphocytes Number Concentration Bld" },
         { "field": "mch_entmass_rbc", "name": "MCH Average Mass Rbc" },
         { "field": "mchc_mcnc_rbc", "name": "MCHC Mass Concentration Rbc" },
@@ -342,8 +342,6 @@
         { "field": "pmv_entvol_bld", "name": "PMV Mean Volume Bld" },
         { "field": "rbc_ncnc_bld", "name": "Red Blood Cells Number Concentration Bld" },
         { "field": "rdw_ratio_rbc", "name": "Red Cell Distribution Width Ratio Rbc" },
-        { "field": "chol1", "name": "Total Cholesterol" },
-        { "field": "trig1", "name": "Triglycerides" },
         { "field": "wbc_ncnc_bld", "name": "White Blood Cells Number Concentration Bld" }
       ],
       "manifestMapping": {
