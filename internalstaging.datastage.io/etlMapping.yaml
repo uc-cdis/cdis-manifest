@@ -10,12 +10,9 @@ mappings:
     flatten_props:
       - path: demographics
         props:
-          - name: gender
           - name: race
           - name: ethnicity
           - name: age_at_index
-          - name: bmi
-          - name: height
           - name: hispanic_subgroup
           - name: subcohort
           - name: weight_baseline
@@ -49,18 +46,13 @@ mappings:
       - path: blood_pressure_test
         props:
           - name: diastolic_blood_pressure
-          - name: systolic_blood_pressure
-          - name: bp_diastolic       
+          - name: bp_diastolic
       - path: medication_records
         props:
           - name: hypertension_meds
           - name: antihypertensive_meds
           - name: fasting_lipids
           - name: lipid_lowering_medication
-      - path: samples
-        props:
-          - name: biospecimen_anatomic_site
-        sorted_by: updated_datetime, desc
       - path: lab_results
         props:
           - name: lymphocyte_ncnc_bld
@@ -78,19 +70,9 @@ mappings:
           - name: wbc_ncnc_bld
           - name: basophil_ncnc_bld
           - name: eosinophil_ncnc_bld
-          - name: chol1
-          - name: trig1
-          - name: unit_triglycerides1
-          - name: hdl1
-          - name: unit_hdl1
-          - name: ldl1
-      - path: exposure
-        props:
-          - name: current_smoker_baseline
-          - name: ever_smoker_baseline
-      - path: sample
-        props:
-          - name: biospecimen_anatomic_site 
+          - name: unit_triglycerides
+          - name: hdl
+          - name: ldl
     aggregated_props:
       - name: _samples_count
         path: samples
