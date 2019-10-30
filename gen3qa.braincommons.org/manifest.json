@@ -31,7 +31,7 @@
       "arborist": "true"
   },
   "hatchery": {
-    "user-namespace": "jupyter-pods-bhcqa",
+    "user-namespace": "jupyter-pods",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
     "sidecar": {
@@ -39,7 +39,7 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
-        "NAMESPACE": "bhcqa",
+        "NAMESPACE": "default",
         "HOSTNAME": "gen3qa.braincommons.org"
       },
       "args": [],
