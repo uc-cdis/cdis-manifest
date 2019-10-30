@@ -62,31 +62,60 @@
           "body": "Visit ImmPort, a resource funded by the NIH, NIAID, and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
           "external_link": "https://www.immport.org/home",
           "external_link_text": "Visit Website",
-          "logo": "/custom/logo/immport-main-icon.png"
+          "logo": "/custom/logo/immport-main-icon.png",
+          "internal_link": "/explorer"
         },
         {
           "name": "NIAID TB Environment",
           "icon": "data-explore",
           "body": "Explore data from the NIAID <a href='https://tbportals.niaid.nih.gov/'>TB Portals</a> Program and <a href='https://www.patricbrc.org'>PATRIC</a>, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
-          "external_link": "https://tb.niaiddata.org"
+          "external_link": "https://tb.niaiddata.org",
+          "internal_link": "/explorer"
         },
         {
           "name": "NIAID AIDS Environment",
-          "icon": "data-explore",
+          "logo": "/custom/sponsors/gitops-sponsors/macs-wihs-logo.png",
           "body": "Explore data from the NIAID Multicenter AIDS Cohort Study <a href='https://www.niaid.nih.gov/research/multicenter-aids-cohort-study-public-data-set'>(MACS)</a> and Women's Interagency HIV Study <a href='https://www.niaid.nih.gov/research/womens-interagency-hiv-study'>(WIHS)</a>.",
-          "external_link": "https://aids.niaiddata.org"
+          "external_link": "https://aids.niaiddata.org",
+          "internal_link": "/explorer"
         },
         {
           "name": "NIAID Flu Environment",
           "icon": "data-explore",
           "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID) <a href='https://www.niaid.nih.gov/research/systems-biology-consortium'>Systems Biology Consortium for Infectious Diseases</a>.",
-          "external_link": "https://flu.niaiddata.org"
+          "external_link": "https://flu.niaiddata.org",
+          "internal_link": "/explorer"
         },
         {
           "name": "NIAID Microbiome Environment",
           "icon": "data-explore",
           "body": "Explore data from a collection of open-access microbiome related studies from <a href='https://www.immport.org/home'>ImmPort</a>.",
-          "external_link": "https://microbiome.niaiddata.org"
+          "external_link": "https://microbiome.niaiddata.org",
+          "internal_link": "/explorer"
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://tbportals.niaid.nih.gov/",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/tb-logo.png",
+          "coming_soon": true
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://actgnetwork.org/",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/actg-logo.png",
+          "coming_soon": true
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://www.patricbrc.org",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/patric-logo.png",
+          "coming_soon": true
         }
       ]
     },
