@@ -169,14 +169,40 @@
         }
       ]
     },
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "case",
-      "index": "",
-      "nodeCountField": "node_id"
-    },
     "table": {
-      "enabled": true
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "submitter_id",
+        "gender",
+        "ethnicity",
+        "race",
+        "experimental_group",
+        "_aliquots_count",
+        "_read_group_count",
+        "_samples_count",
+        "_submitted_expression_arrays_count",
+        "_submitted_unaligned_reads_count"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [
+        {"field": "_aliquots_count", "name": "Aliquots Count"},
+        {"field": "_read_group_count", "name": "Read Groups Count"},
+        {"field": "_samples_count", "name": "Samples Count"},
+        {"field": "_submitted_expression_arrays_count", "name": "Submitted Expression Arrays Count"},
+        {"field": "_submitted_unaligned_reads_count", "name": "Submitted Unaligned Reads Count"}
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
     },
     "buttons": [
       {
