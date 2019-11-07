@@ -12,7 +12,6 @@
     "fence": "quay.io/cdis/fence:4.12.0",
     "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
-    "peregrine-canary": "quay.io/cdis/peregrine:fix_promise",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:2.1.2",
@@ -144,14 +143,15 @@
     "environment": "bhcqa",
     "hostname": "gen3qa.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.6.3/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.8.2/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bhcqa/user.yaml",
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "public_datasets": true,
     "tier_access_level": "regular",
-    "tier_access_limit": 50
+    "tier_access_limit": 50,
+    "maintenance_mode": "on"
   },
   "ssjdispatcher": {
     "job_images": {
