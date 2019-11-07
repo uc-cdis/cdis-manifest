@@ -10,6 +10,7 @@ mappings:
       - name: ethnicity
       - name: race
       - name: age_at_enrollment
+      - name: experimental_group
     aggregated_props:
       - name: veteran_status
         path: visits.demographics
@@ -23,6 +24,21 @@ mappings:
         path: visits.diagnoses
         src: age_at_onset
         fn: min
+      - name: _samples_count
+        path: visits.samples
+        fn: count
+      - name: _aliquots_count
+        path: visits.samples.aliquots
+        fn: count
+      - name: _read_group_count
+        path: visits.samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_expression_arrays_count
+        path: visits.samples.aliquots.submitted_expression_array_files
+        fn: count
+      - name: _submitted_unaligned_reads_count
+        path: visits.samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
     joining_props:
       - index: file
         join_on: case_id
