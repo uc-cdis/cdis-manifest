@@ -6,35 +6,39 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: gender
+      - name: ethnicity
+      - name: race
+      - name: age_at_enrollment
+      - name: experimental_group
     aggregated_props:
       - name: veteran_status
-        path: demographics
+        path: visits.demographics
         src: veteran_status
         fn: set
       - name: education_years
-        path: demographics
+        path: visits.demographics
         src: education_years
         fn: max
       - name: age_at_onset
-        path: diagnoses
+        path: visits.diagnoses
         src: age_at_onset
         fn: min
-      - name: gender
-        path: demographics
-        src: gender
-        fn: set
-      - name: race
-        path: demographics
-        src: race
-        fn: set
-      - name: ethnicity
-        path: demographics
-        src: ethnicity
-        fn: set
-      - name: age_at_enrollment
-        path: demographics
-        src: age_at_enrollment
-        fn: set
+      - name: _samples_count
+        path: visits.samples
+        fn: count
+      - name: _aliquots_count
+        path: visits.samples.aliquots
+        fn: count
+      - name: _read_group_count
+        path: visits.samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_expression_arrays_count
+        path: visits.samples.aliquots.submitted_expression_array_files
+        fn: count
+      - name: _submitted_unaligned_reads_count
+        path: visits.samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
     joining_props:
       - index: file
         join_on: case_id
