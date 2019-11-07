@@ -116,6 +116,7 @@
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@braincommons.org"
     },
+    "certs": {},
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
@@ -129,6 +130,7 @@
       }
     ]
   },
+  "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
     "noIndex": true
@@ -161,10 +163,10 @@
         {
           "title": "Case",
           "fields": [
-            "race",
+            "project_id",
             "ethnicity",
             "gender",
-            "project_id"
+            "race"
           ]
         }
       ]
