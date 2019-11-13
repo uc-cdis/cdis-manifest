@@ -24,14 +24,13 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:0.3.0",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "tube": "quay.io/cdis/tube:0.3.18",
+    "tube": "quay.io/cdis/tube:0.3.15",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
     "wts": "quay.io/cdis/workspace-token-service:master"
   },
   "global": {
     "environment": "anvilstaging",
-    "hostname": "staging.theanvil.io",
+    "hostname": "internalstaging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.0.4/schema.json",
     "portal_app": "gitops",
@@ -59,11 +58,11 @@
   "guppy": {
     "indices": [
       {
-        "index": "etl_staging-anvil",
+        "index": "etl_internalstaging-anvil",
         "type": "case"
       },
       {
-        "index": "file_staging-anvil",
+        "index": "file_internalstaging-anvil",
         "type": "file"
       }
     ],
@@ -78,7 +77,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
-      "env": {"NAMESPACE":"default", "HOSTNAME": "gen3.datastage.io"},
+      "env": {"NAMESPACE":"default", "HOSTNAME": "internalstaging.theanvil.io"},
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
