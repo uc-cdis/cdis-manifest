@@ -58,9 +58,7 @@
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bhcdatastaging/user.yaml",
     "dispatcher_job_num": "10",
-    "sync_from_dbgap": "False",
-    "public_datasets": true,
-    "tier_access_level": "regular"
+    "sync_from_dbgap": "False"
   },
   "ssjdispatcher": {
     "job_images": {
