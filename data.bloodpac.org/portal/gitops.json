@@ -56,8 +56,8 @@
         {
           "name": "Explore Data",
           "icon": "data-files",
-          "body": "The File page gives you insights and a clear overview of data.",
-          "link": "/files",
+          "body": "The Explorer page gives you insights and a clear overview of data.",
+          "link": "/explorer",
           "label": "Explore data"
         },
         {
@@ -85,12 +85,6 @@
           "name": "Exploration"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#daa520",
-          "name": "Files"
-        },
-        {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
@@ -115,7 +109,7 @@
         {
           "icon": "upload",
           "link": "/submission",
-          "name": "Data Submission"
+          "name": "Submit Data"
         },
         {
           "link": "https://www.synapse.org/#!Synapse:syn8011461/wiki/411591",
@@ -132,6 +126,7 @@
     },
     "certs": {
       "security_quiz": {
+        "hasCorrectAnswers": true,
         "title": "BloodPAC User agreement",
         "description": "",
         "questions": [
@@ -201,6 +196,13 @@
         "leftIcon": "datafile",
         "rightIcon": "download",
         "fileName": "manifest.json"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
       }
     ],
     "arrangerConfig": {
@@ -208,6 +210,87 @@
       "graphqlField": "case",
       "index": "",
       "nodeCountField": "project_id"
+    },
+    "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
     }
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "data_type": {
+        "chartType": "stackedBar",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "case",
+        "resourceIdField": "case_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+    "dropdowns": {}
   }
 }
