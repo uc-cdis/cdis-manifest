@@ -1,0 +1,5 @@
+language: python
+
+script:
+  - pip install gen3utils
+  - gen3utils validate */manifest.json # run tests
