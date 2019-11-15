@@ -30,25 +30,25 @@
   "jupyterhub": {
     "enabled": "yes",
     "containers": [
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 0.5,
-                    "memory": "256M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
-                  },
-                  {
-                    "name": "Bioinfo - Python/R",
-                    "cpu": 1.0,
-                    "memory": "1024M",
-                    "image": "quay.io/occ_data/jupyternotebook:1.7.2"
-                  },
-                  {
-                    "name": "Brain - Python/R/Freesurfer",
-                    "cpu": 1.0,
-                    "memory": "1.5G",
-                    "image": "quay.io/cdis/jupyterbrain:1.1"
-                  }
-                ]
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 0.5,
+        "memory": "256M",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+      },
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 1,
+        "memory": "1024M",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2"
+      },
+      {
+        "name": "Brain - Python/R/Freesurfer",
+        "cpu": 1,
+        "memory": "1.5G",
+        "image": "quay.io/cdis/jupyterbrain:1.1"
+      }
+    ]
   },
   "global": {
     "environment": "bhcdatastaging",
@@ -82,5 +82,55 @@
       }
     ],
     "auth_filter_field": "auth_resource_path"
- }
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
+  }
 }
