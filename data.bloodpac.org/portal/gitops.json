@@ -178,7 +178,30 @@
       ]
     },
     "table": {
-      "enabled": true
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "ethnicity",
+        "race",
+        "gender",
+        "submitter_id",
+        "data_format",
+        "data_type",
+        "_aliquots_count",
+        "_analytes_count",
+        "_biospecimens_count",
+        "_cell_images_count",
+        "_mass_cytometry_assays_count",
+        "_mass_cytometry_images_count",
+        "_quantification_assay_qcs_count",
+        "_read_groups_count",
+        "_samples_count",
+        "_slide_images_count",
+        "_submitted_aligned_reads_files_count",
+        "_submitted_methylations_count",
+        "_submitted_somatic_mutations_count",
+        "_submitted_unaligned_reads_files_count"
+      ]
     },
     "buttons": [
       {
