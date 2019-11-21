@@ -99,7 +99,7 @@
     }
   ],
   "hatchery": {
-    "user-namespace": "jupyter-pods-internalstaging",
+    "user-namespace": "jupyter-pods-bdc-internalstaging",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "500Gi",
     "sidecar": {
@@ -107,7 +107,7 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
       "env": {
-        "NAMESPACE":"internalstaging",
+        "NAMESPACE":"bdc-internalstaging",
         "HOSTNAME": "internalstaging.datastage.io"
       },
       "args": [],
