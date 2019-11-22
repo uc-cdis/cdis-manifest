@@ -1,33 +1,33 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the staging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.2.1",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.5.0",
+    "fence": "quay.io/cdis/fence:4.11.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:0.3.3",
+    "guppy": "quay.io/cdis/guppy:0.3.9",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:1.1.0",
-    "portal": "quay.io/cdis/data-portal:2.19.2",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "sower": "quay.io/cdis/sower:0.3.0",
-    "spark": "quay.io/cdis/gen3-spark:master",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "portal": "quay.io/cdis/data-portal:2.22.2",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
+    "sower": "quay.io/cdis/sower:0.3.0",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.18",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "wts": "quay.io/cdis/workspace-token-service:master"
+    "wts": "quay.io/cdis/workspace-token-service:0.2.0"
   },
   "global": {
     "environment": "anvilstaging",
@@ -80,7 +80,7 @@
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
       "env": {
         "NAMESPACE": "default",
-        "HOSTNAME": "gen3.datastage.io"
+        "HOSTNAME": "staging.theanvil.io"
       },
       "args": [],
       "command": [
