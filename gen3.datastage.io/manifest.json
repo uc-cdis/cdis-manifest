@@ -1,36 +1,37 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the prod environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.2.0",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.4.1",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
+    "fence": "quay.io/cdis/fence:4.11.0",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.19.1",
+    "portal": "quay.io/cdis/data-portal:2.22.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.16",
-    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "tube": "quay.io/cdis/tube:0.3.18",
+    "guppy": "quay.io/cdis/guppy:0.3.9",
     "sower": "quay.io/cdis/sower:0.3.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
-    "manifestservice": "quay.io/cdis/manifestservice:0.2.0"
-  },
-  "arborist": {
-    "deployment_version": "2"
+    "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
   },
   "google": {
     "enabled": "yes"
+  },
+  "arborist": {
+    "deployment_version": "2"
   },
   "sower": [
     {
@@ -61,7 +62,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "case"
+            "value": "subject"
           }
         ],
         "volumeMounts": [
@@ -228,14 +229,15 @@
     "environment": "stageprod",
     "hostname": "gen3.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.2.4/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.7/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
-    "sync_from_dbgap": "False",
+    "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
     "public_datasets": true,
-    "tier_access_level": "private"
+    "tier_access_level": "private",
+    "maintenance_mode": "on"
   },
   "canary": {
     "default": 0
@@ -244,7 +246,7 @@
     "indices": [
       {
         "index": "dcp_etl",
-        "type": "case"
+        "type": "subject"
       },
       {
         "index": "dcp_file",

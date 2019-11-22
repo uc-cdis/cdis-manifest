@@ -1,8 +1,8 @@
 mappings:
   - name: dcp_etl
-    doc_type: case
+    doc_type: subject
     type: aggregator
-    root: case
+    root: subject
     props:
       - name: submitter_id
       - name: project_id
@@ -10,11 +10,10 @@ mappings:
     flatten_props:
       - path: demographics
         props:
-          - name: gender
-          - name: race
-          - name: ethnicity
           - name: age_at_index
-          - name: bmi
+          - name: hispanic_subgroup
+          - name: subcohort
+          - name: weight_baseline
       - path: medical_histories
         props:
           - name: diabetes
@@ -29,6 +28,15 @@ mappings:
           - name: heart_failure
           - name: myocardial_infarction
           - name: stroke
+          - name: cac_score
+          - name: cac_volume
+          - name: carotid_plaque
+          - name: carotid_stenosis
+          - name: cimt_1
+          - name: cimt_2
+          - name: vte_case_status
+          - name: vte_followup_start_age
+          - name: vte_prior_history
       - path: diagnoses
         props:
           - name: metabolic_syndrome_diagnosis
@@ -36,14 +44,13 @@ mappings:
       - path: blood_pressure_test
         props:
           - name: diastolic_blood_pressure
-          - name: systolic_blood_pressure
+          - name: bp_diastolic
       - path: medication_records
         props:
           - name: hypertension_meds
-      - path: samples
-        props:
-          - name: biospecimen_anatomic_site
-        sorted_by: updated_datetime, desc
+          - name: antihypertensive_meds
+          - name: fasting_lipids
+          - name: lipid_lowering_medication
       - path: lab_results
         props:
           - name: lymphocyte_ncnc_bld
@@ -61,13 +68,26 @@ mappings:
           - name: wbc_ncnc_bld
           - name: basophil_ncnc_bld
           - name: eosinophil_ncnc_bld
-          - name: chol1
-          - name: trig1
-          - name: unit_triglycerides1
-          - name: hdl1
-          - name: unit_hdl1
-          - name: ldl1
+          - name: unit_triglycerides
+          - name: hdl
+          - name: ldl
     aggregated_props:
+      - name: gender
+        path: demographics
+        src: gender
+        fn: set
+      - name: race
+        path: demographics
+        src: race
+        fn: set
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
+        fn: set
+      - name: age_at_enrollment
+        path: demographics
+        src: age_at_enrollment
+        fn: set
       - name: _samples_count
         path: samples
         fn: count
@@ -91,7 +111,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: case_id
+        join_on: subject_id
         props:
           - name: data_format
             src: data_format
@@ -113,8 +133,8 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
-      case:
+      subject:
         props:
-          - name: case_id
+          - name: subject_id
             src: id
           - name: project_id
