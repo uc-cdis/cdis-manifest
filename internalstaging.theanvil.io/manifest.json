@@ -20,7 +20,7 @@
     "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
-    "portal": "quay.io/cdis/data-portal:2.22.2",
+    "portal": "quay.io/cdis/data-portal:2.22.5",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
     "sower": "quay.io/cdis/sower:0.3.0",
@@ -71,7 +71,7 @@
     "enable_encrypt_whitelist": false
   },
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "jupyter-pods-internalanvil",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "500Gi",
     "sidecar": {
@@ -79,7 +79,7 @@
       "memory-limit": "512Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
       "env": {
-        "NAMESPACE": "default",
+        "NAMESPACE": "internalanvil",
         "HOSTNAME": "internalstaging.theanvil.io"
       },
       "args": [],
