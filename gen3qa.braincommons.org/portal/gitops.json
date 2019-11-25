@@ -197,12 +197,40 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Study Selection",
           "fields": [
-            "project_id",
-            "ethnicity",
+            "project_id"
+          ]
+        },
+        {
+          "title": "Demographics",
+          "fields": [
             "gender",
-            "race"
+            "race",
+            "ethnicity",
+            "veteran_status",
+            "age_at_enrollment",
+            "age_at_onset",
+            "education_years"
+          ]
+        },
+        {
+          "title": "Assessment",
+          "fields": [
+            "unified_parkinsons_disease_ratings",
+            "mds_updrs",
+            "hopkins_verbal_learning_tests",
+            "scales_for_outcomes_in_pds",
+            "modified_schwab_england_scales",
+            "baseline_dyspnea_indexes",
+            "hamilton_depression_ratings",
+            "state_trait_anxiety_inventories",
+            "upenn_smell_tests",
+            "geriatric_depression_scales",
+            "montreal_cognitive_functional_tests",
+            "mini_mental_status_exams",
+            "rem_sleep_behaviors",
+            "epworth_sleepiness_scales"
           ]
         }
       ]
@@ -213,20 +241,31 @@
         "project_id",
         "submitter_id",
         "gender",
-        "ethnicity",
         "race",
-        "experimental_group",
-        "_aliquots_count",
-        "_read_group_count",
-        "_samples_count",
-        "_submitted_expression_arrays_count",
-        "_submitted_unaligned_reads_count"
+        "ethnicity",
+        "age_at_enrollment",
+        "age_at_onset",
+        "education_years"
       ]
     },
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
       "fieldMapping": [
+        {"field": "unified_parkinsons_disease_ratings", "name": "Parkinson's"},
+        {"field": "mds_updrs", "name": ""},
+        {"field": "hopkins_verbal_learning_tests", "name": ""},
+        {"field": "scales_for_outcomes_in_pds", "name": ""},
+        {"field": "modified_schwab_england_scales", "name": ""},
+        {"field": "baseline_dyspnea_indexes", "name": "Depression/Anxiety"},
+        {"field": "hamilton_depression_ratings", "name": ""},
+        {"field": "state_trait_anxiety_inventories", "name": ""},
+        {"field": "upenn_smell_tests", "name": ""},
+        {"field": "geriatric_depression_scales", "name": ""},
+        {"field": "montreal_cognitive_functional_tests", "name": "Cognitive"},
+        {"field": "mini_mental_status_exams", "name": ""},
+        {"field": "rem_sleep_behaviors", "name": "Sleep"},
+        {"field": "epworth_sleepiness_scales", "name": ""},
         {"field": "_aliquots_count", "name": "Aliquots Count"},
         {"field": "_read_group_count", "name": "Read Groups Count"},
         {"field": "_samples_count", "name": "Samples Count"},
