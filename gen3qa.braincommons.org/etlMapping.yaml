@@ -24,7 +24,7 @@ mappings:
         path: visits.diagnoses
         src: age_at_onset
         fn: min
-       - name: mds_updrs
+      - name: mds_updrs
         value_mappings:
           - uploaded: MDS-UPDRS
           - md5summed: MDS-UPDRS
