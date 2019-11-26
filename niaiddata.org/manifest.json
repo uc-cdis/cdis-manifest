@@ -74,7 +74,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "14512Mi",
-      "name": "Jupyter Notebook TB Ariba and Mykrobe- Lab Edition",
+      "name": "Jupyter Notebook Predict Antimicrobial Drug Resistance of Tuberculosis- Lab Edition",
       "image": "quay.io/cdis/jupyter-tb:jupyter-nde1.0.0",
       "env": {"FRAME_ANCESTORS": "https://tb.niaiddata.org https://microbiome.niaiddata.org https://aids.niaiddata.org https://flu.niaiddata.org"},
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.default_url=/lab","--NotebookApp.password=''","--NotebookApp.token=''"],
