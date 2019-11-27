@@ -39,6 +39,27 @@
           "body": "The data are defined in a generic way by the dictionary. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
+        },
+        {
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "The Exploration Page provides insight and a clear overview of selected properties.",
+          "link": "/explorer",
+          "label": "Explore data"
+        },
+        {
+          "name": "Access Data",
+          "icon": "data-access",
+          "body": "An interactive interface provides the ability to query all nodes and properties in the data model.",
+          "link": "/query",
+          "label": "Query data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
+          "link": "#hostname#workspace/",
+          "label": "Run analysis"
         }
       ],
       "homepageChartNodes": [
@@ -72,6 +93,12 @@
           "link": "/files",
           "color": "#a2a2a2",
           "name": "Files"
+        },
+        {
+          "icon": "query",
+          "link": "/query",
+          "color": "#a2a2a2",
+          "name": "Query"
         },
         {
           "icon": "workspace",
