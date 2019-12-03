@@ -4,9 +4,9 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.2.1",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.8.2",
+    "fence": "quay.io/cdis/fence:4.13.1",
     "indexd": "quay.io/cdis/indexd:1.1.4",
     "peregrine": "quay.io/cdis/peregrine:1.3.0",
     "pidgin": "quay.io/cdis/pidgin:1.2.0",
@@ -104,5 +104,58 @@
     ],
     "config_index": "ibdgc_array-config",
     "auth_filter_field": "auth_resource_path"
- }
+ },
+ "arborist": {
+   "deployment_version": "2"
+ },
+ "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 10,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
+  }
 }
