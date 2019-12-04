@@ -297,7 +297,7 @@
     ]
   },
   "global": {
-    "environment": "stageprod",
+    "environment": "stagingdatastage",
     "hostname": "staging.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.7/schema.json",
@@ -305,7 +305,7 @@
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "s3://cdis-gen3-users/datastagestaging/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
     "tier_access_level": "private"
   },
@@ -315,15 +315,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "staging_etl",
+        "index": "dcp_etl",
         "type": "subject"
       },
       {
-        "index": "staging_file",
+        "index": "dcp_file",
         "type": "file"
       }
     ],
-    "config_index": "staging_array-config",
+    "config_index": "dcp_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
