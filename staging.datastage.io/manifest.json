@@ -15,7 +15,7 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.22.2",
+    "portal": "quay.io/cdis/data-portal:2.22.6",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.18",
@@ -307,7 +307,8 @@
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
-    "tier_access_level": "private"
+    "tier_access_level": "regular",
+    "tier_access_limit": 50
   },
   "canary": {
     "default": 0
