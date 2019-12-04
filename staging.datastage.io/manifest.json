@@ -1,25 +1,25 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the staging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.2.1",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.5.0",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "peregrine": "quay.io/cdis/peregrine:feat_bagit2",
+    "fence": "quay.io/cdis/fence:4.11.0",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
     "portal": "quay.io/cdis/data-portal:2.22.6",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.15",
-    "guppy": "quay.io/cdis/guppy:0.3.0",
+    "tube": "quay.io/cdis/tube:0.3.18",
+    "guppy": "quay.io/cdis/guppy:0.3.9",
     "sower": "quay.io/cdis/sower:0.3.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
@@ -38,7 +38,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.2.1",
+        "image": "quay.io/cdis/pelican:0.1.9",
         "pull_policy": "Always",
         "env": [
           {
@@ -61,7 +61,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "case"
+            "value": "subject"
           }
         ],
         "volumeMounts": [
@@ -78,8 +78,8 @@
             "subPath": "creds.json"
           }
         ],
-        "cpu-limit": "2",
-        "memory-limit": "6Gi"
+        "cpu-limit": "1",
+        "memory-limit": "12Gi"
       },
       "volumes": [
         {
@@ -99,7 +99,7 @@
     }
   ],
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "jupyter-pods-staging",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "500Gi",
     "sidecar": {
@@ -107,8 +107,8 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
       "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "gen3.datastage.io"
+        "NAMESPACE":"staging",
+        "HOSTNAME": "staging.datastage.io"
       },
       "args": [],
       "command": [
@@ -300,10 +300,10 @@
     "environment": "stagingdatastage",
     "hostname": "staging.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.2.3/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.7/schema.json",
     "portal_app": "gitops",
-    "kube_bucket": "kube-stagingdatastage-gen3",
-    "logs_bucket": "logs-stagingdatastage-gen3",
+    "kube_bucket": "kube-stageprod-gen3",
+    "logs_bucket": "logs-stageprod-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/stagingdatastage/user.yaml",
     "public_datasets": true,
@@ -317,7 +317,7 @@
     "indices": [
       {
         "index": "dcp_etl",
-        "type": "case"
+        "type": "subject"
       },
       {
         "index": "dcp_file",
@@ -342,14 +342,14 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 10,
-      "max": 15,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 4,
-      "max": 8,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "peregrine": {
