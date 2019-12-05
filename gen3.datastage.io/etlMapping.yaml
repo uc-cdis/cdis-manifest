@@ -72,9 +72,9 @@ mappings:
           - name: hdl
           - name: ldl
     aggregated_props:
-      - name: gender
+      - name: annotated_sex
         path: demographics
-        src: gender
+        src: annotated_sex
         fn: set
       - name: race
         path: demographics
