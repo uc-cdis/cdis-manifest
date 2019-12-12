@@ -7,10 +7,10 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:4.7.0",
+    "fence": "quay.io/cdis/fence:4.12.0",
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "indexd": "quay.io/cdis/indexd:2.2.0",
     "peregrine": "quay.io/cdis/peregrine:1.0.5",
     "pidgin": "quay.io/cdis/pidgin:1.2.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
@@ -32,7 +32,7 @@
     "deployment_version": "2"
   },
   "indexd": {
-      "arborist": "true"
+    "arborist": "true"
   },
   "global": {
     "environment": "dcfprod",
@@ -47,5 +47,31 @@
   },
   "canary": {
     "default": 0
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 6,
+      "max": 12,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 6,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
   }
 }

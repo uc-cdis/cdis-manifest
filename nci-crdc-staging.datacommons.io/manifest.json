@@ -22,12 +22,12 @@
     "portal": "quay.io/cdis/data-portal:2.2.5",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
-  }, 
+  },
   "arborist": {
     "deployment_version": "2"
   },
   "indexd": {
-      "arborist": "true"
+    "arborist": "true"
   },
   "peregrine": {
     "sidecar": "False"
@@ -51,5 +51,31 @@
   },
   "canary": {
     "default": 0
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
   }
 }

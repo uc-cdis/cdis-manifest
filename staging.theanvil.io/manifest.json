@@ -1,38 +1,39 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the staging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.2.1",
+    "arborist": "quay.io/cdis/arborist:2.3.2",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.5.0",
+    "fence": "quay.io/cdis/fence:4.11.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:0.3.3",
+    "guppy": "quay.io/cdis/guppy:0.3.10",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
-    "indexd": "quay.io/cdis/indexd:2.0.0",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:1.1.0",
-    "portal": "quay.io/cdis/data-portal:2.19.2",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "portal": "quay.io/cdis/data-portal:2.22.6",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
     "sower": "quay.io/cdis/sower:0.3.0",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:0.3.15",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.3.18",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "wts": "quay.io/cdis/workspace-token-service:master"
+    "wts": "quay.io/cdis/workspace-token-service:0.2.0"
   },
   "global": {
     "environment": "anvilstaging",
     "hostname": "staging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.0.4/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.0.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
@@ -45,7 +46,7 @@
     "public_datasets": true
   },
   "google": {
-    "enabled": "yes"
+    "enabled": "no"
   },
   "ssjdispatcher": {
     "job_images": {
@@ -77,10 +78,23 @@
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
-      "env": {"NAMESPACE":"default", "HOSTNAME": "gen3.datastage.io"},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "staging.theanvil.io"
+      },
       "args": [],
-      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
-      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+      "command": [
+        "/bin/bash",
+        "/sidecarDockerrun.sh"
+      ],
+      "lifecycle-pre-stop": [
+        "su",
+        "-c",
+        "echo test",
+        "-s",
+        "/bin/sh",
+        "root"
+      ]
     },
     "containers": [
       {
@@ -181,5 +195,55 @@
   ],
   "canary": {
     "default": 0
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
   }
 }

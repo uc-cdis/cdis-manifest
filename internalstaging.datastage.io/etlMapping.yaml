@@ -10,8 +10,6 @@ mappings:
     flatten_props:
       - path: demographics
         props:
-          - name: race
-          - name: ethnicity
           - name: age_at_index
           - name: hispanic_subgroup
           - name: subcohort
@@ -74,6 +72,22 @@ mappings:
           - name: hdl
           - name: ldl
     aggregated_props:
+      - name: annotated_sex
+        path: demographics
+        src: annotated_sex
+        fn: set
+      - name: race
+        path: demographics
+        src: race
+        fn: set
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
+        fn: set
+      - name: age_at_enrollment
+        path: demographics
+        src: age_at_enrollment
+        fn: set
       - name: _samples_count
         path: samples
         fn: count

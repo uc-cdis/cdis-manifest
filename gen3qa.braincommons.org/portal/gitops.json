@@ -90,12 +90,6 @@
           "name": "Query"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#a2a2a2",
-          "name": "Files"
-        },
-        {
           "icon": "workspace",
           "link": "/workspace",
           "color": "#a2a2a2",
@@ -197,12 +191,40 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Study Selection",
           "fields": [
-            "project_id",
-            "ethnicity",
+            "project_id"
+          ]
+        },
+        {
+          "title": "Demographics",
+          "fields": [
             "gender",
-            "race"
+            "race",
+            "ethnicity",
+            "veteran_status",
+            "age_at_enrollment",
+            "age_at_onset",
+            "education_years"
+          ]
+        },
+        {
+          "title": "Assessment",
+          "fields": [
+            "unified_parkinsons_disease_ratings",
+            "mds_updrs",
+            "hopkins_verbal_learning_tests",
+            "scales_for_outcomes_in_pds",
+            "modified_schwab_england_scales",
+            "baseline_dyspnea_indexes",
+            "hamilton_depression_ratings",
+            "state_trait_anxiety_inventories",
+            "upenn_smell_tests",
+            "geriatric_depression_scales",
+            "montreal_cognitive_functional_tests",
+            "mini_mental_status_exams",
+            "rem_sleep_behaviors",
+            "epworth_sleepiness_scales"
           ]
         }
       ]
@@ -213,20 +235,31 @@
         "project_id",
         "submitter_id",
         "gender",
-        "ethnicity",
         "race",
-        "experimental_group",
-        "_aliquots_count",
-        "_read_group_count",
-        "_samples_count",
-        "_submitted_expression_arrays_count",
-        "_submitted_unaligned_reads_count"
+        "ethnicity",
+        "age_at_enrollment",
+        "age_at_onset",
+        "education_years"
       ]
     },
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
       "fieldMapping": [
+        {"field": "unified_parkinsons_disease_ratings", "name": "UPDRS"},
+        {"field": "mds_updrs", "name": "MDS-UPDRS"},
+        {"field": "hopkins_verbal_learning_tests", "name": "HVLT-R"},
+        {"field": "scales_for_outcomes_in_pds", "name": "Scales for Outcomes in Parkinson’s Disease – Autonomic"},
+        {"field": "modified_schwab_england_scales", "name": "Modified Schwab"},
+        {"field": "baseline_dyspnea_indexes", "name": "BDI"},
+        {"field": "hamilton_depression_ratings", "name": "Hamilton"},
+        {"field": "state_trait_anxiety_inventories", "name": "Anxiety – State-Trait Anxiety Inventory (STAI)"},
+        {"field": "upenn_smell_tests", "name": "UPSIT"},
+        {"field": "geriatric_depression_scales", "name": "Geriatric Depression Scale Short Form Questionnaire"},
+        {"field": "montreal_cognitive_functional_tests", "name": "MOCA"},
+        {"field": "mini_mental_status_exams", "name": "MMSE"},
+        {"field": "rem_sleep_behaviors", "name": "REM Sleep Behavior Disorder Questionnaire"},
+        {"field": "epworth_sleepiness_scales", "name": "Epworth Sleepiness Scale"},
         {"field": "_aliquots_count", "name": "Aliquots Count"},
         {"field": "_read_group_count", "name": "Read Groups Count"},
         {"field": "_samples_count", "name": "Samples Count"},
