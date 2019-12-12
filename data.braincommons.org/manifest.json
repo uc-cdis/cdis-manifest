@@ -38,7 +38,7 @@
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
     "sidecar": {
-      "cpu-limit": "1.0",
+      "cpu-limit": "0.8",
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
@@ -62,7 +62,7 @@
     "containers": [
       {
         "target-port": 8888,
-        "cpu-limit": "1.0",
+        "cpu-limit": "0.8",
         "memory-limit": "1.5Gi",
         "name": "Brain - Python/R/Freesurfer",
         "image": "quay.io/cdis/jupyterbrain:1.1",
@@ -116,7 +116,7 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "1.0",
+        "cpu-limit": "0.8",
         "memory-limit": "1024Mi",
         "name": "Bioinfo - Python/R",
         "image": "quay.io/occ_data/jupyternotebook:1.7.2",
