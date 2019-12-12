@@ -34,9 +34,6 @@ mappings:
       - name: _mass_cytometry_images_count
         path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
         fn: count
-      - name: _quantification_assay_qcs_count
-        path: biospecimens.samples.aliquots.analytes.quantification_assays.quantification_assay_qcs
-        fn: count
       - name: _read_groups_count
         path: biospecimens.samples.aliquots.analytes.read_groups
         fn: count
