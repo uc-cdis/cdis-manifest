@@ -92,7 +92,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "14512Mi",
       "name": "Jupyter Notebook DAIDS- Lab Edition",
-      "image": "quay.io/cdis/jupyter-daids:jupyter-nde1.1.0",
+      "image": "quay.io/cdis/jupyter-daids:jupyter-nde1.1.1",
       "env": {"FRAME_ANCESTORS": "https://tb.niaiddata.org https://microbiome.niaiddata.org https://aids.niaiddata.org https://flu.niaiddata.org"},
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.default_url=/lab","--NotebookApp.password=''","--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
