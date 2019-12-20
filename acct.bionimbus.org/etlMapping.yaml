@@ -1,0 +1,26 @@
+mappings:
+  - name: qa-acct_etl
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: submitter_id
+      - name: project_id
+  - name: qa-acct_file
+    doc_type: file
+    type: collector
+    root: None
+    props:
+     - name: object_id
+     - name: md5sum
+     - name: file_name
+     - name: file_size
+     - name: data_format
+     - name: data_type
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
