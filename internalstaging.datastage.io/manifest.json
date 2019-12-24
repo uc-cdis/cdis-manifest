@@ -9,8 +9,8 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.11.0",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "fence": "quay.io/cdis/fence:4.13.2",
+    "indexd": "quay.io/cdis/indexd:2.6.1",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
@@ -38,7 +38,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:feat_topological-order",
+        "image": "quay.io/cdis/pelican:0.2.3",
         "pull_policy": "Always",
         "env": [
           {
