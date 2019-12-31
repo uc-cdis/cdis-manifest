@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.13.2",
+    "fence": "quay.io/cdis/fence:4.13.3",
     "indexd": "quay.io/cdis/indexd:2.6.1",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
@@ -342,8 +342,14 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 5,
+      "max": 15,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
