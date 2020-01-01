@@ -9,8 +9,8 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.11.0",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "fence": "quay.io/cdis/fence:4.13.3",
+    "indexd": "quay.io/cdis/indexd:2.6.1",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
@@ -39,7 +39,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.9",
+        "image": "quay.io/cdis/pelican-export:0.2.3",
         "pull_policy": "Always",
         "env": [
           {
@@ -106,7 +106,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "gen3.datastage.io"
@@ -301,7 +301,7 @@
     "environment": "stageprod",
     "hostname": "gen3.datastage.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.7/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.8/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
@@ -343,8 +343,14 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 10,
+      "min": 5,
       "max": 15,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
