@@ -2,15 +2,15 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_sample_count",
-        "name": "Sample",
-        "plural": "Samples"
+        "graphql": "_participant_count",
+        "name": "Participant",
+        "plural": "Participants"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_sample_count",
-        "name": "Sample"
+        "graphql": "_participant_count",
+        "name": "Participant"
       }
     ],
     "projectDetails": "boardCounts"
