@@ -1,4 +1,11 @@
 mappings:
+  - name: icgc_etl
+    doc_type: case
+    type: aggregator
+    root: case
+    props:
+      - name: submitter_id
+      - name: project_id
   - name: icgc_file
     doc_type: file
     type: collector
@@ -11,4 +18,4 @@ mappings:
       - name: file_size
       - name: data_format
       - name: data_type
-      - name: state
+      - name: project_id
