@@ -8,25 +8,23 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:4.11.0",
+    "fence": "quay.io/cdis/fence:4.13.3",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "guppy": "quay.io/cdis/guppy:0.3.10",
-    "hatchery": "quay.io/cdis/hatchery:0.1.0",
+    "hatchery": "quay.io/cdis/hatchery:0.1.1",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "indexd": "quay.io/cdis/indexd:2.6.1",
     "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
-    "portal": "quay.io/cdis/data-portal:2.22.6",
+    "pidgin": "quay.io/cdis/pidgin:1.2.0",
+    "portal": "quay.io/cdis/data-portal:2.23.4",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
+    "sheepdog": "quay.io/cdis/sheepdog:2.1.2",
     "sower": "quay.io/cdis/sower:0.3.0",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.18",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
+    "tube": "quay.io/cdis/tube:0.3.22",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.7",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0"
   },
   "global": {
@@ -77,7 +75,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
       "env": {
         "NAMESPACE": "internalanvil",
         "HOSTNAME": "internalstaging.theanvil.io"
@@ -133,7 +131,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.6",
+        "image": "quay.io/cdis/pelican-export:0.2.3",
         "pull_policy": "Always",
         "env": [
           {
@@ -247,3 +245,4 @@
     }
   }
 }
+
