@@ -75,7 +75,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
       "env": {
         "NAMESPACE": "internalanvil",
         "HOSTNAME": "internalstaging.theanvil.io"
@@ -131,7 +131,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican:0.1.6",
+        "image": "quay.io/cdis/pelican-export:0.2.3",
         "pull_policy": "Always",
         "env": [
           {
