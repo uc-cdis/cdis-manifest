@@ -2,4 +2,5 @@ language: python
 
 script:
   - pip install gen3utils
-  - gen3utils validate */manifest.json # run tests
+  - gen3utils validate-manifest */manifest.json  # validate all the manifest.json files
+  - gen3utils post-deployment-changes uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST  # comment on PRs with relevant deployment changes
