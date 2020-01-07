@@ -1,0 +1,117 @@
+{
+  "notes": [
+    "This is the icgc environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:2.3.2",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:feat_cleversafe-url",
+    "indexd": "quay.io/cdis/indexd:2.1.0",
+    "peregrine": "quay.io/cdis/peregrine:2.1.1",
+    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
+    "portal": "quay.io/cdis/data-portal:2.22.6",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "tube": "quay.io/cdis/tube:0.3.18",
+    "guppy": "quay.io/cdis/guppy:0.3.10"
+  },
+  "google": {
+    "enabled": "yes"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "global": {
+    "environment": "icgc",
+    "hostname": "icgc.bionimbus.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:446046036926:certificate/cf0052c5-18cc-43f3-9ae7-920568c73247",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/reference_file_node/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-icgc-gen3",
+    "logs_bucket": "logs-icgc-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/genomel/user.yaml",
+    "public_datasets": true,
+    "tier_access_level": "libre",
+    "tier_access_limit": 50,
+    "sync_from_dbgap": "False"
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "icgc_etl",
+        "type": "case"
+      },
+      {
+        "index": "icgc_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "icgc_array-config",
+    "auth_filter_field": "auth_resource_path"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 4,
+      "targetCpu": 40
+    }
+  }
+}
