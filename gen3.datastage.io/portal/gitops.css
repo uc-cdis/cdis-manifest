@@ -41,10 +41,12 @@
   border-bottom: 3px solid var(--primary-color);
 }
 
+.nav-bar__logo {
+  padding: 15px 0;
+}
+
 .nav-bar__logo-img {
-  height: 110px;
-  margin-bottom: -30px;
-  margin-top: -25px;
+  height: 50px;
 }
 
 .footer__version-area {
