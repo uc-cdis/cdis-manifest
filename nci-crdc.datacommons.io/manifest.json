@@ -57,14 +57,14 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 6,
-      "max": 12,
+      "min": 5,
+      "max": 15,
       "targetCpu": 40
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 6,
-      "max": 12,
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
