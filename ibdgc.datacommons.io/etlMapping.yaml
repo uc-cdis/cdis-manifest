@@ -1,8 +1,8 @@
 mappings:
   - name: ibdgc_etl
-    doc_type: case
+    doc_type: participant
     type: aggregator
-    root: case
+    root: participant
     props:
       - name: submitter_id
       - name: project_id
@@ -25,7 +25,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: case_id
+        join_on: participant_id
         props:
           - name: data_format
             src: data_format
@@ -47,9 +47,9 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
-      case:
+      participant:
         props:
-          - name: case_id
+          - name: participant_id
             fn: set
             src: id
           - name: project_id
