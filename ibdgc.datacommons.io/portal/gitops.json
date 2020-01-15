@@ -2,7 +2,7 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant",
         "plural": "Participants"
       },
@@ -14,7 +14,7 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant"
       },
       {
@@ -64,7 +64,7 @@
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
+          "node": "participant",
           "name": "Participants"
         },
         {
@@ -142,7 +142,7 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Participant",
           "fields":[
             "project_id",
             "gender",
@@ -188,15 +188,15 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
+      "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "participant_id",
+        "referenceIdFieldInDataIndex": "participant_id"
       }
     }
   },
@@ -249,8 +249,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "participant",
+        "resourceIdField": "participant_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
