@@ -9,16 +9,16 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0", 
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
-    "fence": "quay.io/cdis/fence:4.13.1",
+    "fence": "quay.io/cdis/fence:4.13.2",
     "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:2.1.2",
-    "portal": "quay.io/cdis/data-portal:2.22.10",
+    "portal": "quay.io/cdis/data-portal:2.23.4",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
@@ -147,7 +147,7 @@
     "environment": "bhcprodv2",
     "hostname": "data.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/1.0.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.0/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bhc/user.yaml",
     "dispatcher_job_num": "10",
@@ -193,8 +193,8 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 5,
+      "max": 15,
       "targetCpu": 40
     },
     "indexd": {
@@ -207,6 +207,12 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "revproxy": {
@@ -229,4 +235,3 @@
     }
  }
 }
-
