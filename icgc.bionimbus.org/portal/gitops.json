@@ -22,18 +22,18 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "ICGC Bionimbus",
+    "appName": "Bionimbus PDC for ICGC",
     "index": {
       "introduction": {
         "heading": "",
-        "text": "ICGC Bionimbus commons is used for downloading ICGC PCAWG and DREAM Challenge data.",
+        "text": "Bionimbus Protected Data Cloud hosts an ICGC Data Commons for downloading ICGC PCAWG and DREAM Challenge data.",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Explore Files",
           "icon": "stage-explore",
-          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "body": "The Exploration Page allows you to download data files and gives you insights and a clear overview under selected factors.",
           "link": "/files",
           "label": "Explore data"
         },
@@ -86,9 +86,9 @@
     },
     "login": {
       "title": "ICGC Bionimbus",
-      "subTitle": "Explore, Analyze, and Share Data",
+      "subTitle": "Explore, Analyze, and Download Data",
       "text": "This website supports the management, analysis and sharing of human disease Files for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
-      "contact": "If you have any questions about access or the registration process, please contact ",
+      "contact": "If you have any questions about access or the registration process, please see https://docs.icgc.org/pcawg/data/#apply-for-data-access or contact ",
       "email": "support@datacommons.io",
       "image": "stage-icons/stage-gene"
     },
@@ -104,13 +104,11 @@
         "alt": "Center for Translational Data Science at the University of Chicago"
       },
       {
-        "src": "/src/img/sponsors/nhlbi.png",
-        "href": "https://www.nhlbi.nih.gov",
-        "alt": "NHLBI"
+        "src": "/src/img/sponsors/ICGC.png",
+        "href": "https://docs.icgc.org/pcawg/",
+        "alt": "ICGC PCAWG"
       }
-    ],
-    "categorical9Colors": ["#c02f42", "#175676", "#59CD90", "#F2DC5D", "#40476D", "#FFA630", "#AE8799", "#1A535C", "#462255"],
-    "categorical2Colors": ["#6d6e70", "#c02f42"]
+    ]
   },
   "requiredCerts": [],
   "featureFlags": {
@@ -137,6 +135,19 @@
         }
       ]
     },
+    "dropdowns": {
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      }
+    ],
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
@@ -198,6 +209,17 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      }
+    ],
     "dropdowns": {}
   }
 }
