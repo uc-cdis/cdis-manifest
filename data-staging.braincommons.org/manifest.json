@@ -180,8 +180,8 @@
   "scaling": {
     "arborist": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 1,
+      "max": 1,
       "targetCpu": 40
     },
     "portal": {
@@ -192,8 +192,8 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 1,
+      "max": 1,
       "targetCpu": 40
     },
     "indexd": {
@@ -206,6 +206,12 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1,
       "targetCpu": 40
     },
     "revproxy": {
