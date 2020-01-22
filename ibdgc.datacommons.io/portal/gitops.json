@@ -71,6 +71,19 @@
           "node": "sample",
           "name": "Samples"
         }
+      ],
+      "customHomepageChartConfig": [
+        {
+          "chartType": "horizontalStackedBar",
+          "dataType": "participant",
+          "yAxisProp": "country",
+          "xAxisProp": "ibd_affection_status",
+          "constrains": {
+            "project_id": "IIBDGC-GWAS-Mega-2"
+          },
+          "chartTitle": "IIBDGC-GWAS-Mega-2 project",
+          "logBase": 10
+        }
       ]
     },
     "navigation": {
@@ -137,6 +150,14 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
+      },
+      "ibd_affection_status": {
+        "chartType": "pie",
+        "title": "IBD Affection Status"
+      },
+      "diagnosis": {
+        "chartType": "pie",
+        "title": "Diagnosis"
       }
     },
     "filters": {
@@ -147,6 +168,7 @@
             "project_id",
             "gender",
             "race",
+            "country",
             "jewish",
             "hispanic",
             "ibd_affection_status",
@@ -157,11 +179,12 @@
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "fields": [
         "project_id",
         "gender",
         "race",
+        "country",
         "jewish",
         "hispanic",
         "ibd_affection_status",
@@ -259,3 +282,4 @@
     "dropdowns": {}
   }
 }
+
