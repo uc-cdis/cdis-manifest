@@ -6,6 +6,8 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+    parent_props:
+      - path: centers[country]
     flatten_props:
       - path: demographics
         props:
