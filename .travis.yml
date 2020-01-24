@@ -6,6 +6,13 @@ script:
   # validate all the manifest.json files:
   - gen3utils validate-manifest */manifest.json
 
+  # validate ETL mapping files
+  - |
+    for dir in *; do
+      man=$dir/manifest.json; etl=$dir/etlMapping.yaml
+      [ -f $man ] && [ -f $etl ] && echo "ETL mapping validation for $dir" && gen3utils validate-etl-mapping $etl $man
+    done
+
   # comment on PRs with relevant deployment changes:
   - if [[ $TRAVIS_PULL_REQUEST != false ]]; then gen3utils post-deployment-changes uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST; fi
 
