@@ -127,25 +127,11 @@
     },
     "containers": [
       {
-        "target-port": 8787,
-        "cpu-limit": "1.0",
-        "memory-limit": "512Mi",
-        "name": "R Studio",
-        "image": "heliumdatastage/rstudio-server:1",
-        "env": {
-          "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/"
-      },
-      {
         "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "512Mi",
-        "name": "Jupyter Notebook Bio Python",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0",
+        "cpu-limit": "0.8",
+        "memory-limit": "1.5Gi",
+        "name": "Brain - Python/R/Freesurfer",
+        "image": "quay.io/cdis/jupyterbrain:1.1",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -169,9 +155,9 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "4.0",
-        "memory-limit": "15512Mi",
-        "name": "Jupyter Notebook Power Python",
+        "cpu-limit": "0.5",
+        "memory-limit": "256Mi",
+        "name": "Bioinfo - Python/R",
         "image": "quay.io/occ_data/jupyternotebook:1.7.2",
         "env": {},
         "args": [
@@ -196,10 +182,10 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "8096Mi",
-        "name": "Helium Autoencoder Demo",
-        "image": "quay.io/cdis/auntoencoder-copd-demo:latest",
+        "cpu-limit": "0.8",
+        "memory-limit": "1024Mi",
+        "name": "Bioinfo - Python/R",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -218,85 +204,12 @@
           "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
         ],
         "user-uid": 1000,
-        "fs-gid": 100
-      },
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "8096Mi",
-        "name": "Helium Tensorflow-Pytorch",
-        "image": "heliumdatastage/tensorflow-pytorch-ext:1",
-        "env": {},
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100
-      },
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "8096Mi",
-        "name": "Helium CIP Demo",
-        "image": "heliumdatastage/jup-cip:v1",
-        "env": {},
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
       }
     ]
-  },
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Helium COPD Demo",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
-      }
-    ]
-  },
+  }, 
+},
 "environment": "qaplanetv1",
     "hostname": "qa-brain.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
