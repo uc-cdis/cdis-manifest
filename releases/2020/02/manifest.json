@@ -210,7 +210,8 @@
     ]
   }, 
 },
-"environment": "qaplanetv1",
+"global": {
+  "environment": "qaplanetv1",
     "hostname": "qa-brain.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.8.2/schema.json",
