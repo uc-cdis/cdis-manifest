@@ -38,7 +38,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:0.3.0",
+        "image": "quay.io/cdis/pelican-export:0.3.2",
         "pull_policy": "Always",
         "env": [
           {
@@ -298,8 +298,8 @@
   },
   "global": {
     "environment": "stageprod",
-    "hostname": "internalstaging.datastage.io",
-    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
+    "hostname": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/a82bb5ed-9ad1-444d-9bfd-5bc314541307",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.9/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
@@ -384,3 +384,4 @@
     }
   }
 }
+
