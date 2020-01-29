@@ -2,7 +2,7 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant",
         "plural": "Participants"
       },
@@ -14,7 +14,7 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant"
       },
       {
@@ -64,12 +64,31 @@
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
+          "node": "participant",
           "name": "Participants"
         },
         {
           "node": "sample",
           "name": "Samples"
+        },
+        {
+          "node": "raw_snp_genotype",
+          "name": "Raw SNP Genotype"
+        }
+      ],
+      "customHomepageChartConfig": [
+        {
+          "chartType": "horizontalGroupedBar",
+          "dataType": "participant",
+          "yAxisProp": "country",
+          "xAxisProp": "ibd_affection_status",
+          "constrains": {
+            "project_id": "IIBDGC-GWAS-Mega-2"
+          },
+          "chartTitle": "IIBDGC-GWAS-Mega-2 project",
+          "logBase": 10,
+          "initialUnselectedKeys": ["no data", "Unknown"],
+          "dataTypePlural": "participants"
         }
       ]
     },
@@ -137,6 +156,18 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
+      },
+      "ibd_affection_status": {
+        "chartType": "pie",
+        "title": "IBD Affection Status"
+      },
+      "diagnosis": {
+        "chartType": "pie",
+        "title": "Diagnosis"
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
       }
     },
     "filters": {
@@ -147,27 +178,21 @@
             "project_id",
             "gender",
             "race",
-            "jewish",
-            "hispanic",
             "ibd_affection_status",
-            "diagnosis",
-            "population_control"
+            "country",
+            "diagnosis"
           ]
         }
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "fields": [
         "project_id",
         "gender",
         "race",
-        "jewish",
-        "hispanic",
         "ibd_affection_status",
-        "diagnosis",
-        "population_control",
-        "_samples_count"
+        "country"
       ]
     },
     "buttons": [
@@ -188,15 +213,15 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
+      "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "node_id",
+        "referenceIdFieldInDataIndex": "node_id"
       }
     }
   },
