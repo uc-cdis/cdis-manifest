@@ -109,7 +109,7 @@
       "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
       "env": {
         "NAMESPACE":"staging",
-        "HOSTNAME": "staging.datastage.io"
+        "HOSTNAME": "staging.gen3.biodatacatalyst.nhlbi.nih.gov"
       },
       "args": [],
       "command": [
@@ -299,7 +299,7 @@
   },
   "global": {
     "environment": "stagingdatastage",
-    "hostname": "staging.datastage.io",
+    "hostname": "staging.gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/4081369d-6d60-44ff-aa07-11bac3618a9a",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.3.9/schema.json",
     "portal_app": "gitops",
