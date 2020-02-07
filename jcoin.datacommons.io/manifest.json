@@ -13,6 +13,7 @@
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.13",
     "portal": "quay.io/cdis/data-portal:2.23.4",
+    "guppy": "quay.io/cdis/guppy:0.3.14",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
@@ -131,5 +132,19 @@
       "max": 4,
       "targetCpu": 40
     }
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "jcoin_etl",
+        "type": "participant"
+      },
+      {
+        "index": "jcoin_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "jcoin_array-config",
+    "auth_filter_field": "auth_resource_path"
   }
 }
