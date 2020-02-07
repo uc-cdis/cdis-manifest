@@ -66,7 +66,7 @@
         },
         {
           "icon": "exploration",
-          "link": "/explorer",
+          "link": "/files",
           "color": "#a2a2a2",
           "name": "Exploration"
         },
@@ -81,6 +81,18 @@
           "link": "/identity",
           "color": "#a2a2a2",
           "name": "Profile"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://docs.icgc.org/pcawg/data/#download-from-pdc",
+          "name": "PCAWG Access Documentation"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Gen3 Documentation"
         }
       ]
     },
