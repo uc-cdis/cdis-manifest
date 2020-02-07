@@ -30,7 +30,7 @@ mappings:
         sorted_by: updated_datetime, desc
     aggregated_props:
       - name: center
-        path: follow_ups.center
+        path: follow_ups.centers
         src: submitter_id
         fn: set
     joining_props:
