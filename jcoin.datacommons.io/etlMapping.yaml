@@ -7,7 +7,7 @@ mappings:
       - name: submitter_id
       - name: project_id
     parent_props:
-      - path: protocol[protocol]
+      - path: protocols[protocol]
     flatten_props:
       - path: demographics
         props:
