@@ -42,8 +42,8 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:integration202002",
       "env": {
-        "NAMESPACE": "qa-brain",
-        "HOSTNAME": "qa-brain.planx-pla.net"
+        "NAMESPACE": "<environment>",
+        "HOSTNAME": "<environment_fqdn>"
       },
       "args": [],
       "command": [
@@ -144,16 +144,16 @@
     ]
   },
   "global": {
-    "environment": "qaplanetv1",
-    "hostname": "qa-brain.planx-pla.net",
-    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.8.2/schema.json",
+    "environment": "<environment>",
+    "hostname": "<environment_fqdn>",
+    "revproxy_arn": "<aws_acm_cert_arn",
+    "dictionary_url": "<Gen3 Dictionary>",
     "portal_app": "gitops",
-    "kube_bucket": "kube-qaplanetv1-gen3",
-    "logs_bucket": "logs-qaplanetv1-gen3",
+    "kube_bucket": "kube-<environment>-gen3",
+    "logs_bucket": "logs-<environment>-gen3",
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "5",
-    "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml",
+    "useryaml_s3path": "<user yaml>",
     "netpolicy": "on",
     "tier_access_level": "regular",
     "tier_access_limit": "50",
@@ -170,15 +170,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "qa-brain_etl",
+        "index": "<environment_prefix>_etl",
         "type": "case"
       },
       {
-        "index": "qa-brain_file",
+        "index": "<environment_prefix>_file",
         "type": "file"
       }
     ],
-    "config_index": "qa-brain_array-config",
+    "config_index": "<environment_prefix>_array-config",
     "auth_filter_field": "auth_resource_path"
  },
  "scaling": {
