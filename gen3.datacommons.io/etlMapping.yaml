@@ -1,5 +1,5 @@
 mappings:
-  - name: internalstaging_etl
+  - name: oadc_etl
     doc_type: subject
     type: aggregator
     root: subject
@@ -119,7 +119,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: internalstaging_file
+  - name: oadc_file
     doc_type: file
     type: collector
     root: None
