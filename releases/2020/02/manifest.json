@@ -22,10 +22,10 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.02",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
+    "spark": "quay.io/cdis/gen3-spark:2020.02",
     "tube": "quay.io/cdis/tube:2020.02",
     "guppy": "quay.io/cdis/guppy:2020.02",
-    "wts": "quay.io/cdis/workspace-token-service:0.1.0"
+    "wts": "quay.io/cdis/workspace-token-service:2020.02"
   },
   "arborist": {
     "deployment_version": "2"
