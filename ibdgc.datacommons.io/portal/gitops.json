@@ -2,7 +2,7 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant",
         "plural": "Participants"
       },
@@ -14,7 +14,7 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
+        "graphql": "_participant_count",
         "name": "Participant"
       },
       {
@@ -64,12 +64,26 @@
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
+          "node": "participant",
           "name": "Participants"
         },
         {
           "node": "sample",
           "name": "Samples"
+        }
+      ],
+      "customHomepageChartConfig": [
+        {
+          "chartType": "horizontalGroupedBar",
+          "dataType": "participant",
+          "yAxisProp": "country",
+          "xAxisProp": "ibd_affection_status",
+          "constrains": {
+            "project_id": "IIBDGC-GWAS-Mega-2"
+          },
+          "chartTitle": "IIBDGC-GWAS-Mega-2 project",
+          "logBase": 10,
+          "initialUnselectedKeys": ["Unknown", "no data"]
         }
       ]
     },
@@ -137,16 +151,25 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
+      },
+      "ibd_affection_status": {
+        "chartType": "pie",
+        "title": "IBD Affection Status"
+      },
+      "diagnosis": {
+        "chartType": "pie",
+        "title": "Diagnosis"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Participant",
           "fields":[
             "project_id",
             "gender",
             "race",
+            "country",
             "jewish",
             "hispanic",
             "ibd_affection_status",
@@ -157,11 +180,12 @@
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "fields": [
         "project_id",
         "gender",
         "race",
+        "country",
         "jewish",
         "hispanic",
         "ibd_affection_status",
@@ -188,15 +212,15 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
+      "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "participant_id",
+        "referenceIdFieldInDataIndex": "participant_id"
       }
     }
   },
@@ -249,8 +273,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "participant",
+        "resourceIdField": "participant_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
@@ -259,3 +283,4 @@
     "dropdowns": {}
   }
 }
+
