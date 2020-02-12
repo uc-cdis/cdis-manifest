@@ -249,8 +249,8 @@
         "referenceIdFieldInResourceIndex": "subject_id",
         "referenceIdFieldInDataIndex": "node_id"
       },
-      "accessibleFieldCheckList": ["subject_id"],
-      "accessibleValidationField": "subject_id"
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
     }
   },
   "fileExplorerConfig": {
@@ -320,8 +320,8 @@
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["subject_id"],
-      "accessibleValidationField": "subject_id",
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     }
   },
