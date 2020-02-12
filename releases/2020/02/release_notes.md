@@ -3,7 +3,7 @@
 ## uc-cdis/fence
 
 #### New Features
-  - added `google_primary_service_account` email to userinfo endpoint (to 
+  - Added `google_primary_service_account` email to userinfo endpoint (to 
     support Google requester pays buckets, need to know email of service 
     account that signed the url) (#751)
 
