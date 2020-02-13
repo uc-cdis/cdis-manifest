@@ -24,12 +24,19 @@
   fill: 1px solid var(--primary-color);
 }
 
+.g3-dropdown-button__button--primary:hover, 
+.g3-dropdown-button__button--primary:hover svg path, 
+.g3-dropdown-button__menu-trigger--primary:hover, 
+.g3-dropdown-button__menu-trigger--primary:hover svg path {
+  border: 1px solid black;
+}
+
 /* Nav Bars and Footer */
 
 .top-bar,
 .top-bar__header,
 .top-icon-button.body-typo {
-  background-color: var(--secondary-color);
+  background-color: #616265;
 }
 
 .top-bar__link {
@@ -42,8 +49,9 @@
 }
 
 .nav-bar__logo-img {
-  height: 27px;
-  margin-top: 18px;
+  height: 110px;
+  margin-bottom: -30px;
+  margin-top: -25px;
 }
 
 .footer__version-area {
@@ -135,4 +143,9 @@ tspan.special-number,
 
 .explorer-button-group__dropdown {
   margin-right: 10px;
+}
+
+/* Other */
+.protected-content {
+  background-color: #f4f4f6;
 }
