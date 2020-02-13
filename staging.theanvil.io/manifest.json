@@ -49,7 +49,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:0.3.2",
+        "image": "quay.io/cdis/pelican-export:2020.02",
         "pull_policy": "Always",
         "env": [
           {
