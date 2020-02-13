@@ -43,6 +43,73 @@
     "tier_access_limit": 50,
     "public_datasets": true
   },
+  "sower": [
+    {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican-export:0.3.2",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "subject"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+      "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
+        "memory-limit": "12Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "google": {
     "enabled": "no"
   },
