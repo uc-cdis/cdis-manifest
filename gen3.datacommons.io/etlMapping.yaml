@@ -1,8 +1,8 @@
 mappings:
   - name: oadc_etl
-    doc_type: case
+    doc_type: subject
     type: aggregator
-    root: case
+    root: subject
     props:
       - name: submitter_id
       - name: project_id
@@ -111,7 +111,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: case_id
+        join_on: subject_id
         props:
           - name: data_format
             src: data_format
@@ -133,8 +133,8 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
-      case:
+      subject:
         props:
-          - name: case_id
+          - name: subject_id
             src: id
           - name: project_id

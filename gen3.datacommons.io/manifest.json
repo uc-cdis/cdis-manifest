@@ -59,7 +59,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "case"
+            "value": "subject"
           }
         ],
         "volumeMounts": [
@@ -195,7 +195,7 @@
     "indices": [
       {
         "index": "oadc_etl",
-        "type": "case"
+        "type": "subject"
       },
       {
         "index": "oadc_file",

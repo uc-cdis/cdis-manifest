@@ -3,9 +3,9 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       },
       {
         "graphql": "_study_count",
@@ -20,8 +20,8 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_subject_count",
+        "name": "Subject"
       },
       {
         "graphql": "_study_count",
@@ -149,7 +149,7 @@
       },
       "node_id": {
         "chartType": "count",
-        "title": "Cases"
+        "title": "Subjects"
       },
       "gender": {
         "chartType": "pie",
@@ -219,8 +219,8 @@
       ]
     },
     "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
       "fieldMapping": [
         {"field": "unified_parkinsons_disease_ratings", "name": "UPDRS"},
         {"field": "mds_updrs", "name": "MDS-UPDRS"},
@@ -245,8 +245,8 @@
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -309,8 +309,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
