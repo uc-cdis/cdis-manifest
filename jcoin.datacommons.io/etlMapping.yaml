@@ -33,16 +33,6 @@ mappings:
         path: follow_ups.centers
         src: submitter_id
         fn: set
-    joining_props:
-      - index: file
-        join_on: participant_id
-        props:
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
   - name: jcoin_file
     doc_type: file
     type: collector
@@ -56,10 +46,3 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
-    injecting_props:
-      participant:
-        props:
-          - name: participant_id
-            fn: set
-            src: id
-          - name: project_id
