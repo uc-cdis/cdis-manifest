@@ -7,6 +7,7 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "quay.io/cdis/arborist:2020.02",
     "fence": "quay.io/cdis/fence:2020.02",
     "indexd": "quay.io/cdis/indexd:2020.02",
@@ -18,6 +19,12 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.02"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
   },
   "jupyterhub": {
     "enabled": "yes",
