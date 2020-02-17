@@ -13,9 +13,14 @@
         "plural": "Studies"
       },
       {
-        "graphql": "_visit_count",
-        "name": "Visit",
-        "plural": "Visits"
+        "graphql": "_sample_count",
+        "name": "Sample",
+        "plural": "Samples"
+      },
+      {
+        "graphql": "_imaging_file_count",
+        "name": "Imaging File",
+        "plural": "Imaging Files"
       }
     ],
     "chartCounts": [
@@ -24,8 +29,8 @@
         "name": "Subject"
       },
       {
-        "graphql": "_study_count",
-        "name": "Study"
+        "graphql": "_imaging_file_count",
+        "name": "Imaging File"
       }
     ],
     "projectDetails": "boardCounts"
