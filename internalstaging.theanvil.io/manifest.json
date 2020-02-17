@@ -36,7 +36,7 @@
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
     "netpolicy": "on",
-    "sync_from_dbgap": "True",
+    "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/anvilinternalstaging/user.yaml",
     "dispatcher_job_num": "10",
     "tier_access_level": "regular",
