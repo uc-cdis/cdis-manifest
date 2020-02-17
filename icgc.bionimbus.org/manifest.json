@@ -7,19 +7,19 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.3.2",
+    "arborist": "quay.io/cdis/arborist:2020.02",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:feat_cleversafe-url",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
-    "peregrine": "quay.io/cdis/peregrine:2.1.1",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "fence": "quay.io/cdis/fence:2020.02",
+    "indexd": "quay.io/cdis/indexd:2020.02",
+    "peregrine": "quay.io/cdis/peregrine:2020.02",
+    "pidgin": "quay.io/cdis/pidgin:2020.02",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.22.6",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.02",
+    "portal": "quay.io/cdis/data-portal:2020.02",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.18",
-    "guppy": "quay.io/cdis/guppy:0.3.10"
+    "spark": "quay.io/cdis/gen3-spark:2020.02",
+    "tube": "quay.io/cdis/tube:2020.02",
+    "guppy": "quay.io/cdis/guppy:2020.02"
   },
   "google": {
     "enabled": "no"
