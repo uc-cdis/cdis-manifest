@@ -16,12 +16,24 @@ mappings:
           - name: primary_diagnosis
       - path: exposures
         props:
-          - name: 
+          - name: alcohol_use_score
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
-      - name: _aliquots_count
+      - name: _medical_conditions_count
+        path: medical_conditions
+        fn: count
+      - name: _exposures_count
+        path: exposures
+        fn: count
+      - name: _procedures_count
+        path: procedures
+        fn: count
+      - name: _clinical_assessments_count
+        path: clinical_assessments
+        fn: count
+      - name: _imaging_files_count
         path: samples.aliquots
         fn: count
       - name: _unaligned_reads_files_count
