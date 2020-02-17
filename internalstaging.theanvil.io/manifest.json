@@ -134,12 +134,12 @@
     "auth_filter_field": "auth_resource_path"
   },
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "jupyter-pods-internalanvil",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "500Gi",
     "sidecar": {
       "cpu-limit": "1.0",
-      "memory-limit": "256Mi",
+      "memory-limit": "512Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:2020.02",
       "env": {
         "NAMESPACE": "internalanvil",
@@ -364,8 +364,8 @@
     },
     "indexd": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 4,
+      "max": 8,
       "targetCpu": 40
     },
     "peregrine": {
