@@ -241,30 +241,7 @@
         "ldl"
       ]
     },
-    "dropdowns": {
-      "download": {
-        "title": "Download"
-      }
-    },
     "buttons": [
-      {
-        "enabled": true,
-        "type": "data",
-        "title": "Download All Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json",
-        "dropdownId": "download"
-      },
       {
         "enabled": true,
         "type": "export",
