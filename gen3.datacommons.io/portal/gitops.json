@@ -178,34 +178,13 @@
           ]
         },
         {
-          "title": "Demographics",
+          "title": "Subjects",
           "fields": [
+            "age_at_enrollment",
             "gender",
             "race",
             "ethnicity",
-            "veteran_status",
-            "age_at_enrollment",
-            "age_at_onset",
-            "education_years"
-          ]
-        },
-        {
-          "title": "Assessment",
-          "fields": [
-            "unified_parkinsons_disease_ratings",
-            "mds_updrs",
-            "hopkins_verbal_learning_tests",
-            "scales_for_outcomes_in_pds",
-            "modified_schwab_england_scales",
-            "baseline_dyspnea_indexes",
-            "hamilton_depression_ratings",
-            "state_trait_anxiety_inventories",
-            "upenn_smell_tests",
-            "geriatric_depression_scales",
-            "montreal_cognitive_functional_tests",
-            "mini_mental_status_exams",
-            "rem_sleep_behaviors",
-            "epworth_sleepiness_scales"
+            "experimental_group"
           ]
         }
       ]
@@ -215,37 +194,22 @@
       "fields": [
         "project_id",
         "submitter_id",
+        "age_at_enrollment",
         "gender",
         "race",
         "ethnicity",
-        "age_at_enrollment",
-        "age_at_onset",
-        "education_years"
+        "experimental_group"
       ]
     },
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        {"field": "unified_parkinsons_disease_ratings", "name": "UPDRS"},
-        {"field": "mds_updrs", "name": "MDS-UPDRS"},
-        {"field": "hopkins_verbal_learning_tests", "name": "HVLT-R"},
-        {"field": "scales_for_outcomes_in_pds", "name": "Scales for Outcomes in Parkinson’s Disease – Autonomic"},
-        {"field": "modified_schwab_england_scales", "name": "Modified Schwab"},
-        {"field": "baseline_dyspnea_indexes", "name": "BDI"},
-        {"field": "hamilton_depression_ratings", "name": "Hamilton"},
-        {"field": "state_trait_anxiety_inventories", "name": "Anxiety – State-Trait Anxiety Inventory (STAI)"},
-        {"field": "upenn_smell_tests", "name": "UPSIT"},
-        {"field": "geriatric_depression_scales", "name": "Geriatric Depression Scale Short Form Questionnaire"},
-        {"field": "montreal_cognitive_functional_tests", "name": "MOCA"},
-        {"field": "mini_mental_status_exams", "name": "MMSE"},
-        {"field": "rem_sleep_behaviors", "name": "REM Sleep Behavior Disorder Questionnaire"},
-        {"field": "epworth_sleepiness_scales", "name": "Epworth Sleepiness Scale"},
-        {"field": "_aliquots_count", "name": "Aliquots Count"},
-        {"field": "_read_group_count", "name": "Read Groups Count"},
         {"field": "_samples_count", "name": "Samples Count"},
-        {"field": "_submitted_expression_arrays_count", "name": "Submitted Expression Arrays Count"},
-        {"field": "_submitted_unaligned_reads_count", "name": "Submitted Unaligned Reads Count"}
+        {"field": "_imaging_files_count", "name": "Imaging Files Count"},
+        {"field": "_unaligned_reads_files_count", "name": "Unaligned Reads Count"},
+        {"field": "_aligned_reads_files_count", "name": "Aligned Reads Count"},
+        {"field": "_expression_arrays_count", "name": "Expression Arrays Count"}
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -293,7 +257,8 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "data_category"
           ]
         }
       ]
