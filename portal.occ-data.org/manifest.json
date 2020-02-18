@@ -26,6 +26,9 @@
     "wts": "quay.io/cdis/workspace-token-service:2020.02",
     "manifestservice": "quay.io/cdis/manifestservice:2020.02"
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "hatchery": {
     "user-namespace": "jupyter-pods",
     "sub-dir": "/lw-workspace",
