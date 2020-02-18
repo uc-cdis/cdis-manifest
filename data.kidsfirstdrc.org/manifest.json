@@ -41,7 +41,10 @@
   },
   "scaling": {
     "arborist": {
-      "strategy": "auto"
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
     },
     "portal": {
       "strategy": "auto"
@@ -50,7 +53,10 @@
       "strategy": "auto"
     },
     "indexd": {
-      "strategy": "auto"
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
     },
     "peregrine": {
       "strategy": "auto"
