@@ -10,19 +10,13 @@ mappings:
       - name: ethnicity
       - name: race
       - name: gender
-    flatten_props:
-      - path: medical_conditions
-        props:
-          - name: primary_diagnosis
-      - path: exposures
-        props:
-          - name: alcohol_use_score
+      - name: age_at_enrollment
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
-      - name: _medical_conditions_count
-        path: medical_conditions
+      - name: _conditions_count
+        path: conditions
         fn: count
       - name: _exposures_count
         path: exposures
