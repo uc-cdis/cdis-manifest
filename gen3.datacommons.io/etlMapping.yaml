@@ -31,16 +31,16 @@ mappings:
         path: imaging_files
         fn: count
       - name: _expression_arrays_count
-        path: samples.aliquots.expression_arrays
+        path: expression_arrays
         fn: count
       - name: _unaligned_reads_files_count
-        path: samples.aliquots.read_groups.unaligned_reads_files
+        path: unaligned_reads_files
         fn: count
       - name: _aligned_reads_files_count
-        path: samples.aliquots.read_groups.aligned_reads_files
+        path: aligned_reads_files
         fn: count
       - name: _variant_call_files_count
-        path: samples.aliquots.read_groups.variant_call_files
+        path: variant_call_files
         fn: count
     joining_props:
       - index: file
