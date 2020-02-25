@@ -23,6 +23,9 @@
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "guppy": "quay.io/cdis/guppy:0.2.1"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "jupyterhub": {
     "enabled": "no"
   },
