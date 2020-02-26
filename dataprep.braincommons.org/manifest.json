@@ -1,6 +1,6 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the dataprep environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
@@ -42,7 +42,7 @@
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
         "NAMESPACE": "default",
-        "HOSTNAME": "data-staging.braincommons.org"
+        "HOSTNAME": "dataprep.braincommons.org"
       },
       "args": [],
       "command": [
@@ -144,11 +144,11 @@
   },
   "global": {
     "environment": "bhcdatastaging",
-    "hostname": "data-staging.braincommons.org",
+    "hostname": "dataprep.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.1/schema.json",
     "portal_app": "gitops",
-    "useryaml_s3path": "s3://cdis-gen3-users/bhcdatastaging/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/bhcdataprep/user.yaml",
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "public_datasets": true,
