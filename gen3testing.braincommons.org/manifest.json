@@ -1,11 +1,8 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the gen3testing environment manifest",
     "That's all I have to say"
   ],
-  "jenkins": {
-    "autodeploy": "yes"
-  },
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
@@ -42,7 +39,7 @@
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
         "NAMESPACE": "default",
-        "HOSTNAME": "data-staging.braincommons.org"
+        "HOSTNAME": "gen3testing.braincommons.org"
       },
       "args": [],
       "command": [
@@ -143,12 +140,12 @@
     ]
   },
   "global": {
-    "environment": "bhcdatastaging",
-    "hostname": "data-staging.braincommons.org",
+    "environment": "bhcqa",
+    "hostname": "gen3testing.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.0/schema.json",
     "portal_app": "gitops",
-    "useryaml_s3path": "s3://cdis-gen3-users/bhcdatastaging/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/bhctesting/user.yaml",
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "public_datasets": true,
@@ -166,22 +163,22 @@
   "guppy": {
     "indices": [
       {
-        "index": "bhcdatastaging_etl",
+        "index": "bhcqa_etl",
         "type": "case"
       },
       {
-        "index": "bhcdatastaging_file",
+        "index": "bhcqa_file",
         "type": "file"
       }
     ],
-    "config_index": "bhcdatastaging_array-config",
+    "config_index": "bhcqa_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
     "arborist": {
       "strategy": "auto",
-      "min": 1,
-      "max": 1,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "portal": {
@@ -192,8 +189,8 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 1,
-      "max": 1,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "indexd": {
@@ -206,12 +203,6 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
-      "targetCpu": 40
-    },
-    "presigned-url-fence": {
-      "strategy": "auto",
-      "min": 1,
-      "max": 1,
       "targetCpu": 40
     },
     "revproxy": {

@@ -81,7 +81,7 @@
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "query"
+          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -105,6 +105,81 @@
     }
   },
   "featureFlags": {
-    "explorer": false
+    "explorer": true
+  },
+  "dataExplorerConfig": {
+    "guppyConfig": {
+      "dataType": "case",
+      "nodeCountTitle": "Cases",
+      "fieldMapping": [
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "case_id",
+        "referenceIdFieldInDataIndex": "case_id"
+      }
+    }
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "data_type": {
+        "chartType": "stackedBar",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "case",
+        "resourceIdField": "case_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      }
+    ],
+    "dropdowns": {}
   }
 }

@@ -1,0 +1,48 @@
+mappings:
+  - name: jcoin_etl
+    doc_type: participant
+    type: aggregator
+    root: participant
+    props:
+      - name: submitter_id
+      - name: project_id
+    parent_props:
+      - path: protocols[protocol]
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+          - name: race
+          - name: jewish
+          - name: hispanic
+      - path: follow_ups
+        props:
+          - name: age_at_visit
+          - name: age_at_visit_gt89
+          - name: drug_used
+          - name: ever_transferred
+          - name: health_insurance
+          - name: height
+          - name: weight
+          - name: weight_percentage
+          - name: bmi
+          - name: pregnancy_status
+        sorted_by: updated_datetime, desc
+    aggregated_props:
+      - name: center
+        path: follow_ups.centers
+        src: submitter_id
+        fn: set
+  - name: jcoin_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state

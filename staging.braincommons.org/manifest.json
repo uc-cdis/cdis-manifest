@@ -1,8 +1,11 @@
 {
   "notes": [
-    "This is the dev environment manifest",
-    "That's all I have to say"
+    "This is the staging environment manifest",
+    "Staging environment for braincommons"
   ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
@@ -34,12 +37,12 @@
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
     "sidecar": {
-      "cpu-limit": "1.0",
+      "cpu-limit": "0.8",
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
         "NAMESPACE": "default",
-        "HOSTNAME": "gen3qa.braincommons.org"
+        "HOSTNAME": "data-staging.braincommons.org"
       },
       "args": [],
       "command": [
@@ -58,7 +61,7 @@
     "containers": [
       {
         "target-port": 8888,
-        "cpu-limit": "1.0",
+        "cpu-limit": "0.8",
         "memory-limit": "1.5Gi",
         "name": "Brain - Python/R/Freesurfer",
         "image": "quay.io/cdis/jupyterbrain:1.1",
@@ -112,7 +115,7 @@
       },
       {
         "target-port": 8888,
-        "cpu-limit": "1.0",
+        "cpu-limit": "0.8",
         "memory-limit": "1024Mi",
         "name": "Bioinfo - Python/R",
         "image": "quay.io/occ_data/jupyternotebook:1.7.2",
@@ -140,12 +143,12 @@
     ]
   },
   "global": {
-    "environment": "bhcqa",
-    "hostname": "gen3qa.braincommons.org",
+    "environment": "bhcprodv2",
+    "hostname": "staging.braincommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:728066667777:certificate/3dfa6ec9-320b-4ce6-ab83-967e286a4d76",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.1/schema.json",
     "portal_app": "gitops",
-    "useryaml_s3path": "s3://cdis-gen3-users/bhcqa/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/bhcstaging/user.yaml",
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "public_datasets": true,
@@ -163,18 +166,18 @@
   "guppy": {
     "indices": [
       {
-        "index": "bhcqa_etl",
+        "index": "bhc_etl",
         "type": "case"
       },
       {
-        "index": "bhcqa_file",
+        "index": "bhc_file",
         "type": "file"
       }
     ],
-    "config_index": "bhcqa_array-config",
+    "config_index": "bhc_array-config",
     "auth_filter_field": "auth_resource_path"
-  },
-  "scaling": {
+ },
+ "scaling": {
     "arborist": {
       "strategy": "auto",
       "min": 2,
@@ -189,8 +192,8 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 5,
+      "max": 15,
       "targetCpu": 40
     },
     "indexd": {
@@ -203,6 +206,12 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "revproxy": {
@@ -223,5 +232,5 @@
       "max": 4,
       "targetCpu": 40
     }
-  }
+ }
 }
