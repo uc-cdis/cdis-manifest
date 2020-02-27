@@ -19,7 +19,7 @@
     "peregrine": "quay.io/cdis/peregrine:2020.02",
     "pidgin": "quay.io/cdis/pidgin:2020.02",
     "portal": "quay.io/cdis/data-portal:2020.02",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:2020.02",
     "sower": "quay.io/cdis/sower:2020.02",
     "spark": "quay.io/cdis/gen3-spark:2020.02",
@@ -49,7 +49,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2020.20",
+        "image": "quay.io/cdis/pelican-export:2020.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -72,7 +72,7 @@
           },
           {
             "name": "ROOT_NODE",
-            "value": "subject"
+            "value": "case"
           }
         ],
         "volumeMounts": [
@@ -132,6 +132,33 @@
       }
     ],
     "auth_filter_field": "auth_resource_path"
+  },
+  "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "500Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "512Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.5",
+      "env": {"NAMESPACE":"internalanvil", "HOSTNAME": "internalstaging.theanvil.io"},
+      "args": [],
+      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+    },
+    "containers": [
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "512Mi",
+        "name": "R Studio",
+        "image": "heliumdatastage/rstudio-server:1",
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/"
+      }
+    ]
   },
   "jupyterhub": {
     "enabled": "yes",
