@@ -35,7 +35,7 @@
         {
           "name": "Access Data",
           "icon": "stage-access",
-          "body": "Send graphQL queries to get information on data files. For example, this query finds a specific file by filename: \n\n{datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
+          "body": "Send graphQL queries to get information on data files. For example, this query finds a specific file by filename: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
           "link": "/query",
           "label": "Query data"
         }
@@ -171,7 +171,7 @@
   },
   "fileExplorerConfig": {
     "charts": {
-      "data_type": {
+      "project_id": {
         "chartType": "pie",
         "title": "Project ID"
       },
