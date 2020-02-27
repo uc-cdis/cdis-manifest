@@ -12,10 +12,12 @@ mappings:
     root: None
     category: data_file
     props:
+      - name: submitter_id
       - name: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
       - name: data_format
       - name: data_type
+      - name: data_category
       - name: project_id
