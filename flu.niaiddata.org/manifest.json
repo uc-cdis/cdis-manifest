@@ -21,6 +21,9 @@
     "tube": "quay.io/cdis/tube:0.3.15",
     "guppy": "quay.io/cdis/guppy:0.3.3"
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "jupyterhub": {
     "enabled": "no"
   },

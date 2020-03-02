@@ -49,6 +49,9 @@
   "canary": {
     "default": 0
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "guppy": {
     "indices": [
       {
@@ -66,5 +69,5 @@
     ],
     "config_index": "tb_array-config",
     "auth_filter_field": "auth_resource_path"
-  }  
+  }
 }
