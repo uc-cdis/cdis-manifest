@@ -3,20 +3,15 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot",
-        "plural": "Aliquots"
+        "graphql": "_project_count",
+        "name": "Project",
+        "plural": "Projects"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "case"
+        "graphql": "_project_count",
+        "name": "project"
       }
     ],
     "projectDetails": "boardCounts"
@@ -40,19 +35,15 @@
         {
           "name": "Access Data",
           "icon": "stage-access",
-          "body": "Use our selected tool to filter out the data you need.",
+          "body": "Send graphQL queries to get information on data files. For example, this query finds a specific file by filename: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
           "link": "/query",
           "label": "Query data"
         }
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
-          "name": "cases"
-        },
-        {
-          "node": "aliquot",
-          "name": "Aliquots"
+          "node": "project",
+          "name": "projects"
         }
       ]
     },
@@ -86,6 +77,11 @@
     },
     "topBar": {
       "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Browse Data"
+        },
         {
           "link": "https://docs.icgc.org/pcawg/data/#download-from-pdc",
           "name": "PCAWG Access Documentation"
@@ -175,9 +171,9 @@
   },
   "fileExplorerConfig": {
     "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
+      "project_id": {
+        "chartType": "pie",
+        "title": "Project ID"
       },
       "data_format": {
         "chartType": "stackedBar",
@@ -191,7 +187,8 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "data_category"
           ]
         }
       ]
@@ -200,9 +197,13 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "submitter_id",
         "file_name",
         "file_size",
-        "object_id"
+        "object_id",
+        "data_type",
+        "data_format",
+        "data_category"
       ]
     },
     "guppyConfig": {
