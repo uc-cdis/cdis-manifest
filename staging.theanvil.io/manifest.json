@@ -36,7 +36,7 @@
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
     "netpolicy": "on",
-    "sync_from_dbgap": "True",
+    "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/anvilstaging/user.yaml",
     "dispatcher_job_num": "10",
     "tier_access_level": "regular",
@@ -139,7 +139,7 @@
     "user-volume-size": "500Gi",
     "sidecar": {
       "cpu-limit": "1.0",
-      "memory-limit": "256Mi",
+      "memory-limit": "512Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:2020.02",
       "env": {
         "NAMESPACE": "default",
@@ -430,8 +430,8 @@
     },
     "indexd": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 4,
+      "max": 8,
       "targetCpu": 40
     },
     "peregrine": {
