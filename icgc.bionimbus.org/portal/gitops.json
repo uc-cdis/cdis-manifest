@@ -35,7 +35,7 @@
         {
           "name": "Access Data",
           "icon": "stage-access",
-          "body": "Send graphQL queries to get information on data files. For example, this query finds a specific file by filename: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
+          "body": "Query files: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
           "link": "/query",
           "label": "Query data"
         }
@@ -130,7 +130,7 @@
       },
       "node_id": {
         "chartType": "count",
-        "title": "Cases"
+        "title": "Subjects"
       }
     },
     "filters": {
@@ -157,15 +157,15 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
       "fieldMapping": [
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
       }
     }
   },
@@ -178,6 +178,10 @@
       "data_format": {
         "chartType": "stackedBar",
         "title": "File Format"
+      },
+      "experimental_strategy": {
+        "chartType": "stackedBar",
+        "title": "Experimental Strategy"
       }
     },
     "filters": {
@@ -188,7 +192,11 @@
             "project_id",
             "data_type",
             "data_format",
-            "data_category"
+            "data_category",
+            "analysis_type",
+            "experimental_strategy",
+            "primary_site",
+            "specimen_type"
           ]
         }
       ]
@@ -199,11 +207,20 @@
         "project_id",
         "submitter_id",
         "file_name",
+        "dcc_file_id",
+        "storage_urls",
         "file_size",
         "object_id",
         "data_type",
         "data_format",
-        "data_category"
+        "data_category",
+        "analysis_type",
+        "experimental_strategy",
+        "participant_barcode",
+        "specimen_barcode",
+        "sample_barcode",
+        "primary_site",
+        "specimen_type"
       ]
     },
     "guppyConfig": {
@@ -213,8 +230,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
