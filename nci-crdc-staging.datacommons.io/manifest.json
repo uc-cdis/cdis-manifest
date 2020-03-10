@@ -2,7 +2,7 @@
   "notes": [
     "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
     "syncing authZ information from dbGap, there is a manual whitelist. ",
-    "Environment is configured for Google data access methods including service account ",
+    "Environment is configured for Google data access methods including service accounts ",
     "registration. Data is in multiple Google buckets with both public and *controlled* ",
     "data. The controlled data is actually just public data so there's no sensitive ",
     "data in this env."
