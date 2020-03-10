@@ -6,6 +6,69 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: disease_status_last_followup
+      - name: cancer_first_relative
+      - name: age_at_diagnosis
+      - name: vital_status
+      - name: prior_malignancy
+      - name: tumor_type
+      - name: tumor_subtype
+      - name: age_at_diagnosis_group
+      - name: gender
+      - name: primary_site
+      - name: age_at_last_followup
+      - name: diagnosis_icd10
+    aggregated_props:
+      - name: analysis_types
+        src: analysis_types
+        path: analysis_types
+        fn: list
+      - name: available_data_types
+        src: available_data_types
+        path: available_data_types
+        fn: list
+      - name: sample_barcodes
+        src: sample_barcodes
+        path: sample_barcodes
+        fn: list
+      - name: sample_ids
+        src: sample_ids
+        path: sample_ids
+        fn: list
+      - name: specimen_ids
+        src: specimen_ids
+        path: specimen_ids
+        fn: list
+      - name: specimen_barcodes
+        src: specimen_barcodes
+        path: specimen_barcodes
+        fn: list
+      - name: sample_barcodes
+        src: sample_barcodes
+        path: sample_barcodes
+        fn: list
+      - name: _aligned_reads_files_count
+        path: aligned_reads_files
+        fn: count
+      - name: _variant_call_files_count
+        path: variant_call_files
+        fn: count
+      - name: _aligned_reads_files_count
+        path: aligned_reads_files
+        fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_type
+            fn: set
   - name: icgc_file
     doc_type: file
     type: collector
@@ -23,7 +86,7 @@ mappings:
       - name: project_id
       - name: analysis_type
       - name: experimental_strategy
-      - name: participant_barcode
+      - name: donor_barcode
       - name: specimen_barcode
       - name: sample_barcode
       - name: aliquot_barcode
@@ -31,3 +94,12 @@ mappings:
       - name: specimen_type
       - name: dcc_file_id
       - name: storage_urls
+      - name: donor_ids
+      - name: specimen_ids
+      - name: sample_ids
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+          - name: project_id

@@ -207,8 +207,6 @@
         "project_id",
         "submitter_id",
         "file_name",
-        "dcc_file_id",
-        "storage_urls",
         "file_size",
         "object_id",
         "data_type",
@@ -216,11 +214,17 @@
         "data_category",
         "analysis_type",
         "experimental_strategy",
-        "participant_barcode",
+        "donor_barcode",
         "specimen_barcode",
         "sample_barcode",
+        "aliquot_barcode",
         "primary_site",
-        "specimen_type"
+        "specimen_type",
+        "dcc_file_id",
+        "storage_urls",
+        "donor_ids",
+        "specimen_ids",
+        "sample_ids"
       ]
     },
     "guppyConfig": {
