@@ -6,18 +6,18 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
-      - name: disease_status_last_followup
-      - name: cancer_first_relative
       - name: age_at_diagnosis
-      - name: vital_status
+      - name: age_at_diagnosis_group
+      - name: age_at_last_followup
+      - name: cancer_first_relative
+      - name: diagnosis_icd10
+      - name: disease_status_last_followup
       - name: prior_malignancy
       - name: tumor_type
       - name: tumor_subtype
-      - name: age_at_diagnosis_group
       - name: gender
       - name: primary_site
-      - name: age_at_last_followup
-      - name: diagnosis_icd10
+      - name: vital_status
     aggregated_props:
       - name: _aligned_reads_files_count
         path: aligned_reads_files
@@ -62,10 +62,6 @@ mappings:
       - name: primary_site
       - name: specimen_type
       - name: dcc_file_id
-      - name: storage_urls
-      - name: donor_ids
-      - name: specimen_ids
-      - name: sample_ids
     injecting_props:
       subject:
         props:
