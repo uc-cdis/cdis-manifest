@@ -19,34 +19,6 @@ mappings:
       - name: age_at_last_followup
       - name: diagnosis_icd10
     aggregated_props:
-      - name: analysis_types
-        src: analysis_types
-        path: subjects
-        fn: list
-      - name: available_data_types
-        src: available_data_types
-        path: subjects
-        fn: list
-      - name: sample_barcodes
-        src: sample_barcodes
-        path: subjects
-        fn: list
-      - name: sample_ids
-        src: sample_ids
-        path: subjects
-        fn: list
-      - name: specimen_ids
-        src: specimen_ids
-        path: subjects
-        fn: list
-      - name: specimen_barcodes
-        src: specimen_barcodes
-        path: subjects
-        fn: list
-      - name: sample_barcodes
-        src: sample_barcodes
-        path: subjects
-        fn: list
       - name: _aligned_reads_files_count
         path: aligned_reads_files
         fn: count
