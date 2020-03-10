@@ -21,31 +21,31 @@ mappings:
     aggregated_props:
       - name: analysis_types
         src: analysis_types
-        path: analysis_types
+        path: subjects
         fn: list
       - name: available_data_types
         src: available_data_types
-        path: available_data_types
+        path: subjects
         fn: list
       - name: sample_barcodes
         src: sample_barcodes
-        path: sample_barcodes
+        path: subjects
         fn: list
       - name: sample_ids
         src: sample_ids
-        path: sample_ids
+        path: subjects
         fn: list
       - name: specimen_ids
         src: specimen_ids
-        path: specimen_ids
+        path: subjects
         fn: list
       - name: specimen_barcodes
         src: specimen_barcodes
-        path: specimen_barcodes
+        path: subjects
         fn: list
       - name: sample_barcodes
         src: sample_barcodes
-        path: sample_barcodes
+        path: subjects
         fn: list
       - name: _aligned_reads_files_count
         path: aligned_reads_files
