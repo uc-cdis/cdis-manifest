@@ -25,9 +25,6 @@ mappings:
       - name: _variant_call_files_count
         path: variant_call_files
         fn: count
-      - name: _aligned_reads_files_count
-        path: aligned_reads_files
-        fn: count
     joining_props:
       - index: file
         join_on: subject_id
