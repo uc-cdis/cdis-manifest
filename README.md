@@ -1,4 +1,4 @@
-# Pre-commit hook installation:
+### Pre-commit hook installation:
 
 `ln -s $(pwd)/.githooks/pre-commit $(pwd)/.git/hooks/pre-commit`
 
