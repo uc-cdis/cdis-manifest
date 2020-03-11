@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/skip_tests_for_githooks') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
