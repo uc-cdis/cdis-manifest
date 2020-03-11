@@ -10,6 +10,7 @@ for FILE in "${git_diff[@]}"; do
 
     if [ $RC -ne 0 ]; then
       echo "fix your json! -> ${FILE}"
+      echo "try this command: cat ${FILE} | python -c 'import simplejson,sys;obj=simplejson.load(sys.stdin);'"
       exit 1
     fi
   fi
