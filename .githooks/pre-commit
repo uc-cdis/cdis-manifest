@@ -1,0 +1,16 @@
+#/bin/bash
+
+git_diff=($( git diff --name-only origin/master | tr "\n" " "))
+
+for FILE in "${git_diff[@]}"; do
+  extension=$("${FILE#*.}")
+  if [ "$extension" == ".json" ]; then
+    cat $FILE | python -m json.tool
+    RC=$?
+
+    if [ $RC -ne 0 ]; then
+      echo "fix your json! -> ${FILE}"
+      exit 1
+    fi
+  fi
+done
