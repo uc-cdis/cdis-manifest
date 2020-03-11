@@ -11,7 +11,7 @@ for FILE in "${git_diff[@]}"; do
     if [ $RC -ne 0 ]; then
       echo "fix your json! -> ${FILE}"
       jq_installed=$(which jq)
-      if [ $RC -ne 0 ]; then
+      if [ $? -eq 0 ]; then
         cat ${FILE} | jq
       else
         echo "install jq to debug further or copy your json into https://jsonlint.com/"
