@@ -9,6 +9,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2.3.2",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.03",
     "fence": "quay.io/cdis/fence:feat_cleversafe-url",
     "indexd": "quay.io/cdis/indexd:2.1.0",
     "peregrine": "quay.io/cdis/peregrine:2.1.1",
@@ -39,7 +40,8 @@
     "public_datasets": true,
     "tier_access_level": "libre",
     "tier_access_limit": 50,
-    "sync_from_dbgap": "True"
+    "sync_from_dbgap": "True",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
