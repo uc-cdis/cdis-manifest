@@ -10,7 +10,12 @@ for FILE in "${git_diff[@]}"; do
 
     if [ $RC -ne 0 ]; then
       echo "fix your json! -> ${FILE}"
-      echo "try this command: cat ${FILE} | python -c 'import simplejson,sys;obj=simplejson.load(sys.stdin);'"
+      jq_installed=$(which jq)
+      if [ $RC -ne 0 ]; then
+        cat ${FILE} | jq
+      else
+        echo "install jq to debug further or copy your json into https://jsonlint.com/"
+      fi
       exit 1
     fi
   fi

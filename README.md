@@ -1,6 +1,6 @@
 # Pre-commit hook installation:
 
-`ln -s .githooks./pre-commit .git/hooks/pre-commit`
+`ln -s $(pwd)/.githooks/pre-commit $(pwd)/.git/hooks/pre-commit`
 
 # TL;DR
 
