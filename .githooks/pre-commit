@@ -1,0 +1,23 @@
+#/bin/bash
+
+git_diff=($( git diff --name-only origin/master | tr "\n" " "))
+
+for FILE in "${git_diff[@]}"; do
+  extension="${FILE##*.}"
+  if [ "$extension" == "json" ]; then
+    output=$(cat $FILE | python -m json.tool)
+    RC=$?
+
+    if [ $RC -ne 0 ]; then
+      echo $output
+      echo "fix your json! -> ${FILE}"
+      jq_installed=$(which jq)
+      if [ $? -eq 0 ]; then
+        cat ${FILE} | jq
+      else
+        echo "install jq to debug further or copy your json into https://jsonlint.com/"
+      fi
+      exit 1
+    fi
+  fi
+done
