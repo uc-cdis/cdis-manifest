@@ -136,6 +136,18 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
+      },
+      "race": {
+        "chartType": "pie",
+        "title": "Race"
+      },
+      "center": {
+        "chartType": "bar",
+        "title": "center"
       }
     },
     "filters": {
@@ -144,29 +156,47 @@
           "title": "Case",
           "fields":[
             "project_id",
+            "drug_used",
+            "ever_transferred",
+            "pregnancy_status",
+            "protocol",
+            "height",
+            "weight",
+            "weight_percentage",
+            "bmi",
+            "health_insurance",
+            "center"
+          ]
+        },
+        {
+          "title": "Participant",
+          "fields":[
             "gender",
             "race",
             "jewish",
-            "hispanic",
-            "ibd_affection_status",
-            "diagnosis",
-            "population_control"
+            "hispanic"
           ]
         }
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "fields": [
         "project_id",
         "gender",
         "race",
         "jewish",
         "hispanic",
-        "ibd_affection_status",
-        "diagnosis",
-        "population_control",
-        "_samples_count"
+        "drug_used",
+        "ever_transferred",
+        "pregnancy_status",
+        "protocol",
+        "height",
+        "weight",
+        "weight_percentage",
+        "bmi",
+        "health_insurance",
+        "center"
       ]
     },
     "buttons": [
@@ -187,15 +217,19 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
+      "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
+        { "field": "project_id", "name": "Project ID" },
+        { "field": "bmi", "name": "BMI (kg/m^2)" },
+        { "field": "height", "name": "Height (cm)" },
+        { "field": "weight", "name": "Weight (g)" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "participant_id",
+        "referenceIdFieldInDataIndex": "participant_id"
       }
     }
   },
@@ -248,8 +282,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "participant",
+        "resourceIdField": "participant_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
