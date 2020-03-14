@@ -1,7 +1,7 @@
 {
   "notes": [
     "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
-    "syncing authZ information from dbGap, there is a manual whitelist. ",
+    "syncing authz information from dbGap, there is a manual whitelist. ",
     "Environment is configured for Google data access methods including service account ",
     "registration. Data is in multiple Google buckets with both public and *controlled* ",
     "data. The controlled data is actually just public data so there's no sensitive ",
@@ -20,6 +20,7 @@
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
     "portal": "quay.io/cdis/data-portal:2.2.5",
+    "sower": "quay.io/cdis/sower:0.3.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "metadata": "quay.io/cdis/metadata-service:v1.2.0",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
@@ -39,6 +40,86 @@
   "jupyterhub": {
     "enabled": "no"
   },
+  "sower": [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:0.1.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:0.1.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "global": {
     "environment": "dcf-staging",
     "hostname": "nci-crdc-staging.datacommons.io",
