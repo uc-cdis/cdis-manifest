@@ -103,6 +103,19 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://jcoin.datacommons.io/dashboard/Public/index.html",
+          "name": "Documentation"
+        }
+      ]
+    },
     "login": {
       "title": "JCOIN Portal",
       "subTitle": "Explore, Analyze, and Share Data",
