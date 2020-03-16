@@ -153,9 +153,13 @@
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Participant",
           "fields":[
             "project_id",
+            "gender",
+            "race",
+            "jewish",
+            "hispanic",
             "drug_used",
             "ever_transferred",
             "pregnancy_status",
@@ -166,15 +170,6 @@
             "bmi",
             "health_insurance",
             "center"
-          ]
-        },
-        {
-          "title": "Participant",
-          "fields":[
-            "gender",
-            "race",
-            "jewish",
-            "hispanic"
           ]
         }
       ]
