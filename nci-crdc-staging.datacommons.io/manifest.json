@@ -46,7 +46,7 @@
       "action": "index-object-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:0.1.0",
+        "image": "quay.io/cdis/manifest-indexing:1.0.0",
         "pull_policy": "Always",
         "env": [
           {
@@ -85,7 +85,7 @@
       "action": "download-indexd-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:0.1.0",
+        "image": "quay.io/cdis/download-indexd-manifest:1.0.0",
         "pull_policy": "Always",
         "env": [
           {
