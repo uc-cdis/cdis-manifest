@@ -1,0 +1,131 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:2020.03",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:2020.03",
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "portal": "quay.io/cdis/data-portal:2.24.8",
+    "tube": "quay.io/cdis/tube:2020.03",
+    "guppy": "quay.io/cdis/guppy:2020.03",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "quay.io/cdis/gen3-spark:2020.03",
+    "hatchery": "quay.io/cdis/hatchery:2020.03",
+    "wts": "quay.io/cdis/workspace-token-service:2020.03",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3"
+  },
+  "global": {
+    "environment": "covid19-prod",
+    "hostname": "covid19.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/ec368910-95e7-4f7f-bdd3-020a2f51bc94",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/flu-datadictionary/1.0.1/schema.json",
+    "portal_app": "dev",
+    "kube_bucket": "kube-covid19-prod-gen3",
+    "logs_bucket": "s3logs-logs-covid19-prod-gen3",
+    "sync_from_dbgap": "False",
+    "dispatcher_job_num": "10",
+    "netpolicy": "on",
+    "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml"
+  },
+  "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "10Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:chore_sidecar",
+      "env": {"NAMESPACE":"default", "HOSTNAME": "covid19.datacommons.io"},
+      "args": [],
+      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+    },
+    "containers": [{
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio",
+      "image": "quay.io/cdis/rstudio:master",
+      "env": {"DISABLE_AUTH": "true"},
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
+    },{
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Jupyter - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    }]
+  },
+  "canary": {
+    "default": 0
+  },
+ "arborist": {
+   "deployment_version": "2"
+ },
+ "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 10,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
+  }
+}
