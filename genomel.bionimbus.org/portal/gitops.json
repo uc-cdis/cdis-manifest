@@ -108,6 +108,19 @@
     "explorer": true
   },
   "dataExplorerConfig": {
+    "filters": {
+      "tabs": [
+        {
+          "title": "Cases",
+          "fields": [
+            "project_id"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": false
+    },
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
