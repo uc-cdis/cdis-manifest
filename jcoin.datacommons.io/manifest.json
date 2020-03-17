@@ -4,30 +4,24 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.3.2",
+    "arborist": "quay.io/cdis/arborist:2020.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
-    "fence": "quay.io/cdis/fence:4.13.1",
-    "indexd": "quay.io/cdis/indexd:2.6.0",
-    "peregrine": "quay.io/cdis/peregrine:1.3.0",
-    "pidgin": "quay.io/cdis/pidgin:1.2.0",
+    "fence": "quay.io/cdis/fence:2020.03",
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.13",
-    "portal": "quay.io/cdis/data-portal:2.23.4",
-    "tube": "quay.io/cdis/tube:0.3.25",
-    "guppy": "quay.io/cdis/guppy:0.4.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "portal": "quay.io/cdis/data-portal:2.24.8",
+    "tube": "quay.io/cdis/tube:2020.03",
+    "guppy": "quay.io/cdis/guppy:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "hatchery": "quay.io/cdis/hatchery:0.1.0",
-    "wts": "quay.io/cdis/workspace-token-service:0.2.0",
+    "spark": "quay.io/cdis/gen3-spark:2020.03",
+    "hatchery": "quay.io/cdis/hatchery:2020.03",
+    "wts": "quay.io/cdis/workspace-token-service:2020.03",
     "ambassador": "quay.io/datawire/ambassador:0.60.3"
   },
-  "ssjdispatcher": {
-    "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:0.0.3"
-    }
-},
   "global": {
     "environment": "jcoin-prod",
     "hostname": "jcoin.datacommons.io",
