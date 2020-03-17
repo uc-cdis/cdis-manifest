@@ -7,10 +7,10 @@
 		"autodeploy": "yes"
 	},
 	"versions": {
-		"indexd": "quay.io/cdis/indexd:2.4.0",
+		"indexd": "quay.io/cdis/indexd:2020.03",
 		"fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
 		"portal": "quay.io/cdis/dataguids:master",
-		"revproxy": "quay.io/cdis/nginx:1.15.5-ctds"
+		"revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1"
 	},
 	"jupyterhub": {
 		"enabled": "no"
