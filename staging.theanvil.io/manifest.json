@@ -7,31 +7,31 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.02",
+    "arborist": "quay.io/cdis/arborist:2020.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.02",
+    "fence": "quay.io/cdis/fence:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:2020.02",
-    "hatchery": "quay.io/cdis/hatchery:2020.02",
+    "guppy": "quay.io/cdis/guppy:2020.03",
+    "hatchery": "quay.io/cdis/hatchery:2020.03",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "indexd": "quay.io/cdis/indexd:2020.02",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.02",
-    "peregrine": "quay.io/cdis/peregrine:2020.02",
-    "pidgin": "quay.io/cdis/pidgin:2020.02",
-    "portal": "quay.io/cdis/data-portal:2020.02",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.02",
-    "sower": "quay.io/cdis/sower:2020.02",
-    "spark": "quay.io/cdis/gen3-spark:2020.02",
-    "tube": "quay.io/cdis/tube:2020.02",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.02",
-    "wts": "quay.io/cdis/workspace-token-service:2020.02"
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
+    "portal": "quay.io/cdis/data-portal:2020.03",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "sower": "quay.io/cdis/sower:2020.03",
+    "spark": "quay.io/cdis/gen3-spark:2020.03",
+    "tube": "quay.io/cdis/tube:2020.03",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.03",
+    "wts": "quay.io/cdis/workspace-token-service:2020.03"
   },
   "global": {
     "environment": "anvilstaging",
     "hostname": "staging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.1.2/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.1.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
@@ -49,7 +49,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2020.02",
+        "image": "quay.io/cdis/pelican-export:2020.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -114,7 +114,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2020.02"
+      "indexing": "quay.io/cdis/indexs3client:2020.03"
     }
   },
   "arborist": {
@@ -140,7 +140,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:2020.02",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2020.03",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "staging.theanvil.io"
