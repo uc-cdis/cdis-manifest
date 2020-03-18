@@ -30,7 +30,7 @@
   "jupyterhub": {
     "enabled": "yes",
     "nb_storage_size": "250Gi",
-    "sidecar": "quay.io/cdis/gen3fuse-sidecar:feat_c8",
+    "sidecar": "quay.io/cdis/gen3fuse-sidecar:2020.03",
     "containers": [
       {
         "name": "Bioinfo - Python/R",
