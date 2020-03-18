@@ -29,6 +29,9 @@
   "arborist": {
     "deployment_version": "2"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "hatchery": {
     "user-namespace": "jupyter-pods",
     "sub-dir": "/lw-workspace",
