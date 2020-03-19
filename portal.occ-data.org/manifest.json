@@ -176,5 +176,8 @@
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/edc/user.yaml",
     "netpolicy": "on"
+  },
+  "canary": {
+    "default": 0
   }
 }
