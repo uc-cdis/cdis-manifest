@@ -13,6 +13,13 @@ mappings:
           - name: race
           - name: ethnicity
           - name: year_of_birth
+          - name: age
+      - path: sample
+        props:
+          - name: ischemic_time
+      - path: death_record
+        props:
+          - name: hardy_scale 
       - path: diagnoses
         props:
           - name: primary_diagnosis
