@@ -43,7 +43,7 @@ mappings:
         sorted_by: updated_datetime, desc
       - path: blood_pressure_test
         props:
-          - name: diastolic_blood_pressure
+          - name: bp_systolic
           - name: bp_diastolic
       - path: medication_records
         props:
