@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #962328;
-  --secondary-color: #836891;
+  --primary-color: #B02F34;
+  --secondary-color: #421C52;
 
   --primary-color_light: #B7474D;
   --secondary-color_light: #90799b;
@@ -15,8 +15,8 @@
   --g3-color__white: #FFFFFF;;
 
   --g3-primary-btn__color: var(--g3-color__white);
-  --g3-primary-btn__bg-color: var(--primary-color);
-  --g3-primary-btn__bg-color--hover: var(--primary-color_light);
+  --g3-primary-btn__bg-color: var(--secondary-color);
+  --g3-primary-btn__bg-color--hover: var(--secondary-color_light);
   --g3-primary-btn__border-color: var(--g3-color__lightgray);
   --g3-primary-btn__border-color--hover: var(--g3-color__gray);
   --g3-primary-btn__border-color--active: var(--g3-color__lightgray);
