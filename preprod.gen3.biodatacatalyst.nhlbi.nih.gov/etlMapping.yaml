@@ -37,10 +37,6 @@ mappings:
           - name: vte_case_status
           - name: vte_followup_start_age
           - name: vte_prior_history
-      - path: diagnoses
-        props:
-          - name: metabolic_syndrome_diagnosis
-        sorted_by: updated_datetime, desc
       - path: blood_pressure_test
         props:
           - name: bp_systolic
@@ -83,10 +79,6 @@ mappings:
       - name: ethnicity
         path: demographics
         src: ethnicity
-        fn: set
-      - name: age_at_enrollment
-        path: demographics
-        src: age_at_enrollment
         fn: set
       - name: _samples_count
         path: samples
