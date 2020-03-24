@@ -25,7 +25,8 @@
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "manifestservice": "quay.io/cdis/manifestservice:master"
+    "manifestservice": "quay.io/cdis/manifestservice:master",
+    "metadata": "quay.io/cdis/metadata-service:v1.2.0"
   },
   "peregrine": {
     "sidecar": "True"
