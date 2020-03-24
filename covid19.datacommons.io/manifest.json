@@ -25,7 +25,7 @@
     "environment": "covid19-prod",
     "hostname": "covid19.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/ec368910-95e7-4f7f-bdd3-020a2f51bc94",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/flu-datadictionary/1.0.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/1.0.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
     "logs_bucket": "s3logs-logs-covid19-prod-gen3",
