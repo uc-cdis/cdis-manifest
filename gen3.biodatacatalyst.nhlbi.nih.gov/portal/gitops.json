@@ -176,8 +176,8 @@
         }
       ]
     },
-    "categorical9Colors": ["#c02f42", "#175676", "#59CD90", "#F2DC5D", "#40476D", "#FFA630", "#AE8799", "#1A535C", "#462255"],
-    "categorical2Colors": ["#6d6e70", "#c02f42"]
+    "categorical9Colors": ["#c0143c", "#616265", "#59CD90", "#F2DC5D", "#40476D", "#FFA630", "#AE8799", "#1A535C", "#462255"],
+    "categorical2Colors": ["#616265", "#c0143c"]
   },
   "requiredCerts": [],
   "featureFlags": {
@@ -226,6 +226,7 @@
           "title": "Diagnosis",
           "fields": [
             "bp_diastolic",
+            "bp_systolic",
             "basophil_ncnc_bld",
             "eosinophil_ncnc_bld",
             "hdl",
@@ -340,6 +341,7 @@
         { "field": "vte_followup_start_age", "name": "VTE Followup Start Age" },
         { "field": "vte_prior_history", "name": "VTE Prior History" },
         { "field": "bp_diastolic", "name": "BP Diastolic" },
+        { "field": "bp_systolic", "name": "BP Systolic" },
         { "field": "basophil_ncnc_bld", "name": "Basophils Number Concentration Bld" },
         { "field": "eosinophil_ncnc_bld", "name": "Eosinophils Number Concentration Bld" },
         { "field": "hdl", "name": "HDL" },
