@@ -25,8 +25,7 @@
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:0.0.6",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
-    "metadata": "quay.io/cdis/metadata-service:v1.2.0"
+    "manifestservice": "quay.io/cdis/manifestservice:master"
   },
   "peregrine": {
     "sidecar": "True"
@@ -96,12 +95,6 @@
       "strategy": "auto",
       "min": 2,
       "max": 6,
-      "targetCpu": 40
-    },
-    "metadata": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 5,
       "targetCpu": 40
     }
   }
