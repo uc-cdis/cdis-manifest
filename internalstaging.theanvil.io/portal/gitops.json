@@ -118,9 +118,9 @@
         "chartType": "count",
         "title": "Cases"
       },
-      "gender": {
+      "sex": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Sex"
       },
       "race": {
         "chartType": "bar",
@@ -220,7 +220,7 @@
       "dataType": "case",
       "nodeCountTitle": "Cases",
       "fieldMapping": [
-        { "field": "gender", "name": "Gender" },
+        { "field": "sex", "name": "Sex" },
         { "field": "race", "name": "Race" },
         { "field": "age", "name": "Age" },
         { "field": "ethnicity", "name": "Ethnicity" },
