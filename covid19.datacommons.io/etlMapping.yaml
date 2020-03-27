@@ -1,0 +1,34 @@
+mappings:
+  - name: covid19
+    doc_type: location
+    type: aggregator
+    root: location
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: country_region
+      - name: province_state
+      - name: latitude
+      - name: longitude
+    flatten_props:
+      - path: time_series
+        props:
+          - name: confirmed
+          - name: deaths
+          - name: recovered
+          - name: testing
+          - name: date
+        sorted_by: updated_datetime, desc
+  - name: covid19_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
