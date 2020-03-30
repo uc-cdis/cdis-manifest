@@ -11,7 +11,7 @@ mappings:
       - name: latitude
       - name: longitude
     flatten_props:
-      - path: time_series
+      - path: time_seriess
         props:
           - name: confirmed
           - name: deaths
