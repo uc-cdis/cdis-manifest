@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 git_diff=($( git diff --name-only origin/master | tr "\n" " "))
 
