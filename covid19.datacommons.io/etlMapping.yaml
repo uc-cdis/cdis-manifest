@@ -10,15 +10,27 @@ mappings:
       - name: province_state
       - name: latitude
       - name: longitude
-    flatten_props:
-      - path: time_seriess
-        props:
-          - name: confirmed
-          - name: deaths
-          - name: recovered
-          - name: testing
-          - name: date
-        sorted_by: updated_datetime, desc
+    aggregated_props:
+      - name: confirmed
+        path: time_seriess
+        src: confirmed
+        fn: set
+      - name: deaths
+        path: time_seriess
+        src: deaths
+        fn: set
+      - name: recovered
+        path: time_seriess
+        src: recovered
+        fn: set
+      - name: testing
+        path: time_seriess
+        src: testing
+        fn: set
+      - name: date
+        path: time_seriess
+        src: date
+        fn: set
   - name: covid19_file
     doc_type: file
     type: collector
