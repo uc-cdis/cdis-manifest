@@ -1,0 +1,46 @@
+mappings:
+  - name: covid19
+    doc_type: location
+    type: aggregator
+    root: location
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: country_region
+      - name: province_state
+      - name: latitude
+      - name: longitude
+    aggregated_props:
+      - name: confirmed
+        path: time_seriess
+        src: confirmed
+        fn: list
+      - name: deaths
+        path: time_seriess
+        src: deaths
+        fn: list
+      - name: recovered
+        path: time_seriess
+        src: recovered
+        fn: list
+      - name: testing
+        path: time_seriess
+        src: testing
+        fn: list
+      - name: date
+        path: time_seriess
+        src: date
+        fn: list
+  - name: covid19_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state

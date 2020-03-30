@@ -167,41 +167,27 @@
   "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
-      "study_submitter_id": {
+      "project_id": {
         "chartType": "count",
-        "title": "Studies"
+        "title": "Projects"
       },
-      "virus_subtype": {
-        "chartType": "pie",
-        "title": "Virus Subtype"
+      "country_region": {
+        "chartType": "bar",
+        "title": "Country Region"
       },
-      "strain": {
-        "chartType": "pie",
-        "title": "Virus Strain"
+      "province_state": {
+        "chartType": "bar",
+        "title": "Province State"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Subject",
+          "title": "Location",
           "fields":[
-            "study_submitter_id",
-            "gender",
-            "race",
-            "ethnicity",
-            "vital_status"
-          ]
-        }, {
-          "title": "Experiment",
-          "fields": [
-            "virus_type",
-            "virus_subtype",
-            "analyte_type",
-            "biospecimen_anatomic_site",
-            "cell_line",
-            "sample_type",
-            "composition",
-            "strain"
+            "project_id",
+            "country_region",
+            "province_state"
           ]
         }
       ]
@@ -209,21 +195,7 @@
     "table": {
       "enabled": false
     },
-    "dropdowns": {
-      "download": {
-        "title": "Download"
-      }
-    },
     "buttons": [
-      {
-        "enabled": true,
-        "type": "data",
-        "title": "Download All Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json",
-        "dropdownId": "download"
-      },
       {
         "enabled": true,
         "type": "manifest",
@@ -242,19 +214,14 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "fieldMapping": [
-        { "field": "study_submitter_id", "name": "Study" }
-      ],
+      "dataType": "location",
+      "nodeCountTitle": "Locations",
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInResourceIndex": "location_id",
         "referenceIdFieldInDataIndex": "node_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
+      }
     }
   },
   "fileExplorerConfig": {
@@ -327,24 +294,6 @@
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
-    }
-  },
-  "dataAvailabilityToolConfig": {
-    "guppyConfig": {
-      "dataType": "subject",
-      "mainField": "virus_subtype",
-      "mainFieldTitle": "Virus subtype",
-      "mainFieldIsNumeric": false,
-      "aggFields": [
-        "biospecimen_anatomic_site",
-        "sample_type",
-        "composition",
-        "strain",
-        "species"
-      ],
-      "fieldMapping": [
-        { "field": "subject_id", "name": "Subject" }
-      ]
     }
   },
   "showArboristAuthzOnProfile": true,
