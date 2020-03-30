@@ -14,23 +14,23 @@ mappings:
       - name: confirmed
         path: time_seriess
         src: confirmed
-        fn: set
+        fn: list
       - name: deaths
         path: time_seriess
         src: deaths
-        fn: set
+        fn: list
       - name: recovered
         path: time_seriess
         src: recovered
-        fn: set
+        fn: list
       - name: testing
         path: time_seriess
         src: testing
-        fn: set
+        fn: list
       - name: date
         path: time_seriess
         src: date
-        fn: set
+        fn: list
   - name: covid19_file
     doc_type: file
     type: collector
