@@ -24,9 +24,9 @@
   fill: 1px solid var(--primary-color);
 }
 
-.g3-dropdown-button__button--primary:hover, 
-.g3-dropdown-button__button--primary:hover svg path, 
-.g3-dropdown-button__menu-trigger--primary:hover, 
+.g3-dropdown-button__button--primary:hover,
+.g3-dropdown-button__button--primary:hover svg path,
+.g3-dropdown-button__menu-trigger--primary:hover,
 .g3-dropdown-button__menu-trigger--primary:hover svg path {
   border: 1px solid black;
 }
@@ -58,15 +58,23 @@
   width: 600px;
 }
 
+/**
+ * hide footer versions from view, according to NIH guidelines that require
+ * footer to contain only links.
+ */
+.footer__version-area, .footer__logo-area {
+  display: none;
+}
+
 .footer {
   background-color: #000;
 }
 
-.footer__nav {
+.footer-container {
   background-color: #000;
 }
 
-.footer-container { 
+.footer__nav {
   background-color: #000;
 }
 
@@ -133,16 +141,14 @@ tspan.special-number,
   fill: var(--primary-color);
 }
 
-.data-explorer__charts {
-  tspan.special-number,
-  .special-number,
-  .form-special-number {
-    color: var(--secondary-color);
-  }
+.data-explorer__charts tspan.special-number,
+.data-explorer__charts .special-number,
+.data-explorer__charts .form-special-number {
+  color: var(--secondary-color);
+}
 
-  .special-number {
-    fill: var(--secondary-color);
-  }
+.data-explorer__charts .special-number {
+  fill: var(--secondary-color);
 }
 
 .explorer-button-group__dropdown {
