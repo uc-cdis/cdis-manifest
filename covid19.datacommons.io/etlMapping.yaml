@@ -2,7 +2,7 @@ mappings:
   - name: covid19
     doc_type: location
     type: aggregator
-    root: location
+    root: summary_location
     props:
       - name: submitter_id
       - name: project_id
@@ -12,23 +12,23 @@ mappings:
       - name: longitude
     aggregated_props:
       - name: confirmed
-        path: time_seriess
+        path: summary_report
         src: confirmed
         fn: list
       - name: deaths
-        path: time_seriess
+        path: summary_report
         src: deaths
         fn: list
       - name: recovered
-        path: time_seriess
+        path: summary_report
         src: recovered
         fn: list
       - name: testing
-        path: time_seriess
+        path: summary_report
         src: testing
         fn: list
       - name: date
-        path: time_seriess
+        path: summary_report
         src: date
         fn: list
   - name: covid19_file
