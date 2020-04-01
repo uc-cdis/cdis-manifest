@@ -8,8 +8,10 @@ mappings:
       - name: project_id
       - name: country_region
       - name: province_state
+      - name: county
       - name: latitude
       - name: longitude
+      - name: FIPS
     aggregated_props:
       - name: confirmed
         path: summary_reports
