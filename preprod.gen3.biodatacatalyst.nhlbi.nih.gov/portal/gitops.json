@@ -357,7 +357,10 @@
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
     "terraExportURL": "https://datastage.terra.bio/#import-data",
-    "terraTemplate": "bdc"
+    "terraTemplate": [ 
+      "bdc",
+      "gen3"
+    ]
   },
   "fileExplorerConfig": {
     "charts": {
