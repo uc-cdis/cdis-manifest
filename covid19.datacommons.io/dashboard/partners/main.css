@@ -1,0 +1,33 @@
+#header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.header__img-wrapper {
+  flex-grow: 1;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 40px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+#container {
+  min-height: 100%;
+  background-color: #eeeeee;
+}
+
+.image-wrapper{
+  height: 150px;
+  justify-content: space-around;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 50px;
+}
