@@ -19,7 +19,29 @@
   justify-content: center;
 }
 
+
+.container {
+    height: 300px;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.container:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+#element {
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 Arial sans-serif;        /* <-- reset the font property */
+}
+
+
 #container {
+  display: wrap;
   min-height: 100%;
   background-color: #eeeeee;
 }
@@ -31,3 +53,4 @@
   padding-left: 15px;
   padding-top: 50px;
 }
+
