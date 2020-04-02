@@ -13,16 +13,17 @@ mappings:
           - name: race
           - name: ethnicity
           - name: age
-      - path: sample
+      - path: death_records
         props:
-          - name: ischemic_time
-      - path: death_record
-        props:
-          - name: hardy_scale 
+          - name: hardy_scale
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
+      - name: ischemic_time
+        path: samples
+        src: ischemic_time
+        fn: set
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
