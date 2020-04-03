@@ -1,23 +1,35 @@
 {
   "notes": [
-    "DCF Production Manifest. Clients hit endpoints in fence and indexd. ",
-    "Other services are left running to showcase the front-end."
+    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
+    "syncing authz information from dbGap, there is a manual whitelist. ",
+    "Environment is configured for Google data access methods including service account ",
+    "registration. Data is in multiple Google buckets with both public and *controlled* ",
+    "data. The controlled data is actually just public data so there's no sensitive ",
+    "data in this env."
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:4.12.0",
-    "arborist": "quay.io/cdis/arborist:2.3.2",
-    "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:2.2.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.5",
-    "pidgin": "quay.io/cdis/pidgin:1.2.0",
+    "fence": "quay.io/cdis/fence:2020.03",
+    "arborist": "quay.io/cdis/arborist:2020.03",
+    "google-sa-validation": "placeholder:2020.03",
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
-    "portal": "quay.io/cdis/data-portal:2.2.5",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "portal": "quay.io/cdis/data-portal:2020.03",
+    "sower": "quay.io/cdis/sower:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+    "metadata": "quay.io/cdis/metadata-service:2020.03",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:2020.03"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
   },
   "peregrine": {
     "sidecar": "False"
@@ -28,22 +40,96 @@
   "jupyterhub": {
     "enabled": "no"
   },
-  "arborist": {
-    "deployment_version": "2"
-  },
-  "indexd": {
-    "arborist": "true"
-  },
+  "sower": [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:2020.03",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:1.0.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "global": {
-    "environment": "dcfprod",
-    "hostname": "nci-crdc.datacommons.io",
-    "revproxy_arn": "arn:aws:acm:us-east-1:584476192960:certificate/4173b316-0510-4216-8043-3f9234570475",
+    "environment": "dcf-staging",
+    "hostname": "nci-crdc-staging.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:584476192960:certificate/b1f41138-54c0-4d5f-b2f3-7c5ebb20b555",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "dev",
-    "kube_bucket": "kube-dcfprod-gen3",
-    "logs_bucket": "logs-dcfprod-gen3",
+    "kube_bucket": "kube-dcf-staging-gen3",
+    "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "s3://cdis-gen3-users/ncicrdc/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging-users/user.yaml"
   },
   "canary": {
     "default": 0
@@ -57,26 +143,32 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 5,
-      "max": 15,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 20,
-      "max": 25,
+      "min": 2,
+      "max": 10,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
       "min": 2,
-      "max": 6,
+      "max": 4,
       "targetCpu": 40
     },
     "revproxy": {
       "strategy": "auto",
       "min": 2,
-      "max": 10,
+      "max": 6,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     }
   }
