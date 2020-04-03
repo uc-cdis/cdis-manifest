@@ -1,3 +1,4 @@
+
 #header {
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
@@ -11,14 +12,13 @@
   flex-grow: 1;
 }
 
-#main {
+/* #main {
   overflow: auto;
   padding-bottom: 40px;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-}
-
+} */
 
 .container {
     height: 300px;
@@ -33,17 +33,17 @@
     height: 100%;
 }
 
-#element {
+.element {
     display: inline-block;
     vertical-align: middle;  /* vertical alignment of the inline element */
     font: 16px/1 Arial sans-serif;        /* <-- reset the font property */
 }
 
 
-#container {
+.container {
   display: wrap;
-  min-height: 100%;
-  background-color: #eeeeee;
+  /* min-height: 100%; */
+  background-color: #fff;
 }
 
 .image-wrapper{
@@ -53,4 +53,3 @@
   padding-left: 15px;
   padding-top: 50px;
 }
-
