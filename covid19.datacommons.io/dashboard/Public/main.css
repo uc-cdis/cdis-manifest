@@ -1,7 +1,7 @@
 
 #header {
   background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #4A4A4A;
   display: flex;
   justify-content: space-between;
   padding: 30px;
@@ -19,6 +19,15 @@
   flex-flow: wrap;
   justify-content: center;
 } */
+
+.container h1 {
+  border-top: 2px solid #4A4A4A;
+  border-bottom: 2px solid #4A4A4A;
+  font-size: 50px;
+  font-family: 'Anton', sans-serif;
+  padding: 1rem;
+  color: #4A4A4A;
+}
 
 .container {
     height: 300px;
@@ -48,8 +57,33 @@
 
 .image-wrapper{
   height: 150px;
-  justify-content: space-around;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 50px;
+  padding: 1em;
+}
+
+.text-wrapper {
+  height: 150px;
+  padding: 0.5em;
+  vertical-align: top;
+  font-size: 20px;
+  text-align: left;
+  font-family: 'Source Sans Pro', sans-serif;
+  max-width: 25em;
+
+}
+
+.partner-content {
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 1em;
+  flex-basis: 100%;
+  overflow: auto;
+
+}
+
+.partner {
+  padding: 1em;
+  vertical-align: top;
+  width: 100%;
+  display: flex;
 }
