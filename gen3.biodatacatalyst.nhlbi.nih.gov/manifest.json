@@ -1,6 +1,6 @@
 {
   "notes": [
-    "This is the prod environment manifest",
+    "This is the internalstaging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
@@ -15,7 +15,8 @@
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:3.0.0",
-    "portal": "quay.io/cdis/data-portal:2.24.7",
+    "metadata": "quay.io/cdis/metadata-service:v1.2.0",
+    "portal": "quay.io/cdis/data-portal:2.24.10",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.18",
@@ -24,8 +25,7 @@
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
-    "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    "manifestservice": "quay.io/cdis/manifestservice:0.2.0"
   },
   "google": {
     "enabled": "yes"
@@ -124,17 +124,18 @@
   },
   "global": {
     "environment": "stageprod",
-    "hostname": "gen3.biodatacatalyst.nhlbi.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/472403d1-09a8-4d10-a5de-9b316f7da980",
+    "hostname": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/a82bb5ed-9ad1-444d-9bfd-5bc314541307",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.4.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/datastageinternalstaging/user.yaml",
+    "public_datasets": true,
     "tier_access_level": "regular",
     "tier_access_limit": 50,
-    "public_datasets": true
+    "netpolicy": "on"
   },
   "canary": {
     "default": 0
@@ -142,15 +143,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "dcp_etl",
+        "index": "internalstaging_etl",
         "type": "subject"
       },
       {
-        "index": "dcp_file",
+        "index": "internalstaging_file",
         "type": "file"
       }
     ],
-    "config_index": "dcp_array-config",
+    "config_index": "internalstaging_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
@@ -174,14 +175,14 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 20,
-      "max": 25,
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 4,
-      "max": 8,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "peregrine": {
@@ -192,8 +193,8 @@
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 4,
-      "max": 10,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "sheepdog": {
@@ -207,6 +208,12 @@
       "min": 2,
       "max": 4,
       "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
+      "targetCpu": 40      
     }
   }
 }
