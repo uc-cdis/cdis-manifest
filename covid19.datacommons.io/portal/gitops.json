@@ -142,23 +142,31 @@
         "chartType": "count",
         "title": "Projects"
       },
-      "country_region": {
+      "symptoms": {
         "chartType": "bar",
-        "title": "Country Region"
+        "title": "Symptoms"
       },
-      "province_state": {
-        "chartType": "bar",
-        "title": "Province State"
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Location",
+          "title": "subject",
           "fields":[
-            "project_id",
-            "country_region",
-            "province_state"
+            "symptoms",
+            "country",
+            "visiting_wuhan",
+            "from_wuhan",
+            "travel_history_location",
+            "death",
+            "recovered",
+            "reporting_date",
+            "source",
+            "age",
+            "gender"
           ]
         }
       ]
