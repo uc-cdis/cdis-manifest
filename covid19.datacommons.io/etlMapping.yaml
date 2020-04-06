@@ -38,24 +38,24 @@ mappings:
         src: date
         fn: list
   - name: covid19_subject
-      doc_type: subject
-      type: aggregator
-      root: subject
-      props:
-        - name: symptoms
-        - name: country
-        - name: visiting_wuhan
-        - name: from_wuhan
-        - name: travel_history_location
-        - name: death
-        - name: recovered
-        - name: reporting_date
-        - name: source
-        - name: age
-      flatten_props:
-        - path: demographics
-          props:
-            - name: gender
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: symptoms
+      - name: country
+      - name: visiting_wuhan
+      - name: from_wuhan
+      - name: travel_history_location
+      - name: death
+      - name: recovered
+      - name: reporting_date
+      - name: source
+      - name: age
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
   - name: covid19_file
     doc_type: file
     type: collector
