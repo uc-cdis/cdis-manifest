@@ -42,6 +42,7 @@ mappings:
     type: aggregator
     root: subject
     props:
+      - name: project_id
       - name: symptoms
       - name: country
       - name: visiting_wuhan
