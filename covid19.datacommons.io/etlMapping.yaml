@@ -12,6 +12,8 @@ mappings:
       - name: latitude
       - name: longitude
       - name: FIPS
+      - name: iso2
+      - name: iso3
     aggregated_props:
       - name: confirmed
         path: summary_reports
