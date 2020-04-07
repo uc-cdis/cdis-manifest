@@ -1,0 +1,74 @@
+mappings:
+  - name: covid19
+    doc_type: location
+    type: aggregator
+    root: summary_location
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: country_region
+      - name: province_state
+      - name: county
+      - name: latitude
+      - name: longitude
+      - name: FIPS
+      - name: iso2
+      - name: iso3
+    aggregated_props:
+      - name: confirmed
+        path: summary_reports
+        src: confirmed
+        fn: list
+      - name: deaths
+        path: summary_reports
+        src: deaths
+        fn: list
+      - name: recovered
+        path: summary_reports
+        src: recovered
+        fn: list
+      - name: negative
+        path: summary_reports
+        src: negative
+        fn: list
+      - name: testing
+        path: summary_reports
+        src: testing
+        fn: list
+      - name: date
+        path: summary_reports
+        src: date
+        fn: list
+  - name: covid19_subject
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: project_id
+      - name: symptoms
+      - name: country
+      - name: visiting_wuhan
+      - name: from_wuhan
+      - name: travel_history_location
+      - name: death
+      - name: recovered
+      - name: reporting_date
+      - name: source
+      - name: age
+    flatten_props:
+      - path: demographics
+        props:
+          - name: gender
+  - name: covid19_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state

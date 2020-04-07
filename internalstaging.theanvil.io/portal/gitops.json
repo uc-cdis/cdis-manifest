@@ -118,9 +118,9 @@
         "chartType": "count",
         "title": "Cases"
       },
-      "gender": {
+      "sex": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Sex"
       },
       "race": {
         "chartType": "bar",
@@ -132,13 +132,12 @@
         {
           "title": "Case",
           "fields":[
-            "gender",
+            "sex",
             "age",
             "race",
             "ethnicity",
             "ischemic_time",
-            "hardy_scale",
-            "primary_diagnosis"
+            "hardy_scale"
           ]
         }, {
           "title": "Projects",
@@ -160,12 +159,10 @@
         "project_id",
         "ethnicity",
         "race",
-        "gender",
+        "sex",
         "age",
-        "year_of_birth",
         "ischemic_time",
         "hardy_scale",
-        "primary_diagnosis",
         "_aliquots_count",
         "_read_groups_count",
         "_samples_count",
@@ -222,7 +219,7 @@
       "dataType": "case",
       "nodeCountTitle": "Cases",
       "fieldMapping": [
-        { "field": "gender", "name": "Gender" },
+        { "field": "sex", "name": "Sex" },
         { "field": "race", "name": "Race" },
         { "field": "age", "name": "Age" },
         { "field": "ethnicity", "name": "Ethnicity" },

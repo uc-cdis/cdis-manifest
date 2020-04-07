@@ -11,11 +11,6 @@
         "graphql": "_study_count",
         "name": "Study",
         "plural": "Studies"
-      },
-      {
-        "graphql": "_summary_lab_result_count",
-        "name": "Lab record",
-        "plural": "Lab records"
       }
     ],
     "chartCounts": [
@@ -31,27 +26,20 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "COVID19 Commons",
+    "appName": "Chicagoland COVID-19 Commons",
     "index": {
       "introduction": {
-        "heading": "COVID19 Commons",
-        "text": "The COVID19 Commons supports the management, analysis and sharing of COVID19 data",
+        "heading": "Chicagoland COVID-19 Commons",
+        "text": "The Chicagoland COVID-19 Commons supports the management, analysis and sharing of COVID-19 data",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The COVID19 Commons defines the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "The Chicagoland COVID-19 Commons defines the data in a general way. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
-        },
-        {
-          "name": "Explore Data",
-          "icon": "data-explore",
-          "body": "The Exploration Page provides insight and a clear overview of selected properties.",
-          "link": "/explorer",
-          "label": "Explore data"
         },
         {
           "name": "Access Data",
@@ -66,6 +54,20 @@
           "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
           "link": "#hostname#workspace/",
           "label": "Run analysis"
+        }
+      ],
+      "homepageChartNodes": [
+        {
+          "node": "summary_location",
+          "name": "Locations"
+        },
+        {
+          "node": "summary_report",
+          "name": "Summary Reports"
+        },
+        {
+          "node": "subject",
+          "name": "Subjects"
         }
       ]
     },
@@ -82,18 +84,6 @@
           "link": "/explorer",
           "color": "#a2a2a2",
           "name": "Exploration"
-        },
-        {
-          "icon": "analysis",
-          "link": "/analysis",
-          "color": "#a2a2a2",
-          "name": "Apps"
-        },
-        {
-          "icon": "query",
-          "link": "/query",
-          "color": "#a2a2a2",
-          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -113,7 +103,11 @@
       "items": [
         {
           "link": "/",
-          "name": "COVID19 Commons Home"
+          "name": "Chicagoland COVID-19 Commons Home"
+        },
+        {
+          "link": "https://covid19.datacommons.io/dashboard/Public/index.html",
+          "name": "Partners"
         },
         {
           "icon": "upload",
@@ -127,22 +121,19 @@
       ]
     },
     "login": {
-      "title": "COVID19 Commons",
-      "subTitle": "Explore, Analyze, and Share Data",
-      "text": "The website intercalates government datasets from disciplines to create clean, easy to navigate visualizations for data-driven discovery within COVID19 data.",
+      "title": "Chicagoland COVID-19 Commons",
+      "subTitle": "Explore, Analyze, and Share Data to Improve Health Outcomes for COVID-19",
+      "text": "",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io"
+      "email": "support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
     },
+    "categorical9Colors": ["#B02F34", "#421C52", "#AEEBF2", "#E0DD10", "#40476D", "#FFA630", "#AE8799", "#035C94", "#462255"],
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
-      },
-      {
-        "src": "/src/img/createdby.png",
-        "href": "https://ctds.uchicago.edu/",
-        "alt": "Center for Translational Data Science at the University of Chicago"
       }
     ]
   },
@@ -153,184 +144,54 @@
   "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
-      "study_submitter_id": {
+      "project_id": {
         "chartType": "count",
-        "title": "Studies"
+        "title": "Projects"
       },
-      "virus_subtype": {
-        "chartType": "pie",
-        "title": "Virus Subtype"
+      "symptoms": {
+        "chartType": "bar",
+        "title": "Symptoms"
       },
-      "strain": {
+      "source": {
         "chartType": "pie",
-        "title": "Virus Strain"
+        "title": "Source"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Subject",
+          "title": "subject",
           "fields":[
-            "study_submitter_id",
-            "gender",
-            "race",
-            "ethnicity",
-            "vital_status"
-          ]
-        }, {
-          "title": "Experiment",
-          "fields": [
-            "virus_type",
-            "virus_subtype",
-            "analyte_type",
-            "biospecimen_anatomic_site",
-            "cell_line",
-            "sample_type",
-            "composition",
-            "strain"
+            "project_id",
+            "symptoms",
+            "country",
+            "visiting_wuhan",
+            "from_wuhan",
+            "death",
+            "recovered",
+            "reporting_date",
+            "source",
+            "age"
           ]
         }
       ]
     },
     "table": {
-      "enabled": false
-    },
-    "dropdowns": {
-      "download": {
-        "title": "Download"
-      }
+      "enabled": true
     },
     "buttons": [
-      {
-        "enabled": true,
-        "type": "data",
-        "title": "Download All Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export To Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      }
     ],
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
-      "fieldMapping": [
-        { "field": "study_submitter_id", "name": "Study" }
-      ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
         "referenceIdFieldInResourceIndex": "subject_id",
         "referenceIdFieldInDataIndex": "node_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
+      }
     }
   },
-  "fileExplorerConfig": {
-    "charts": {
-      "subject_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      },
-      "data_type": {
-        "chartType": "pie",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "pie",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "File",
-          "fields": [
-            "subject_id",
-            "data_type",
-            "data_format"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "subject_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "dropdowns": {},
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
-      ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
-    }
-  },
-  "dataAvailabilityToolConfig": {
-    "guppyConfig": {
-      "dataType": "subject",
-      "mainField": "virus_subtype",
-      "mainFieldTitle": "Virus subtype",
-      "mainFieldIsNumeric": false,
-      "aggFields": [
-        "biospecimen_anatomic_site",
-        "sample_type",
-        "composition",
-        "strain",
-        "species"
-      ],
-      "fieldMapping": [
-        { "field": "subject_id", "name": "Subject" }
-      ]
-    }
-  }
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false
 }

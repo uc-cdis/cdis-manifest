@@ -11,19 +11,19 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:4.15.0",
-    "arborist": "quay.io/cdis/arborist:2.3.2",
-    "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:2.2.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.5",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
+    "fence": "quay.io/cdis/fence:2020.03",
+    "arborist": "quay.io/cdis/arborist:2020.03",
+    "google-sa-validation": "placeholder:2020.03",
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
-    "portal": "quay.io/cdis/data-portal:2.24.9",
-    "sower": "quay.io/cdis/sower:0.3.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "portal": "quay.io/cdis/data-portal:2020.03",
+    "sower": "quay.io/cdis/sower:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "metadata": "quay.io/cdis/metadata-service:v1.2.0",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+    "jupyterhub": "quay.io/occ_data/jupyterhub:2020.03"
   },
   "arborist": {
     "deployment_version": "2"
@@ -46,7 +46,7 @@
       "action": "index-object-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:1.0.0",
+        "image": "quay.io/cdis/manifest-indexing:1.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -85,7 +85,7 @@
       "action": "download-indexd-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.0.0",
+        "image": "quay.io/cdis/download-indexd-manifest:1.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -147,6 +147,12 @@
       "max": 4,
       "targetCpu": 40
     },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 10,
+      "targetCpu": 40
+    },
     "indexd": {
       "strategy": "auto",
       "min": 2,
@@ -156,7 +162,7 @@
     "revproxy": {
       "strategy": "auto",
       "min": 2,
-      "max": 4,
+      "max": 6,
       "targetCpu": 40
     },
     "metadata": {
