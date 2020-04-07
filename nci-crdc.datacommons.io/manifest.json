@@ -18,7 +18,6 @@
     "portal": "quay.io/cdis/data-portal:2020.03",
     "sower": "quay.io/cdis/sower:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "metadata": "quay.io/cdis/metadata-service:v1.2.0",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.03"
   },
   "arborist": {
@@ -36,6 +35,86 @@
   "jupyterhub": {
     "enabled": "no"
   },
+  "sower": [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:1.0.1",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:1.0.1",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "global": {
     "environment": "dcfprod",
     "hostname": "nci-crdc.datacommons.io",
