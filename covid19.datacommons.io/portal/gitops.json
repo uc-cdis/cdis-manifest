@@ -146,9 +146,9 @@
         "chartType": "bar",
         "title": "Symptoms"
       },
-      "gender": {
+      "country": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Country"
       }
     },
     "filters": {
@@ -160,13 +160,11 @@
             "country",
             "visiting_wuhan",
             "from_wuhan",
-            "travel_history_location",
             "death",
             "recovered",
             "reporting_date",
             "source",
-            "age",
-            "gender"
+            "age"
           ]
         }
       ]
