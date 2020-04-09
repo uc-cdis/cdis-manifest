@@ -3,14 +3,14 @@
   "graphql": {
     "boardCounts": [
       {
+        "graphql": "_summary_location_count",
+        "name": "Location",
+        "plural": "Locations"
+      },
+      {
         "graphql": "_subject_count",
         "name": "Subject",
         "plural": "Subjects"
-      },
-      {
-        "graphql": "_study_count",
-        "name": "Study",
-        "plural": "Studies"
       }
     ],
     "chartCounts": [
