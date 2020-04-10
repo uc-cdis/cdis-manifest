@@ -13,7 +13,7 @@
     "pidgin": "quay.io/cdis/pidgin:2020.03",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:4.0.0",
-    "portal": "quay.io/cdis/data-portal:covid19-1.5.2",
+    "portal": "quay.io/cdis/data-portal:covid19-1.6.0",
     "tube": "quay.io/cdis/tube:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.03",
@@ -26,8 +26,8 @@
   },
   "global": {
     "environment": "covid19-prod",
-    "hostname": "covid19.datacommons.io",
-    "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/ec368910-95e7-4f7f-bdd3-020a2f51bc94",
+    "hostname": "chicagoland.pandemicresponsecommons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/e5edf56f-4003-4ee3-9ecd-162aaf19c058",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.1.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
@@ -46,7 +46,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:2020.03",
-      "env": {"NAMESPACE":"default", "HOSTNAME": "covid19.datacommons.io"},
+      "env": {"NAMESPACE":"default", "HOSTNAME": "chicagoland.pandemicresponsecommons.org"},
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
