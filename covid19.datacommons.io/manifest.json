@@ -26,8 +26,8 @@
   },
   "global": {
     "environment": "covid19-prod",
-    "hostname": "chicagoland.pandemicresponsecommons.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:454671780472:certificate/d26f2f68-d68a-4303-a9d5-0f9f0996c1a4",
+    "hostname": "covid19.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/ec368910-95e7-4f7f-bdd3-020a2f51bc94",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.1.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
@@ -46,7 +46,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:2020.03",
-      "env": {"NAMESPACE":"default", "HOSTNAME": "chicagoland.pandemicresponsecommons.org"},
+      "env": {"NAMESPACE":"default", "HOSTNAME": "covid19.datacommons.io"},
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
