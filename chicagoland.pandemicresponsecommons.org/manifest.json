@@ -86,7 +86,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19",
-      "image": "quay.io/cdis/jupyter-covid1.0.0",
+      "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.0.0",
       "pull_policy": "Always",
       "env": {"FRAME_ANCESTORS": "https://chicagoland.pandemicresponsecommons.org"},
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.default_url=/lab","--NotebookApp.password=''","--NotebookApp.token=''"],
