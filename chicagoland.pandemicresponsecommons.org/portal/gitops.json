@@ -201,6 +201,7 @@
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
     "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace and can be launched by following the instructions listed in the readme.md file. When running the notebooks from the Workspace the most recent data is pulled from the originating source in real time and the notebook will render the most updated information.",
     "resources": [
       {
         "title": "Exploring the Demographics of COVID-19 Cases",
