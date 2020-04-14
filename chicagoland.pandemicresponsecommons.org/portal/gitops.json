@@ -86,7 +86,7 @@
           "name": "Exploration"
         },
         {
-          "name": "Notebooks",
+          "name": "Notebook Browser",
           "link": "/resource-browser",
           "icon": "query",
           "color": "#a2a2a2"
@@ -207,6 +207,18 @@
         "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
         "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
         "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
+      },
+      {
+        "title": "Chicago COVID-19 forecasting using SEIR models",
+        "description": "In this notebook, we construct an SEIR model for COVID-19 in Cook County, Illinois, using data sourced from Johns Hopkins University, but available within the Chicagoland COVID-19 Commons. We then perform an optimization of initial model parameter values and do some simple validation.",
+        "link": "/dashboard/Public/notebooks/covid19_seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_seir.png"
+      },
+      {
+        "title": "Visualizing Global COVID-19 data",
+        "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
+        "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
       }
     ]
   },
