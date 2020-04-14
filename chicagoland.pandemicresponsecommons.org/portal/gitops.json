@@ -86,6 +86,12 @@
           "name": "Exploration"
         },
         {
+          "name": "Notebooks",
+          "link": "/resource-browser",
+          "icon": "query",
+          "color": "#a2a2a2"
+        },
+        {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
@@ -191,6 +197,18 @@
         "referenceIdFieldInDataIndex": "node_id"
       }
     }
+  },
+  "resourceBrowser": {
+    "title": "COVID-19 Jupyter Notebooks",
+    "public": true,
+    "resources": [
+      {
+        "title": "Exploring the Demographics of COVID-19 Cases",
+        "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
+        "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
+      }
+    ]
   },
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
