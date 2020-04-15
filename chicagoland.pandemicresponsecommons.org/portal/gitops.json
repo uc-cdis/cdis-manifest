@@ -86,7 +86,7 @@
           "name": "Exploration"
         },
         {
-          "name": "Notebooks",
+          "name": "Notebook Browser",
           "link": "/resource-browser",
           "icon": "query",
           "color": "#a2a2a2"
@@ -201,12 +201,25 @@
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
     "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace and can be launched by following the instructions listed in the readme.md file. When running the notebooks from the Workspace the most recent data is pulled from the originating source in real time and the notebook will render the most updated information.",
     "resources": [
       {
         "title": "Exploring the Demographics of COVID-19 Cases",
         "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
         "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
         "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
+      },
+      {
+        "title": "Chicago COVID-19 forecasting using SEIR models",
+        "description": "In this notebook, we construct an SEIR model for COVID-19 in Cook County, Illinois, using data sourced from Johns Hopkins University, but available within the Chicagoland COVID-19 Commons. We then perform an optimization of initial model parameter values and do some simple validation.",
+        "link": "/dashboard/Public/notebooks/covid19_seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_seir.png"
+      },
+      {
+        "title": "Visualizing Global COVID-19 data",
+        "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
+        "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
       }
     ]
   },
