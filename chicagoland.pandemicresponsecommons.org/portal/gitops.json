@@ -3,14 +3,14 @@
   "graphql": {
     "boardCounts": [
       {
+        "graphql": "_summary_location_count",
+        "name": "Location",
+        "plural": "Locations"
+      },
+      {
         "graphql": "_subject_count",
         "name": "Subject",
         "plural": "Subjects"
-      },
-      {
-        "graphql": "_study_count",
-        "name": "Study",
-        "plural": "Studies"
       }
     ],
     "chartCounts": [
@@ -35,25 +35,32 @@
       },
       "buttons": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The Chicagoland COVID-19 Commons defines the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
+          "name": "Browse Jupyter Notebooks",
+          "icon": "data-access",
+          "body": "The notebooks pull data from various external sources to generate and output useful tables, charts, graphs, and models.",
+          "link": "/resource-browser",
+          "label": "Browse notebooks"
         },
         {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "An interactive interface provides the ability to query all nodes and properties in the data model.",
-          "link": "/query",
-          "label": "Query data"
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "link": "/explorer",
+          "label": "Explore data"
         },
         {
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "label": "Run analysis"
+        },
+        {
+          "name": "Define Data Field",
+          "icon": "data-field-define",
+          "body": "The Chicagoland COVID-19 Commons defines the data in a general way. Study the dictionary before you start browsing.",
+          "link": "/DD",
+          "label": "Learn more"
         }
       ],
       "homepageChartNodes": [
@@ -74,10 +81,10 @@
     "navigation": {
       "items": [
         {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "icon": "query",
+          "color": "#a2a2a2"
         },
         {
           "icon": "exploration",
@@ -90,6 +97,12 @@
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
           "name": "Workspace"
+        },
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
         },
         {
           "icon": "profile",
@@ -106,7 +119,7 @@
           "name": "Chicagoland COVID-19 Commons Home"
         },
         {
-          "link": "https://covid19.datacommons.io/dashboard/Public/index.html",
+          "link": "https://pandemicresponsecommons.org/members/chicagoland-commons-partners/",
           "name": "Partners"
         },
         {
@@ -192,6 +205,32 @@
       }
     }
   },
+  "resourceBrowser": {
+    "title": "COVID-19 Jupyter Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace and can be launched by following the instructions listed in the readme.md file. When running the notebooks from the Workspace the most recent data is pulled from the originating source in real time and the notebook will render the most updated information.",
+    "resources": [
+      {
+        "title": "Exploring the Demographics of COVID-19 Cases",
+        "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
+        "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
+      },
+      {
+        "title": "Chicago COVID-19 forecasting using SEIR models",
+        "description": "In this notebook, we construct an SEIR model for COVID-19 in Cook County, Illinois, using data sourced from Johns Hopkins University, but available within the Chicagoland COVID-19 Commons. We then perform an optimization of initial model parameter values and do some simple validation.",
+        "link": "/dashboard/Public/notebooks/covid19_seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_seir.png"
+      },
+      {
+        "title": "Visualizing Global COVID-19 data",
+        "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
+        "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
+      }
+    ]
+  },
+  "enableCovid19Dashboard": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
