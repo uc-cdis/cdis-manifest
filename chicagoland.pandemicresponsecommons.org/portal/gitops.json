@@ -35,18 +35,18 @@
       },
       "buttons": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The Chicagoland COVID-19 Commons defines the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
+          "name": "Browse Jupyter Notebooks",
+          "icon": "data-access",
+          "body": "The notebooks pull data from various external sources to generate and output useful tables, charts, graphs, and models.",
+          "link": "/resource-browser",
+          "label": "Browse notebooks"
         },
         {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "An interactive interface provides the ability to query all nodes and properties in the data model.",
-          "link": "/query",
-          "label": "Query data"
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "link": "/explorer",
+          "label": "Explore data"
         },
         {
           "name": "Analyze Data",
@@ -54,6 +54,13 @@
           "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
           "link": "#hostname#workspace/",
           "label": "Run analysis"
+        },
+        {
+          "name": "Define Data Field",
+          "icon": "data-field-define",
+          "body": "The Chicagoland COVID-19 Commons defines the data in a general way. Study the dictionary before you start browsing.",
+          "link": "/DD",
+          "label": "Learn more"
         }
       ],
       "homepageChartNodes": [
