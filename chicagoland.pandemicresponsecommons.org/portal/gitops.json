@@ -74,10 +74,10 @@
     "navigation": {
       "items": [
         {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "icon": "query",
+          "color": "#a2a2a2"
         },
         {
           "icon": "exploration",
@@ -86,16 +86,16 @@
           "name": "Exploration"
         },
         {
-          "name": "Notebook Browser",
-          "link": "/resource-browser",
-          "icon": "query",
-          "color": "#a2a2a2"
-        },
-        {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
           "name": "Workspace"
+        },
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
         },
         {
           "icon": "profile",
@@ -223,6 +223,7 @@
       }
     ]
   },
+  "enableCovid19Dashboard": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
