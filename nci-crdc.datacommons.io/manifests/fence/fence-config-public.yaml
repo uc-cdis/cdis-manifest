@@ -87,3 +87,13 @@ S3_BUCKETS:
     cred: 'fence_bot'
   cds-223-phs001926:
     cred: 'fence_bot'
+
+WHITE_LISTED_SERVICE_ACCOUNT_EMAILS:
+- 1030307208060-p62b9hihrbviogv3ahlp371gb8sl8953@developer.gserviceaccount.com
+- 144657163696-utjumdn9c03fof16ig7bjak44hfj53o6@developer.gserviceaccount.com
+- 907668440978-oskt05du3ao083cke14641u35deokgjj@developer.gserviceaccount.com
+- fence-service@dcf-staging-202214.iam.gserviceaccount.com
+- isb-cgc-project-monitor@isb-cgc-dev-1.iam.gserviceaccount.com
+- webapp-test@isb-cgc-test.iam.gserviceaccount.com
+- webapp-uat@isb-cgc-uat.iam.gserviceaccount.com
+
