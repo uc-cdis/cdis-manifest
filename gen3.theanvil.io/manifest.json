@@ -1,107 +1,47 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the internalstaging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.03",
+    "arborist": "quay.io/cdis/arborist:2020.04",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.03",
+    "fence": "quay.io/cdis/fence:2020.04",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:2020.03",
-    "hatchery": "quay.io/cdis/hatchery:2020.03",
-    "indexd": "quay.io/cdis/indexd:2020.03",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.03",
-    "peregrine": "quay.io/cdis/peregrine:2020.03",
-    "pidgin": "quay.io/cdis/pidgin:2020.03",
-    "portal": "quay.io/cdis/data-portal:2020.03",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
-    "sower": "quay.io/cdis/sower:2020.03",
-    "spark": "quay.io/cdis/gen3-spark:2020.03",
-    "tube": "quay.io/cdis/tube:2020.03",
+    "guppy": "quay.io/cdis/guppy:2020.04",
+    "hatchery": "quay.io/cdis/hatchery:2020.04",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "wts": "quay.io/cdis/workspace-token-service:2020.03"
+    "indexd": "quay.io/cdis/indexd:2020.04",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.04",
+    "peregrine": "quay.io/cdis/peregrine:2020.04",
+    "pidgin": "quay.io/cdis/pidgin:2020.04",
+    "portal": "quay.io/cdis/data-portal:2020.04",
+    "revproxy": "quay.io/cdis/nginx:2020.04",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.04",
+    "sower": "quay.io/cdis/sower:2020.04",
+    "spark": "quay.io/cdis/gen3-spark:2020.04",
+    "tube": "quay.io/cdis/tube:2020.04",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.04",
+    "wts": "quay.io/cdis/workspace-token-service:2020.04"
   },
   "global": {
-    "environment": "anvilprod",
-    "hostname": "gen3.theanvil.io",
+    "environment": "anvilstaging",
+    "hostname": "internalstaging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.1.3/schema.json",
     "portal_app": "gitops",
-    "kube_bucket": "kube-anvilprod-gen3",
-    "logs_bucket": "logs-anvilprod-gen3",
+    "kube_bucket": "kube-anvilstaging-gen3",
+    "logs_bucket": "logs-anvilstaging-gen3",
     "netpolicy": "on",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "s3://cdis-gen3-users/anvil/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/anvilinternalstaging/user.yaml",
+    "dispatcher_job_num": "10",
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true
-  },
-  "google": {
-    "enabled": "yes"
-  },
-  "peregrine": {
-    "sidecar": "True"
-  },
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      }
-    ]
-  },
-  "hatchery": {
-    "user-namespace": "jupyter-pods",
-    "sub-dir": "/lw-workspace",
-    "user-volume-size": "500Gi",
-    "sidecar": {
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.5",
-      "env": {"NAMESPACE":"default", "HOSTNAME": "gen3.datastage.io"},
-      "args": [],
-      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
-      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
-    },
-    "containers": [
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "512Mi",
-        "name": "R Studio",
-        "image": "heliumdatastage/rstudio-server:1",
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/"
-      }
-    ]
-  },
-  "arborist": {
-    "deployment_version": "2"
-  },
-  "guppy": {
-    "indices": [
-      {
-        "index": "anvil_case",
-        "type": "case"
-      },
-      {
-        "index": "anvil_file",
-        "type": "file"
-      }
-    ],
-    "config_index": "anvil_array-config",
-    "auth_filter_field": "auth_resource_path",
-    "enable_encrypt_whitelist": false
   },
   "sower": [
     {
@@ -109,7 +49,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2020.03",
+        "image": "quay.io/cdis/pelican-export:2020.04",
         "pull_policy": "Always",
         "env": [
           {
@@ -169,6 +109,96 @@
       "restart_policy": "Never"
     }
   ],
+  "google": {
+    "enabled": "yes"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2020.04"
+    }
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "etl_internalstaging-anvil",
+        "type": "case"
+      },
+      {
+        "index": "file_internalstaging-anvil",
+        "type": "file"
+      }
+    ],
+    "auth_filter_field": "auth_resource_path"
+  },
+  "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "500Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "512Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2020.04",
+      "env": {
+        "NAMESPACE": "internalanvil",
+        "HOSTNAME": "internalstaging.theanvil.io"
+      },
+      "args": [],
+      "command": [
+        "/bin/bash",
+        "/sidecarDockerrun.sh"
+      ],
+      "lifecycle-pre-stop": [
+        "su",
+        "-c",
+        "echo test",
+        "-s",
+        "/bin/sh",
+        "root"
+      ]
+    },
+    "containers": [
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "512Mi",
+        "name": "R Studio",
+        "image": "heliumdatastage/rstudio-server:1",
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/"
+      }
+    ]
+  },
+  "jupyterhub": {
+    "enabled": "yes",
+    "containers": [
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 0.5,
+        "memory": "256M",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
+      },
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 1,
+        "memory": "1024M",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
+      },
+      {
+        "name": "Helium COPD Demo",
+        "cpu": 1,
+        "memory": "1024M",
+        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
+      }
+    ]
+  },
+  "peregrine": {
+    "sidecar": "True"
+  },
   "canary": {
     "default": 0
   },
@@ -193,8 +223,8 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 8,
-      "max": 25,
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     },
     "indexd": {
