@@ -9,18 +9,21 @@ mappings:
     flatten_props:
       - path: demographics
         props:
-          - name: gender
+          - name: sex
           - name: race
           - name: ethnicity
-          - name: year_of_birth
-      - path: diagnoses
+          - name: age
+      - path: death_records
         props:
-          - name: primary_diagnosis
-        sorted_by: updated_datetime, desc
+          - name: hardy_scale
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
+      - name: ischemic_time
+        path: samples
+        src: ischemic_time
+        fn: set
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
