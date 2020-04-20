@@ -13,6 +13,10 @@ mappings:
           - name: race
           - name: ethnicity
           - name: year_of_birth
+      - path: diagnoses
+        props:
+          - name: primary_diagnosis
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
@@ -20,30 +24,34 @@ mappings:
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
-      - name: _submitted_methylations_count
-        path: samples.aliquots.submitted_methylation_files
-        fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
         fn: count
       - name: _submitted_aligned_reads_count
         path: samples.aliquots.read_groups.submitted_aligned_reads_files
         fn: count
-      - name: _submitted_copy_number_files_on_read_groups_count
-        path: samples.aliquots.read_groups.submitted_copy_number_files
-        fn: count
-      - name: _submitted_somatic_mutations_count
-        path: samples.aliquots.read_groups.submitted_somatic_mutations
-        fn: count
+    joining_props:
+      - index: file
+        join_on: case_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
   - name: file_anvil
     doc_type: file
     type: collector
     root: None
+    category: data_file
     props:
       - name: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
+      - name: data_format
+      - name: data_type
       - name: state
     injecting_props:
       case:
@@ -51,16 +59,3 @@ mappings:
           - name: case_id
             src: id
           - name: project_id
-    target_nodes:
-      - name: slide_image
-        path: slides.samples.cases
-      - name: submitted_methylation
-        path: aliquots.samples.cases
-      - name: submitted_copy_number
-        path: read_groups.aliquots.samples.cases
-      - name: submitted_aligned_reads
-        path: read_groups.aliquots.samples.cases
-      - name: submitted_unaligned_reads
-        path: read_groups.aliquots.samples.cases
-      - name: submitted_somatic_mutation
-        path: read_groups.aliquots.samples.cases
