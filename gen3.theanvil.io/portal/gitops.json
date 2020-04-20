@@ -118,9 +118,9 @@
         "chartType": "count",
         "title": "Cases"
       },
-      "gender": {
+      "sex": {
         "chartType": "pie",
-        "title": "Gender"
+        "title": "Sex"
       },
       "race": {
         "chartType": "bar",
@@ -132,10 +132,12 @@
         {
           "title": "Case",
           "fields":[
-            "gender",
+            "sex",
+            "age",
             "race",
             "ethnicity",
-            "primary_diagnosis"
+            "ischemic_time",
+            "hardy_scale"
           ]
         }, {
           "title": "Projects",
@@ -157,9 +159,10 @@
         "project_id",
         "ethnicity",
         "race",
-        "gender",
-        "year_of_birth",
-        "primary_diagnosis",
+        "sex",
+        "age",
+        "ischemic_time",
+        "hardy_scale",
         "_aliquots_count",
         "_read_groups_count",
         "_samples_count",
@@ -215,7 +218,14 @@
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
-      "fieldMapping": [],
+      "fieldMapping": [
+        { "field": "sex", "name": "Sex" },
+        { "field": "race", "name": "Race" },
+        { "field": "age", "name": "Age" },
+        { "field": "ethnicity", "name": "Ethnicity" },
+        { "field": "ischemic_time", "name": "Ischemic Time" },
+        { "field": "hardy_scale", "name": "Hardy Scale" }
+      ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
