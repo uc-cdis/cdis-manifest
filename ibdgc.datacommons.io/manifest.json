@@ -17,7 +17,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.04",
     "spark": "quay.io/cdis/gen3-spark:2020.04",
-    "tube": "quay.io/cdis/tube:2020.04",
+    "tube": "quay.io/cdis/tube:0.3.26",
     "hatchery": "quay.io/cdis/hatchery:2020.04",
     "wts": "quay.io/cdis/workspace-token-service:2020.04",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
