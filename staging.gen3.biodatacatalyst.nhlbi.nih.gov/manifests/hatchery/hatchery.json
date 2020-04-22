@@ -1,5 +1,5 @@
 {
-  "user-namespace": "jupyter-pods-staging",
+  "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "500Gi",
   "sidecar": {
@@ -7,7 +7,7 @@
     "memory-limit": "256Mi",
     "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
     "env": {
-      "NAMESPACE":"staging",
+      "NAMESPACE":"default",
       "HOSTNAME": "staging.gen3.biodatacatalyst.nhlbi.nih.gov"
     },
     "args": [],
