@@ -35,6 +35,152 @@
   },
   "sower": [
     {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/get-dbgap-metadata:feat_metadata",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:feat_metadata",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:master",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:master",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
       "name": "pelican-export",
       "action": "export",
       "container": {
