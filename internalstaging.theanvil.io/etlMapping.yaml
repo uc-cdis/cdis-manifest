@@ -6,17 +6,80 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: dbgap_study_id
     flatten_props:
       - path: demographics
         props:
           - name: sex
           - name: race
           - name: ethnicity
+          - name: ancestry
           - name: age
       - path: death_records
         props:
           - name: hardy_scale
+      - path: phenotypes
+        props:
+          - name: disease_description
+          - name: hpo_present
+          - name: hpo_absent
+          - name: disease_omim_id
+          - name: solve_state 
+          - name: congenital_status
+          - name: age_of_onset
     aggregated_props:
+      - name: sample_source
+        path: samples
+        src: sample_source
+        fn: set
+      - name: sample_provider
+        path: samples
+        src: sample_provider
+        fn: set
+      - name: inheritance_description
+        path: samples.discoveries
+        src: inheritance_description
+        fn: set
+      - name: zygosity
+        path: samples.discoveries
+        src: zygosity
+        fn: set
+      - name: significance
+        path: samples.discoveries
+        src: significance
+        fn: set
+      - name: gene_class
+        path: samples.discoveries
+        src: gene_class
+        fn: set
+      - name: exome_capture_platform
+        path: samples.aliquots.read_groups
+        src: exome_capture_platform
+        fn: set
+      - name: library_prep_kit_method
+        path: samples.aliquots.read_groups
+        src: library_prep_kit_method
+        fn: set
+      - name: capture_region_bed_file
+        path: samples.aliquots.read_groups
+        src: capture_region_bed_file
+        fn: set
+      - name: reference_genome_build
+        path: samples.aliquots.read_groups
+        src: reference_genome_build
+        fn: set
+      - name: sequencing_assay
+        path: samples.aliquots.read_groups
+        src: sequencing_assay
+        fn: set
+      - name: alignment_method
+        path: samples.aliquots.read_groups
+        src: alignment_method
+        fn: set
+      - name: data_proccessing_pipeline
+        path: samples.aliquots.read_groups
+        src: data_proccessing_pipeline
+        fn: set
       - name: _samples_count
         path: samples
         fn: count
