@@ -135,14 +135,40 @@
             "sex",
             "age",
             "race",
+            "ancestry",
             "ethnicity",
+            "disease_description", 
+            "hpo_present", 
+            "hpo_absent", 
+            "disease_omim_id", 
+            "solve_state", 
+            "congenital_status", 
+            "age_of_onset",
             "ischemic_time",
             "hardy_scale"
           ]
         }, {
+          "title": "Sample",
+          "fields": [
+            "sample_source",
+            "sample_provider",
+            "inheritance_description", 
+            "zygosity", 
+            "significance", 
+            "gene_class",
+            "library_prep_kit_method", 
+            "exome_capture_platform", 
+            "capture_region_bed_file", 
+            "reference_genome_build", 
+            "sequencing_assay", 
+            "alignment_method", 
+            "data_proccessing_pipeline"
+          ]
+        }, {
           "title": "Projects",
           "fields": [
-            "project_id"
+            "project_id",
+            "dbgap_study_id"
           ]
         }
       ]
@@ -224,7 +250,29 @@
         { "field": "age", "name": "Age" },
         { "field": "ethnicity", "name": "Ethnicity" },
         { "field": "ischemic_time", "name": "Ischemic Time" },
-        { "field": "hardy_scale", "name": "Hardy Scale" }
+        { "field": "hardy_scale", "name": "Hardy Scale" },
+        { "field": "ancestry", "name": "Ancestry" },
+        { "field": "disease_description", "name": "Disease Description" }, 
+        { "field": "hpo_present", "name": "HPO Present" }, 
+        { "field": "hpo_absent", "name": "HPO Absent" }, 
+        { "field": "disease_omim_id", "name": "Disease omim id" }, 
+        { "field": "solve_state", "name": "" }, 
+        { "field": "congenital_status", "name": "" }, 
+        { "field": "age_of_onset", "name": "" },
+        { "field": "sample_source", "name": "" },
+        { "field": "sample_provider", "name": "" },
+        { "field": "inheritance_description", "name": "" }, 
+        { "field": "zygosity", "name": "" }, 
+        { "field": "significance", "name": "" }, 
+        { "field": "gene_class", "name": "" },
+        { "field": "library_prep_kit_method", "name": "" }, 
+        { "field": "exome_capture_platform", "name": "" }, 
+        { "field": "capture_region_bed_file", "name": "" }, 
+        { "field": "reference_genome_build", "name": "" }, 
+        { "field": "sequencing_assay", "name": "" }, 
+        { "field": "alignment_method", "name": "" }, 
+        { "field": "data_proccessing_pipeline", "name": "" },
+        { "field": "dbgap_study_id", "name": "" }        
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
