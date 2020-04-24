@@ -18,16 +18,35 @@ mappings:
       - path: death_records
         props:
           - name: hardy_scale
-      - path: phenotypes
-        props:
-          - name: disease_description
-          - name: hpo_present
-          - name: hpo_absent
-          - name: disease_omim_id
-          - name: solve_state 
-          - name: congenital_status
-          - name: age_of_onset
     aggregated_props:
+      - name: disease_description
+        path: phenotypes
+        src: disease_description
+        fn: set
+      - name: hpo_present
+        path: phenotypes
+        src: hpo_present
+        fn: set
+      - name: hpo_absent
+        path: phenotypes
+        src: hpo_absent
+        fn: set
+      - name: disease_omim_id
+        path: phenotypes
+        src: disease_omim_id
+        fn: set
+      - name: solve_state
+        path: phenotypes
+        src: solve_state 
+        fn: set
+      - name: congenital_status
+        path: phenotypes
+        src: congenital_status
+        fn: set
+      - name: age_of_onset
+        path: phenotypes
+        src: age_of_onset
+        fn: set      
       - name: sample_source
         path: samples
         src: sample_source
