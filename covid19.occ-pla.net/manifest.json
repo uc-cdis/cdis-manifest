@@ -6,7 +6,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "covid19-etl": "quay.io/cdis/covid19-etl:1.0.9",
+    "covid19-etl": "quay.io/cdis/covid19-etl:1.0.12",
     "nb-etl": "quay.io/cdis/nb-etl:1.0.9",
     "fence": "quay.io/cdis/fence:2020.03",
     "indexd": "quay.io/cdis/indexd:2020.03",
@@ -37,7 +37,8 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "public_datasets": true,
-    "useryaml_s3path": "s3://cdis-gen3-users/occ-covid19/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/occ-covid19/user.yaml",
+    "lb_type": "internal"
   },
   "hatchery": {
     "user-namespace": "jupyter-pods",
