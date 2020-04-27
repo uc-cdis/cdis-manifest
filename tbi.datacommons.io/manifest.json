@@ -31,7 +31,7 @@
     "environment": "fitbirprod",
     "hostname": "tbi.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:345060017512:certificate/d86cc34b-b352-46ef-808b-12a5fd6c743c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/0.1.9/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-fitbirprod-gen3",
     "logs_bucket": "s3logs-logs-fitbirprod-gen3",
@@ -134,7 +134,7 @@
     "fence": {
       "strategy": "auto",
       "min": 2,
-      "max": 4,
+      "max": 5,
       "targetCpu": 40
     },
     "indexd": {
