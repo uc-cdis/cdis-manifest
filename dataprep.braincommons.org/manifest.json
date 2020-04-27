@@ -71,7 +71,9 @@
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
           "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
+          "--NotebookApp.token=''",
+          "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+          "--NotebookApp.quit_button=False"
         ],
         "command": [
           "start-notebook.sh"
@@ -98,7 +100,9 @@
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
           "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
+          "--NotebookApp.token=''",
+          "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+          "--NotebookApp.quit_button=False"
         ],
         "command": [
           "start-notebook.sh"
@@ -125,7 +129,9 @@
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
           "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
+          "--NotebookApp.token=''",
+          "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+          "--NotebookApp.quit_button=False"
         ],
         "command": [
           "start-notebook.sh"
@@ -141,6 +147,20 @@
         "user-uid": 1000,
         "fs-gid": 100,
         "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8787,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "R Studio",
+        "image": "quay.io/cdis/rstudio:master",
+        "env": {"DISABLE_AUTH": "true"},
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/",
+        "user-volume-location": "/home/rstudio/pd",
+        "fs-gid": 100
       }
     ]
   },
