@@ -1,11 +1,11 @@
 {
-  "user-namespace": "jupyter-pods-internalanvil",
+  "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "500Gi",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "512Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:0.1.5",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.04",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "staging.theanvil.io"
