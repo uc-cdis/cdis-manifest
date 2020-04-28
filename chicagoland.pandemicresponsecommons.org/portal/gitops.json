@@ -129,7 +129,7 @@
     "charts": {
       "project_id": {
         "chartType": "count",
-        "title": "Projects"
+        "title": "Datasets"
       },
       "symptoms": {
         "chartType": "bar",
@@ -137,24 +137,36 @@
       },
       "source": {
         "chartType": "pie",
-        "title": "Source"
+        "title": "Sources"
       }
     },
+    "fieldMapping" : [
+      { "field": "project_id", "name": "Dataset" }
+    ],
     "filters": {
       "tabs": [
         {
-          "title": "subject",
+          "title": "Subject",
           "fields":[
             "project_id",
             "symptoms",
-            "country",
             "visiting_wuhan",
             "from_wuhan",
             "death",
             "recovered",
             "reporting_date",
             "source",
-            "age"
+            "age",
+            "infection_case",
+            "isolated"
+          ]
+        },
+        {
+          "title": "Origin",
+          "fields":[
+            "city",
+            "province",
+            "country"
           ]
         }
       ]
@@ -167,6 +179,9 @@
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
+      "fieldMapping" : [
+        { "field": "project_id", "name": "Dataset" }
+      ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
