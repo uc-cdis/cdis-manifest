@@ -1,7 +1,8 @@
 {
   "notes": [
-    "This is the dev environment manifest",
-    "That's all I have to say"
+    "This is the ACCOuNT environment manifest",
+    "https://acct.bionimbus.org",
+    "Last updated by cgmeyer 04-29-2020 to add Guppy, Tube, and Spark for ETL process."
   ],
   "jenkins": {
     "autodeploy": "yes"
@@ -16,6 +17,9 @@
     "sheepdog": "quay.io/cdis/sheepdog:2020.04",
     "portal": "quay.io/cdis/data-portal:2020.04",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "quay.io/cdis/gen3-spark:2020.04",
+    "tube": "quay.io/cdis/tube:2020.04",
+    "guppy": "quay.io/cdis/guppy:2020.04",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.04",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.04"
   },
@@ -47,6 +51,20 @@
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "acct_etl",
+        "type": "subject"
+      },
+      {
+        "index": "acct_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "acct_array-config",
+    "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
     "arborist": {
@@ -90,6 +108,12 @@
       "min": 2,
       "max": 4,
       "targetCpu": 40
+    },
+    "guppy": {
+    "strategy": "auto",
+    "min": 1,
+    "max": 4,
+    "targetCpu": 40
     }
   }
 }
