@@ -55,10 +55,22 @@ mappings:
       - name: reporting_date
       - name: source
       - name: age
+      - name: age_decade
+      - name: city
+      - name: date_confirmation
+      - name: date_death_or_discharge
+      - name: date_onset_symptoms
+      - name: disease
+      - name: infection_case
+      - name: province
+      - name: global_num
+      - name: contact_number
+      - name: isolated
     flatten_props:
       - path: demographics
         props:
           - name: gender
+          - name: year_of_birth
   - name: covid19_file
     doc_type: file
     type: collector

@@ -4,11 +4,11 @@
   "user-volume-size": "500Gi",
   "sidecar": {
     "cpu-limit": "1.0",
-    "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
+    "memory-limit": "512Mi",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.04",
     "env": {
-      "NAMESPACE":"default",
-      "HOSTNAME": "staging.gen3.biodatacatalyst.nhlbi.nih.gov"
+      "NAMESPACE": "default",
+      "HOSTNAME": "staging.theanvil.io"
     },
     "args": [],
     "command": [
@@ -44,7 +44,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
       "name": "Jupyter Notebook Bio Python",
-      "image": "quay.io/cdis/jupyter-notebook:jupyter-java",
+      "image": "quay.io/occ_data/jupyternotebook:1.9.0",
       "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -71,7 +71,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "15512Mi",
       "name": "Jupyter Notebook Power Python",
-      "image": "quay.io/cdis/jupyter-notebook:jupyter-java",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
       "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
