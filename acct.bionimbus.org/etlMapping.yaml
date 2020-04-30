@@ -81,25 +81,19 @@ mappings:
         path: samples
         fn: count
       - name: _mrna_microarrays_count
-        path: mrna_microarrays
-        fn: count
-      - name: _reference_files_count
-        path: reference_files
+        path: samples.aliquots.mrna_microarrays
         fn: count
       - name: _submitted_aligned_reads_files_count
-        path: submitted_aligned_reads_files
+        path: samples.aliquots.read_groups.submitted_aligned_reads_files
         fn: count
       - name: _submitted_genotyping_array_files_count
-        path: submitted_genotyping_array_files
+        path: samples.aliquots.submitted_genotyping_array_files
         fn: count
       - name: _submitted_snp_array_files_count
-        path: submitted_snp_array_files
+        path: samples.aliquots.submitted_snp_array_files
         fn: count
       - name: _submitted_unaligned_reads_files_count
-        path: submitted_unaligned_reads_files
-        fn: count
-      - name: _aligned_reads_indexes_count
-        path: aligned_reads_indexes
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
         fn: count
     joining_props:
       - index: file
