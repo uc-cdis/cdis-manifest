@@ -26,11 +26,17 @@
   "arborist": {
     "deployment_version": "2"
   },
-  "jupyterhub": {
-    "enabled": "yes"
+  "indexd": {
+    "arborist": "true"
   },
   "peregrine": {
     "sidecar": "True"
+  },
+  "google": {
+    "enabled": "yes"
+  },
+  "jupyterhub": {
+    "enabled": "yes"
   },
   "global": {
     "environment": "accountprod",
@@ -73,17 +79,23 @@
       "max": 4,
       "targetCpu": 40
     },
-    "portal": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
     "fence": {
       "strategy": "auto",
-      "min": 1,
+      "min": 2,
       "max": 10,
       "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 10,
+      "targetCpu": 40
+    },
+    "guppy": {
+    "strategy": "auto",
+    "min": 1,
+    "max": 4,
+    "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
@@ -97,10 +109,16 @@
       "max": 4,
       "targetCpu": 40
     },
-    "revproxy": {
+    "portal": {
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 6,
       "targetCpu": 40
     },
     "sheepdog": {
@@ -108,12 +126,6 @@
       "min": 2,
       "max": 4,
       "targetCpu": 40
-    },
-    "guppy": {
-    "strategy": "auto",
-    "min": 1,
-    "max": 4,
-    "targetCpu": 40
     }
   }
 }
