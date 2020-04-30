@@ -291,6 +291,13 @@
         "leftIcon": "datafile",
         "rightIcon": "download",
         "fileName": "manifest.json"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export File Manifest to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
       }
     ]
   },
@@ -350,6 +357,13 @@
         "leftIcon": "datafile",
         "rightIcon": "download",
         "fileName": "file-manifest.json"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-workspace",
+        "title": "Export File Manifest to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
       }
     ],
     "dropdowns": {}
