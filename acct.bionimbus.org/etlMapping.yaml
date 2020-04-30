@@ -1,0 +1,140 @@
+mappings:
+  - name: acct_etl
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: disease_type
+      - name: index_date
+      - name: primary_site
+      - name: species
+      - name: strain
+    aggregated_props:
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
+        fn: set
+      - name: gender
+        path: demographics
+        src: gender
+        fn: set
+      - name: race
+        path: demographics
+        src: race
+        fn: set
+      - name: primary_diagnosis
+        path: diagnoses
+        src: primary_diagnosis
+        fn: set
+      - name: alcohol_intensity
+        path: exposures
+        src: alcohol_intensity
+        fn: set
+      - name: bmi
+        path: exposures
+        src: bmi
+        fn: max
+      - name: pack_years_smoked
+        path: exposures
+        src: pack_years_smoked
+        fn: max
+      - name: years_smoked
+        path: exposures
+        src: years_smoked
+        fn: set
+      - name: composition
+        path: samples
+        src: composition
+        fn: set
+      - name: tissue_type
+        path: samples
+        src: tissue_type
+        fn: set
+      - name: therapeutic_agents
+        path: diagnoses.treatments
+        src: therapeutic_agents
+        fn: set
+      - name: _clinical_tests_count
+        path: clinical_tests
+        fn: count
+      - name: _demographics_count
+        path: demographics
+        fn: count
+      - name: _diagnoses_count
+        path: diagnoses
+        fn: count
+      - name: _exposures_count
+        path: exposures
+        fn: count
+      - name: _family_histories_count
+        path: family_histories
+        fn: count
+      - name: _follow_ups_count
+        path: follow_ups
+        fn: count
+      - name: _medical_histories_count
+        path: medical_histories
+        fn: count
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _mrna_microarrays_count
+        path: mrna_microarrays
+        fn: count
+      - name: _reference_files_count
+        path: reference_files
+        fn: count
+      - name: _submitted_aligned_reads_files_count
+        path: submitted_aligned_reads_files
+        fn: count
+      - name: _submitted_genotyping_array_files_count
+        path: submitted_genotyping_array_files
+        fn: count
+      - name: _submitted_snp_array_files_count
+        path: submitted_snp_array_files
+        fn: count
+      - name: _submitted_unaligned_reads_files_count
+        path: submitted_unaligned_reads_files
+        fn: count
+      - name: _aligned_reads_indexes_count
+        path: aligned_reads_indexes
+        fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_type
+            fn: set
+  - name: acct_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+      - name: experimental_strategy
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+            fn: set
+          - name: project_id
+            fn: set

@@ -44,23 +44,23 @@
       },
       "buttons": [
         {
-          "name": "Define Data Field",
+          "name": "Data Model",
           "icon": "data-field-define",
-          "body": "The ACCOuNT Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "The ACCOuNT Data Commons ingests and exports data that conform to a graph-like relational data model.",
           "link": "/DD",
           "label": "Learn more"
         },
         {
           "name": "Explore Data",
           "icon": "data-explore",
-          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "body": "The File Exploration Page supports browsing data files using filters and selection of files for download.",
           "link": "/files",
           "label": "Explore data"
         },
         {
           "name": "Access Data",
           "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
+          "body": "Subject and file metadata can be queried using graphQL.",
           "link": "/query",
           "label": "Query data"
         },
@@ -68,7 +68,7 @@
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "label": "Run analysis"
         }
       ]
@@ -96,7 +96,7 @@
         },
         {
           "icon": "workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "color": "#a2a2a2",
           "name": "Workspace"
         },
@@ -105,6 +105,19 @@
           "link": "/identity",
           "color": "#a2a2a2",
           "name": "Profile"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Browse Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Gen3 Documentation"
         }
       ]
     },
@@ -130,6 +143,7 @@
       ]
     }
   },
+  "requiredCerts": [],
   "featureFlags": {
     "explorer": false
   }
