@@ -84,3 +84,14 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+  - name: covid19_dataset
+    doc_type: dataset
+    type: aggregator
+    root: project
+    props:
+      - name: code
+      - name: name
+      - name: url
+      - name: data_description
+    parent_props:
+      - path: programs[program_name:name]
