@@ -31,11 +31,11 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "The BRAIN Commons Portal",
+    "appName": "The TBI Commons Portal",
     "index": {
       "introduction": {
-        "heading": "BRAIN Commons",
-        "text": "The BRAIN Commons supports the management, analysis and sharing of brain health data for the research community with the aim of accelerating discovery and development of diagnostics, treatment and prevention of diseases impacting the brain. The BRAIN Commons enables cross-project analyses through the harmonization of data to a common data model and data dictionary, and a cloud-based analysis workspace implementing Jupyter notebooks.",
+        "heading": "TBI Commons",
+        "text": "The TBI Commons supports the management, analysis and sharing of brain health data for the research community with the aim of accelerating discovery and development of diagnostics, treatment and prevention of diseases impacting the brain. The BRAIN Commons enables cross-project analyses through the harmonization of data to a common data model and data dictionary, and a cloud-based analysis workspace implementing Jupyter notebooks.",
         "link": "/submission"
       },
       "buttons": [
@@ -117,11 +117,11 @@
       ]
     },
     "login": {
-      "title": "BRAIN Commons",
+      "title": "TBI Commons",
       "subTitle": "Explore, Analyze, and Share Data",
-      "text": "The BRAIN Commons is a scalable cloud-based platform for computational discovery designed for the brain health community. The BRAIN Commons empowers the global research community by providing access to multi-modal data, state-of-the-art analytic tools and a secure interoperable system for data sharing to accelerate discovery and development of therapies, diagnostic tests, and other technologies for the treatment and prevention of diseases impacting the brain.",
+      "text": "The TBI Commons is a scalable cloud-based platform for computational discovery designed for the brain health community. The BRAIN Commons empowers the global research community by providing access to multi-modal data, state-of-the-art analytic tools and a secure interoperable system for data sharing to accelerate discovery and development of therapies, diagnostic tests, and other technologies for the treatment and prevention of diseases impacting the brain.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@braincommons.org"
+      "email": "support@datacommons.io"
     },
     "certs": {
       "privacy_policy": {
@@ -160,7 +160,7 @@
       }
     ]
   },
-  "requiredCerts": ["privacy_policy"],
+  "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
     "noIndex": true
