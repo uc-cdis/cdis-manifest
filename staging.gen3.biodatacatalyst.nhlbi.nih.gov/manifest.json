@@ -20,7 +20,7 @@
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.18",
     "guppy": "quay.io/cdis/guppy:0.4.1",
-    "sower": "quay.io/cdis/sower:0.3.0",
+    "sower": "quay.io/cdis/sower:0.4.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
@@ -93,6 +93,156 @@
           "name": "peregrine-creds-volume",
           "secret": {
             "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/get-dbgap-metadata:1.1.0",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:1.1.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:1.1.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
