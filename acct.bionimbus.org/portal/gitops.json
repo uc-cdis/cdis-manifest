@@ -145,6 +145,174 @@
   },
   "requiredCerts": [],
   "featureFlags": {
-    "explorer": false
+    "explorer": true
+  },
+  "dataExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "count",
+        "title": "Projects"
+      },
+      "node_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Subjects",
+          "fields": [
+            "project_id",
+            "disease_type",
+            "index_date",
+            "primary_site",
+            "species",
+            "strain",
+            "ethnicity",
+            "gender",
+            "race",
+            "primary_diagnosis",
+            "alcohol_intensity",
+            "bmi",
+            "pack_years_smoked",
+            "years_smoked",
+            "composition",
+            "tissue_type",
+            "therapeutic_agents"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "disease_type",
+        "index_date",
+        "primary_site",
+        "species",
+        "strain",
+        "ethnicity",
+        "gender",
+        "race",
+        "primary_diagnosis",
+        "alcohol_intensity",
+        "bmi",
+        "pack_years_smoked",
+        "years_smoked",
+        "composition",
+        "tissue_type",
+        "therapeutic_agents"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download Data",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "data.json"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json"
+      }
+    ]
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "pie",
+        "title": "Project ID"
+      },
+      "data_category": {
+        "chartType": "stackedBar",
+        "title": "File Category"
+      },
+      "data_type": {
+        "chartType": "stackedBar",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format",
+            "data_category",
+            "experimental_strategy"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "submitter_id",
+        "object_id",
+        "md5sum",
+        "file_name",
+        "file_size",
+        "data_format",
+        "data_type",
+        "data_category",
+        "experimental_strategy"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json"
+      }
+    ],
+    "dropdowns": {}
   }
 }
