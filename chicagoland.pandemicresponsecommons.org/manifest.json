@@ -29,7 +29,7 @@
     "environment": "covid19-prod",
     "hostname": "chicagoland.pandemicresponsecommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/e5edf56f-4003-4ee3-9ecd-162aaf19c058",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.3.7/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.3.9/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
     "logs_bucket": "s3logs-logs-covid19-prod-gen3",
@@ -37,6 +37,7 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "public_datasets": true,
+    "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml"
   },
   "hatchery": {
@@ -176,6 +177,10 @@
       {
         "index": "covid19_subject",
         "type": "subject"
+      },
+      {
+        "index": "covid19_dataset",
+        "type": "dataset"
       }
     ],
     "config_index": "covid19_array-config",
