@@ -125,68 +125,107 @@
     "analysis": true
   },
   "analysisTools": [ ],
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Datasets"
+  "explorerConfig": [
+    {
+      "tabTitle": "Datasets",
+      "filters": {
+        "tabs": [
+          {
+            "title": "Catalogue",
+            "fields": [
+              "program_name",
+              "code"
+            ]
+          }
+        ]
       },
-      "symptoms": {
-        "chartType": "bar",
-        "title": "Symptoms"
+      "table": {
+        "enabled": true,
+        "fields": [
+          "name",
+          "data_description",
+          "code"
+        ]
       },
-      "source": {
-        "chartType": "pie",
-        "title": "Sources"
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "dataset",
+        "nodeCountTitle": "Datasets",
+        "fieldMapping": [
+          { "field": "name", "name": "Dataset" },
+          { "field": "code", "name": "ID" }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "subject_id",
+          "referenceIdFieldInDataIndex": "node_id"
+        }
       }
     },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Subject",
-          "fields":[
-            "project_id",
-            "symptoms",
-            "visiting_wuhan",
-            "from_wuhan",
-            "death",
-            "recovered",
-            "reporting_date",
-            "source",
-            "age",
-            "infection_case",
-            "isolated"
-          ]
+    {
+      "tabTitle": "Subjects",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Datasets"
         },
-        {
-          "title": "Origin",
-          "fields":[
-            "city",
-            "province",
-            "country"
-          ]
+        "symptoms": {
+          "chartType": "bar",
+          "title": "Symptoms"
+        },
+        "source": {
+          "chartType": "pie",
+          "title": "Source"
         }
-      ]
-    },
-    "table": {
-      "enabled": true
-    },
-    "buttons": [
-    ],
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "fieldMapping" : [
-        { "field": "project_id", "name": "Dataset" }
-      ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "node_id"
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Clinical",
+            "fields": [
+              "project_id",
+              "symptoms",
+              "death",
+              "recovered",
+              "reporting_date",
+              "source",
+              "infection_case",
+              "isolated"
+            ]
+          },
+          {
+            "title": "Demographics",
+            "fields": [
+              "country",
+              "province",
+              "city",
+              "age",
+              "from_wuhan",
+              "visiting_wuhan"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true
+      },
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping" : [
+          { "field": "project_id", "name": "Dataset" }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "subject_id",
+          "referenceIdFieldInDataIndex": "node_id"
+        }
       }
     }
-  },
+  ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
     "public": true,
@@ -212,7 +251,10 @@
       }
     ]
   },
-  "enableCovid19Dashboard": true,
+  "covid19DashboardConfig": {
+    "dataUrl": "https://opendata.datacommons.io/",
+    "enableCharts": false
+  },
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
