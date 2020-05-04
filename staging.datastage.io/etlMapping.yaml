@@ -84,10 +84,6 @@ mappings:
         path: demographics
         src: ethnicity
         fn: set
-      - name: age_at_enrollment
-        path: demographics
-        src: age_at_enrollment
-        fn: set
       - name: _samples_count
         path: samples
         fn: count
