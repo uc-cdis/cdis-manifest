@@ -95,9 +95,9 @@ mappings:
         path: samples.aliquots.read_groups
         src: alignment_method
         fn: set
-      - name: data_proccessing_pipeline
+      - name: data_processing_pipeline
         path: samples.aliquots.read_groups
-        src: data_proccessing_pipeline
+        src: data_processing_pipeline
         fn: set
       - name: _samples_count
         path: samples
