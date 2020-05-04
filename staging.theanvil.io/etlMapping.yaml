@@ -9,14 +9,10 @@ mappings:
     flatten_props:
       - path: demographics
         props:
-          - name: gender
+          - name: sex
           - name: race
           - name: ethnicity
           - name: year_of_birth
-      - path: diagnoses
-        props:
-          - name: primary_diagnosis
-        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
