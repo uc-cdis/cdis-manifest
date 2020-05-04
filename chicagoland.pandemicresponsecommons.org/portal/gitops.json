@@ -142,9 +142,9 @@
       "table": {
         "enabled": true,
         "fields": [
+          "code",
           "name",
-          "data_description",
-          "code"
+          "data_description"
         ]
       },
       "buttons": [],
@@ -156,10 +156,7 @@
           { "field": "code", "name": "ID" }
         ],
         "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "subject_id",
-          "referenceIdFieldInDataIndex": "node_id"
+          "referenceIdFieldInResourceIndex": "code"
         }
       }
     },
@@ -218,11 +215,74 @@
           { "field": "project_id", "name": "Dataset" }
         ],
         "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "subject_id",
-          "referenceIdFieldInDataIndex": "node_id"
+          "referenceIdFieldInResourceIndex": "subject_id"
         }
+      }
+    },
+    {
+      "tabTitle": "Genomics",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "fields": [
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "dropdowns": {},
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": false,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" },
+          { "field": "project_id", "name": "Dataset" },
+          { "field": "data_type", "name": "File Type" },
+          { "field": "data_format", "name": "File Format" }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id"
+        },
+        "downloadAccessor": "object_id"
       }
     }
   ],
