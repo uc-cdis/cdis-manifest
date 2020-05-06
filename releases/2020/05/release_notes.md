@@ -1,4 +1,4 @@
-# Core Gen3 Release 202002 (Aurora)
+# Core Gen3 Release 202005 (Dearborn)
 
 ## uc-cdis/fence
 
