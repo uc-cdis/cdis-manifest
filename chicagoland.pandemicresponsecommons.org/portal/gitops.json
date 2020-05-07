@@ -131,7 +131,7 @@
       "filters": {
         "tabs": [
           {
-            "title": "Catalogue",
+            "title": "Details",
             "fields": [
               "program_name",
               "code"
@@ -224,17 +224,17 @@
       "charts": {
         "data_type": {
           "chartType": "bar",
-          "title": "File Type"
+          "title": "Data Type"
         },
         "data_format": {
           "chartType": "bar",
-          "title": "File Format"
+          "title": "Data Format"
         }
       },
       "filters": {
         "tabs": [
           {
-            "title": "File",
+            "title": "Viral",
             "fields": [
               "data_type",
               "data_format"
@@ -274,9 +274,7 @@
         "dataType": "file",
         "fieldMapping": [
           { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Dataset" },
-          { "field": "data_type", "name": "File Type" },
-          { "field": "data_format", "name": "File Format" }
+          { "field": "project_id", "name": "Dataset" }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
