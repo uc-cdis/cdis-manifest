@@ -134,7 +134,8 @@
             "title": "Details",
             "fields": [
               "program_name",
-              "code"
+              "code",
+              "data_description"
             ]
           }
         ]
@@ -142,9 +143,13 @@
       "table": {
         "enabled": true,
         "fields": [
+          "url",
           "code",
           "name",
           "data_description"
+        ],
+        "linkFields": [
+          "url"
         ]
       },
       "buttons": [],
@@ -236,6 +241,7 @@
           {
             "title": "Viral",
             "fields": [
+              "project_id",
               "data_type",
               "data_format"
             ]
