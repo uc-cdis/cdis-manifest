@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/skip_tests_to_decommission_envs') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
