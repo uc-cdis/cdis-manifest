@@ -289,6 +289,12 @@
       },
       {
         "enabled": true,
+        "type": "export-to-seven-bridges",
+        "title": "Export All to Seven Bridges",
+        "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
         "type": "export-to-pfb",
         "title": "Export to PFB",
         "leftIcon": "datafile",
@@ -357,10 +363,11 @@
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
     "terraExportURL": "https://datastage.terra.bio/#import-data",
-    "terraTemplate": [ 
+    "terraTemplate": [
       "bdc",
       "gen3"
-    ]
+    ],
+    "sevenBridgesExportURL": "https://preprod.gen3.biodatacatalyst.nhlbi.nih.gov/"
   },
   "fileExplorerConfig": {
     "charts": {
