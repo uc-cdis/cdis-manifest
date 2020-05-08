@@ -84,6 +84,11 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+    injecting_props:
+      project:
+        props:
+          - name: project_code
+            src: code
   - name: covid19_dataset
     doc_type: dataset
     type: aggregator
