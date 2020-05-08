@@ -142,9 +142,13 @@
       "table": {
         "enabled": true,
         "fields": [
+          "url",
           "code",
           "name",
           "data_description"
+        ],
+        "linkFields": [
+          "url"
         ]
       },
       "buttons": [],
@@ -153,7 +157,8 @@
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
           { "field": "name", "name": "Dataset" },
-          { "field": "code", "name": "ID" }
+          { "field": "code", "name": "ID" },
+          { "field": "url", "name": "Source" }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "code"
@@ -236,6 +241,7 @@
           {
             "title": "Viral",
             "fields": [
+              "project_id",
               "data_type",
               "data_format"
             ]
