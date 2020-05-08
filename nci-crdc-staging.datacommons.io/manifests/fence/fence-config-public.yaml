@@ -1,0 +1,14 @@
+S3_BUCKETS:
+  nci-cbiit-caninedatacommons-file:
+    cred: 'fence_bot'
+  tcga-protected-dcf-databucket-gen3:
+    cred: 'fence_bot'
+  tcga-public-dcf-databucket-gen3:
+    cred: 'fence_bot'
+  pdcdatastore-controlled:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  dev-testing-bucketfor-matchdata:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+

@@ -7,17 +7,24 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "fence": "quay.io/cdis/fence:4.12.0",
-    "arborist": "quay.io/cdis/arborist:2.3.2",
-    "google-sa-validation": "placeholder",
-    "indexd": "quay.io/cdis/indexd:2.2.0",
-    "peregrine": "quay.io/cdis/peregrine:1.0.5",
-    "pidgin": "quay.io/cdis/pidgin:1.2.0",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.6",
-    "portal": "quay.io/cdis/data-portal:2.2.5",
+    "fence": "quay.io/cdis/fence:2020.04",
+    "arborist": "quay.io/cdis/arborist:2020.04",
+    "google-sa-validation": "placeholder:2020.04",
+    "indexd": "quay.io/cdis/indexd:2020.04",
+    "peregrine": "quay.io/cdis/peregrine:2020.04",
+    "pidgin": "quay.io/cdis/pidgin:2020.04",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.04",
+    "portal": "quay.io/cdis/data-portal:2020.04",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master"
+    "metadata": "quay.io/cdis/metadata-service:v1.3.0",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:2020.04"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
   },
   "peregrine": {
     "sidecar": "False"
@@ -27,12 +34,6 @@
   },
   "jupyterhub": {
     "enabled": "no"
-  },
-  "arborist": {
-    "deployment_version": "2"
-  },
-  "indexd": {
-    "arborist": "true"
   },
   "global": {
     "environment": "dcfprod",
@@ -76,7 +77,13 @@
     "revproxy": {
       "strategy": "auto",
       "min": 2,
-      "max": 4,
+      "max": 10,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     }
   }

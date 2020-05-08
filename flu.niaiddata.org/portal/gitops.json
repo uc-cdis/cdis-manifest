@@ -163,10 +163,6 @@
         "chartType": "count",
         "title": "Studies"
       },
-      "subject_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      },
       "virus_subtype": {
         "chartType": "pie",
         "title": "Virus Subtype"
@@ -249,8 +245,8 @@
         "referenceIdFieldInResourceIndex": "subject_id",
         "referenceIdFieldInDataIndex": "node_id"
       },
-      "accessibleFieldCheckList": ["subject_id"],
-      "accessibleValidationField": "subject_id"
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
     }
   },
   "fileExplorerConfig": {
@@ -320,8 +316,8 @@
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["subject_id"],
-      "accessibleValidationField": "subject_id",
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     }
   },

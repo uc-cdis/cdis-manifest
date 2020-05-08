@@ -64,7 +64,6 @@
       ]
     },
     "navigation": {
-      "title": "JCOIN Data Commons",
       "items": [
         {
           "icon": "dictionary",
@@ -104,12 +103,43 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://jcoin.datacommons.io/dashboard/Public/index.html",
+          "name": "Documentation"
+        }
+      ]
+    },
     "login": {
       "title": "JCOIN Portal",
       "subTitle": "Explore, Analyze, and Share Data",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io"
-    }
+      "email": "support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/bg"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/custom/sponsors/gitops-sponsors/JCOIN-funded.png",
+        "href": "https://heal.nih.gov/research/research-to-practice/jcoin",
+        "alt": "JCOIN is funded by NIDA as part of the NIH HEAL Initiative(SM)"
+      }
+    ]
   },
   "featureFlags": {
     "explorer": true
@@ -119,37 +149,62 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
+      },
+      "race": {
+        "chartType": "pie",
+        "title": "Race"
+      },
+      "center": {
+        "chartType": "bar",
+        "title": "center"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Participant",
           "fields":[
             "project_id",
             "gender",
             "race",
             "jewish",
             "hispanic",
-            "ibd_affection_status",
-            "diagnosis",
-            "population_control"
+            "drug_used",
+            "ever_transferred",
+            "pregnancy_status",
+            "protocol",
+            "height",
+            "weight",
+            "weight_percentage",
+            "bmi",
+            "health_insurance",
+            "center"
           ]
         }
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "fields": [
         "project_id",
         "gender",
         "race",
         "jewish",
         "hispanic",
-        "ibd_affection_status",
-        "diagnosis",
-        "population_control",
-        "_samples_count"
+        "drug_used",
+        "ever_transferred",
+        "pregnancy_status",
+        "protocol",
+        "height",
+        "weight",
+        "weight_percentage",
+        "bmi",
+        "health_insurance",
+        "center"
       ]
     },
     "buttons": [
@@ -170,15 +225,19 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
+      "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
+        { "field": "project_id", "name": "Project ID" },
+        { "field": "bmi", "name": "BMI (kg/m^2)" },
+        { "field": "height", "name": "Height (cm)" },
+        { "field": "weight", "name": "Weight (g)" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "participant_id",
+        "referenceIdFieldInDataIndex": "participant_id"
       }
     }
   },
@@ -231,8 +290,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "participant",
+        "resourceIdField": "participant_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },

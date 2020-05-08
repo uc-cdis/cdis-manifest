@@ -7,19 +7,20 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.3.2",
+    "arborist": "quay.io/cdis/arborist:2020.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:feat_cleversafe-url",
-    "indexd": "quay.io/cdis/indexd:2.1.0",
-    "peregrine": "quay.io/cdis/peregrine:2.1.1",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.10",
-    "portal": "quay.io/cdis/data-portal:2.22.6",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.03",
+    "fence": "quay.io/cdis/fence:4.17.0",
+    "indexd": "quay.io/cdis/indexd:2020.03",
+    "peregrine": "quay.io/cdis/peregrine:2020.03",
+    "pidgin": "quay.io/cdis/pidgin:2020.03",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.03",
+    "portal": "quay.io/cdis/data-portal:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.18",
-    "guppy": "quay.io/cdis/guppy:0.3.10"
+    "spark": "quay.io/cdis/gen3-spark:2020.03",
+    "tube": "quay.io/cdis/tube:2020.03",
+    "guppy": "quay.io/cdis/guppy:2020.03"
   },
   "google": {
     "enabled": "no"
@@ -31,7 +32,7 @@
     "environment": "icgc",
     "hostname": "icgc.bionimbus.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:446046036926:certificate/cf0052c5-18cc-43f3-9ae7-920568c73247",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/reference_file_node/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/tcga_dictionary/1.0.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-icgc-gen3",
     "logs_bucket": "logs-icgc-gen3",
@@ -39,7 +40,8 @@
     "public_datasets": true,
     "tier_access_level": "libre",
     "tier_access_limit": 50,
-    "sync_from_dbgap": "False"
+    "sync_from_dbgap": "True",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
@@ -48,7 +50,7 @@
     "indices": [
       {
         "index": "icgc_etl",
-        "type": "case"
+        "type": "subject"
       },
       {
         "index": "icgc_file",
