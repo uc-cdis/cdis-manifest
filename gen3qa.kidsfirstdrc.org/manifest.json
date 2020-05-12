@@ -16,7 +16,7 @@
     "revproxy": "quay.io/cdis/nginx:2020.05",
     "sheepdog": "quay.io/cdis/sheepdog:2020.05",
     "portal": "quay.io/cdis/data-portal:2020.05",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {
     "deployment_version": "2"
