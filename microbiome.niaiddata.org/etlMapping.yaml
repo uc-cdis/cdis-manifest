@@ -42,11 +42,11 @@ mappings:
         src: biospecimen_anatomic_site
         path: samples
         fn: set
-      - name: experiment_type
-        src: culture
+      - name: experiment_types
+        src: experiment_type
         path: samples.aliquots.experiments
         fn: set
-      - name: experimental_strategy
+      - name: experimental_strategies
         src: experimental_strategy
         path: samples.aliquots.experiments.sequencing_results
         fn: set
