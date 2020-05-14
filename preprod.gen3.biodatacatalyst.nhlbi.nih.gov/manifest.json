@@ -111,7 +111,7 @@
       "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.3",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.4",
         "pull_policy": "Always",
         "env": [
           {
@@ -151,7 +151,7 @@
       "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:1.1.3",
+        "image": "quay.io/cdis/get-dbgap-metadata:1.1.4",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -181,7 +181,7 @@
       "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:1.1.3",
+        "image": "quay.io/cdis/manifest-indexing:1.1.4",
         "pull_policy": "Always",
         "env": [
           {
@@ -221,7 +221,7 @@
       "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.1.3",
+        "image": "quay.io/cdis/download-indexd-manifest:1.1.4",
         "pull_policy": "Always",
         "env": [
           {
