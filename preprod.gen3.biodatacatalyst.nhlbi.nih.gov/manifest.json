@@ -108,7 +108,7 @@
     {
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
-      "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.4",
@@ -148,7 +148,7 @@
     {
       "name": "get-dbgap-metadata",
       "action": "get-dbgap-metadata",
-      "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/get-dbgap-metadata:1.1.4",
@@ -178,7 +178,7 @@
     {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
-      "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-indexing:1.1.4",
@@ -218,7 +218,7 @@
     {
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
-      "serviceAccountName": "sower-jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/download-indexd-manifest:1.1.4",
@@ -292,6 +292,7 @@
     "public_datasets": true,
     "tier_access_level": "regular",
     "tier_access_limit": 50,
+    "dispatcher_job_num": "10",
     "netpolicy": "on"
   },
   "canary": {
