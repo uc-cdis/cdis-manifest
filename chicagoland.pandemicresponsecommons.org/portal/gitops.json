@@ -211,7 +211,15 @@
         ]
       },
       "table": {
-        "enabled": true
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "gender",
+          "age",
+          "city",
+          "province",
+          "country"
+        ]
       },
       "buttons": [],
       "guppyConfig": {
@@ -281,7 +289,9 @@
         "dataType": "file",
         "fieldMapping": [
           { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Dataset" }
+          { "field": "project_id", "name": "Dataset" },
+          { "field": "data_type", "name": "Data Type" },
+          { "field": "data_format", "name": "Data Format" }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
