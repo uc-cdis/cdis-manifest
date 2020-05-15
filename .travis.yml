@@ -10,7 +10,9 @@ script:
   - |
     for dir in *; do
       man=$dir/manifest.json; etl=$dir/etlMapping.yaml
-      [ -f $man ] && [ -f $etl ] && echo "ETL mapping validation for $dir" && gen3utils validate-etl-mapping $etl $man
+      if [ -f $man ] && [ -f $etl ]; then
+        echo "ETL mapping validation for $dir" && gen3utils validate-etl-mapping $etl $man
+      fi
     done
 
   # comment on PRs with relevant deployment changes:
