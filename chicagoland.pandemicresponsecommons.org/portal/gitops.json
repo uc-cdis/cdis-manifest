@@ -329,6 +329,12 @@
         "description": "In this R notebook, we track COVID-19 local (US) and global cases with active, confirmed, recovered and death toll on the map at the latest time point. The interactive maps indicate the concentration of coronavirus cases across the US and around the world.",
         "link": "/dashboard/Public/notebooks/jhu_map.html",
         "imageUrl": "/dashboard/Public/notebooks/jhu_map.png"
+      },
+      {
+        "title": "An Extended SEIR Model For COVID-19",
+        "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
+        "link": "/dashboard/Public/notebooks/extended-seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
       }
     ]
   },
