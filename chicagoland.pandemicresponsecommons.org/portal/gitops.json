@@ -289,14 +289,15 @@
         "dataType": "file",
         "fieldMapping": [
           { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Dataset" },
-          { "field": "data_type", "name": "Data Type" },
-          { "field": "data_format", "name": "Data Format" }
+          { "field": "project_id", "name": "Dataset" }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "object_id"
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
         },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       }
     }
