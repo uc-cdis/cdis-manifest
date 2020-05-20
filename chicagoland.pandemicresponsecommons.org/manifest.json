@@ -6,15 +6,15 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "covid19-etl": "quay.io/cdis/covid19-etl:1.0.12",
+    "covid19-etl": "quay.io/cdis/covid19-etl:1.0.13",
     "nb-etl": "quay.io/cdis/nb-etl:1.0.12",
     "fence": "quay.io/cdis/fence:2020.03",
-    "indexd": "quay.io/cdis/indexd:2020.03",
+    "indexd": "quay.io/cdis/indexd:2.8.0",
     "peregrine": "quay.io/cdis/peregrine:2020.03",
     "pidgin": "quay.io/cdis/pidgin:2020.03",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:4.0.0",
-    "portal": "quay.io/cdis/data-portal:covid19-2.1.0",
+    "sheepdog": "quay.io/cdis/sheepdog:4.1.0",
+    "portal": "quay.io/cdis/data-portal:covid19-3.0.0",
     "tube": "quay.io/cdis/tube:2020.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.03",
@@ -29,7 +29,7 @@
     "environment": "covid19-prod",
     "hostname": "chicagoland.pandemicresponsecommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/e5edf56f-4003-4ee3-9ecd-162aaf19c058",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.3.2/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.3.10/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
     "logs_bucket": "s3logs-logs-covid19-prod-gen3",
@@ -37,6 +37,7 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "public_datasets": true,
+    "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml"
   },
   "hatchery": {
@@ -176,6 +177,10 @@
       {
         "index": "covid19_subject",
         "type": "subject"
+      },
+      {
+        "index": "covid19_dataset",
+        "type": "dataset"
       }
     ],
     "config_index": "covid19_array-config",

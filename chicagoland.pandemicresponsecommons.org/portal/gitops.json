@@ -125,56 +125,165 @@
     "analysis": true
   },
   "analysisTools": [ ],
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "explorerConfig": [
+    {
+      "tabTitle": "Datasets",
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "program_name",
+              "code"
+            ]
+          }
+        ]
       },
-      "symptoms": {
-        "chartType": "bar",
-        "title": "Symptoms"
+      "table": {
+        "enabled": true,
+        "fields": [
+          "code",
+          "name",
+          "data_description"
+        ]
       },
-      "source": {
-        "chartType": "pie",
-        "title": "Source"
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "dataset",
+        "nodeCountTitle": "Datasets",
+        "fieldMapping": [
+          { "field": "name", "name": "Dataset" },
+          { "field": "code", "name": "ID" }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "code"
+        }
       }
     },
-    "filters": {
-      "tabs": [
-        {
-          "title": "subject",
-          "fields":[
-            "project_id",
-            "symptoms",
-            "country",
-            "visiting_wuhan",
-            "from_wuhan",
-            "death",
-            "recovered",
-            "reporting_date",
-            "source",
-            "age"
-          ]
+    {
+      "tabTitle": "Subjects",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Datasets"
+        },
+        "symptoms": {
+          "chartType": "bar",
+          "title": "Symptoms"
+        },
+        "source": {
+          "chartType": "pie",
+          "title": "Source"
         }
-      ]
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Clinical",
+            "fields": [
+              "project_id",
+              "symptoms",
+              "death",
+              "recovered",
+              "reporting_date",
+              "source",
+              "infection_case",
+              "isolated"
+            ]
+          },
+          {
+            "title": "Demographics",
+            "fields": [
+              "country",
+              "province",
+              "city",
+              "age",
+              "from_wuhan",
+              "visiting_wuhan"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true
+      },
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping" : [
+          { "field": "project_id", "name": "Dataset" }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "subject_id"
+        }
+      }
     },
-    "table": {
-      "enabled": true
-    },
-    "buttons": [
-    ],
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "node_id"
+    {
+      "tabTitle": "Genomics",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "Data Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "Data Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Viral",
+            "fields": [
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "dropdowns": {},
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": false,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" },
+          { "field": "project_id", "name": "Dataset" }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id"
+        },
+        "downloadAccessor": "object_id"
       }
     }
-  },
+  ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
     "public": true,
@@ -200,7 +309,10 @@
       }
     ]
   },
-  "enableCovid19Dashboard": true,
+  "covid19DashboardConfig": {
+    "dataUrl": "https://opendata.datacommons.io/",
+    "enableCharts": false
+  },
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
