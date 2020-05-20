@@ -128,6 +128,7 @@
   "explorerConfig": [
     {
       "tabTitle": "Datasets",
+      "charts": {},
       "filters": {
         "tabs": [
           {
@@ -157,8 +158,7 @@
         "dataType": "dataset",
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
-          { "field": "name", "name": "Dataset" },
-          { "field": "code", "name": "ID" },
+          { "field": "code", "name": "Dataset" },
           { "field": "url", "name": "Source" }
         ],
         "manifestMapping": {
@@ -169,7 +169,7 @@
     {
       "tabTitle": "Subjects",
       "charts": {
-        "project_id": {
+        "project_code": {
           "chartType": "count",
           "title": "Datasets"
         },
@@ -187,7 +187,7 @@
           {
             "title": "Clinical",
             "fields": [
-              "project_id",
+              "project_code",
               "symptoms",
               "death",
               "recovered",
@@ -213,12 +213,17 @@
       "table": {
         "enabled": true,
         "fields": [
-          "project_id",
+          "project_url",
+          "project_code",
+          "project_name",
           "gender",
           "age",
           "city",
           "province",
           "country"
+        ],
+        "linkFields": [
+          "project_url"
         ]
       },
       "buttons": [],
@@ -226,7 +231,9 @@
         "dataType": "subject",
         "nodeCountTitle": "Subjects",
         "fieldMapping" : [
-          { "field": "project_id", "name": "Dataset" }
+          { "field": "project_url", "name": "Dataset Source" },
+          { "field": "project_code", "name": "Dataset" },
+          { "field": "project_name", "name": "Dataset Name" }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
@@ -250,7 +257,7 @@
           {
             "title": "Viral",
             "fields": [
-              "project_id",
+              "project_code",
               "data_type",
               "data_format"
             ]
@@ -260,10 +267,16 @@
       "table": {
         "enabled": true,
         "fields": [
-          "project_id",
+          "project_url",
+          "project_code",
+          "project_name",
           "file_name",
+          "data_type",
           "file_size",
           "object_id"
+        ],
+        "linkFields": [
+          "project_url"
         ]
       },
       "dropdowns": {},
@@ -288,8 +301,10 @@
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
-          { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Dataset" }
+          { "field": "project_url", "name": "Dataset Source" },
+          { "field": "project_code", "name": "Dataset" },
+          { "field": "project_name", "name": "Dataset Name" },
+          { "field": "object_id", "name": "GUID" }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
