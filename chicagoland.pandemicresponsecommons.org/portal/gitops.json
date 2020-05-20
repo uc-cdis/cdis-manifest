@@ -211,7 +211,15 @@
         ]
       },
       "table": {
-        "enabled": true
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "gender",
+          "age",
+          "city",
+          "province",
+          "country"
+        ]
       },
       "buttons": [],
       "guppyConfig": {
@@ -285,8 +293,11 @@
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "object_id"
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
         },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       }
     }
@@ -313,6 +324,18 @@
         "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
         "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
         "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
+      },
+      {
+        "title": "A Live View of COVID-19’s Global Presence",
+        "description": "In this R notebook, we track COVID-19 local (US) and global cases with active, confirmed, recovered and death toll on the map at the latest time point. The interactive maps indicate the concentration of coronavirus cases across the US and around the world.",
+        "link": "/dashboard/Public/notebooks/jhu_map.html",
+        "imageUrl": "/dashboard/Public/notebooks/jhu_map.png"
+      },
+      {
+        "title": "An Extended SEIR Model For COVID-19",
+        "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
+        "link": "/dashboard/Public/notebooks/extended-seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
       }
     ]
   },

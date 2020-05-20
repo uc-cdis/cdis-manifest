@@ -70,14 +70,14 @@
     },
     "indexd": {
       "strategy": "auto",
-      "min": 2,
-      "max": 6,
+      "min": 6,
+      "max": 18,
       "targetCpu": 40
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 2,
-      "max": 10,
+      "min": 4,
+      "max": 12,
       "targetCpu": 40
     },
     "metadata": {
