@@ -197,8 +197,8 @@
             "cohort_name",
             "compositions",
             "biospecimen_anatomic_sites",
-            "experiment_type",
-            "experimental_strategy"
+            "experiment_types",
+            "experimental_strategies"
           ]
         }
       ]
@@ -257,8 +257,8 @@
         { "field": "compositions", "name": "Sample Composition" },
         { "field": "biospecimen_anatomic_sites", "name": "Body Site" },
         { "field": "visit_number", "name": "For DAT" },
-        { "field": "experiment_type", "name": "Experiment Type" },
-        { "field": "experimental_strategy", "name": "Experimental Strategy" },
+        { "field": "experiment_types", "name": "Experiment Types" },
+        { "field": "experimental_strategies", "name": "Experimental Strategies" },
         { "field": "data_format", "name": "Data Format" },
         { "field": "data_type", "name": "Data Type" }
       ],
