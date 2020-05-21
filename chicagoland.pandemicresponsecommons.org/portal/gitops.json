@@ -134,8 +134,7 @@
           {
             "title": "Details",
             "fields": [
-              "program_name",
-              "code",
+              "name",
               "data_description"
             ]
           }
@@ -158,8 +157,8 @@
         "dataType": "dataset",
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
-          { "field": "code", "name": "Dataset" },
-          { "field": "url", "name": "Source" }
+          { "field": "url", "name": "Source" },
+          { "field": "name", "name": "Dataset" }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "code"
@@ -169,17 +168,21 @@
     {
       "tabTitle": "Subjects",
       "charts": {
-        "project_code": {
-          "chartType": "count",
-          "title": "Datasets"
+        "project_name": {
+          "chartType": "bar",
+          "title": "Dataset"
+        },
+        "gender": {
+          "chartType": "pie",
+          "title": "Gender"
+        },
+        "country": {
+          "chartType": "bar",
+          "title": "Country"
         },
         "symptoms": {
           "chartType": "bar",
           "title": "Symptoms"
-        },
-        "source": {
-          "chartType": "pie",
-          "title": "Source"
         }
       },
       "filters": {
@@ -187,7 +190,7 @@
           {
             "title": "Clinical",
             "fields": [
-              "project_code",
+              "project_name",
               "symptoms",
               "death",
               "recovered",
@@ -203,6 +206,7 @@
               "country",
               "province",
               "city",
+              "gender",
               "age",
               "from_wuhan",
               "visiting_wuhan"
@@ -232,8 +236,8 @@
         "nodeCountTitle": "Subjects",
         "fieldMapping" : [
           { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset" },
-          { "field": "project_name", "name": "Dataset Name" }
+          { "field": "project_code", "name": "Dataset Code" },
+          { "field": "project_name", "name": "Dataset" }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
@@ -257,7 +261,7 @@
           {
             "title": "Viral",
             "fields": [
-              "project_code",
+              "project_name",
               "data_type",
               "data_format"
             ]
@@ -302,8 +306,8 @@
         "dataType": "file",
         "fieldMapping": [
           { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset" },
-          { "field": "project_name", "name": "Dataset Name" },
+          { "field": "project_code", "name": "Dataset Code" },
+          { "field": "project_name", "name": "Dataset" },
           { "field": "object_id", "name": "GUID" }
         ],
         "nodeCountTitle": "Files",
