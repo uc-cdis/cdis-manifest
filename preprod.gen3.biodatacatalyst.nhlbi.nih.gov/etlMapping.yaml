@@ -7,6 +7,7 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: consent_codes
+      - name: geographic_site      
     flatten_props:
       - path: demographics
         props:
@@ -105,6 +106,14 @@ mappings:
       - name: _simple_germline_variations_count
         path: samples.aliquots.read_groups.simple_germline_variations
         fn: count
+      - name: current_smoker_baseline
+        path: exposures
+        src: current_smoker_baseline
+        fn: set        
+      - name: ever_smoker_baseline
+        path: exposures
+        src: ever_smoker_baseline
+        fn: set            
     joining_props:
       - index: file
         join_on: subject_id
