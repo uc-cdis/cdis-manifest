@@ -14,6 +14,8 @@ mappings:
           - name: hispanic_subgroup
           - name: subcohort
           - name: weight_baseline
+          - name: bmi_baseline
+          - name: height_baseline
       - path: medical_histories
         props:
           - name: diabetes
@@ -67,6 +69,8 @@ mappings:
           - name: unit_triglycerides
           - name: hdl
           - name: ldl
+          - name: triglycerides
+          - name: total_cholesterol          
     aggregated_props:
       - name: annotated_sex
         path: demographics
