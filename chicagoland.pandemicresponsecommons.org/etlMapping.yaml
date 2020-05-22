@@ -14,31 +14,37 @@ mappings:
       - name: FIPS
       - name: iso2
       - name: iso3
-    aggregated_props:
-      - name: confirmed
-        path: summary_reports
-        src: confirmed
-        fn: list
-      - name: deaths
-        path: summary_reports
-        src: deaths
-        fn: list
-      - name: recovered
-        path: summary_reports
-        src: recovered
-        fn: list
-      - name: negative
-        path: summary_reports
-        src: negative
-        fn: list
-      - name: testing
-        path: summary_reports
-        src: testing
-        fn: list
-      - name: date
-        path: summary_reports
-        src: date
-        fn: list
+    flatten_props:
+      - path: summary_reports
+        props:
+          - name: confirmed
+          - name: deaths
+          - name: recovered
+          - name: negative
+          - name: testing
+          - name: date
+          - name: staffed_all_beds
+          - name: staffed_icu_beds
+          - name: licensed_all_beds
+          - name: all_bed_occupancy_rate
+          - name: icu_bed_occupancy_rate
+          - name: population
+          - name: population_gtr_20
+          - name: population_gtr_65
+          - name: staffed_all_beds_per_1000
+          - name: staffed_all_beds_per_1000_gtr_20
+          - name: staffed_all_beds_per_1000_gtr_65
+          - name: staffed_icu_beds_per_1000
+          - name: staffed_icu_beds_per_1000_gtr_20
+          - name: staffed_icu_beds_per_1000_gtr_65
+          - name: licensed_all_beds_per_1000
+          - name: licensed_all_beds_per_1000_gtr_20
+          - name: licensed_all_beds_per_1000_gtr_65
+          - name: estimated_full_mech_ventilators
+          - name: estimated_full_mech_ventilators_per_100000
+          - name: estimated_full_mech_pediatric_ventilators
+          - name: estimated_full_mech_pediatric_ventilators_per_100000
+        sorted_by: updated_datetime, desc
   - name: covid19_subject
     doc_type: subject
     type: aggregator
