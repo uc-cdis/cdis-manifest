@@ -230,6 +230,7 @@
           "title": "Diagnosis",
           "fields": [
             "bp_diastolic",
+            "bp_systolic",
             "basophil_ncnc_bld",
             "eosinophil_ncnc_bld",
             "hdl",
@@ -333,6 +334,7 @@
         { "field": "vte_followup_start_age", "name": "VTE Followup Start Age" },
         { "field": "vte_prior_history", "name": "VTE Prior History" },
         { "field": "bp_diastolic", "name": "BP Diastolic" },
+        { "field": "bp_systolic", "name": "BP Systolic" },
         { "field": "basophil_ncnc_bld", "name": "Basophils Number Concentration Bld" },
         { "field": "eosinophil_ncnc_bld", "name": "Eosinophils Number Concentration Bld" },
         { "field": "hdl", "name": "HDL" },
