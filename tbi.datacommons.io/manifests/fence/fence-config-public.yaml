@@ -108,7 +108,7 @@ SESSION_ALLOWED_SCOPES:
 # be used by the frontend to display secondary buttons differently).
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'Login from Google'
-    desc: 'description'
+    desc: ''
     idp: google
   #   secondary: True
   # - name: 'ORCID Login'
