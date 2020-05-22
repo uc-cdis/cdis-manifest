@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/tweak_manifestHelper_logic') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
