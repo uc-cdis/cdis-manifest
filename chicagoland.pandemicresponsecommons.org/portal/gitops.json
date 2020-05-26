@@ -134,6 +134,7 @@
           {
             "title": "Details",
             "fields": [
+              "investigator_affiliation",
               "name",
               "data_description"
             ]
@@ -145,6 +146,7 @@
         "fields": [
           "url",
           "code",
+          "investigator_affiliation",
           "name",
           "data_description"
         ],
@@ -157,7 +159,8 @@
         "dataType": "dataset",
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
-          { "field": "url", "name": "Source" },
+          { "field": "url", "name": "Source URL" },
+          { "field": "investigator_affiliation", "name": "Source"},
           { "field": "name", "name": "Dataset" }
         ],
         "manifestMapping": {
@@ -190,6 +193,7 @@
           {
             "title": "Clinical",
             "fields": [
+              "project_investigator_affiliation",
               "project_name",
               "symptoms",
               "death",
@@ -219,6 +223,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_investigator_affiliation",
           "project_name",
           "gender",
           "age",
@@ -235,9 +240,10 @@
         "dataType": "subject",
         "nodeCountTitle": "Subjects",
         "fieldMapping" : [
-          { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset Code" },
-          { "field": "project_name", "name": "Dataset" }
+          { "field": "project_url", "name": "Source URL" },
+          { "field": "project_code", "name": "Code" },
+          { "field": "project_name", "name": "Dataset" },
+          { "field": "project_investigator_affiliation", "name": "Source"}
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
@@ -261,6 +267,7 @@
           {
             "title": "Viral",
             "fields": [
+              "project_investigator_affiliation",
               "project_name",
               "data_type",
               "data_format"
@@ -273,6 +280,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_investigator_affiliation",
           "project_name",
           "file_name",
           "data_type",
@@ -305,9 +313,10 @@
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
-          { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset Code" },
+          { "field": "project_url", "name": "Source URL" },
+          { "field": "project_code", "name": "Code" },
           { "field": "project_name", "name": "Dataset" },
+          { "field": "project_investigator_affiliation", "name": "Source"},
           { "field": "object_id", "name": "GUID" }
         ],
         "nodeCountTitle": "Files",
