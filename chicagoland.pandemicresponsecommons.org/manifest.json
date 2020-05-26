@@ -116,13 +116,7 @@
       "max": 4,
       "targetCpu": 40
     },
-    "guppy": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
-    "portal": {
+    "dashboard": {
       "strategy": "auto",
       "min": 2,
       "max": 4,
@@ -130,8 +124,14 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 1,
+      "min": 2,
       "max": 10,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "indexd": {
@@ -144,6 +144,18 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 10,
       "targetCpu": 40
     },
     "revproxy": {
