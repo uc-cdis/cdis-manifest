@@ -76,6 +76,8 @@ mappings:
       - path: projects[project_name:name]
       - path: projects[project_url:url]
       - path: projects[project_data_description:data_description]
+      - path: projects[project_investigator_affiliation:investigator_affiliation]
+      - path: projects[project_availability_type:availability_type]
   - name: covid19_file
     doc_type: file
     type: collector
@@ -104,6 +106,12 @@ mappings:
           - name: project_data_description
             src: data_description
             fn: set
+          - name: project_investigator_affiliation
+            src: investigator_affiliation
+            fn: set
+          - name: project_availability_type
+            src: availability_type
+            fn: set
   - name: covid19_dataset
     doc_type: dataset
     type: aggregator
@@ -113,5 +121,8 @@ mappings:
       - name: name
       - name: url
       - name: data_description
+      - name: investigator_affiliation
+      - name: availability_type
+      - name: date_collected
     parent_props:
       - path: programs[program_name:name]
