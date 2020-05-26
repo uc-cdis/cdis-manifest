@@ -1,4 +1,4 @@
-{
+/
   "notes": [
     "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
     "syncing authz information from dbGap, there is a manual whitelist. ",
@@ -46,7 +46,7 @@
       "action": "index-object-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:2020.05",
+        "image": "quay.io/cdis/manifest-indexing:1.1.6",
         "pull_policy": "Always",
         "env": [
           {
@@ -85,7 +85,7 @@
       "action": "download-indexd-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.0.1",
+        "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
         "pull_policy": "Always",
         "env": [
           {
