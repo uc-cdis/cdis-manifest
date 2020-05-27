@@ -66,11 +66,16 @@ mappings:
       - name: global_num
       - name: contact_number
       - name: isolated
+      - name: current_state
+      - name: infected_by
+      - name: released_date
+      - name: hospital
     flatten_props:
       - path: demographics
         props:
           - name: gender
           - name: year_of_birth
+          - name: nationality
     parent_props:
       - path: projects[project_code:code]
       - path: projects[project_name:name]
