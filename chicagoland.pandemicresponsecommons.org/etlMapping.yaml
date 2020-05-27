@@ -97,6 +97,37 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
+      sample:
+        props:
+          - name: location
+            src: location
+            fn: set
+          - name: host
+            src: host
+            fn: set
+          - name: organism
+            src: organism
+            fn: set
+          - name: sample_type
+            src: sample_type
+            fn: set
+          - name: isolation_source
+            src: isolation_source
+            fn: set
+          - name: isolate
+            src: isolate
+            fn: set
+          - name: collection_date
+            src: collection_date
+            fn: set
+      study:
+        props:
+          - name: journal
+            src: journal
+            fn: set
+          - name: pmid
+            src: pmid
+            fn: set
       project:
         props:
           - name: project_code
