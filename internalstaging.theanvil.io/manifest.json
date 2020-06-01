@@ -112,7 +112,7 @@
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "sower-jobs-internalstaging-theanvil-io-sa",
+      "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.6",
@@ -152,7 +152,7 @@
     {
       "name": "get-dbgap-metadata",
       "action": "get-dbgap-metadata",
-      "serviceAccountName": "sower-jobs-internalstaging-theanvil-io-sa",
+      "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/get-dbgap-metadata:1.1.6",
@@ -183,7 +183,7 @@
       "name": "manifest-indexing",
       "action": "index-object-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "sower-jobs-internalstaging-theanvil-io-sa",
+      "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-indexing:1.1.6",
@@ -224,7 +224,7 @@
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "sower-jobs-internalstaging-theanvil-io-sa",
+      "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
