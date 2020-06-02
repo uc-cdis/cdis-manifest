@@ -14,18 +14,18 @@
     "peregrine": "quay.io/cdis/peregrine:3.0.0",
     "pidgin": "quay.io/cdis/pidgin:1.0.0",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:3.0.0",
-    "portal": "quay.io/cdis/data-portal:2.27.0",
+    "sheepdog": "quay.io/cdis/sheepdog:4.1.0",
+    "metadata": "quay.io/cdis/metadata-service:2020.05",
+    "portal": "quay.io/cdis/data-portal:2.26.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "tube": "quay.io/cdis/tube:0.3.18",
     "guppy": "quay.io/cdis/guppy:0.4.1",
-    "sower": "quay.io/cdis/sower:0.4.0",
+    "sower": "quay.io/cdis/sower:0.5.0",
     "hatchery": "quay.io/cdis/hatchery:0.1.0",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
     "manifestservice": "quay.io/cdis/manifestservice:0.2.0",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
     "data-ingestion-pipeline": "quay.io/cdis/bdcat-data-ingestion:1.1",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.04"
   },
@@ -108,10 +108,11 @@
     {
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
-      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.3",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.6",
         "pull_policy": "Always",
         "env": [
           {
@@ -148,10 +149,10 @@
     {
       "name": "get-dbgap-metadata",
       "action": "get-dbgap-metadata",
-      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:1.1.3",
+        "image": "quay.io/cdis/get-dbgap-metadata:1.1.6",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -178,10 +179,11 @@
     {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
-      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:1.1.3",
+        "image": "quay.io/cdis/manifest-indexing:1.1.6",
         "pull_policy": "Always",
         "env": [
           {
@@ -218,10 +220,11 @@
     {
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
-      "serviceAccountName": "sower-jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov-sa",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.1.3",
+        "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
         "pull_policy": "Always",
         "env": [
           {
@@ -292,6 +295,7 @@
     "public_datasets": true,
     "tier_access_level": "regular",
     "tier_access_limit": 50,
+    "dispatcher_job_num": "10",
     "netpolicy": "on"
   },
   "canary": {
@@ -364,6 +368,12 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     }
   }
