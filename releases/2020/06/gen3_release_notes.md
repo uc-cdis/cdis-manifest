@@ -46,12 +46,6 @@
     (#273)
   - Added auth info to DRS endpoint swagger. (#266)
 
-#### Deployment Changes
-  - <!-- This section should only contain important things devops should know 
-    when updating service versions. --> (#273)
-  - <!-- This section should only contain important things devops should know 
-    when updating service versions. --> (#266)
-
 ## uc-cdis/data-portal
 
 #### Dependency Updates
@@ -107,12 +101,8 @@
 #### New Features
   - Support adding a service account in the job configuration (#14)
 
-#### Deployment Changes
-  - <!-- This section should only contain important things devops should know 
-    when updating service versions. --> (#14)
-
 ## uc-cdis/tube
 
 #### Bug Fixes
-  - PXP-5538 (#126)
+  - Tube issue - case_id missing in files (#126)
 
