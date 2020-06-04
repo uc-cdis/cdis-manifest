@@ -24,7 +24,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.05",
     "metadata": "quay.io/cdis/metadata-service:2020.06",
-    "ambassador": "1.4.2"
+    "ambassador": "quay.io/datawire/ambassador:1.4.2"
   },
   "arborist": {
     "deployment_version": "2"
