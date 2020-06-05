@@ -353,6 +353,86 @@
         "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       }
+    },
+    {
+      "tabTitle": "Summary",
+      "charts": {},
+      "filters": {
+        "tabs": [{
+            "title": "Reports",
+            "fields": [
+              "staffed_all_beds",
+              "staffed_icu_beds",
+              "licensed_all_beds",
+              "all_bed_occupancy_rate",
+              "icu_bed_occupancy_rate",
+              "population",
+              "population_gtr_20",
+              "population_gtr_65",
+              "estimated_full_mech_ventilators",
+              "estimated_full_mech_pediatric_ventilators"
+            ]
+          },
+          {
+            "title": "Location",
+            "fields": [
+              "county",
+              "province_state"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "fields": []
+      },
+      "dropdowns": {},
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "location",
+        "fieldMapping": [{
+            "field": "staffed_all_beds",
+            "name": "All Staffed Beds"
+          },
+          {
+            "field": "staffed_icu_beds",
+            "name": "All ICU Beds"
+          },
+          {
+            "field": "licensed_all_beds",
+            "name": "All Licensed Beds"
+          },
+          {
+            "field": "icu_bed_occupancy_rate",
+            "name": "ICU Beds Occupancy Rate"
+          },
+          {
+            "field": "population_gtr_20",
+            "name": "Population Greater Than 20"
+          },
+          {
+            "field": "population_gtr_65",
+            "name": "Population Greater Than 65"
+          },
+          {
+            "field": "estimated_full_mech_ventilators",
+            "name": "Estimated Ventilators"
+          },
+          {
+            "field": "estimated_full_mech_pediatric_ventilators",
+            "name": "Estimated Pediatric Ventilators"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          }
+        ],
+        "nodeCountTitle": "Locations",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
     }
   ],
   "resourceBrowser": {
