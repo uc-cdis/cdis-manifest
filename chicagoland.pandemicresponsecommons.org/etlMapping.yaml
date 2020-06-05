@@ -16,27 +16,27 @@ mappings:
       - name: iso3
     aggregated_props:
       - name: confirmed
-        path: summary_reports
+        path: summary_clinicals
         src: confirmed
         fn: list
       - name: deaths
-        path: summary_reports
+        path: summary_clinicals
         src: deaths
         fn: list
       - name: recovered
-        path: summary_reports
+        path: summary_clinicals
         src: recovered
         fn: list
       - name: negative
-        path: summary_reports
+        path: summary_clinicals
         src: negative
         fn: list
       - name: testing
-        path: summary_reports
+        path: summary_clinicals
         src: testing
         fn: list
       - name: date
-        path: summary_reports
+        path: summary_clinicals
         src: date
         fn: list
   - name: covid19_subject
