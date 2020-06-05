@@ -146,158 +146,208 @@
     "explorer": true,
     "noIndex": true
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "explorerConfig": [
+    {
+      "tabTitle": "Study",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Study",
+            "fields": [
+              "project_name",
+              "investigator_affiliation",
+              "investigator_name",
+              "data_description",
+              "study_description"
+            ]
+          }
+        ]
       },
-      "node_id": {
-        "chartType": "count",
-        "title": "Subjects"
+      "table": {
+        "enabled": true,
+        "fields": [
+          "study_url",
+          "project_name",
+          "investigator_affiliation",
+          "investigator_name",
+          "data_description",
+          "study_description"
+        ],
+        "linkFields": [
+          "study_url"
+        ]
       },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
+      "guppyConfig": {
+        "dataType": "study",
+        "nodeCountTitle": "Studies",
+        "fieldMapping": [],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "subject_id",
+          "referenceIdFieldInDataIndex": "subject_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
-      },
-      "ethnicity": {
-        "chartType": "bar",
-        "title": "Ethnicity"
-      }
+      "buttons": []
     },
-    "filters": {
-      "tabs": [
+    {
+      "tabTitle": "Data",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Projects"
+        },
+        "node_id": {
+          "chartType": "count",
+          "title": "Subjects"
+        },
+        "gender": {
+          "chartType": "pie",
+          "title": "Gender"
+        },
+        "race": {
+          "chartType": "bar",
+          "title": "Race"
+        },
+        "ethnicity": {
+          "chartType": "bar",
+          "title": "Ethnicity"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Study Selection",
+            "fields": [
+              "project_id"
+            ]
+          },
+          {
+            "title": "Subjects",
+            "fields": [
+              "age_at_enrollment",
+              "gender",
+              "race",
+              "ethnicity",
+              "experimental_group"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "submitter_id",
+          "age_at_enrollment",
+          "gender",
+          "race",
+          "ethnicity",
+          "experimental_group"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping": [
+          {"field": "_samples_count", "name": "Samples Count"},
+          {"field": "_imaging_files_count", "name": "Imaging Files Count"},
+          {"field": "_unaligned_reads_files_count", "name": "Unaligned Reads Count"},
+          {"field": "_aligned_reads_files_count", "name": "Aligned Reads Count"},
+          {"field": "_expression_arrays_count", "name": "Expression Arrays Count"}
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "subject_id",
+          "referenceIdFieldInDataIndex": "subject_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      },
+      "buttons": [
         {
-          "title": "Study Selection",
-          "fields": [
-            "project_id"
-          ]
+          "enabled": true,
+          "type": "data",
+          "title": "Download Data",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "data.json"
         },
         {
-          "title": "Subjects",
-          "fields": [
-            "age_at_enrollment",
-            "gender",
-            "race",
-            "ethnicity",
-            "experimental_group"
-          ]
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
         }
       ]
     },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "submitter_id",
-        "age_at_enrollment",
-        "gender",
-        "race",
-        "ethnicity",
-        "experimental_group"
-      ]
-    },
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "fieldMapping": [
-        {"field": "_samples_count", "name": "Samples Count"},
-        {"field": "_imaging_files_count", "name": "Imaging Files Count"},
-        {"field": "_unaligned_reads_files_count", "name": "Unaligned Reads Count"},
-        {"field": "_aligned_reads_files_count", "name": "Aligned Reads Count"},
-        {"field": "_expression_arrays_count", "name": "Expression Arrays Count"}
-      ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+    {
+      "tabTitle": "File",
+      "charts": {
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
       },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
-    },
-    "buttons": [
-      {
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format",
+              "data_category"
+            ]
+          }
+        ]
+      },
+      "table": {
         "enabled": true,
-        "type": "data",
-        "title": "Download Data",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "data.json"
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
       },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
-      }
-    ]
-  },
-   "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "subject",
+          "resourceIdField": "subject_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
       },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
+      "buttons": [
         {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format",
-            "data_category"
-          ]
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
         }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
       ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json"
-      }
-    ],
-    "dropdowns": {}
-  }
+      "dropdowns": {}
+    }
+  ]
 }

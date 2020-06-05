@@ -83,7 +83,6 @@ mappings:
       - name: project_id
       - name: data_description
       - name: study_description
-      - name: data_description
       - name: study_url
     parent_props:
       - path: projects[project_name:name]
