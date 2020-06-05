@@ -44,7 +44,7 @@
         "cpu-limit": "1.0",
         "memory-limit": "512Mi",
         "name": "Jupyter Notebook Bio Python",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0",
+        "image": "quay.io/cdis/jupyter-notebook:jupyter-java-1.1",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -71,7 +71,7 @@
         "cpu-limit": "4.0",
         "memory-limit": "15512Mi",
         "name": "Jupyter Notebook Power Python",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "image": "quay.io/cdis/jupyter-notebook:jupyter-java-1.1",
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
