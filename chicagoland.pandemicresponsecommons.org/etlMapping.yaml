@@ -14,31 +14,42 @@ mappings:
       - name: FIPS
       - name: iso2
       - name: iso3
-    aggregated_props:
-      - name: confirmed
-        path: summary_clinicals
-        src: confirmed
-        fn: list
-      - name: deaths
-        path: summary_clinicals
-        src: deaths
-        fn: list
-      - name: recovered
-        path: summary_clinicals
-        src: recovered
-        fn: list
-      - name: negative
-        path: summary_clinicals
-        src: negative
-        fn: list
-      - name: testing
-        path: summary_clinicals
-        src: testing
-        fn: list
-      - name: date
-        path: summary_clinicals
-        src: date
-        fn: list
+    flatten_props:
+      - path: summary_clinicals
+        props:
+          - name: confirmed
+          - name: deaths
+          - name: recovered
+          - name: negative
+          - name: testing
+          - name: date
+          - name: staffed_all_beds
+          - name: staffed_icu_beds
+          - name: licensed_all_beds
+          - name: all_bed_occupancy_rate
+          - name: icu_bed_occupancy_rate
+          - name: population
+          - name: population_gtr_20
+          - name: population_gtr_65
+          - name: staffed_all_beds_per_1000
+          - name: staffed_all_beds_per_1000_gtr_20
+          - name: staffed_all_beds_per_1000_gtr_65
+          - name: staffed_icu_beds_per_1000
+          - name: staffed_icu_beds_per_1000_gtr_20
+          - name: staffed_icu_beds_per_1000_gtr_65
+          - name: licensed_all_beds_per_1000
+          - name: licensed_all_beds_per_1000_gtr_20
+          - name: licensed_all_beds_per_1000_gtr_65
+          - name: estimated_full_mech_ventilators
+          - name: estimated_full_mech_ventilators_per_100000
+          - name: estimated_full_mech_pediatric_ventilators
+          - name: estimated_full_mech_pediatric_ventilators_per_100000
+        sorted_by: updated_datetime, desc
+    parent_props:
+      - path: projects[project_code:code]
+      - path: projects[project_name:name]
+      - path: projects[project_url:url]
+      - path: projects[project_investigator_affiliation:investigator_affiliation]
   - name: covid19_subject
     doc_type: subject
     type: aggregator
