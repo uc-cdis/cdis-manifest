@@ -15,7 +15,7 @@ mappings:
       - name: iso2
       - name: iso3
     flatten_props:
-      - path: summary_reports
+      - path: summary_clinicals
         props:
           - name: confirmed
           - name: deaths
@@ -72,16 +72,23 @@ mappings:
       - name: global_num
       - name: contact_number
       - name: isolated
+      - name: current_state
+      - name: infected_by
+      - name: released_date
+      - name: hospital
     flatten_props:
       - path: demographics
         props:
           - name: gender
           - name: year_of_birth
+          - name: nationality
     parent_props:
       - path: projects[project_code:code]
       - path: projects[project_name:name]
       - path: projects[project_url:url]
       - path: projects[project_data_description:data_description]
+      - path: projects[project_investigator_affiliation:investigator_affiliation]
+      - path: projects[project_availability_type:availability_type]
   - name: covid19_file
     doc_type: file
     type: collector
@@ -96,6 +103,37 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
+      sample:
+        props:
+          - name: location
+            src: location
+            fn: set
+          - name: host
+            src: host
+            fn: set
+          - name: organism
+            src: organism
+            fn: set
+          - name: sample_type
+            src: sample_type
+            fn: set
+          - name: isolation_source
+            src: isolation_source
+            fn: set
+          - name: isolate
+            src: isolate
+            fn: set
+          - name: collection_date
+            src: collection_date
+            fn: set
+      study:
+        props:
+          - name: journal
+            src: journal
+            fn: set
+          - name: pmid
+            src: pmid
+            fn: set
       project:
         props:
           - name: project_code
@@ -110,6 +148,12 @@ mappings:
           - name: project_data_description
             src: data_description
             fn: set
+          - name: project_investigator_affiliation
+            src: investigator_affiliation
+            fn: set
+          - name: project_availability_type
+            src: availability_type
+            fn: set
   - name: covid19_dataset
     doc_type: dataset
     type: aggregator
@@ -119,5 +163,8 @@ mappings:
       - name: name
       - name: url
       - name: data_description
+      - name: investigator_affiliation
+      - name: availability_type
+      - name: date_collected
     parent_props:
       - path: programs[program_name:name]

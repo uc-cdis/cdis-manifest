@@ -134,6 +134,7 @@
           {
             "title": "Details",
             "fields": [
+              "investigator_affiliation",
               "name",
               "data_description"
             ]
@@ -145,6 +146,7 @@
         "fields": [
           "url",
           "code",
+          "investigator_affiliation",
           "name",
           "data_description"
         ],
@@ -157,7 +159,8 @@
         "dataType": "dataset",
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
-          { "field": "url", "name": "Source" },
+          { "field": "url", "name": "Source URL" },
+          { "field": "investigator_affiliation", "name": "Source"},
           { "field": "name", "name": "Dataset" }
         ],
         "manifestMapping": {
@@ -190,7 +193,9 @@
           {
             "title": "Clinical",
             "fields": [
+              "project_investigator_affiliation",
               "project_name",
+              "hospital",
               "symptoms",
               "death",
               "recovered",
@@ -203,13 +208,14 @@
           {
             "title": "Demographics",
             "fields": [
+              "gender",
               "country",
               "province",
               "city",
-              "gender",
               "age",
               "from_wuhan",
-              "visiting_wuhan"
+              "visiting_wuhan",
+              "nationality"
             ]
           }
         ]
@@ -219,6 +225,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_investigator_affiliation",
           "project_name",
           "gender",
           "age",
@@ -235,9 +242,11 @@
         "dataType": "subject",
         "nodeCountTitle": "Subjects",
         "fieldMapping" : [
-          { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset Code" },
-          { "field": "project_name", "name": "Dataset" }
+          { "field": "project_url", "name": "Source URL" },
+          { "field": "project_code", "name": "Code" },
+          { "field": "project_name", "name": "Dataset" },
+          { "field": "source", "name": "Media Outlet"},
+          { "field": "project_investigator_affiliation", "name": "Source"}
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
@@ -254,6 +263,22 @@
         "data_format": {
           "chartType": "bar",
           "title": "Data Format"
+        },
+        "host": {
+          "chartType": "bar",
+          "title": "Host"
+        },
+        "organism": {
+          "chartType": "bar",
+          "title": "Organism"
+        },
+        "sample_type": {
+          "chartType": "bar",
+          "title": "Sample Type"
+        },
+        "isolation_source": {
+          "chartType": "bar",
+          "title": "Isolation Source"
         }
       },
       "filters": {
@@ -261,9 +286,16 @@
           {
             "title": "Viral",
             "fields": [
+              "project_investigator_affiliation",
               "project_name",
               "data_type",
-              "data_format"
+              "data_format",
+              "location",
+              "host",
+              "organism",
+              "sample_type",
+              "isolation_source",
+              "collection_date"
             ]
           }
         ]
@@ -273,6 +305,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_investigator_affiliation",
           "project_name",
           "file_name",
           "data_type",
@@ -295,7 +328,7 @@
           "dropdownId": "download"
         },
         {
-          "enabled": false,
+          "enabled": true,
           "type": "export-files-to-workspace",
           "title": "Export to Workspace",
           "leftIcon": "datafile",
@@ -305,9 +338,10 @@
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
-          { "field": "project_url", "name": "Dataset Source" },
-          { "field": "project_code", "name": "Dataset Code" },
+          { "field": "project_url", "name": "Source URL" },
+          { "field": "project_code", "name": "Code" },
           { "field": "project_name", "name": "Dataset" },
+          { "field": "project_investigator_affiliation", "name": "Source"},
           { "field": "object_id", "name": "GUID" }
         ],
         "nodeCountTitle": "Files",
@@ -355,6 +389,12 @@
         "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
         "link": "/dashboard/Public/notebooks/extended-seir.html",
         "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
+      },
+      {
+        "title": "COVID-19 Testing Over Time in the US",
+        "description": "COVID-19 testing is very crucial to understand the spread of the pandemic. In this Python notebook, we have focused our efforts on visualizing the COVID-19 testing data across the U.S. States and Territories from the COVID Tracking Project. The animations will allow you to see how testing data has changed over time.",
+        "link": "/dashboard/Public/notebooks/CTP_testing.html",
+        "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
       }
     ]
   },

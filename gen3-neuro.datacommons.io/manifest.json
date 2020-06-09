@@ -15,7 +15,7 @@
     "pidgin": "quay.io/cdis/pidgin:2020.05",
     "revproxy": "quay.io/cdis/nginx:2020.05",
     "sheepdog": "quay.io/cdis/sheepdog:2020.05",
-    "portal": "quay.io/cdis/data-portal:2020.05",
+    "portal": "quay.io/cdis/data-portal:2.27.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.05",
     "tube": "quay.io/cdis/tube:2020.05",
@@ -100,7 +100,7 @@
     "environment": "oadc",
     "hostname": "gen3-neuro.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:345060017512:certificate/dd80ffa5-1d5f-4436-9cd9-c5159b8f2618",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/openaccess_dictionary/0.2.2/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/openaccess_dictionary/0.3.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-oadc-gen3",
     "logs_bucket": "logs-oadc-gen3",
@@ -122,6 +122,10 @@
       {
         "index": "oadc_file",
         "type": "file"
+      },
+      {
+        "index": "oadc_study",
+        "type": "study"
       }
     ],
     "config_index": "oadc_array-config",

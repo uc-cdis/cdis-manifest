@@ -71,20 +71,6 @@
           "node": "sample",
           "name": "Samples"
         }
-      ],
-      "customHomepageChartConfig": [
-        {
-          "chartType": "horizontalGroupedBar",
-          "dataType": "participant",
-          "yAxisProp": "country",
-          "xAxisProp": "ibd_affection_status",
-          "constrains": {
-            "project_id": "IIBDGC-GWAS-Mega-2"
-          },
-          "chartTitle": "IIBDGC-GWAS-Mega-2 project",
-          "logBase": 10,
-          "initialUnselectedKeys": ["Unknown", "no data"]
-        }
       ]
     },
     "navigation": {
@@ -165,6 +151,13 @@
         "chartType": "count",
         "title": "Projects"
       },
+      "gender": {
+        "chartType":"pie",
+        "title": "Gender"
+      },
+      "country": {
+        "chartType": "stackedBar"
+      },
       "ibd_affection_status": {
         "chartType": "pie",
         "title": "IBD Affection Status"
@@ -181,14 +174,18 @@
           "fields":[
             "project_id",
             "gender",
-            "race",
             "country",
-            "jewish",
-            "hispanic",
             "ibd_affection_status",
-            "diagnosis",
-            "population_control"
+            "diagnosis"
           ]
+        },
+        {
+          "title":"Centers",
+          "fields":[
+            "project_id",
+            "name",
+            "investigator_name"
+          ]  
         }
       ]
     },
@@ -228,6 +225,9 @@
       "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
+        { "field": "project_id", "name": "Project ID" },
+        { "field": "ibd_affection_status", "name": "IBD Affection Status"},
+        { "field": "name", "name": "Center Name"}
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -282,7 +282,8 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+        { "field": "object_id", "name": "GUID"},
+        { "field": "project_id", "name": "Project ID" }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
@@ -296,4 +297,3 @@
     "dropdowns": {}
   }
 }
-
