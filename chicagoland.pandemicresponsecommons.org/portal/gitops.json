@@ -356,84 +356,140 @@
     },
     {
       "tabTitle": "Summary",
-      "charts": {},
-      "filters": {
-        "tabs": [{
-            "title": "Reports",
-            "fields": [
-              "staffed_all_beds",
-              "staffed_icu_beds",
-              "licensed_all_beds",
-              "all_bed_occupancy_rate",
-              "icu_bed_occupancy_rate",
-              "population",
-              "population_gtr_20",
-              "population_gtr_65",
-              "estimated_full_mech_ventilators",
-              "estimated_full_mech_pediatric_ventilators"
-            ]
-          },
-          {
-            "title": "Location",
-            "fields": [
-              "county",
-              "province_state"
-            ]
-          }
-        ]
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
+        },
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
+        },
+        "county": {
+          "chartType": "bar",
+          "title": "Illinois Counties"
+        }
       },
-      "table": {
-        "enabled": false,
-        "fields": []
-      },
-      "dropdowns": {},
-      "buttons": [],
-      "guppyConfig": {
-        "dataType": "location",
-        "fieldMapping": [{
-            "field": "staffed_all_beds",
-            "name": "All Staffed Beds"
-          },
-          {
-            "field": "staffed_icu_beds",
-            "name": "All ICU Beds"
-          },
-          {
-            "field": "licensed_all_beds",
-            "name": "All Licensed Beds"
-          },
-          {
-            "field": "icu_bed_occupancy_rate",
-            "name": "ICU Beds Occupancy Rate"
-          },
-          {
-            "field": "population_gtr_20",
-            "name": "Population Greater Than 20"
-          },
-          {
-            "field": "population_gtr_65",
-            "name": "Population Greater Than 65"
-          },
-          {
-            "field": "estimated_full_mech_ventilators",
-            "name": "Estimated Ventilators"
-          },
-          {
-            "field": "estimated_full_mech_pediatric_ventilators",
-            "name": "Estimated Pediatric Ventilators"
-          },
-          {
-            "field": "province_state",
-            "name": "Province or State"
+        "filters": {
+          "tabs": [
+            {
+              "title": "Demographics",
+              "fields": [
+                "country_region",
+                "province_state",
+                "county"
+              ]
+            },
+            {
+              "title": "Clinical",
+              "fields": [
+                "project_investigator_affiliation",
+                "project_name",
+                "staffed_all_beds",
+                "staffed_icu_beds",
+                "licensed_all_beds",
+                "all_bed_occupancy_rate",
+                "icu_bed_occupancy_rate",
+                "population",
+                "population_gtr_20",
+                "population_gtr_65",
+                "estimated_full_mech_ventilators",
+                "estimated_full_mech_pediatric_ventilators",
+                "confirmed",
+                "deaths",
+                "recovered",
+                "testing"
+              ]
+            }
+          ]
+        },
+        "table": {
+          "enabled": true,
+          "fields": [
+            "project_url",
+            "project_code",
+            "project_investigator_affiliation",
+            "project_name",
+            "country_region",
+            "province_state",
+            "county",
+            "confirmed",
+            "recovered",
+            "deaths"
+          ],
+          "linkFields": [
+            "project_url"
+          ]
+        },
+        "dropdowns": {},
+        "buttons": [],
+        "guppyConfig": {
+          "dataType": "location",
+          "fieldMapping": [
+            {
+              "field": "staffed_all_beds",
+              "name": "All Staffed Beds"
+            },
+            {
+              "field": "staffed_icu_beds",
+              "name": "All ICU Beds"
+            },
+            {
+              "field": "licensed_all_beds",
+              "name": "All Licensed Beds"
+            },
+            {
+              "field": "icu_bed_occupancy_rate",
+              "name": "ICU Beds Occupancy Rate"
+            },
+            {
+              "field": "population_gtr_20",
+              "name": "Population Greater Than 20"
+            },
+            {
+              "field": "population_gtr_65",
+              "name": "Population Greater Than 65"
+            },
+            {
+              "field": "estimated_full_mech_ventilators",
+              "name": "Estimated Ventilators"
+            },
+            {
+              "field": "estimated_full_mech_pediatric_ventilators",
+              "name": "Estimated Pediatric Ventilators"
+            },
+            {
+              "field": "province_state",
+              "name": "Province or State"
+            },
+            {
+              "field": "country_region",
+              "name": "Country or Region"
+            },
+            {
+              "field": "project_url",
+              "name": "Source URL"
+            },
+            {
+              "field": "project_code",
+              "name": "Code"
+            },
+            {
+              "field": "project_name",
+              "name": "Dataset"
+            },
+            {
+              "field": "project_investigator_affiliation",
+              "name": "Source"
+            }
+          ],
+          "nodeCountTitle": "Locations",
+          "manifestMapping": {
+            "referenceIdFieldInResourceIndex": "project_id",
+            "referenceIdFieldInDataIndex": "project_id"
           }
-        ],
-        "nodeCountTitle": "Locations",
-        "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "project_id",
-          "referenceIdFieldInDataIndex": "project_id"
         }
       }
-    }
   ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
