@@ -355,7 +355,7 @@
       }
     },
     {
-      "tabTitle": "Summary",
+      "tabTitle": "Locations",
       "charts": {
         "project_investigator_affiliation": {
           "chartType": "bar",
@@ -367,19 +367,11 @@
         },
         "county": {
           "chartType": "bar",
-          "title": "Illinois Counties"
+          "title": "County"
         }
       },
         "filters": {
           "tabs": [
-            {
-              "title": "Demographics",
-              "fields": [
-                "country_region",
-                "province_state",
-                "county"
-              ]
-            },
             {
               "title": "Clinical",
               "fields": [
@@ -387,11 +379,6 @@
                 "project_name",
                 "staffed_all_beds",
                 "staffed_icu_beds",
-                "licensed_all_beds",
-                "all_bed_occupancy_rate",
-                "icu_bed_occupancy_rate",
-                "population",
-                "population_gtr_20",
                 "population_gtr_65",
                 "estimated_full_mech_ventilators",
                 "estimated_full_mech_pediatric_ventilators",
@@ -399,6 +386,14 @@
                 "deaths",
                 "recovered",
                 "testing"
+              ]
+            },
+            {
+              "title": "Demographics",
+              "fields": [
+                "country_region",
+                "province_state",
+                "county"
               ]
             }
           ]
@@ -414,8 +409,14 @@
             "province_state",
             "county",
             "confirmed",
+            "deaths",
             "recovered",
-            "deaths"
+            "testing",
+            "staffed_all_beds",
+            "staffed_icu_beds",
+            "population_gtr_65",
+            "estimated_full_mech_ventilators",
+            "estimated_full_mech_pediatric_ventilators"
           ],
           "linkFields": [
             "project_url"
@@ -428,23 +429,11 @@
           "fieldMapping": [
             {
               "field": "staffed_all_beds",
-              "name": "All Staffed Beds"
+              "name": "Staffed Beds"
             },
             {
               "field": "staffed_icu_beds",
-              "name": "All ICU Beds"
-            },
-            {
-              "field": "licensed_all_beds",
-              "name": "All Licensed Beds"
-            },
-            {
-              "field": "icu_bed_occupancy_rate",
-              "name": "ICU Beds Occupancy Rate"
-            },
-            {
-              "field": "population_gtr_20",
-              "name": "Population Greater Than 20"
+              "name": "ICU Beds"
             },
             {
               "field": "population_gtr_65",
