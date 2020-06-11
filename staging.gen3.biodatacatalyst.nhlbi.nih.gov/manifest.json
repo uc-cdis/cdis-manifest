@@ -259,29 +259,6 @@
       "restart_policy": "Never"
     }
   ],
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Helium COPD Demo",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
-      }
-    ]
-  },
   "global": {
     "environment": "stagingdatastage",
     "hostname": "staging.gen3.biodatacatalyst.nhlbi.nih.gov",
