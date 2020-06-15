@@ -61,7 +61,7 @@ mappings:
           - name: state_icu_available
           - name: state_vents_available
           - name: state_total_beds
-          - name: state_total_beds_available
+          - name: states_total_beds_available
           - name: state_total_beds_used
           - name: state_pct_hospital_beds_available
           - name: state_adult_icu_capacity
@@ -77,7 +77,7 @@ mappings:
           - name: state_ventilators_in_use
           - name: state_ventilators_in_use_covid
           - name: state_ventilators_covid_patients_pct
-          - name: state_ventilators_covid_patients_In_use_pct
+          - name: state_ventilators_covid_patients_in_use_pct
           - name: state_covid_patients_non_icu
           - name: state_total_covid_pui_in_icu
           - name: state_total_covid_pui_in_hospital
