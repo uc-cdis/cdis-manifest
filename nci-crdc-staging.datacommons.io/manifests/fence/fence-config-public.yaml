@@ -11,4 +11,6 @@ S3_BUCKETS:
   dev-testing-bucketfor-matchdata:
     cred: 'fence_bot'
     region: 'us-east-1'
-
+  dcf-staging-data-bucket:
+    cred: 'fence_bot'
+    region: 'us-east-1'
