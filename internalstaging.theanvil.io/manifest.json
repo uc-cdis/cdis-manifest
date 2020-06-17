@@ -25,14 +25,13 @@
     "spark": "quay.io/cdis/gen3-spark:2020.06",
     "tube": "quay.io/cdis/tube:2020.06",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06",
-    "wts": "quay.io/cdis/workspace-token-service:2020.06",
-    "metadata": "quay.io/cdis/metadata-service:2020.06"
+    "wts": "quay.io/cdis/workspace-token-service:2020.06"
   },
   "global": {
     "environment": "anvilstaging",
     "hostname": "internalstaging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.1.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.1.2/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
