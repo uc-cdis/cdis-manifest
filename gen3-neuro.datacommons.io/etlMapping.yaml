@@ -75,3 +75,16 @@ mappings:
           - name: subject_id
             src: id
           - name: project_id
+  - name: oadc_study
+    doc_type: study
+    type: aggregator
+    root: study
+    props:
+      - name: project_id
+      - name: data_description
+      - name: study_description
+      - name: study_url
+    parent_props:
+      - path: projects[project_name:name]
+      - path: projects[investigator_affiliation:investigator_affiliation]
+      - path: projects[investigator_name:investigator_name]

@@ -171,9 +171,9 @@
     {
       "tabTitle": "Subjects",
       "charts": {
-        "project_name": {
+        "project_investigator_affiliation": {
           "chartType": "bar",
-          "title": "Dataset"
+          "title": "Dataset Source"
         },
         "gender": {
           "chartType": "pie",
@@ -195,6 +195,7 @@
             "fields": [
               "project_investigator_affiliation",
               "project_name",
+              "hospital",
               "symptoms",
               "death",
               "recovered",
@@ -207,13 +208,14 @@
           {
             "title": "Demographics",
             "fields": [
+              "gender",
               "country",
               "province",
               "city",
-              "gender",
               "age",
               "from_wuhan",
-              "visiting_wuhan"
+              "visiting_wuhan",
+              "nationality"
             ]
           }
         ]
@@ -261,6 +263,22 @@
         "data_format": {
           "chartType": "bar",
           "title": "Data Format"
+        },
+        "host": {
+          "chartType": "bar",
+          "title": "Host"
+        },
+        "organism": {
+          "chartType": "bar",
+          "title": "Organism"
+        },
+        "sample_type": {
+          "chartType": "bar",
+          "title": "Sample Type"
+        },
+        "isolation_source": {
+          "chartType": "bar",
+          "title": "Isolation Source"
         }
       },
       "filters": {
@@ -271,7 +289,13 @@
               "project_investigator_affiliation",
               "project_name",
               "data_type",
-              "data_format"
+              "data_format",
+              "location",
+              "host",
+              "organism",
+              "sample_type",
+              "isolation_source",
+              "collection_date"
             ]
           }
         ]
@@ -304,7 +328,7 @@
           "dropdownId": "download"
         },
         {
-          "enabled": false,
+          "enabled": true,
           "type": "export-files-to-workspace",
           "title": "Export to Workspace",
           "leftIcon": "datafile",
@@ -329,7 +353,132 @@
         "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       }
-    }
+    },
+    {
+      "tabTitle": "Locations",
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
+        },
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
+        },
+        "county": {
+          "chartType": "bar",
+          "title": "County"
+        }
+      },
+        "filters": {
+          "tabs": [
+            {
+              "title": "Clinical",
+              "fields": [
+                "project_investigator_affiliation",
+                "project_name",
+                "staffed_all_beds",
+                "staffed_icu_beds",
+                "population_gtr_65",
+                "estimated_full_mech_ventilators",
+                "estimated_full_mech_pediatric_ventilators",
+                "confirmed",
+                "deaths",
+                "recovered",
+                "testing"
+              ]
+            },
+            {
+              "title": "Demographics",
+              "fields": [
+                "country_region",
+                "province_state",
+                "county"
+              ]
+            }
+          ]
+        },
+        "table": {
+          "enabled": true,
+          "fields": [
+            "project_url",
+            "project_code",
+            "project_investigator_affiliation",
+            "project_name",
+            "country_region",
+            "province_state",
+            "county",
+            "confirmed",
+            "deaths",
+            "recovered",
+            "testing",
+            "staffed_all_beds",
+            "staffed_icu_beds",
+            "population_gtr_65",
+            "estimated_full_mech_ventilators",
+            "estimated_full_mech_pediatric_ventilators"
+          ],
+          "linkFields": [
+            "project_url"
+          ]
+        },
+        "dropdowns": {},
+        "buttons": [],
+        "guppyConfig": {
+          "dataType": "location",
+          "fieldMapping": [
+            {
+              "field": "staffed_all_beds",
+              "name": "Staffed Beds"
+            },
+            {
+              "field": "staffed_icu_beds",
+              "name": "ICU Beds"
+            },
+            {
+              "field": "population_gtr_65",
+              "name": "Population Greater Than 65"
+            },
+            {
+              "field": "estimated_full_mech_ventilators",
+              "name": "Estimated Ventilators"
+            },
+            {
+              "field": "estimated_full_mech_pediatric_ventilators",
+              "name": "Estimated Pediatric Ventilators"
+            },
+            {
+              "field": "province_state",
+              "name": "Province or State"
+            },
+            {
+              "field": "country_region",
+              "name": "Country or Region"
+            },
+            {
+              "field": "project_url",
+              "name": "Source URL"
+            },
+            {
+              "field": "project_code",
+              "name": "Code"
+            },
+            {
+              "field": "project_name",
+              "name": "Dataset"
+            },
+            {
+              "field": "project_investigator_affiliation",
+              "name": "Source"
+            }
+          ],
+          "nodeCountTitle": "Locations",
+          "manifestMapping": {
+            "referenceIdFieldInResourceIndex": "project_id",
+            "referenceIdFieldInDataIndex": "project_id"
+          }
+        }
+      }
   ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
@@ -365,13 +514,74 @@
         "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
         "link": "/dashboard/Public/notebooks/extended-seir.html",
         "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
+      },
+      {
+        "title": "COVID-19 Testing Over Time in the US",
+        "description": "COVID-19 testing is very crucial to understand the spread of the pandemic. In this Python notebook, we have focused our efforts on visualizing the COVID-19 testing data across the U.S. States and Territories from the COVID Tracking Project. The animations will allow you to see how testing data has changed over time.",
+        "link": "/dashboard/Public/notebooks/CTP_testing.html",
+        "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
       }
     ]
   },
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
   "covid19DashboardConfig": {
     "dataUrl": "https://opendata.datacommons.io/",
-    "enableCharts": false
-  },
-  "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+    "chartsConfig": {
+      "world": [
+          [
+              {
+                  "title": "Daily Confirmed Cases (5-day Moving Average)",
+                  "description": "This plot visualizes the number of newly confirmed COVID-19 cases for the 10 most affected countries using a 5-day moving average. This is calculated for each plotted day by averaging the values of that day, the two previous days, and the two following days. This approach helps prevent major events from skewing the data.",
+                  "xTitle": "Date",
+                  "yTitle": "Confirmed New Cases",
+                  "type": "lineChart",
+                  "prop": "top10ChartData"
+              }
+          ]
+      ],
+      "illinois": [
+          [
+              {
+                  "title": "Cook County Daily Cases",
+                  "description": "Here we plot daily case counts over time, where the gray bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively. The sharp decrease in estimated true cases in the third week of March results from a similarly sharp decrease in estimated Rt at that same time due to the Illinois statewide lockdown intervention being put in place on March 21st.",
+                  "type": "image",
+                  "prop": "imgCases"
+              },
+              {
+                  "title": "Cook County Daily Cases Forecast",
+                  "description": "Here we plot reported cases and estimated true cases on a log10 scale and forecast 7 days beyond June 1st, the date of the last observation. We note that leading up to March 21st, the first day of lockdown in Illinois, there were no measures put in place to control the spread of COVID-19, and so the reported and estimated cases in that time period are seen to be increasing at a relatively high rate. The rate of change of modeled case counts sharply decreases and restabilizes around March 21st in response to a corresponding drop in Rt resulting from beginning the lockdown intervention at that time. Moving forward from early April we observe that the rate of change of reported and estimated true cases is still positive but very close to zero, indicating that Rt in this time period is greater than but very close 1.",
+                  "type": "image",
+                  "prop": "imgCasesForecast"
+              },
+              {
+                  "title": "Cook County Daily Deaths",
+                  "description": "Here we plot daily death counts over time, where the gray bars are observed deaths and the blue curve represents modeled death counts.",
+                  "type": "image",
+                  "prop": "imgDeaths"
+              },
+              {
+                  "title": "Cook County Daily Deaths Forecast",
+                  "description": "Here we plot observed and modeled daily deaths on a log10 scale and forecast 7 days beyond June 1st, the date of the last observation. We note that the curve bends downward approximately 2-3 weeks after March 21st, the first day of lockdown in Illinois, but still maintains a slightly positive slope thereafter, indicating that lockdown in Cook County reduced Rt but not to less than 1.",
+                  "type": "image",
+                  "prop": "imgDeathsForecast"
+              }
+          ],
+          [
+              {
+                  "title": "Cook County Estimated Rt",
+                  "description": "Step-wise estimate of Rt; initial Rt is estimated using mortality data from the beginning of the outbreak. Rt drops on March 21st, the first day of lockdown, to just above 1 and remains there for the duration of lockdown.",
+                  "type": "image",
+                  "prop": "imgRt"
+              },
+              {
+                  "title": "Rt as of June 1st",
+                  "description": "June 1st estimates of Rt for the five IL counties most impacted by COVID-19.",
+                  "type": "image",
+                  "prop": "imgRtJune1"
+              }
+          ]
+      ]
+    }
+  }
 }

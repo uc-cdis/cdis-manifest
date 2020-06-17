@@ -5,10 +5,6 @@ S3_BUCKETS:
     cred: 'fence_bot'
   target-controlled:
     cred: 'fence_bot'
-  tcga-open:
-    cred: 'fence_bot'
-  tcga-controlled:
-    cred: 'fence_bot'
   tcga-2-open:
     cred: 'fence_bot'
   tcga-2-controlled:
@@ -34,6 +30,8 @@ S3_BUCKETS:
   gdc-nciccr-phs001444-controlled:
     cred: 'fence_bot'
   gdc-organoid-pancreatic-phs001611-controlled:
+    cred: 'fence_bot'
+  gdc-organoid-pancreatic-phs001611-2-controlled:
     cred: 'fence_bot'
   gdc-varepop-apollo-phs001374-controlled:
     cred: 'fence_bot'

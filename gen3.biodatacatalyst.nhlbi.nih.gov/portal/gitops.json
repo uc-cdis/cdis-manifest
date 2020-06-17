@@ -64,7 +64,7 @@
           "name": "Analyze Data",
           "icon": "stage-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "label": "Run analysis"
         }
       ],
@@ -76,10 +76,6 @@
         {
           "node": "study",
           "name": "Studies"
-        },
-        {
-          "node": "aliquot",
-          "name": "Aliquots"
         }
       ]
     },
@@ -105,7 +101,7 @@
         },
         {
           "icon": "workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "color": "#a2a2a2",
           "name": "Workspace"
         },
@@ -155,28 +151,28 @@
           "text": "Data Sharing Policy"
         },
         {
-          "href": "https://www.nhlbi.nih.gov/about/foia-fee-for-service-office",
-          "text": "Freedom of Information Act (FOIA)"
+          "text": "Freedom of Information Act (FOIA)",
+          "href": "https://www.nhlbi.nih.gov/about/foia-fee-for-service-office"
         },
         {
-          "href": "https://biodatacatalyst.nhlbi.nih.gov/accessibility",
-          "text": "Accessibility Information"
+          "text": "Accessibility Information",
+          "href": "https://biodatacatalyst.nhlbi.nih.gov/accessibility"
         },
         {
-          "href": "https://www.hhs.gov",
-          "text": "U.S. Department of Health & Human Services"
+          "text": "U.S. Department of Health & Human Services",
+          "href": "https://www.hhs.gov"
         },
         {
-          "href": "https://www.nih.gov",
-          "text": "National Institutes of Health"
+          "text": "National Institutes of Health",
+          "href": "https://www.nih.gov"
         },
         {
-          "href": "https://www.nhlbi.nih.gov",
-          "text": "National Heart, Lung, and Blood Institute"
+          "text": "National Heart, Lung, and Blood Institute",
+          "href": "https://www.nhlbi.nih.gov"
         },
         {
-          "href": "https://www.usa.gov",
-          "text": "USA.gov"
+          "text": "USA.gov",
+          "href": "https://www.usa.gov"
         }
       ]
     },
@@ -247,7 +243,9 @@
             "pmv_entvol_bld",
             "rbc_ncnc_bld",
             "rdw_ratio_rbc",
-            "wbc_ncnc_bld"
+            "wbc_ncnc_bld",
+            "total_cholesterol",
+            "triglycerides"
           ]
         },
         {
@@ -262,7 +260,12 @@
             "hispanic_subgroup",
             "ethnicity",
             "subcohort",
-            "weight_baseline"
+            "weight_baseline",
+            "bmi_baseline",
+            "height_baseline",
+            "current_smoker_baseline",
+            "ever_smoker_baseline",
+            "geographic_site"
           ]
         }
       ]
@@ -281,24 +284,6 @@
       ]
     },
     "buttons": [
-      {
-        "enabled": false,
-        "type": "data",
-        "title": "Download All Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": false,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json",
-        "dropdownId": "download"
-      },
       {
         "enabled": true,
         "type": "export",
@@ -362,7 +347,14 @@
         { "field": "pmv_entvol_bld", "name": "PMV Mean Volume Bld" },
         { "field": "rbc_ncnc_bld", "name": "Red Blood Cells Number Concentration Bld" },
         { "field": "rdw_ratio_rbc", "name": "Red Cell Distribution Width Ratio Rbc" },
-        { "field": "wbc_ncnc_bld", "name": "White Blood Cells Number Concentration Bld" }
+        { "field": "wbc_ncnc_bld", "name": "White Blood Cells Number Concentration Bld" },
+        { "field": "bmi_baseline", "name": "BMI Baseline" },
+        { "field": "current_smoker_baseline", "name": "Current Smoker Baseline" },
+        { "field": "ever_smoker_baseline", "name": "Ever Smoker Baseline" },
+        { "field": "geographic_site", "name": "Geographic Site" },
+        { "field": "height_baseline", "name": "Height Baseline" },
+        { "field": "total_cholesterol", "name": "Total Cholesterol" },
+        { "field": "triglycerides", "name": "Triglycerides" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -375,7 +367,10 @@
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
     "terraExportURL": "https://terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
-    "terraTemplate": "bdc"
+    "terraTemplate": [ 
+      "bdc",
+      "gen3"
+    ]
   },
   "fileExplorerConfig": {
     "charts": {
@@ -446,8 +441,8 @@
     "dropdowns": {}
   },
   "terraExportWarning": {
-    "message": "Warning: Your selected cohort contains more subjects than are currently supported for import by Terra. It is recommended that you slice your data into segments of no more than 14,000 subjects and then export each segment separately. Would you like to continue anyway?",
     "subjectThreshold": 14000,
-    "title": "Warning: Data Transfer May Fail in Terra"
+    "title": "Warning: Data Transfer May Fail in Terra",
+    "message": "Warning: Your selected cohort contains more subjects than are currently supported for import by Terra. It is recommended that you slice your data into segments of no more than 14,000 subjects and then export each segment separately. Would you like to continue anyway?"
   }
 }
