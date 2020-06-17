@@ -17,14 +17,6 @@ mappings:
       - name: congenital_status
       - name: age_of_onset
       - name: hardy_scale
-    flatten_props:
-      - path: samples
-        props:
-          - name: sample_provider
-          - name: tissue_affected_status
-          - name: tissue_type
-          - name: sample_type
-          - name: original_material_type
     aggregated_props:
       - name: exome_capture_platform
         path: samples.sequencings
