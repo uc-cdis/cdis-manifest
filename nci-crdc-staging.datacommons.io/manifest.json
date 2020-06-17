@@ -46,6 +46,8 @@
     {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-indexing:1.1.6",
@@ -85,6 +87,8 @@
     {
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
