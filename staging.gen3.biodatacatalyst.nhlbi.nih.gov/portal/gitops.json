@@ -64,7 +64,7 @@
           "name": "Analyze Data",
           "icon": "stage-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "#hostname#workspace/",
+          "link": "workspace/",
           "label": "Run analysis"
         }
       ],
@@ -105,7 +105,7 @@
         },
         {
           "icon": "workspace",
-          "link": "#hostname#workspace/",
+          "link": "workspace/",
           "color": "#a2a2a2",
           "name": "Workspace"
         },
@@ -247,7 +247,9 @@
             "pmv_entvol_bld",
             "rbc_ncnc_bld",
             "rdw_ratio_rbc",
-            "wbc_ncnc_bld"
+            "wbc_ncnc_bld",
+            "total_cholesterol",
+            "triglycerides"
           ]
         },
         {
@@ -262,7 +264,12 @@
             "hispanic_subgroup",
             "ethnicity",
             "subcohort",
-            "weight_baseline"
+            "weight_baseline",
+            "bmi_baseline",
+            "height_baseline",
+            "current_smoker_baseline",
+            "ever_smoker_baseline",
+            "geographic_site"
           ]
         }
       ]
@@ -350,7 +357,14 @@
         { "field": "pmv_entvol_bld", "name": "PMV Mean Volume Bld" },
         { "field": "rbc_ncnc_bld", "name": "Red Blood Cells Number Concentration Bld" },
         { "field": "rdw_ratio_rbc", "name": "Red Cell Distribution Width Ratio Rbc" },
-        { "field": "wbc_ncnc_bld", "name": "White Blood Cells Number Concentration Bld" }
+        { "field": "wbc_ncnc_bld", "name": "White Blood Cells Number Concentration Bld" },
+        { "field": "bmi_baseline", "name": "BMI Baseline" },
+        { "field": "current_smoker_baseline", "name": "Current Smoker Baseline" },
+        { "field": "ever_smoker_baseline", "name": "Ever Smoker Baseline" },
+        { "field": "geographic_site", "name": "Geographic Site" },
+        { "field": "height_baseline", "name": "Height Baseline" },
+        { "field": "total_cholesterol", "name": "Total Cholesterol" },
+        { "field": "triglycerides", "name": "Triglycerides" }      
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
