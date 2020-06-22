@@ -14,6 +14,7 @@ mappings:
       - name: FIPS
       - name: iso2
       - name: iso3
+      - name: reporting_org
     flatten_props:
       - path: summary_clinicals
         props:
@@ -44,6 +45,7 @@ mappings:
           - name: estimated_full_mech_ventilators_per_100000
           - name: estimated_full_mech_pediatric_ventilators
           - name: estimated_full_mech_pediatric_ventilators_per_100000
+          - name: lastUpdateEt
         sorted_by: updated_datetime, desc
     parent_props:
       - path: projects[project_code:code]
