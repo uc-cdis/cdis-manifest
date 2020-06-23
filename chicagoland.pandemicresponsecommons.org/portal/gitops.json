@@ -622,6 +622,12 @@
           ],
           [
               {
+                  "title": "Rt as of June 1st",
+                  "description": "June 1st estimates of Rt for the five IL counties most impacted by COVID-19.",
+                  "type": "image",
+                  "prop": "imgRtAll"
+              },
+              {
                   "title": "Cook County Estimated Rt",
                   "description": "Step-wise estimate of Rt; initial Rt is estimated using mortality data from the beginning of the outbreak. Rt drops on March 21st, the first day of lockdown, to just above 1 and remains there for the duration of lockdown.",
                   "type": "image",
@@ -638,12 +644,6 @@
                   "description": "Step-wise estimate of Rt; initial Rt is estimated using mortality data from the beginning of the outbreak. Rt drops on March 21st, the first day of lockdown, to just above 1 and remains there for the duration of lockdown.",
                   "type": "image",
                   "prop": "imgDuPageRt"
-              },
-              {
-                  "title": "Rt as of June 1st",
-                  "description": "June 1st estimates of Rt for the five IL counties most impacted by COVID-19.",
-                  "type": "image",
-                  "prop": "imgRtAll"
               }
           ]
       ]
