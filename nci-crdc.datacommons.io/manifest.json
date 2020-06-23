@@ -1,11 +1,7 @@
 {
   "notes": [
-    "This is the DCF Staging env. It uses GDC's NIH Login node as IDP but instead of ",
-    "syncing authz information from dbGap, there is a manual whitelist. ",
-    "Environment is configured for Google data access methods including service account ",
-    "registration. Data is in multiple Google buckets with both public and *controlled* ",
-    "data. The controlled data is actually just public data so there's no sensitive ",
-    "data in this env."
+    "DCF Production Manifest. Clients hit endpoints in fence and indexd. ",
+    "Other services are left running to showcase the front-end."
   ],
   "jenkins": {
     "autodeploy": "yes"
@@ -127,13 +123,13 @@
     }
   ],
   "global": {
-    "environment": "dcf-staging",
-    "hostname": "nci-crdc-staging.datacommons.io",
+    "environment": "dcfprod",
+    "hostname": "nci-crdc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:584476192960:certificate/b1f41138-54c0-4d5f-b2f3-7c5ebb20b555",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "dev",
-    "kube_bucket": "kube-dcf-staging-gen3",
-    "logs_bucket": "logs-dcf-staging-gen3",
+    "kube_bucket": "kube-dcfprod-gen3",
+    "logs_bucket": "logs-dcfprod-gen3",
     "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging-users/user.yaml",
     "dispatcher_job_num": "10"
@@ -150,26 +146,26 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 5,
+      "max": 15,
       "targetCpu": 40
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 10,
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 6,
+      "max": 18,
       "targetCpu": 40
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 2,
-      "max": 6,
+      "min": 4,
+      "max": 12,
       "targetCpu": 40
     },
     "metadata": {
