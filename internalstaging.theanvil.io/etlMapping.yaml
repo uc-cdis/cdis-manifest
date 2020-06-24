@@ -1,5 +1,5 @@
 mappings:
-  - name: etl_internalstaging-anvil
+  - name: internalstaging-anvil_etl
     doc_type: subject
     type: aggregator
     root: subject
@@ -16,8 +16,28 @@ mappings:
       - name: solve_state
       - name: congenital_status
       - name: age_of_onset
-      - name: hardy_scale
+#    flatten_props:
     aggregated_props:
+      - name: sample_provider
+        path: samples
+        src: sample_provider
+        fn: set
+      - name: tissue_affected_status
+        path: samples
+        src: tissue_affected_status
+        fn: set
+      - name: tissue_type
+        path: samples
+        src: tissue_type
+        fn: set
+      - name: sample_type
+        path: samples
+        src: sample_type
+        fn: set
+      - name: original_material_type
+        path: samples
+        src: original_material_type
+        fn: set
       - name: exome_capture_platform
         path: samples.sequencings
         src: exome_capture_platform
@@ -62,7 +82,15 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: file_internalstaging-anvil
+    parent_props:
+      - path: projects[project_code:code]
+      - path: projects[project_name:name]
+      - path: projects[project_dbgap_phs:dbgap_phs]
+      - path: projects[project_dbgap_consent_text:dbgap_consent_text]
+      - path: projects[project_short_name:short_name]
+      - path: projects[project_dbgap_accession_number:dbgap_accession_number]
+
+  - name: internalstaging-anvil_file
     doc_type: file
     type: collector
     root: None
@@ -80,4 +108,6 @@ mappings:
         props:
           - name: subject_id
             src: id
+            fn: set
           - name: project_id
+            fn: set

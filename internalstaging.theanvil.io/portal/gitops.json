@@ -141,13 +141,11 @@
             "disease_id", 
             "solve_state", 
             "congenital_status", 
-            "age_of_onset",
-            "hardy_scale"
+            "age_of_onset"
           ]
         }, {
           "title": "Sample",
           "fields": [
-            "sample_source",
             "sample_provider",
             "tissue_affected_status",
             "tissue_type",
@@ -169,18 +167,14 @@
           "title": "Projects",
           "fields": [
             "project_id",
-            "short_name",
-            "dbgap_accession_number",
-            "dbgap_consent_text"
+            "project_short_name",
+            "project_dbgap_accession_number",
+            "project_dbgap_consent_text",
+            "project_dbgap_phs",
+            "project_name"
           ]
         }
       ]
-    },
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "subject",
-      "index": "",
-      "nodeCountField": "node_id"
     },
     "table": {
       "enabled": true,
@@ -189,9 +183,6 @@
         "ancestry",
         "sex",
         "age_value",
-        "total_ischemic_time",
-        "hardy_scale",
-        "_subjects_count",
         "_samples_count",
         "_sequencings_count"
       ]
@@ -246,33 +237,11 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        { "field": "sex", "name": "Sex" },
-        { "field": "age_value", "name": "Age Value" },
-        { "field": "hardy_scale", "name": "Hardy Scale" },
-        { "field": "ancestry", "name": "Ancestry" },
-        { "field": "disease_description", "name": "Disease Description" }, 
-        { "field": "phenotype_present", "name": "Phenotype Present" }, 
-        { "field": "phenotype_absent", "name": "Phenotype Absent" }, 
         { "field": "disease_id", "name": "Disease ID" }, 
-        { "field": "solve_state", "name": "Solve State" }, 
-        { "field": "congenital_status", "name": "Congenital Status" }, 
         { "field": "age_of_onset", "name": "Age of Onset" },
-        { "field": "sample_source", "name": "Sample Source" },
-        { "field": "sample_provider", "name": "Sample Provider" },
-        { "field": "tissue_affected_status", "name": "Sample Provider" },
-        { "field": "tissue_type", "name": "Tissue Type" },
-        { "field": "sample_type", "name": "Sample Type" },
-        { "field": "original_material_type", "name": "Original Material Type" },
-        { "field": "library_prep_kit_method", "name": "Library Prep Kit Method" }, 
-        { "field": "exome_capture_platform", "name": "Exome Capture Platform" }, 
-        { "field": "capture_region_bed_file", "name": "Capture Region Bed File" }, 
-        { "field": "reference_genome_build", "name": "Reference Genome Build" }, 
-        { "field": "sequencing_assay", "name": "Sequencing Assay" }, 
-        { "field": "alignment_method", "name": "Alignment Method" }, 
-        { "field": "data_processing_pipeline", "name": "Data Processing Pipeline" },
-        { "field": "short_name", "name": "Short Name" }, 
-        { "field": "dbgap_accession_number", "name": "dbGaP Accession Number" },    
-        { "field": "dbgap_consent_text", "name": "dbGaP Consent Text" }           
+        { "field": "project_dbgap_accession_number", "name": "Project dbGaP Accession Number" },
+        { "field": "project_dbgap_consent_text", "name":"Project dbGaP Consent Text"},
+        { "field": "project_dbgap_phs", "name":"Project dbGaP Phs"}    
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
