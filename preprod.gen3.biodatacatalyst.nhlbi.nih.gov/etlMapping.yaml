@@ -124,6 +124,9 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+          - name: file_count
+            src: file_id
+            fn: count
   - name: internalstaging_file
     doc_type: file
     type: collector

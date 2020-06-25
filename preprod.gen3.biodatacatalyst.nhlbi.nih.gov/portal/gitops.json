@@ -320,6 +320,7 @@
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
+      "fileCountField": "file_count",
       "fieldMapping": [
         { "field": "consent_codes", "name": "Data Use Restriction" },
         { "field": "cac_score", "name": "CAC Score" },
