@@ -12,16 +12,12 @@ mappings:
       - name: age_at_enrollment
       - name: experimental_group
     aggregated_props:
-      - name: veteran_status
-        path: visits.demographics
-        src: veteran_status
-        fn: set
       - name: education_years
-        path: visits.demographics
+        path: demographics
         src: education_years
         fn: max
       - name: age_at_onset
-        path: visits.diagnoses
+        path: diagnoses
         src: age_at_onset
         fn: min
       - name: mds_updrs
@@ -31,7 +27,7 @@ mappings:
           - validating: MDS-UPDRS
           - validated: MDS-UPDRS
           - released: MDS-UPDRS
-        path: visits.mds_unified_pd_ratings
+        path: mds_unified_pd_ratings
         src: state
         fn: set
       - name: unified_parkinsons_disease_ratings
@@ -41,7 +37,7 @@ mappings:
           - validating: UPDRS
           - validated: UPDRS
           - released: UPDRS
-        path: visits.unified_parkinsons_disease_ratings
+        path: unified_parkinsons_disease_ratings
         src: state
         fn: set
       - name: hopkins_verbal_learning_tests
@@ -51,7 +47,7 @@ mappings:
           - validating: HVLT-R
           - validated: HVLT-R
           - released: HVLT-R
-        path: visits.hopkins_verbal_learning_tests
+        path: hopkins_verbal_learning_tests
         src: state
         fn: set
       - name: scales_for_outcomes_in_pds
@@ -71,7 +67,7 @@ mappings:
           - validating: Modified Schwab
           - validated: Modified Schwab
           - released: Modified Schwab
-        path: visits.modified_schwab_england_scales
+        path: modified_schwab_england_scales
         src: state
         fn: set
       - name: baseline_dyspnea_indexes
@@ -81,7 +77,7 @@ mappings:
           - validating: BDI
           - validated: BDI
           - released: BDI
-        path: visits.baseline_dyspnea_indexes
+        path: baseline_dyspnea_indexes
         src: state
         fn: set
       - name: hamilton_depression_ratings
@@ -91,7 +87,7 @@ mappings:
           - validating: Hamilton
           - validated: Hamilton
           - released: Hamilton
-        path: visits.hamilton_depression_ratings
+        path: hamilton_depression_ratings
         src: state
         fn: set
       - name: state_trait_anxiety_inventories
@@ -101,7 +97,7 @@ mappings:
           - validating: Anxiety – State-Trait Anxiety Inventory (STAI)
           - validated: Anxiety – State-Trait Anxiety Inventory (STAI)
           - released: Anxiety – State-Trait Anxiety Inventory (STAI)
-        path: visits.state_trait_anxiety_inventories
+        path: state_trait_anxiety_inventories
         src: state
         fn: set
       - name: upenn_smell_tests
@@ -121,7 +117,7 @@ mappings:
           - validating: Geriatric Depression Scale Short Form Questionnaire
           - validated: Geriatric Depression Scale Short Form Questionnaire
           - released: Geriatric Depression Scale Short Form Questionnaire
-        path: visits.geriatric_depression_scales
+        path: geriatric_depression_scales
         src: state
         fn: set
       - name: montreal_cognitive_functional_tests
@@ -131,7 +127,7 @@ mappings:
           - validating: MOCA
           - validated: MOCA
           - released: MOCA
-        path: visits.montreal_cognitive_functional_tests
+        path: montreal_cognitive_functional_tests
         src: state
         fn: set
       - name: mini_mental_status_exams
@@ -141,7 +137,7 @@ mappings:
           - validating: MMSE
           - validated: MMSE
           - released: MMSE
-        path: visits.mini_mental_status_exams
+        path: mini_mental_status_exams
         src: state
         fn: set
       - name: rem_sleep_behaviors
@@ -151,7 +147,7 @@ mappings:
           - validating: REM Sleep Behavior Disorder Questionnaire
           - validated: REM Sleep Behavior Disorder Questionnaire
           - released: REM Sleep Behavior Disorder Questionnaire
-        path: visits.rem_sleep_behaviors
+        path: rem_sleep_behaviors
         src: state
         fn: set
       - name: epworth_sleepiness_scales
@@ -161,23 +157,23 @@ mappings:
           - validating: Epworth Sleepiness Scale
           - validated: Epworth Sleepiness Scale
           - released: Epworth Sleepiness Scale
-        path: visits.epworth_sleepiness_scales
+        path: epworth_sleepiness_scales
         src: state
         fn: set
       - name: _samples_count
-        path: visits.samples
+        path: samples
         fn: count
       - name: _aliquots_count
-        path: visits.samples.aliquots
+        path: samples.aliquots
         fn: count
       - name: _read_group_count
-        path: visits.samples.aliquots.read_groups
+        path: samples.aliquots.read_groups
         fn: count
       - name: _submitted_expression_arrays_count
-        path: visits.samples.aliquots.submitted_expression_array_files
+        path: samples.aliquots.submitted_expression_array_files
         fn: count
       - name: _submitted_unaligned_reads_count
-        path: visits.samples.aliquots.read_groups.submitted_unaligned_reads_files
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
         fn: count
     joining_props:
       - index: file
