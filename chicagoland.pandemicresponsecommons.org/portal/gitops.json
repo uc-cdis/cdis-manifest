@@ -595,7 +595,7 @@
           "description": "Here we plot observed and modeled daily deaths on a log10 scale and forecast a short period beyond the date of the last observation."
         },
         "imgRt": {
-          "description": "Step-wise estimate of Rt; initial Rt is estimated using mortality data from the beginning of the outbreak. Rt drops on March 21st in response to the state-wide lockdown beginning on that day."
+          "description": "Step-wise estimate of Rt from the beginning of the outbreak up to the end of lockdown in Illinois; initial Rt is estimated using mortality data from early in the outbreak. Rt drops on March 21st in response to the state-wide lockdown beginning on that day."
         }
       }
     }
