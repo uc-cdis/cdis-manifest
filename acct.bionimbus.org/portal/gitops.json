@@ -276,15 +276,16 @@
       "enabled": true,
       "fields": [
         "project_id",
-        "submitter_id",
-        "object_id",
-        "md5sum",
+        "subject_submitter_id",
         "file_name",
-        "file_size",
         "data_format",
         "data_type",
         "data_category",
-        "experimental_strategy"
+        "experimental_strategy",
+        "file_size",
+        "submitter_id",
+        "object_id",
+        "md5sum"
       ]
     },
     "guppyConfig": {
