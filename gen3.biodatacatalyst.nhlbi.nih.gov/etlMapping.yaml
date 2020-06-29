@@ -1,5 +1,5 @@
 mappings:
-  - name: dcp_etl
+  - name: internalstaging_etl
     doc_type: subject
     type: aggregator
     root: subject
@@ -124,7 +124,10 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: dcp_file
+          - name: file_count
+            src: file_id
+            fn: count
+  - name: internalstaging_file
     doc_type: file
     type: collector
     root: None
