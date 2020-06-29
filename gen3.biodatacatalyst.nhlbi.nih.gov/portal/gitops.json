@@ -320,6 +320,7 @@
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
+      "fileCountField": "file_count",
       "fieldMapping": [
         { "field": "consent_codes", "name": "Data Use Restriction" },
         { "field": "cac_score", "name": "CAC Score" },
@@ -366,7 +367,7 @@
       "accessibleValidationField": "project_id"
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
-    "terraExportURL": "https://terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
+    "terraExportURL": "https://datastage.terra.bio/#import-data",
     "terraTemplate": [ 
       "bdc",
       "gen3"
