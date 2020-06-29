@@ -1,6 +1,6 @@
 {
   "notes": [
-    "This is the prod environment manifest",
+    "This is the internalstaging environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
@@ -13,10 +13,10 @@
     "indexd": "quay.io/cdis/indexd:2020.06",
     "peregrine": "quay.io/cdis/peregrine:2020.06",
     "pidgin": "quay.io/cdis/pidgin:2020.06",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "revproxy": "quay.io/cdis/nginx:2020.06",
     "sheepdog": "quay.io/cdis/sheepdog:2020.06",
     "metadata": "quay.io/cdis/metadata-service:2020.06",
-    "portal": "quay.io/cdis/data-portal:2020.06",
+    "portal": "quay.io/cdis/data-portal:2.30.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.06",
     "tube": "quay.io/cdis/tube:2020.06",
@@ -27,8 +27,7 @@
     "wts": "quay.io/cdis/workspace-token-service:2020.06",
     "manifestservice": "quay.io/cdis/manifestservice:2020.06",
     "data-ingestion-pipeline": "quay.io/cdis/bdcat-data-ingestion:1.1",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06"
   },
   "google": {
     "enabled": "yes"
@@ -105,6 +104,159 @@
         }
       ],
       "restart_policy": "Never"
+    },
+    {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.6",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/get-dbgap-metadata:1.1.6",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:1.1.6",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
     }
   ],
   "jupyterhub": {
@@ -132,8 +284,8 @@
   },
   "global": {
     "environment": "stageprod",
-    "hostname": "gen3.biodatacatalyst.nhlbi.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/472403d1-09a8-4d10-a5de-9b316f7da980",
+    "hostname": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/a82bb5ed-9ad1-444d-9bfd-5bc314541307",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.4.9/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
@@ -152,15 +304,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "dcp_etl",
+        "index": "internalstaging_etl",
         "type": "subject"
       },
       {
-        "index": "dcp_file",
+        "index": "internalstaging_file",
         "type": "file"
       }
     ],
-    "config_index": "dcp_array-config",
+    "config_index": "internalstaging_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
@@ -184,14 +336,14 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 20,
-      "max": 25,
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 4,
-      "max": 8,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "peregrine": {
@@ -202,8 +354,8 @@
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 4,
-      "max": 10,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "sheepdog": {
