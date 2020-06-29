@@ -13,10 +13,10 @@
     "indexd": "quay.io/cdis/indexd:2020.06",
     "peregrine": "quay.io/cdis/peregrine:2020.06",
     "pidgin": "quay.io/cdis/pidgin:2020.06",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "revproxy": "quay.io/cdis/nginx:2020.06",
     "sheepdog": "quay.io/cdis/sheepdog:2020.06",
     "metadata": "quay.io/cdis/metadata-service:2020.06",
-    "portal": "quay.io/cdis/data-portal:2020.06",
+    "portal": "quay.io/cdis/data-portal:2.30.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.06",
     "tube": "quay.io/cdis/tube:2020.06",
@@ -27,8 +27,7 @@
     "wts": "quay.io/cdis/workspace-token-service:2020.06",
     "manifestservice": "quay.io/cdis/manifestservice:2020.06",
     "data-ingestion-pipeline": "quay.io/cdis/bdcat-data-ingestion:1.1",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06"
   },
   "google": {
     "enabled": "yes"
@@ -134,17 +133,11 @@
     "environment": "stageprod",
     "hostname": "gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/472403d1-09a8-4d10-a5de-9b316f7da980",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.4.9/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
     "sync_from_dbgap": "True",
-    "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
-    "public_datasets": true,
-    "tier_access_level": "regular",
-    "tier_access_limit": 50,
-    "dispatcher_job_num": "10",
-    "netpolicy": "on"
+    "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml"
   },
   "canary": {
     "default": 0
@@ -159,18 +152,10 @@
         "index": "dcp_file",
         "type": "file"
       }
-    ],
-    "config_index": "dcp_array-config",
-    "auth_filter_field": "auth_resource_path"
+    ]
   },
   "scaling": {
     "arborist": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
-    "portal": {
       "strategy": "auto",
       "min": 2,
       "max": 4,
@@ -194,34 +179,10 @@
       "max": 8,
       "targetCpu": 40
     },
-    "peregrine": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
     "revproxy": {
       "strategy": "auto",
       "min": 4,
       "max": 10,
-      "targetCpu": 40
-    },
-    "sheepdog": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
-    "guppy": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
-    "metadata": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 5,
       "targetCpu": 40
     }
   }
