@@ -1,41 +1,60 @@
 mappings:
-  - name: etl_anvil
-    doc_type: case
+  - name: etl_internalstaging-anvil
+    doc_type: subject
     type: aggregator
-    root: case
+    root: subject
     props:
       - name: submitter_id
       - name: project_id
-    flatten_props:
-      - path: demographics
-        props:
-          - name: sex
-          - name: race
-          - name: ethnicity
-          - name: age
-      - path: death_records
-        props:
-          - name: hardy_scale
+      - name: sex
+      - name: age_value
+      - name: ancestry
+      - name: disease_description
+      - name: phenotype_present
+      - name: phenotype_absent
+      - name: disease_id
+      - name: solve_state
+      - name: congenital_status
+      - name: age_of_onset
+      - name: hardy_scale
     aggregated_props:
+      - name: exome_capture_platform
+        path: samples.sequencings
+        src: exome_capture_platform
+        fn: set
+      - name: library_prep_kit_method
+        path: samples.sequencings
+        src: library_prep_kit_method
+        fn: set
+      - name: capture_region_bed_file
+        path: samples.sequencings
+        src: capture_region_bed_file
+        fn: set
+      - name: reference_genome_build
+        path: samples.sequencings
+        src: reference_genome_build
+        fn: set
+      - name: sequencing_assay
+        path: samples.sequencings
+        src: sequencing_assay
+        fn: set
+      - name: alignment_method
+        path: samples.sequencings
+        src: alignment_method
+        fn: set
+      - name: data_processing_pipeline
+        path: samples.sequencings
+        src: data_processing_pipeline
+        fn: set
       - name: _samples_count
         path: samples
         fn: count
-      - name: ischemic_time
-        path: samples
-        src: ischemic_time
-        fn: set
-      - name: _aliquots_count
-        path: samples.aliquots
-        fn: count
-      - name: _read_groups_count
-        path: samples.aliquots.read_groups
-        fn: count
-      - name: _submitted_aligned_reads_count
-        path: samples.aliquots.read_groups.submitted_aligned_reads_files
+      - name: _sequencings_count
+        path: samples.sequencings
         fn: count
     joining_props:
       - index: file
-        join_on: case_id
+        join_on: subject_id
         props:
           - name: data_format
             src: data_format
@@ -43,7 +62,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: file_anvil
+  - name: file_internalstaging-anvil
     doc_type: file
     type: collector
     root: None
@@ -57,8 +76,8 @@ mappings:
       - name: data_type
       - name: state
     injecting_props:
-      case:
+      subject:
         props:
-          - name: case_id
+          - name: subject_id
             src: id
           - name: project_id
