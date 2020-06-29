@@ -3,20 +3,20 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       },
       {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot",
-        "plural": "Aliquots"
+        "graphql": "_sample_count",
+        "name": "Sample",
+        "plural": "Samples"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_subject_count",
+        "name": "Subject"
       }
     ],
     "projectDetails": "boardCounts"
@@ -49,7 +49,7 @@
         {
           "name": "Analyze Data",
           "icon": "anvil-analyze",
-          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "body": "Analyze your selected subjects using Jupyter Notebooks in our secure cloud environment",
           "link": "#hostname#workspace/",
           "label": "Run analysis",
           "color": "#035C94"
@@ -57,12 +57,12 @@
       ],
       "homepageChartNodes": [
         {
-          "node": "case",
-          "name": "Cases"
+          "node": "subject",
+          "name": "Subjects"
         },
         {
-          "node": "aliquot",
-          "name": "Aliquots"
+          "node": "sample",
+          "name": "Samples"
         }
       ]
     },
@@ -116,7 +116,7 @@
       },
       "node_id": {
         "chartType": "count",
-        "title": "Cases"
+        "title": "Subjects"
       },
       "sex": {
         "chartType": "pie",
@@ -124,32 +124,61 @@
       },
       "race": {
         "chartType": "bar",
-        "title": "Race"
+        "title": "Ancestry"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Subject",
           "fields":[
             "sex",
-            "age",
-            "race",
-            "ethnicity",
-            "ischemic_time",
+            "age_value",
+            "ancestry",
+            "disease_description", 
+            "phenotype_present", 
+            "phenotype_absent", 
+            "disease_id", 
+            "solve_state", 
+            "congenital_status", 
+            "age_of_onset",
             "hardy_scale"
+          ]
+        }, {
+          "title": "Sample",
+          "fields": [
+            "sample_source",
+            "sample_provider",
+            "tissue_affected_status",
+            "tissue_type",
+            "sample_type",
+            "original_material_type"
+          ]
+        }, {
+          "title": "Sequencing",
+          "fields": [
+            "library_prep_kit_method", 
+            "exome_capture_platform", 
+            "capture_region_bed_file", 
+            "reference_genome_build", 
+            "sequencing_assay", 
+            "alignment_method", 
+            "data_processing_pipeline"
           ]
         }, {
           "title": "Projects",
           "fields": [
-            "project_id"
+            "project_id",
+            "short_name",
+            "dbgap_accession_number",
+            "dbgap_consent_text"
           ]
         }
       ]
     },
     "arrangerConfig": {
       "projectId": "search",
-      "graphqlField": "case",
+      "graphqlField": "subject",
       "index": "",
       "nodeCountField": "node_id"
     },
@@ -157,16 +186,14 @@
       "enabled": true,
       "fields": [
         "project_id",
-        "ethnicity",
-        "race",
+        "ancestry",
         "sex",
-        "age",
-        "ischemic_time",
+        "age_value",
+        "total_ischemic_time",
         "hardy_scale",
-        "_aliquots_count",
-        "_read_groups_count",
+        "_subjects_count",
         "_samples_count",
-        "_submitted_aligned_reads_count"
+        "_sequencings_count"
       ]
     },
     "dropdowns": {
@@ -183,7 +210,7 @@
         "rightIcon": "download",
         "fileName": "clinical.json",
         "dropdownId": "download",
-        "tooltipText": "You have not selected any cases to download. Please use the checkboxes on the left to select specific cases you would like to download."
+        "tooltipText": "You have not selected any subjects to download. Please use the checkboxes on the left to select specific subjects you would like to download."
       },
       {
         "enabled": true,
@@ -216,21 +243,42 @@
       }
     ],
     "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
       "fieldMapping": [
         { "field": "sex", "name": "Sex" },
-        { "field": "race", "name": "Race" },
-        { "field": "age", "name": "Age" },
-        { "field": "ethnicity", "name": "Ethnicity" },
-        { "field": "ischemic_time", "name": "Ischemic Time" },
-        { "field": "hardy_scale", "name": "Hardy Scale" }
+        { "field": "age_value", "name": "Age Value" },
+        { "field": "hardy_scale", "name": "Hardy Scale" },
+        { "field": "ancestry", "name": "Ancestry" },
+        { "field": "disease_description", "name": "Disease Description" }, 
+        { "field": "phenotype_present", "name": "Phenotype Present" }, 
+        { "field": "phenotype_absent", "name": "Phenotype Absent" }, 
+        { "field": "disease_id", "name": "Disease ID" }, 
+        { "field": "solve_state", "name": "Solve State" }, 
+        { "field": "congenital_status", "name": "Congenital Status" }, 
+        { "field": "age_of_onset", "name": "Age of Onset" },
+        { "field": "sample_source", "name": "Sample Source" },
+        { "field": "sample_provider", "name": "Sample Provider" },
+        { "field": "tissue_affected_status", "name": "Sample Provider" },
+        { "field": "tissue_type", "name": "Tissue Type" },
+        { "field": "sample_type", "name": "Sample Type" },
+        { "field": "original_material_type", "name": "Original Material Type" },
+        { "field": "library_prep_kit_method", "name": "Library Prep Kit Method" }, 
+        { "field": "exome_capture_platform", "name": "Exome Capture Platform" }, 
+        { "field": "capture_region_bed_file", "name": "Capture Region Bed File" }, 
+        { "field": "reference_genome_build", "name": "Reference Genome Build" }, 
+        { "field": "sequencing_assay", "name": "Sequencing Assay" }, 
+        { "field": "alignment_method", "name": "Alignment Method" }, 
+        { "field": "data_processing_pipeline", "name": "Data Processing Pipeline" },
+        { "field": "short_name", "name": "Short Name" }, 
+        { "field": "dbgap_accession_number", "name": "dbGaP Accession Number" },    
+        { "field": "dbgap_consent_text", "name": "dbGaP Consent Text" }           
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -277,8 +325,8 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
