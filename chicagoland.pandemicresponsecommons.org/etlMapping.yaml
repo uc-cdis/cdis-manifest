@@ -86,10 +86,7 @@ mappings:
 
         sorted_by: updated_datetime, desc
     parent_props:
-      - path: projects[project_code:code]
-      - path: projects[project_name:name]
-      - path: projects[project_url:url]
-      - path: projects[project_investigator_affiliation:investigator_affiliation]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
   - name: covid19_subject
     doc_type: subject
     type: aggregator
@@ -128,12 +125,7 @@ mappings:
           - name: year_of_birth
           - name: nationality
     parent_props:
-      - path: projects[project_code:code]
-      - path: projects[project_name:name]
-      - path: projects[project_url:url]
-      - path: projects[project_data_description:data_description]
-      - path: projects[project_investigator_affiliation:investigator_affiliation]
-      - path: projects[project_availability_type:availability_type]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
   - name: covid19_file
     doc_type: file
     type: collector
