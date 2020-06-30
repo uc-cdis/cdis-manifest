@@ -130,5 +130,8 @@ mappings:
           - name: subject_id
             src: id
             fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set
           - name: project_id
             fn: set
