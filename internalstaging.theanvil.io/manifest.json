@@ -157,7 +157,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:1.1.6",
+        "image": "quay.io/cdis/get-dbgap-metadata:2.0.0",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -188,7 +188,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:1.1.6",
+        "image": "quay.io/cdis/manifest-indexing:2.0.0",
         "pull_policy": "Always",
         "env": [
           {
@@ -229,7 +229,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
+        "image": "quay.io/cdis/download-indexd-manifest:2.0.0",
         "pull_policy": "Always",
         "env": [
           {
