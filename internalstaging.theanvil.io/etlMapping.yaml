@@ -96,6 +96,8 @@ mappings:
     root: None
     category: data_file
     props:
+      - name: project_id
+      - name: submitter_id
       - name: object_id
       - name: md5sum
       - name: file_name
@@ -103,11 +105,17 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+      - name: data_category
+      - name: analyte_type
+      - name: sequencing_assay      
     injecting_props:
       subject:
         props:
           - name: subject_id
             src: id
             fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set            
           - name: project_id
             fn: set
