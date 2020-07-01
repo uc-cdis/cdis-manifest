@@ -117,7 +117,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:1.1.6",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:2.0.0",
         "pull_policy": "Always",
         "env": [
           {
