@@ -50,7 +50,7 @@
       "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:2020.07",
+        "image": "quay.io/cdis/manifest-indexing:2.0.0",
         "pull_policy": "Always",
         "env": [
           {
@@ -91,7 +91,7 @@
       "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:1.1.6",
+        "image": "quay.io/cdis/download-indexd-manifest:2.0.0",
         "pull_policy": "Always",
         "env": [
           {
