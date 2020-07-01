@@ -27,7 +27,8 @@
     "wts": "quay.io/cdis/workspace-token-service:2020.06",
     "manifestservice": "quay.io/cdis/manifestservice:2020.06",
     "data-ingestion-pipeline": "quay.io/cdis/bdcat-data-ingestion:1.1",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06"
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06",
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
   },
   "google": {
     "enabled": "yes"
