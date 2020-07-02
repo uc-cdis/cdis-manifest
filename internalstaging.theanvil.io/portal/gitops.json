@@ -272,8 +272,11 @@
           "title": "File",
           "fields": [
             "project_id",
+            "data_category",
             "data_type",
-            "data_format"
+            "data_format",
+            "analyte_type", 
+            "sequencing_assay"
           ]
         }
       ]
@@ -282,9 +285,15 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "subject_submitter_id",
         "file_name",
+        "data_format",
+        "data_type",
+        "data_category",
         "file_size",
-        "object_id"
+        "submitter_id",
+        "object_id",
+        "md5sum"
       ]
     },
     "guppyConfig": {
