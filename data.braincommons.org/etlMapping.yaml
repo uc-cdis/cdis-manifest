@@ -12,10 +12,6 @@ mappings:
       - name: age_at_enrollment
       - name: experimental_group
     aggregated_props:
-      - name: veteran_status
-        path: demographics
-        src: veteran_status
-        fn: set
       - name: education_years
         path: demographics
         src: education_years
