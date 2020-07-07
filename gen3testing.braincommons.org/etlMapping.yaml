@@ -57,7 +57,7 @@ mappings:
           - validating: Scales for Outcomes in Parkinson’s Disease - Autonomic
           - validated: Scales for Outcomes in Parkinson’s Disease - Autonomic
           - released: Scales for Outcomes in Parkinson’s Disease - Autonomic
-        path: visits.scales_for_outcomes_in_pds
+        path: scales_for_outcomes_in_pds
         src: state
         fn: set
       - name: modified_schwab_england_scales
@@ -107,7 +107,7 @@ mappings:
           - validating: UPSIT
           - validated: UPSIT
           - released: UPSIT
-        path: visits.upenn_smell_tests
+        path: upenn_smell_tests
         src: state
         fn: set
       - name: geriatric_depression_scales
