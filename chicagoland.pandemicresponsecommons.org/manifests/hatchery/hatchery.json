@@ -41,6 +41,22 @@
       "fs-gid": 100
     },
     {
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio JHU map",
+      "image": "quay.io/cdis/rstudio-jhumap:jhumap-1.0.0",
+      "env": {
+        "DISABLE_AUTH": "true"
+      },
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
+    },
+    {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
