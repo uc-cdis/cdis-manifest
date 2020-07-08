@@ -125,8 +125,32 @@ mappings:
           - name: gender
           - name: year_of_birth
           - name: nationality
+          - name: vital_status
+      - path: follow_ups
+        props:
+          - name: finding
+          - name: intubated
+            value_mappings:
+              - Y: 'True'
+              - N: 'False'
+          - name: extubated
+            value_mappings:
+              - Y: 'True'
+              - N: 'False'
+          - name: pO2_saturation
+          - name: leukocyte_count
+          - name: neutrophil_count
+          - name: lymphocyte_count
+          - name: view
+        sorted_by: updated_datetime, desc
+    aggregated_props:
+      - name: image_location
+        path: imaging_files
+        src: image_location
+        fn: set
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
+      - path: studies[study_doi:study_doi]
   - name: covid19_genomic_file
     doc_type: genomic_file
     type: collector
