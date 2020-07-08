@@ -29,6 +29,9 @@
     "dashboard": "quay.io/cdis/gen3-statics:2020.07",
     "metadata": "quay.io/cdis/metadata-service:2020.07"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "global": {
     "environment": "anvilstaging",
     "hostname": "internalstaging.theanvil.io",
