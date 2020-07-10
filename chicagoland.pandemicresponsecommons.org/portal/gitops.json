@@ -712,15 +712,9 @@
         [
           {
             "title": "Cook County Daily Cases",
-            "description": "Here we plot daily case counts over time, where the gray bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively. The sharp decrease in estimated true cases in the third week of March results from a similarly sharp decrease in estimated Rt at that same time due to the Illinois statewide lockdown intervention being put in place on March 21st.",
+            "description": "Here we plot daily case counts over time, where the gray bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
             "type": "image",
             "path": "bayes-by-county/17031/cases.png"
-          },
-          {
-            "title": "Cook County Daily Cases Forecast",
-            "description": "Here we plot reported cases and estimated true cases on a log10 scale and forecast 7 days beyond the date of the last observation. We note that leading up to March 21st, the first day of lockdown in Illinois, there were no measures put in place to control the spread of COVID-19, and so the reported and estimated cases in that time period are seen to be increasing at a relatively high rate. The rate of change of modeled case counts sharply decreases and restabilizes around March 21st in response to a corresponding drop in Rt resulting from beginning the lockdown intervention at that time. Moving forward from early April we observe that the rate of change of estimated true cases is slightly negative, indicating that Rt in this time period is slightly less than 1.",
-            "type": "image",
-            "path": "bayes-by-county/17031/casesForecast.png"
           },
           {
             "title": "Cook County Daily Deaths",
@@ -729,16 +723,16 @@
             "path": "bayes-by-county/17031/deaths.png"
           },
           {
-            "title": "Cook County Daily Deaths Forecast",
-            "description": "Here we plot observed and modeled daily deaths on a log10 scale and forecast 7 days beyond the date of the last observation. We note that the curve bends downward approximately 2-3 weeks after March 21st, the first day of lockdown in Illinois, and maintains a slightly negative slope thereafter, indicating that lockdown in Cook County reduced Rt to slightly below 1.",
+            "title": "Cook County Estimated Rt",
+            "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
             "type": "image",
-            "path": "bayes-by-county/17031/deathsForecast.png"
+            "path": "bayes-by-county/17031/Rt.png"
           }
         ],
         [
           {
-            "title": "Rt as of June 1st",
-            "description": "June 1st estimates of Rt for the IL counties most impacted by COVID-19.",
+            "title": "Average Rt Over Latest 7 Days Of Observations",
+            "description": "Latest Rt estimates for the IL counties most impacted by COVID-19.",
             "type": "image",
             "path": "bayes-by-county/Rt_All.png"
           }
@@ -746,19 +740,13 @@
       ],
       "simulations": {
         "imgCases": {
-          "description": "Here we plot daily case counts over time, where the gray bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively. The decrease in estimated true cases in the third week of March results from a decrease in estimated Rt at that same time due to the Illinois statewide lockdown intervention being put in place on March 21st."
-        },
-        "imgCasesForecast": {
-          "description": "Here we plot reported cases and estimated true cases on a log10 scale and forecast a short period beyond the date of the last observation."
+          "description": "Here we plot daily case counts over time, where the gray bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
         },
         "imgDeaths": {
           "description": "Here we plot daily death counts over time, where the gray bars are observed deaths and the blue curve represents modeled death counts."
         },
-        "imgDeathsForecast": {
-          "description": "Here we plot observed and modeled daily deaths on a log10 scale and forecast a short period beyond the date of the last observation."
-        },
         "imgRt": {
-          "description": "Step-wise estimate of Rt from the beginning of the outbreak up to the end of lockdown in Illinois; initial Rt is estimated using mortality data from early in the outbreak. Rt drops on March 21st in response to the state-wide lockdown beginning on that day."
+          "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
         }
       }
     }
