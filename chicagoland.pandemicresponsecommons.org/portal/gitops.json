@@ -712,13 +712,13 @@
         [
           {
             "title": "Cook County Daily Cases",
-            "description": "Here we plot daily case counts over time, where the bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
             "type": "image",
             "path": "bayes-by-county/17031/cases.png"
           },
           {
             "title": "Cook County Daily Deaths",
-            "description": "Here we plot daily death counts over time, where the bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
             "type": "image",
             "path": "bayes-by-county/17031/deaths.png"
           },
@@ -740,10 +740,10 @@
       ],
       "simulations": {
         "imgCases": {
-          "description": "Here we plot daily case counts over time, where the bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
+          "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
         },
         "imgDeaths": {
-          "description": "Here we plot daily death counts over time, where the bars are observed deaths and the blue curve represents modeled death counts."
+          "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts."
         },
         "imgRt": {
           "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
