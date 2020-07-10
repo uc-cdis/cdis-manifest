@@ -191,15 +191,19 @@
       "filters": {
         "tabs": [
           {
-            "title": "Clinical",
+            "title": "Details",
             "fields": [
               "project_investigator_affiliation",
-              "project_name",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Clinical",
+            "fields": [
               "hospital",
               "symptoms",
               "death",
               "recovered",
-              "reporting_date",
               "source",
               "infection_case",
               "isolated",
@@ -219,14 +223,14 @@
           {
             "title": "Demographics",
             "fields": [
+              "age",
               "gender",
+              "nationality",
               "country",
               "province",
               "city",
-              "age",
               "from_wuhan",
-              "visiting_wuhan",
-              "nationality"
+              "visiting_wuhan"
             ]
           }
         ]
@@ -254,6 +258,7 @@
         "nodeCountTitle": "Subjects",
         "fieldMapping" : [
           { "field": "project_url", "name": "Source URL" },
+          {"field": "infection_case", "name": "Exposure"},
           { "field": "project_code", "name": "Code" },
           { "field": "project_name", "name": "Dataset" },
           { "field": "source", "name": "Reporting Source"},
@@ -299,10 +304,15 @@
       "filters": {
         "tabs": [
           {
-            "title": "Viral",
+            "title": "Details",
             "fields": [
               "project_investigator_affiliation",
-              "project_name",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Viral",
+            "fields": [
               "data_type",
               "data_format",
               "location",
@@ -388,28 +398,27 @@
         "filters": {
           "tabs": [
             {
-              "title": "Clinical",
+              "title": "Details",
               "fields": [
                 "project_investigator_affiliation",
-                "project_name",
-                "staffed_all_beds",
-                "staffed_icu_beds",
-                "population_gtr_65",
-                "estimated_full_mech_ventilators",
-                "estimated_full_mech_pediatric_ventilators",
-                "confirmed",
-                "deaths",
-                "recovered",
-                "testing"
+                "project_name"
               ]
             },
             {
-              "title": "Demographics",
+              "title": "Global",
               "fields": [
                 "country_region",
                 "province_state",
                 "county",
-                "reporting_org"
+                "confirmed",
+                "deaths",
+                "recovered",
+                "testing",
+                "staffed_all_beds",
+                "staffed_icu_beds",
+                "population_gtr_65",
+                "estimated_full_mech_ventilators",
+                "estimated_full_mech_pediatric_ventilators"
               ]
             },
             {
@@ -417,6 +426,8 @@
               "fields": [
                 "community_area",
                 "state_region_description",
+                "reporting_org",
+                "deaths_per_10000",
                 "region_icu_avail",
                 "region_icu_capacity",
                 "region_vents_available",
