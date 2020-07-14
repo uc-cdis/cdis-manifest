@@ -295,20 +295,5 @@
       "downloadAccessor": "object_id"
     },
     "dropdowns": {}
-  },
-  "dataAvailabilityToolConfig": {
-    "guppyConfig": {
-      "dataType": "participant",
-      "mainField": "diagnosis",
-      "mainFieldTitle": "Diagnosis",
-      "mainFieldIsNumeric": false,
-      "aggFields": [
-          "gender",
-          "race",
-          "ibd_affection_status"
-      ],
-      "fieldMapping": [
-      ]
-    }
   }
 }
