@@ -7,31 +7,36 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.04",
+    "arborist": "quay.io/cdis/arborist:2020.07",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.04",
+    "fence": "quay.io/cdis/fence:2020.07",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:2020.04",
-    "hatchery": "quay.io/cdis/hatchery:2020.04",
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "indexd": "quay.io/cdis/indexd:2020.04",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.04",
-    "peregrine": "quay.io/cdis/peregrine:2020.04",
-    "pidgin": "quay.io/cdis/pidgin:2020.04",
-    "portal": "quay.io/cdis/data-portal:2020.04",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.04",
-    "sower": "quay.io/cdis/sower:2020.04",
-    "spark": "quay.io/cdis/gen3-spark:2020.04",
-    "tube": "quay.io/cdis/tube:2020.04",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.04",
-    "wts": "quay.io/cdis/workspace-token-service:2020.04"
+    "guppy": "quay.io/cdis/guppy:2020.07",
+    "hatchery": "quay.io/cdis/hatchery:2020.07",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "indexd": "quay.io/cdis/indexd:2020.07",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.07",
+    "peregrine": "quay.io/cdis/peregrine:2020.07",
+    "pidgin": "quay.io/cdis/pidgin:2020.07",
+    "portal": "quay.io/cdis/data-portal:2020.07",
+    "revproxy": "quay.io/cdis/nginx:2020.07",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.07",
+    "sower": "quay.io/cdis/sower:2020.07",
+    "spark": "quay.io/cdis/gen3-spark:2020.07",
+    "tube": "quay.io/cdis/tube:2020.07",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.07",
+    "wts": "quay.io/cdis/workspace-token-service:2020.07",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.07",
+    "metadata": "quay.io/cdis/metadata-service:2020.07"
+  },
+  "indexd": {
+    "arborist": "true"
   },
   "global": {
     "environment": "anvilstaging",
     "hostname": "staging.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/1.1.5/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.1.12/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilstaging-gen3",
     "logs_bucket": "logs-anvilstaging-gen3",
@@ -43,13 +48,16 @@
     "tier_access_limit": 50,
     "public_datasets": true
   },
+  "peregrine": {
+    "peregrine_timeout": "45"
+  },
   "sower": [
     {
       "name": "pelican-export",
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2020.04",
+        "image": "quay.io/cdis/pelican-export:2020.07",
         "pull_policy": "Always",
         "env": [
           {
@@ -114,7 +122,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2020.04"
+      "indexing": "quay.io/cdis/indexs3client:2020.07"
     }
   },
   "arborist": {
@@ -123,42 +131,16 @@
   "guppy": {
     "indices": [
       {
-        "index": "etl_staging-anvil",
-        "type": "case"
+        "index": "staging.theanvil.io_subject",
+        "type": "subject"
       },
       {
-        "index": "file_staging-anvil",
+        "index": "staging.theanvil.io_file",
         "type": "file"
       }
     ],
     "auth_filter_field": "auth_resource_path",
-    "config_index": "etl_anvil-array-config"
-  },
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Helium COPD Demo",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
-      }
-    ]
-  },
-  "peregrine": {
-    "sidecar": "True"
+    "config_index": "staging.theanvil.io_array-config"
   },
   "canary": {
     "default": 0
