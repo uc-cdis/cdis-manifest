@@ -174,7 +174,6 @@
           "fields":[
             "project_id",
             "gender",
-            "country",
             "ibd_affection_status",
             "diagnosis"
           ]
@@ -184,6 +183,7 @@
           "fields":[
             "project_id",
             "name",
+            "country",
             "investigator_name"
           ]  
         }
@@ -295,5 +295,23 @@
       "downloadAccessor": "object_id"
     },
     "dropdowns": {}
+  },
+  "dataAvailabilityToolConfig": {
+    "guppyConfig": {
+      "dataType": "participant",
+      "mainField": "diagnosis",
+      "mainFieldTitle": "Diagnosis",
+      "mainFieldIsNumeric": false,
+      "aggFields": [
+          "gender",
+          "race",
+          "jewish",
+          "hispanic",
+          "ibd_affection_status",
+          "population_control"
+      ],
+      "fieldMapping": [
+      ]
+    }
   }
 }
