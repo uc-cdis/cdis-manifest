@@ -295,23 +295,5 @@
       "downloadAccessor": "object_id"
     },
     "dropdowns": {}
-  },
-  "dataAvailabilityToolConfig": {
-    "guppyConfig": {
-      "dataType": "participant",
-      "mainField": "diagnosis",
-      "mainFieldTitle": "Diagnosis",
-      "mainFieldIsNumeric": false,
-      "aggFields": [
-          "gender",
-          "race",
-          "jewish",
-          "hispanic",
-          "ibd_affection_status",
-          "population_control"
-      ],
-      "fieldMapping": [
-      ]
-    }
   }
 }
