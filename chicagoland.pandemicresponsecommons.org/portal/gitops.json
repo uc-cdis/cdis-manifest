@@ -202,8 +202,7 @@
             "fields": [
               "hospital",
               "symptoms",
-              "death",
-              "recovered",
+              "current_state",
               "source",
               "infection_case",
               "isolated",
@@ -214,9 +213,7 @@
               "pO2_saturation",
               "leukocyte_count",
               "neutrophil_count",
-              "lymphocyte_count",
               "view",
-              "image_location",
               "study_doi"
             ]
           },
@@ -274,7 +271,6 @@
           { "field": "project_investigator_affiliation", "name": "Source"},
           { "field": "pO2_saturation", "name": "pO2 Saturation"},
           { "field": "view", "name": "X-ray View"},
-          { "field": "image_location", "name": "X-ray Location"},
           { "field": "study_doi", "name": "Study DOI"}
         ],
         "manifestMapping": {
