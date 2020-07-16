@@ -89,16 +89,16 @@
           "name": "Exploration"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#a2a2a2",
-          "name": "Files"
-        },
-        {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
           "name": "Query"
+        },
+        {
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "color": "#a2a2a2",
+          "icon": "query"
         },
         {
           "icon": "workspace",
@@ -295,5 +295,15 @@
       "downloadAccessor": "object_id"
     },
     "dropdowns": {}
+  },
+  "resourceBrowser": {
+    "title": "IBDGC Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
+    "resources": [
+      {
+        "title": "IBDGC Notebooks coming soon"
+      }
+    ]
   }
 }
