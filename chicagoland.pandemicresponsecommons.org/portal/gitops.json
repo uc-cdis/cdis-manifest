@@ -717,6 +717,18 @@
         "description": "COVID-19 testing is very crucial to understand the spread of the pandemic. In this Python notebook, we have focused our efforts on visualizing the COVID-19 testing data across the U.S. States and Territories from the COVID Tracking Project. The animations will allow you to see how testing data has changed over time.",
         "link": "/dashboard/Public/notebooks/CTP_testing.html",
         "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
+      },
+      {
+        "title": "Cross Dataset Analysis on COVID-19 Symptoms and Fatality Rate",
+        "description": "In this notebook, we are performing some visual analysis on the individual case reports that provide aggregated data on clinical states (e.g. deceased, recovered, alive, etc) and symptoms. We are looking at whether the fatality rates and symptoms are similar across different datasets.",
+        "link": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.html",
+        "imageUrl": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.png"
+      },
+      {
+        "title": "Demo: Exploring clinical data from multiple commons",
+        "description": "In this notebook, we obtain the clinical data for multiple projects from the Chicagoland Pandemic Response Commons and the NCI Genomic Data Commons (GDC) and visualize some of the clinical attributes. This notebook is for demonstration purposes only and not biologically meaningful.",
+        "link": "/dashboard/Public/notebooks/TCGA_OV_COVID.html",
+        "imageUrl": "/dashboard/Public/notebooks/TCGA_OV_COVID.png"
       }
     ]
   },
