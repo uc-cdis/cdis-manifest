@@ -64,7 +64,7 @@
           "name": "Analyze Data",
           "icon": "stage-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "workspace/",
+          "link": "/workspace",
           "label": "Run analysis"
         }
       ],
@@ -76,10 +76,10 @@
         {
           "node": "study",
           "name": "Studies"
-        },
-        {
-          "node": "aliquot",
-          "name": "Aliquots"
+        },	
+        {	
+          "node": "aliquot",	
+          "name": "Aliquots"	
         }
       ]
     },
@@ -105,7 +105,7 @@
         },
         {
           "icon": "workspace",
-          "link": "workspace/",
+          "link": "/workspace",
           "color": "#a2a2a2",
           "name": "Workspace"
         },
@@ -294,11 +294,11 @@
         "title": "Export All to Terra",
         "rightIcon": "external-link"
       },
-      {
-        "enabled": true,
-        "type": "export-to-seven-bridges",
-        "title": "Export All to Seven Bridges",
-        "rightIcon": "external-link"
+      {	
+        "enabled": true,	
+        "type": "export-to-seven-bridges",	
+        "title": "Export All to Seven Bridges",	
+        "rightIcon": "external-link"	
       },
       {
         "enabled": true,
@@ -330,6 +330,7 @@
     "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
+      "fileCountField": "file_count",
       "fieldMapping": [
         { "field": "consent_codes", "name": "Data Use Restriction" },
         { "field": "cac_score", "name": "CAC Score" },
@@ -364,7 +365,7 @@
         { "field": "geographic_site", "name": "Geographic Site" },
         { "field": "height_baseline", "name": "Height Baseline" },
         { "field": "total_cholesterol", "name": "Total Cholesterol" },
-        { "field": "triglycerides", "name": "Triglycerides" }      
+        { "field": "triglycerides", "name": "Triglycerides" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -377,7 +378,7 @@
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
     "terraExportURL": "https://dev.terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
-    "terraTemplate": [
+    "terraTemplate": [ 
       "bdc",
       "gen3"
     ],
