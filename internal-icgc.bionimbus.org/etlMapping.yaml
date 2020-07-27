@@ -1,0 +1,70 @@
+mappings:
+  - name: internal-icgc_etl
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: age_at_diagnosis
+      - name: age_at_diagnosis_group
+      - name: age_at_last_followup
+      - name: cancer_first_relative
+      - name: diagnosis_icd10
+      - name: disease_status_last_followup
+      - name: prior_malignancy
+      - name: tumor_type
+      - name: tumor_subtype
+      - name: gender
+      - name: primary_site
+      - name: vital_status
+    aggregated_props:
+      - name: _aligned_reads_files_count
+        path: aligned_reads_files
+        fn: count
+      - name: _variant_call_files_count
+        path: variant_call_files
+        fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_type
+            fn: set
+  - name: internal-icgc_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+      - name: project_id
+      - name: analysis_type
+      - name: experimental_strategy
+      - name: donor_barcode
+      - name: specimen_barcode
+      - name: sample_barcode
+      - name: aliquot_barcode
+      - name: primary_site
+      - name: specimen_type
+      - name: dcc_file_id
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+          - name: project_id
