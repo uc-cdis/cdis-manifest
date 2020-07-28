@@ -97,6 +97,11 @@
     "sync_from_dbgap": "False",
     "netpolicy": "on"
   },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2020.07"
+    }
+  },
   "canary": {
     "default": 0
   }
