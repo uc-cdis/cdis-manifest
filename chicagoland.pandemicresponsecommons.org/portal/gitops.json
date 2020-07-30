@@ -111,7 +111,17 @@
       "email": "support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
     },
-    "categorical9Colors": ["#B02F34", "#421C52", "#AEEBF2", "#E0DD10", "#40476D", "#FFA630", "#AE8799", "#035C94", "#462255"],
+    "categorical9Colors": [
+      "#B02F34",
+      "#421C52",
+      "#AEEBF2",
+      "#E0DD10",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
@@ -122,9 +132,10 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "explorerPublic": true
   },
-  "analysisTools": [ ],
+  "analysisTools": [],
   "explorerConfig": [
     {
       "tabTitle": "Datasets",
@@ -159,13 +170,24 @@
         "dataType": "dataset",
         "nodeCountTitle": "Datasets",
         "fieldMapping": [
-          { "field": "url", "name": "Source URL" },
-          { "field": "investigator_affiliation", "name": "Source"},
-          { "field": "name", "name": "Dataset" }
+          {
+            "field": "url",
+            "name": "Source URL"
+          },
+          {
+            "field": "investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "name",
+            "name": "Dataset"
+          }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "code"
-        }
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -277,20 +299,49 @@
       "guppyConfig": {
         "dataType": "subject",
         "nodeCountTitle": "Subjects",
-        "fieldMapping" : [
-          { "field": "project_url", "name": "Source URL" },
-          {"field": "infection_case", "name": "Exposure"},
-          { "field": "project_code", "name": "Code" },
-          { "field": "project_name", "name": "Dataset" },
-          { "field": "source", "name": "Reporting Source"},
-          { "field": "project_investigator_affiliation", "name": "Source"},
-          { "field": "pO2_saturation", "name": "pO2 Saturation"},
-          { "field": "view", "name": "X-ray View"},
-          { "field": "study_doi", "name": "Study DOI"}
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "infection_case",
+            "name": "Exposure"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "source",
+            "name": "Reporting Source"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "pO2_saturation",
+            "name": "pO2 Saturation"
+          },
+          {
+            "field": "view",
+            "name": "X-ray View"
+          },
+          {
+            "field": "study_doi",
+            "name": "Study DOI"
+          }
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
-        }
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -390,20 +441,35 @@
       "guppyConfig": {
         "dataType": "genomic_file",
         "fieldMapping": [
-          { "field": "project_url", "name": "Source URL" },
-          { "field": "project_code", "name": "Code" },
-          { "field": "project_name", "name": "Dataset" },
-          { "field": "project_investigator_affiliation", "name": "Source"},
-          { "field": "object_id", "name": "GUID" }
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "object_id",
+            "name": "GUID"
+          }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "object_id",
           "referenceIdFieldInDataIndex": "object_id"
         },
+        "downloadAccessor": "object_id",
         "accessibleFieldCheckList": ["project_id"],
-        "accessibleValidationField": "project_id",
-        "downloadAccessor": "object_id"
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -422,336 +488,326 @@
           "title": "County"
         }
       },
-        "filters": {
-          "tabs": [
-            {
-              "title": "Details",
-              "fields": [
-                "project_investigator_affiliation",
-                "project_name"
-              ]
-            },
-            {
-              "title": "Global",
-              "fields": [
-                "country_region",
-                "province_state",
-                "county",
-                "confirmed",
-                "deaths",
-                "recovered",
-                "testing",
-                "staffed_all_beds",
-                "staffed_icu_beds",
-                "population_gtr_65",
-                "estimated_full_mech_ventilators",
-                "estimated_full_mech_pediatric_ventilators"
-              ]
-            },
-            {
-              "title": "Illinois",
-              "fields": [
-                "community_area",
-                "state_region_description",
-                "reporting_org",
-                "deaths_per_10000",
-
-                "region_icu_capacity",
-                "region_icu_avail",
-                "region_vents_capacity",
-                "region_vents_available",
-
-                "state_vent_covid_patients",
-                "state_icu_covid_patients",
-                "state_covid_patients_non_icu",
-                "state_covid_pui_patients",
-                "state_total_covid_pui_in_hospital",
-                "state_total_covid_pui_in_icu",
-                "state_icu_capacity",
-                "state_icu_available",
-                "state_vent_capacity",
-                "state_vents_available",
-                "state_Ventilators_open_pct",
-                "state_ventilators_in_use",
-                "state_ventilators_in_use_covid",
-                "state_ventilators_covid_patients_pct",
-
-                "state_total_beds",
-                "state_total_beds_available",
-                "state_total_beds_used",
-                "total_in_use_beds_non_covid",
-                "total_in_use_beds_covid",
-                "state_pct_beds_covid_pui",
-                "state_pct_hospital_beds_available",
-
-                "state_icu_open_beds",
-                "state_icu_beds_used",
-                "state_icu_open_beds_pct"
-              ]
-            }
-          ]
-        },
-        "table": {
-          "enabled": true,
-          "fields": [
-            "project_url",
-            "project_code",
-            "project_investigator_affiliation",
-            "project_name",
-            "country_region",
-            "province_state",
-            "county",
-            "community_area",
-            "state_region_description",
-            "reporting_org",
-            "confirmed",
-            "deaths",
-            "recovered",
-            "testing",
-            "staffed_all_beds",
-            "staffed_icu_beds",
-            "population_gtr_65",
-            "estimated_full_mech_ventilators",
-            "estimated_full_mech_pediatric_ventilators",
-            "region_icu_avail",
-            "region_icu_capacity",
-            "region_vents_available",
-            "region_vents_capacity",
-
-            "state_vent_covid_patients",
-            "state_icu_covid_patients",
-            "state_covid_patients_non_icu",
-            "state_covid_pui_patients",
-            "state_total_covid_pui_in_hospital",
-            "state_total_covid_pui_in_icu",
-
-            
-
-            "state_icu_capacity",
-            "state_icu_available",
-                
-            "state_vent_capacity",
-            "state_vents_available",
-            "state_Ventilators_open_pct",
-            "state_ventilators_in_use",
-            "state_ventilators_in_use_covid",
-            "state_ventilators_covid_patients_pct",
-                
-            "state_total_beds",
-            "state_total_beds_available",
-            "state_total_beds_used",
-            "total_in_use_beds_non_covid",
-            "total_in_use_beds_covid",
-            "state_pct_beds_covid_pui",
-            "state_pct_hospital_beds_available",
-                
-            "state_icu_open_beds",
-            "state_icu_beds_used",
-            "state_icu_open_beds_pct"  
-          ],
-          "linkFields": [
-            "project_url"
-          ]
-        },
-        "dropdowns": {},
-        "buttons": [
+      "filters": {
+        "tabs": [
           {
-            "enabled": false,
-            "type": "data",
-            "title": "Download Clinical",
-            "leftIcon": "user",
-            "rightIcon": "download",
-            "fileName": "clinical.json"
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Global",
+            "fields": [
+              "country_region",
+              "province_state",
+              "county",
+              "confirmed",
+              "deaths",
+              "recovered",
+              "testing",
+              "staffed_all_beds",
+              "staffed_icu_beds",
+              "population_gtr_65",
+              "estimated_full_mech_ventilators",
+              "estimated_full_mech_pediatric_ventilators"
+            ]
+          },
+          {
+            "title": "Illinois",
+            "fields": [
+              "community_area",
+              "state_region_description",
+              "reporting_org",
+              "deaths_per_10000",
+              "region_icu_capacity",
+              "region_icu_avail",
+              "region_vents_capacity",
+              "region_vents_available",
+              "state_vent_covid_patients",
+              "state_icu_covid_patients",
+              "state_covid_patients_non_icu",
+              "state_covid_pui_patients",
+              "state_total_covid_pui_in_hospital",
+              "state_total_covid_pui_in_icu",
+              "state_icu_capacity",
+              "state_icu_available",
+              "state_vent_capacity",
+              "state_vents_available",
+              "state_Ventilators_open_pct",
+              "state_ventilators_in_use",
+              "state_ventilators_in_use_covid",
+              "state_ventilators_covid_patients_pct",
+              "state_total_beds",
+              "state_total_beds_available",
+              "state_total_beds_used",
+              "total_in_use_beds_non_covid",
+              "total_in_use_beds_covid",
+              "state_pct_beds_covid_pui",
+              "state_pct_hospital_beds_available",
+              "state_icu_open_beds",
+              "state_icu_beds_used",
+              "state_icu_open_beds_pct"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_investigator_affiliation",
+          "project_name",
+          "country_region",
+          "province_state",
+          "county",
+          "community_area",
+          "state_region_description",
+          "reporting_org",
+          "confirmed",
+          "deaths",
+          "recovered",
+          "testing",
+          "staffed_all_beds",
+          "staffed_icu_beds",
+          "population_gtr_65",
+          "estimated_full_mech_ventilators",
+          "estimated_full_mech_pediatric_ventilators",
+          "region_icu_avail",
+          "region_icu_capacity",
+          "region_vents_available",
+          "region_vents_capacity",
+          "state_vent_covid_patients",
+          "state_icu_covid_patients",
+          "state_covid_patients_non_icu",
+          "state_covid_pui_patients",
+          "state_total_covid_pui_in_hospital",
+          "state_total_covid_pui_in_icu",
+          "state_icu_capacity",
+          "state_icu_available",
+          "state_vent_capacity",
+          "state_vents_available",
+          "state_Ventilators_open_pct",
+          "state_ventilators_in_use",
+          "state_ventilators_in_use_covid",
+          "state_ventilators_covid_patients_pct",
+          "state_total_beds",
+          "state_total_beds_available",
+          "state_total_beds_used",
+          "total_in_use_beds_non_covid",
+          "total_in_use_beds_covid",
+          "state_pct_beds_covid_pui",
+          "state_pct_hospital_beds_available",
+          "state_icu_open_beds",
+          "state_icu_beds_used",
+          "state_icu_open_beds_pct"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {},
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "data",
+          "title": "Download Clinical",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "location",
+        "fieldMapping": [
+          {
+            "field": "community_area",
+            "name": "Chicago Neigborhood"
+          },
+          {
+            "field": "reporting_org",
+            "name": "IL Reporting Organization"
+          },
+          {
+            "field": "deaths_per_10000",
+            "name": "Chicago Neighborhood Deaths per 10,000"
+          },
+          {
+            "field": "staffed_all_beds",
+            "name": "Staffed Beds"
+          },
+          {
+            "field": "staffed_icu_beds",
+            "name": "ICU Beds"
+          },
+          {
+            "field": "population_gtr_65",
+            "name": "Population Greater Than 65"
+          },
+          {
+            "field": "estimated_full_mech_ventilators",
+            "name": "Estimated Ventilators"
+          },
+          {
+            "field": "estimated_full_mech_pediatric_ventilators",
+            "name": "Estimated Pediatric Ventilators"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "reporting_org",
+            "name": "Reporting Organization"
+          },
+          {
+            "field": "state_region_description",
+            "name": "IL Hospital Region"
+          },
+          {
+            "field": "region_icu_avail",
+            "name": "IL Region ICU Availability"
+          },
+          {
+            "field": "region_icu_capacity",
+            "name": "IL Region ICU Capacity"
+          },
+          {
+            "field": "region_vents_available",
+            "name": "IL Region Ventilators Available"
+          },
+          {
+            "field": "region_vents_capacity",
+            "name": "IL Region Ventilators Capacity"
+          },
+          {
+            "field": "state_icu_capacity",
+            "name": "IL ICU Capacity"
+          },
+          {
+            "field": "state_icu_covid_patients",
+            "name": "IL ICU COVID-19 Patients"
+          },
+          {
+            "field": "state_vent_capacity",
+            "name": "IL Ventilator Capacity"
+          },
+          {
+            "field": "state_vent_covid_patients",
+            "name": "IL Ventilator COVID-19 Patients"
+          },
+          {
+            "field": "state_ventilators_in_use_covid",
+            "name": "IL Ventilators In Use COVID-19"
+          },
+          {
+            "field": "state_icu_available",
+            "name": "IL ICU Available"
+          },
+          {
+            "field": "state_vents_available",
+            "name": "IL Ventilators Available"
+          },
+          {
+            "field": "state_total_beds",
+            "name": "IL Total Beds"
+          },
+          {
+            "field": "state_total_beds_available",
+            "name": "IL Total Beds Available "
+          },
+          {
+            "field": "state_total_beds_used",
+            "name": "IL Total Beds Used"
+          },
+          {
+            "field": "state_pct_hospital_beds_available",
+            "name": "IL Percentage Hospital Bed Available"
+          },
+          {
+            "field": "state_icu_open_beds",
+            "name": "IL ICU Open Beds"
+          },
+          {
+            "field": "state_icu_beds_used",
+            "name": "IL ICU Beds in Use"
+          },
+          {
+            "field": "state_icu_open_beds_pct",
+            "name": "IL ICU Open Beds Percentage"
+          },
+          {
+            "field": "state_covid_pui_patients",
+            "name": "IL COVID-19 PUI Patients"
+          },
+          {
+            "field": "state_Ventilators_open_pct",
+            "name": "IL Ventilators Open Percentage"
+          },
+          {
+            "field": "state_ventilators_in_use",
+            "name": "IL Ventilators In Use"
+          },
+          {
+            "field": "state_ventilators_covid_patients_pct",
+            "name": "IL Ventilators COVID-19 Patients Percentage"
+          },
+          {
+            "field": "state_covid_patients_non_icu",
+            "name": "IL COVID-19 Patients Non ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_icu",
+            "name": "IL Total COVID-19 PUI ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_hospital",
+            "name": "IL COVID-19 PUI Hospitalized"
+          },
+          {
+            "field": "state_pct_beds_covid_pui",
+            "name": "IL Percentage Beds COVID-19 PUI"
+          },
+          {
+            "field": "total_in_use_beds_non_covid",
+            "name": "IL Total In Use Non-COVID-19 Beds "
+          },
+          {
+            "field": "total_in_use_beds_covid",
+            "name": "IL Total In Use COVID-19 Beds"
           }
         ],
-        "guppyConfig": {
-          "dataType": "location",
-          "fieldMapping": [
-            {
-              "field": "community_area",
-              "name": "Chicago Neigborhood"
-            },
-            {
-              "field": "reporting_org",
-              "name": "IL Reporting Organization"
-            },
-            {
-              "field": "deaths_per_10000",
-              "name": "Chicago Neighborhood Deaths per 10,000"
-            },
-            {
-              "field": "staffed_all_beds",
-              "name": "Staffed Beds"
-            },
-            {
-              "field": "staffed_icu_beds",
-              "name": "ICU Beds"
-            },
-            {
-              "field": "population_gtr_65",
-              "name": "Population Greater Than 65"
-            },
-            {
-              "field": "estimated_full_mech_ventilators",
-              "name": "Estimated Ventilators"
-            },
-            {
-              "field": "estimated_full_mech_pediatric_ventilators",
-              "name": "Estimated Pediatric Ventilators"
-            },
-            {
-              "field": "province_state",
-              "name": "Province or State"
-            },
-            {
-              "field": "country_region",
-              "name": "Country or Region"
-            },
-            {
-              "field": "project_url",
-              "name": "Source URL"
-            },
-            {
-              "field": "project_code",
-              "name": "Code"
-            },
-            {
-              "field": "project_name",
-              "name": "Dataset"
-            },
-            {
-              "field": "project_investigator_affiliation",
-              "name": "Source"
-            },
-            {
-              "field": "reporting_org",
-              "name": "Reporting Organization"
-            },
-            {
-              "field": "state_region_description",
-              "name": "IL Hospital Region"
-            },
-            {
-              "field": "region_icu_avail",
-              "name": "IL Region ICU Availability"
-            },
-            {
-              "field": "region_icu_capacity",
-              "name": "IL Region ICU Capacity"
-            },
-            {
-              "field": "region_vents_available",
-              "name": "IL Region Ventilators Available"
-            },
-            {
-              "field": "region_vents_capacity",
-              "name": "IL Region Ventilators Capacity"
-            },
-            {
-              "field": "state_icu_capacity",
-              "name": "IL ICU Capacity"
-            },
-            {
-              "field": "state_icu_covid_patients",
-              "name": "IL ICU COVID-19 Patients"
-            },
-            {
-              "field": "state_vent_capacity",
-              "name": "IL Ventilator Capacity"
-            },
-            {
-              "field": "state_vent_covid_patients",
-              "name": "IL Ventilator COVID-19 Patients"
-            },
-            {
-              "field": "state_ventilators_in_use_covid",
-              "name": "IL Ventilators In Use COVID-19"
-            },
-            {
-              "field": "state_icu_available",
-              "name": "IL ICU Available"
-            },
-            {
-              "field": "state_vents_available",
-              "name": "IL Ventilators Available"
-            },
-            {
-              "field": "state_total_beds",
-              "name": "IL Total Beds"
-            },
-            {
-              "field": "state_total_beds_available",
-              "name": "IL Total Beds Available "
-            },
-            {
-              "field": "state_total_beds_used",
-              "name": "IL Total Beds Used"
-            },
-            {
-              "field": "state_pct_hospital_beds_available",
-              "name": "IL Percentage Hospital Bed Available"
-            },
-            {
-              "field": "state_icu_open_beds",
-              "name": "IL ICU Open Beds"
-            },
-            {
-              "field": "state_icu_beds_used",
-              "name": "IL ICU Beds in Use"
-            },
-            {
-              "field": "state_icu_open_beds_pct",
-              "name": "IL ICU Open Beds Percentage"
-            },
-            {
-              "field": "state_covid_pui_patients",
-              "name": "IL COVID-19 PUI Patients"
-            },
-            {
-              "field": "state_Ventilators_open_pct",
-              "name": "IL Ventilators Open Percentage"
-            },
-            {
-              "field": "state_ventilators_in_use",
-              "name": "IL Ventilators In Use"
-            },
-            {
-              "field": "state_ventilators_covid_patients_pct",
-              "name": "IL Ventilators COVID-19 Patients Percentage"
-            },
-            {
-              "field": "state_covid_patients_non_icu",
-              "name": "IL COVID-19 Patients Non ICU"
-            },
-            {
-              "field": "state_total_covid_pui_in_icu",
-              "name": "IL Total COVID-19 PUI ICU"
-            },
-
-            {
-              "field": "state_total_covid_pui_in_hospital",
-              "name": "IL COVID-19 PUI Hospitalized"
-            },
-            {
-              "field": "state_pct_beds_covid_pui",
-              "name": "IL Percentage Beds COVID-19 PUI"
-            },
-            {
-              "field": "total_in_use_beds_non_covid",
-              "name": "IL Total In Use Non-COVID-19 Beds "
-            },
-            {
-              "field": "total_in_use_beds_covid",
-              "name": "IL Total In Use COVID-19 Beds"
-            }
-          ],
-          "nodeCountTitle": "Locations",
-          "manifestMapping": {
-            "referenceIdFieldInResourceIndex": "project_id",
-            "referenceIdFieldInDataIndex": "project_id"
-          }
-        }
+        "nodeCountTitle": "Locations",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
+    }
   ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
@@ -878,7 +934,7 @@
             }
           }
         ],
-        [   
+        [
           {
             "title": "Cook County Daily Cases",
             "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
