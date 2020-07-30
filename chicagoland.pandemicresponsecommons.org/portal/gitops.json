@@ -132,7 +132,8 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "explorerPublic": true
   },
   "analysisTools": [],
   "explorerConfig": [
@@ -184,7 +185,9 @@
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "code"
-        }
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -336,7 +339,9 @@
         ],
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
-        }
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -462,11 +467,9 @@
           "referenceIdFieldInResourceIndex": "object_id",
           "referenceIdFieldInDataIndex": "object_id"
         },
-        "accessibleFieldCheckList": [
-          "project_id"
-        ],
-        "accessibleValidationField": "project_id",
-        "downloadAccessor": "object_id"
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
     {
@@ -800,7 +803,9 @@
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "project_id",
           "referenceIdFieldInDataIndex": "project_id"
-        }
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     }
   ],
