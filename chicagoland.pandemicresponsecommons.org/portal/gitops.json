@@ -862,14 +862,23 @@
               "xAxisProp": "county",
               "yAxisProp": "testing",
               "filters": {
-                "=": {
-                  "project_id": "open-IDPH"
-                }
+                "AND": [
+                  {
+                    "=": {
+                      "project_id": "open-IDPH"
+                    }
+                  },
+                  {
+                    "!=": {
+                      "county": "Illinois"
+                    }
+                  }
+                ]
               }
             }
           }
         ],
-        [
+        [   
           {
             "title": "Cook County Daily Cases",
             "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
