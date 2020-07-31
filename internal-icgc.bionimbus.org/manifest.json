@@ -28,13 +28,10 @@
   "arborist": {
     "deployment_version": "2"
   },
-  "indexd": {
-    "arborist": "true"
-  },
   "global": {
     "environment": "icgc",
-    "hostname": "icgc.bionimbus.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:446046036926:certificate/cf0052c5-18cc-43f3-9ae7-920568c73247",
+    "hostname": "internal-icgc.bionimbus.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:446046036926:certificate/78c19346-d853-454c-9cec-bbc0e3590d64",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/tcga_dictionary/1.0.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-icgc-gen3",
@@ -52,15 +49,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "icgc_etl",
+        "index": "internal-icgc_etl",
         "type": "subject"
       },
       {
-        "index": "icgc_file",
+        "index": "internal-icgc_file",
         "type": "file"
       }
     ],
-    "config_index": "icgc_array-config",
+    "config_index": "internal-icgc_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {

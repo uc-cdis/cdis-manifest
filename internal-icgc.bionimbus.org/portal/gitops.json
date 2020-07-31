@@ -1,0 +1,261 @@
+{
+  "gaTrackingId": "UA-119127212-5",
+  "graphql": {
+    "boardCounts": [
+      {
+        "graphql": "_project_count",
+        "name": "Project",
+        "plural": "Projects"
+      }
+    ],
+    "chartCounts": [
+      {
+        "graphql": "_project_count",
+        "name": "project"
+      }
+    ],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "Bionimbus PDC for ICGC",
+    "index": {
+      "introduction": {
+        "heading": "",
+        "text": "Bionimbus Protected Data Cloud hosts an ICGC Data Commons for downloading ICGC PCAWG and DREAM Challenge data.",
+        "link": "/submission"
+      },
+      "buttons": [
+        {
+          "name": "Explore Files",
+          "icon": "stage-explore",
+          "body": "The Exploration Page allows you to download data files and gives you insights and a clear overview under selected factors.",
+          "link": "/files",
+          "label": "Explore data"
+        },
+        {
+          "name": "Access Data",
+          "icon": "stage-access",
+          "body": "Query files: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
+          "link": "/query",
+          "label": "Query data"
+        }
+      ],
+      "homepageChartNodes": [
+        {
+          "node": "project",
+          "name": "projects"
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
+        },
+        {
+          "icon": "exploration",
+          "link": "/files",
+          "color": "#a2a2a2",
+          "name": "Exploration"
+        },
+        {
+          "icon": "query",
+          "link": "/query",
+          "color": "#a2a2a2",
+          "name": "Query"
+        },
+        {
+          "icon": "profile",
+          "link": "/identity",
+          "color": "#a2a2a2",
+          "name": "Profile"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Browse Data"
+        },
+        {
+          "link": "https://docs.icgc.org/pcawg/data/#download-from-pdc",
+          "name": "PCAWG Access Documentation"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Gen3 Documentation"
+        }
+      ]
+    },
+    "login": {
+      "title": "ICGC Bionimbus",
+      "subTitle": "Explore, Analyze, and Download Data",
+      "text": "This website supports the management, analysis and sharing of human disease Files for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
+      "contact": "If you have any questions about access or the registration process, please see https://docs.icgc.org/pcawg/data/#apply-for-data-access or contact ",
+      "email": "support@datacommons.io",
+      "image": "stage-icons/stage-gene"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/src/img/sponsors/ICGC.png",
+        "href": "https://docs.icgc.org/pcawg/",
+        "alt": "ICGC PCAWG"
+      }
+    ]
+  },
+  "requiredCerts": [],
+  "featureFlags": {
+    "explorer": true
+  },
+  "dataExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "count",
+        "title": "Projects"
+      },
+      "node_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Projects",
+          "fields": [
+            "project_id"
+          ]
+        }
+      ]
+    },
+    "dropdowns": {
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      }
+    ],
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "subject_id"
+      }
+    }
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "pie",
+        "title": "Project ID"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      },
+      "experimental_strategy": {
+        "chartType": "stackedBar",
+        "title": "Experimental Strategy"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format",
+            "data_category",
+            "analysis_type",
+            "experimental_strategy",
+            "primary_site",
+            "specimen_type"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "submitter_id",
+        "file_name",
+        "file_size",
+        "object_id",
+        "data_type",
+        "data_format",
+        "data_category",
+        "analysis_type",
+        "experimental_strategy",
+        "donor_barcode",
+        "specimen_barcode",
+        "sample_barcode",
+        "aliquot_barcode",
+        "primary_site",
+        "specimen_type",
+        "dcc_file_id"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "downloadAccessor": "object_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download File Metadata",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "data.json"
+      }
+    ],
+    "dropdowns": {}
+  }
+}

@@ -85,6 +85,7 @@ mappings:
           - name: testing
           - name: total_in_use_beds_non_covid
           - name: total_in_use_beds_covid
+          - name: totalTestsViral
         sorted_by: updated_datetime, desc
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
@@ -98,7 +99,6 @@ mappings:
       - name: country
       - name: visiting_wuhan
       - name: from_wuhan
-      - name: travel_history_location
       - name: death
       - name: recovered
       - name: reporting_date
