@@ -201,7 +201,7 @@
           "chartType": "pie",
           "title": "Gender"
         },
-        "country": {
+        "country_region": {
           "chartType": "bar",
           "title": "Country"
         },
@@ -222,18 +222,21 @@
           {
             "title": "Clinical",
             "fields": [
-              "hospital",
-              "symptoms",
-              "current_state",
-              "source",
-              "infection_case",
-              "finding",
+              
+              "covid_19_status",
               "vital_status",
-              "intubated",
+              "icu_status",
+              "hospital",
+              "needed_supplemental_O2",
+              "condition",
+              "symptoms",
+              "reporting_source",
+              "exposure",
+              "pneumonia_type",
+              "ventilator_status",
               "extubated",
               "pO2_saturation",
               "leukocyte_count",
-              "neutrophil_count",
               "view",
               "study_doi"
             ]
@@ -243,12 +246,11 @@
             "fields": [
               "age",
               "gender",
-              "nationality",
-              "country",
-              "province",
+              "ethnicity",
+              "country_region",
+              "province_state",
               "city",
-              "from_wuhan",
-              "visiting_wuhan"
+              "travel_history_location"
             ]
           }
         ]
@@ -262,25 +264,25 @@
           "project_name",
           "age",
           "gender",
-          "nationality",
-          "country",
-          "province",
+          "ethnicity",
+          "country_region",
+          "province_state",
           "city",
-          "from_wuhan",
-          "visiting_wuhan",
+          "covid_19_status",
+          "vital_status",
+          "isolation_status",
+          "icu_status",
+          "ventilator_status",
           "hospital",
           "symptoms",
-          "current_state",
-          "infection_case",
-          "finding",
-          "intubated",
+          "exposure",
+          "pneumonia_type",
           "extubated",
           "pO2_saturation",
           "leukocyte_count",
-          "neutrophil_count",
           "view",
           "study_doi",
-          "source"
+          "reporting_source"
         ],
         "linkFields": [
           "project_url"
@@ -305,10 +307,6 @@
             "name": "Source URL"
           },
           {
-            "field": "infection_case",
-            "name": "Exposure"
-          },
-          {
             "field": "project_code",
             "name": "Code"
           },
@@ -317,12 +315,24 @@
             "name": "Dataset"
           },
           {
-            "field": "source",
-            "name": "Reporting Source"
-          },
-          {
             "field": "project_investigator_affiliation",
             "name": "Source"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "covid_19_status",
+            "name": "COVID-19 Status"
+          },
+          {
+            "field": "icu_status",
+            "name": "ICU Status"
           },
           {
             "field": "pO2_saturation",
@@ -867,7 +877,7 @@
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "covid19DashboardConfig": {
-    "dataUrl": "https://opendata.datacommons.io/",
+    "dataUrl": "https://static.planx-pla.net/",
     "chartsConfig": {
       "world": [
         [
