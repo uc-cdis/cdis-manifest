@@ -84,7 +84,6 @@ mappings:
     doc_type: medical_history
     type: aggregator
     root: case
-    category: medical_history
     props:
       - name: project_id
       - name: submitter_id
