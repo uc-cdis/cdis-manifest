@@ -145,174 +145,306 @@
   "featureFlags": {
     "explorer": true
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "explorerConfig": [
+    {
+      "tabTitle": "Studies",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Studies",
+            "fields": [
+              "project_id",
+              "study_setup",
+              "study_objective",
+              "study_design",
+              "associated_study"
+            ]
+          }
+        ]
       },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
-      },
-      "ethnicity": {
-        "chartType": "bar",
-        "title": "Ethnicity"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Case",
-          "fields":[
-            "project_id",
-            "gender",
-            "race",
-            "ethnicity"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "ethnicity",
-        "race",
-        "gender",
-        "submitter_id",
-        "data_format",
-        "data_type",
-        "_aliquots_count",
-        "_analytes_count",
-        "_biospecimens_count",
-        "_cell_images_count",
-        "_mass_cytometry_assays_count",
-        "_mass_cytometry_images_count",
-        "_read_groups_count",
-        "_samples_count",
-        "_slide_images_count",
-        "_submitted_aligned_reads_files_count",
-        "_submitted_methylations_count",
-        "_submitted_somatic_mutations_count",
-        "_submitted_unaligned_reads_files_count"
-      ]
-    },
-    "buttons": [
-      {
+      "table": {
         "enabled": true,
-        "type": "data",
-        "title": "Download Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json"
+        "fields": [
+          "project_id",
+          "submitter_id",
+          "study_setup",
+          "study_objective",
+          "study_design",
+          "study_description",
+          "data_description",
+          "associated_study"
+        ],
+        "linkFields": [
+          "url"
+        ]
       },
-      {
-        "enabled": false,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "study",
+        "nodeCountTitle": "Studies",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "submitter_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Cases",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Demographics",
+            "fields":[
+              "project_id",
+              "index_date",
+              "lost_to_followup",
+              "gender",
+              "days_to_birth",
+              "race",
+              "ethnicity"
+            ]
+          },
+          {
+            "title": "Medical History",
+            "fields": [
+              "project_id",
+              "comorbidity",
+              "days_to_comorbidity",
+              "age_at_diagnosis",
+              "best_overall_response",
+              "classification_of_tumor",
+              "days_to_best_overall_response",
+              "days_to_diagnosis",
+              "morphology",
+              "primary_diagnosis",
+              "prior_treatment",
+              "tissue_or_organ_of_origin",
+              "tumor_grade",
+              "ajcc_clinical_stage",
+              "overall_survival",
+              "progression_free_survival",
+              "ajcc_pathologic_stage",
+              "method_of_diagnosis",
+              "ajcc_pathologic_n",
+              "ajcc_pathologic_t",
+              "ajcc_pathologic_m",
+              "analyte_name",
+              "days_to_test",
+              "test_result",
+              "test_sample_composition",
+              "test_type",
+              "test_units",
+              "test_value",
+              "days_to_followup",
+              "time_from_alcohol",
+              "time_from_biopsy",
+              "time_from_exercise",
+              "time_from_food",
+              "time_from_physical_trauma",
+              "time_from_recreational_drugs",
+              "time_from_tobacco",
+              "time_from_treatment",
+              "therapeutic_agents",
+              "treatment_intent_type",
+              "treatment_type",
+              "days_to_treatment_start",
+              "regimen_or_line_of_therapy",
+              "days_to_treatment_end",
+              "treatment_class",
+              "dosage",
+              "dosage_units"
+            ]
+          }
+        ]
       },
-      {
+      "table": {
         "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      }
-    ],
-    "arrangerConfig": {
-      "projectId": "search",
-      "graphqlField": "case",
-      "index": "",
-      "nodeCountField": "project_id"
-    },
-    "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
-      "fieldMapping": [],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "case_id"
+        "fields": [
+          "project_id",
+          "index_date",
+          "lost_to_followup",
+          "gender",
+          "days_to_birth",
+          "race",
+          "ethnicity",
+          "comorbidity",
+          "days_to_comorbidity",
+          "age_at_diagnosis",
+          "best_overall_response",
+          "classification_of_tumor",
+          "days_to_best_overall_response",
+          "days_to_diagnosis",
+          "morphology",
+          "primary_diagnosis",
+          "prior_treatment",
+          "tissue_or_organ_of_origin",
+          "tumor_grade",
+          "ajcc_clinical_stage",
+          "overall_survival",
+          "progression_free_survival",
+          "ajcc_pathologic_stage",
+          "method_of_diagnosis",
+          "ajcc_pathologic_n",
+          "ajcc_pathologic_t",
+          "ajcc_pathologic_m",
+          "analyte_name",
+          "days_to_test",
+          "test_result",
+          "test_sample_composition",
+          "test_type",
+          "test_units",
+          "test_value",
+          "days_to_followup",
+          "time_from_alcohol",
+          "time_from_biopsy",
+          "time_from_exercise",
+          "time_from_food",
+          "time_from_physical_trauma",
+          "time_from_recreational_drugs",
+          "time_from_tobacco",
+          "time_from_treatment",
+          "therapeutic_agents",
+          "treatment_intent_type",
+          "treatment_type",
+          "days_to_treatment_start",
+          "regimen_or_line_of_therapy",
+          "days_to_treatment_end",
+          "treatment_class",
+          "dosage",
+          "dosage_units",
+          "_aliquots_count",
+          "_analytes_count",
+          "_biospecimens_count",
+          "_cell_images_count",
+          "_mass_cytometry_assays_count",
+          "_mass_cytometry_images_count",
+          "_read_groups_count",
+          "_samples_count",
+          "_slide_images_count",
+          "_submitted_aligned_reads_files_count",
+          "_submitted_methylations_count",
+          "_submitted_somatic_mutations_count",
+          "_submitted_unaligned_reads_files_count"
+        ]
       },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
-    }
-  },
-  "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
+      "buttons": [
         {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format"
-          ]
+          "enabled": true,
+          "type": "data",
+          "title": "Download Table",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": false,
+          "type": "manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export Table to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
       ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "case_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
+      "guppyConfig": {
+        "dataType": "case",
+        "nodeCountTitle": "Cases",
+        "fieldMapping": [],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "case_id",
+          "referenceIdFieldInDataIndex": "case_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
-    ],
-    "dropdowns": {}
-  }
+    },
+    {
+      "tabTitle": "Files",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "Data Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "Data Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format",
+              "data_category",
+              "file_size",
+              "experimental_strategy"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "submitter_id",
+          "object_id",
+          "file_name",
+          "file_size",
+          "data_type",
+          "data_format",
+          "data_category",
+          "experimental_strategy"
+        ]
+      },
+      "dropdowns": {},
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "file-manifest",
+          "title": "Download Object Data Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "case",
+          "resourceIdField": "case_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
+      }
+    }
+  ]
 }

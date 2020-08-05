@@ -96,10 +96,10 @@ mappings:
     props:
       - name: project_id
       - name: vital_status
-      - name: covid_19_status  
-      - name: date_confirmation 
+      - name: covid_19_status
+      - name: date_confirmation
       - name: travel_history_location
-      - name: infected_by  
+      - name: infected_by
     flatten_props:
       - path: demographics
         props:
@@ -129,7 +129,7 @@ mappings:
           - name: hospital
           - name: pneumonia_type
           - name: ventilator_status
-        sorted_by: updated_datetime, desc          
+        sorted_by: updated_datetime, desc
       - path: follow_ups
         props:
           - name: extubated

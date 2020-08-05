@@ -1,15 +1,33 @@
 mappings:
-  - name: bloodpac_etl
+  - name: bloodpac_study
+    doc_type: study
+    type: aggregator
+    root: study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_setup
+      - name: study_objective
+      - name: study_design
+      - name: study_description
+      - name: data_description
+      - name: associated_study
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
+  - name: bloodpac_case
     doc_type: case
     type: aggregator
     root: case
     props:
-      - name: submitter_id
       - name: project_id
+      - name: submitter_id
+      - name: index_date
+      - name: lost_to_followup
     flatten_props:
       - path: demographics
         props:
           - name: gender
+          - name: days_to_birth
           - name: race
           - name: ethnicity
     aggregated_props:
@@ -62,18 +80,85 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+  - name: bloodpac_medical_history
+    doc_type: medical_history
+    type: aggregator
+    root: case
+    flatten_props:
+      - path: comorbidities
+        props:
+          - name: comorbidity
+          - name: days_to_comorbidity
+        sorted_by: updated_datetime, desc
+      - path: diagnoses
+        props:
+          - name: age_at_diagnosis
+          - name: best_overall_response
+          - name: classification_of_tumor
+          - name: days_to_best_overall_response
+          - name: days_to_diagnosis
+          - name: morphology
+          - name: primary_diagnosis
+          - name: prior_treatment
+          - name: tissue_or_organ_of_origin
+          - name: tumor_grade
+          - name: ajcc_clinical_stage
+          - name: overall_survival
+          - name: progression_free_survival
+          - name: ajcc_pathologic_stage
+          - name: method_of_diagnosis
+          - name: ajcc_pathologic_n
+          - name: ajcc_pathologic_t
+          - name: ajcc_pathologic_m
+        sorted_by: updated_datetime, desc
+      - path: diagnostic_tests
+        props:
+          - name: analyte_name
+          - name: days_to_test
+          - name: test_result
+          - name: test_sample_composition
+          - name: test_type
+          - name: test_units
+          - name: test_value
+        sorted_by: updated_datetime, desc
+      - path: followups
+        props:
+          - name: days_to_followup
+          - name: time_from_alcohol
+          - name: time_from_biopsy
+          - name: time_from_exercise
+          - name: time_from_food
+          - name: time_from_physical_trauma
+          - name: time_from_recreational_drugs
+          - name: time_from_tobacco
+          - name: time_from_treatment
+        sorted_by: updated_datetime, desc
+      - path: treatments
+        props:
+          - name: therapeutic_agents
+          - name: treatment_intent_type
+          - name: treatment_type
+          - name: days_to_treatment_start
+          - name: regimen_or_line_of_therapy
+          - name: days_to_treatment_end
+          - name: treatment_class
+          - name: dosage
+          - name: dosage_units
+        sorted_by: updated_datetime, desc
   - name: bloodpac_file
     doc_type: file
     type: collector
     root: None
     category: data_file
     props:
+      - name: submitter_id
       - name: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
       - name: data_format
       - name: data_type
+      - name: data_category
       - name: state
     injecting_props:
       case:
