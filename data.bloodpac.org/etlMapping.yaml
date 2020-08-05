@@ -84,6 +84,9 @@ mappings:
     doc_type: medical_history
     type: aggregator
     root: case
+    props:
+      - name: project_id
+      - name: submitter_id
     flatten_props:
       - path: comorbidities
         props:
