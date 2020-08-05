@@ -76,7 +76,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "bloodpac_etl",
+        "index": "bloodpac_study",
+        "type": "study"
+      },
+      {
+        "index": "bloodpac_case",
+        "type": "case"
+      },
+      {
+        "index": "bloodpac_medical_history",
         "type": "case"
       },
       {
