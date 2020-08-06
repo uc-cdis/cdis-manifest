@@ -146,6 +146,93 @@
     "explorer": true
   },
   "explorerConfig": [
+      {
+          "tabTitle": "Studies",
+          "charts": {},
+          "filters": {
+            "tabs": [
+              {
+                "title": "Studies",
+                "fields":[
+                  "project_id",
+                  "study_setup",
+                  "study_objective",
+                  "study_design"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "project_id",
+              "submitter_id",
+              "study_description",
+              "data_description",
+              "study_setup",
+              "study_objective",
+              "study_design",
+              "associated_study",
+              "_aliquots_count",
+              "_analytes_count",
+              "_biospecimens_count",
+              "_cell_images_count",
+              "_mass_cytometry_assays_count",
+              "_mass_cytometry_images_count",
+              "_read_groups_count",
+              "_samples_count",
+              "_slide_images_count",
+              "_submitted_aligned_reads_files_count",
+              "_submitted_methylations_count",
+              "_submitted_somatic_mutations_count",
+              "_submitted_unaligned_reads_files_count"
+            ]
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Clinical",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "clinical.json"
+            },
+            {
+              "enabled": false,
+              "type": "manifest",
+              "title": "Download Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "manifest.json"
+            },
+            {
+              "enabled": true,
+              "type": "export-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "arrangerConfig": {
+            "projectId": "search",
+            "graphqlField": "study",
+            "index": "",
+            "nodeCountField": "project_id"
+          },
+          "guppyConfig": {
+            "dataType": "study",
+            "nodeCountTitle": "Studies",
+            "fieldMapping": [],
+            "manifestMapping": {
+              "resourceIndexType": "file",
+              "resourceIdField": "object_id",
+              "referenceIdFieldInResourceIndex": "case_id",
+              "referenceIdFieldInDataIndex": "case_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id"
+          }
+    },
     {
         "tabTitle": "Cases",
         "charts": {
