@@ -80,6 +80,100 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+  - name: bloodpac_sample
+    doc_type: sample
+    type: aggregator
+    root: biospecimen
+    props:
+      - name: biospecimen_anatomic_site
+      - name: biospecimen_type
+      - name: blood_tube_type
+      - name: days_to_collection
+      - name: days_to_procurement
+      - name: method_of_procurement
+      - name: procured_or_purchased
+      - name: tissue_type
+      - name: disease_type
+      - name: shipping_temperature
+      - name: tumor_code
+      - name: tumor_morphology
+      - name: days_to_collection_not_reported
+      - name: days_to_procurement_not_reported
+      - name: biospecimen_volume
+      - name: blood_draw_method
+      - name: clinical_site
+      - name: primary_site
+      - name: tumor_descriptor
+      - name: days_to_collection
+      - name: days_to_procurement
+      - name: procurement_temperature
+      - name: metastatic_bone
+      - name: metastatic_visceral
+      - name: metastatic_lymph_node
+      - name: biospecimen_weight
+    flatten_props:
+      - path: samples
+        props:
+          - name: composition
+          - name: hours_to_fractionation_lower
+          - name: hours_to_fractionation_upper
+          - name: blood_fractionation_method
+          - name: hours_to_fractionation_lower
+          - name: hours_to_fractionation_upper
+          - name: sample_volume
+          - name: storage_agitation
+          - name: storage_agitation_hours
+        sorted_by: updated_datetime, desc
+      - path: samples.aliquots
+        props:
+          - name: aliquot_container
+          - name: clinical_or_contrived
+          - name: hours_to_freezer_lower
+          - name: hours_to_freezer_upper
+          - name: preservation_method
+          - name: storage_temperature
+          - name: aliquot_volume
+          - name: methanol_added
+          - name: hours_to_freezer_lower
+          - name: hours_to_freezer_lower_other
+          - name: hours_to_freezer_upper
+          - name: hours_to_freezer_upper_other
+          - name: aliquot_quantity
+          - name: contrivance_method
+        sorted_by: updated_datetime, desc
+      - path: samples.aliquots.analytes
+        props:
+          - name: analyte_isolation_method
+          - name: analyte_type
+          - name: cell_type
+          - name: cell_identifier
+          - name: frame_identifier
+          - name: run_identifier
+          - name: days_to_assay
+        sorted_by: updated_datetime, desc
+      - path: samples.aliquots.analytes.read_groups
+        props:
+          - name: instrument_model
+          - name: is_paired_end
+          - name: library_preparation_kit_name
+          - name: library_preparation_kit_vendor
+          - name: library_preparation_kit_version
+          - name: library_strategy
+          - name: platform
+          - name: read_group_name
+          - name: read_length_lower
+          - name: read_length_upper
+          - name: barcoding_applied
+          - name: target_capture_kit_name
+          - name: library_name
+          - name: library_selection
+          - name: sequencing_center
+          - name: library_strand
+          - name: flow_cell_barcode
+          - name: adapter_sequence
+          - name: library_preparation_kit_catalog_number
+          - name: cycles
+        sorted_by: updated_datetime, desc
   - name: bloodpac_medical_history
     doc_type: medical_history
     type: aggregator
