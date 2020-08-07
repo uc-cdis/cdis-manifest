@@ -13,6 +13,9 @@ mappings:
       - name: data_description
       - name: associated_study
     aggregated_props:
+      - name: _cases_count
+        path: cases
+        fn: count
       - name: _biospecimens_count
         path: cases.biospecimens
         fn: count
@@ -25,17 +28,14 @@ mappings:
       - name: _analytes_count
         path: cases.biospecimens.samples.aliquots.analytes
         fn: count
-      - name: _cell_images_count
-        path: cases.biospecimens.samples.aliquots.analytes.cell_images
+      - name: _read_groups_count
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups
         fn: count
       - name: _immunoassays_count
         path: cases.biospecimens.samples.aliquots.analytes.immunoassays
         fn: count
-      - name: _mass_cytometry_assays_count
-        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays
-        fn: count
-      - name: _mass_cytometry_images_count
-        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
+      - name: _cell_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.cell_images
         fn: count
       - name: _pcr_assays_count
         path: cases.biospecimens.samples.aliquots.analytes.pcr_assays
@@ -43,8 +43,11 @@ mappings:
       - name: _pcr_assay_files_count
         path: cases.biospecimens.samples.aliquots.analytes.pcr_assays.pcr_assay_files
         fn: count
-      - name: _read_groups_count
-        path: cases.biospecimens.samples.aliquots.analytes.read_groups
+      - name: _mass_cytometry_assays_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays
+        fn: count
+      - name: _mass_cytometry_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
         fn: count
       - name: _slide_images_count
         path: cases.biospecimens.samples.aliquots.slide_images
@@ -81,43 +84,52 @@ mappings:
           - name: ethnicity
     aggregated_props:
       - name: _biospecimens_count
-        path: biospecimens
+        path: cases.biospecimens
         fn: count
       - name: _samples_count
-        path: biospecimens.samples
+        path: cases.biospecimens.samples
         fn: count
       - name: _aliquots_count
-        path: biospecimens.samples.aliquots
+        path: cases.biospecimens.samples.aliquots
         fn: count
       - name: _analytes_count
-        path: biospecimens.samples.aliquots.analytes
-        fn: count
-      - name: _cell_images_count
-        path: biospecimens.samples.aliquots.analytes.cell_images
-        fn: count
-      - name: _mass_cytometry_assays_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
-        fn: count
-      - name: _mass_cytometry_images_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
+        path: cases.biospecimens.samples.aliquots.analytes
         fn: count
       - name: _read_groups_count
-        path: biospecimens.samples.aliquots.analytes.read_groups
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups
+        fn: count
+      - name: _immunoassays_count
+        path: cases.biospecimens.samples.aliquots.analytes.immunoassays
+        fn: count
+      - name: _cell_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.cell_images
+        fn: count
+      - name: _pcr_assays_count
+        path: cases.biospecimens.samples.aliquots.analytes.pcr_assays
+        fn: count
+      - name: _pcr_assay_files_count
+        path: cases.biospecimens.samples.aliquots.analytes.pcr_assays.pcr_assay_files
+        fn: count
+      - name: _mass_cytometry_assays_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays
+        fn: count
+      - name: _mass_cytometry_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
         fn: count
       - name: _slide_images_count
-        path: biospecimens.samples.aliquots.slide_images
+        path: cases.biospecimens.samples.aliquots.slide_images
         fn: count
       - name: _submitted_aligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
         fn: count
       - name: _submitted_methylations_count
-        path: biospecimens.samples.aliquots.analytes.submitted_methylation_files
+        path: cases.biospecimens.samples.aliquots.analytes.submitted_methylation_files
         fn: count
       - name: _submitted_somatic_mutations_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
         fn: count
       - name: _submitted_unaligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
         fn: count
     joining_props:
       - index: file
