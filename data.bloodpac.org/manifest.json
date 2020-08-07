@@ -84,8 +84,16 @@
         "type": "case"
       },
       {
-        "index": "bloodpac_sample",
-        "type": "sample"
+        "index": "bloodpac_biospecimen",
+        "type": "biospecimen"
+      },
+      {
+        "index": "bloodpac_aliquot",
+        "type": "aliquot"
+      },
+      {
+        "index": "bloodpac_read_group",
+        "type": "read_group"
       },
       {
         "index": "bloodpac_medical_history",
