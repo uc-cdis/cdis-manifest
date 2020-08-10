@@ -1,15 +1,85 @@
 mappings:
-  - name: bloodpac_etl
+  - name: bloodpac_study
+    doc_type: study
+    type: aggregator
+    root: study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_setup
+      - name: study_objective
+      - name: study_design
+      - name: study_description
+      - name: data_description
+      - name: associated_study
+    aggregated_props:
+      - name: _cases_count
+        path: cases
+        fn: count
+      - name: _biospecimens_count
+        path: cases.biospecimens
+        fn: count
+      - name: _samples_count
+        path: cases.biospecimens.samples
+        fn: count
+      - name: _aliquots_count
+        path: cases.biospecimens.samples.aliquots
+        fn: count
+      - name: _analytes_count
+        path: cases.biospecimens.samples.aliquots.analytes
+        fn: count
+      - name: _read_groups_count
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups
+        fn: count
+      - name: _immunoassays_count
+        path: cases.biospecimens.samples.aliquots.analytes.immunoassays
+        fn: count
+      - name: _cell_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.cell_images
+        fn: count
+      - name: _pcr_assays_count
+        path: cases.biospecimens.samples.aliquots.analytes.pcr_assays
+        fn: count
+      - name: _pcr_assay_files_count
+        path: cases.biospecimens.samples.aliquots.analytes.pcr_assays.pcr_assay_files
+        fn: count
+      - name: _mass_cytometry_assays_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays
+        fn: count
+      - name: _mass_cytometry_images_count
+        path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
+        fn: count
+      - name: _slide_images_count
+        path: cases.biospecimens.samples.aliquots.slide_images
+        fn: count
+      - name: _submitted_aligned_reads_files_count
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
+        fn: count
+      - name: _submitted_methylations_count
+        path: cases.biospecimens.samples.aliquots.analytes.submitted_methylation_files
+        fn: count
+      - name: _submitted_somatic_mutations_count
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
+        fn: count
+      - name: _submitted_unaligned_reads_files_count
+        path: cases.biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
+        fn: count
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
+  - name: bloodpac_case
     doc_type: case
     type: aggregator
     root: case
     props:
-      - name: submitter_id
       - name: project_id
+      - name: submitter_id
+      - name: index_date
+      - name: lost_to_followup
     flatten_props:
       - path: demographics
         props:
           - name: gender
+          - name: days_to_birth
           - name: race
           - name: ethnicity
     aggregated_props:
@@ -25,17 +95,26 @@ mappings:
       - name: _analytes_count
         path: biospecimens.samples.aliquots.analytes
         fn: count
+      - name: _read_groups_count
+        path: biospecimens.samples.aliquots.analytes.read_groups
+        fn: count
+      - name: _immunoassays_count
+        path: biospecimens.samples.aliquots.analytes.immunoassays
+        fn: count
       - name: _cell_images_count
         path: biospecimens.samples.aliquots.analytes.cell_images
+        fn: count
+      - name: _pcr_assays_count
+        path: biospecimens.samples.aliquots.analytes.pcr_assays
+        fn: count
+      - name: _pcr_assay_files_count
+        path: biospecimens.samples.aliquots.analytes.pcr_assays.pcr_assay_files
         fn: count
       - name: _mass_cytometry_assays_count
         path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
         fn: count
       - name: _mass_cytometry_images_count
         path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
-        fn: count
-      - name: _read_groups_count
-        path: biospecimens.samples.aliquots.analytes.read_groups
         fn: count
       - name: _slide_images_count
         path: biospecimens.samples.aliquots.slide_images
@@ -62,18 +141,187 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+  - name: bloodpac_biospecimen
+    doc_type: biospecimen
+    type: aggregator
+    root: biospecimen
+    props:
+      - name: biospecimen_anatomic_site
+      - name: biospecimen_type
+      - name: blood_tube_type
+      - name: days_to_collection
+      - name: days_to_procurement
+      - name: method_of_procurement
+      - name: procured_or_purchased
+      - name: tissue_type
+      - name: disease_type
+      - name: shipping_temperature
+      - name: tumor_code
+      - name: tumor_morphology
+      - name: days_to_collection_not_reported
+      - name: days_to_procurement_not_reported
+      - name: biospecimen_volume
+      - name: blood_draw_method
+      - name: clinical_site
+      - name: primary_site
+      - name: tumor_descriptor
+      - name: days_to_collection
+      - name: days_to_procurement
+      - name: procurement_temperature
+      - name: metastatic_bone
+      - name: metastatic_visceral
+      - name: metastatic_lymph_node
+      - name: biospecimen_weight
+    flatten_props:
+      - path: samples
+        props:
+          - name: composition
+          - name: hours_to_fractionation_lower
+          - name: hours_to_fractionation_upper
+          - name: blood_fractionation_method
+          - name: hours_to_fractionation_lower
+          - name: hours_to_fractionation_upper
+          - name: sample_volume
+          - name: storage_agitation
+          - name: storage_agitation_hours
+        sorted_by: updated_datetime, desc
+  - name: bloodpac_aliquot
+    doc_type: aliquot
+    type: aggregator
+    root: aliquot
+    props:
+      - name: aliquot_container
+      - name: clinical_or_contrived
+      - name: hours_to_freezer_lower
+      - name: hours_to_freezer_upper
+      - name: preservation_method
+      - name: storage_temperature
+      - name: aliquot_volume
+      - name: methanol_added
+      - name: hours_to_freezer_lower
+      - name: hours_to_freezer_lower_other
+      - name: hours_to_freezer_upper
+      - name: hours_to_freezer_upper_other
+      - name: aliquot_quantity
+      - name: contrivance_method
+    flatten_props:
+      - path: analytes
+        props:
+          - name: analyte_isolation_method
+          - name: analyte_type
+          - name: cell_type
+          - name: cell_identifier
+          - name: frame_identifier
+          - name: run_identifier
+          - name: days_to_assay
+        sorted_by: updated_datetime, desc
+  - name: bloodpac_read_group
+    doc_type: read_group
+    type: aggregator
+    root: read_group
+    props:
+      - name: instrument_model
+      - name: is_paired_end
+      - name: library_preparation_kit_name
+      - name: library_preparation_kit_vendor
+      - name: library_preparation_kit_version
+      - name: library_strategy
+      - name: platform
+      - name: read_group_name
+      - name: read_length_lower
+      - name: read_length_upper
+      - name: barcoding_applied
+      - name: target_capture_kit_name
+      - name: library_name
+      - name: library_selection
+      - name: sequencing_center
+      - name: library_strand
+      - name: flow_cell_barcode
+      - name: adapter_sequence
+      - name: library_preparation_kit_catalog_number
+      - name: cycles
+  - name: bloodpac_medical_history
+    doc_type: medical_history
+    type: aggregator
+    root: case
+    props:
+      - name: project_id
+      - name: submitter_id
+    flatten_props:
+      - path: comorbidities
+        props:
+          - name: comorbidity
+          - name: days_to_comorbidity
+        sorted_by: updated_datetime, desc
+      - path: diagnoses
+        props:
+          - name: age_at_diagnosis
+          - name: best_overall_response
+          - name: classification_of_tumor
+          - name: days_to_best_overall_response
+          - name: days_to_diagnosis
+          - name: morphology
+          - name: primary_diagnosis
+          - name: prior_treatment
+          - name: tissue_or_organ_of_origin
+          - name: tumor_grade
+          - name: ajcc_clinical_stage
+          - name: overall_survival
+          - name: progression_free_survival
+          - name: ajcc_pathologic_stage
+          - name: method_of_diagnosis
+          - name: ajcc_pathologic_n
+          - name: ajcc_pathologic_t
+          - name: ajcc_pathologic_m
+        sorted_by: updated_datetime, desc
+      - path: diagnostic_tests
+        props:
+          - name: analyte_name
+          - name: days_to_test
+          - name: test_result
+          - name: test_sample_composition
+          - name: test_type
+          - name: test_units
+          - name: test_value
+        sorted_by: updated_datetime, desc
+      - path: followups
+        props:
+          - name: days_to_followup
+          - name: time_from_alcohol
+          - name: time_from_biopsy
+          - name: time_from_exercise
+          - name: time_from_food
+          - name: time_from_physical_trauma
+          - name: time_from_recreational_drugs
+          - name: time_from_tobacco
+          - name: time_from_treatment
+        sorted_by: updated_datetime, desc
+      - path: treatments
+        props:
+          - name: therapeutic_agents
+          - name: treatment_intent_type
+          - name: treatment_type
+          - name: days_to_treatment_start
+          - name: regimen_or_line_of_therapy
+          - name: days_to_treatment_end
+          - name: treatment_class
+          - name: dosage
+          - name: dosage_units
+        sorted_by: updated_datetime, desc
   - name: bloodpac_file
     doc_type: file
     type: collector
     root: None
     category: data_file
     props:
+      - name: submitter_id
       - name: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
       - name: data_format
       - name: data_type
+      - name: data_category
       - name: state
     injecting_props:
       case:

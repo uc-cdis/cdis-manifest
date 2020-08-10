@@ -85,6 +85,7 @@ mappings:
           - name: testing
           - name: total_in_use_beds_non_covid
           - name: total_in_use_beds_covid
+          - name: totalTestsViral
         sorted_by: updated_datetime, desc
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
@@ -94,45 +95,43 @@ mappings:
     root: subject
     props:
       - name: project_id
-      - name: symptoms
-      - name: country
-      - name: visiting_wuhan
-      - name: from_wuhan
+      - name: vital_status
+      - name: covid_19_status  
+      - name: date_confirmation 
       - name: travel_history_location
-      - name: death
-      - name: recovered
-      - name: reporting_date
-      - name: source
-      - name: age
-      - name: age_decade
-      - name: city
-      - name: date_confirmation
-      - name: date_death_or_discharge
-      - name: date_onset_symptoms
-      - name: disease
-      - name: infection_case
-      - name: province
-      - name: global_num
-      - name: contact_number
-      - name: isolated
-      - name: current_state
-      - name: infected_by
-      - name: released_date
-      - name: hospital
+      - name: infected_by  
     flatten_props:
       - path: demographics
         props:
           - name: gender
+          - name: age
+          - name: race
+          - name: ethnicity
+          - name: age_decade
           - name: year_of_birth
-          - name: nationality
-          - name: vital_status
+          - name: country_region
+          - name: province_state
+          - name: city
+      - path: observations
+        props:
+          - name: treatment_status
+          - name: isolation_status
+          - name: icu_status
+          - name: hospitalized_status
+          - name: needed_supplemental_O2
+          - name: condition
+          - name: symptoms
+          - name: reporting_date
+          - name: reporting_source
+          - name: date_onset_symptoms
+          - name: exposure
+          - name: released_date
+          - name: hospital
+          - name: pneumonia_type
+          - name: ventilator_status
+        sorted_by: updated_datetime, desc          
       - path: follow_ups
         props:
-          - name: finding
-          - name: intubated
-            value_mappings:
-              - Y: 'True'
-              - N: 'False'
           - name: extubated
             value_mappings:
               - Y: 'True'

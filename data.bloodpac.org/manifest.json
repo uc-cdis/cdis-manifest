@@ -4,25 +4,25 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.07",
+    "arborist": "quay.io/cdis/arborist:2020.08",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.07",
-    "indexd": "quay.io/cdis/indexd:2020.07",
-    "peregrine": "quay.io/cdis/peregrine:2020.07",
-    "pidgin": "quay.io/cdis/pidgin:2020.07",
-    "revproxy": "quay.io/cdis/nginx:2020.07",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.07",
-    "portal": "quay.io/cdis/data-portal:2020.07",
+    "fence": "quay.io/cdis/fence:2020.08",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.05",
-    "spark": "quay.io/cdis/gen3-spark:2020.07",
-    "tube": "quay.io/cdis/tube:2020.07",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.07",
-    "guppy": "quay.io/cdis/guppy:2020.07",
-    "hatchery": "quay.io/cdis/hatchery:2020.07",
+    "spark": "quay.io/cdis/gen3-spark:2020.08",
+    "tube": "quay.io/cdis/tube:2020.08",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.08",
+    "guppy": "quay.io/cdis/guppy:2020.08",
+    "hatchery": "quay.io/cdis/hatchery:2020.08",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "quay.io/cdis/workspace-token-service:2020.07",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.07"
+    "wts": "quay.io/cdis/workspace-token-service:2020.08",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.08"
   },
   "arborist": {
     "deployment_version": "2"
@@ -30,7 +30,7 @@
   "jupyterhub": {
     "enabled": "yes",
     "nb_storage_size": "250Gi",
-    "sidecar": "quay.io/cdis/gen3fuse-sidecar:2020.07",
+    "sidecar": "quay.io/cdis/gen3fuse-sidecar:2020.08",
     "containers": [
       {
         "name": "Bioinfo - Python/R",
@@ -76,8 +76,28 @@
   "guppy": {
     "indices": [
       {
-        "index": "bloodpac_etl",
+        "index": "bloodpac_study",
+        "type": "study"
+      },
+      {
+        "index": "bloodpac_case",
         "type": "case"
+      },
+      {
+        "index": "bloodpac_biospecimen",
+        "type": "biospecimen"
+      },
+      {
+        "index": "bloodpac_aliquot",
+        "type": "aliquot"
+      },
+      {
+        "index": "bloodpac_read_group",
+        "type": "read_group"
+      },
+      {
+        "index": "bloodpac_medical_history",
+        "type": "medical_history"
       },
       {
         "index": "bloodpac_file",
@@ -96,6 +116,11 @@
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "netpolicy": "on"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2020.07"
+    }
   },
   "canary": {
     "default": 0
