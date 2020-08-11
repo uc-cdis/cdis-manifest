@@ -25,7 +25,8 @@
     "guppy": "quay.io/cdis/guppy:2020.08",
     "manifestservice": "quay.io/cdis/manifestservice:2020.08",
     "dashboard": "quay.io/cdis/gen3-statics:2020.08",
-    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.1"
+    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.1",
+    "sower": "quay.io/cdis/sower:2020.08"
   },
   "global": {
     "environment": "covid19-prod",
@@ -119,6 +120,88 @@
       "indexing": "quay.io/cdis/indexs3client:2020.08"
     }
   },
+  "sower" : [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "serviceAccountName": "jobs-chicagoland-pandemicresponsecommons-org",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:2020.08",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "serviceAccountName": "jobs-chicagoland-pandemicresponsecommons-org",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:2020.08",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "guppy": {
     "indices": [
       {
