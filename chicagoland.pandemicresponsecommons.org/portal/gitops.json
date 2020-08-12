@@ -522,11 +522,7 @@
               "population_gtr_65",
               "estimated_full_mech_ventilators",
               "estimated_full_mech_pediatric_ventilators",
-              "npi",
               "provider_business_practice_city",
-              "provider_business_practice_st",
-              "provider_first_line_business_pr",
-              "provider_second_line_business_pr",
               "taxonomy_code",
               "provider_type",
               "provider_subtype",
@@ -816,14 +812,6 @@
           {
             "field": "total_in_use_beds_covid",
             "name": "IL Total In Use COVID-19 Beds"
-          },
-          {
-            "field": "npi",
-            "name": "National Provider Identifier"
-          },
-          {
-            "field": "provider_business_practice_st",
-            "name": "Provider Business Practice"
           }
         ],
         "nodeCountTitle": "Locations",
