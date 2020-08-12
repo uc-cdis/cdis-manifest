@@ -1,0 +1,64 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:2020.08",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "quay.io/cdis/fence:2020.08",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:feat_wireframe-poc",
+    "tube": "quay.io/cdis/tube:2020.08",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "quay.io/cdis/gen3-spark:2020.08"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "global": {
+    "environment": "niaiddata",
+    "hostname": "accessclinicaltrials.niaid.nih.gov",
+    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/4ad7a53b-9fdb-413d-8f8c-0cdb33057f1b\n",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/3.5.4/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-niaiddata-gen3",
+    "logs_bucket": "kube-niaiddata-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/nde/user.yaml",
+    "netpolicy": "on",
+    "tier_access_level": "libre",
+    "public_datasets": true
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "niaid",
+        "type": "subject"
+      },
+      {
+        "index": "niaid_follow_up",
+        "type": "follow_up"
+      },
+      {
+        "index": "niaid_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "niaid_array-config",
+    "auth_filter_field": "auth_resource_path"
+  }
+}
