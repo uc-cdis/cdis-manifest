@@ -134,13 +134,15 @@
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
     },
-    "footerLogos": [
-      {
-        "src": "/custom/sponsors/gitops-sponsors/niddk_white.png",
-        "href": "https://www.niddk.nih.gov",
-        "alt": "National Institute of Diabetes & Digestive & Kidney Diseases (NIDDK)"
-      }
-    ]
+    "footerLogos": [],
+    "footer": {
+      "links": [
+        {
+          "href": "https://www.niddk.nih.gov",
+          "text": "Funded by the National Institute of Diabetes & Digestive & Kidney Diseases (NIDDK)"
+        }
+      ]
+    }
   },
   "featureFlags": {
     "explorer": true
