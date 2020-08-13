@@ -344,6 +344,158 @@
         }
       },
       {
+          "tabTitle": "Biospecimens",
+          "charts": {
+            "project_id": {
+              "chartType": "count",
+              "title": "Projects"
+            },
+            "biospecimen_anatomic_site": {
+              "chartType": "bar",
+              "title": "Anatomic Site"
+            },
+            "biospecimen_type": {
+              "chartType": "pie",
+              "title": "Biospecimen Type"
+            },
+            "blood_tube_type": {
+              "chartType": "bar",
+              "title": "Blood Tube Type"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "Biospecimens",
+                "fields":[
+                  "project_id",
+                  "biospecimen_anatomic_site",
+                  "biospecimen_type",
+                  "blood_tube_type",
+                  "days_to_collection",
+                  "days_to_procurement",
+                  "method_of_procurement",
+                  "procured_or_purchased",
+                  "tissue_type",
+                  "disease_type",
+                  "shipping_temperature",
+                  "tumor_code",
+                  "tumor_morphology",
+                  "days_to_collection_not_reported",
+                  "days_to_procurement_not_reported",
+                  "biospecimen_volume",
+                  "blood_draw_method",
+                  "clinical_site",
+                  "primary_site",
+                  "tumor_descriptor",
+                  "days_to_collection",
+                  "days_to_procurement",
+                  "procurement_temperature",
+                  "metastatic_bone",
+                  "metastatic_visceral",
+                  "metastatic_lymph_node",
+                  "biospecimen_weight",
+                  "composition",
+                  "hours_to_fractionation_lower",
+                  "hours_to_fractionation_upper",
+                  "blood_fractionation_method",
+                  "hours_to_fractionation_lower",
+                  "hours_to_fractionation_upper",
+                  "sample_volume",
+                  "storage_agitation",
+                  "storage_agitation_hours"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "project_id",
+              "submitter_id",
+              "biospecimen_anatomic_site",
+              "biospecimen_type",
+              "blood_tube_type",
+              "days_to_collection",
+              "days_to_procurement",
+              "method_of_procurement",
+              "procured_or_purchased",
+              "tissue_type",
+              "disease_type",
+              "shipping_temperature",
+              "tumor_code",
+              "tumor_morphology",
+              "days_to_collection_not_reported",
+              "days_to_procurement_not_reported",
+              "biospecimen_volume",
+              "blood_draw_method",
+              "clinical_site",
+              "primary_site",
+              "tumor_descriptor",
+              "days_to_collection",
+              "days_to_procurement",
+              "procurement_temperature",
+              "metastatic_bone",
+              "metastatic_visceral",
+              "metastatic_lymph_node",
+              "biospecimen_weight",
+              "composition",
+              "hours_to_fractionation_lower",
+              "hours_to_fractionation_upper",
+              "blood_fractionation_method",
+              "hours_to_fractionation_lower",
+              "hours_to_fractionation_upper",
+              "sample_volume",
+              "storage_agitation",
+              "storage_agitation_hours"
+            ]
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Biospecimens",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "biospecimen.json"
+            },
+            {
+              "enabled": false,
+              "type": "manifest",
+              "title": "Download Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "manifest.json"
+            },
+            {
+              "enabled": true,
+              "type": "export-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "arrangerConfig": {
+            "projectId": "search",
+            "graphqlField": "biospecimen",
+            "index": "",
+            "nodeCountField": "project_id"
+          },
+          "guppyConfig": {
+            "dataType": "biospecimen",
+            "nodeCountTitle": "Biospecimens",
+            "fieldMapping": [],
+            "manifestMapping": {
+              "resourceIndexType": "file",
+              "resourceIdField": "object_id",
+              "referenceIdFieldInResourceIndex": "case_id",
+              "referenceIdFieldInDataIndex": "case_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id"
+          }
+      },
+      {
         "tabTitle": "Files",
         "charts": {
           "data_type": {

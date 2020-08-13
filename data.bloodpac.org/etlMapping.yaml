@@ -146,6 +146,8 @@ mappings:
     type: aggregator
     root: biospecimen
     props:
+      - name: project_id
+      - name: submitter_id
       - name: biospecimen_anatomic_site
       - name: biospecimen_type
       - name: blood_tube_type
@@ -190,6 +192,8 @@ mappings:
     type: aggregator
     root: aliquot
     props:
+      - name: project_id
+      - name: submitter_id
       - name: aliquot_container
       - name: clinical_or_contrived
       - name: hours_to_freezer_lower
@@ -220,6 +224,8 @@ mappings:
     type: aggregator
     root: read_group
     props:
+      - name: project_id
+      - name: submitter_id
       - name: instrument_model
       - name: is_paired_end
       - name: library_preparation_kit_name
