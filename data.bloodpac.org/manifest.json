@@ -75,22 +75,34 @@
   },
   "guppy": {
     "indices": [
-      {
-        "index": "bloodpac_study",
-        "type": "study"
-      },
-      {
-        "index": "bloodpac_case",
-        "type": "case"
-      },
-      {
-        "index": "bloodpac_biospecimen",
-        "type": "biospecimen"
-      },
-      {
-        "index": "bloodpac_file",
-        "type": "file"
-      }
+        {
+          "index": "bloodpac_study",
+          "type": "study"
+        },
+        {
+          "index": "bloodpac_case",
+          "type": "case"
+        },
+        {
+          "index": "bloodpac_medical_history",
+          "type": "medical_history"
+        },
+        {
+          "index": "bloodpac_biospecimen",
+          "type": "biospecimen"
+        },
+        {
+          "index": "bloodpac_aliquot",
+          "type": "aliquot"
+        },
+        {
+          "index": "bloodpac_read_group",
+          "type": "read_group"
+        },
+        {
+          "index": "bloodpac_file",
+          "type": "file"
+        }
     ],
     "config_index": "bloodpac_array-config",
     "auth_filter_field": "auth_resource_path"
