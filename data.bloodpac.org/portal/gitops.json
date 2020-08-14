@@ -148,7 +148,24 @@
   "explorerConfig": [
       {
           "tabTitle": "Studies",
-          "charts": {},
+          "charts": {
+            "project_id": {
+              "chartType": "count",
+              "title": "Projects"
+            },
+            "study_setup": {
+              "chartType": "bar",
+              "title": "Study Setup"
+            },
+            "study_objective": {
+              "chartType": "bar",
+              "title": "Study Objective"
+            },
+            "study_design": {
+              "chartType": "bar",
+              "title": "Study Design"
+            }
+          },
           "filters": {
             "tabs": [
               {
@@ -400,7 +417,12 @@
                   "metastatic_bone",
                   "metastatic_visceral",
                   "metastatic_lymph_node",
-                  "biospecimen_weight",
+                  "biospecimen_weight"
+                ]
+              },
+              {
+                "title": "Samples",
+                "fields":[
                   "composition",
                   "hours_to_fractionation_lower",
                   "hours_to_fractionation_upper",
@@ -536,7 +558,12 @@
                     "hours_to_freezer_upper",
                     "hours_to_freezer_upper_other",
                     "aliquot_quantity",
-                    "contrivance_method",
+                    "contrivance_method"
+                  ]
+                },
+                {
+                  "title": "Analytes",
+                  "fields":[
                     "analyte_isolation_method",
                     "analyte_type",
                     "cell_type",
@@ -766,11 +793,21 @@
             "filters": {
               "tabs": [
                 {
-                  "title": "Medical History",
+                  "title": "Projects",
                   "fields":[
-                    "project_id",
+                    "project_id"
+                  ]
+                },
+                {
+                  "title": "Comorbidities",
+                  "fields":[
                     "comorbidity",
-                    "days_to_comorbidity",
+                    "days_to_comorbidity"
+                  ]
+                },
+                {
+                  "title": "Diagnoses",
+                  "fields":[
                     "age_at_diagnosis",
                     "best_overall_response",
                     "classification_of_tumor",
@@ -788,14 +825,24 @@
                     "method_of_diagnosis",
                     "ajcc_pathologic_n",
                     "ajcc_pathologic_t",
-                    "ajcc_pathologic_m",
+                    "ajcc_pathologic_m"
+                  ]
+                },
+                {
+                  "title": "Diagnostic Tests",
+                  "fields":[
                     "analyte_name",
                     "days_to_test",
                     "test_result",
                     "test_sample_composition",
                     "test_type",
                     "test_units",
-                    "test_value",
+                    "test_value"
+                  ]
+                },
+                {
+                  "title": "Followups",
+                  "fields":[
                     "days_to_followup",
                     "time_from_alcohol",
                     "time_from_biopsy",
@@ -804,7 +851,12 @@
                     "time_from_physical_trauma",
                     "time_from_recreational_drugs",
                     "time_from_tobacco",
-                    "time_from_treatment",
+                    "time_from_treatment"
+                  ]
+                },
+                {
+                  "title": "Treatments",
+                  "fields":[
                     "therapeutic_agents",
                     "treatment_intent_type",
                     "treatment_type",
