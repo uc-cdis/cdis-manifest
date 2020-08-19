@@ -18,6 +18,7 @@ mappings:
       - name: reporting_org
       - name: state_hospital_region
       - name: state_region_description
+      - name: city
     flatten_props:
       - path: summary_clinicals
         props:
@@ -86,6 +87,9 @@ mappings:
           - name: total_in_use_beds_non_covid
           - name: total_in_use_beds_covid
           - name: totalTestsViral
+          - name: provider_type
+          - name: provider_subtype
+          - name: detailed_specialty
         sorted_by: updated_datetime, desc
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
