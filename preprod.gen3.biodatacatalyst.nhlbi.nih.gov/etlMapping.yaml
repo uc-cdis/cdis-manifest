@@ -147,11 +147,6 @@ mappings:
           - name: bucket_path
             src: id
             fn: set
-      reference_file_index:
-        props:
-          - name: bucket_path
-            src: id
-            fn: set 
       subject:
         props:
           - name: subject_id
