@@ -1,93 +1,16 @@
 S3_BUCKETS:
+  nci-cbiit-caninedatacommons-file:
+    cred: 'fence_bot'
   tcga-protected-dcf-databucket-gen3:
     cred: 'fence_bot'
   tcga-public-dcf-databucket-gen3:
     cred: 'fence_bot'
-  target-controlled:
+  pdcdatastore-controlled:
     cred: 'fence_bot'
-  tcga-2-open:
+    region: 'us-east-1'
+  dev-testing-bucketfor-matchdata:
     cred: 'fence_bot'
-  tcga-2-controlled:
+    region: 'us-east-1'
+  dcf-staging-data-bucket:
     cred: 'fence_bot'
-  pdcdatastore:
-    cred: 'fence_bot'
-  gdc-beataml1.0-crenolanib-phs001628-controlled:
-    cred: 'fence_bot'
-  gdc-ccle-controlled:
-    cred: 'fence_bot'
-  gdc-cgci-blgsp-phs000235-controlled:
-    cred: 'fence_bot'
-  gdc-cptac-phs001287-controlled:
-    cred: 'fence_bot'
-  gdc-ctsp-phs001175-controlled:
-    cred: 'fence_bot'
-  gdc-fm-ad-phs001179-controlled:
-    cred: 'fence_bot'
-  gdc-hcmi-cmdc-phs001486-controlled:
-    cred: 'fence_bot'
-  gdc-mmrf-commpass-phs000748-controlled:
-    cred: 'fence_bot'
-  gdc-nciccr-phs001444-controlled:
-    cred: 'fence_bot'
-  gdc-organoid-pancreatic-phs001611-2-controlled:
-    cred: 'fence_bot'
-  gdc-varepop-apollo-phs001374-controlled:
-    cred: 'fence_bot'
-  nci-cbiit-caninedatacommons-file:
-    cred: 'fence_bot'
-  gdc-cptac-2-phs000892-controlled:
-    cred: 'fence_bot'
-  gdc-genie-phs001337-controlled:
-    cred: 'fence_bot'
-  cds-54-phs000178:
-    cred: 'fence_bot'
-  cds-211-phs001713:
-    cred: 'fence_bot'
-  cds-207-phs001787:
-    cred: 'fence_bot'
-  cds-212-phs001437:
-    cred: 'fence_bot'
-  gdc-target-phs000218-2-open:
-    cred: 'fence_bot'
-  gdc-nciccr-phs001444-2-open:
-    cred: 'fence_bot'
-  gdc-beataml1-cohort-phs001657-2-open:
-    cred: 'fence_bot'
-  gdc-beataml1.0-crenolanib-phs001628-2-open:
-    cred: 'fence_bot'
-  gdc-cgci-blgsp-phs000235-2-open:
-    cred: 'fence_bot'
-  gdc-cptac-2-phs000892-2-open:
-    cred: 'fence_bot'
-  gdc-cptac-phs001287-2-open:
-    cred: 'fence_bot'
-  gdc-ctsp-phs001175-2-open:
-    cred: 'fence_bot'
-  gdc-fm-ad-phs001179-2-open:
-    cred: 'fence_bot'
-  gdc-genie-phs001337-2-open:
-    cred: 'fence_bot'
-  gdc-hcmi-cmdc-phs001486-2-open:
-    cred: 'fence_bot'
-  gdc-mmrf-commpass-phs000748-2-open:
-    cred: 'fence_bot'
-  gdc-nciccr-phs001444-2-open:
-    cred: 'fence_bot'
-  gdc-ohsu-cnl-phs001799-2-open:
-    cred: 'fence_bot'
-  gdc-organoid-pancreatic-phs001611-2-open:
-    cred: 'fence_bot'
-  gdc-varepop-apollo-phs001374-2-open:
-    cred: 'fence_bot'
-  gdc-ccle-2-open:
-    cred: 'fence_bot'
-  sddp-phs001554:
-    cred: 'fence_bot'
-  cds-225-phs001859:
-    cred: 'fence_bot'
-  cds-223-phs001926:
-    cred: 'fence_bot'
-  gdc-beataml1-cohort-phs001657-2-controlled:
-    cred: 'fence_bot'
-  dcfprod-data-bucket:
-    cred: 'fence_bot'
+    region: 'us-east-1'
