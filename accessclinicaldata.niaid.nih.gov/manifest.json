@@ -28,8 +28,8 @@
   },
   "global": {
     "environment": "niaiddata",
-    "hostname": "accessclinicaltrials.niaid.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/4ad7a53b-9fdb-413d-8f8c-0cdb33057f1b",
+    "hostname": "accessclinicaldata.niaid.nih.gov",
+    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/61c84d3f-f5bb-4bb4-a90b-8b50216580ee",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/3.5.4/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
