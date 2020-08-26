@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "512Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:2020.07",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.08",
     "env": {
       "NAMESPACE": "internalanvil",
       "HOSTNAME": "internalstaging.theanvil.io"
