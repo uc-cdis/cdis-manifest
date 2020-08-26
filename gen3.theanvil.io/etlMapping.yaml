@@ -1,5 +1,5 @@
 mappings:
-  - name: internalstaging-anvil_etl
+  - name: gen3.theanvil.io_subject
     doc_type: subject
     type: aggregator
     root: subject
@@ -90,7 +90,7 @@ mappings:
       - path: projects[project_short_name:short_name]
       - path: projects[project_dbgap_accession_number:dbgap_accession_number]
 
-  - name: internalstaging-anvil_file
+  - name: gen3.theanvil.io_file
     doc_type: file
     type: collector
     root: None
