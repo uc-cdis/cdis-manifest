@@ -391,7 +391,9 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "callset",
+            "bucket_path"
           ]
         }
       ]
@@ -402,7 +404,8 @@
         "project_id",
         "file_name",
         "file_size",
-        "object_id"
+        "object_id",
+        "callset"
       ]
     },
     "guppyConfig": {
