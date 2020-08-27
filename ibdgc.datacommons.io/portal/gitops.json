@@ -147,157 +147,177 @@
   "featureFlags": {
     "explorer": true
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "explorerConfig": [
+    {
+      "tabTitle": "Data",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Projects"
+        },
+        "gender": {
+          "chartType": "pie",
+          "title": "Gender"
+        },
+        "country": {
+          "chartType": "stackedBar",
+          "title": "Country"
+        },
+        "ibd_affection_status": {
+          "chartType": "pie",
+          "title": "IBD Affection Status"
+        },
+        "diagnosis": {
+          "chartType": "pie",
+          "title": "Diagnosis"
+        }
       },
-      "gender": {
-        "chartType":"pie",
-        "title": "Gender"
+      "filters": {
+        "tabs": [
+          {
+            "title": "Participants",
+            "fields": [
+              "project_id",
+              "gender",
+              "ibd_affection_status",
+              "diagnosis"
+            ]
+          },
+          {
+            "title": "Centers",
+            "fields": [
+              "project_id",
+              "name",
+              "country",
+              "investigator_name"
+            ]
+          }
+        ]
       },
-      "country": {
-        "chartType": "stackedBar"
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_id",
+          "gender",
+          "race",
+          "country",
+          "jewish",
+          "hispanic",
+          "ibd_affection_status",
+          "diagnosis",
+          "population_control",
+          "_samples_count"
+        ]
       },
-      "ibd_affection_status": {
-        "chartType": "pie",
-        "title": "IBD Affection Status"
-      },
-      "diagnosis": {
-        "chartType": "pie",
-        "title": "Diagnosis"
-      }
-    },
-    "filters": {
-      "tabs": [
+      "buttons": [
         {
-          "title": "Participant",
-          "fields":[
-            "project_id",
-            "gender",
-            "ibd_affection_status",
-            "diagnosis"
-          ]
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
         },
         {
-          "title":"Centers",
-          "fields":[
-            "project_id",
-            "name",
-            "country",
-            "investigator_name"
-          ]  
-        }
-      ]
-    },
-    "table": {
-      "enabled": false,
-      "fields": [
-        "project_id",
-        "gender",
-        "race",
-        "country",
-        "jewish",
-        "hispanic",
-        "ibd_affection_status",
-        "diagnosis",
-        "population_control",
-        "_samples_count"
-      ]
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "external-link"
-      },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "participant",
-      "nodeCountTitle": "Participants",
-      "fieldMapping": [
-        { "field": "project_id", "name": "Project ID" },
-        { "field": "ibd_affection_status", "name": "IBD Affection Status"},
-        { "field": "name", "name": "Center Name"}
-      ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "participant_id",
-        "referenceIdFieldInDataIndex": "participant_id"
-      }
-    }
-  },
-  "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
         {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format"
-          ]
+          "enabled": true,
+          "type": "data",
+          "title": "Download Clinical Data",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical-data.json"
         }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID"},
-        { "field": "project_id", "name": "Project ID" }
       ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "participant",
-        "resourceIdField": "participant_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "downloadAccessor": "object_id"
+      "guppyConfig": {
+        "dataType": "participant",
+        "nodeCountTitle": "Participants",
+        "fieldMapping": [
+          { "field": "project_id", "name": "Project ID" },
+          { "field": "ibd_affection_status", "name": "IBD Affection Status"},
+          { "field": "name", "name": "Center Name"}
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
     },
-    "dropdowns": {}
-  },
+    {
+      "tabTitle": "Files",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Files",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" },
+          { "field": "project_id", "name": "Project ID" }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "participant",
+          "resourceIdField": "participant_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id"
+      },
+      "dropdowns": {}
+    }
+  ],
   "resourceBrowser": {
     "title": "NIDDK IBDGC Notebooks",
     "public": true,
