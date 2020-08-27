@@ -291,6 +291,12 @@
         "rightIcon": "external-link"
       },
       {
+        "enabled": true, 
+        "type": "export-to-seven-bridges",
+        "title": "Export All to Seven Bridges", 
+        "rightIcon": "external-link"
+      },
+      {
         "enabled": true,
         "type": "export-to-pfb",
         "title": "Export to PFB",
@@ -371,7 +377,8 @@
     "terraTemplate": [ 
       "bdc",
       "gen3"
-    ]
+    ],
+    "sevenBridgesExportURL": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill"
   },
   "fileExplorerConfig": {
     "charts": {
