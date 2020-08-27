@@ -59,6 +59,12 @@
 				"host": "https://nci-crdc.datacommons.io/index/",
 				"hints": [],
 				"type": "indexd"
+			},
+			{
+				"name": "AnVIL",
+				"host": "https://gen3.theanvil.io/index/",
+				"hints": [".*dg\\.ANV0.*"],
+				"type": "indexd"
 			}
 		]
 	}
