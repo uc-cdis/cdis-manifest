@@ -1,5 +1,5 @@
 mappings:
-  - name: internalstaging_etl
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_subject
     doc_type: subject
     type: aggregator
     root: subject
@@ -127,7 +127,7 @@ mappings:
           - name: file_count
             src: file_id
             fn: count
-  - name: internalstaging_file
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_file
     doc_type: file
     type: collector
     root: None
