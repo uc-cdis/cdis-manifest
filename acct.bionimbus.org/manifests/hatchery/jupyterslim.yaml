@@ -1,0 +1,31 @@
+version: '3'
+services:
+   webapp:
+      image: "quay.io/cdis/jupyter-notebook:master"
+      volumes:
+         - ${DATA_VOLUME}:/data
+         - ${USER_VOLUME}:/home/jovyan/pd
+      entrypoint:
+        - "start-notebook.sh"
+      command:
+        - "--NotebookApp.base_url=/lw-workspace/proxy"
+        - "--NotebookApp.password=''"
+        - "--NotebookApp.token=''"
+      environment:
+        - NAMESPACE=default
+        - HOSTNAME=acct.bionimbus.org
+      ports: 
+         - "${SERVICE_PORT}:8888"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8888/lw-workspace/proxy/"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3
+      deploy:
+        resources:
+          limits:
+            cpus: '0.50'
+            memory: 256M
+          reservations:
+            cpus: '0.25'
+            memory: 128M

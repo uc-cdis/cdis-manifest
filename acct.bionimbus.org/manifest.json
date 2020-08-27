@@ -8,9 +8,11 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "quay.io/cdis/arborist:2020.08",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:2020.08",
+    "hatchery": "quay.io/cdis/hatchery:2020.08",
     "indexd": "quay.io/cdis/indexd:2020.08",
     "peregrine": "quay.io/cdis/peregrine:2020.08",
     "pidgin": "quay.io/cdis/pidgin:2020.08",
@@ -21,8 +23,8 @@
     "spark": "quay.io/cdis/gen3-spark:2020.08",
     "tube": "quay.io/cdis/tube:2020.08",
     "guppy": "quay.io/cdis/guppy:2020.08",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:2020.05",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.08"
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.08",
+    "wts": "quay.io/cdis/workspace-token-service:2020.08"
   },
   "arborist": {
     "deployment_version": "2"
