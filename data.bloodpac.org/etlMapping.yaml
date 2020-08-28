@@ -167,8 +167,6 @@ mappings:
       - name: clinical_site
       - name: primary_site
       - name: tumor_descriptor
-      - name: days_to_collection
-      - name: days_to_procurement
       - name: procurement_temperature
       - name: metastatic_bone
       - name: metastatic_visceral
@@ -181,8 +179,6 @@ mappings:
           - name: hours_to_fractionation_lower
           - name: hours_to_fractionation_upper
           - name: blood_fractionation_method
-          - name: hours_to_fractionation_lower
-          - name: hours_to_fractionation_upper
           - name: sample_volume
           - name: storage_agitation
           - name: storage_agitation_hours
@@ -196,8 +192,6 @@ mappings:
       - name: submitter_id
       - name: aliquot_container
       - name: clinical_or_contrived
-      - name: hours_to_freezer_lower
-      - name: hours_to_freezer_upper
       - name: preservation_method
       - name: storage_temperature
       - name: aliquot_volume
