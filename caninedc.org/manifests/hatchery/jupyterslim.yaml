@@ -13,7 +13,7 @@ services:
         - "--NotebookApp.token=''"
       environment:
         - NAMESPACE=default
-        - HOSTNAME=acct.bionimbus.org
+        - HOSTNAME=caninedc.org
       ports: 
          - "${SERVICE_PORT}:8888"
       healthcheck:
