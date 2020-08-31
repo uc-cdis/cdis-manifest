@@ -3,9 +3,9 @@
   "sub-dir": "/lw-workspace",
   "user-volume-size": "500Gi",
   "sidecar": {
-    "cpu-limit": "0.5",
+    "cpu-limit": "1.0",
     "memory-limit": "512Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:2020.07",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.08",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "gen3.theanvil.io"
@@ -68,8 +68,8 @@
     },
     {
       "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "6000Mi",
+      "cpu-limit": "4.0",
+      "memory-limit": "15512Mi",
       "name": "Jupyter Notebook Power Python",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
       "env": {},
