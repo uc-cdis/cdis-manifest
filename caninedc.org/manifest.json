@@ -101,33 +101,6 @@
       "restart_policy": "Never"
     }
   ],
-  "jupyterhub": {
-    "enabled": "yes",
-    "sidecar": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.09",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1.0,
-        "memory": "1024M",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1.0,
-        "memory": "2.0G",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.3"
-      }
-    ]
-  },
-  "peregrine": {
-    "sidecar": "True"
-  },
   "global": {
     "environment": "canineprod",
     "hostname": "caninedc.org",
