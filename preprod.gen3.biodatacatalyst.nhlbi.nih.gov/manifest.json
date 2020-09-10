@@ -187,7 +187,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:2.0.0",
+        "image": "quay.io/cdis/manifest-indexing:2.0.2",
         "pull_policy": "Always",
         "env": [
           {
