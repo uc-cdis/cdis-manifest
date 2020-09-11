@@ -76,10 +76,6 @@
         {
           "node": "study",
           "name": "Studies"
-        },	
-        {	
-          "node": "aliquot",	
-          "name": "Aliquots"	
         }
       ]
     },
@@ -294,11 +290,11 @@
         "title": "Export All to Terra",
         "rightIcon": "external-link"
       },
-      {	
-        "enabled": true,	
-        "type": "export-to-seven-bridges",	
-        "title": "Export All to Seven Bridges",	
-        "rightIcon": "external-link"	
+      {
+        "enabled": true, 
+        "type": "export-to-seven-bridges",
+        "title": "Export All to Seven Bridges", 
+        "rightIcon": "external-link"
       },
       {
         "enabled": true,
@@ -377,12 +373,12 @@
       "accessibleValidationField": "project_id"
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
-    "terraExportURL": "https://dev.terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
+    "terraExportURL": "https://terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
     "terraTemplate": [ 
       "bdc",
       "gen3"
     ],
-    "sevenBridgesExportURL": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill"
+    "sevenBridgesExportURL": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill"
   },
   "fileExplorerConfig": {
     "charts": {
@@ -402,7 +398,9 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "callset",
+            "bucket_path"
           ]
         }
       ]
@@ -413,7 +411,8 @@
         "project_id",
         "file_name",
         "file_size",
-        "object_id"
+        "object_id",
+        "callset"
       ]
     },
     "guppyConfig": {
