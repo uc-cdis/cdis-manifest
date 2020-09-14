@@ -206,27 +206,35 @@
     "filters": {
       "tabs": [
         {
-          "title": "Medical History",
+          "title": "Project",
           "fields": [
-            "cac_score",
-            "cac_volume",
-            "carotid_plaque",
-            "carotid_stenosis",
-            "cimt_1",
-            "cimt_2",
-            "vte_case_status",
-            "vte_followup_start_age",
-            "vte_prior_history",
-            "antihypertensive_meds",
-            "fasting_lipids",
-            "lipid_lowering_medication"
+            "project_id",
+            "consent_codes",
+            "studies_submitter_id",
+            "geographic_site",
+            "data_type",
+            "data_format"            
           ]
         },
         {
-          "title": "Diagnosis",
+          "title": "Subject",
           "fields": [
+            "annotated_sex",
+            "race",
+            "ethnicity",
+            "hispanic_subgroup",
+            "subcohort"            
+          ]
+        },
+        {
+          "title": "Harmonized Variables",
+          "fields": [
+            "weight_baseline",
+            "bmi_baseline",
+            "height_baseline",
+            "current_smoker_baseline",
+            "ever_smoker_baseline",
             "bp_diastolic",
-            "bp_systolic",
             "basophil_ncnc_bld",
             "eosinophil_ncnc_bld",
             "hdl",
@@ -245,27 +253,19 @@
             "rdw_ratio_rbc",
             "wbc_ncnc_bld",
             "total_cholesterol",
-            "triglycerides"
-          ]
-        },
-        {
-          "title": "Subject",
-          "fields": [
-            "project_id",
-            "consent_codes",
-            "data_type",
-            "data_format",
-            "race",
-            "annotated_sex",
-            "hispanic_subgroup",
-            "ethnicity",
-            "subcohort",
-            "weight_baseline",
-            "bmi_baseline",
-            "height_baseline",
-            "current_smoker_baseline",
-            "ever_smoker_baseline",
-            "geographic_site"
+            "triglycerides",
+            "cac_score",
+            "cac_volume",
+            "carotid_plaque",
+            "carotid_stenosis",
+            "cimt_1",
+            "cimt_2",
+            "vte_case_status",
+            "vte_followup_start_age",
+            "vte_prior_history",
+            "antihypertensive_meds",
+            "fasting_lipids",
+            "lipid_lowering_medication"
           ]
         }
       ]
@@ -361,7 +361,8 @@
         { "field": "geographic_site", "name": "Geographic Site" },
         { "field": "height_baseline", "name": "Height Baseline" },
         { "field": "total_cholesterol", "name": "Total Cholesterol" },
-        { "field": "triglycerides", "name": "Triglycerides" }
+        { "field": "triglycerides", "name": "Triglycerides" },
+        { "field": "studies_submitter_id", "name": "Study" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
