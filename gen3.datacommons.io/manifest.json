@@ -107,7 +107,7 @@
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/metadata-manifest-ingestion:2.0.0",
@@ -147,7 +147,7 @@
     {
       "name": "get-dbgap-metadata",
       "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/get-dbgap-metadata:2.0.0",
@@ -178,7 +178,7 @@
       "name": "manifest-indexing",
       "action": "index-object-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-indexing:2.0.2",
@@ -219,7 +219,7 @@
       "name": "manifest-merging",
       "action": "merge-manifests",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-merging:master",
@@ -260,7 +260,7 @@
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/download-indexd-manifest:2.0.0",
