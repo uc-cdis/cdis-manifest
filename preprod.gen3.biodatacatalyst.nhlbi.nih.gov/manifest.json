@@ -16,7 +16,7 @@
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
     "metadata": "quay.io/cdis/metadata-service:2020.08",
-    "portal": "quay.io/cdis/data-portal:2020.08",
+    "portal": "quay.io/cdis/data-portal:2.33.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
     "tube": "quay.io/cdis/tube:2020.08",
@@ -74,6 +74,74 @@
           {
             "name": "ROOT_NODE",
             "value": "subject"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "12Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "pelican-export-files",
+      "action": "export-files",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican-export:0.5.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "file"
+          },
+          {
+            "name": "EXTRA_NODES",
+            "value": ""
           }
         ],
         "volumeMounts": [
