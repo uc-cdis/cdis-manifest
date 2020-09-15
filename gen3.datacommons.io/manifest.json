@@ -7,28 +7,37 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.06",
+    "arborist": "quay.io/cdis/arborist:2020.08",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.06",
-    "indexd": "quay.io/cdis/indexd:2020.06",
-    "peregrine": "quay.io/cdis/peregrine:2020.06",
-    "pidgin": "quay.io/cdis/pidgin:2020.06",
-    "revproxy": "quay.io/cdis/nginx:2020.06",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.06",
-    "portal": "quay.io/cdis/data-portal:2020.06",
+    "fence": "quay.io/cdis/fence:2020.08",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:2020.08",
+    "metadata": "quay.io/cdis/metadata-service:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:2020.06",
-    "tube": "quay.io/cdis/tube:2020.06",
-    "guppy": "quay.io/cdis/guppy:2020.06",
-    "sower": "quay.io/cdis/sower:2020.06",
-    "hatchery": "quay.io/cdis/hatchery:2020.06",
+    "spark": "quay.io/cdis/gen3-spark:2020.08",
+    "tube": "quay.io/cdis/tube:2020.08",
+    "guppy": "quay.io/cdis/guppy:2020.08",
+    "sower": "quay.io/cdis/sower:2020.08",
+    "hatchery": "quay.io/cdis/hatchery:2020.08",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "quay.io/cdis/workspace-token-service:2020.06",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.06",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.06"
+    "wts": "quay.io/cdis/workspace-token-service:2020.08",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.08",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.08"
   },
   "arborist": {
     "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2020.08"
+    }
   },
   "sower": [
     {
@@ -90,6 +99,200 @@
           "name": "peregrine-creds-volume",
           "secret": {
             "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-gen3-datacommons-io",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:2.0.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "serviceAccountName": "jobs-gen3-datacommons-io",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/get-dbgap-metadata:2.0.0",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-gen3-datacommons-io",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:2.0.2",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-merging",
+      "action": "merge-manifests",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-gen3-datacommons-io",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-merging:master",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-gen3-datacommons-io",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:2.0.0",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
@@ -180,6 +383,12 @@
       "strategy": "auto",
       "min": 2,
       "max": 4,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
       "targetCpu": 40
     }
   }
