@@ -57,7 +57,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -123,7 +123,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2020.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -163,7 +163,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2020.09",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -194,7 +194,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2020.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -235,7 +235,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2020.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -275,7 +275,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2020.09"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.09"
     }
   },
   "arborist": {
