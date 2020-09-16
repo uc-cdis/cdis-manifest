@@ -213,7 +213,7 @@
             "studies_submitter_id",
             "geographic_site",
             "data_type",
-            "data_format"            
+            "data_format"
           ]
         },
         {
@@ -223,7 +223,7 @@
             "race",
             "ethnicity",
             "hispanic_subgroup",
-            "subcohort"            
+            "subcohort"
           ]
         },
         {
@@ -291,9 +291,9 @@
         "rightIcon": "external-link"
       },
       {
-        "enabled": true, 
+        "enabled": true,
         "type": "export-to-seven-bridges",
-        "title": "Export All to Seven Bridges", 
+        "title": "Export All to Seven Bridges",
         "rightIcon": "external-link"
       },
       {
@@ -375,7 +375,7 @@
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
     "terraExportURL": "https://terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
-    "terraTemplate": [ 
+    "terraTemplate": [
       "bdc",
       "gen3"
     ],
@@ -448,8 +448,33 @@
         "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-pfb",
+        "title": "Export All to PFB",
+        "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "export-files",
+        "title": "Export All to Terra",
+        "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-seven-bridges",
+        "title": "Export All to Seven Bridges",
+        "rightIcon": "external-link"
       }
     ],
+    "terraExportURL": "https://terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
+    "terraTemplate": [
+      "bdc",
+      "gen3"
+    ],
+    "sevenBridgesExportURL": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill",
+    "enableLimitedFilePFBExport": {"sourceNodeField": "source_node"},
     "dropdowns": {}
   },
   "terraExportWarning": {
