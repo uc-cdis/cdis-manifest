@@ -20,8 +20,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.08",
     "metadata": "quay.io/cdis/metadata-service:2020.08",
-    "aws-bucket-manifest": "quay.io/cdis/bucket-manifest:1.1.1",
-    "gcp-bucket-manifest": "quay.io/cdis/google-bucket-manifest:1.1.1"
+    "datareplicate": "quay.io/cdis/dcf-dataservice:1.1.1"
   },
   "arborist": {
     "deployment_version": "2"
