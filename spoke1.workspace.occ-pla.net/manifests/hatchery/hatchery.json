@@ -1,0 +1,23 @@
+{
+  "user-namespace": "jupyter-pods-spoke1-workspace",
+  "sub-dir": "/lw-workspace",
+  "user-volume-size": "10Gi",
+  "sidecar": {
+    "cpu-limit": "1.0",
+    "memory-limit": "256Mi",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.08",
+    "env": {"NAMESPACE":"spoke1-workspace", "HOSTNAME": "spoke1.workspace.planx-pla.net"},
+    "args": [],
+    "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+    "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+  },
+  "containers": [
+  ],
+  "more-configs": [
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/jupyterslim.yaml",
+      "name": "Jupyter Notebook"
+    }
+  ]
+}
