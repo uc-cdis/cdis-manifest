@@ -1,0 +1,66 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "arborist": "quay.io/cdis/arborist:master",
+    "dashboard": "quay.io/cdis/gen3-statics:chore_iam-test",
+    "fence": "quay.io/cdis/fence:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "hatchery": "quay.io/cdis/hatchery:master",
+    "portal": "quay.io/cdis/data-portal:master",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "wts": "quay.io/cdis/workspace-token-service:master"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "google": {
+    "enabled": "no"
+  },
+  "global": {
+    "environment": "occ-covid19",
+    "hostname": "spoke1.workspace.planx-pla.net",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/master/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube-occ-covid19-gen3",
+    "logs_bucket": "logs-occ-covid19-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/occ-covid19/user.yaml",
+    "netpolicy": "on",
+    "lb_type": "public"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "workspace"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    }
+  },
+  "canary": {
+    "default": 0
+  }
+}
