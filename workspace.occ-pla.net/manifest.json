@@ -1,0 +1,43 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "versions": {
+    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
+    "fence": "quay.io/cdis/fence:2020.09",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1"
+  },
+  "global": {
+    "environment": "occ-covid19",
+    "hostname": "workspace.occ-pla.net",
+    "revproxy_arn": "arn:aws:acm:us-east-1:504226487987:certificate/f1172750-0c4c-42d7-b051-b927054810af",
+    "portal_app": "GEN3-WORKSPACE-PARENT",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube-occ-covid19-gen3",
+    "logs_bucket": "logs-occ-covid19-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/occ-covid19/user.yaml",
+    "netpolicy": "on",
+    "lb_type": "public"
+  },
+  "scaling": {
+    "dashboard": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    }
+  },
+  "canary": {
+    "default": 0
+  }
+}
