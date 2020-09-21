@@ -271,6 +271,24 @@
         }
       ]
     },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "data_format",
+        "race",
+        "annotated_sex",
+        "ethnicity",
+        "bp_diastolic",
+        "hdl",
+        "ldl"
+      ]
+    },
+    "dropdowns": {
+      "download": {
+        "title": "Download"
+      }
+    },
     "buttons": [
       {
         "enabled": true,
