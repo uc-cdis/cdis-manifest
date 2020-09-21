@@ -16,6 +16,8 @@ mappings:
       - name: solve_state
       - name: congenital_status
       - name: age_of_onset
+      - name: phenotype_group
+      - name: anvil_project_id
 #    flatten_props:
     aggregated_props:
       - name: sample_provider
