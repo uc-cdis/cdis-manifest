@@ -1,0 +1,31 @@
+version: '3.6'
+# see https://ctds-planx.atlassian.net/browse/PXP-6692
+services:
+  dicom-gh:
+    image: heliumdatastage/cloudtop-ohif:develop-latest
+    container_name: dicom-gh
+    entrypoint: 
+      - /init
+    #ports: 
+    #  - ${SERVICE_PORT}:8080
+    network_mode: service:nginx
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.3'
+          memory: 200M
+  nginx:
+    # testing against a local build of the Dockerfile
+    image: "quay.io/cdis/ws-nginx-proxy:2020.09"
+    ports: 
+      - "${SERVICE_PORT}:7780"
+    environment:
+      - "APP_PORT=8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
