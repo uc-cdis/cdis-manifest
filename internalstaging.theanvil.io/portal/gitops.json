@@ -124,14 +124,24 @@
         "chartType": "pie",
         "title": "Sex"
       },
-      "race": {
+      "ancestry": {
         "chartType": "bar",
         "title": "Ancestry"
       }
     },
     "filters": {
       "tabs": [
-        {
+         {
+          "title": "Projects",
+          "fields": [
+            "project_id",
+            "project_short_name",
+            "project_dbgap_accession_number",
+            "project_dbgap_consent_text",
+            "project_dbgap_phs",
+            "project_name"
+          ]
+         }, {
           "title": "Subject",
           "fields":[
             "anvil_project_id",
@@ -166,16 +176,6 @@
             "sequencing_assay", 
             "alignment_method", 
             "data_processing_pipeline"
-          ]
-        }, {
-          "title": "Projects",
-          "fields": [
-            "project_id",
-            "project_short_name",
-            "project_dbgap_accession_number",
-            "project_dbgap_consent_text",
-            "project_dbgap_phs",
-            "project_name"
           ]
         }
       ]
