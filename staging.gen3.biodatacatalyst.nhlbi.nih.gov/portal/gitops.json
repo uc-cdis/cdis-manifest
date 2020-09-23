@@ -76,10 +76,6 @@
         {
           "node": "study",
           "name": "Studies"
-        },	
-        {	
-          "node": "aliquot",	
-          "name": "Aliquots"	
         }
       ]
     },
@@ -294,11 +290,11 @@
         "title": "Export All to Terra",
         "rightIcon": "external-link"
       },
-      {	
-        "enabled": true,	
-        "type": "export-to-seven-bridges",	
-        "title": "Export All to Seven Bridges",	
-        "rightIcon": "external-link"	
+      {
+        "enabled": true, 
+        "type": "export-to-seven-bridges",
+        "title": "Export All to Seven Bridges", 
+        "rightIcon": "external-link"
       },
       {
         "enabled": true,
@@ -402,7 +398,9 @@
           "fields": [
             "project_id",
             "data_type",
-            "data_format"
+            "data_format",
+            "callset",
+            "bucket_path"
           ]
         }
       ]
@@ -413,7 +411,8 @@
         "project_id",
         "file_name",
         "file_size",
-        "object_id"
+        "object_id",
+        "callset"
       ]
     },
     "guppyConfig": {
