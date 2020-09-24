@@ -9,16 +9,19 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.08",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.08",
     "fence": "quay.io/cdis/fence:2020.08",
     "indexd": "quay.io/cdis/indexd:2020.08",
     "peregrine": "quay.io/cdis/peregrine:2020.08",
     "pidgin": "quay.io/cdis/pidgin:2020.08",
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:feat_wireframe-poc",
+    "portal": "quay.io/cdis/data-portal:feat_niaid-ct",
     "tube": "quay.io/cdis/tube:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:2020.08"
+    "spark": "quay.io/cdis/gen3-spark:2020.08",
+    "requestor": "quay.io/cdis/requestor:1.1.0",
+    "guppy": "quay.io/cdis/guppy:2020.08"
   },
   "arborist": {
     "deployment_version": "2"
@@ -30,7 +33,7 @@
     "environment": "niaiddata",
     "hostname": "accessclinicaldata.niaid.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/61c84d3f-f5bb-4bb4-a90b-8b50216580ee",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/3.5.4/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.2.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "kube-niaiddata-gen3",
@@ -46,19 +49,19 @@
   "guppy": {
     "indices": [
       {
-        "index": "niaid",
-        "type": "subject"
+        "index": "accessclinicaldata.niaid.nih.gov_clinical_trials",
+        "type": "clinical_trials"
       },
       {
-        "index": "niaid_follow_up",
-        "type": "follow_up"
+        "index": "accessclinicaldata.niaid.nih.gov_ctfile",
+        "type": "ctfile"
       },
       {
-        "index": "niaid_file",
-        "type": "file"
+        "index": "accessclinicaldata.niaid.nih.gov_oafile",
+        "type": "oafile"
       }
     ],
-    "config_index": "niaid_array-config",
+    "config_index": "accessclinicaldata.niaid.nih.gov_array-config",
     "auth_filter_field": "auth_resource_path"
   }
 }

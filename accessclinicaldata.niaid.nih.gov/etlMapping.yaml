@@ -1,211 +1,32 @@
 mappings:
-  - name: niaid
-    doc_type: subject
+  - name: accessclinicaldata.niaid.nih.gov_clinical_trials
+    doc_type: clinical_trials
     type: aggregator
-    root: subject
+    root: core_metadata_collection
     props:
-      - name: submitter_id
+      - name: creator
+      - name: condition
+      - name: category
+      - name: study_design_allocation
+      - name: study_design_intervention_model
+      - name: study_design_masking
+      - name: study_design_primary_purpose
+      - name: responsible_party
+      - name: study_start_date
+      - name: study_completion_date
+      - name: data_available
+      - name: clinical_trial_website
+      - name: publications
+      - name: brief_summary
+      - name: description
+      - name: title
       - name: project_id
-      - name: hiv_status
-        value_mappings:
-          - true: positive
-          - false: negative
-      - name: species
-      - name: amikacin_res_phenotype
-      - name: capreomycin_res_phenotype
-      - name: isoniazid_res_phenotype
-      - name: kanamycin_res_phenotype
-      - name: ofloxacin_res_phenotype
-      - name: pyrazinamide_res_phenotype
-      - name: rifampicin_res_phenotype
-      - name: rifampin_res_phenotype
-      - name: streptomycin_res_phenotype
-    flatten_props:
-      - path: demographics
-        props:
-          - name: gender
-          - name: race
-          - name: ethnicity
-          - name: vital_status
-          - name: year_of_birth
-          - name: study_center
-            src: country_of_birth
-      - path: virus_infections
-        props:
-          - name: virus_type
-          - name: virus_subtype
-      - path: hiv_history_records
-        props:
-          - name: arthxbase
-          - name: cd4nadir
-          - name: fposdate
-          - name: frstdthd
-          - name: status
-      - path: comorbidities
-        props:
-          - name: bshbvstat
-          - name: bshcvstat
-    aggregated_props:
-      - name: _follow_ups_count
-        path: follow_ups
-        fn: count
-      - name: _summary_drug_uses_count
-        path: follow_ups.summary_drug_uses
-        fn: count
-      - name: _summary_lab_results_on_follow_up_count
-        path: follow_ups.summary_lab_results
-        fn: count
-      - name: _samples_count
-        path: samples
-        fn: count
-      - name: _aliquots_count
-        path: samples.aliquots
-        fn: count
-      - name: _summary_lab_results_on_sample_count
-        path: samples.summary_lab_results
-        fn: count
-      - name: _mrna_microarrays_count
-        path: samples.aliquots.mrna_microarrays
-        fn: count
-      - name: _mirna_microarrays_count
-        path: samples.aliquots.mirna_microarrays
-        fn: count
-      - name: _lipid_mass_spectrometries_count
-        path: samples.aliquots.lipid_mass_spectrometries
-        fn: count
-      - name: _protein_mass_spectrometries_count
-        path: samples.aliquots.protein_mass_spectrometries
-        fn: count
-      - name: _metabolite_mass_spectrometries_count
-        path: samples.aliquots.metabolite_mass_spectrometries
-        fn: count
-      - name: _submitted_unaligned_reads_count
-        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
-        fn: count
-      - name: _regimen_or_line_of_therapies
-        src: regimen_or_line_of_therapy
-        path: diagnoses.treatments
-        fn: set
-      - name: _type_of_resistances
-        src: type_of_resistance
-        path: diagnoses
-        fn: set
-      - name: _summary_tb_culture_result
-        src: culture
-        path: samples.tb_results
-        fn: set
-      - name: _summary_tb_microscopy_result
-        src: microscopy
-        path: samples.tb_results
-        fn: set
-      - name: _summary_tb_specimen_result
-        src: test_type
-        path: samples.tb_results
-        fn: set
-      - name: therapy
-        path: follow_ups.summary_drug_uses
-        src: thrpy
-        fn: set
-      - name: therapyv
-        path: follow_ups.summary_drug_uses
-        src: thrpyv
-        fn: set
-      - name: _min_viral_load
-        path: follow_ups.summary_lab_results
-        src: viral_load
-        fn: min
-    joining_props:
-      - index: file
-        join_on: subject_id
-        props:
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
-          - name: file_id
-            src: file_id
-            fn: set
-  - name: niaid_follow_up
-    doc_type: follow_up
+      - name: cmc_unique_id
+        src: submitter_id
+  - name: accessclinicaldata.niaid.nih.gov_ctfile
+    doc_type: ctfile
     type: aggregator
-    root: follow_up
-    props:
-      - name: submitter_id
-      - name: age_at_visit
-      - name: age_at_visit_gt89
-      - name: bmi
-      - name: drug_used
-      - name: ever_transferred
-      - name: health_insurance
-      - name: height
-      - name: pregnancy_status
-      - name: version_data
-      - name: visit_name
-      - name: visit_type
-      - name: visit_number
-      - name: harmonized_visit_number
-      - name: visit_date
-      - name: weight
-      - name: weight_percentage
-      - name: tint
-      - name: days_to_follow_up
-    parent_props:
-      - path: subjects[subject_id:id,project_id,hiv_status]
-    flatten_props:
-      - path: summary_drug_uses
-        props:
-          - name: abc
-          - name: abcv
-          - name: thrpy
-          - name: thrpyv
-          - name: trz
-          - name: trzv
-      - path: summary_socio_demographics
-        props:
-          - name: cocuse
-          - name: drinkcat
-          - name: eductn
-          - name: emotl
-          - name: employ
-          - name: income
-          - name: insurance
-          - name: paidsex
-    aggregated_props:
-      - name: viral_load
-        path: summary_lab_results
-        src: viral_load
-        fn: min
-      - name: leu3n
-        path: summary_lab_results
-        src: leu3n
-        fn: min
-      - name: leu2n
-        path: summary_lab_results
-        src: leu2n
-        fn: min
-      - name: chol
-        path: summary_lab_results
-        src: chol
-        fn: min
-      - name: cd4dt
-        path: summary_lab_results
-        src: cd4dt
-        fn: min
-    joining:
-      - index: subject
-        join_on: subject_id
-        props:
-          - name: frstdthd
-            src: frstdthd
-          - name: fposdate
-            src: fposdate
-  - name: niaid_file
-    doc_type: file
-    type: collector
-    root: None
-    category: data_file
+    root: clinical_trial_file
     props:
       - name: object_id
       - name: md5sum
@@ -213,11 +34,20 @@ mappings:
       - name: file_size
       - name: data_format
       - name: data_type
-      - name: state
-    injecting_props:
-      subject:
-        props:
-          - name: subject_id
-            src: id
-            fn: set
-          - name: project_id
+      - name: project_id
+    parent_props:
+      - path: core_metadata_collections[cmc_unique_id:submitter_id]
+  - name: accessclinicaldata.niaid.nih.gov_oafile
+    doc_type: oafile
+    type: aggregator
+    root: open_access_doc
+    props:
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: doc_url
+      - name: project_id
+    parent_props:
+      - path: core_metadata_collections[cmc_unique_id:submitter_id]

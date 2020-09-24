@@ -15,7 +15,7 @@
           "The goal of the platform is to allow the research community access to clinical data sets to harness the power of data to generate new knowledge to understand, treat, and prevent infectious diseases such as COVID-19.",
           "Biomedical and health data coupled with powerful advanced data analytical tools provide innovative opportunities to accelerate the development of new and improved therapeutic interventions and diagnostics, prevention strategies and disease surveillance, and identification of molecular biomarkers to predict susceptibility, progression and severity of diseases.",
           "This resource provides a foundation with potential to improve the health of people in the United States and around the world.",
-          "To access and download a dataset from this NIAID controlled access clinical trials data repository, a <a href=''>Data Access Request (DAR)</a> is required to be submitted to NIAID by the requestor using the DAR form found on the Accessclinicaldata@NIAID data platform and will be reviewed by the NIAID Clinical Trials Data Access Committee. Upon approval of the DAR by NIAID and prior to accessing and downloading the data set, the primary requestor and their institution will be notified and required to agree to and sign a <a href=''>Data Use Agreement (DUA)</a> that outlines the terms of the use of the data.  Note that the DUA will require two signatures – from the requestor and from the institutional authorizing official. The DUA signature process will be facilitated via a DocuSign mechanism and the requestor and the authorizing institutional official’s email addresses will be utilized to facilitate the sign-off process."
+          "To access and download a dataset from this NIAID controlled access clinical trials data repository, a <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/NIAID%20Data%20Access%20Request%20FormSept2020.pdf'>Data Access Request (DAR)</a> is required to be submitted to NIAID by the requestor using the DAR form found on the Accessclinicaldata@NIAID data platform and will be reviewed by the NIAID Clinical Trials Data Access Committee. Upon approval of the DAR by NIAID and prior to accessing and downloading the data set, the primary requestor and their institution will be notified and required to agree to and sign a <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/2020-1138%20v200917FINALDUA.pdf'>Data Use Agreement (DUA)</a> that outlines the terms of the use of the data.  Note that the DUA will require two signatures – from the requestor and from the institutional authorizing official. The DUA signature process will be facilitated via a DocuSign mechanism and the requestor and the authorizing institutional official’s email addresses will be utilized to facilitate the sign-off process."
         ]
       },
       "buttons": [],
@@ -28,7 +28,7 @@
     "navigation": {
       "items": [{
         "icon": "query",
-        "link": "/study-viewer",
+        "link": "/study-viewer/clinical_trials",
         "color": "#a2a2a2",
         "name": "Study Viewer"
       }]
@@ -52,231 +52,36 @@
   "featureFlags": {
     "explorer": true
   },
-  "studyViewerConfig": {
-    "openMode": "open-first",
-    "defaultOpenStudyName": "ACTT",
-    "data": [{
-      "name": "ACTT",
-      "title": "The Adaptive COVID-19 Treatment Trial (ACTT)",
-      "description": "This study is an adaptive, randomized, double-blind, placebo-controlled trial to evaluate the safety and efficacy of novel therapeutic agents in hospitalized adults diagnosed with COVID-19. The study is a multicenter trial that will be conducted in up to approximately 100 sites globally. The study will compare different investigational therapeutic agents to a control arm. There will be interim monitoring to introduce new arms and allow early stopping for futility, efficacy, or safety.",
-      "meta": {
-        "condition": "COVID-19",
-        "study_design": "Interventional (Clinical Trial), Randomized Allocation",
-        "sponsor": "National Institute of Allergy and Infectious Diseases (NIAID)",
-        "study_dates": "February 21, 2020 - May 21, 2020",
-        "data_available": "Patient-level data",
-        "websites": [{
-          "name": "Visit ClinicalTrials.gov",
-          "type": "link",
-          "link": "https://clinicaltrials.gov/ct2/show/NCT04280705"
-        }],
-        "study_publications": [{
-          "name": "Remdesivir for the Treatment of Covid-19 - Preliminary Report",
-          "type": "link",
-          "link": "https://pubmed.ncbi.nlm.nih.gov/32445440/"
-        }]
+  "studyViewerConfig": [
+    {
+      "openMode": "open-first",
+      "openFirstRowAccessor": "",
+      "dataType": "clinical_trials",
+      "title": "Studies",
+      "titleField": "title",
+      "rowAccessor": "cmc_unique_id",
+      "listItemConfig": {
+        "blockFields": ["brief_summary"],
+        "tableFields": ["creator","condition", "category", "data_available", "clinical_trial_website", "publications"]
       },
-      "document": [{
-        "name": "Patient-Level Data Elements",
-        "format": "PDF",
-        "type": "file",
-        "link": "/",
-        "size": 763843
-      }, {
-        "name": "Protocol",
-        "format": "PDF",
-        "type": "file",
-        "link": "/",
-        "size": 7638643
-      }],
-      "hasAccess": false
-    }]
-  },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+      "singleItemConfig": {
+        "blockFields": ["description"],
+        "tableFields": ["creator","condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date", "data_available", "clinical_trial_website", "publications"]
       },
-      "submitter_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
-      },
-      "species": {
-        "chartType": "bar",
-        "title": "Species"
-      }
-    },
-    "filters": {
-      "tabs": [{
-          "title": "Subject",
-          "fields": [
-            "project_id",
-            "gender",
-            "race",
-            "ethnicity",
-            "vital_status",
-            "frstdthd",
-            "species",
-            "data_type",
-            "data_format"
-          ]
-        },
-        {
-          "title": "Diagnosis",
-          "fields": [
-            "arthxbase",
-            "bshbvstat",
-            "bshcvstat",
-            "cd4nadir",
-            "status",
-            "virus_type",
-            "virus_subtype",
-            "hiv_status"
-          ]
-        },
-        {
-          "title": "Drug Resistance",
-          "fields": [
-            "amikacin_res_phenotype",
-            "capreomycin_res_phenotype",
-            "isoniazid_res_phenotype",
-            "kanamycin_res_phenotype",
-            "ofloxacin_res_phenotype",
-            "pyrazinamide_res_phenotype",
-            "rifampicin_res_phenotype",
-            "rifampin_res_phenotype",
-            "streptomycin_res_phenotype"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "enabled": false
-    },
-    "dropdowns": {
-      "download": {
-        "title": "Download"
-      }
-    },
-    "buttons": [{
-        "enabled": true,
-        "type": "data",
-        "title": "Download All Clinical",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "clinical.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export To Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "fieldMapping": [],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "node_id"
-      },
-      "accessibleFieldCheckList": [
-        "subject_id"
+      "fieldMapping": [
+        { "field": "brief_summary", "name": "Brief Study Description" },
+        { "field": "description", "name": "Detailed Description"},
+        { "field": "creator", "name": "Sponsor"},
+        { "field": "category", "name": "Study Type"},
+        { "field": "clinical_trial_website", "name": "Websites"},
+        { "field": "publications", "name": "Study Publications"}
       ],
-      "accessibleValidationField": "subject_id"
+      "downloadField": "object_id",
+      "fileDataType": "ctfile",
+      "docDataType": "oafile"
     }
-  },
-  "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [{
-        "title": "File",
-        "fields": [
-          "subject_id",
-          "data_type",
-          "data_format"
-        ]
-      }]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "subject_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "dropdowns": {},
-    "buttons": [{
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json",
-        "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [{
-        "field": "object_id",
-        "name": "GUID"
-      }],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": [
-        "subject_id"
-      ],
-      "accessibleValidationField": "subject_id",
-      "downloadAccessor": "object_id"
-    }
-  },
+  ],
+  "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
