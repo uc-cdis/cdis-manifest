@@ -50,7 +50,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.5.0",
         "pull_policy": "Always",
         "env": [
           {
@@ -114,7 +114,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:0.5.0",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.5.0",
         "pull_policy": "Always",
         "env": [
           {
