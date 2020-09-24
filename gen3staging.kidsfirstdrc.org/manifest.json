@@ -44,44 +44,28 @@
   },
   "scaling": {
     "arborist": {
-      "strategy": "auto",
-      "min": 0,
-      "max": 0,
-      "targetCpu": 0
+      "strategy": "auto"
     },
     "portal": {
       "strategy": "auto"
     },
     "fence": {
-      "strategy": "",
-      "min": 0,
-      "max": 0,
-      "targetCpu": 0
+      "strategy": "auto"
     },
     "indexd": {
-      "strategy": "",
-      "min": 0,
-      "max": 0,
-      "targetCpu": 0
+      "strategy": "auto"
     },
     "peregrine": {
       "strategy": "auto"
     },
     "revproxy": {
-      "strategy": "",
-      "min": 0,
-      "max": 0,
-      "targetCpu": 0
+      "strategy": "auto"
     },
     "sheepdog": {
       "strategy": "auto"
     },
     "presigned-url-fence": {
-      "strategy": "",
-      "min": 0,
-      "max": 0,
-      "targetCpu": 0
+      "strategy": "auto"
     }
-  },
-  "sower": []
+  }
 }
