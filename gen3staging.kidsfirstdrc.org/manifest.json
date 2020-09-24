@@ -7,15 +7,14 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.09",
-    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
-    "fence": "quay.io/cdis/fence:4.23.2",
-    "indexd": "quay.io/cdis/indexd:2020.09",
-    "peregrine": "quay.io/cdis/peregrine:2020.09",
-    "pidgin": "quay.io/cdis/pidgin:2020.09",
-    "revproxy": "quay.io/cdis/nginx:2020.09",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.09",
-    "portal": "quay.io/cdis/data-portal:2020.09",
+    "arborist": "quay.io/cdis/arborist:2020.08",
+    "fence": "quay.io/cdis/fence:4.22.4",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {
@@ -24,42 +23,64 @@
   "indexd": {
     "arborist": "true"
   },
+  "jupyterhub": {
+    "enabled": "no"
+  },
   "global": {
     "environment": "skfqa",
     "hostname": "gen3staging.kidsfirstdrc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:222487244010:certificate/d91de077-c452-4172-9f1e-c88c99feb9f0",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "useryaml_s3path": "s3://kf-gen3-user/nonprd/user-nonprd.yaml",
     "portal_app": "dev",
-    "kube_bucket": "kube-skfqa-gen3",
-    "logs_bucket": "logs-skfqa-gen3",
     "sync_from_dbgap": "False",
-    "netpolicy": "on",
-    "useryaml_s3path": "s3://kf-gen3-user/nonprd/user-nonprd.yaml"
+    "slack_send_dbgap": "True",
+    "kube_bucket": "kube-skfqa-gen3",
+    "logs_bucket": "logs-skfqa-gen3"
   },
   "canary": {
     "default": 0
   },
   "scaling": {
     "arborist": {
-      "strategy": "auto"
+      "strategy": "auto",
+      "min": 0,
+      "max": 0,
+      "targetCpu": 0
     },
     "portal": {
       "strategy": "auto"
     },
     "fence": {
-      "strategy": "auto"
+      "strategy": "",
+      "min": 0,
+      "max": 0,
+      "targetCpu": 0
     },
     "indexd": {
-      "strategy": "auto"
+      "strategy": "",
+      "min": 0,
+      "max": 0,
+      "targetCpu": 0
     },
     "peregrine": {
       "strategy": "auto"
     },
     "revproxy": {
-      "strategy": "auto"
+      "strategy": "",
+      "min": 0,
+      "max": 0,
+      "targetCpu": 0
     },
     "sheepdog": {
       "strategy": "auto"
+    },
+    "presigned-url-fence": {
+      "strategy": "",
+      "min": 0,
+      "max": 0,
+      "targetCpu": 0
     }
-  }
+  },
+  "sower": []
 }
