@@ -28,7 +28,7 @@
     "navigation": {
       "items": [{
         "icon": "query",
-        "link": "/study-viewer/clinical_trials",
+        "link": "/study-viewer",
         "color": "#a2a2a2",
         "name": "Study Viewer"
       }]
@@ -52,35 +52,46 @@
   "featureFlags": {
     "explorer": true
   },
-  "studyViewerConfig": [
-    {
-      "openMode": "open-first",
-      "openFirstRowAccessor": "",
-      "dataType": "clinical_trials",
-      "title": "Studies",
-      "titleField": "title",
-      "rowAccessor": "cmc_unique_id",
-      "listItemConfig": {
-        "blockFields": ["brief_summary"],
-        "tableFields": ["creator","condition", "category", "data_available", "clinical_trial_website", "publications"]
+  "studyViewerConfig": {
+    "openMode": "open-first",
+    "defaultOpenStudyName": "ACTT",
+    "data": [{
+      "name": "ACTT",
+      "title": "The Adaptive COVID-19 Treatment Trial (ACTT)",
+      "description": "This study is an adaptive, randomized, double-blind, placebo-controlled trial to evaluate the safety and efficacy of novel therapeutic agents in hospitalized adults diagnosed with COVID-19. The study is a multicenter trial that will be conducted in up to approximately 100 sites globally. The study will compare different investigational therapeutic agents to a control arm. There will be interim monitoring to introduce new arms and allow early stopping for futility, efficacy, or safety.",
+      "meta": {
+        "condition": "COVID-19",
+        "study_design": "Interventional (Clinical Trial), Randomized Allocation",
+        "sponsor": "National Institute of Allergy and Infectious Diseases (NIAID)",
+        "study_dates": "February 21, 2020 - May 21, 2020",
+        "data_available": "Patient-level data",
+        "websites": [{
+          "name": "Visit ClinicalTrials.gov",
+          "type": "link",
+          "link": "https://clinicaltrials.gov/ct2/show/NCT04280705"
+        }],
+        "study_publications": [{
+          "name": "Remdesivir for the Treatment of Covid-19 - Preliminary Report",
+          "type": "link",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/32445440/"
+        }]
       },
-      "singleItemConfig": {
-        "blockFields": ["description"],
-        "tableFields": ["creator","condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date", "data_available", "clinical_trial_website", "publications"]
-      },
-      "fieldMapping": [
-        { "field": "brief_summary", "name": "Brief Study Description" },
-        { "field": "description", "name": "Detailed Description"},
-        { "field": "creator", "name": "Sponsor"},
-        { "field": "category", "name": "Study Type"},
-        { "field": "clinical_trial_website", "name": "Websites"},
-        { "field": "publications", "name": "Study Publications"}
-      ],
-      "downloadField": "object_id",
-      "fileDataType": "ctfile",
-      "docDataType": "oafile"
-    }
-  ],
+      "document": [{
+        "name": "Patient-Level Data Elements",
+        "format": "PDF",
+        "type": "file",
+        "link": "/",
+        "size": 763843
+      }, {
+        "name": "Protocol",
+        "format": "PDF",
+        "type": "file",
+        "link": "/",
+        "size": 7638643
+      }],
+      "hasAccess": false
+    }]
+  },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
