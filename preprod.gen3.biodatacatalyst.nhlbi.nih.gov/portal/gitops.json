@@ -189,7 +189,7 @@
         "chartType": "count",
         "title": "Projects"
       },
-      "subject_id": {
+      "_subject_id": {
         "chartType": "count",
         "title": "Subjects"
       },
@@ -213,7 +213,7 @@
             "studies_submitter_id",
             "geographic_site",
             "data_type",
-            "data_format"            
+            "data_format"
           ]
         },
         {
@@ -266,7 +266,7 @@
             "pmv_entvol_bld",
             "rbc_ncnc_bld",
             "rdw_ratio_rbc",
-            "wbc_ncnc_bld"    
+            "wbc_ncnc_bld"
           ]
         }
       ]
@@ -324,10 +324,10 @@
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "_subject_id",
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
-      "nodeCountField": "subject_id"
+      "nodeCountField": "_subject_id"
     },
     "guppyConfig": {
       "dataType": "subject",
@@ -373,8 +373,8 @@
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "_subject_id",
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -430,7 +430,7 @@
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
+        "resourceIdField": "_subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
