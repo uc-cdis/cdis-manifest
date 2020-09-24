@@ -8,6 +8,7 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.08",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
     "fence": "quay.io/cdis/fence:4.22.4",
     "indexd": "quay.io/cdis/indexd:2020.08",
     "peregrine": "quay.io/cdis/peregrine:2020.08",
@@ -34,7 +35,7 @@
     "useryaml_s3path": "s3://kf-gen3-user/nonprd/user-nonprd.yaml",
     "portal_app": "dev",
     "sync_from_dbgap": "False",
-    "slack_send_dbgap": "True",
+    "netpolicy": "on",
     "kube_bucket": "kube-skfqa-gen3",
     "logs_bucket": "logs-skfqa-gen3"
   },
