@@ -113,6 +113,19 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data",
+          "name": "Documentation"
+        }
+      ]
+    },
     "login": {
       "title": "NHLBI BioData Catalyst",
       "subTitle": "Explore, Analyze, and Share Data",
