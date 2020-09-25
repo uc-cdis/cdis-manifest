@@ -28,210 +28,213 @@
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.09",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09"    
   },
-  "arborist": {
-    "deployment_version": "2"
+  "indexd": {
+    "arborist": "true"
   },
   "ssjdispatcher": {
     "job_images": {
       "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.09"
-    }, 
-  "indexd": {
-    "arborist": "true"
-  },  
-  {
-    "name": "ingest-metadata-manifest",
-    "action": "ingest-metadata-manifest",
-    "activeDeadlineSeconds": 86400,
-    "serviceAccountName": "jobs-data-bloodpac-org",
-    "container": {
-      "name": "job-task",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2020.09",
-      "pull_policy": "Always",
-      "env": [
-        {
-          "name": "GEN3_HOSTNAME",
-          "valueFrom": {
-            "configMapKeyRef": {
-              "name": "manifest-global",
-              "key": "hostname"
+    }
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "sower": [
+    {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-data-bloodpac-org",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2020.09",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
             }
           }
-        }
-      ],
-      "volumeMounts": [
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
         {
           "name": "creds-volume",
-          "readOnly": true,
-          "mountPath": "/creds.json",
-          "subPath": "creds.json"
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
         }
       ],
-      "cpu-limit": "1",
-      "memory-limit": "1Gi"
+      "restart_policy": "Never"
     },
-    "volumes": [
-      {
-        "name": "creds-volume",
-        "secret": {
-          "secretName": "sower-jobs-g3auto"
-        }
-      }
-    ],
-    "restart_policy": "Never"
-  },
-  {
-    "name": "get-dbgap-metadata",
-    "action": "get-dbgap-metadata",
-    "serviceAccountName": "jobs-data-bloodpac-org",
-    "container": {
-      "name": "job-task",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2020.09",
-      "pull_policy": "Always",
-      "env": [],
-      "volumeMounts": [
+    {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "serviceAccountName": "jobs-data-bloodpac-org",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2020.09",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
         {
           "name": "creds-volume",
-          "readOnly": true,
-          "mountPath": "/creds.json",
-          "subPath": "creds.json"
-        }
-      ],
-      "cpu-limit": "1",
-      "memory-limit": "1Gi"
-    },
-    "volumes": [
-      {
-        "name": "creds-volume",
-        "secret": {
-          "secretName": "sower-jobs-g3auto"
-        }
-      }
-    ],
-    "restart_policy": "Never"
-  },
-  {
-    "name": "manifest-indexing",
-    "action": "index-object-manifest",
-    "activeDeadlineSeconds": 86400,
-    "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-    "container": {
-      "name": "job-task",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2020.09",
-      "pull_policy": "Always",
-      "env": [
-        {
-          "name": "GEN3_HOSTNAME",
-          "valueFrom": {
-            "configMapKeyRef": {
-              "name": "manifest-global",
-              "key": "hostname"
-            }
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
-      "volumeMounts": [
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-data-bloodpac-org",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2020.09",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
         {
           "name": "sower-jobs-creds-volume",
-          "readOnly": true,
-          "mountPath": "/creds.json",
-          "subPath": "creds.json"
-        }
-      ],
-      "cpu-limit": "1",
-      "memory-limit": "1Gi"
-    },
-    "volumes": [
-      {
-        "name": "sower-jobs-creds-volume",
-        "secret": {
-          "secretName": "sower-jobs-g3auto"
-        }
-      }
-    ],
-    "restart_policy": "Never"
-  },
-  {
-    "name": "manifest-merging",
-    "action": "merge-manifests",
-    "activeDeadlineSeconds": 86400,
-    "serviceAccountName": "jobs-data-bloodpac-org",
-    "container": {
-      "name": "job-task",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2020.09",
-      "pull_policy": "Always",
-      "env": [
-        {
-          "name": "GEN3_HOSTNAME",
-          "valueFrom": {
-            "configMapKeyRef": {
-              "name": "manifest-global",
-              "key": "hostname"
-            }
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
-      "volumeMounts": [
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-merging",
+      "action": "merge-manifests",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-data-bloodpac-org",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2020.09",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
         {
           "name": "sower-jobs-creds-volume",
-          "readOnly": true,
-          "mountPath": "/creds.json",
-          "subPath": "creds.json"
-        }
-      ],
-      "cpu-limit": "1",
-      "memory-limit": "1Gi"
-    },
-    "volumes": [
-      {
-        "name": "sower-jobs-creds-volume",
-        "secret": {
-          "secretName": "sower-jobs-g3auto"
-        }
-      }
-    ],
-    "restart_policy": "Never"
-  },
-  {
-    "name": "indexd-manifest",
-    "action": "download-indexd-manifest",
-    "activeDeadlineSeconds": 86400,
-    "serviceAccountName": "jobs-data-bloodpac-org",
-    "container": {
-      "name": "job-task",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2020.09",
-      "pull_policy": "Always",
-      "env": [
-        {
-          "name": "GEN3_HOSTNAME",
-          "valueFrom": {
-            "configMapKeyRef": {
-              "name": "manifest-global",
-              "key": "hostname"
-            }
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
-      "volumeMounts": [
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-data-bloodpac-org",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2020.09",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
         {
           "name": "sower-jobs-creds-volume",
-          "readOnly": true,
-          "mountPath": "/creds.json",
-          "subPath": "creds.json"
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
         }
       ],
-      "cpu-limit": "1",
-      "memory-limit": "1Gi"
-    },
-    "volumes": [
-      {
-        "name": "sower-jobs-creds-volume",
-        "secret": {
-          "secretName": "sower-jobs-g3auto"
-        }
-      }
-    ],
-    "restart_policy": "Never"
-  },  
+      "restart_policy": "Never"
+    }
+  ],
   "jupyterhub": {
     "enabled": "yes",
     "nb_storage_size": "250Gi",
@@ -315,7 +318,6 @@
   "global": {
     "environment": "bloodv2",
     "hostname": "data.bloodpac.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:562749638216:certificate/8cfa5317-9c44-4d6a-9af8-8373952b4230",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.7.3/schema.json",
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bpa/user.yaml",
