@@ -104,8 +104,21 @@
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
     },
-    "categorical9Colors": ["#035C94", "#7EBAC0", "#AEEBF2", "#E0DD10", "#40476D", "#FFA630", "#AE8799", "#035C94", "#462255"],
-    "categorical2Colors": ["#035C94", "#7EBAC0"]
+    "categorical9Colors": [
+      "#035C94",
+      "#7EBAC0",
+      "#AEEBF2",
+      "#E0DD10",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
+    "categorical2Colors": [
+      "#035C94",
+      "#7EBAC0"
+    ]
   },
   "featureFlags": {
     "explorer": true
@@ -124,7 +137,7 @@
         "chartType": "pie",
         "title": "Sex"
       },
-      "race": {
+      "ancestry": {
         "chartType": "bar",
         "title": "Ancestry"
       }
@@ -132,40 +145,6 @@
     "filters": {
       "tabs": [
         {
-          "title": "Subject",
-          "fields":[
-            "sex",
-            "age_value",
-            "ancestry",
-            "disease_description", 
-            "phenotype_present", 
-            "phenotype_absent", 
-            "disease_id", 
-            "solve_state", 
-            "congenital_status", 
-            "age_of_onset"
-          ]
-        }, {
-          "title": "Sample",
-          "fields": [
-            "sample_provider",
-            "tissue_affected_status",
-            "tissue_type",
-            "sample_type",
-            "original_material_type"
-          ]
-        }, {
-          "title": "Sequencing",
-          "fields": [
-            "library_prep_kit_method", 
-            "exome_capture_platform", 
-            "capture_region_bed_file", 
-            "reference_genome_build", 
-            "sequencing_assay", 
-            "alignment_method", 
-            "data_processing_pipeline"
-          ]
-        }, {
           "title": "Projects",
           "fields": [
             "project_id",
@@ -175,6 +154,45 @@
             "project_dbgap_phs",
             "project_name"
           ]
+        },
+        {
+          "title": "Subject",
+          "fields": [
+            "anvil_project_id",
+            "sex",
+            "age_value",
+            "ancestry",
+            "disease_description",
+            "phenotype_present",
+            "phenotype_absent",
+            "disease_id",
+            "solve_state",
+            "congenital_status",
+            "age_of_onset",
+            "phenotype_group"
+          ]
+        },
+        {
+          "title": "Sample",
+          "fields": [
+            "sample_provider",
+            "tissue_affected_status",
+            "tissue_type",
+            "sample_type",
+            "original_material_type"
+          ]
+        },
+        {
+          "title": "Sequencing",
+          "fields": [
+            "library_prep_kit_method",
+            "exome_capture_platform",
+            "capture_region_bed_file",
+            "reference_genome_build",
+            "sequencing_assay",
+            "alignment_method",
+            "data_processing_pipeline"
+          ]
         }
       ]
     },
@@ -182,9 +200,11 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "anvil_project_id",
         "ancestry",
         "sex",
         "age_value",
+        "phenotype_group",
         "_samples_count",
         "_sequencings_count"
       ]
@@ -239,23 +259,40 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        { "field": "disease_id", "name": "Disease ID" }, 
-        { "field": "age_of_onset", "name": "Age of Onset" },
-        { "field": "project_dbgap_accession_number", "name": "Project dbGaP Accession Number" },
-        { "field": "project_dbgap_consent_text", "name":"Project dbGaP Consent Text"},
-        { "field": "project_dbgap_phs", "name":"Project dbGaP Phs"}    
+        {
+          "field": "disease_id",
+          "name": "Disease ID"
+        },
+        {
+          "field": "age_of_onset",
+          "name": "Age of Onset"
+        },
+        {
+          "field": "project_dbgap_accession_number",
+          "name": "Project dbGaP Accession Number"
+        },
+        {
+          "field": "project_dbgap_consent_text",
+          "name": "Project dbGaP Consent Text"
+        },
+        {
+          "field": "project_dbgap_phs",
+          "name": "Project dbGaP Phs"
+        }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "_subject_id",
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
       "accessibleValidationField": "project_id"
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
-    "terraExportURL": "https://bvdp-saturn-dev.appspot.com/#import-data"
+    "terraExportURL": "https://anvil.terra.bio/#import-data"
   },
   "fileExplorerConfig": {
     "charts": {
@@ -277,7 +314,7 @@
             "data_category",
             "data_type",
             "data_format",
-            "analyte_type", 
+            "analyte_type",
             "sequencing_assay"
           ]
         }
@@ -301,16 +338,21 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+        {
+          "field": "object_id",
+          "name": "GUID"
+        }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
+        "resourceIdField": "_subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
@@ -331,7 +373,6 @@
         "leftIcon": "datafile",
         "rightIcon": "download"
       }
-    ],
-    "dropdowns": {}
+    ]
   }
 }
