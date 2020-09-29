@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.09",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.3",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.5",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.09",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.09",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.09",
@@ -140,8 +140,7 @@
             "value": "file"
           },
           {
-            "name": "EXTRA_NODES",
-            "value": ""
+            "name": "EXTRA_NODES"
           }
         ],
         "volumeMounts": [
@@ -205,7 +204,7 @@
     "environment": "stageprod",
     "hostname": "gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/472403d1-09a8-4d10-a5de-9b316f7da980",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.6.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/3.6.2/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
