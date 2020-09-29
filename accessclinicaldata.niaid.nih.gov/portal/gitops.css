@@ -50,6 +50,21 @@
   --g3-font__semi-bold-weight: 600;
 }
 
+h1, h2, h3, h4,
+.caption,
+.form-h1, .form-h2, .form-caption {
+    font-family: 'Martel', serif;
+}
+
+body,
+.introduction,
+.body,
+.special-number,
+.form-body,
+.form-special-number {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Buttons */
 
 .data-dictionary__switch-button--active,
@@ -80,6 +95,18 @@
 
 .nav-bar__logo-img {
   height: 50px;
+}
+
+.nav-bar__link--home {
+  padding-top: 4px;
+  font-size: x-large;
+  color: var(--primary-color);;
+}
+
+.nav-bar__link--home:hover {
+  color: var(--primary-color);;
+  opacity: 1;
+  border-bottom: 0;
 }
 
 .index-page__top {

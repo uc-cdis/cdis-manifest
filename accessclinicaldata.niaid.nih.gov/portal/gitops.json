@@ -7,6 +7,7 @@
   },
   "components": {
     "appName": "NIAID Clinical Trials Repository",
+    "homepageAltText": "NIH: National Institute of Allergy and Infectious Diseases logo",
     "index": {
       "introduction": {
         "heading": "Accessing  NIAID  Clinical Trials Data",
@@ -26,6 +27,7 @@
       "homepageChartNodes": []
     },
     "navigation": {
+      "title": "AccessClinicalData@NIAID",
       "items": [{
         "icon": "query",
         "link": "/study-viewer",
@@ -46,7 +48,7 @@
     "footerLogos": [{
       "src": "/custom/sponsors/gitops-sponsors/niaid_dark.png",
       "href": "https://www.niaid.nih.gov/",
-      "alt": "NIAID"
+      "alt": "NIH: National Institute of Allergy and Infectious Diseases logo"
     }]
   },
   "featureFlags": {
