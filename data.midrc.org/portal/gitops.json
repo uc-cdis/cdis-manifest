@@ -33,20 +33,35 @@
           "text": "The Medical Imaging & Data Resource Center (MIDRC) Data Commons supports the management, analysis and sharing of medical imaging data for the improvement of patient outcomes.",
           "link": "/submission"
         },
-        "buttons": [],
-        "homepageChartNodes": [
-          {
-            "node": "summary_location",
-            "name": "Locations"
-          },
-          {
-            "node": "summary_report",
-            "name": "Summary Reports"
-          },
-          {
-            "node": "subject",
-            "name": "Subjects"
-          }
+        "buttons": [
+            {
+              "name": "Data Dictionary",
+              "icon": "data-field-define",
+              "body": "Browse the nodes and properties of the graph data model used in the Open Access Data Commons.",
+              "link": "/DD",
+              "label": "Explore Data Model"
+            },
+            {
+              "name": "Explore Data",
+              "icon": "data-explore",
+              "body": "Search and download subsets of data from the Open Access Data Commons using intuitive navigation tools.",
+              "link": "/explorer",
+              "label": "Explore data"
+            },
+            {
+              "name": "Query Data",
+              "icon": "data-access",
+              "body": "Search and download subsets of data from the Open Access Data Commons using GraphQL queries.",
+              "link": "/query",
+              "label": "Query data"
+            },
+            {
+              "name": "Analyze Data",
+              "icon": "data-analyze",
+              "body": "Perform analysis on the Open Access Data Commons data using Jupyter Notebooks.",
+              "link": "/workspace",
+              "label": "Run analysis"
+            }
         ]
       },
       "navigation": {
@@ -58,22 +73,28 @@
             "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
           },
           {
-            "name": "Workspace",
-            "link": "#hostname#workspace/",
-            "icon": "workspace",
-            "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
-          },
-          {
             "name": "Dictionary",
             "link": "/DD",
             "icon": "dictionary",
             "tooltip": "Study the data model and download data submission templates."
           },
           {
+            "name": "Query",
+            "link": "/query",
+            "icon": "query",
+            "tooltip": "Query the databases using GraphQL."
+          },
+          {
             "name": "Profile",
             "link": "/identity",
             "icon": "profile",
             "tooltip": "Create API keys and check your access privileges."
+          },
+          {
+            "name": "Workspace",
+            "link": "#hostname#workspace/",
+            "icon": "workspace",
+            "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
           }
         ]
       },
@@ -168,8 +189,8 @@
                 "associated_study",
                 "_subjects_count",
                 "_samples_count",
-                "_imaging_files_count",
-                "_virus_genomes_count"
+                "_virus_genomes_count",
+                "_imaging_files_count"
               ]
             },
             "buttons": [

@@ -34,9 +34,10 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
-      - name: age
       - name: gender
       - name: race
+      - name: age
+      - name: zip
     aggregated_props:
       - name: _samples_count
         path: samples
