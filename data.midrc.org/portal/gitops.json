@@ -3,9 +3,9 @@
     "graphql": {
       "boardCounts": [
         {
-          "graphql": "_summary_location_count",
-          "name": "Location",
-          "plural": "Locations"
+          "graphql": "_imaging_file_count",
+          "name": "Image",
+          "plural": "Images"
         },
         {
           "graphql": "_subject_count",
@@ -26,7 +26,7 @@
       "projectDetails": "boardCounts"
     },
     "components": {
-      "appName": "Chicagoland COVID-19 Commons",
+      "appName": "The Medical Imaging and Data Resource Center Commons",
       "index": {
         "introduction": {
           "heading": "Chicagoland COVID-19 Commons",
@@ -52,12 +52,6 @@
       "navigation": {
         "items": [
           {
-            "name": "Notebook Browser",
-            "link": "/resource-browser",
-            "icon": "query",
-            "tooltip": "The notebooks pull data from various external sources to generate and output useful tables, charts, graphs, and models."
-          },
-          {
             "name": "Exploration",
             "link": "/explorer",
             "icon": "exploration",
@@ -73,12 +67,13 @@
             "name": "Dictionary",
             "link": "/DD",
             "icon": "dictionary",
-            "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
+            "tooltip": "Study the data model and download data submission templates."
           },
           {
             "name": "Profile",
             "link": "/identity",
-            "icon": "profile"
+            "icon": "profile",
+            "tooltip": "Create API keys and check your access privileges."
           }
         ]
       },
@@ -86,11 +81,11 @@
         "items": [
           {
             "link": "/",
-            "name": "Chicagoland COVID-19 Commons Home"
+            "name": "Medical Imaging & Data Resource Center Home"
           },
           {
-            "link": "https://covid19.occ-pla.net/members/chicagoland-commons-partners/",
-            "name": "Partners"
+            "link": "https://www.midrc.org/",
+            "name": "About"
           },
           {
             "icon": "upload",
@@ -104,8 +99,8 @@
         ]
       },
       "login": {
-        "title": "Chicagoland COVID-19 Commons",
-        "subTitle": "Explore, Analyze, and Share Data to Improve Health Outcomes for COVID-19",
+        "title": "Medical Imaging & Data Resource Center Data Commons",
+        "subTitle": "Explore, Analyze, and Share Medical Imaging Data to Improve Patient Outcomes",
         "text": "",
         "contact": "If you have any questions about access or the registration process, please contact ",
         "email": "support@datacommons.io",
@@ -122,86 +117,277 @@
     },
     "featureFlags": {
       "explorer": true,
-      "analysis": true
+      "analysis": true,
+      "explorerPublic": true
     },
     "analysisTools": [ ],
-    "dataExplorerConfig": {
-      "charts": {
-        "project_id": {
-          "chartType": "count",
-          "title": "Projects"
-        },
-        "symptoms": {
-          "chartType": "bar",
-          "title": "Symptoms"
-        },
-        "source": {
-          "chartType": "pie",
-          "title": "Source"
-        }
+    "explorerConfig": [
+        {
+            "tabTitle": "Studies",
+            "charts": {
+              "project_id": {
+                "chartType": "count",
+                "title": "Projects"
+              },
+              "study_setup": {
+                "chartType": "bar",
+                "title": "Study Setup"
+              },
+              "study_objective": {
+                "chartType": "bar",
+                "title": "Study Objective"
+              },
+              "study_design": {
+                "chartType": "bar",
+                "title": "Study Design"
+              }
+            },
+            "filters": {
+              "tabs": [
+                {
+                  "title": "Studies",
+                  "fields":[
+                    "project_id",
+                    "study_setup",
+                    "study_objective",
+                    "study_design"
+                  ]
+                }
+              ]
+            },
+            "table": {
+              "enabled": true,
+              "fields": [
+                "project_id",
+                "submitter_id",
+                "study_description",
+                "data_description",
+                "study_setup",
+                "study_objective",
+                "study_design",
+                "associated_study",
+                "_subjects_count",
+                "_samples_count",
+                "_imaging_files_count",
+                "_viral_genomes_count"
+              ]
+            },
+            "buttons": [
+              {
+                "enabled": true,
+                "type": "data",
+                "title": "Download Studies",
+                "leftIcon": "user",
+                "rightIcon": "download",
+                "fileName": "midrc_studies.json"
+              },
+              {
+                "enabled": false,
+                "type": "manifest",
+                "title": "Download File Manifest",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "midrc_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
+              }
+            ],
+            "arrangerConfig": {
+              "projectId": "search",
+              "graphqlField": "study",
+              "index": "",
+              "nodeCountField": "project_id"
+            },
+            "guppyConfig": {
+              "dataType": "study",
+              "nodeCountTitle": "Studies",
+              "fieldMapping": [],
+              "manifestMapping": {
+                "resourceIndexType": "file",
+                "resourceIdField": "object_id",
+                "referenceIdFieldInResourceIndex": "subject_id",
+                "referenceIdFieldInDataIndex": "subject_id"
+              },
+              "accessibleFieldCheckList": ["project_id"],
+              "accessibleValidationField": "project_id"
+            }
       },
-      "filters": {
-        "tabs": [
-          {
-            "title": "subject",
-            "fields":[
-              "project_id",
-              "symptoms",
-              "country",
-              "visiting_wuhan",
-              "from_wuhan",
-              "death",
-              "recovered",
-              "reporting_date",
-              "source",
-              "age"
+      {
+          "tabTitle": "Subjects",
+          "charts": {
+            "project_id": {
+              "chartType": "count",
+              "title": "Projects"
+            },
+            "gender": {
+              "chartType": "pie",
+              "title": "Gender"
+            },
+            "race": {
+              "chartType": "bar",
+              "title": "Race"
+            },
+            "Age": {
+              "chartType": "bar",
+              "title": "Age"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "Subjects",
+                "fields":[
+                  "project_id",
+                  "gender",
+                  "race",
+                  "age",
+                  "zip"
+                ]
+              }
             ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "project_id",
+              "submitter_id",
+              "gender",
+              "race",
+              "age",
+              "zip",
+              "_samples_count",
+              "_imaging_files_count"
+            ]
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Subjects",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "midrc_subjects.json"
+            },
+            {
+              "enabled": false,
+              "type": "manifest",
+              "title": "Download File Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "midrc_file_manifest.json"
+            },
+            {
+              "enabled": false,
+              "type": "export-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "arrangerConfig": {
+            "projectId": "search",
+            "graphqlField": "subject",
+            "index": "",
+            "nodeCountField": "project_id"
+          },
+          "guppyConfig": {
+            "dataType": "subject",
+            "nodeCountTitle": "Subjects",
+            "fieldMapping": [],
+            "manifestMapping": {
+              "resourceIndexType": "file",
+              "resourceIdField": "object_id",
+              "referenceIdFieldInResourceIndex": "subject_id",
+              "referenceIdFieldInDataIndex": "subject_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id"
           }
-        ]
-      },
-      "table": {
-        "enabled": true
-      },
-      "buttons": [
-      ],
-      "guppyConfig": {
-        "dataType": "subject",
-        "nodeCountTitle": "Subjects",
-        "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "subject_id",
-          "referenceIdFieldInDataIndex": "node_id"
-        }
-      }
-    },
-    "resourceBrowser": {
-      "title": "COVID-19 Jupyter Notebooks",
-      "public": true,
-      "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace and can be launched by following the instructions listed in the readme.md file. When running the notebooks from the Workspace the most recent data is pulled from the originating source in real time and the notebook will render the most updated information.",
-      "resources": [
-        {
-          "title": "Exploring the Demographics of COVID-19 Cases",
-          "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
-          "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
-          "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
         },
         {
-          "title": "Chicago COVID-19 forecasting using SEIR models",
-          "description": "In this notebook, we construct an SEIR model for COVID-19 in Cook County, Illinois, using data sourced from Johns Hopkins University, but available within the Chicagoland COVID-19 Commons. We then perform an optimization of initial model parameter values and do some simple validation.",
-          "link": "/dashboard/Public/notebooks/covid19_seir.html",
-          "imageUrl": "/dashboard/Public/notebooks/covid19_seir.png"
-        },
-        {
-          "title": "Visualizing Global COVID-19 data",
-          "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
-          "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
-          "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
+          "tabTitle": "Files",
+          "charts": {
+            "data_type": {
+              "chartType": "stackedBar",
+              "title": "File Type"
+            },
+            "data_format": {
+              "chartType": "stackedBar",
+              "title": "File Format"
+            },
+            "data_category": {
+              "chartType": "stackedBar",
+              "title": "File Category"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "File",
+                "fields": [
+                  "project_id",
+                  "data_type",
+                  "data_format",
+                  "data_category",
+                  "file_size"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "project_id",
+              "submitter_id",
+              "object_id",
+              "file_name",
+              "file_size",
+              "md5sum",
+              "data_type",
+              "data_format",
+              "data_category"
+            ]
+          },
+          "guppyConfig": {
+            "dataType": "file",
+            "fieldMapping": [
+              { "field": "object_id", "name": "GUID" }
+            ],
+            "nodeCountTitle": "Files",
+            "manifestMapping": {
+              "resourceIndexType": "subject",
+              "resourceIdField": "subject_id",
+              "referenceIdFieldInResourceIndex": "object_id",
+              "referenceIdFieldInDataIndex": "object_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id",
+            "downloadAccessor": "object_id"
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "file-manifest",
+              "title": "Download File Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "midrc_file_manifest.json",
+              "dropdownId": "download"
+            },
+            {
+              "enabled": true,
+              "type": "export-files-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "dropdowns": {}
         }
-      ]
-    },
-    "enableCovid19Dashboard": true,
-    "showArboristAuthzOnProfile": true,
-    "showFenceAuthzOnProfile": false
-  }
-  
+    ]
+}
