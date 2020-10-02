@@ -79,9 +79,19 @@
         { "field": "clinical_trial_website", "name": "Websites"},
         { "field": "publications", "name": "Study Publications"}
       ],
-      "downloadField": "object_id",
       "fileDataType": "ctfile",
-      "docDataType": "oafile"
+      "docDataType": "oafile",
+      "buttons": [
+        {
+          "type": "download"
+        },
+        {
+          "type": "request_access",
+          "resourceDisplayNameField": "title",
+          "redirectModalText": "the NIAID Data Access Request Form",
+          "singleItemView": false
+        }
+      ]
     }
   ],
   "useArboristUI": true,
