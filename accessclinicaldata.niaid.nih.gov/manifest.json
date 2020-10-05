@@ -16,11 +16,11 @@
     "pidgin": "quay.io/cdis/pidgin:2020.08",
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:feat_wireframe-poc",
+    "portal": "quay.io/cdis/data-portal:nct-1.1.0",
     "tube": "quay.io/cdis/tube:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
-    "requestor": "quay.io/cdis/requestor:1.1.0",
+    "requestor": "quay.io/cdis/requestor:1.2.0",
     "guppy": "quay.io/cdis/guppy:2020.08"
   },
   "arborist": {
@@ -38,7 +38,7 @@
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "kube-niaiddata-gen3",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/nde/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/nct/user.yaml",
     "netpolicy": "on",
     "tier_access_level": "libre",
     "public_datasets": true

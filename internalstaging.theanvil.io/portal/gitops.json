@@ -148,12 +148,12 @@
             "sex",
             "age_value",
             "ancestry",
-            "disease_description", 
-            "phenotype_present", 
-            "phenotype_absent", 
-            "disease_id", 
-            "solve_state", 
-            "congenital_status", 
+            "disease_description",
+            "phenotype_present",
+            "phenotype_absent",
+            "disease_id",
+            "solve_state",
+            "congenital_status",
             "age_of_onset",
             "phenotype_group"
           ]
@@ -169,12 +169,12 @@
         }, {
           "title": "Sequencing",
           "fields": [
-            "library_prep_kit_method", 
-            "exome_capture_platform", 
-            "capture_region_bed_file", 
-            "reference_genome_build", 
-            "sequencing_assay", 
-            "alignment_method", 
+            "library_prep_kit_method",
+            "exome_capture_platform",
+            "capture_region_bed_file",
+            "reference_genome_build",
+            "sequencing_assay",
+            "alignment_method",
             "data_processing_pipeline"
           ]
         }
@@ -243,17 +243,17 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        { "field": "disease_id", "name": "Disease ID" }, 
+        { "field": "disease_id", "name": "Disease ID" },
         { "field": "age_of_onset", "name": "Age of Onset" },
         { "field": "project_dbgap_accession_number", "name": "Project dbGaP Accession Number" },
         { "field": "project_dbgap_consent_text", "name":"Project dbGaP Consent Text"},
-        { "field": "project_dbgap_phs", "name":"Project dbGaP Phs"}    
+        { "field": "project_dbgap_phs", "name":"Project dbGaP Phs"}
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
         "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -281,7 +281,7 @@
             "data_category",
             "data_type",
             "data_format",
-            "analyte_type", 
+            "analyte_type",
             "sequencing_assay"
           ]
         }
@@ -310,7 +310,7 @@
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
+        "resourceIdField": "_subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },

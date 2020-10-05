@@ -1,0 +1,81 @@
+mappings:
+  - name: midrc_study
+    doc_type: study
+    type: aggregator
+    root: study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_setup
+      - name: study_objective
+      - name: study_design
+      - name: study_description
+      - name: data_description
+      - name: associated_study
+    aggregated_props:
+      - name: _subjects_count
+        path: subjects
+        fn: count
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _virus_genomes_count
+        path: virus_genomes
+        fn: count
+      - name: _imaging_files_count
+        path: subjects.imaging_files
+        fn: count
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
+  - name: midrc_subject
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: gender
+      - name: race
+      - name: age
+      - name: zip
+    aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _imaging_files_count
+        path: imaging_files
+        fn: count
+    joining_props:
+      - index: file
+        join_on: subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+  - name: midrc_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+      - name: state
+    injecting_props:
+      subject:
+        props:
+          - name: subject_id
+            src: id
+          - name: project_id

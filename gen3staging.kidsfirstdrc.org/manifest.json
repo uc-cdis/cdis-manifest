@@ -7,15 +7,15 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.08",
+    "arborist": "quay.io/cdis/arborist:2020.09",
     "dashboard": "quay.io/cdis/gen3-statics:2020.09",
-    "fence": "quay.io/cdis/fence:4.22.4",
-    "indexd": "quay.io/cdis/indexd:2020.08",
-    "peregrine": "quay.io/cdis/peregrine:2020.08",
-    "pidgin": "quay.io/cdis/pidgin:2020.08",
-    "revproxy": "quay.io/cdis/nginx:2020.08",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:2020.08",
+    "fence": "quay.io/cdis/fence:4.23.5",
+    "indexd": "quay.io/cdis/indexd:2020.09",
+    "peregrine": "quay.io/cdis/peregrine:2020.09",
+    "pidgin": "quay.io/cdis/pidgin:2020.09",
+    "revproxy": "quay.io/cdis/nginx:2020.09",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.09",
+    "portal": "quay.io/cdis/data-portal:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {
@@ -53,7 +53,10 @@
       "strategy": "auto"
     },
     "indexd": {
-      "strategy": "auto"
+      "strategy": "auto",
+      "min": 8,
+      "max": 12,
+      "targetCpu": 40
     },
     "peregrine": {
       "strategy": "auto"
