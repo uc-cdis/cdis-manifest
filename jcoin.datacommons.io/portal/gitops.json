@@ -15,7 +15,7 @@
     ],
     "projectDetails": "boardCounts"
   },
-   "components": {
+  "components": {
     "appName": "JCOIN Portal",
     "index": {
       "introduction": {
@@ -167,7 +167,7 @@
       "tabs": [
         {
           "title": "Participant",
-          "fields":[
+          "fields": [
             "project_id",
             "gender",
             "race",
@@ -228,10 +228,22 @@
       "dataType": "participant",
       "nodeCountTitle": "Participants",
       "fieldMapping": [
-        { "field": "project_id", "name": "Project ID" },
-        { "field": "bmi", "name": "BMI (kg/m^2)" },
-        { "field": "height", "name": "Height (cm)" },
-        { "field": "weight", "name": "Weight (g)" }
+        {
+          "field": "project_id",
+          "name": "Project ID"
+        },
+        {
+          "field": "bmi",
+          "name": "BMI (kg/m^2)"
+        },
+        {
+          "field": "height",
+          "name": "Height (cm)"
+        },
+        {
+          "field": "weight",
+          "name": "Weight (g)"
+        }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -286,7 +298,10 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+        {
+          "field": "object_id",
+          "name": "GUID"
+        }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
