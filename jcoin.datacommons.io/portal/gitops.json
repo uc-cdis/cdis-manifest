@@ -179,7 +179,6 @@
               "ever_transferred",
               "pregnancy_status",
               "protocol",
-              "height",
               "weight",
               "weight_percentage",
               "bmi",
@@ -213,17 +212,25 @@
         {
           "enabled": true,
           "type": "export-to-workspace",
-          "title": "Export to Workspace",
+          "title": "Export Files to Workspace",
           "leftIcon": "datafile",
           "rightIcon": "external-link"
         },
         {
           "enabled": true,
           "type": "manifest",
-          "title": "Download Manifest",
+          "title": "Download File Manifest",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "manifest.json"
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "data",
+          "title": "Download Clinical Data",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical-data.json"
         }
       ],
       "guppyConfig": {
@@ -250,8 +257,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "participant_id",
-          "referenceIdFieldInDataIndex": "participant_id"
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
         }
       }
     },
@@ -291,8 +298,15 @@
       "buttons": [
         {
           "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
           "type": "file-manifest",
-          "title": "Download Manifest",
+          "title": "Download File Manifest",
           "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "file-manifest.json"
