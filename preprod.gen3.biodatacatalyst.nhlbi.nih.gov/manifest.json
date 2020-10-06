@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.10",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.10",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.5",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.10",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.10",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.10",
@@ -50,7 +50,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.5.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -114,7 +114,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.5.1",
         "pull_policy": "Always",
         "env": [
           {
