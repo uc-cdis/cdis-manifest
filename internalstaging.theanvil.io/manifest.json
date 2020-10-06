@@ -163,7 +163,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata-service:2020.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2020.10",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
