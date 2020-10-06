@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.09",
     "dashboard": "quay.io/cdis/gen3-statics:2020.09",
-    "fence": "quay.io/cdis/fence:4.23.2",
+    "fence": "quay.io/cdis/fence:4.23.5",
     "indexd": "quay.io/cdis/indexd:2020.09",
     "peregrine": "quay.io/cdis/peregrine:2020.09",
     "pidgin": "quay.io/cdis/pidgin:2020.09",
@@ -53,7 +53,10 @@
       "strategy": "auto"
     },
     "indexd": {
-      "strategy": "auto"
+      "strategy": "auto",
+      "min": 8,
+      "max": 12,
+      "targetCpu": 40
     },
     "peregrine": {
       "strategy": "auto"

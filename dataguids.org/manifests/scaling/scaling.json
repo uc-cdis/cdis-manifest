@@ -1,0 +1,14 @@
+{
+  "indexd": {
+    "strategy": "auto",
+    "min": 4,
+    "max": 12,
+    "targetCpu": 40
+  },
+  "revproxy": {
+    "strategy": "auto",
+    "min": 4,
+    "max": 10,
+    "targetCpu": 40
+  }
+}
