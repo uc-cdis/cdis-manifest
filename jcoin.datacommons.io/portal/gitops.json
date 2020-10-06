@@ -15,7 +15,7 @@
     ],
     "projectDetails": "boardCounts"
   },
-   "components": {
+  "components": {
     "appName": "JCOIN Portal",
     "index": {
       "introduction": {
@@ -144,159 +144,188 @@
   "featureFlags": {
     "explorer": true
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
-      },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      },
-      "race": {
-        "chartType": "pie",
-        "title": "Race"
-      },
-      "center": {
-        "chartType": "bar",
-        "title": "center"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Participant",
-          "fields":[
-            "project_id",
-            "gender",
-            "race",
-            "jewish",
-            "hispanic",
-            "drug_used",
-            "ever_transferred",
-            "pregnancy_status",
-            "protocol",
-            "height",
-            "weight",
-            "weight_percentage",
-            "bmi",
-            "health_insurance",
-            "center"
-          ]
+  "explorerConfig": [
+    {
+      "tabTitle": "Data",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Projects"
+        },
+        "gender": {
+          "chartType": "pie",
+          "title": "Gender"
+        },
+        "race": {
+          "chartType": "pie",
+          "title": "Race"
+        },
+        "center": {
+          "chartType": "bar",
+          "title": "center"
         }
-      ]
-    },
-    "table": {
-      "enabled": false,
-      "fields": [
-        "project_id",
-        "gender",
-        "race",
-        "jewish",
-        "hispanic",
-        "drug_used",
-        "ever_transferred",
-        "pregnancy_status",
-        "protocol",
-        "height",
-        "weight",
-        "weight_percentage",
-        "bmi",
-        "health_insurance",
-        "center"
-      ]
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "external-link"
       },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "participant",
-      "nodeCountTitle": "Participants",
-      "fieldMapping": [
-        { "field": "project_id", "name": "Project ID" },
-        { "field": "bmi", "name": "BMI (kg/m^2)" },
-        { "field": "height", "name": "Height (cm)" },
-        { "field": "weight", "name": "Weight (g)" }
+      "filters": {
+        "tabs": [
+          {
+            "title": "Participant",
+            "fields": [
+              "project_id",
+              "gender",
+              "race",
+              "hispanic",
+              "drug_used",
+              "ever_transferred",
+              "pregnancy_status",
+              "protocol",
+              "health_insurance",
+              "center"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_id",
+          "gender",
+          "race",
+          "jewish",
+          "hispanic",
+          "drug_used",
+          "ever_transferred",
+          "pregnancy_status",
+          "protocol",
+          "height",
+          "weight",
+          "weight_percentage",
+          "bmi",
+          "health_insurance",
+          "center"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "data",
+          "title": "Download Clinical Data",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical-data.json"
+        }
       ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "participant_id",
-        "referenceIdFieldInDataIndex": "participant_id"
+      "guppyConfig": {
+        "dataType": "participant",
+        "nodeCountTitle": "Participants",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "bmi",
+            "name": "BMI (kg/m^2)"
+          },
+          {
+            "field": "height",
+            "name": "Height (cm)"
+          },
+          {
+            "field": "weight",
+            "name": "Weight (g)"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
       }
+    },
+    {
+      "tabTitle": "Files",
+      "charts": {
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          {
+            "field": "object_id",
+            "name": "GUID"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "participant",
+          "resourceIdField": "participant_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id"
+      },
+      "dropdowns": {}
     }
-  },
-  "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json"
-      }
-    ],
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
-      ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "participant",
-        "resourceIdField": "participant_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "downloadAccessor": "object_id"
-    },
-    "dropdowns": {}
-  }
+  ]
 }
