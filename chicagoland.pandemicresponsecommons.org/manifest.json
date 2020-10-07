@@ -14,8 +14,8 @@
     "pidgin": "quay.io/cdis/pidgin:2020.08",
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "tube": "quay.io/cdis/tube:0.4.0",
     "portal": "quay.io/cdis/data-portal:covid19-3.8.1",
+    "tube": "quay.io/cdis/tube:0.4.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
     "hatchery": "quay.io/cdis/hatchery:2020.08",
@@ -215,6 +215,10 @@
       {
         "index": "covid19_subject",
         "type": "subject"
+      },
+      {
+        "index": "covid19_clinical_trials",
+        "type": "clinical_trials"
       },
       {
         "index": "covid19_dataset",

@@ -154,6 +154,26 @@ mappings:
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
       - path: studies[study_doi:study_doi]
+  - name: covid19_clinical_trials
+    doc_type: clinical_trials
+    type: aggregator
+    root: clinical_trials
+    props:
+      - name: project_id
+      - name: completed_clinical_trials
+      - name: description
+      - name: development_stage
+      - name: fda_regulated_drug_product
+      - name: focus
+      - name: inprogress_clinical_trials
+      - name: location
+      - name: nct_number
+      - name: phase
+      - name: sponsor
+      - name: technology
+      - name: title
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
   - name: covid19_genomic_file
     doc_type: genomic_file
     type: collector
