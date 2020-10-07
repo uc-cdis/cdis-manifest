@@ -10,7 +10,7 @@
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.09",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.09",
     "sower": "quay.io/cdis/sower:2020.09",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.09",    
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.09",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.09",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.09",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.09",
@@ -25,7 +25,7 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.09",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.09",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09"    
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09"
   },
   "indexd": {
     "arborist": "true"
@@ -319,7 +319,7 @@
     "hostname": "data.bloodpac.org",
 
     "revproxy_arn": "arn:aws:acm:us-east-1:562749638216:certificate/8cfa5317-9c44-4d6a-9af8-8373952b4230",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.7.4/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/0.7.5/schema.json",
 
     "portal_app": "gitops",
     "useryaml_s3path": "s3://cdis-gen3-users/bpa/user.yaml",
@@ -331,9 +331,8 @@
     "job_images": {
       "indexing": "quay.io/cdis/indexs3client:2020.09"
     }
-  },  
+  },
   "canary": {
     "default": 0
   }
 }
-
