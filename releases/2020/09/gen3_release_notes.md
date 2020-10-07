@@ -1,4 +1,4 @@
-# Core Gen3 Release 202008 (Hyde Park)
+# Core Gen3 Release 202009 (Hyde Park)
 
 ## uc-cdis/gen3-statics
 
