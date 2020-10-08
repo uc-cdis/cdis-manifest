@@ -216,8 +216,8 @@
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "_subject_id",
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -298,7 +298,7 @@
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
+        "resourceIdField": "_subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
