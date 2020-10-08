@@ -36,14 +36,19 @@
       }]
     },
     "topBar": {
-      "items": []
+      "items": [
+        {
+          "link": "accessclinicaldatasupport@niaid.nih.gov",
+          "name": "Contact Support"
+        }
+      ]
     },
     "login": {
       "title": "Accessing NIAID Clinical Trials Data",
       "subTitle": "Access clinical data to understand, treat, and prevent infectious diseases",
       "text": "Data access to de-identified and anonymous individual patient level data from NIAID sponsored clinical trials will be available to approved users and their institution through a data access request and data use agreement to assure protection of patient privacy and data security.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io"
+      "email": "accessclinicaldatasupport@niaid.nih.gov"
     },
     "footerLogos": [{
       "src": "/custom/sponsors/gitops-sponsors/niaid_dark.png",
@@ -89,7 +94,9 @@
           "type": "request_access",
           "resourceDisplayNameField": "title",
           "redirectModalText": "the NIAID Data Access Request Form",
-          "singleItemView": false
+          "singleItemView": false,
+          "accessRequestedText": "DAR In Progress",
+          "accessRequestedTooltipText": "Your recently submitted DAR is being reviewed by NIAID"
         }
       ]
     }
