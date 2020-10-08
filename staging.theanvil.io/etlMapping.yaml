@@ -16,6 +16,8 @@ mappings:
       - name: solve_state
       - name: congenital_status
       - name: age_of_onset
+      - name: phenotype_group
+      - name: anvil_project_id
 #    flatten_props:
     aggregated_props:
       - name: sample_provider
@@ -107,7 +109,7 @@ mappings:
       - name: state
       - name: data_category
       - name: analyte_type
-      - name: sequencing_assay      
+      - name: sequencing_assay
     injecting_props:
       subject:
         props:
@@ -116,6 +118,6 @@ mappings:
             fn: set
           - name: subject_submitter_id
             src: submitter_id
-            fn: set            
+            fn: set
           - name: project_id
             fn: set
