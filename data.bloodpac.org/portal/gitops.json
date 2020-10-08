@@ -247,8 +247,8 @@
             "manifestMapping": {
               "resourceIndexType": "file",
               "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "case_id",
-              "referenceIdFieldInDataIndex": "case_id"
+              "referenceIdFieldInResourceIndex": "_case_id",
+              "referenceIdFieldInDataIndex": "_case_id"
             },
             "accessibleFieldCheckList": ["project_id"],
             "accessibleValidationField": "project_id"
@@ -359,8 +359,8 @@
           "manifestMapping": {
             "resourceIndexType": "file",
             "resourceIdField": "object_id",
-            "referenceIdFieldInResourceIndex": "case_id",
-            "referenceIdFieldInDataIndex": "case_id"
+            "referenceIdFieldInResourceIndex": "_case_id",
+            "referenceIdFieldInDataIndex": "_case_id"
           },
           "accessibleFieldCheckList": ["project_id"],
           "accessibleValidationField": "project_id"
@@ -508,8 +508,8 @@
             "manifestMapping": {
               "resourceIndexType": "file",
               "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "case_id",
-              "referenceIdFieldInDataIndex": "case_id"
+              "referenceIdFieldInResourceIndex": "_case_id",
+              "referenceIdFieldInDataIndex": "_case_id"
             },
             "accessibleFieldCheckList": ["project_id"],
             "accessibleValidationField": "project_id"
@@ -629,8 +629,8 @@
               "manifestMapping": {
                 "resourceIndexType": "file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
+                "referenceIdFieldInResourceIndex": "_case_id",
+                "referenceIdFieldInDataIndex": "_case_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -751,8 +751,8 @@
               "manifestMapping": {
                 "resourceIndexType": "file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
+                "referenceIdFieldInResourceIndex": "_case_id",
+                "referenceIdFieldInDataIndex": "_case_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -948,8 +948,8 @@
               "manifestMapping": {
                 "resourceIndexType": "file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
+                "referenceIdFieldInResourceIndex": "_case_id",
+                "referenceIdFieldInDataIndex": "_case_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -996,7 +996,7 @@
           "nodeCountTitle": "Files",
           "manifestMapping": {
             "resourceIndexType": "case",
-            "resourceIdField": "case_id",
+            "resourceIdField": "_case_id",
             "referenceIdFieldInResourceIndex": "object_id",
             "referenceIdFieldInDataIndex": "object_id"
           },
