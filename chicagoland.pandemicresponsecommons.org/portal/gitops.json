@@ -355,6 +355,79 @@
       }
     },
     {
+      "tabTitle": "Interventions",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name",
+              "title",
+              "focus",
+              "technology",
+              "development_stage",
+              "phase"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_investigator_affiliation",
+          "project_name",  
+          "title",
+          "focus",
+          "description",
+          "technology",
+          "development_stage",
+          "phase",
+          "location",
+          "nct_number"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "clinical_trials",
+        "nodeCountTitle": "Interventions",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          { "field": "title",
+            "name": "Intervention Name"
+          },
+          {  "field": "nct_number",
+             "name": "NCT Number"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
       "tabTitle": "Genomics",
       "charts": {
         "data_type": {
