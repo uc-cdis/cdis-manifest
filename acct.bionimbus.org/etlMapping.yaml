@@ -11,6 +11,7 @@ mappings:
       - name: primary_site
       - name: species
       - name: strain
+      - name: arm
     aggregated_props:
       - name: ethnicity
         path: demographics
@@ -51,6 +52,34 @@ mappings:
       - name: tissue_type
         path: samples
         src: tissue_type
+        fn: set
+      - name: clotting
+        path: follow_ups
+        src: clotting
+        fn: set
+      - name: bleeding
+        path: follow_ups
+        src: bleeding
+        fn: set
+      - name: mace
+        path: follow_ups
+        src: mace
+        fn: set
+      - name: indication_for_noac_treatment
+        path: diagnoses.treatments
+        src: indication_for_noac_treatment
+        fn: set
+      - name: indication_for_warfarin_treatment
+        path: diagnoses.treatments
+        src: indication_for_warfarin_treatment
+        fn: set
+      - name: indication_for_clopidogrel_treatment
+        path: diagnoses.treatments
+        src: indication_for_clopidogrel_treatment
+        fn: set
+      - name: age_at_index
+        path: demographics
+        src: age_at_index
         fn: set
       - name: therapeutic_agents
         path: diagnoses.treatments
