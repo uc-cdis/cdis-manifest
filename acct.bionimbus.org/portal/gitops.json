@@ -164,22 +164,32 @@
           "title": "Subjects",
           "fields": [
             "project_id",
-            "disease_type",
-            "index_date",
-            "primary_site",
+            "arm",
             "species",
-            "strain",
-            "ethnicity",
             "gender",
             "race",
-            "primary_diagnosis",
-            "alcohol_intensity",
+            "age_at_index",
             "bmi",
+            "alcohol_intensity",
             "pack_years_smoked",
-            "years_smoked",
+            "years_smoked"
+          ]
+        },
+        {
+          "title": "Clinical",
+          "fields": [
+            "clotting",
+            "bleeding",
+            "mace",
+            "indication_for_noac_treatment",
+            "indication_for_warfarin_treatment",
+            "indication_for_clopidogrel_treatment",
+            "therapeutic_agents",
+            "disease_type",
+            "primary_site",
+            "primary_diagnosis",
             "composition",
-            "tissue_type",
-            "therapeutic_agents"
+            "tissue_type"
           ]
         }
       ]
@@ -211,7 +221,8 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        { "field": "submitter_id", "name": "Subject ID" }
+        { "field": "age_at_index", "name": "Age" },
+        { "field": "indication_for_noac_treatment", "name": "Indication For NOAC Treatment" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
