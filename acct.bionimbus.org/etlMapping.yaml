@@ -12,6 +12,10 @@ mappings:
       - name: species
       - name: strain
       - name: arm
+    flatten_props:
+      - path: demographics
+        props: 
+          - name: age_at_index    
     aggregated_props:
       - name: ethnicity
         path: demographics
@@ -76,10 +80,6 @@ mappings:
       - name: indication_for_clopidogrel_treatment
         path: diagnoses.treatments
         src: indication_for_clopidogrel_treatment
-        fn: set
-      - name: age_at_index
-        path: demographics
-        src: age_at_index
         fn: set
       - name: therapeutic_agents
         path: diagnoses.treatments
