@@ -221,6 +221,7 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
+        { "field": "submitter_id", "name": "Subject ID" },
         { "field": "age_at_index", "name": "Age" },
         { "field": "indication_for_noac_treatment", "name": "Indication For NOAC Treatment" }
       ],
