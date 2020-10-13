@@ -171,5 +171,12 @@
       "user-uid": 1000,
       "fs-gid": 100
     }
+  ],
+  "more-configs": [	
+    {	
+      "type": "dockstore-compose:1.0.0",	
+      "path": "/hatchery-more-configs/dicom2.yaml",	
+      "name": "Dicom2"	
+    }
   ]
 }
