@@ -1,0 +1,56 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.08",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.08",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.08",
+    "mariner": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/mariner:2020.08",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.08",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.08",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.08",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.08",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.08",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.08",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2020.08",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.08",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.08",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.08",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2020.08",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3"
+  },
+  "global": {
+    "environment": "vhdcprod",
+    "hostname": "va.datacommons.io",
+    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/b9fe7c65-75be-4e2c-9abe-ffdce1c5ff33",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.3/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-vhdcprod-gen3",
+    "logs_bucket": "logs-vhdcprod-gen3",
+    "sync_from_dbgap": "False",
+    "dispatcher_job_num": "10",
+    "useryaml_s3path": "s3://cdis-gen3-users/vhdcprod/user.yaml",
+    "netpolicy": "on"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.08"
+    }
+  },
+  "canary": {
+    "default": 0
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  }
+}
