@@ -44,7 +44,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: _subject_id
+        join_on: subject_id
         props:
           - name: data_format
             src: data_format
@@ -72,6 +72,6 @@ mappings:
     injecting_props:
       subject:
         props:
-          - name: _subject_id
+          - name: subject_id
             src: id
           - name: project_id
