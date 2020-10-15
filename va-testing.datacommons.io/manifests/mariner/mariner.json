@@ -1,0 +1,110 @@
+{
+  "storage": {
+    "s3": {
+      "name": "mariner-va-testing",
+      "region": "us-east-1"
+    }
+  },
+  "secrets": {
+    "awsusercreds": {
+      "name": "workflow-bot-g3auto",
+      "key": "awsusercreds.json"
+    }
+  },
+  "jobs": {
+    "engine": {
+      "labels": {
+        "app": "mariner-engine"
+      },
+      "serviceaccount": "mariner-service-account",
+      "restart_policy": "never"
+    },
+    "task": {
+      "labels": {
+        "app": "mariner-task"
+      },
+      "restart_policy": "never"
+    }
+  },
+  "containers": {
+    "engine": {
+      "name": "mariner-engine",
+      "image": "quay.io/cdis/mariner-engine:1.0.0",
+      "pull_policy": "always",
+      "command": [
+        "/bin/sh",
+        "/engineDockerrun.sh"
+      ],
+      "resources": {
+        "limits": {
+          "memory": "1Gi",
+          "cpu": "400m"
+        }
+      }
+    },
+    "s3sidecar": {
+      "name": "mariner-s3sidecar",
+      "image": "quay.io/cdis/mariner-s3sidecar:1.0.0",
+      "pull_policy": "always",
+      "command": [
+        "/bin/sh",
+        "/s3sidecarDockerrun.sh"
+      ],
+      "lifecycle": {
+        "prestop": [
+          "/bin/sh",
+          "-c",
+          "fusermount -u -z /$ENGINE_WORKSPACE"
+        ]
+      },
+      "resources": {
+        "limits": {
+          "memory": "256Mi",
+          "cpu": "100m"
+        }
+      },
+      "securitycontext": {
+        "privileged": true
+      }
+    },
+    "gen3fusesidecar": {
+      "name": "mariner-gen3fusesidecar",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.2.1",
+      "pull_policy": "always",
+      "command": [
+        "/bin/bash",
+        "/marinerRun.sh"
+      ],
+      "lifecycle": {
+        "prestop": [
+          "/bin/bash",
+          "-c",
+          "fusermount -u -z /$COMMONS_DATA"
+        ]
+      },
+      "resources": {
+        "limits": {
+          "memory": "256Mi",
+          "cpu": "100m"
+        }
+      },
+      "securitycontext": {
+        "privileged": true
+      }
+    },
+    "task": {
+      "name": "mariner-task",
+      "image": "alpine",
+      "pull_policy": "always",
+      "command": [
+        "/bin/sh"
+      ],
+      "resources": {
+        "limits": {
+          "memory": "512Mi",
+          "cpu": "900m"
+        }
+      }
+    }
+  }
+}
