@@ -5,6 +5,7 @@ mappings:
     root: core_metadata_collection
     props:
       - name: creator
+      - name: nct_number
       - name: condition
       - name: category
       - name: study_design_allocation
@@ -15,6 +16,7 @@ mappings:
       - name: study_start_date
       - name: study_completion_date
       - name: data_available
+      - name: data_availability_date
       - name: clinical_trial_website
       - name: publications
       - name: brief_summary
