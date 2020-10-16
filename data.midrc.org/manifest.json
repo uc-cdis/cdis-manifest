@@ -51,8 +51,16 @@
         "type": "subject"
       },
       {
-        "index": "midrc_file",
-        "type": "file"
+        "index": "midrc_imaging_exam",
+        "type": "imaging_exam"
+      },
+      {
+        "index": "midrc_imaging_file",
+        "type": "imaging_file"
+      },
+      {
+        "index": "midrc_genomic_file",
+        "type": "genomic_file"
       }
     ],
     "config_index": "midrc_array-config",

@@ -189,7 +189,7 @@
                 "associated_study",
                 "_subjects_count",
                 "_samples_count",
-                "_virus_genomes_count",
+                "_imaging_exams_count",
                 "_imaging_files_count"
               ]
             },
@@ -281,7 +281,7 @@
               "race",
               "age",
               "zip",
-              "_samples_count",
+              "_imaging_exams_count",
               "_imaging_files_count"
             ]
           },
@@ -331,7 +331,7 @@
           }
         },
         {
-          "tabTitle": "Files",
+          "tabTitle": "Genomic Files",
           "charts": {
             "data_type": {
               "chartType": "stackedBar",
@@ -375,11 +375,11 @@
             ]
           },
           "guppyConfig": {
-            "dataType": "file",
+            "dataType": "genomic_file",
             "fieldMapping": [
               { "field": "object_id", "name": "GUID" }
             ],
-            "nodeCountTitle": "Files",
+            "nodeCountTitle": "Genomic Files",
             "manifestMapping": {
               "resourceIndexType": "subject",
               "resourceIdField": "subject_id",
