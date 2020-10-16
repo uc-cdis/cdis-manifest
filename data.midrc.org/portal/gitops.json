@@ -197,7 +197,7 @@
               {
                 "enabled": true,
                 "type": "data",
-                "title": "Download Studies",
+                "title": "Download Study Metadata",
                 "leftIcon": "user",
                 "rightIcon": "download",
                 "fileName": "midrc_studies.json"
@@ -229,16 +229,13 @@
               "nodeCountTitle": "Studies",
               "fieldMapping": [],
               "manifestMapping": {
-                "resourceIndexType": "file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "subject_id",
-                "referenceIdFieldInDataIndex": "subject_id"
+                "referenceIdFieldInResourceIndex": "subject_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
             }
-      },
-      {
+        },
+        {
           "tabTitle": "Subjects",
           "charts": {
             "project_id": {
@@ -289,7 +286,7 @@
             {
               "enabled": true,
               "type": "data",
-              "title": "Download Subjects",
+              "title": "Download Subject Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
               "fileName": "midrc_subjects.json"
