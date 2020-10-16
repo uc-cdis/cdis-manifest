@@ -73,6 +73,7 @@ mappings:
           - name: number_icu_admits
           - name: mortality
           - name: primary_diagnosis
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
