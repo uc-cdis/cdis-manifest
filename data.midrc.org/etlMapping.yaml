@@ -74,6 +74,9 @@ mappings:
           - name: mortality
           - name: primary_diagnosis
     aggregated_props:
+      - name: _samples_count
+        path: samples
+        fn: count
       - name: _imaging_exams_count
         path: imaging_exams
         fn: count
@@ -91,27 +94,8 @@ mappings:
       - name: radiologist_notes
       - name: days_to_exam
       - name: hours_to_exam
-      - name:: exam_description
+      - name: exam_description
       - name: FLO2_percentage
-    joining_props:
-      - index: file
-        join_on: exam_id
-        props:
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
-          - name: data_category
-            src: data_category
-            fn: set
-    injecting_props:
-      subject:
-        props:
-          - name: subject_id
-            src: id
-          - name: project_id
   - name: midrc_imaging_file
     doc_type: imaging_file
     type: collector
@@ -130,6 +114,7 @@ mappings:
       - name: imaging_subtype
       - name: scan_id
       - name: modality
+      - name: body_part_examined
     injecting_props:
       subject:
         props:
