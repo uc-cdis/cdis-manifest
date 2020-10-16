@@ -51,8 +51,16 @@
         "type": "subject"
       },
       {
-        "index": "midrc_file",
-        "type": "file"
+        "index": "midrc_imaging_exam",
+        "type": "imaging_exam"
+      },
+      {
+        "index": "midrc_imaging_file",
+        "type": "imaging_file"
+      },
+      {
+        "index": "midrc_genomic_file",
+        "type": "genomic_file"
       }
     ],
     "config_index": "midrc_array-config",
@@ -66,7 +74,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.0.4/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.0.6/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on"
