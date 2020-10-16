@@ -15,7 +15,6 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.09",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2.33.0",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.09",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.09",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.4.2",
@@ -51,25 +50,38 @@
         "type": "subject"
       },
       {
-        "index": "midrc_file",
-        "type": "file"
+        "index": "midrc_imaging_exam",
+        "type": "imaging_exam"
+      },
+      {
+        "index": "midrc_imaging_file",
+        "type": "imaging_file"
+      },
+      {
+        "index": "midrc_genomic_file",
+        "type": "genomic_file"
       }
     ],
     "config_index": "midrc_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "global": {
-    "environment": "midrcprod",
-    "hostname": "data.midrc.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:813684607867:certificate/d4bdf325-afce-4e1d-b431-0dd062ee12c5",
-    "useryaml_s3path": "s3://cdis-gen3-users/midrc/user.yaml",
-    "kube_bucket": "kube-midrcprod-gen3",
-    "dispatcher_job_num": "10",
-    "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.0.4/schema.json",
+    "environment": "qa-midrc",
+    "hostname": "qa-midrc.planx-pla.net",
+    "environment": "qa-covid19",
+    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
     "portal_app": "gitops",
-    "sync_from_dbgap": "False",
-    "netpolicy": "on"
+    "kube_bucket": "kube-qaplanetv2-gen3",
+    "logs_bucket": "logs-qaplanetv2-gen3",
+    "netpolicy": "off",
+    "public_datasets": true,
+    "tier_access_level": "regular",
+    "tier_access_limit": "2",
+    "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml",
+    "dispatcher_job_num": "10",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.0.6/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False"
   },
   "canary": {
     "default": 0

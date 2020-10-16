@@ -189,7 +189,7 @@
                 "associated_study",
                 "_subjects_count",
                 "_samples_count",
-                "_virus_genomes_count",
+                "_imaging_exams_count",
                 "_imaging_files_count"
               ]
             },
@@ -197,7 +197,7 @@
               {
                 "enabled": true,
                 "type": "data",
-                "title": "Download Studies",
+                "title": "Download Study Metadata",
                 "leftIcon": "user",
                 "rightIcon": "download",
                 "fileName": "midrc_studies.json"
@@ -229,16 +229,13 @@
               "nodeCountTitle": "Studies",
               "fieldMapping": [],
               "manifestMapping": {
-                "resourceIndexType": "file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "subject_id",
-                "referenceIdFieldInDataIndex": "subject_id"
+                "referenceIdFieldInResourceIndex": "subject_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
             }
-      },
-      {
+        },
+        {
           "tabTitle": "Subjects",
           "charts": {
             "project_id": {
@@ -281,7 +278,7 @@
               "race",
               "age",
               "zip",
-              "_samples_count",
+              "_imaging_exams_count",
               "_imaging_files_count"
             ]
           },
@@ -289,7 +286,7 @@
             {
               "enabled": true,
               "type": "data",
-              "title": "Download Subjects",
+              "title": "Download Subject Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
               "fileName": "midrc_subjects.json"
@@ -331,7 +328,114 @@
           }
         },
         {
-          "tabTitle": "Files",
+          "tabTitle": "Images",
+          "charts": {
+            "data_type": {
+              "chartType": "stackedBar",
+              "title": "Image Type"
+            },
+            "data_format": {
+              "chartType": "stackedBar",
+              "title": "Image Format"
+            },
+            "data_category": {
+              "chartType": "stackedBar",
+              "title": "Image Category"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "Imaging Files",
+                "fields": [
+                  "project_id",
+                  "data_type",
+                  "data_format",
+                  "data_category",
+                  "file_size",
+                  "modality",
+                  "imaging_type",
+                  "imaging_subtype",
+                  "body_part_examined"
+                ]
+              },
+              {
+                "title": "Imaging Studies",
+                "fields": [
+                  "exam_modality",
+                  "days_to_exam",
+                  "hours_to_exam",
+                  "FLO2_percentage"
+                ]
+              },
+              {
+                "title": "Subjects",
+                "fields": [
+                  "gender",
+                  "race",
+                  "age",
+                  "zip"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "project_id",
+              "submitter_id",
+              "object_id",
+              "file_name",
+              "file_size",
+              "md5sum",
+              "data_type",
+              "data_format",
+              "data_category",
+              "imaging_type",
+              "imaging_subtype",
+              "scan_id",
+              "modality",
+              "body_part_examined"
+            ]
+          },
+          "guppyConfig": {
+            "dataType": "imaging_file",
+            "fieldMapping": [
+              { "field": "object_id", "name": "GUID" }
+            ],
+            "nodeCountTitle": "Imaging Files",
+            "manifestMapping": {
+              "resourceIndexType": "subject",
+              "resourceIdField": "subject_id",
+              "referenceIdFieldInResourceIndex": "object_id",
+              "referenceIdFieldInDataIndex": "object_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id",
+            "downloadAccessor": "object_id"
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "file-manifest",
+              "title": "Download File Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "midrc_file_manifest.json",
+              "dropdownId": "download"
+            },
+            {
+              "enabled": true,
+              "type": "export-files-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "dropdowns": {}
+        },
+        {
+          "tabTitle": "Genomic Files",
           "charts": {
             "data_type": {
               "chartType": "stackedBar",
@@ -375,11 +479,11 @@
             ]
           },
           "guppyConfig": {
-            "dataType": "file",
+            "dataType": "genomic_file",
             "fieldMapping": [
               { "field": "object_id", "name": "GUID" }
             ],
-            "nodeCountTitle": "Files",
+            "nodeCountTitle": "Genomic Files",
             "manifestMapping": {
               "resourceIndexType": "subject",
               "resourceIdField": "subject_id",

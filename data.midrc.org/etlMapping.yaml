@@ -22,6 +22,9 @@ mappings:
       - name: _virus_genomes_count
         path: virus_genomes
         fn: count
+      - name: _imaging_exams_count
+        path: subjects.imaging_exams
+        fn: count
       - name: _imaging_files_count
         path: subjects.imaging_files
         fn: count
@@ -38,31 +41,66 @@ mappings:
       - name: race
       - name: age
       - name: zip
+    flatten_props:
+      - path: conditions
+        props:
+          - name: latest_bmi
+          - name: latest_weight
+          - name: latest_height_inches
+          - name: latest_height_string
+          - name: tuberculosis
+          - name: systemic_lupus_erythmatosus
+          - name: rheumatoid_arthritis
+          - name: extensive_burns
+          - name: asplenia
+          - name: hyposplenia
+          - name: measles
+          - name: cytomegalovirus
+          - name: chicken_pox
+          - name: herpes_zoster
+          - name: malnutrition
+          - name: current_pregnant
+          - name: chronic_kidney_disease
+          - name: diabetes_type_1
+          - name: diabetes_type_2
+          - name: transplant
+          - name: hemodialysis_pre_diagnosis
+          - name: hemodialysis_post_diagnosis
+          - name: cancer
+          - name: covid_test_positive
+          - name: covid_test_name
+          - name: icu_admit
+          - name: number_icu_admits
+          - name: mortality
+          - name: primary_diagnosis
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
+      - name: _imaging_exams_count
+        path: imaging_exams
+        fn: count
       - name: _imaging_files_count
         path: imaging_files
         fn: count
-    joining_props:
-      - index: file
-        join_on: subject_id
-        props:
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
-          - name: data_category
-            src: data_category
-            fn: set
-  - name: midrc_file
-    doc_type: file
+  - name: midrc_imaging_exam
+    doc_type: imaging_exam
+    type: aggregator
+    root: imaging_exam
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: modality
+      - name: radiologist_notes
+      - name: days_to_exam
+      - name: hours_to_exam
+      - name: exam_description
+      - name: FLO2_percentage
+  - name: midrc_imaging_file
+    doc_type: imaging_file
     type: collector
     root: None
-    category: data_file
+    category: imaging_data_file
     props:
       - name: submitter_id
       - name: object_id
@@ -72,10 +110,62 @@ mappings:
       - name: data_format
       - name: data_type
       - name: data_category
-      - name: state
+      - name: imaging_type
+      - name: imaging_subtype
+      - name: scan_id
+      - name: modality
+      - name: body_part_examined
     injecting_props:
       subject:
         props:
           - name: subject_id
             src: id
           - name: project_id
+          - name: gender
+            src: gender
+            fn: set
+          - name: race
+            src: race
+            fn: set
+          - name: age
+            src: age
+            fn: set
+          - name: zip
+            src: zip
+            fn: set
+      imaging_exam:
+        props:
+          - name: exam_id
+            src: id
+          - name: exam_modality
+            src: modality
+            fn: set
+          - name: days_to_exam
+            src: days_to_exam
+            fn: set
+          - name: hours_to_exam
+            src: hours_to_exam
+            fn: set
+          - name: exam_description
+            src: exam_description
+            fn: set
+          - name: FLO2_percentage
+            src: FLO2_percentage
+            fn: set
+          - name: radiologist_notes
+            src: radiologist_notes
+            fn: set
+  - name: midrc_genomic_file
+    doc_type: genomic_file
+    type: collector
+    root: None
+    category: genomic_data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
