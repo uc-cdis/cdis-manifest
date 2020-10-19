@@ -18,7 +18,7 @@ mappings:
       - name: age_of_onset
       - name: phenotype_group
       - name: anvil_project_id
-#    flatten_props:
+    #    flatten_props:
     aggregated_props:
       - name: sample_provider
         path: samples
@@ -110,6 +110,7 @@ mappings:
       - name: data_category
       - name: analyte_type
       - name: sequencing_assay
+      - name: source_node
     injecting_props:
       subject:
         props:
