@@ -63,7 +63,7 @@
   "studyViewerConfig": [
     {
       "openMode": "open-first",
-      "openFirstRowAccessor": "",
+      "openFirstRowAccessor": "ACTT",
       "dataType": "clinical_trials",
       "title": "Studies",
       "titleField": "title",
@@ -83,6 +83,7 @@
         { "field": "creator", "name": "Sponsor"},
         { "field": "category", "name": "Study Type"},
         { "field": "clinical_trial_website", "name": "Websites"},
+        { "field": "nct_number", "name": "NCT Number"},
         { "field": "publications", "name": "Study Publications"}
       ],
       "fileDataType": "ctfile",
