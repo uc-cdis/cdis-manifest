@@ -1,0 +1,155 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDataRefresh",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::236835632492:user/data-refresh"
+      },
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::tcga-2-controlled",
+        "arn:aws:s3:::tcga-2-controlled/*"
+      ]
+    },
+    {
+      "Sid": "SbgVaporstoreMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "SbgVaporstoreMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "UChicagoReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::433568766270:user/reuben-csoc"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": [
+        "s3:List*",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::tcga-2-controlled"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-controlled/*"
+    },
+    {
+      "Sid": "PreventDeletion",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:Delete*",
+      "Resource": [
+        "arn:aws:s3:::tcga-2-controlled",
+        "arn:aws:s3:::tcga-2-controlled/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:username": "data-refresh"
+        }
+      }
+    }
+  ]
+}
