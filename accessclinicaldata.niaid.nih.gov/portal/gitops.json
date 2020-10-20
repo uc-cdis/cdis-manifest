@@ -12,11 +12,11 @@
       "introduction": {
         "heading": "Accessing  NIAID  Clinical Trials Data",
         "multiLineTexts": [
-          "AccessClinicalData@NIAID is a NIAID cloud-based, secure data platform that enables sharing of and access to data sets from NIAID COVID-19 and other sponsored clinical trials for the basic and clinical research community.",
-          "The goal of the platform is to allow the research community access to clinical data sets to harness the power of data to generate new knowledge to understand, treat, and prevent infectious diseases such as COVID-19.",
+          "AccessClinicalData@NIAID is a NIAID cloud-based, secure data platform that enables sharing of and access to reports and data sets from NIAID COVID-19 and other sponsored clinical trials for the basic and clinical research community.",
+          "The goal of the platform is to allow the research community access to clinical data to generate new knowledge to understand, treat, and prevent infectious diseases such as COVID-19.",
           "Biomedical and health data coupled with powerful advanced data analytical tools provide innovative opportunities to accelerate the development of new and improved therapeutic interventions and diagnostics, prevention strategies and disease surveillance, and identification of molecular biomarkers to predict susceptibility, progression and severity of diseases.",
           "This resource provides a foundation with potential to improve the health of people in the United States and around the world.",
-          "To access and download a dataset from this NIAID controlled access clinical trials data repository, a <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/NIAID%20Data%20Access%20Request%20FormSept2020.pdf'>Data Access Request (DAR)</a> is required to be submitted to NIAID by the requestor using the DAR form found on the Accessclinicaldata@NIAID data platform and will be reviewed by the NIAID Clinical Trials Data Access Committee. Upon approval of the DAR by NIAID and prior to accessing and downloading the data set, the primary requestor and their institution will be notified and required to agree to and sign a <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/2020-1138%20v200917FINALDUA.pdf'>Data Use Agreement (DUA)</a> that outlines the terms of the use of the data.  Note that the DUA will require two signatures – from the requestor and from the institutional authorizing official. The DUA signature process will be facilitated via a DocuSign mechanism and the requestor and the authorizing institutional official’s email addresses will be utilized to facilitate the sign-off process."
+          "To access and download a dataset, a <a href='https://qa-niaid.planx-pla.net/dashboard/Public/files/NIAID%20Data%20Access%20Request%20FormSept2020.pdf'>Data Access Request (DAR)</a> is required to be submitted to NIAID. The DAR form will be reviewed by the NIAID Clinical Trials Data Access Committee. Upon approval, the primary requestor and their institution will be notified and required to agree to and sign a <a href='https://qa-niaid.planx-pla.net/dashboard/Public/files/2020-1138%20v200917FINALDUA.pdf'>Data Use Agreement (DUA)</a> that outlines the terms of the use of the data. If study reports are available, these will be provided in pdf format for download"
         ]
       },
       "buttons": [],
@@ -70,7 +70,6 @@
       "rowAccessor": "cmc_unique_id",
       "listItemConfig": {
         "blockFields": ["brief_summary"],
-
         "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications"]
       },
       "singleItemConfig": {
