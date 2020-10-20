@@ -1,0 +1,165 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SbgVaporMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "SbgVaporMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "UChicagoReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::433568766270:user/reuben-csoc"
+      },
+      "Action": [
+        "s3:List*",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "UChicagoReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::433568766270:user/reuben-csoc"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": [
+        "s3:List*",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::tcga-2-open"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::tcga-2-open/*"
+    },
+    {
+      "Sid": "PreventDeletion",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:Delete*",
+      "Resource": [
+        "arn:aws:s3:::tcga-2-open",
+        "arn:aws:s3:::tcga-2-open/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:username": "data-refresh"
+        }
+      }
+    },
+    {
+      "Sid": "AllowPublicRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::tcga-2-open/*",
+        "arn:aws:s3:::tcga-2-open"
+      ]
+    }
+  ]
+}
