@@ -27,6 +27,24 @@
         "arn:aws:s3:::gdc-cgci-phs000235-2-controlled/*",
         "arn:aws:s3:::gdc-cgci-phs000235-2-controlled"
       ]
+    },
+    {
+      "Sid": "data-refresh only with bucket owner full control",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::236835632492:user/data-refresh"
+        ]
+      },
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::gdc-cgci-phs000235-2-controlled/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+      }
     }
   ]
 }

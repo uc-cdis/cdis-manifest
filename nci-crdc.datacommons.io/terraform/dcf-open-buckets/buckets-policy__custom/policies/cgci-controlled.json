@@ -1,29 +1,19 @@
 {
-  "Version": "2008-10-17",
+  "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "",
+      "Sid": "AllowDataRefresh",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+        "AWS": "arn:aws:iam::236835632492:user/data-refresh"
       },
-      "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::gdc-cgci-phs000235-2-open/*",
-        "arn:aws:s3:::gdc-cgci-phs000235-2-open"
-      ]
-    },
-    {
-      "Sid": "AllowPublicRead",
-      "Effect": "Allow",
-      "Principal": "*",
       "Action": [
         "s3:Get*",
         "s3:List*"
       ],
       "Resource": [
-        "arn:aws:s3:::gdc-cgci-phs000235-2-open",
-        "arn:aws:s3:::gdc-cgci-phs000235-2-open/*"
+        "arn:aws:s3:::cgci-controlled",
+        "arn:aws:s3:::cgci-controlled/*"
       ]
     },
     {
@@ -37,7 +27,7 @@
       "Action": [
         "s3:PutObject"
       ],
-      "Resource": "arn:aws:s3:::gdc-cgci-phs000235-2-open/*",
+      "Resource": "arn:aws:s3:::cgci-controlled/*",
       "Condition": {
         "StringEquals": {
           "s3:x-amz-acl": "bucket-owner-full-control"
