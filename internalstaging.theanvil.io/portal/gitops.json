@@ -211,31 +211,7 @@
           "_sequencings_count"
         ]
       },
-      "dropdowns": {
-        "download": {
-          "title": "Download"
-        }
-      },
       "buttons": [
-        {
-          "enabled": true,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
-          "rightIcon": "download",
-          "fileName": "clinical.json",
-          "dropdownId": "download",
-          "tooltipText": "You have not selected any subjects to download. Please use the checkboxes on the left to select specific subjects you would like to download."
-        },
-        {
-          "enabled": true,
-          "type": "manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "manifest.json",
-          "dropdownId": "download"
-        },
         {
           "enabled": true,
           "type": "export",
@@ -381,14 +357,14 @@
           "type": "export-files-to-pfb",
           "title": "Export All to PFB",
           "rightIcon": "external-link",
-          "tooltipText": "You have not selected any cases to export. Please use the checkboxes on the left to select specific cases you would like to export."
+          "tooltipText": "You have not selected any subjects to export. Please use the checkboxes on the left to select specific subjects you would like to export."
         },
         {
           "enabled": true,
           "type": "export-files",
           "title": "Export All to Terra",
           "rightIcon": "external-link",
-          "tooltipText": "You have not selected any cases to export. Please use the checkboxes on the left to select specific cases you would like to export."
+          "tooltipText": "You have not selected any subjects to export. Please use the checkboxes on the left to select specific subjects you would like to export."
         }
       ],
       "enableLimitedFilePFBExport": {
@@ -434,7 +410,10 @@
               "project_dbgap_accession_number",
               "project_dbgap_consent_text",
               "project_dbgap_phs",
-              "project_name"
+              "project_name",
+              "data_type",
+              "data_format",
+              "data_category"
             ]
           },
           {
