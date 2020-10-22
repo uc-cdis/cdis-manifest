@@ -338,15 +338,6 @@
       "buttons": [
         {
           "enabled": true,
-          "type": "file-manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "file-manifest.json",
-          "dropdownId": "download"
-        },
-        {
-          "enabled": true,
           "type": "export-files-to-workspace",
           "title": "Export to Workspace",
           "leftIcon": "datafile",
