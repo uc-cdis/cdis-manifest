@@ -2,7 +2,7 @@
 
 set -v
 
-target="cdis-manifest/nci-crdc.datacommons.io/terraform"
+target="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 workspace=dcf-open-buckets/buckets-policy__custom
 synclist=(
 setup.sh
@@ -13,8 +13,7 @@ root.tf
 policies.tf
 )
 
-mkdir -p "$target/$workspace"
 for name in "${synclist[@]}"; do
-    rsync -avz "dcfprod@dcfprod.csoc:.local/share/gen3/$workspace/$name" "$target/$workspace/$name"
+    rsync -avz "dcfprod@dcfprod.csoc:.local/share/gen3/$workspace/$name" "$target/$name"
 done
 
