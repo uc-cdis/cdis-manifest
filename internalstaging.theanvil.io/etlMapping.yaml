@@ -84,6 +84,9 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
+          - name: data_category
+            src: data_category
+            fn: set
     parent_props:
       - path: projects[project_code:code]
       - path: projects[project_name:name]
