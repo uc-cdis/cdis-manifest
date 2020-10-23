@@ -33,7 +33,8 @@
     "useryaml_s3path": "s3://kf-gen3-user/user.yaml",
     "portal_app": "dev",
     "sync_from_dbgap": "True",
-    "slack_send_dbgap": "True"
+    "slack_send_dbgap": "True",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
