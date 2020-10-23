@@ -31,7 +31,10 @@
       "memory-limit": "1024Mi",
       "name": "Jupyter Notebook Bio Python",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "gen3.datacommons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -58,7 +61,10 @@
       "memory-limit": "1.5G",
       "name": "Jupyter Notebook Bio Python",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "gen3.datacommons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -85,7 +91,10 @@
       "memory-limit": "1.5Gi",
       "name": "Brain - Python/R/Freesurfer",
       "image": "quay.io/cdis/jupyterbrain:1.1",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "gen3.datacommons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -112,7 +121,10 @@
       "memory-limit": "256Mi",
       "name": "Bioinfo - Python/R",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "gen3.datacommons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -139,7 +151,10 @@
       "memory-limit": "1024Mi",
       "name": "Bioinfo - Python/R",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "gen3.datacommons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
