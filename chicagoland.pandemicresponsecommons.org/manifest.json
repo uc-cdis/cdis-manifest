@@ -14,7 +14,7 @@
     "pidgin": "quay.io/cdis/pidgin:2020.08",
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:covid19-3.8.1",
+    "portal": "quay.io/cdis/data-portal:2.36.0",
     "tube": "quay.io/cdis/tube:0.4.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
@@ -42,7 +42,11 @@
     "public_datasets": true,
     "tier_access_level": "regular",
     "tier_access_limit": "5",
-    "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml",
+    "maintenance_mode": "off"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "covid19"
   },
   "canary": {
     "default": 0

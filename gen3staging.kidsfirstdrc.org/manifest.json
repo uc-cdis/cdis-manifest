@@ -37,7 +37,8 @@
     "sync_from_dbgap": "False",
     "netpolicy": "on",
     "kube_bucket": "kube-skfqa-gen3",
-    "logs_bucket": "logs-skfqa-gen3"
+    "logs_bucket": "logs-skfqa-gen3",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
