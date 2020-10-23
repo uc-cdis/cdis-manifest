@@ -91,9 +91,6 @@ mappings:
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
-      - name: _submitted_snp_array_files_count
-        path: samples.aliquots.submitted_snp_array_files
-        fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
         fn: count
