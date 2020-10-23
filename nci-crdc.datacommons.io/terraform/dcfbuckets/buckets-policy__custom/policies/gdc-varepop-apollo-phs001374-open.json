@@ -1,0 +1,20 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::544076110303:user/bucket-copy-user",
+          "arn:aws:iam::584476192960:user/fence_bot"
+        ]
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::gdc-varepop-apollo-phs001374-open/*",
+        "arn:aws:s3:::gdc-varepop-apollo-phs001374-open"
+      ]
+    }
+  ]
+}

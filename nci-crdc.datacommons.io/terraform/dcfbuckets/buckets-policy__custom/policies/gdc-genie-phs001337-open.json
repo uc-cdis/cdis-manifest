@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGetObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::544076110303:user/bucket-copy-user"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::gdc-genie-phs001337-open/*",
+        "arn:aws:s3:::gdc-genie-phs001337-open"
+      ]
+    }
+  ]
+}
