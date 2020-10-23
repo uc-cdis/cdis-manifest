@@ -1,0 +1,167 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SbgVaporMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "SbgVaporMGavrilovReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:user/vaporstore"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "SbgDevReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::163707484866:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "SbgProdReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::972028439221:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "CGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::100263570800:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:List*",
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "PGCReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151136852077:root"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "UChicagoReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::433568766270:user/reuben-csoc"
+      },
+      "Action": [
+        "s3:List*",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "UChicagoReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::433568766270:user/reuben-csoc"
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::584476192960:user/fence_bot",
+          "arn:aws:iam::544076110303:user/bucket-copy-user"
+        ]
+      },
+      "Action": [
+        "s3:List*",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::target-open"
+    },
+    {
+      "Sid": "UChicagoBotReadOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::584476192960:user/fence_bot",
+          "arn:aws:iam::544076110303:user/bucket-copy-user"
+        ]
+      },
+      "Action": "s3:Get*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "DataRefreshDelete",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::236835632492:user/data-refresh"
+      },
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::target-open/*"
+    },
+    {
+      "Sid": "PreventDeletion",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:Delete*",
+      "Resource": [
+        "arn:aws:s3:::target-open",
+        "arn:aws:s3:::target-open/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:username": "data-refresh"
+        }
+      }
+    }
+  ]
+}
