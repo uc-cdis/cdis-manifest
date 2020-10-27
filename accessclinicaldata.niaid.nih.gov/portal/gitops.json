@@ -48,7 +48,8 @@
       "subTitle": "Access clinical data to understand, treat, and prevent infectious diseases",
       "text": "Data access to de-identified and anonymous individual patient level data from NIAID sponsored clinical trials will be available to approved users and their institution through a data access request and data use agreement to assure protection of patient privacy and data security.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "accessclinicaldatasupport@niaid.nih.gov"
+      "email": "accessclinicaldatasupport@niaid.nih.gov",
+      "image": ""
     },
     "footerLogos": [{
       "src": "/custom/sponsors/gitops-sponsors/niaid_dark.png",
@@ -75,6 +76,23 @@
       "singleItemConfig": {
         "blockFields": ["description"],
         "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"]
+        "sideBoxes": [
+          {
+            "title": "Data Access Agreements",
+            "items": [
+              {
+                "type": "pdf",
+                "link": "https://qa-niaid.planx-pla.net/dashboard/Public/files/2020-1138%20v200917FINALDUA.pdf",
+                "name": "Data Use Agreement (DUA)"
+              },
+              {
+                "type": "pdf",
+                "link": "https://qa-niaid.planx-pla.net/dashboard/Public/files/NIAID%20Data%20Access%20Request%20FormSept2020.pdf",
+                "name": "Data Access Request (DAR)"
+              }
+            ]
+          }
+        ]
       },
       "fieldMapping": [
         { "field": "brief_summary", "name": "Brief Study Description" },
