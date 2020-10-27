@@ -97,7 +97,9 @@
           "redirectModalText": "the NIAID Data Access Request Form",
           "singleItemView": false,
           "accessRequestedText": "DAR In Progress",
-          "accessRequestedTooltipText": "Your recently submitted DAR is being reviewed by NIAID"
+          "accessRequestedTooltipText": "Your recently submitted DAR is being reviewed by NIAID",
+          "enableButtonField": "data_available_for_request",
+          "disableButtonTooltipText": "This dataset is coming soon"
         }
       ]
     }
