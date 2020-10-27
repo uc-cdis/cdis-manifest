@@ -16,7 +16,7 @@
     "pidgin": "quay.io/cdis/pidgin:2020.08",
     "revproxy": "quay.io/cdis/nginx:2020.08",
     "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:nct-1.2.0",
+    "portal": "quay.io/cdis/data-portal:2.37.0",
     "tube": "quay.io/cdis/tube:2020.08",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
@@ -46,6 +46,9 @@
   },
   "canary": {
     "default": 0
+  },
+  "portal": {
+    "GEN3_BUNDLE": "nct"
   },
   "guppy": {
     "indices": [
