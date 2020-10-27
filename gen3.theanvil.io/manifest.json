@@ -164,7 +164,22 @@
         ],
         "cpu-limit": "1",
         "memory-limit": "12Gi"
-      }
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
     }
   ],
   "google": {
