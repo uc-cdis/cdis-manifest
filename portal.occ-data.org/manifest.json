@@ -7,23 +7,23 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.08",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.11",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2020.08",
-    "indexd": "quay.io/cdis/indexd:2020.08",
-    "peregrine": "quay.io/cdis/peregrine:2020.08",
-    "pidgin": "quay.io/cdis/pidgin:2020.08",
-    "revproxy": "quay.io/cdis/nginx:2020.08",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
-    "portal": "quay.io/cdis/data-portal:2020.08",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.11",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.11",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.11",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.11",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.11",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.11",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.11",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:2020.08",
-    "tube": "quay.io/cdis/tube:2020.08",
-    "nb2": "quay.io/cdis/shiny-nb2:feat_dcp-shiny-app",
-    "hatchery": "quay.io/cdis/hatchery:2020.08",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.11",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2020.11",
+    "nb2": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nb2:2020.11",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2020.11",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "quay.io/cdis/workspace-token-service:2020.08",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.08"
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.11",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.11"
   },
   "arborist": {
     "deployment_version": "2"
@@ -38,7 +38,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:2020.08",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2020.11",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "portal.occ-data.org"
