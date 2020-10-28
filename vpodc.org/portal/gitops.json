@@ -89,12 +89,6 @@
           "color": "#a2a2a2"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#a2a2a2",
-          "name": "Files"
-        },
-        {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
@@ -152,111 +146,163 @@
   "analysisTools": [
     "vaGWAS"
   ],
-  "dataExplorerConfig": {
-    "charts": {
-      "Chicago_ID": {
-        "chartType": "count",
-        "title": "Patients"
-      },
-      "ActionableMutations.Lab": {
-        "chartType": "pie",
-        "title": "ActionableMutations.Lab"
-      },
-      "Oncology_Primary.ICDOSite": {
-        "chartType": "bar",
-        "title": "Site (ICD-O)"
-      },
-      "Oncology_Primary.Radiation": {
-        "chartType": "pie",
-        "title": "Radiation"
-      },
-      "Oncology_Primary.Chemotherapy": {
-        "chartType": "pie",
-        "title": "Chemotherapy"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Demographic",
-          "fields": [
-            "project_id",
-            "Days_To_Birth",
-            "Days_To_Death",
-            "DeceasedFlag",
-            "Ethnicity",
-            "Gender",
-            "Race"
-          ]
+  "explorerConfig": [
+    {
+      "tabTitle": "Patients",
+      "charts": {
+        "Chicago_ID": {
+          "chartType": "count",
+          "title": "Patients"
         },
-        {
-          "title": "ActionableMutations",
-          "fields": [
-            "project_id",
-            "ActionableMutations.Lab",
-            "ActionableMutations.Gene",
-            "ActionableMutations.DaysFromAnchorDateToBxDate"
-          ]
+        "Oncology_Primary.ICDOSite": {
+          "chartType": "bar",
+          "title": "Site (ICD-O)"
         },
-        {
-          "title": "Oncology Primary",
-          "fields": [
-            "project_id",
-            "Oncology_Primary.Multiplicitycounter",
-            "Oncology_Primary.ICDOSite",
-            "Oncology_Primary.Radiation",
-            "Oncology_Primary.Chemotherapy",
-            "Oncology_Primary.DaysFromAnchorDateToDiagnosisDate",
-            "Oncology_Primary.Gradedifferentiation",
-            "Oncology_Primary.Laterality",
-            "Oncology_Primary.Stagegroupbest",
-            "Oncology_Primary.RadiationsurgerySequence",
-            "Oncology_Primary.Histologyicdo3X",
-            "Oncology_Primary.Lymphvascularinvasionl",
-            "Oncology_Primary.SeerSummaryStage2000",
-            "Oncology_Primary.PhysiciansStage",
-            "Oncology_Primary.DaysFromAnchorDateToMostdefinitivesurgDate",
-            "Oncology_Primary.ChemotherapyFac",
-            "Oncology_Primary.TumorSize",
-            "Oncology_Primary.SequenceNumber"
-          ]
+        "Oncology_Primary.Radiation": {
+          "chartType": "pie",
+          "title": "Radiation"
+        },
+        "Oncology_Primary.Chemotherapy": {
+          "chartType": "pie",
+          "title": "Chemotherapy"
         }
-      ]
-    },
-    "buttons": [
-      {
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Demographic",
+            "fields": [
+              "project_id",
+              "Days_To_Birth",
+              "Days_To_Death",
+              "DeceasedFlag",
+              "Ethnicity",
+              "Gender",
+              "Race"
+            ]
+          },
+          {
+            "title": "ActionableMutations",
+            "fields": [
+              "project_id",
+              "ActionableMutations.Lab",
+              "ActionableMutations.Gene",
+              "ActionableMutations.DaysFromAnchorDateToBxDate"
+            ]
+          },
+          {
+            "title": "Oncology Primary",
+            "fields": [
+              "project_id",
+              "Oncology_Primary.Multiplicitycounter",
+              "Oncology_Primary.ICDOSite",
+              "Oncology_Primary.Radiation",
+              "Oncology_Primary.Chemotherapy",
+              "Oncology_Primary.DaysFromAnchorDateToDiagnosisDate",
+              "Oncology_Primary.Gradedifferentiation",
+              "Oncology_Primary.Laterality",
+              "Oncology_Primary.Stagegroupbest",
+              "Oncology_Primary.RadiationsurgerySequence",
+              "Oncology_Primary.Histologyicdo3X",
+              "Oncology_Primary.Lymphvascularinvasionl",
+              "Oncology_Primary.SeerSummaryStage2000",
+              "Oncology_Primary.PhysiciansStage",
+              "Oncology_Primary.DaysFromAnchorDateToMostdefinitivesurgDate",
+              "Oncology_Primary.ChemotherapyFac",
+              "Oncology_Primary.TumorSize",
+              "Oncology_Primary.SequenceNumber"
+            ]
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        }
+      ],
+      "table": {
         "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export To Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
+        "fields": [
+          "project_id",
+          "Race",
+          "Ethnicity",
+          "Gender",
+          "ActionableMutations.Lab",
+          "Oncology_Primary.Multiplicitycounter",
+          "Oncology_Primary.ICDOSite"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "patients",
+        "nodeCountTitle": "Patients",
+        "fieldMapping": [],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "case_id",
+          "referenceIdFieldInDataIndex": "Chicago_ID"
+        }
       }
-    ],
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "auth_resource_path",
-        "Race",
-        "Ethnicity",
-        "Gender",
-        "ActionableMutations.Lab",
-        "Oncology_Primary.Multiplicitycounter",
-        "Oncology_Primary.ICDOSite"
-      ]
     },
-    "guppyConfig": {
-      "dataType": "patients",
-      "nodeCountTitle": "Patients",
-      "fieldMapping": [],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "case_id",
-        "referenceIdFieldInDataIndex": "Chicago_ID"
+    {
+      "tabTitle": "Files",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Files",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format",
+              "file_id",
+              "file_name",
+              "file_size",
+              "object_id"
+            ]
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        }
+      ],
+      "table": {
+        "enabled": true,
+        "fields": [
+          "submitter_id",
+          "data_type",
+          "data_format",
+          "file_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "file",
+        "nodeCountTitle": "Files",
+        "fieldMapping": [],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "Chicago_ID"
+        }
       }
     }
-  },
+  ],
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
 }
