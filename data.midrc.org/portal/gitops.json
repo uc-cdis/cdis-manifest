@@ -3,11 +3,6 @@
     "graphql": {
       "boardCounts": [
         {
-          "graphql": "_imaging_file_count",
-          "name": "Image",
-          "plural": "Images"
-        },
-        {
           "graphql": "_imaging_exam_count",
           "name": "Imaging Exam",
           "plural": "Imaging Exams"
@@ -20,16 +15,12 @@
       ],
       "chartCounts": [
         {
-          "graphql": "_subject_count",
-          "name": "Subject"
-        },
-        {
           "graphql": "_imaging_exam_count",
           "name": "Imaging Exam"
         },
         {
-          "graphql": "_study_count",
-          "name": "Study"
+          "graphql": "_subject_count",
+          "name": "Subject",
         }
       ],
       "projectDetails": "boardCounts"
@@ -154,24 +145,7 @@
     "explorerConfig": [
         {
             "tabTitle": "Studies",
-            "charts": {
-              "project_id": {
-                "chartType": "count",
-                "title": "Projects"
-              },
-              "study_setup": {
-                "chartType": "bar",
-                "title": "Study Setup"
-              },
-              "study_objective": {
-                "chartType": "bar",
-                "title": "Study Objective"
-              },
-              "study_design": {
-                "chartType": "bar",
-                "title": "Study Design"
-              }
-            },
+            "charts": {},
             "filters": {
               "tabs": [
                 {
@@ -195,11 +169,7 @@
                 "study_setup",
                 "study_objective",
                 "study_design",
-                "associated_study",
-                "_subjects_count",
-                "_samples_count",
-                "_virus_genomes_count",
-                "_imaging_files_count"
+                "associated_study"
               ]
             },
             "buttons": [
@@ -249,24 +219,7 @@
       },
       {
           "tabTitle": "Subjects",
-          "charts": {
-            "project_id": {
-              "chartType": "count",
-              "title": "Projects"
-            },
-            "gender": {
-              "chartType": "pie",
-              "title": "Gender"
-            },
-            "race": {
-              "chartType": "bar",
-              "title": "Race"
-            },
-            "Age": {
-              "chartType": "bar",
-              "title": "Age"
-            }
-          },
+          "charts": {},
           "filters": {
             "tabs": [
               {
@@ -289,9 +242,7 @@
               "gender",
               "race",
               "age",
-              "zip",
-              "_samples_count",
-              "_imaging_files_count"
+              "zip"
             ]
           },
           "buttons": [
@@ -338,86 +289,6 @@
             "accessibleFieldCheckList": ["project_id"],
             "accessibleValidationField": "project_id"
           }
-        },
-        {
-          "tabTitle": "Files",
-          "charts": {
-            "data_type": {
-              "chartType": "stackedBar",
-              "title": "File Type"
-            },
-            "data_format": {
-              "chartType": "stackedBar",
-              "title": "File Format"
-            },
-            "data_category": {
-              "chartType": "stackedBar",
-              "title": "File Category"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "File",
-                "fields": [
-                  "project_id",
-                  "data_type",
-                  "data_format",
-                  "data_category",
-                  "file_size"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
-            "fields": [
-              "project_id",
-              "submitter_id",
-              "object_id",
-              "file_name",
-              "file_size",
-              "md5sum",
-              "data_type",
-              "data_format",
-              "data_category"
-            ]
-          },
-          "guppyConfig": {
-            "dataType": "file",
-            "fieldMapping": [
-              { "field": "object_id", "name": "GUID" }
-            ],
-            "nodeCountTitle": "Files",
-            "manifestMapping": {
-              "resourceIndexType": "subject",
-              "resourceIdField": "subject_id",
-              "referenceIdFieldInResourceIndex": "object_id",
-              "referenceIdFieldInDataIndex": "object_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id",
-            "downloadAccessor": "object_id"
-          },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "file-manifest",
-              "title": "Download File Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "midrc_file_manifest.json",
-              "dropdownId": "download"
-            },
-            {
-              "enabled": true,
-              "type": "export-files-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "dropdowns": {}
         }
     ],
     "useArboristUI": true,
