@@ -69,7 +69,11 @@
     "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.2.1/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "public_datasets": true,
+    "tier_access_level": "regular",
+    "tier_access_limit": "1",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
