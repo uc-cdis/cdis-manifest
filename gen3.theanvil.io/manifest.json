@@ -231,8 +231,8 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 5,
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
