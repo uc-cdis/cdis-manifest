@@ -31,6 +31,11 @@
   "arborist": {
     "deployment_version": "2"
   },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.11"
+    }
+  },
   "sower": [
     {
       "name": "pelican-export",
