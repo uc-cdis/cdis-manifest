@@ -160,9 +160,7 @@
           {
             "title": "Subject",
             "searchFields": [
-              "subject_id",
-              "submitter_id",
-              "consent_codes"
+              "_subject_id"
             ],
             "fields": [
               "anvil_project_id",
@@ -243,6 +241,10 @@
         "nodeCountTitle": "Subjects",
         "fieldMapping": [
           {
+            "field": "_subject_id",
+            "name": "Subject ID"
+          },
+          {
             "field": "disease_id",
             "name": "Disease ID"
           },
@@ -302,7 +304,6 @@
               "sequencing_assay"
             ],
             "searchFields": [
-              "file_id",
               "file_name"
             ]
           }
