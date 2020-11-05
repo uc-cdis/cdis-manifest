@@ -231,6 +231,11 @@
         },
         {
           "title": "Subject",
+          "searchFields": [
+            "_subject_id",
+            "submitter_id",
+            "consent_codes"
+          ],
           "fields": [
             "annotated_sex",
             "race",
@@ -421,7 +426,11 @@
             "data_format",
             "callset",
             "bucket_path"
-          ]
+          ],
+          "searchFields": [
+            "file_id",
+            "file_name"
+          ],
         }
       ]
     },
