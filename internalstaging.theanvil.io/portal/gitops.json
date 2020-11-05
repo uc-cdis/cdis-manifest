@@ -159,6 +159,11 @@
           },
           {
             "title": "Subject",
+            "searchFields": [
+              "subject_id",
+              "submitter_id",
+              "consent_codes"
+            ],
             "fields": [
               "anvil_project_id",
               "sex",
@@ -295,6 +300,10 @@
               "data_format",
               "analyte_type",
               "sequencing_assay"
+            ],
+            "searchFields": [
+              "file_id",
+              "file_name"
             ]
           }
         ]
