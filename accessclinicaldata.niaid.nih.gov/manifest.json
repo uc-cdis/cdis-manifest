@@ -21,6 +21,9 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.08",
     "requestor": "quay.io/cdis/requestor:1.2.0",
+    "hatchery": "quay.io/cdis/hatchery:2020.11",
+    "wts": "quay.io/cdis/workspace-token-service:2020.11",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "guppy": "quay.io/cdis/guppy:2020.08"
   },
   "arborist": {
