@@ -26,12 +26,12 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhgri-datacommons:
     cred: fence-bot
-    role-arn': arn:aws:iam::600168050588:role/developer_access_gtex
-    region': us-east-1
+    role-arn: arn:aws:iam::600168050588:role/developer_access_gtex
+    region: us-east-1
   nih-nhlbi-datacommons:
     cred: fence-bot
-    role-arn': arn:aws:iam::600168050588:role/developer_bucket_access_topmed
-    region': us-east-1
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_topmed
+    region: us-east-1
   nih-nhlbi-topmed-released-phs000007-c1:
     cred: fence-bot
     region: us-east-1
@@ -106,7 +106,7 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000920-c2:
     cred: fence-bot
-    region': us-east-1
+    region: us-east-1
   nih-nhlbi-topmed-released-phs000921-c2:
     cred: fence-bot
     region: us-east-1
@@ -214,7 +214,7 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs001217-c1:
     cred: fence-bot
-    region': us-east-1
+    region: us-east-1
   nih-nhlbi-topmed-released-phs001218-c2:
     cred: fence-bot
     region: us-east-1
@@ -235,7 +235,7 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs001345-c1:
     cred: fence-bot
-    region': us-east-1
+    region: us-east-1
   nih-nhlbi-topmed-released-phs001359-c1:
     cred: fence-bot
     region: us-east-1
@@ -268,7 +268,7 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs001598-c1:
     cred: fence-bot
-    region': us-east-1
+    region: us-east-1
   nih-nhlbi-biodata-catalyst-1000-genomes-high-coverage:
     cred: fence-bot
     role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
