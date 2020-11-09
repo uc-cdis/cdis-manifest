@@ -624,7 +624,7 @@
     "dropdowns": {}
   },
   "terraExportWarning": {
-    "subjectThreshold": 14000,
+    "subjectThreshold": 120000,
     "title": "Warning: Data Transfer May Fail in Terra",
     "message": "Warning: Your selected cohort contains more subjects than are currently supported for import by Terra. It is recommended that you slice your data into segments of no more than 14,000 subjects and then export each segment separately. Would you like to continue anyway?"
   }
