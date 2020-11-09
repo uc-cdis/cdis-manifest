@@ -231,7 +231,6 @@
               "vital_status",
               "icu_status",
               "hospital",
-              "needed_supplemental_O2",
               "condition",
               "symptoms",
               "reporting_source",
@@ -339,10 +338,6 @@
             "name": "ICU Status"
           },
           {
-            "field": "pO2_saturation",
-            "name": "pO2 Saturation"
-          },
-          {
             "field": "view",
             "name": "X-ray View"
           },
@@ -389,6 +384,7 @@
           "technology",
           "development_stage",
           "phase",
+          "sponsor",
           "location",
           "nct_number"
         ],
@@ -594,11 +590,10 @@
               "deaths",
               "recovered",
               "testing",
+              "positive_rate",
               "staffed_all_beds",
               "staffed_icu_beds",
-              "population_gtr_65",
-              "estimated_full_mech_ventilators",
-              "estimated_full_mech_pediatric_ventilators"
+              "estimated_full_mech_ventilators"
             ]
           },
           {
@@ -608,8 +603,6 @@
               "state_region_description",
               "city",
               "provider_type",
-              "provider_subtype",
-              "detailed_specialty",
               "reporting_org",
               "deaths_per_10000",
               "region_icu_capacity",
@@ -621,7 +614,6 @@
               "state_covid_patients_non_icu",
               "state_covid_pui_patients",
               "state_total_covid_pui_in_hospital",
-              "state_total_covid_pui_in_icu",
               "state_icu_capacity",
               "state_icu_available",
               "state_vent_capacity",
@@ -632,14 +624,27 @@
               "state_ventilators_covid_patients_pct",
               "state_total_beds",
               "state_total_beds_available",
-              "state_total_beds_used",
-              "total_in_use_beds_non_covid",
               "total_in_use_beds_covid",
               "state_pct_beds_covid_pui",
               "state_pct_hospital_beds_available",
               "state_icu_open_beds",
               "state_icu_beds_used",
               "state_icu_open_beds_pct"
+            ]
+          },
+          {
+            "title": "Public Health",
+            "fields": [
+              "population_density",
+              "completed_high_school",
+              "college_degree",
+              "graduate_degree",
+              "job_density",
+              "jail",
+              "hhinc_mean",
+              "med_hhinc",
+              "cardiovasc_death_rate",
+              "diabetes_prevalence"
             ]
           }
         ]
@@ -888,6 +893,18 @@
           {
             "field": "total_in_use_beds_covid",
             "name": "IL Total In Use COVID-19 Beds"
+          },
+          {
+            "field": "hhinc_mean",
+            "name": "Mean Household Income"
+          },
+          {
+            "field": "med_hhinc",
+            "name": "Median Household Income"
+          },
+          {
+            "field": "cardiovasc_death_rate",
+            "name": "Cardiovascular Death Rate"
           }
         ],
         "nodeCountTitle": "Locations",
