@@ -24,7 +24,8 @@
     "hatchery": "quay.io/cdis/hatchery:2020.11",
     "wts": "quay.io/cdis/workspace-token-service:2020.11",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "quay.io/cdis/guppy:2020.08"
+    "guppy": "quay.io/cdis/guppy:2020.08",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.11"
   },
   "arborist": {
     "deployment_version": "2"
@@ -45,7 +46,13 @@
     "netpolicy": "on",
     "tier_access_level": "libre",
     "public_datasets": true,
+    "dispatcher_job_num": "10",
     "maintenance_mode": "off"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2020.11"
+    }
   },
   "canary": {
     "default": 0
