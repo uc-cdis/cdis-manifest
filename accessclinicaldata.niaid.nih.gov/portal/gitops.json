@@ -133,5 +133,12 @@
   ],
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  }
 }
