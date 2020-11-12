@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-15",
+  "injectDAPTag": true,
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -28,12 +29,20 @@
     },
     "navigation": {
       "title": "AccessClinicalData@NIAID",
-      "items": [{
-        "icon": "query",
-        "link": "/study-viewer/clinical_trials",
-        "color": "#a2a2a2",
-        "name": "Study Viewer"
-      }]
+      "items": [
+        {
+          "icon": "query",
+          "link": "/study-viewer/clinical_trials",
+          "color": "#a2a2a2",
+          "name": "Study Viewer"
+        },
+        {
+          "icon": "workspace",
+          "link": "#hostname#workspace/",
+          "color": "#a2a2a2",
+          "name": "Workspace"
+        }
+      ]
     },
     "topBar": {
       "items": [
@@ -48,7 +57,8 @@
       "subTitle": "Access clinical data to understand, treat, and prevent infectious diseases",
       "text": "Data access to de-identified and anonymous individual patient level data from NIAID sponsored clinical trials will be available to approved users and their institution through a data access request and data use agreement to assure protection of patient privacy and data security.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "accessclinicaldatasupport@niaid.nih.gov"
+      "email": "accessclinicaldatasupport@niaid.nih.gov",
+      "image": ""
     },
     "footerLogos": [{
       "src": "/custom/sponsors/gitops-sponsors/niaid_dark.png",
@@ -62,7 +72,6 @@
   "explorerConfig": [],
   "studyViewerConfig": [
     {
-      "openMode": "close-all",
       "dataType": "clinical_trials",
       "title": "Studies",
       "titleField": "title",
@@ -73,7 +82,24 @@
       },
       "singleItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"]
+        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"],
+        "sideBoxes": [
+          {
+            "title": "Data Access Agreements",
+            "items": [
+              {
+                "type": "pdf",
+                "link": "https://qa-niaid.planx-pla.net/dashboard/Public/files/2020-1138%20v200917FINALDUA.pdf",
+                "name": "Data Use Agreement (DUA)"
+              },
+              {
+                "type": "pdf",
+                "link": "https://qa-niaid.planx-pla.net/dashboard/Public/files/NIAID%20Data%20Access%20Request%20FormSept2020.pdf",
+                "name": "Data Access Request (DAR)"
+              }
+            ]
+          }
+        ]
       },
       "fieldMapping": [
         { "field": "brief_summary", "name": "Brief Study Description" },
@@ -86,6 +112,8 @@
       ],
       "fileDataType": "ctfile",
       "docDataType": "oafile",
+      "openMode": "close-all",
+      "defaultOrderBy": ["title", "asc"],
       "buttons": [
         {
           "type": "download"
@@ -96,12 +124,21 @@
           "redirectModalText": "the NIAID Data Access Request Form",
           "singleItemView": false,
           "accessRequestedText": "DAR In Progress",
-          "accessRequestedTooltipText": "Your recently submitted DAR is being reviewed by NIAID"
+          "accessRequestedTooltipText": "Your recently submitted DAR is being reviewed by NIAID",
+          "enableButtonField": "data_available_for_request",
+          "disableButtonTooltipText": "This dataset is coming soon"
         }
       ]
     }
   ],
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  }
 }

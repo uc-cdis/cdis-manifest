@@ -159,6 +159,9 @@
           },
           {
             "title": "Subject",
+            "searchFields": [
+              "_subject_id"
+            ],
             "fields": [
               "anvil_project_id",
               "sex",
@@ -238,6 +241,10 @@
         "nodeCountTitle": "Subjects",
         "fieldMapping": [
           {
+            "field": "_subject_id",
+            "name": "Subject ID"
+          },
+          {
             "field": "disease_id",
             "name": "Disease ID"
           },
@@ -295,6 +302,9 @@
               "data_format",
               "analyte_type",
               "sequencing_assay"
+            ],
+            "searchFields": [
+              "file_name"
             ]
           }
         ]

@@ -109,6 +109,18 @@ body,
   border-bottom: 0;
 }
 
+/* Login Page */
+
+.login-page__side-box {
+  min-height: 0;
+}
+
+.protected-content {
+  min-height: 0;
+}
+
+/* Index Page */
+
 .index-page__top {
   display: inline-flex;
   width: 80%;
@@ -119,6 +131,8 @@ body,
   max-width: 770px;
   width: 100%;
 }
+
+/* Introduction Page */
 
 .introduction {
   width: 100%;

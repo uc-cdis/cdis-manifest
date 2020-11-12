@@ -58,8 +58,8 @@
     },
     {
       "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "cpu-limit": "4.0",
+      "memory-limit": "16Gi",
       "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19",
       "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.1.2",
       "env": {"FRAME_ANCESTORS": "https://chicagoland.pandemicresponsecommons.org"},

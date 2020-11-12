@@ -4,7 +4,7 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.09",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2.5.0",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.3",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.09",
@@ -66,10 +66,14 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.0.4/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.2.2/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "public_datasets": true,
+    "tier_access_level": "regular",
+    "tier_access_limit": "1",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
