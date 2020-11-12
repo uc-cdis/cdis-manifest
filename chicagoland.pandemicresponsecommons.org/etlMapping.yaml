@@ -7,6 +7,10 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: country_region
+        value_mappings:
+          - US: 'United States'
+          - Korea, South: 'South Korea'
+          - Taiwan*: 'Taiwan'
       - name: community_area
       - name: province_state
         value_mappings:
