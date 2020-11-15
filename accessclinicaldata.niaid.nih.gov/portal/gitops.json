@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-15",
+  "injectDAPTag": true,
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -28,12 +29,20 @@
     },
     "navigation": {
       "title": "AccessClinicalData@NIAID",
-      "items": [{
-        "icon": "query",
-        "link": "/study-viewer/clinical_trials",
-        "color": "#a2a2a2",
-        "name": "Study Viewer"
-      }]
+      "items": [
+        {
+          "icon": "query",
+          "link": "/study-viewer/clinical_trials",
+          "color": "#a2a2a2",
+          "name": "Study Viewer"
+        },
+        {
+          "icon": "workspace",
+          "link": "#hostname#workspace/",
+          "color": "#a2a2a2",
+          "name": "Workspace"
+        }
+      ]
     },
     "topBar": {
       "items": [
@@ -63,7 +72,6 @@
   "explorerConfig": [],
   "studyViewerConfig": [
     {
-      "openMode": "close-all",
       "dataType": "clinical_trials",
       "title": "Studies",
       "titleField": "title",
@@ -104,6 +112,8 @@
       ],
       "fileDataType": "ctfile",
       "docDataType": "oafile",
+      "openMode": "close-all",
+      "defaultOrderBy": ["title", "asc"],
       "buttons": [
         {
           "type": "download"
@@ -123,5 +133,12 @@
   ],
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  }
 }

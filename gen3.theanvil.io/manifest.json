@@ -7,27 +7,28 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.09",
+    "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:1.2",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.11",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.5",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.11",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2020.09",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2020.09",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2020.11",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2020.11",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.09",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.09",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.09",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.09",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2.33.0",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.09",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.09",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2020.09",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.09",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.4.2",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.09",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.09",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.09"
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.11",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.11",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.11",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.11",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.11",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.11",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.11",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2020.11",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.11",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2020.11",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.11",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.11",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.11",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.11"
   },
   "indexd": {
     "arborist": "true"
@@ -36,7 +37,7 @@
     "environment": "anvilprod",
     "hostname": "gen3.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.2.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.2.8/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilprod-gen3",
     "logs_bucket": "logs-anvilprod-gen3",
@@ -57,7 +58,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.5.1",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.11",
         "pull_policy": "Always",
         "env": [
           {
@@ -115,6 +116,70 @@
         }
       ],
       "restart_policy": "Never"
+    },
+    {
+      "name": "pelican-export-files",
+      "action": "export-files",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2020.11",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "file"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "12Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
     }
   ],
   "google": {
@@ -122,7 +187,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.09"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2020.11"
     }
   },
   "arborist": {
@@ -166,8 +231,8 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 2,
-      "max": 5,
+      "min": 20,
+      "max": 25,
       "targetCpu": 40
     },
     "indexd": {
