@@ -53,6 +53,18 @@
       {
         "index": "midrc_file",
         "type": "file"
+      },
+      {
+        "index": "midrc_condition",
+        "type": "condition"
+      },
+      {
+        "index": "midrc_imaging_data_file",
+        "type": "imaging_data_file"
+      },
+      {
+        "index": "midrc_virus_data_file",
+        "type": "virus_data_file"
       }
     ],
     "config_index": "midrc_array-config",
