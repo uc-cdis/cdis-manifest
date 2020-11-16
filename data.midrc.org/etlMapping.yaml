@@ -22,8 +22,17 @@ mappings:
       - name: _virus_genomes_count
         path: virus_genomes
         fn: count
-      - name: _imaging_files_count
-        path: subjects.imaging_files
+      - name: _imaging_exams_count
+        path: subjects.imaging_exams
+        fn: count
+      - name: _imaging_series_count
+        path: subjects.imaging_exams.imaging_series
+        fn: count
+      - name: _ct_images_count
+        path: subjects.imaging_exams.ct_images
+        fn: count
+      - name: _structured_reports_count
+        path: subjects.imaging_exams.structured_reports
         fn: count
     parent_props:
       - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
@@ -38,16 +47,58 @@ mappings:
       - name: race
       - name: age
       - name: zip
+    flatten_props:
+      - path: conditions
+        props:
+          - name: asplenia
+          - name: cancer
+          - name: chicken_pox
+          - name: chronic_kidney_disease
+          - name: covid_test_positive
+          - name: covid_test_name
+          - name: current_pregnant
+          - name: cytomegalovirus
+          - name: diabetes_type_1
+          - name: diabetes_type_2
+          - name: extensive_burns
+          - name: hemodialysis_post_diagnosis
+          - name: hemodialysis_pre_diagnosis
+          - name: herpes_zoster
+          - name: hyposplenia
+          - name: icu_admit
+          - name: latest_bmi
+          - name: latest_height_inches
+          - name: latest_height_string
+          - name: latest_weight
+          - name: malnutrition
+          - name: measles
+          - name: mortality
+          - name: number_icu_admits
+          - name: primary_diagnosis
+          - name: rheumatoid_arthritis
+          - name: systemic_lupus_erythmatosus
+          - name: transplant
+          - name: tuberculosis
+        sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
         path: samples
         fn: count
-      - name: _imaging_files_count
-        path: imaging_files
+      - name: _imaging_exams_count
+        path: imaging_exams
+        fn: count
+      - name: _imaging_series_count
+        path: imaging_exams.imaging_series
+        fn: count
+      - name: _ct_images_count
+        path: imaging_exams.ct_images
+        fn: count
+      - name: _structured_reports_count
+        path: structured_reports
         fn: count
     joining_props:
-      - index: file
-        join_on: subject_id
+      - index: imaging_data_file
+        join_on: _subject_id
         props:
           - name: data_format
             src: data_format
@@ -57,6 +108,183 @@ mappings:
             fn: set
           - name: data_category
             src: data_category
+            fn: set
+  - name: midrc_virus_data_file
+    doc_type: virus_data_file
+    type: collector
+    root: None
+    category: virus_data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+    injecting_props:
+      sample:
+        props:
+          - name: ncbi_bioproject
+            src: ncbi_bioproject
+            fn: set
+          - name: ncbi_biosample
+            src: ncbi_biosample
+            fn: set
+          - name: host
+            src: host
+            fn: set
+          - name: location
+            src: location
+            fn: set
+          - name: organism
+            src: organism
+            fn: set
+          - name: isolation_source
+            src: isolation_source
+            fn: set
+          - name: isolate
+            src: isolate
+            fn: set
+          - name: collection_date
+            src: collection_date
+            fn: set
+  - name: midrc_condition
+    doc_type: condition
+    type: aggregator
+    root: condition
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: asplenia
+      - name: cancer
+      - name: chicken_pox
+      - name: chronic_kidney_disease
+      - name: covid_test_positive
+      - name: covid_test_name
+      - name: current_pregnant
+      - name: cytomegalovirus
+      - name: diabetes_type_1
+      - name: diabetes_type_2
+      - name: extensive_burns
+      - name: hemodialysis_post_diagnosis
+      - name: hemodialysis_pre_diagnosis
+      - name: herpes_zoster
+      - name: hyposplenia
+      - name: icu_admit
+      - name: latest_bmi
+      - name: latest_height_inches
+      - name: latest_height_string
+      - name: latest_weight
+      - name: malnutrition
+      - name: measles
+      - name: mortality
+      - name: number_icu_admits
+      - name: primary_diagnosis
+      - name: rheumatoid_arthritis
+      - name: systemic_lupus_erythmatosus
+      - name: transplant
+      - name: tuberculosis
+    parent_props:
+      - path: subjects[_subject_id:id]
+  - name: midrc_imaging_data_file
+    doc_type: imaging_data_file
+    type: collector
+    root: None
+    category: imaging_data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+      - name: file_description
+      - name: implementation_class_uid
+      - name: implementation_version_name
+      - name: transfer_syntax_uid
+      - name: image_type
+      - name: modality
+      - name: manufacturer
+      - name: manufacturer_model_name
+      - name: study_description
+      - name: series_description
+      - name: body_part_examined
+      - name: view_position
+      - name: slice_thickness
+      - name: contrast_bolus_agent_number
+      - name: spacing_between_slices
+      - name: lossy_image_compression
+    injecting_props:
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
+          - name: project_id
+            src: project_id
+            fn: set
+          - name: gender
+            src: gender
+            fn: set
+          - name: race
+            src: race
+            fn: set
+          - name: age
+            src: age
+            fn: max
+          - name: zip
+            src: zip
+            fn: set
+      imaging_exam:
+        props:
+          - name: exam_modality
+            src: exam_modality
+            fn: set
+          - name: days_to_exam
+            src: days_to_exam
+            fn: max
+          - name: hours_to_exam
+            src: hours_to_exam
+            fn: max
+          - name: exam_description
+            src: exam_description
+            fn: set
+          - name: FLO2_percentage
+            src: FLO2_percentage
+            fn: max
+          - name: radiologist_notes
+            src: radiologist_notes
+            fn: set
+          - name: age_at_imaging
+            src: age_at_imaging
+            fn: max
+          - name: scan_year
+            src: scan_year
+            fn: max
+      imaging_series:
+        props:
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: series_id
+            src: series_id
+            fn: set
+          - name: series_type
+            src: series_type
+            fn: set
+          - name: series_name
+            src: series_name
+            fn: set
+    joining_props:
+      - index: condition
+        join_on: _subject_id
+        props:
+          - name: covid_test_name
+            src: covid_test_name
             fn: set
   - name: midrc_file
     doc_type: file
@@ -76,6 +304,4 @@ mappings:
     injecting_props:
       subject:
         props:
-          - name: subject_id
-            src: id
           - name: project_id
