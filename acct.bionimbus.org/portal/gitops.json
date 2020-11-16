@@ -164,22 +164,30 @@
           "title": "Subjects",
           "fields": [
             "project_id",
-            "disease_type",
-            "index_date",
-            "primary_site",
-            "species",
-            "strain",
-            "ethnicity",
+            "arm",
             "gender",
             "race",
-            "primary_diagnosis",
-            "alcohol_intensity",
+            "age_at_index",
             "bmi",
-            "pack_years_smoked",
-            "years_smoked",
+            "alcohol_intensity",
+            "pack_years_smoked"
+          ]
+        },
+        {
+          "title": "Clinical",
+          "fields": [
+            "clotting",
+            "bleeding",
+            "mace",
+            "indication_for_noac_treatment",
+            "indication_for_warfarin_treatment",
+            "indication_for_clopidogrel_treatment",
+            "therapeutic_agents",
+            "disease_type",
+            "primary_site",
+            "primary_diagnosis",
             "composition",
-            "tissue_type",
-            "therapeutic_agents"
+            "tissue_type"
           ]
         }
       ]
@@ -188,6 +196,7 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "submitter_id",
         "disease_type",
         "index_date",
         "primary_site",
@@ -210,12 +219,15 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
+        { "field": "submitter_id", "name": "Subject ID" },
+        { "field": "age_at_index", "name": "Age" },
+        { "field": "indication_for_noac_treatment", "name": "Indication For NOAC Treatment" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "_subject_id",
+        "referenceIdFieldInDataIndex": "_subject_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
@@ -296,7 +308,7 @@
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
+        "resourceIdField": "_subject_id",
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },

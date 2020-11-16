@@ -7,15 +7,15 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.05",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
-    "fence": "quay.io/cdis/fence:2020.05",
-    "indexd": "quay.io/cdis/indexd:2020.05",
-    "peregrine": "quay.io/cdis/peregrine:2020.05",
-    "pidgin": "quay.io/cdis/pidgin:2020.05",
-    "revproxy": "quay.io/cdis/nginx:2020.05",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.05",
-    "portal": "quay.io/cdis/data-portal:2020.05",
+    "arborist": "quay.io/cdis/arborist:2020.09",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
+    "fence": "quay.io/cdis/fence:4.23.6",
+    "indexd": "quay.io/cdis/indexd:2020.09",
+    "peregrine": "quay.io/cdis/peregrine:2020.09",
+    "pidgin": "quay.io/cdis/pidgin:2020.09",
+    "revproxy": "quay.io/cdis/nginx:2020.09",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.09",
+    "portal": "quay.io/cdis/data-portal:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {
@@ -34,7 +34,8 @@
     "logs_bucket": "logs-kfqa2-gen3",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
-    "useryaml_s3path": "s3://cdis-gen3-users/kfqa2/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/kfqa2/user.yaml",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0

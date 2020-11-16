@@ -16,7 +16,9 @@ mappings:
       - name: solve_state
       - name: congenital_status
       - name: age_of_onset
-#    flatten_props:
+      - name: phenotype_group
+      - name: anvil_project_id
+    #    flatten_props:
     aggregated_props:
       - name: sample_provider
         path: samples
@@ -74,13 +76,16 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: subject_id
+        join_on: _subject_id
         props:
           - name: data_format
             src: data_format
             fn: set
           - name: data_type
             src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
             fn: set
     parent_props:
       - path: projects[project_code:code]
@@ -107,15 +112,16 @@ mappings:
       - name: state
       - name: data_category
       - name: analyte_type
-      - name: sequencing_assay      
+      - name: sequencing_assay
+      - name: source_node
     injecting_props:
       subject:
         props:
-          - name: subject_id
+          - name: _subject_id
             src: id
             fn: set
           - name: subject_submitter_id
             src: submitter_id
-            fn: set            
+            fn: set
           - name: project_id
             fn: set

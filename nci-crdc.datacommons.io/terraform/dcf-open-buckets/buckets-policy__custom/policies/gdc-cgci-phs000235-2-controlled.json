@@ -1,0 +1,50 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDataRefresh",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::236835632492:user/data-refresh"
+      },
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::gdc-cgci-phs000235-2-controlled",
+        "arn:aws:s3:::gdc-cgci-phs000235-2-controlled/*"
+      ]
+    },
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::gdc-cgci-phs000235-2-controlled/*",
+        "arn:aws:s3:::gdc-cgci-phs000235-2-controlled"
+      ]
+    },
+    {
+      "Sid": "data-refresh only with bucket owner full control",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::236835632492:user/data-refresh"
+        ]
+      },
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::gdc-cgci-phs000235-2-controlled/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+      }
+    }
+  ]
+}

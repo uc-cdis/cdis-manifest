@@ -11,6 +11,11 @@ mappings:
       - name: primary_site
       - name: species
       - name: strain
+      - name: arm
+    flatten_props:
+      - path: demographics
+        props: 
+          - name: age_at_index    
     aggregated_props:
       - name: ethnicity
         path: demographics
@@ -51,6 +56,30 @@ mappings:
       - name: tissue_type
         path: samples
         src: tissue_type
+        fn: set
+      - name: clotting
+        path: follow_ups
+        src: clotting
+        fn: set
+      - name: bleeding
+        path: follow_ups
+        src: bleeding
+        fn: set
+      - name: mace
+        path: follow_ups
+        src: mace
+        fn: set
+      - name: indication_for_noac_treatment
+        path: diagnoses.treatments
+        src: indication_for_noac_treatment
+        fn: set
+      - name: indication_for_warfarin_treatment
+        path: diagnoses.treatments
+        src: indication_for_warfarin_treatment
+        fn: set
+      - name: indication_for_clopidogrel_treatment
+        path: diagnoses.treatments
+        src: indication_for_clopidogrel_treatment
         fn: set
       - name: therapeutic_agents
         path: diagnoses.treatments
@@ -97,7 +126,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: subject_id
+        join_on: _subject_id
         props:
           - name: data_format
             src: data_format
@@ -127,7 +156,7 @@ mappings:
     injecting_props:
       subject:
         props:
-          - name: subject_id
+          - name: _subject_id
             src: id
             fn: set
           - name: subject_submitter_id

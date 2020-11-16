@@ -7,7 +7,7 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: consent_codes
-      - name: geographic_site      
+      - name: geographic_site
     flatten_props:
       - path: demographics
         props:
@@ -71,7 +71,7 @@ mappings:
           - name: hdl
           - name: ldl
           - name: triglycerides
-          - name: total_cholesterol          
+          - name: total_cholesterol
     aggregated_props:
       - name: annotated_sex
         path: demographics
@@ -91,9 +91,6 @@ mappings:
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
-      - name: _submitted_snp_array_files_count
-        path: samples.aliquots.submitted_snp_array_files
-        fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
         fn: count
@@ -109,14 +106,16 @@ mappings:
       - name: current_smoker_baseline
         path: exposures
         src: current_smoker_baseline
-        fn: set        
+        fn: set
       - name: ever_smoker_baseline
         path: exposures
         src: ever_smoker_baseline
-        fn: set            
+        fn: set
+    parent_props:
+      - path: studies[studies_submitter_id:submitter_id]
     joining_props:
       - index: file
-        join_on: subject_id
+        join_on: _subject_id
         props:
           - name: data_format
             src: data_format
@@ -140,9 +139,13 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+      - name: callset
+      - name: bucket_path
+      - name: source_node
     injecting_props:
       subject:
         props:
-          - name: subject_id
+          - name: _subject_id
             src: id
+            fn: set
           - name: project_id

@@ -1,0 +1,35 @@
+{
+  "user-namespace": "jupyter-pods",
+  "sub-dir": "/lw-workspace",
+  "user-volume-size": "10Gi",
+  "sidecar": {
+    "cpu-limit": "1.0",
+    "memory-limit": "256Mi",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.10",
+    "env": {
+      "NAMESPACE": "default",
+      "HOSTNAME": "caninedc.org"
+    },
+    "args": [],
+    "command": [
+      "/bin/bash",
+      "/sidecarDockerrun.sh"
+    ],
+    "lifecycle-pre-stop": [
+      "su",
+      "-c",
+      "echo test",
+      "-s",
+      "/bin/sh",
+      "root"
+    ]
+  },
+  "containers": [],
+  "more-configs": [
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/jupyterslim.yaml",
+      "name": "Jupyter Notebook"
+    }
+  ]
+}

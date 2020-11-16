@@ -4,24 +4,25 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.07",
+    "arborist": "quay.io/cdis/arborist:2020.08",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "dashboard": "quay.io/cdis/gen3-statics:2020.07",
-    "fence": "quay.io/cdis/fence:2020.07",
-    "indexd": "quay.io/cdis/indexd:2020.07",
-    "peregrine": "quay.io/cdis/peregrine:2020.07",
-    "pidgin": "quay.io/cdis/pidgin:2020.07",
-    "revproxy": "quay.io/cdis/nginx:2020.07",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.07",
-    "portal": "quay.io/cdis/data-portal:2020.07",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.08",
+    "fence": "quay.io/cdis/fence:2020.08",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:2.32.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:2020.04",
-    "spark": "quay.io/cdis/gen3-spark:2020.07",
-    "tube": "quay.io/cdis/tube:2020.07",
-    "hatchery": "quay.io/cdis/hatchery:2020.07",
-    "wts": "quay.io/cdis/workspace-token-service:2020.07",
+    "spark": "quay.io/cdis/gen3-spark:2020.08",
+    "tube": "quay.io/cdis/tube:2020.08",
+    "hatchery": "quay.io/cdis/hatchery:2020.08",
+    "wts": "quay.io/cdis/workspace-token-service:2020.08",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "quay.io/cdis/guppy:2020.07"
+    "manifestservice": "quay.io/cdis/manifestservice:2020.08",
+    "guppy": "quay.io/cdis/guppy:2020.08"
   },
   "indexd": {
     "arborist": "true"
@@ -33,14 +34,15 @@
     "environment": "ibdgc-prod",
     "hostname": "ibdgc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:980870151884:certificate/d4bc881b-b404-4bef-912f-ed67785f953c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.0.7/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.0.10/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3",
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "netpolicy": "on",
-    "useryaml_s3path": "s3://ibdgc-gen3-users/ibdgc/user.yaml"
+    "useryaml_s3path": "s3://ibdgc-gen3-users/ibdgc/user.yaml",
+    "maintenance_mode": "off"
   },
   "hatchery": {
     "user-namespace": "jupyter-pods",
@@ -49,7 +51,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:2020.07",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2020.08",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "ibdgc.datacommons.io"

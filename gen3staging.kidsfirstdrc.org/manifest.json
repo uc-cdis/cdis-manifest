@@ -7,15 +7,15 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.05",
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
-    "fence": "quay.io/cdis/fence:2020.05",
-    "indexd": "quay.io/cdis/indexd:2020.05",
-    "peregrine": "quay.io/cdis/peregrine:2020.05",
-    "pidgin": "quay.io/cdis/pidgin:2020.05",
-    "revproxy": "quay.io/cdis/nginx:2020.05",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.05",
-    "portal": "quay.io/cdis/data-portal:2020.05",
+    "arborist": "quay.io/cdis/arborist:2020.09",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
+    "fence": "quay.io/cdis/fence:4.23.6",
+    "indexd": "quay.io/cdis/indexd:2020.09",
+    "peregrine": "quay.io/cdis/peregrine:2020.09",
+    "pidgin": "quay.io/cdis/pidgin:2020.09",
+    "revproxy": "quay.io/cdis/nginx:2020.09",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.09",
+    "portal": "quay.io/cdis/data-portal:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {
@@ -24,17 +24,21 @@
   "indexd": {
     "arborist": "true"
   },
+  "jupyterhub": {
+    "enabled": "no"
+  },
   "global": {
     "environment": "skfqa",
     "hostname": "gen3staging.kidsfirstdrc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:222487244010:certificate/d91de077-c452-4172-9f1e-c88c99feb9f0",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "useryaml_s3path": "s3://kf-gen3-user/nonprd/user-nonprd.yaml",
     "portal_app": "dev",
-    "kube_bucket": "kube-skfqa-gen3",
-    "logs_bucket": "logs-skfqa-gen3",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
-    "useryaml_s3path": "s3://kf-gen3-user/nonprd/user-nonprd.yaml"
+    "kube_bucket": "kube-skfqa-gen3",
+    "logs_bucket": "logs-skfqa-gen3",
+    "maintenance_mode": "off"
   },
   "canary": {
     "default": 0
@@ -59,6 +63,9 @@
       "strategy": "auto"
     },
     "sheepdog": {
+      "strategy": "auto"
+    },
+    "presigned-url-fence": {
       "strategy": "auto"
     }
   }

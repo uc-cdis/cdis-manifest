@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDataRefresh",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::236835632492:user/data-refresh"
+      },
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::tcga-2-closed",
+        "arn:aws:s3:::tcga-2-closed/*"
+      ]
+    },
+    {
+      "Sid": "data-refresh only with bucket owner full control",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::236835632492:user/data-refresh"
+        ]
+      },
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::tcga-2-closed/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #BC3231;
+  --secondary-color: #20558A;
+  
+
+  --primary-color_light: #da7171;
+  --secondary-color_light: #6ea6dd;
+  
+
+  --g3-color__bg-cloud: #F5F5F5;
+  --g3-color__bg-coal: #4A4A4A;
+  --g3-color__gray: #606060;
+  --g3-color__lightgray: #9B9B9B;
+  --g3-color__smoke: #D1D1D1;
+  --g3-color__silver: #E7E7E7;
+  --g3-color__black: #000000;
+  --g3-color__white: #FFFFFF;;
+
+  --g3-primary-btn__color: var(--g3-color__white);
+  --g3-primary-btn__bg-color: var(--secondary-color);
+  --g3-primary-btn__bg-color--hover: var(--secondary-color_light);
+  --g3-primary-btn__border-color: var(--g3-color__lightgray);
+  --g3-primary-btn__border-color--hover: var(--g3-color__gray);
+  --g3-primary-btn__border-color--active: var(--g3-color__lightgray);
+
+  --g3-secondary-btn__color: var(--g3-color__white);
+  --g3-secondary-btn__bg-color: var(--secondary-color);
+  --g3-secondary-btn__bg-color--hover: var(--secondary-color_light);
+  --g3-secondary-btn__border-color: var(--g3-color__lightgray);
+  --g3-secondary-btn__border-color--hover: var(--g3-color__gray);
+  --g3-secondary-btn__border-color--active: var(--g3-color__lightgray);
+
+  --g3-default-btn__color: var(--g3-color__gray);
+  --g3-default-btn__color--hover: var(--g3-color__black);
+  --g3-default-btn__color--active: var(--g3-color_lightgray);
+  --g3-default-btn__bg-color: var(--g3-color__white);
+  --g3-default-btn__border-color: var(--g3-color__gray);
+  --g3-default-btn__border-color--hover: var(--g3-color__black);
+
+  --g3-disabled-btn__color: var(--g3-color__lightgray);
+  --g3-disabled-btn__bg-color: var(--g3-color__white);
+  --g3-disabled-btn__border-color: var(--g3-color__silver);
+
+  --g3-dropdown-item__bg-color: var(--g3-color__gray);
+  --g3-dropdown-item__color: var(--g3-color__white);
+  --g3-dropdown-menu__border-color: var(--g3-color__gray);
+
+  --g3-footer-color: var(--g3-color__bg-coal);
+  --g3-font__medium-weight: 500;
+  --g3-font__semi-bold-weight: 600;
+}
+
+h1, h2, h3, h4,
+.caption,
+.form-h1, .form-h2, .form-caption {
+    font-family: 'Martel', serif;
+}
+
+body,
+.introduction,
+.body,
+.special-number,
+.form-body,
+.form-special-number {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Buttons */
+
+.data-dictionary__switch-button--active,
+.popup__title {
+  background-color: var(--primary-color);
+}
+
+/* Nav Bars and Footer */
+
+.top-bar,
+.top-bar__header,
+.top-icon-button.body-typo {
+  background-color: var(--secondary-color);
+}
+
+.top-bar__link {
+  border-right: 2px solid #fff;
+}
+
+.nav-button:hover,
+.button-active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-bar__logo {
+  padding: 15px 0;
+}
+
+.nav-bar__logo-img {
+  height: 50px;
+}
+
+.nav-bar__link--home {
+  padding-top: 4px;
+  font-size: x-large;
+  color: var(--primary-color);;
+}
+
+.nav-bar__link--home:hover {
+  color: var(--primary-color);;
+  opacity: 1;
+  border-bottom: 0;
+}
+
+/* Login Page */
+
+.login-page__side-box {
+  min-height: 0;
+}
+
+.protected-content {
+  min-height: 0;
+}
+
+/* Index Page */
+
+.index-page__top {
+  display: inline-flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.index-page__bar-chart {
+  max-width: 770px;
+  width: 100%;
+}
+
+/* Introduction Page */
+
+.introduction {
+  width: 100%;
+  position: relative;
+}
+
+.introduction__text {
+  text-align: justify;
+}

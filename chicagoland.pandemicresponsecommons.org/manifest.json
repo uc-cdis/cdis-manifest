@@ -4,34 +4,35 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.07",
+    "arborist": "quay.io/cdis/arborist:2.5.0",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "covid19-etl": "quay.io/cdis/covid19-etl:3.3.0",
-    "nb-etl": "quay.io/cdis/covid19-nb-etl:3.3.1",
-    "fence": "quay.io/cdis/fence:2020.07",
-    "indexd": "quay.io/cdis/indexd:2020.07",
-    "peregrine": "quay.io/cdis/peregrine:2020.07",
-    "pidgin": "quay.io/cdis/pidgin:2020.07",
-    "revproxy": "quay.io/cdis/nginx:2020.07",
-    "sheepdog": "quay.io/cdis/sheepdog:4.1.1",
-    "portal": "quay.io/cdis/data-portal:covid19-3.7.0",
-    "tube": "quay.io/cdis/tube:2020.07",
+    "covid19-etl": "quay.io/cdis/covid19-etl:4.4.3",
+    "nb-etl": "quay.io/cdis/covid19-nb-etl:4.0.2",
+    "fence": "quay.io/cdis/fence:2020.08",
+    "indexd": "quay.io/cdis/indexd:2020.08",
+    "peregrine": "quay.io/cdis/peregrine:2020.08",
+    "pidgin": "quay.io/cdis/pidgin:2020.08",
+    "revproxy": "quay.io/cdis/nginx:2020.08",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.08",
+    "portal": "quay.io/cdis/data-portal:2.38.0",
+    "tube": "quay.io/cdis/tube:0.4.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:2020.07",
-    "hatchery": "quay.io/cdis/hatchery:2020.07",
-    "wts": "quay.io/cdis/workspace-token-service:2020.07",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.07",
+    "spark": "quay.io/cdis/gen3-spark:2020.08",
+    "hatchery": "quay.io/cdis/hatchery:2020.08",
+    "wts": "quay.io/cdis/workspace-token-service:2020.08",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:1.0.3",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "quay.io/cdis/guppy:2020.07",
-    "manifestservice": "quay.io/cdis/manifestservice:2020.07",
-    "dashboard": "quay.io/cdis/gen3-statics:2020.07",
-    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.1"
+    "guppy": "quay.io/cdis/guppy:2020.08",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.08",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.08",
+    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.1",
+    "sower": "quay.io/cdis/sower:2020.08"
   },
   "global": {
     "environment": "covid19-prod",
     "hostname": "chicagoland.pandemicresponsecommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/e5edf56f-4003-4ee3-9ecd-162aaf19c058",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/2.6.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/3.7.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
     "logs_bucket": "s3logs-logs-covid19-prod-gen3",
@@ -39,8 +40,13 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "public_datasets": true,
-    "tier_access_level": "libre",
-    "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml"
+    "tier_access_level": "regular",
+    "tier_access_limit": "5",
+    "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml",
+    "maintenance_mode": "off"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "covid19"
   },
   "canary": {
     "default": 0
@@ -115,9 +121,91 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2020.07"
+      "indexing": "quay.io/cdis/indexs3client:0.0.5"
     }
   },
+  "sower" : [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "serviceAccountName": "jobs-chicagoland-pandemicresponsecommons-org",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:2020.08",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "serviceAccountName": "jobs-chicagoland-pandemicresponsecommons-org",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:2020.08",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "guppy": {
     "indices": [
       {
@@ -131,6 +219,10 @@
       {
         "index": "covid19_subject",
         "type": "subject"
+      },
+      {
+        "index": "covid19_clinical_trials",
+        "type": "clinical_trials"
       },
       {
         "index": "covid19_dataset",

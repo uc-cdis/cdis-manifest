@@ -1,0 +1,29 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::584476192960:user/fence_bot"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::gdc-cgci-blgsp-phs000235-controlled/*",
+        "arn:aws:s3:::gdc-cgci-blgsp-phs000235-controlled"
+      ]
+    },
+    {
+      "Sid": "replicate",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::544076110303:user/batch-replication-user"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::gdc-cgci-blgsp-phs000235-controlled/*",
+        "arn:aws:s3:::gdc-cgci-blgsp-phs000235-controlled"
+      ]
+    }
+  ]
+}
