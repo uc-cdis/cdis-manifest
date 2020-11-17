@@ -286,22 +286,3 @@ mappings:
           - name: covid_test_name
             src: covid_test_name
             fn: set
-  - name: midrc_file
-    doc_type: file
-    type: collector
-    root: None
-    category: data_file
-    props:
-      - name: submitter_id
-      - name: object_id
-      - name: md5sum
-      - name: file_name
-      - name: file_size
-      - name: data_format
-      - name: data_type
-      - name: data_category
-      - name: state
-    injecting_props:
-      subject:
-        props:
-          - name: project_id
