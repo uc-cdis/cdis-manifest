@@ -307,9 +307,7 @@
                   "rheumatoid_arthritis",
                   "systemic_lupus_erythmatosus",
                   "transplant",
-                  "tuberculosis",
-                  "covid_test_name",
-                  "covid_test_positive"
+                  "tuberculosis"
                 ]
               }
             ]
@@ -530,18 +528,18 @@
             {
               "enabled": true,
               "type": "data",
-              "title": "Get Image Metadata",
+              "title": "Download Image File Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_images_metadata.json"
+              "fileName": "MIDRC_image_file_metadata.json"
             },
             {
               "enabled": true,
               "type": "file-manifest",
-              "title": "Get Image Download Manifest",
+              "title": "Download Image File Manifest",
               "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "MIDRC_image_manifest.json",
+              "fileName": "MIDRC_image_file_manifest.json",
               "dropdownId": "download"
             },
             {
@@ -634,6 +632,14 @@
             "downloadAccessor": "object_id"
           },
           "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Viral Genomics Metadata",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "MIDRC_viral_genomics_metadata.json"
+            },
             {
               "enabled": true,
               "type": "file-manifest",
