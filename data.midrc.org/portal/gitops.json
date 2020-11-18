@@ -232,12 +232,12 @@
                 "fileName": "MIDRC_study_descriptions.json"
               },
               {
-                "enabled": false,
+                "enabled": true,
                 "type": "manifest",
-                "title": "Download File Manifest",
+                "title": "Download Image Files for Selected Studies",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "midrc_file_manifest.json"
+                "fileName": "MIDRC_imaging_file_manifest.json"
               },
               {
                 "enabled": false,
@@ -252,10 +252,10 @@
               "nodeCountTitle": "Studies",
               "fieldMapping": [],
               "manifestMapping": {
-                "resourceIndexType": "file",
+                "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "subject_id",
-                "referenceIdFieldInDataIndex": "subject_id"
+                "referenceIdFieldInResourceIndex": "id",
+                "referenceIdFieldInDataIndex": "study_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -363,15 +363,15 @@
               "title": "Download Subject Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "midrc_subjects.json"
+              "fileName": "MIDRC_subject_metadata.json"
             },
             {
               "enabled": true,
               "type": "manifest",
-              "title": "Download File Manifest",
+              "title": "Download Imaging Files for Selected Subjects",
               "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "midrc_file_manifest.json"
+              "fileName": "MIDRC_imaging_file_manifest.json"
             },
             {
               "enabled": false,
@@ -396,7 +396,7 @@
           }
         },
         {
-          "tabTitle": "Image Files",
+          "tabTitle": "Imaging Files",
           "charts": {},
           "filters": {
             "tabs": [
@@ -513,7 +513,7 @@
                 "name": "GUID"
               }
             ],
-            "nodeCountTitle": "Image Files",
+            "nodeCountTitle": "Imaging Files",
             "manifestMapping": {
               "resourceIndexType": "subject",
               "resourceIdField": "_subject_id",
