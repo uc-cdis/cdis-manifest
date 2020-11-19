@@ -40,3 +40,20 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+  - name: ibdgc_supplementary_file
+    doc_type: supplementary_file
+    type: collector
+    root: None
+    category: supplementary_data_file
+    props:
+      - name: pmid
+      - name: doi
+      - name: first_author
+      - name: year
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
