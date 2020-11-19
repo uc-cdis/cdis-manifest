@@ -77,18 +77,18 @@
         },
         "buttons": [
             {
-              "name": "Data Dictionary",
-              "icon": "data-field-define",
-              "body": "Browse the nodes and properties of the graph data model used in the MIDRC Data Commons.",
-              "link": "/DD",
-              "label": "Explore Data Model"
-            },
-            {
               "name": "Explore Data",
               "icon": "data-explore",
               "body": "Search and download subsets of data from the MIDRC Data Commons using intuitive navigation tools.",
               "link": "/explorer",
               "label": "Explore data"
+            },
+            {
+              "name": "Data Dictionary",
+              "icon": "data-field-define",
+              "body": "Browse the nodes and properties of the graph data model used in the MIDRC Data Commons.",
+              "link": "/DD",
+              "label": "Explore Data Model"
             },
             {
               "name": "Query Data",
@@ -127,12 +127,6 @@
             "tooltip": "Query the databases using GraphQL."
           },
           {
-            "name": "Profile",
-            "link": "/identity",
-            "icon": "profile",
-            "tooltip": "Create API keys and check your access privileges."
-          },
-          {
             "name": "Workspace",
             "link": "#hostname#workspace/",
             "icon": "workspace",
@@ -142,10 +136,6 @@
       },
       "topBar": {
         "items": [
-          {
-            "link": "/",
-            "name": "Medical Imaging & Data Resource Center Home"
-          },
           {
             "link": "https://www.midrc.org/",
             "name": "About"
@@ -159,7 +149,8 @@
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
           }
-        ]
+        ],
+        "useProfileDropdown": true
       },
       "login": {
         "title": "Medical Imaging & Data Resource Center Data Commons",
