@@ -254,7 +254,7 @@
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "study_id",
+                "referenceIdFieldInResourceIndex": "_study_id",
                 "referenceIdFieldInDataIndex": "_study_id"
               },
               "accessibleFieldCheckList": ["project_id"],
