@@ -231,6 +231,7 @@ mappings:
     root: None
     category: imaging_data_file
     props:
+      - name: project_id
       - name: submitter_id
       - name: object_id
       - name: md5sum
@@ -265,9 +266,6 @@ mappings:
         props:
           - name: _subject_id
             src: id
-            fn: set
-          - name: project_id
-            src: project_id
             fn: set
           - name: gender
             src: gender
