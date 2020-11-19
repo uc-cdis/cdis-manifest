@@ -186,12 +186,12 @@
     "analysisTools": [ ],
     "explorerConfig": [
         {
-            "tabTitle": "Studies",
+            "tabTitle": "Datasets",
             "charts": {},
             "filters": {
               "tabs": [
                 {
-                  "title": "Studies",
+                  "title": "Datasets",
                   "fields":[
                     "project_id",
                     "study_setup",
@@ -226,15 +226,15 @@
               {
                 "enabled": true,
                 "type": "data",
-                "title": "Download Study Descriptions",
+                "title": "Download Dataset Descriptions",
                 "leftIcon": "user",
                 "rightIcon": "download",
-                "fileName": "MIDRC_study_descriptions.json"
+                "fileName": "MIDRC_datasets.json"
               },
               {
                 "enabled": true,
                 "type": "manifest",
-                "title": "Download Image Files for Selected Studies",
+                "title": "Download Imaging File Manifest for Datasets",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_imaging_file_manifest.json"
@@ -249,13 +249,13 @@
             ],
             "guppyConfig": {
               "dataType": "study",
-              "nodeCountTitle": "Studies",
+              "nodeCountTitle": "Datasets",
               "fieldMapping": [],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "id",
-                "referenceIdFieldInDataIndex": "study_id"
+                "referenceIdFieldInResourceIndex": "study_id",
+                "referenceIdFieldInDataIndex": "_study_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -431,7 +431,7 @@
                 ]
               },
               {
-                "title": "Imaging Exams",
+                "title": "Imaging Studies",
                 "fields": [
                   "exam_modality",
                   "days_to_exam",
@@ -638,7 +638,7 @@
               "title": "Download Viral Genomics Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics_metadata.json"
+              "fileName": "MIDRC_viral_genomics.json"
             },
             {
               "enabled": true,
