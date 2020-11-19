@@ -6,7 +6,6 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
-      - name: id
       - name: study_setup
       - name: study_objective
       - name: study_design
@@ -43,7 +42,7 @@ mappings:
         fn: count
     joining_props:
       - index: imaging_data_file
-        join_on: study_id
+        join_on: _study_id
         props:
           - name: object_id
             src: object_id
@@ -232,6 +231,7 @@ mappings:
     root: None
     category: imaging_data_file
     props:
+      - name: project_id
       - name: submitter_id
       - name: object_id
       - name: md5sum
@@ -259,16 +259,13 @@ mappings:
     injecting_props:
       study:
         props:
-          - name: study_id
+          - name: _study_id
             src: id
             fn: set
       subject:
         props:
           - name: _subject_id
             src: id
-            fn: set
-          - name: project_id
-            src: project_id
             fn: set
           - name: gender
             src: gender
