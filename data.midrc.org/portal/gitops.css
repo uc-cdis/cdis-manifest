@@ -72,12 +72,26 @@
   border-bottom: 3px solid var(--primary-color);
 }
 
+.nav-bar__link--right, .nav-bar__link--right:last-child {
+  border: none;
+}
+
+.footer-container {
+  background-color: var(--secondary-color);
+}
+
+.footer__nav {
+  background-color: var(--secondary-color);
+  align-items: center;
+}
+
 .footer__version-area {
   width: 300px;
 }
 
 .footer__logo-area {
-  width: 600px;
+  order: -1;
+  width: auto;
 }
 
 /* Data Explorer */
@@ -120,4 +134,34 @@ tspan.special-number,
 
 .data-explorer__charts .special-number {
   fill: var(--secondary-color);
+}
+
+/* MIDRC Index Changes */
+
+.introduction__icon {
+  display: none;
+}
+
+.index-button-bar {
+  width: 100%;
+  background-color: var(--g3-color__white);
+}
+
+.index-button-bar__thumbnail-button {
+  background-color: inherit;
+  border: none;
+}
+
+.index-button-bar__icon {
+  filter: hue-rotate(45deg);
+}
+
+.index-button-bar__item, .index-button-bar__thumbnail-title {
+  display: none;
+}
+
+@media screen and (max-width: 1170px) {
+  .index-button-bar {
+    padding: 0 10%;
+  }
 }
