@@ -8,9 +8,9 @@
           "plural": "Subjects"
         },
         {
-          "graphql": "_imaging_exam_count",
-          "name": "Imaging Exam",
-          "plural": "Imaging Exams"
+          "graphql": "_imaging_studies_count",
+          "name": "Imaging Study",
+          "plural": "Imaging Studies"
         },
         {
           "graphql": "_imaging_series_count",
@@ -40,9 +40,9 @@
           "plural": "Subjects"
         },
         {
-          "graphql": "_imaging_exam_count",
-          "name": "Imaging Exam",
-          "plural": "Imaging Exams"
+          "graphql": "_imaging_study_count",
+          "name": "Imaging Study",
+          "plural": "Imaging Studies"
         },
         {
           "graphql": "_imaging_series_count",
@@ -185,9 +185,11 @@
                   "title": "Datasets",
                   "fields":[
                     "project_id",
-                    "study_setup",
-                    "study_objective",
-                    "study_design"
+                    "data_contributor",
+                    "research_description",
+                    "research_design",
+                    "research_objective",
+                    "research_setup"
                   ]
                 }
               ]
@@ -195,22 +197,27 @@
             "table": {
               "enabled": true,
               "fields": [
+                "data_url",
                 "project_id",
                 "submitter_id",
-                "study_description",
+                "data_contributor",
                 "data_description",
-                "study_setup",
-                "study_objective",
-                "study_design",
-                "associated_study",
+                "research_description",
+                "research_design",
+                "research_objective",
+                "research_setup",
                 "_subjects_count",
                 "_virus_genomes_count",
-                "_imaging_exams_count",
+                "_imaging_studies_count",
                 "_imaging_series_count",
                 "_ct_images_count",
                 "_cr_images_count",
                 "_dx_images_count",
-                "_structured_reports_count"
+                "_structured_reports_count",
+                "_segmentation_files_count"
+              ],
+              "linkFields": [
+                "data_url"
               ]
             },
             "buttons": [
@@ -220,10 +227,10 @@
                 "title": "Download Dataset Descriptions",
                 "leftIcon": "user",
                 "rightIcon": "download",
-                "fileName": "MIDRC_datasets.json"
+                "fileName": "MIDRC_dataset_descriptions.json"
               },
               {
-                "enabled": true,
+                "enabled": false,
                 "type": "manifest",
                 "title": "Download Imaging File Manifest for Datasets",
                 "leftIcon": "datafile",
@@ -239,14 +246,14 @@
               }
             ],
             "guppyConfig": {
-              "dataType": "study",
+              "dataType": "dataset",
               "nodeCountTitle": "Datasets",
               "fieldMapping": [],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_study_id",
-                "referenceIdFieldInDataIndex": "_study_id"
+                "referenceIdFieldInResourceIndex": "_dataset_id",
+                "referenceIdFieldInDataIndex": "_dataset_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
@@ -344,7 +351,10 @@
               "_imaging_exams_count",
               "_imaging_series_count",
               "_ct_images_count",
-              "_structured_reports_count"
+              "_cr_images_count",
+              "_dx_images_count",
+              "_structured_reports_count",
+              "_segmentation_files_count"
             ]
           },
           "buttons": [
@@ -424,18 +434,22 @@
               {
                 "title": "Imaging Studies",
                 "fields": [
-                  "exam_modality",
-                  "days_to_exam",
-                  "hours_to_exam",
-                  "FLO2_percentage"
+                  "study_modality",
+                  "days_to_study",
+                  "hours_to_study",
+                  "study_description",
+                  "FLO2_percentage",
+                  "age_at_imaging",
+                  "study_year"
                 ]
               },
               {
                 "title": "Imaging Series",
                 "fields": [
-                  "series_type",
                   "series_description",
-                  "series_name"
+                  "series_id",
+                  "series_name",
+                  "series_type"
                 ]
               },
               {
@@ -477,19 +491,19 @@
               "contrast_bolus_agent_number",
               "spacing_between_slices",
               "lossy_image_compression",
-              "exam_modality",
-              "days_to_exam",
-              "hours_to_exam",
-              "exam_description",
+              "study_modality",
+              "days_to_study",
+              "hours_to_study",
+              "study_description",
               "FLO2_percentage",
               "radiologist_notes",
               "age_at_imaging",
-              "scan_year",
+              "study_year",
               "series_type",
               "series_description",
               "series_name",
               "series_id",
-              "_subject_id",
+              "subject_submitter_id",
               "gender",
               "race",
               "age",
@@ -519,18 +533,18 @@
             {
               "enabled": true,
               "type": "data",
-              "title": "Download Image File Metadata",
+              "title": "Download Imaging Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_image_file_metadata.json"
+              "fileName": "MIDRC_imaging_metadata.json"
             },
             {
               "enabled": true,
               "type": "file-manifest",
-              "title": "Download Image File Manifest",
+              "title": "Download Imaging File Manifest",
               "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "MIDRC_image_file_manifest.json",
+              "fileName": "MIDRC_imaging_file_manifest.json",
               "dropdownId": "download"
             },
             {
@@ -629,7 +643,7 @@
               "title": "Download Viral Genomics Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics.json"
+              "fileName": "MIDRC_viral_genomics_metadata.json"
             },
             {
               "enabled": true,

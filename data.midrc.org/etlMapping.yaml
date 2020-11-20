@@ -273,6 +273,9 @@ mappings:
           - name: _subject_id
             src: id
             fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set
           - name: gender
             src: gender
             fn: set
@@ -319,11 +322,11 @@ mappings:
           - name: series_id
             src: series_id
             fn: set
-          - name: series_type
-            src: series_type
-            fn: set
           - name: series_name
             src: series_name
+            fn: set
+          - name: series_type
+            src: series_type
             fn: set
     joining_props:
       - index: condition
