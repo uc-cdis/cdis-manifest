@@ -323,6 +323,85 @@
         "downloadAccessor": "object_id"
       },
       "dropdowns": {}
+    },
+    {
+      "tabTitle": "Exchange Area",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Publications",
+            "fields": [
+              "first_author",
+              "year",
+              "pmid",
+              "doi"
+            ] 
+          },
+          {
+            "title": "Files",
+            "fields": [
+              "data_category",
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "data_category",
+          "data_type",
+          "data_format",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "supplementary_file",
+        "fieldMapping": [
+          { "field": "object_id", "name": "GUID" },
+          { "field": "project_id", "name": "Project ID" },
+          { "field": "pmid", "name": "PMID"},
+          { "field": "doi", "name": "DOI"}
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id"
+      },
+      "dropdowns": {}
     }
   ],
   "resourceBrowser": {
