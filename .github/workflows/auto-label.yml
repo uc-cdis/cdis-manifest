@@ -12,3 +12,4 @@ jobs:
       - uses: banyan/auto-label@1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GEN3_RELEASE_GH_TOKEN }}
+          
