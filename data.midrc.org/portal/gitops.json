@@ -300,7 +300,6 @@
                   "measles",
                   "mortality",
                   "number_icu_admits",
-                  "primary_diagnosis",
                   "rheumatoid_arthritis",
                   "systemic_lupus_erythmatosus",
                   "transplant",
@@ -421,12 +420,8 @@
                   "body_part_examined",
                   "view_position",
                   "slice_thickness",
-                  "contrast_bolus_agent_number",
                   "spacing_between_slices",
-                  "lossy_image_compression",
-                  "implementation_class_uid",
-                  "implementation_version_name",
-                  "transfer_syntax_uid"
+                  "lossy_image_compression"
                 ]
               },
               {
@@ -436,9 +431,7 @@
                   "days_to_study",
                   "hours_to_study",
                   "study_description",
-                  "FLO2_percentage",
-                  "age_at_imaging",
-                  "study_year"
+                  "FLO2_percentage"
                 ]
               },
               {
@@ -446,7 +439,6 @@
                 "fields": [
                   "series_description",
                   "series_id",
-                  "series_name",
                   "series_type"
                 ]
               },

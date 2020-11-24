@@ -41,6 +41,9 @@ mappings:
       - name: _structured_reports_count
         path: subjects.imaging_studies.imaging_series.structured_reports
         fn: count
+      - name: _segmentation_files_count
+        path: subjects.imaging_studies.imaging_series.segmentation_files
+        fn: count
     joining_props:
       - index: imaging_data_file
         join_on: _dataset_id
