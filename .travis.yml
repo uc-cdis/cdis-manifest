@@ -1,7 +1,7 @@
 language: python
 
 script:
-  - pip install gen3utils --upgrade
+  - pip install gen3utils==0.5.3 --upgrade
 
   # validate all the manifest.json files:
   - gen3utils validate-manifest */manifest.json
