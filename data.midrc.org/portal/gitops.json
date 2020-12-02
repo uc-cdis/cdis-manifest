@@ -106,7 +106,34 @@
             }
         ]
       },
-      "navigation": {
+      "homepageChartNodes": [
+        {
+          "node": "subject",
+          "name": "Subjects"
+        },
+        {
+          "name": "imaging_study",
+          "plural": "Imaging Studies"
+        },
+        {
+          "name": "imaging_series",
+          "plural": "Imaging Series"
+        },
+        {
+          "name": "ct_image",
+          "plural": "CT Image Files"
+        },
+        {
+          "name": "cr_image",
+          "plural": "CR Image Files"
+        },
+        {
+          "name": "dx_image",
+          "plural": "DX Image Files"
+        }
+      ]
+    },
+    "navigation": {
         "items": [
           {
             "name": "Exploration",
