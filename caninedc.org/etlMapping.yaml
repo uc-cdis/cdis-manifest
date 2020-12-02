@@ -63,8 +63,8 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-          - name: file_id
-            src: file_id
+          - name: _file_id
+            src: _file_id
             fn: set
   - name: canine_file
     doc_type: file
