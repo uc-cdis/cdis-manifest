@@ -127,7 +127,7 @@ mappings:
             src: data_type
             fn: set
           - name: file_count
-            src: file_id
+            src: _file_id
             fn: count
   - name: staging.gen3.biodatacatalyst.nhlbi.nih.gov_file
     doc_type: file
