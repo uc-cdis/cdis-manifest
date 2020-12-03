@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Covid-19-X-ray-images-classification">Covid-19 X-ray images classification<a class="anchor-link" href="#Covid-19-X-ray-images-classification">&#182;</a></h2>
+<h2 id="COVID-19-X-ray-images-classification">COVID-19 X-ray images classification<a class="anchor-link" href="#COVID-19-X-ray-images-classification">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13132,10 +13132,10 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h4 id="Introduction:">Introduction:<a class="anchor-link" href="#Introduction:">&#182;</a></h4><ul>
-<li>" The novel coronavirus 2019 (COVID-2019), which first appeared in Wuhan city of China in December 2019, spread rapidly around the world and became a pandemic. It has caused a devastating effect on both daily lives, public health, and the global economy. It is critical to detect the positive cases as early as possible so as to prevent the further spread of this epidemic and to quickly treat affected patients. The need for auxiliary diagnostic tools has increased as there are no accurate automated toolkits available. Recent findings obtained using radiology imaging techniques suggest that such images contain salient information about the COVID-19 virus. Application of advanced artificial intelligence (AI) techniques coupled with radiological imaging can be helpful for the accurate detection of this disease, and can also be assistive to overcome the problem of a lack of specialized physicians in remote villages."</li>
+<li>" The novel coronavirus 2019 (COVID-19), which first appeared in Wuhan, China in December 2019, spread rapidly around the world and became a global pandemic. This resulted in a devastating effect on both daily lives, public health, and the global economy. It is critical to detect the positive cases as early as possible to prevent the further spread of this epidemic and to quickly treat infected patients. The need for auxiliary diagnostic tools has increased as there are no accurate automated toolkits available. Recent findings obtained using radiology imaging techniques suggest that such images contain salient information about the COVID-19 virus. Application of advanced artificial intelligence (AI) techniques coupled with radiological imaging can be helpful for the accurate detection of this disease, and can also be assistive to overcome the problem of a lack of specialized physicians in remote villages."</li>
 </ul>
 <ul>
-<li>This notebook is a replication of the DarkCovidNet model<sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup> to classify COVID-19 x-ray images from "No finding" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper in github <a href="https://github.com/muhammedtalo/COVID-19/blob/master/DarkCovidNet%20%20for%20binary%20classes.ipynb">https://github.com/muhammedtalo/COVID-19/blob/master/DarkCovidNet%20%20for%20binary%20classes.ipynb</a>. We use data available in the Chicagoland Pandemic Response Commons (CRPC) for this notebook.</li>
+<li>This notebook is a replication of the DarkCovidNet model<sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup> to classify radiological images as indicative of either "COVID-19" or "No Finding" to assist in the diagnosis if COVID-19. This is an extension of the notebook published along with the paper in GitHub <a href="https://github.com/muhammedtalo/COVID-19/blob/master/DarkCovidNet%20%20for%20binary%20classes.ipynb">https://github.com/muhammedtalo/COVID-19/blob/master/DarkCovidNet%20%20for%20binary%20classes.ipynb</a>. We use data available in the Chicagoland Pandemic Response Commons (CRPC) for this notebook.</li>
 </ul>
 <div class="footnotes">
 <hr>
@@ -13151,10 +13151,10 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h4 id="Data-Source:">Data Source:<a class="anchor-link" href="#Data-Source:">&#182;</a></h4><ul>
-<li>open-COXRAY project in  the CPRC  contains X-ray images for COVID-19 patients imported from <a href="https://github.com/ieee8023/covid-chestxray-dataset">https://github.com/ieee8023/covid-chestxray-dataset</a>. X-ray images for COVID-19 patients are queried and downloaded for image classification.</li>
+<li>open-COXRAY project in the CPRC contains X-ray images for COVID-19 patients imported from <a href="https://github.com/ieee8023/covid-chestxray-dataset">https://github.com/ieee8023/covid-chestxray-dataset</a>. X-ray images for COVID-19 patients are queried and downloaded for image classification.</li>
 </ul>
 <ul>
-<li>open-ChestX-ray8 project in the CPRC contains X-ray images for No finding individuals imported from <a href="https://github.com/muhammedtalo/COVID-19/tree/master/X-Ray%20Image%20DataSet/No_findings">https://github.com/muhammedtalo/COVID-19/tree/master/X-Ray%20Image%20DataSet/No_findings</a>. X-ray images for No finding individuals are queried and downloaded.</li>
+<li>open-ChestX-ray8 project in the CPRC contains X-ray images for individuals with a "No Finding" designation imported from <a href="https://github.com/muhammedtalo/COVID-19/tree/master/X-Ray%20Image%20DataSet/No_findings">https://github.com/muhammedtalo/COVID-19/tree/master/X-Ray%20Image%20DataSet/No_findings</a>. X-ray images for "No Finding" individuals are queried and downloaded.</li>
 </ul>
 
 </div>
@@ -13195,12 +13195,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># !pip install gitpython</span>
 <span class="c1"># !pip install gen3</span>
-<span class="c1"># !pip install fastai</span>
+<span class="c1"># !pip install fastai==1.0.61 --user --no-use-pep517</span>
 <span class="kn">from</span> <span class="nn">fastai.vision</span> <span class="k">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
@@ -13232,14 +13232,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Query GUID for image data classfied as "No finding" and "COVID-19 Cases"</p>
+<p>Query GUIDs for image data classfied as "No Finding" and "COVID-19 Cases"</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query image object id and clinical note information</span>
@@ -13256,7 +13256,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query image object id and clinical note for COVID19 cases</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query image object id and clinical note for COVID-19 cases</span>
 <span class="n">covid_info</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">get_observation_images</span><span class="p">(</span><span class="s2">&quot;open-COXRAY&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -13268,7 +13268,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Download image files for No finding cases</p>
+<p>Download image files for No Finding cases</p>
 
 </div>
 </div>
@@ -13367,9 +13367,9 @@ div#notebook {
 <ul>
 <li><p>All of the images are the 256 * 256 pixels and batch size is defined as 32</p>
 </li>
-<li><p>The image data is normalized to have mean 0 and standard deviation of 1</p>
+<li><p>The image data is normalized to have mean of 0 and a standard deviation of 1</p>
 </li>
-<li><p>We randomly separate images to training and testing datasets in 8:2 ratio with random seed as 41</p>
+<li><p>We randomly separate images to training and testing datasets in an 8:2 ratio with a random seed of 41</p>
 </li>
 </ul>
 
@@ -13662,7 +13662,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use fastai.vision.learner to train a randomly initialized model. Our loss function, Cross-entropy loss, or log loss, measures the performance of a classification model as a probability value between 0 and 1. Cross-entropy loss increases as the predicted probability diverges from the actual label.</p>
+<p>Use fastai.vision.learner to train a randomly initialized model. Our loss function, cross-entropy loss, or log loss, measures the performance of a classification model as a probability value between 0 and 1. Cross-entropy loss increases as the predicted probability diverges from the actual label.</p>
 
 </div>
 </div>
@@ -14831,7 +14831,7 @@ Callbacks functions applied
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Evaluation-precision,-recall-and-f1-score-for-valication-dataset-and-plot-confusion-matrix">Evaluation precision, recall and f1 score for valication dataset and plot confusion matrix<a class="anchor-link" href="#Evaluation-precision,-recall-and-f1-score-for-valication-dataset-and-plot-confusion-matrix">&#182;</a></h4>
+<h4 id="Evaluate-precision,-recall-f1-score-for-validation-dataset-and-plot-confusion-matrix">Evaluate precision, recall f1 score for validation dataset and plot confusion matrix<a class="anchor-link" href="#Evaluate-precision,-recall-f1-score-for-validation-dataset-and-plot-confusion-matrix">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14944,12 +14944,12 @@ weighted avg       0.97      0.97      0.97       156
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>The accuracy of the model predicting COVID-19 cases with validation dataset is (66+86)/(66+3+1+86)=97%. </li>
-<li>Among 69 COVID-19 images, 66 cases were predicted correctly. The recall rate for COVI-19 is 66/69 =96%. </li>
+<li>Among 69 COVID-19 images, 66 cases were predicted correctly. The recall rate for COVID-19 is 66/69 =96%. </li>
 <li>Among 67 predicted COVID-19 cases, 66 cases are COVID-19. The precision rate for COVID-19 is 66/67=99%. </li>
 <li>F1 score for COVID-19 is (96%+99%)/2 = 97%.</li>
-<li>Among 87 No finding cases, 86 cases were predicted correctly. The recall rate for No finding is 86/87=99%.</li>
-<li>Among 89 predicted No finding cases, 86 cases are No finding. The precision rate for No finding is 86/89=97%</li>
-<li>F1 score for No finding is (99%+97%)/2=98%</li>
+<li>Among 87 No Finding cases, 86 cases were predicted correctly. The recall rate for "No Finding" is 86/87=99%.</li>
+<li>Among 89 predicted No Finding cases, 86 cases are "No finding". The precision rate for "No Finding" is 86/89=97%</li>
+<li>F1 score for "No Finding" is (99%+97%)/2=98%</li>
 </ul>
 
 </div>
@@ -15010,9 +15010,9 @@ weighted avg       0.97      0.97      0.97       156
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Positive case is COVID-19 and negative cases is No finding. </li>
-<li>The confusion matrix shows true positive case number is 66, and true negative case number is 86. </li>
-<li>False positive case number is 1 and false negative case number is 3.</li>
+<li>Positive cases are labeled as "COVID-19" and negative cases are labeled as "No Finding". </li>
+<li>The confusion matrix shows true positive case numbers are 66, and true negative case numbers are 86. </li>
+<li>False positive case numbers are 1 and false negative case numbers are 3.</li>
 </ul>
 
 </div>
@@ -15022,14 +15022,14 @@ weighted avg       0.97      0.97      0.97       156
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h4 id="Conclustion">Conclustion<a class="anchor-link" href="#Conclustion">&#182;</a></h4>
+<h4 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We applied the DarkCovidNet model to classify x-ray images for No finding and COVID-19 cases. After training the model over 100 epochs, the losses for the training dataset and validation dataset is stable and the accuracy is 97.4%.</p>
+<p>We applied the DarkCovidNet model to classify x-ray images for No Finding and COVID-19 cases. After training the model with over 100 epochs, the losses for the training dataset and validation dataset is stable and the accuracy is 97.4%.</p>
 
 </div>
 </div>
