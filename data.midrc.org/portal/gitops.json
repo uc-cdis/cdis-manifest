@@ -104,9 +104,35 @@
               "link": "/workspace",
               "label": "Run analysis"
             }
+        ],
+        "homepageChartNodes": [
+            {
+              "node": "subject",
+              "name": "Subjects"
+            },
+            {
+              "node": "imaging_study",
+              "name": "Imaging Studies"
+            },
+            {
+              "node": "imaging_series",
+              "name": "Imaging Series"
+            },
+            {
+              "node": "ct_image",
+              "name": "CT Image Files"
+            },
+            {
+              "node": "cr_image",
+              "name": "CR Image Files"
+            },
+            {
+              "node": "dx_image",
+              "name": "DX Image Files"
+            }
         ]
-      },
-      "navigation": {
+    },
+    "navigation": {
         "items": [
           {
             "name": "Exploration",

@@ -72,7 +72,9 @@
       "memory-limit": "1024Mi",
       "name": "Jupyter Notebook- Create your own",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
-      "env": {},
+      "env": {
+        "NAMESPACE": "default"
+      },
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
       "path-rewrite": "/lw-workspace/proxy/",
@@ -88,7 +90,10 @@
       "memory-limit": "1024Mi",
       "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19",
       "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.0.4",
-      "env": {"FRAME_ANCESTORS": "https://covid19.occ-pla.net"},
+      "env": {
+        "NAMESPACE": "default",
+        "FRAME_ANCESTORS": "https://covid19.occ-pla.net"
+      },
       "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.default_url=/lab","--NotebookApp.password=''","--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
       "path-rewrite": "/lw-workspace/proxy/",

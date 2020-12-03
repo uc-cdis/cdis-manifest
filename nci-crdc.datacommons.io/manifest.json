@@ -9,7 +9,7 @@
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.11",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.11",
-    "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:2020.11",
+    "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:1.2.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.23.7",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "google-sa-validation": "placeholder:2020.11",
