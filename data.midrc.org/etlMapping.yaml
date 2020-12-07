@@ -282,6 +282,9 @@ mappings:
             fn: set
       imaging_study:
         props:
+          - name: _imaging_study_id
+            src: id
+            fn: set
           - name: study_modality
             src: study_modality
             fn: set
@@ -308,6 +311,9 @@ mappings:
             fn: max
       imaging_series:
         props:
+          - name: _imaging_series_id
+            src: id
+            fn: set
           - name: series_description
             src: series_description
             fn: set
@@ -326,4 +332,59 @@ mappings:
         props:
           - name: covid_test_name
             src: covid_test_name
+            fn: set
+  - name: midrc_imaging_study
+    doc_type: imaging_study
+    type: aggregator
+    root: imaging_study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_modality
+      - name: days_to_study
+      - name: hours_to_study
+      - name: study_description
+      - name: FLO2_percentage
+      - name: radiologist_notes
+      - name: age_at_imaging
+      - name: study_year
+    flatten_props:
+      - path: imaging_series
+        props:
+          - name: series_description
+          - name: series_id
+          - name: series_name
+          - name: series_type
+        sorted_by: updated_datetime, desc
+    aggregated_props:
+      - name: _imaging_series_count
+        path: imaging_series
+        fn: count
+      - name: _ct_images_count
+        path: ct_images
+        fn: count
+      - name: _cr_images_count
+        path: cr_images
+        fn: count
+      - name: _dx_images_count
+        path: dx_images
+        fn: count
+    joining_props:
+      - index: imaging_data_file
+        join_on: _imaging_study_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
             fn: set
