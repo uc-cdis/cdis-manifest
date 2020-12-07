@@ -8,24 +8,14 @@
           "plural": "Cases"
         },
         {
-          "graphql": "_subject_count(with_path_to:{type:\"condition\",covid_test_positive:true})",
-          "name": "COVID-19 Positive Case",
-          "plural": "COVID-19 Positive Cases"
-        },
-        {
           "graphql": "_imaging_study_count",
           "name": "Imaging Study",
           "plural": "Imaging Studies"
         },
         {
-          "graphql": "_imaging_study_count(study_modality: [\"DX\", \"CR\"])",
+          "graphql": "_dx_image_count",
           "name": "Chest Radiograph",
           "plural": "Chest Radiographs"
-        },
-        {
-          "graphql": "_imaging_study_count(study_modality:\"CT\")",
-          "name": "Thoracic CT Scan",
-          "plural": "Thoracic CT Scans"
         }
       ],
       "chartCounts": [
@@ -35,24 +25,14 @@
           "plural": "Cases"
         },
         {
-          "graphql": "_subject_count(with_path_to:{type:\"condition\",covid_test_positive:true})",
-          "name": "COVID-19 Positive Case",
-          "plural": "COVID-19 Positive Cases"
-        },
-        {
           "graphql": "_imaging_study_count",
           "name": "Imaging Study",
           "plural": "Imaging Studies"
         },
         {
-          "graphql": "_imaging_study_count(study_modality: [\"DX\", \"CR\"])",
+          "graphql": "_dx_image_count",
           "name": "Chest Radiograph",
           "plural": "Chest Radiographs"
-        },
-        {
-          "graphql": "_imaging_study_count(study_modality:\"CT\")",
-          "name": "Thoracic CT Scan",
-          "plural": "Thoracic CT Scans"
         }
       ],
       "projectDetails": "boardCounts"
