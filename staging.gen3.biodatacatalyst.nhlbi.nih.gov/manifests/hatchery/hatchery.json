@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.09",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.11",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "staging.gen3.biodatacatalyst.nhlbi.nih.gov"
@@ -170,13 +170,6 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100
-    }
-  ],
-  "more-configs": [	
-    {	
-      "type": "dockstore-compose:1.0.0",	
-      "path": "/hatchery-more-configs/dicom2.yaml",	
-      "name": "Dicom2"	
     }
   ]
 }
