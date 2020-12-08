@@ -15,6 +15,9 @@ S3_BUCKETS:
   cgp-commons-public:
     cred: '*'
     region: us-east-1
+  nih-nhlbi-covid19-phs002299-c1:
+    cred: fence-bot
+    region: us-east-1
   topmed_workflow_testing:
     cred: '*'
     region: us-east-1
