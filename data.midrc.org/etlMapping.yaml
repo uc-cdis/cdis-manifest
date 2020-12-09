@@ -356,6 +356,32 @@ mappings:
           - name: series_name
           - name: series_type
         sorted_by: updated_datetime, desc
+    injecting_props:
+      dataset:
+        props:
+          - name: _dataset_id
+            src: id
+            fn: set
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set
+          - name: gender
+            src: gender
+            fn: set
+          - name: race
+            src: race
+            fn: set
+          - name: age
+            src: age
+            fn: max
+          - name: zip
+            src: zip
+            fn: set
     aggregated_props:
       - name: _imaging_series_count
         path: imaging_series
@@ -373,11 +399,20 @@ mappings:
       - index: imaging_data_file
         join_on: _imaging_study_id
         props:
+          - name: image_submitter_id
+            src: submitter_id
+            fn: set
           - name: object_id
             src: object_id
             fn: set
+          - name: md5sum
+            src: md5sum
+            fn: set
           - name: file_name
             src: file_name
+            fn: set
+          - name: file_size
+            src: file_size
             fn: set
           - name: data_format
             src: data_format
@@ -387,4 +422,52 @@ mappings:
             fn: set
           - name: data_category
             src: data_category
+            fn: set
+          - name: file_description
+            src: file_description
+            fn: set
+          - name: implementation_class_uid
+            src: implementation_class_uid
+            fn: set
+          - name: implementation_version_name
+            src: implementation_version_name
+            fn: set
+          - name: transfer_syntax_uid
+            src: transfer_syntax_uid
+            fn: set
+          - name: image_type
+            src: image_type
+            fn: set
+          - name: image_modality
+            src: modality
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: study_description
+            src: study_description
+            fn: set
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: view_position
+            src: view_position
+            fn: set
+          - name: slice_thickness
+            src: slice_thickness
+            fn: set
+          - name: contrast_bolus_agent_number
+            src: contrast_bolus_agent_number
+            fn: set
+          - name: spacing_between_slices
+            src: spacing_between_slices
+            fn: set
+          - name: lossy_image_compression
+            src: lossy_image_compression
             fn: set
