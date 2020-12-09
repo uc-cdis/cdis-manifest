@@ -15,6 +15,8 @@ S3_BUCKETS:
     cred: 'fence_bot'
   gdc-ccle-controlled:
     cred: 'fence_bot'
+  gdc-cgci-phs000235-2-controlled:
+    cred: 'fence_bot'
   gdc-cgci-blgsp-phs000235-controlled:
     cred: 'fence_bot'
   gdc-cptac-phs001287-controlled:
@@ -53,6 +55,8 @@ S3_BUCKETS:
     cred: 'fence_bot'
   gdc-beataml1.0-crenolanib-phs001628-2-open:
     cred: 'fence_bot'
+  gdc-cgci-phs000235-2-open:
+    cred: 'fence_bot'
   gdc-cgci-blgsp-phs000235-2-open:
     cred: 'fence_bot'
   gdc-cptac-2-phs000892-2-open:
@@ -78,6 +82,10 @@ S3_BUCKETS:
   gdc-varepop-apollo-phs001374-2-open:
     cred: 'fence_bot'
   gdc-ccle-2-open:
+    cred: 'fence_bot'
+  gdc-wcdt-mcrpc-phs001648-2-open:
+    cred: 'fence_bot'
+  gdc-wcdt-mcrpc-phs001648-controlled:
     cred: 'fence_bot'
   sddp-phs001554:
     cred: 'fence_bot'
