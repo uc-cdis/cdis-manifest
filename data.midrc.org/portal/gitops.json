@@ -16,6 +16,11 @@
           "graphql": "_dx_image_count",
           "name": "Chest Radiograph",
           "plural": "Chest Radiographs"
+        },
+        {
+          "graphql": "_imaging_series_count",
+          "name": "Thoracic CT Scans",
+          "plural": "Thoracic CT Scans"
         }
       ],
       "chartCounts": [
@@ -33,6 +38,11 @@
           "graphql": "_dx_image_count",
           "name": "Chest Radiograph",
           "plural": "Chest Radiographs"
+        },
+        {
+          "graphql": "_imaging_series_count",
+          "name": "Thoracic CT Scans",
+          "plural": "Thoracic CT Scans"
         }
       ],
       "projectDetails": "boardCounts"
@@ -52,13 +62,6 @@
               "body": "Search and download subsets of data from the MIDRC Data Commons using intuitive navigation tools.",
               "link": "/explorer",
               "label": "Explore data"
-            },
-            {
-              "name": "Data Dictionary",
-              "icon": "data-field-define",
-              "body": "Browse the nodes and properties of the graph data model used in the MIDRC Data Commons.",
-              "link": "/DD",
-              "label": "Explore Data Model"
             },
             {
               "name": "Query Data",
@@ -87,6 +90,10 @@
             {
               "node": "dx_image",
               "name": "Chest Radiographs"
+            },
+            {
+              "node": "imaging_series",
+              "name": "Thoracic CT Scans"
             }
         ]
     },
@@ -97,12 +104,6 @@
             "link": "/explorer",
             "icon": "exploration",
             "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
-          },
-          {
-            "name": "Dictionary",
-            "link": "/DD",
-            "icon": "dictionary",
-            "tooltip": "Study the data model and download data submission templates."
           },
           {
             "name": "Query",
@@ -163,21 +164,17 @@
         {
           "tabTitle": "Cases",
           "charts": {
-            "covid_test_positive": {
+            "covid_status": {
               "chartType": "pie",
-              "title": "COVID-19 Positive"
+              "title": "COVID-19 Status"
             },
             "gender": {
               "chartType": "pie",
               "title": "Gender"
             },
             "race": {
-              "chartType": "bar",
+              "chartType": "pie",
               "title": "Race"
-            },
-            "Age": {
-              "chartType": "bar",
-              "title": "Age"
             }
           },
           "filters": {
@@ -185,6 +182,7 @@
               {
                 "title": "Demographics",
                 "fields":[
+                  "covid_status",
                   "gender",
                   "race",
                   "age",
@@ -231,12 +229,13 @@
             "enabled": true,
             "fields": [
               "submitter_id",
-              "covid_test_positive",
+              "covid_status",
               "gender",
               "age",
               "race",
               "zip",
               "covid_test_name",
+              "covid_test_positive",
               "asplenia",
               "cancer",
               "chicken_pox",
@@ -299,11 +298,11 @@
           ],
           "guppyConfig": {
             "dataType": "subject",
-            "nodeCountTitle": "Subjects",
+            "nodeCountTitle": "Cases",
             "fieldMapping": [
               {
                 "field": "project_id",
-                "name": "Project"
+                "name": "Dataset"
               },
               {
                 "field": "submitter_id",
@@ -694,6 +693,155 @@
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_viral_genomics_manifest.json",
+              "dropdownId": "download"
+            },
+            {
+              "enabled": false,
+              "type": "export-files-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "dropdowns": {}
+        },
+        {
+          "tabTitle": "Images",
+          "charts": {
+            "study_modality": {
+              "chartType": "pie",
+              "title": "Imaging Modalities"
+            },
+            "gender": {
+              "chartType": "pie",
+              "title": "Case Gender"
+            },
+            "manufacturer": {
+              "chartType": "pie",
+              "title": "Imaging Equipment Manufacturer"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "Image Properties",
+                "fields": [
+                  "modality",
+                  "data_type",
+                  "data_format",
+                  "file_size",
+                  "series_description",
+                  "series_id",
+                  "series_type",
+                  "manufacturer",
+                  "manufacturer_model_name",
+                  "study_description",
+                  "series_description",
+                  "body_part_examined",
+                  "slice_thickness",
+                  "spacing_between_slices",
+                  "lossy_image_compression",
+                  "image_type",
+                  "days_to_study",
+                  "hours_to_study",
+                  "study_description",
+                  "FLO2_percentage",
+                  "data_contributor"
+                ]
+              },
+              {
+                "title": "Case Demographics",
+                "fields": [
+                  "covid_status",
+                  "gender",
+                  "race",
+                  "age",
+                  "zip"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "subject_submitter_id",
+              "file_name",
+              "modality",
+              "body_part_examined",
+              "view_position",
+              "slice_thickness",
+              "spacing_between_slices",
+              "manufacturer",
+              "manufacturer_model_name",
+              "data_format",
+              "object_id",
+              "file_size",
+              "gender",
+              "race",
+              "age",
+              "data_type",
+              "file_description",
+              "image_type",
+              "study_description",
+              "series_description",
+              "lossy_image_compression",
+              "days_to_study",
+              "hours_to_study",
+              "study_description",
+              "FLO2_percentage",
+              "radiologist_notes",
+              "series_type",
+              "series_description",
+              "series_id",
+              "zip",
+              "project_id",
+              "submitter_id",
+              "md5sum"
+            ]
+          },
+          "guppyConfig": {
+            "dataType": "imaging_study",
+            "nodeCountTitle": "Imaging Studies",
+            "fieldMapping": [
+              {
+                "field": "project_id",
+                "name": "Dataset"
+              },
+              {
+                "field": "object_id",
+                "name": "GUID"
+              },
+              {
+                "field": "subject_submitter_id",
+                "name": "Case ID"
+              }
+            ],
+            "manifestMapping": {
+              "resourceIndexType": "imaging_data_file",
+              "resourceIdField": "object_id",
+              "referenceIdFieldInResourceIndex": "_imaging_study_id",
+              "referenceIdFieldInDataIndex": "_imaging_study_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id",
+            "downloadAccessor": "object_id"
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Imaging Metadata",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "MIDRC_imaging_metadata.json"
+            },
+            {
+              "enabled": true,
+              "type": "file-manifest",
+              "title": "Get Image Download Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_imaging_file_manifest.json",
               "dropdownId": "download"
             },
             {

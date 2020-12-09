@@ -73,6 +73,7 @@ mappings:
       - name: race
       - name: age
       - name: zip
+      - name: covid_status
     flatten_props:
       - path: conditions
         props:
@@ -260,6 +261,9 @@ mappings:
           - name: _dataset_id
             src: id
             fn: set
+          - name: data_contributor
+            src: data_contributor
+            fn: set
       subject:
         props:
           - name: _subject_id
@@ -280,6 +284,9 @@ mappings:
           - name: zip
             src: zip
             fn: set
+          - name: covid_status
+            src: covid_status
+            fn: set
       imaging_study:
         props:
           - name: _imaging_study_id
@@ -287,6 +294,9 @@ mappings:
             fn: set
           - name: study_modality
             src: study_modality
+            fn: set
+          - name: study_covid_status
+            src: study_covid_status
             fn: set
           - name: days_to_study
             src: days_to_study
@@ -348,6 +358,7 @@ mappings:
       - name: radiologist_notes
       - name: age_at_imaging
       - name: study_year
+      - name: study_covid_status
     flatten_props:
       - path: imaging_series
         props:
@@ -361,6 +372,9 @@ mappings:
         props:
           - name: _dataset_id
             src: id
+            fn: set
+          - name: data_contributor
+            src: data_contributor
             fn: set
       subject:
         props:
@@ -381,6 +395,9 @@ mappings:
             fn: max
           - name: zip
             src: zip
+            fn: set
+          - name: subject_covid_status
+            src: covid_status
             fn: set
     aggregated_props:
       - name: _imaging_series_count
