@@ -399,19 +399,6 @@ mappings:
           - name: subject_covid_status
             src: covid_status
             fn: set
-    aggregated_props:
-      - name: _imaging_series_count
-        path: imaging_series
-        fn: count
-      - name: _ct_images_count
-        path: ct_images
-        fn: count
-      - name: _cr_images_count
-        path: cr_images
-        fn: count
-      - name: _dx_images_count
-        path: dx_images
-        fn: count
     joining_props:
       - index: imaging_data_file
         join_on: _imaging_study_id
