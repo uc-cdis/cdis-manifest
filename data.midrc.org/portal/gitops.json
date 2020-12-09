@@ -302,7 +302,7 @@
             "fieldMapping": [
               {
                 "field": "project_id",
-                "name": "Dataset"
+                "name": "Dataset ID"
               },
               {
                 "field": "submitter_id",
@@ -327,7 +327,7 @@
               "title": "Images From COVID-19 Positive Cases"
             },
             "modality": {
-              "chartType": "bar",
+              "chartType": "pie",
               "title": "Imaging Modalities"
             },
             "gender": {
@@ -435,6 +435,10 @@
             "dataType": "imaging_data_file",
             "fieldMapping": [
               {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
+              {
                 "field": "object_id",
                 "name": "GUID"
               },
@@ -505,7 +509,7 @@
             "filters": {
               "tabs": [
                 {
-                  "title": "Datasets",
+                  "title": "Dataset Properties",
                   "fields":[
                     "data_contributor",
                     "research_description",
@@ -570,7 +574,12 @@
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
-              "fieldMapping": [],
+              "fieldMapping": [
+                  {
+                    "field": "project_id",
+                    "name": "Dataset ID"
+                  }
+              ],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
@@ -585,15 +594,15 @@
           "tabTitle": "Viral Genomics",
           "charts": {
             "organism": {
-              "chartType": "stackedBar",
+              "chartType": "pie",
               "title": "Organism"
             },
             "data_format": {
-              "chartType": "stackedBar",
+              "chartType": "pie",
               "title": "File Format"
             },
             "data_category": {
-              "chartType": "stackedBar",
+              "chartType": "pie",
               "title": "File Category"
             }
           },
@@ -649,6 +658,10 @@
           "guppyConfig": {
             "dataType": "virus_data_file",
             "fieldMapping": [
+              {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
               {
                 "field": "submitter_id",
                 "name": "Viral Genome ID"
@@ -805,7 +818,11 @@
             "fieldMapping": [
               {
                 "field": "project_id",
-                "name": "Dataset"
+                "name": "Dataset ID"
+              },
+              {
+                "field": "submitter_id",
+                "name": "Imaging Study ID"
               },
               {
                 "field": "object_id",
