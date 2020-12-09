@@ -164,9 +164,9 @@
         {
           "tabTitle": "Cases",
           "charts": {
-            "covid_status": {
+            "covid_test_positive": {
               "chartType": "pie",
-              "title": "COVID-19 Status"
+              "title": "COVID-19 Positive"
             },
             "gender": {
               "chartType": "pie",
@@ -182,7 +182,6 @@
               {
                 "title": "Demographics",
                 "fields":[
-                  "covid_status",
                   "gender",
                   "race",
                   "age",
@@ -229,7 +228,6 @@
             "enabled": true,
             "fields": [
               "submitter_id",
-              "covid_status",
               "gender",
               "age",
               "race",
@@ -320,12 +318,8 @@
           }
         },
         {
-          "tabTitle": "Imaging Files",
+          "tabTitle": "Images",
           "charts": {
-            "covid_test_positive": {
-              "chartType": "pie",
-              "title": "Images From COVID-19 Positive Cases"
-            },
             "modality": {
               "chartType": "pie",
               "title": "Imaging Modalities"
@@ -338,55 +332,38 @@
           "filters": {
             "tabs": [
               {
-                "title": "DICOM Elements",
+                "title": "Image Properties",
                 "fields": [
                   "modality",
-                  "image_type",
                   "manufacturer",
                   "manufacturer_model_name",
+                  "body_part_examined",
+                  "series_description",
+                  "series_id",
+                  "series_type"
+                  "image_type",
                   "study_description",
                   "series_description",
-                  "body_part_examined",
                   "slice_thickness",
                   "spacing_between_slices",
-                  "lossy_image_compression"
+                  "lossy_image_compression",
+                  "days_to_study",
+                  "hours_to_study",
+                  "study_description",
+                  "FLO2_percentage",
+                  "data_type",
+                  "data_format",
+                  "file_size",
+                  "project_id"
                 ]
               },
               {
-                "title": "Subject Demographics",
+                "title": "Case Demographics",
                 "fields": [
                   "gender",
                   "race",
                   "age",
                   "zip"
-                ]
-              },
-              {
-                "title": "File Properties",
-                "fields": [
-                  "project_id",
-                  "data_category",
-                  "data_type",
-                  "data_format",
-                  "file_size"
-                ]
-              },
-              {
-                "title": "Imaging Studies",
-                "fields": [
-                  "study_modality",
-                  "days_to_study",
-                  "hours_to_study",
-                  "study_description",
-                  "FLO2_percentage"
-                ]
-              },
-              {
-                "title": "Imaging Series",
-                "fields": [
-                  "series_description",
-                  "series_id",
-                  "series_type"
                 ]
               }
             ]
@@ -493,17 +470,13 @@
                 "chartType": "count",
                 "title": "data_contributor"
               },
-              "research_setup": {
-                "chartType": "bar",
-                "title": "Research Setup"
-              },
-              "research_objective": {
-                "chartType": "bar",
-                "title": "Research Objective"
-              },
               "research_design": {
                 "chartType": "bar",
                 "title": "Research Design"
+              },
+              "research_setup": {
+                "chartType": "bar",
+                "title": "Research Setup"
               }
             },
             "filters": {
@@ -556,7 +529,7 @@
                 "fileName": "MIDRC_dataset_descriptions.json"
               },
               {
-                "enabled": false,
+                "enabled": true,
                 "type": "manifest",
                 "title": "Download Imaging File Manifest for Datasets",
                 "leftIcon": "datafile",
@@ -706,159 +679,6 @@
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_viral_genomics_manifest.json",
-              "dropdownId": "download"
-            },
-            {
-              "enabled": false,
-              "type": "export-files-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "dropdowns": {}
-        },
-        {
-          "tabTitle": "Images",
-          "charts": {
-            "study_modality": {
-              "chartType": "pie",
-              "title": "Imaging Modalities"
-            },
-            "gender": {
-              "chartType": "pie",
-              "title": "Case Gender"
-            },
-            "manufacturer": {
-              "chartType": "pie",
-              "title": "Imaging Equipment Manufacturer"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Image Properties",
-                "fields": [
-                  "modality",
-                  "data_type",
-                  "data_format",
-                  "file_size",
-                  "series_description",
-                  "series_id",
-                  "series_type",
-                  "manufacturer",
-                  "manufacturer_model_name",
-                  "study_description",
-                  "series_description",
-                  "body_part_examined",
-                  "slice_thickness",
-                  "spacing_between_slices",
-                  "lossy_image_compression",
-                  "image_type",
-                  "days_to_study",
-                  "hours_to_study",
-                  "study_description",
-                  "FLO2_percentage",
-                  "data_contributor"
-                ]
-              },
-              {
-                "title": "Case Demographics",
-                "fields": [
-                  "covid_status",
-                  "gender",
-                  "race",
-                  "age",
-                  "zip"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
-            "fields": [
-              "subject_submitter_id",
-              "file_name",
-              "modality",
-              "body_part_examined",
-              "view_position",
-              "slice_thickness",
-              "spacing_between_slices",
-              "manufacturer",
-              "manufacturer_model_name",
-              "data_format",
-              "object_id",
-              "file_size",
-              "gender",
-              "race",
-              "age",
-              "data_type",
-              "file_description",
-              "image_type",
-              "study_description",
-              "series_description",
-              "lossy_image_compression",
-              "days_to_study",
-              "hours_to_study",
-              "study_description",
-              "FLO2_percentage",
-              "radiologist_notes",
-              "series_type",
-              "series_description",
-              "series_id",
-              "zip",
-              "project_id",
-              "submitter_id",
-              "md5sum"
-            ]
-          },
-          "guppyConfig": {
-            "dataType": "imaging_study",
-            "nodeCountTitle": "Imaging Studies",
-            "fieldMapping": [
-              {
-                "field": "project_id",
-                "name": "Dataset ID"
-              },
-              {
-                "field": "submitter_id",
-                "name": "Imaging Study ID"
-              },
-              {
-                "field": "object_id",
-                "name": "GUID"
-              },
-              {
-                "field": "subject_submitter_id",
-                "name": "Case ID"
-              }
-            ],
-            "manifestMapping": {
-              "resourceIndexType": "imaging_data_file",
-              "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "_imaging_study_id",
-              "referenceIdFieldInDataIndex": "_imaging_study_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id",
-            "downloadAccessor": "object_id"
-          },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data",
-              "title": "Download Imaging Metadata",
-              "leftIcon": "user",
-              "rightIcon": "download",
-              "fileName": "MIDRC_imaging_metadata.json"
-            },
-            {
-              "enabled": true,
-              "type": "file-manifest",
-              "title": "Get Image Download Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_imaging_file_manifest.json",
               "dropdownId": "download"
             },
             {
