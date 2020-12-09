@@ -73,6 +73,7 @@ mappings:
       - name: race
       - name: age
       - name: zip
+      - name: covid_status
     flatten_props:
       - path: conditions
         props:
@@ -260,6 +261,9 @@ mappings:
           - name: _dataset_id
             src: id
             fn: set
+          - name: data_contributor
+            src: data_contributor
+            fn: set
       subject:
         props:
           - name: _subject_id
@@ -280,10 +284,19 @@ mappings:
           - name: zip
             src: zip
             fn: set
+          - name: covid_status
+            src: covid_status
+            fn: set
       imaging_study:
         props:
+          - name: _imaging_study_id
+            src: id
+            fn: set
           - name: study_modality
             src: study_modality
+            fn: set
+          - name: study_covid_status
+            src: study_covid_status
             fn: set
           - name: days_to_study
             src: days_to_study
@@ -308,6 +321,9 @@ mappings:
             fn: max
       imaging_series:
         props:
+          - name: _imaging_series_id
+            src: id
+            fn: set
           - name: series_description
             src: series_description
             fn: set
@@ -326,4 +342,136 @@ mappings:
         props:
           - name: covid_test_name
             src: covid_test_name
+            fn: set
+  - name: midrc_imaging_study
+    doc_type: imaging_study
+    type: aggregator
+    root: imaging_study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_modality
+      - name: days_to_study
+      - name: hours_to_study
+      - name: study_description
+      - name: FLO2_percentage
+      - name: radiologist_notes
+      - name: age_at_imaging
+      - name: study_year
+      - name: study_covid_status
+    flatten_props:
+      - path: imaging_series
+        props:
+          - name: series_description
+          - name: series_id
+          - name: series_name
+          - name: series_type
+        sorted_by: updated_datetime, desc
+    injecting_props:
+      dataset:
+        props:
+          - name: _dataset_id
+            src: id
+            fn: set
+          - name: data_contributor
+            src: data_contributor
+            fn: set
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set
+          - name: gender
+            src: gender
+            fn: set
+          - name: race
+            src: race
+            fn: set
+          - name: age
+            src: age
+            fn: max
+          - name: zip
+            src: zip
+            fn: set
+          - name: subject_covid_status
+            src: covid_status
+            fn: set
+    joining_props:
+      - index: imaging_data_file
+        join_on: _imaging_study_id
+        props:
+          - name: image_submitter_id
+            src: submitter_id
+            fn: set
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: md5sum
+            src: md5sum
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: file_size
+            src: file_size
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+          - name: file_description
+            src: file_description
+            fn: set
+          - name: implementation_class_uid
+            src: implementation_class_uid
+            fn: set
+          - name: implementation_version_name
+            src: implementation_version_name
+            fn: set
+          - name: transfer_syntax_uid
+            src: transfer_syntax_uid
+            fn: set
+          - name: image_type
+            src: image_type
+            fn: set
+          - name: image_modality
+            src: modality
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: study_description
+            src: study_description
+            fn: set
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: view_position
+            src: view_position
+            fn: set
+          - name: slice_thickness
+            src: slice_thickness
+            fn: set
+          - name: contrast_bolus_agent_number
+            src: contrast_bolus_agent_number
+            fn: set
+          - name: spacing_between_slices
+            src: spacing_between_slices
+            fn: set
+          - name: lossy_image_compression
+            src: lossy_image_compression
             fn: set
