@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:0.1.5-mickey",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2020.12",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "vpodc.org"
