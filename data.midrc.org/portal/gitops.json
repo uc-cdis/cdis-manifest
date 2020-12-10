@@ -59,7 +59,7 @@
             {
               "name": "Explore Data",
               "icon": "data-explore",
-              "body": "Search and download subsets of data from the MIDRC Data Commons using intuitive navigation tools.",
+              "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
               "link": "/explorer",
               "label": "Explore data"
             },
@@ -265,7 +265,6 @@
               "_ct_images_count",
               "_cr_images_count",
               "_dx_images_count",
-              "_structured_reports_count",
               "project_id"
             ]
           },
@@ -466,7 +465,7 @@
             "charts": {
               "data_contributor": {
                 "chartType": "count",
-                "title": "data_contributor"
+                "title": "Data Contributors"
               },
               "research_design": {
                 "chartType": "bar",
