@@ -323,6 +323,10 @@
               "chartType": "pie",
               "title": "Imaging Modalities"
             },
+            "study_covid_status": {
+              "chartType": "pie",
+              "title": "Case COVID-19 Status"
+            },
             "gender": {
               "chartType": "pie",
               "title": "Case Gender"
@@ -359,6 +363,7 @@
               {
                 "title": "Case Demographics",
                 "fields": [
+                  "study_covid_status",
                   "gender",
                   "race",
                   "age",
@@ -371,6 +376,7 @@
             "enabled": true,
             "fields": [
               "subject_submitter_id",
+              "study_covid_status",
               "file_name",
               "modality",
               "body_part_examined",
@@ -411,6 +417,10 @@
               {
                 "field": "project_id",
                 "name": "Dataset ID"
+              },
+              {
+                "field": "study_covid_status",
+                "name": "COVID-19 Status"
               },
               {
                 "field": "object_id",
