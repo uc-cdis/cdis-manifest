@@ -70,6 +70,7 @@ mappings:
       - name: race
       - name: age
       - name: zip
+      - name: covid_status
     flatten_props:
       - path: conditions
         props:
@@ -120,9 +121,6 @@ mappings:
         fn: count
       - name: _dx_images_count
         path: imaging_studies.ct_images
-        fn: count
-      - name: _structured_reports_count
-        path: imaging_studies.imaging_series.structured_reports
         fn: count
     joining_props:
       - index: imaging_data_file
@@ -272,6 +270,9 @@ mappings:
           - name: study_year
             src: study_year
             fn: max
+          - name: study_covid_status
+            src: study_covid_status
+            fn: set
       imaging_series:
         props:
           - name: _imaging_series_id
