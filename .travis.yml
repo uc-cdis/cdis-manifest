@@ -1,17 +1,36 @@
 language: python
 
+before_script:
+  - pip install gen3utils --upgrade
+
 script:
-  - pip install gen3utils==0.5.3 --upgrade
-
-  # validate all the manifest.json files:
-  - gen3utils validate-manifest */manifest.json
-
-  # validate ETL mapping files
+  # validate manifest.json and etlMapping.yaml:
   - |
-    for dir in *; do
+    # for push builds, TRAVIS_BRANCH is the current branch name; for PR
+    # builds, it's the name of the branch targeted by the PR.
+    # We need the latter, which we can't get for push builds, so the tests
+    # only run properly on PRs.
+    changed_files=$(git diff --name-only HEAD..$TRAVIS_BRANCH)
+    envs=()
+    for file in $changed_files; do
+      envs+=($(echo "$file" | cut -d "/" -f1))
+    done
+
+    # remove duplicates
+    envs=($(printf "%s\n" "${envs[@]}" | sort -u)); echo  "${uniq[@]}"
+    echo "Updated: ${envs[@]}"
+
+    for dir in "${envs[@]}"; do
       man=$dir/manifest.json; etl=$dir/etlMapping.yaml
+
+      # validate manifest.json
+      if [ -f $man ]; then
+        echo "    Validating $dir"
+        gen3utils validate-manifest $man || exit 1
+      fi
+
+      # validate ETL mapping
       if [ -f $man ] && [ -f $etl ]; then
-        echo "ETL mapping validation for $dir"
         gen3utils validate-etl-mapping $etl $man || exit 1
       fi
     done
