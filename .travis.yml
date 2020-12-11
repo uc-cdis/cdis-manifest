@@ -11,7 +11,7 @@ script:
   - |
     for dir in *; do
       man=$dir/manifest.json; etl=$dir/etlMapping.yaml
-      if [ $dir = "gen3.biodatacatalyst.nhlbi.nih.gov"] || [ $dir = "preprod.gen3.biodatacatalyst.nhlbi.nih.gov"] || [ $dir = "staging.gen3.biodatacatalyst.nhlbi.nih.gov" ] || [ $dir = "caninedc.org" ]; then
+      if [ $dir = "gen3.biodatacatalyst.nhlbi.nih.gov" ] || [ $dir = "preprod.gen3.biodatacatalyst.nhlbi.nih.gov" ] || [ $dir = "staging.gen3.biodatacatalyst.nhlbi.nih.gov" ] || [ $dir = "caninedc.org" ]; then
           echo "Skipping ETL mapping validation for $dir"
       else
         if [ -f $man ] && [ -f $etl ]; then
