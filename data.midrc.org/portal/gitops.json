@@ -4,8 +4,8 @@
       "boardCounts": [
         {
           "graphql": "_subject_count",
-          "name": "Subject",
-          "plural": "Subjects"
+          "name": "Case",
+          "plural": "Cases"
         },
         {
           "graphql": "_imaging_study_count",
@@ -13,31 +13,21 @@
           "plural": "Imaging Studies"
         },
         {
-          "graphql": "_imaging_series_count",
-          "name": "Imaging Series",
-          "plural": "Imaging Series"
-        },
-        {
-          "graphql": "_ct_image_count",
-          "name": "CT Image File",
-          "plural": "CT Image Files"
-        },
-        {
-          "graphql": "_cr_image_count",
-          "name": "CR Image File",
-          "plural": "CR Image Files"
-        },
-        {
           "graphql": "_dx_image_count",
-          "name": "DX Image File",
-          "plural": "DX Image Files"
+          "name": "Chest Radiograph",
+          "plural": "Chest Radiographs"
+        },
+        {
+          "graphql": "_imaging_series_count",
+          "name": "Thoracic CT Scans",
+          "plural": "Thoracic CT Scans"
         }
       ],
       "chartCounts": [
         {
           "graphql": "_subject_count",
-          "name": "Subject",
-          "plural": "Subjects"
+          "name": "Case",
+          "plural": "Cases"
         },
         {
           "graphql": "_imaging_study_count",
@@ -45,24 +35,14 @@
           "plural": "Imaging Studies"
         },
         {
-          "graphql": "_imaging_series_count",
-          "name": "Imaging Series",
-          "plural": "Imaging Series"
-        },
-        {
-          "graphql": "_ct_image_count",
-          "name": "CT Image File",
-          "plural": "CT Image Files"
-        },
-        {
-          "graphql": "_cr_image_count",
-          "name": "CR Image File",
-          "plural": "CR Image Files"
-        },
-        {
           "graphql": "_dx_image_count",
-          "name": "DX Image File",
-          "plural": "DX Image Files"
+          "name": "Chest Radiograph",
+          "plural": "Chest Radiographs"
+        },
+        {
+          "graphql": "_imaging_series_count",
+          "name": "Thoracic CT Scans",
+          "plural": "Thoracic CT Scans"
         }
       ],
       "projectDetails": "boardCounts"
@@ -79,16 +59,9 @@
             {
               "name": "Explore Data",
               "icon": "data-explore",
-              "body": "Search and download subsets of data from the MIDRC Data Commons using intuitive navigation tools.",
+              "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
               "link": "/explorer",
               "label": "Explore data"
-            },
-            {
-              "name": "Data Dictionary",
-              "icon": "data-field-define",
-              "body": "Browse the nodes and properties of the graph data model used in the MIDRC Data Commons.",
-              "link": "/DD",
-              "label": "Explore Data Model"
             },
             {
               "name": "Query Data",
@@ -108,27 +81,19 @@
         "homepageChartNodes": [
             {
               "node": "subject",
-              "name": "Subjects"
+              "name": "Cases"
             },
             {
               "node": "imaging_study",
               "name": "Imaging Studies"
             },
             {
-              "node": "imaging_series",
-              "name": "Imaging Series"
-            },
-            {
-              "node": "ct_image",
-              "name": "CT Image Files"
-            },
-            {
-              "node": "cr_image",
-              "name": "CR Image Files"
-            },
-            {
               "node": "dx_image",
-              "name": "DX Image Files"
+              "name": "Chest Radiographs"
+            },
+            {
+              "node": "imaging_series",
+              "name": "Thoracic CT Scans"
             }
         ]
     },
@@ -141,12 +106,6 @@
             "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
           },
           {
-            "name": "Dictionary",
-            "link": "/DD",
-            "icon": "dictionary",
-            "tooltip": "Study the data model and download data submission templates."
-          },
-          {
             "name": "Query",
             "link": "/query",
             "icon": "query",
@@ -154,7 +113,7 @@
           },
           {
             "name": "Workspace",
-            "link": "#hostname#workspace/",
+            "link": "/workspace",
             "icon": "workspace",
             "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
           }
@@ -203,111 +162,42 @@
     "analysisTools": [ ],
     "explorerConfig": [
         {
-            "tabTitle": "Datasets",
-            "charts": {},
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Datasets",
-                  "fields":[
-                    "project_id",
-                    "data_contributor",
-                    "research_description",
-                    "research_design",
-                    "research_objective",
-                    "research_setup"
-                  ]
-                }
-              ]
+          "tabTitle": "Cases",
+          "charts": {
+            "covid_test_positive": {
+              "chartType": "pie",
+              "title": "COVID-19 Positive"
             },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "data_url",
-                "project_id",
-                "submitter_id",
-                "data_contributor",
-                "data_description",
-                "research_description",
-                "research_design",
-                "research_objective",
-                "research_setup",
-                "_subjects_count",
-                "_virus_genomes_count",
-                "_imaging_studies_count",
-                "_imaging_series_count",
-                "_ct_images_count",
-                "_cr_images_count",
-                "_dx_images_count",
-                "_structured_reports_count"
-              ],
-              "linkFields": [
-                "data_url"
-              ]
+            "gender": {
+              "chartType": "pie",
+              "title": "Gender"
             },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data",
-                "title": "Download Dataset Descriptions",
-                "leftIcon": "user",
-                "rightIcon": "download",
-                "fileName": "MIDRC_dataset_descriptions.json"
-              },
-              {
-                "enabled": false,
-                "type": "manifest",
-                "title": "Download Imaging File Manifest for Datasets",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_imaging_file_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "guppyConfig": {
-              "dataType": "dataset",
-              "nodeCountTitle": "Datasets",
-              "fieldMapping": [],
-              "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_dataset_id",
-                "referenceIdFieldInDataIndex": "_dataset_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
+            "race": {
+              "chartType": "pie",
+              "title": "Race"
             }
-        },
-        {
-          "tabTitle": "Subjects",
-          "charts": {},
+          },
           "filters": {
             "tabs": [
               {
-                "title": "Subjects",
+                "title": "Demographics",
                 "fields":[
-                  "project_id",
                   "gender",
                   "race",
                   "age",
-                  "zip"
+                  "zip",
+                  "project_id"
                 ]
               },
               {
                 "title": "Medical History",
                 "fields":[
+                  "covid_test_positive",
+                  "covid_test_name",
                   "asplenia",
                   "cancer",
                   "chicken_pox",
                   "chronic_kidney_disease",
-                  "covid_test_positive",
-                  "covid_test_name",
                   "current_pregnant",
                   "cytomegalovirus",
                   "diabetes_type_1",
@@ -337,11 +227,10 @@
           "table": {
             "enabled": true,
             "fields": [
-              "project_id",
               "submitter_id",
               "gender",
-              "race",
               "age",
+              "race",
               "zip",
               "covid_test_name",
               "covid_test_positive",
@@ -376,22 +265,22 @@
               "_ct_images_count",
               "_cr_images_count",
               "_dx_images_count",
-              "_structured_reports_count"
+              "project_id"
             ]
           },
           "buttons": [
             {
               "enabled": true,
               "type": "data",
-              "title": "Download Subject Metadata",
+              "title": "Download Case Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_subject_metadata.json"
+              "fileName": "MIDRC_case_metadata.json"
             },
             {
               "enabled": true,
               "type": "manifest",
-              "title": "Download Imaging Files for Selected Subjects",
+              "title": "Download Imaging Files for Selected Cases",
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_imaging_file_manifest.json"
@@ -406,8 +295,17 @@
           ],
           "guppyConfig": {
             "dataType": "subject",
-            "nodeCountTitle": "Subjects",
-            "fieldMapping": [],
+            "nodeCountTitle": "Cases",
+            "fieldMapping": [
+              {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
+              {
+                "field": "submitter_id",
+                "name": "Case ID"
+              }
+            ],
             "manifestMapping": {
               "resourceIndexType": "imaging_data_file",
               "resourceIdField": "object_id",
@@ -419,57 +317,53 @@
           }
         },
         {
-          "tabTitle": "Imaging Files",
-          "charts": {},
+          "tabTitle": "Images",
+          "charts": {
+            "modality": {
+              "chartType": "pie",
+              "title": "Imaging Modalities"
+            },
+            "study_covid_status": {
+              "chartType": "pie",
+              "title": "Case COVID-19 Status"
+            },
+            "gender": {
+              "chartType": "pie",
+              "title": "Case Gender"
+            }
+          },
           "filters": {
             "tabs": [
               {
-                "title": "File Properties",
+                "title": "Image Properties",
                 "fields": [
-                  "project_id",
-                  "data_category",
-                  "data_type",
-                  "data_format",
-                  "file_size"
-                ]
-              },
-              {
-                "title": "DICOM Elements",
-                "fields": [
-                  "image_type",
                   "modality",
                   "manufacturer",
                   "manufacturer_model_name",
+                  "body_part_examined",
+                  "series_description",
+                  "series_id",
+                  "series_type",
+                  "image_type",
                   "study_description",
                   "series_description",
-                  "body_part_examined",
-                  "view_position",
                   "slice_thickness",
                   "spacing_between_slices",
-                  "lossy_image_compression"
-                ]
-              },
-              {
-                "title": "Imaging Studies",
-                "fields": [
-                  "study_modality",
+                  "lossy_image_compression",
                   "days_to_study",
                   "hours_to_study",
                   "study_description",
-                  "FLO2_percentage"
+                  "FLO2_percentage",
+                  "data_type",
+                  "data_format",
+                  "file_size",
+                  "project_id"
                 ]
               },
               {
-                "title": "Imaging Series",
+                "title": "Case Demographics",
                 "fields": [
-                  "series_description",
-                  "series_id",
-                  "series_type"
-                ]
-              },
-              {
-                "title": "Subject Demographics",
-                "fields": [
+                  "study_covid_status",
                   "gender",
                   "race",
                   "age",
@@ -481,28 +375,28 @@
           "table": {
             "enabled": true,
             "fields": [
-              "project_id",
-              "submitter_id",
-              "object_id",
+              "subject_submitter_id",
+              "study_covid_status",
               "file_name",
-              "file_size",
-              "md5sum",
-              "data_type",
-              "data_format",
-              "data_category",
-              "file_description",
-              "image_type",
               "modality",
-              "manufacturer",
-              "manufacturer_model_name",
-              "study_description",
-              "series_description",
               "body_part_examined",
               "view_position",
               "slice_thickness",
               "spacing_between_slices",
+              "manufacturer_model_name",
+              "data_format",
+              "data_type",
+              "object_id",
+              "file_size",
+              "gender",
+              "race",
+              "age",
+              "file_description",
+              "image_type",
+              "manufacturer",
+              "study_description",
+              "series_description",
               "lossy_image_compression",
-              "study_modality",
               "days_to_study",
               "hours_to_study",
               "study_description",
@@ -511,19 +405,30 @@
               "series_type",
               "series_description",
               "series_id",
-              "subject_submitter_id",
-              "gender",
-              "race",
-              "age",
-              "zip"
+              "zip",
+              "project_id",
+              "submitter_id",
+              "md5sum"
             ]
           },
           "guppyConfig": {
             "dataType": "imaging_data_file",
             "fieldMapping": [
               {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
+              {
+                "field": "study_covid_status",
+                "name": "COVID-19 Status"
+              },
+              {
                 "field": "object_id",
                 "name": "GUID"
+              },
+              {
+                "field": "subject_submitter_id",
+                "name": "Case ID"
               }
             ],
             "nodeCountTitle": "Imaging Files",
@@ -544,7 +449,7 @@
               "title": "Download Imaging Metadata",
               "leftIcon": "user",
               "rightIcon": "download",
-              "fileName": "MIDRC_imaging_metadata.json"
+              "fileName": "MIDRC_imaging_file_metadata.json"
             },
             {
               "enabled": true,
@@ -566,12 +471,137 @@
           "dropdowns": {}
         },
         {
+            "tabTitle": "Datasets",
+            "charts": {
+              "data_contributor": {
+                "chartType": "count",
+                "title": "Data Contributors"
+              },
+              "research_design": {
+                "chartType": "bar",
+                "title": "Research Design"
+              },
+              "research_setup": {
+                "chartType": "bar",
+                "title": "Research Setup"
+              }
+            },
+            "filters": {
+              "tabs": [
+                {
+                  "title": "Dataset Properties",
+                  "fields":[
+                    "data_contributor",
+                    "research_description",
+                    "research_design",
+                    "research_objective",
+                    "research_setup",
+                    "project_id"
+                  ]
+                }
+              ]
+            },
+            "table": {
+              "enabled": true,
+              "fields": [
+                "data_url",
+                "data_contributor",
+                "data_description",
+                "research_description",
+                "research_design",
+                "research_objective",
+                "research_setup",
+                "_subjects_count",
+                "_virus_genomes_count",
+                "_imaging_studies_count",
+                "_imaging_series_count",
+                "_ct_images_count",
+                "_cr_images_count",
+                "_dx_images_count",
+                "project_id",
+                "submitter_id"
+              ],
+              "linkFields": [
+                "data_url"
+              ]
+            },
+            "buttons": [
+              {
+                "enabled": true,
+                "type": "data",
+                "title": "Download Dataset Descriptions",
+                "leftIcon": "user",
+                "rightIcon": "download",
+                "fileName": "MIDRC_dataset_descriptions.json"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download Imaging File Manifest for Datasets",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_imaging_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
+              }
+            ],
+            "guppyConfig": {
+              "dataType": "dataset",
+              "nodeCountTitle": "Datasets",
+              "fieldMapping": [
+                  {
+                    "field": "project_id",
+                    "name": "Dataset ID"
+                  }
+              ],
+              "manifestMapping": {
+                "resourceIndexType": "imaging_data_file",
+                "resourceIdField": "object_id",
+                "referenceIdFieldInResourceIndex": "_dataset_id",
+                "referenceIdFieldInDataIndex": "_dataset_id"
+              },
+              "accessibleFieldCheckList": ["project_id"],
+              "accessibleValidationField": "project_id"
+            }
+        },
+        {
           "tabTitle": "Viral Genomics",
-          "charts": {},
+          "charts": {
+            "organism": {
+              "chartType": "pie",
+              "title": "Organism"
+            },
+            "data_format": {
+              "chartType": "pie",
+              "title": "File Format"
+            },
+            "data_category": {
+              "chartType": "pie",
+              "title": "File Category"
+            }
+          },
           "filters": {
             "tabs": [
               {
-                "title": "File Properties",
+                "title": "Viral Sample Info",
+                "fields": [
+                  "organism",
+                  "ncbi_bioproject",
+                  "ncbi_biosample",
+                  "host",
+                  "location",
+                  "isolation_source",
+                  "isolate",
+                  "collection_date"
+                ]
+              },
+              {
+                "title": "Genomics File Properties",
                 "fields": [
                   "project_id",
                   "data_type",
@@ -579,47 +609,42 @@
                   "data_category",
                   "file_size"
                 ]
-              },
-              {
-                "title": "Samples",
-                "fields": [
-                  "ncbi_bioproject",
-                  "ncbi_biosample",
-                  "host",
-                  "location",
-                  "organism",
-                  "isolation_source",
-                  "isolate",
-                  "collection_date"
-                ]
               }
             ]
           },
           "table": {
             "enabled": true,
             "fields": [
-              "project_id",
-              "submitter_id",
-              "object_id",
+              "organism",
+              "ncbi_bioproject",
+              "ncbi_biosample",
+              "host",
+              "location",
+              "isolation_source",
+              "isolate",
+              "collection_date",
               "file_name",
+              "object_id",
               "file_size",
               "md5sum",
               "data_type",
               "data_format",
               "data_category",
-              "ncbi_bioproject",
-              "ncbi_biosample",
-              "host",
-              "location",
-              "organism",
-              "isolation_source",
-              "isolate",
-              "collection_date"
+              "project_id",
+              "submitter_id"
             ]
           },
           "guppyConfig": {
             "dataType": "virus_data_file",
             "fieldMapping": [
+              {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
+              {
+                "field": "submitter_id",
+                "name": "Viral Genome ID"
+              },
               {
                 "field": "object_id",
                 "name": "GUID"

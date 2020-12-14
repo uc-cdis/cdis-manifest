@@ -984,8 +984,16 @@
       }
     ]
   },
+  "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  },
   "covid19DashboardConfig": {
     "dataUrl": "https://opendata.datacommons.io/",
     "chartsConfig": {
