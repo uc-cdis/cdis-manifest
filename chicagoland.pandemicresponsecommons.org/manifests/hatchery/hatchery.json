@@ -55,26 +55,6 @@
       "ready-probe": "/",
       "user-volume-location": "/home/rstudio/pd",
       "fs-gid": 100
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "4.0",
-      "memory-limit": "16Gi",
-      "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19",
-      "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.1.7",
-      "env": {
-        "NAMESPACE": "default",
-        "FRAME_ANCESTORS": "https://chicagoland.pandemicresponsecommons.org"
-      },
-      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.default_url=/lab/tree/welcome.html","--NotebookApp.password=''","--NotebookApp.token=''"],
-      "command": ["start-notebook.sh"],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
     }
   ],
   "more-configs": [
@@ -82,6 +62,11 @@
       "type": "dockstore-compose:1.0.0",
       "path": "/hatchery-more-configs/gen3-igv.yaml",
       "name": "Gen3 IGV"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/jupyter-covid19.yaml",
+      "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19"
     }
   ]
 }
