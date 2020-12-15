@@ -278,11 +278,28 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+      - name: accession
+      - name: genbank_accession
+      - name: sra_accession
+      - name: assay_type
+      - name: center_name
     injecting_props:
       sample:
         props:
           - name: location
             src: location
+            fn: set
+          - name: continent
+            src: continent
+            fn: set
+          - name: country_region
+            src: country_region
+            fn: set
+          - name: province_state
+            src: province_state
+            fn: set
+          - name: county
+            src: county
             fn: set
           - name: host
             src: host
@@ -301,6 +318,15 @@ mappings:
             fn: set
           - name: collection_date
             src: collection_date
+            fn: set
+          - name: originating_lab
+            src: originating_lab
+            fn: set
+          - name: submitting_lab
+            src: submitting_lab
+            fn: set
+          - name: submitting_lab_PI
+            src: submitting_lab_PI
             fn: set
       study:
         props:
