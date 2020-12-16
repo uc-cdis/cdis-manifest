@@ -5,11 +5,12 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "512Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.09",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2020.11",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "staging.theanvil.io"
     },
+    "args": [],
     "command": [
       "/bin/bash",
       "/sidecarDockerrun.sh"
@@ -33,6 +34,7 @@
       "env": {
         "DISABLE_AUTH": "true"
       },
+      "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
       "ready-probe": "/"
@@ -43,6 +45,7 @@
       "memory-limit": "512Mi",
       "name": "Jupyter Notebook Bio Python",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
+      "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -69,6 +72,7 @@
       "memory-limit": "15512Mi",
       "name": "Jupyter Notebook Power Python",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -95,6 +99,7 @@
       "memory-limit": "8096Mi",
       "name": "Helium Autoencoder Demo",
       "image": "quay.io/cdis/auntoencoder-copd-demo:latest",
+      "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -120,6 +125,7 @@
       "memory-limit": "8096Mi",
       "name": "Helium Tensorflow-Pytorch",
       "image": "heliumdatastage/tensorflow-pytorch-ext:1",
+      "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -145,6 +151,7 @@
       "memory-limit": "8096Mi",
       "name": "Helium CIP Demo",
       "image": "heliumdatastage/jup-cip:v1",
+      "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",

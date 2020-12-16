@@ -23,7 +23,8 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.12",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2020.12",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.12"
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.12",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.12"
   },
   "indexd": {
     "arborist": "true"
@@ -35,7 +36,7 @@
     "environment": "ibdgc-prod",
     "hostname": "ibdgc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:980870151884:certificate/d4bc881b-b404-4bef-912f-ed67785f953c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.1.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.2.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3",
