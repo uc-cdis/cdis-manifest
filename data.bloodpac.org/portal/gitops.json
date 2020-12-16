@@ -23,11 +23,13 @@
     "chartCounts": [
       {
         "graphql": "_study_count",
-        "name": "Study"
+        "name": "Study",
+        "plural": "Studies"
       },
       {
         "graphql": "_case_count",
-        "name": "Case"
+        "name": "Case",
+        "plural": "Cases"
       },
       {
         "graphql": "_aliquot_count",
