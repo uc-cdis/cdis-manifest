@@ -7,25 +7,26 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.11",
+    "arborist": "quay.io/cdis/arborist:2020.12",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "dashboard": "quay.io/cdis/gen3-statics:2020.11",
-    "fence": "quay.io/cdis/fence:2020.11",
-    "indexd": "quay.io/cdis/indexd:2.14.0",
-    "peregrine": "quay.io/cdis/peregrine:2020.11",
-    "pidgin": "quay.io/cdis/pidgin:2020.11",
-    "revproxy": "quay.io/cdis/nginx:2020.11",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.11",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.12",
+    "fence": "quay.io/cdis/fence:2020.12",
+    "indexd": "quay.io/cdis/indexd:2020.12",
+    "peregrine": "quay.io/cdis/peregrine:2020.12",
+    "pidgin": "quay.io/cdis/pidgin:2020.12",
+    "revproxy": "quay.io/cdis/nginx:2020.12",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.12",
     "portal": "quay.io/cdis/data-portal:2.39.3",
-    "tube": "quay.io/cdis/tube:2020.11",
+    "tube": "quay.io/cdis/tube:2020.12",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "quay.io/cdis/gen3-spark:2020.11",
+    "spark": "quay.io/cdis/gen3-spark:2020.12",
     "requestor": "quay.io/cdis/requestor:1.2.0",
-    "hatchery": "quay.io/cdis/hatchery:2020.11",
-    "wts": "quay.io/cdis/workspace-token-service:2020.11",
+    "hatchery": "quay.io/cdis/hatchery:2020.12",
+    "wts": "quay.io/cdis/workspace-token-service:2020.12",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "quay.io/cdis/guppy:2020.11",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.11"
+    "guppy": "quay.io/cdis/guppy:2020.12",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.12",
+    "metadata": "quay.io/cdis/metadata-service:2020.12"
   },
   "arborist": {
     "deployment_version": "2"
@@ -51,7 +52,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2020.11"
+      "indexing": "quay.io/cdis/indexs3client:2020.12"
     }
   },
   "canary": {
