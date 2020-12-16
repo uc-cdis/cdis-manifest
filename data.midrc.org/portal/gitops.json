@@ -47,6 +47,41 @@
       ],
       "projectDetails": "boardCounts"
     },
+    "useArboristUI": true,
+    "showArboristAuthzOnProfile": true,
+    "showFenceAuthzOnProfile": true,
+    "componentToResourceMapping": {
+      "Workspace": {
+        "resource": "/workspace",
+        "method": "access",
+        "service": "jupyterhub"
+      },
+      "Analyze Data": {
+        "resource": "/workspace",
+        "method": "access",
+        "service": "jupyterhub"
+      },
+      "Query": {
+        "resource": "/query_page",
+        "method": "access",
+        "service": "query_page"
+      },
+      "Query Data": {
+        "resource": "/query_page",
+        "method": "access",
+        "service": "query_page"
+      },
+      "Data Dictionary": {
+        "resource": "/dictionary_page",
+        "method": "access",
+        "service": "dictionary_page"
+      },
+      "Dictionary": {
+        "resource": "/dictionary_page",
+        "method": "access",
+        "service": "dictionary_page"
+      }
+    },
     "components": {
       "appName": "The Medical Imaging and Data Resource Center Commons",
       "index": {
@@ -62,6 +97,13 @@
               "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
               "link": "/explorer",
               "label": "Explore data"
+            },
+            {
+              "name": "Data Dictionary",
+              "icon": "data-field-define",
+              "body": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions.",
+              "link": "/DD",
+              "label": "Learn more"
             },
             {
               "name": "Query Data",
@@ -104,6 +146,12 @@
             "link": "/explorer",
             "icon": "exploration",
             "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
+          },
+          {
+            "icon": "dictionary",
+            "link": "/DD",
+            "color": "#a2a2a2",
+            "name": "Dictionary"
           },
           {
             "name": "Query",
@@ -697,30 +745,5 @@
           ],
           "dropdowns": {}
         }
-    ],
-    "useArboristUI": true,
-    "showArboristAuthzOnProfile": true,
-    "showFenceAuthzOnProfile": true,
-    "componentToResourceMapping": {
-      "Workspace": {
-        "resource": "/workspace",
-        "method": "access",
-        "service": "jupyterhub"
-      },
-      "Analyze Data": {
-        "resource": "/workspace",
-        "method": "access",
-        "service": "jupyterhub"
-      },
-      "Query": {
-        "resource": "/query_page",
-        "method": "access",
-        "service": "query_page"
-      },
-      "Query Data": {
-        "resource": "/query_page",
-        "method": "access",
-        "service": "query_page"
-      }
-    }
+    ]
 }
