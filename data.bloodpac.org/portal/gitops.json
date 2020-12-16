@@ -1,7 +1,5 @@
 {
   "gaTrackingId": "UA-119127212-2",
-  "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false,
   "graphql": {
     "boardCounts": [
       {
@@ -38,6 +36,26 @@
       }
     ],
     "projectDetails": "boardCounts"
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Query": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    },
+    "Send Queries": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    }
   },
   "components": {
     "appName": "BloodPAC Metadata Submission Portal",
@@ -130,6 +148,10 @@
     "topBar": {
       "items": [
         {
+          "link": "https://bloodpac.org/",
+          "name": "About"
+        },
+        {
           "icon": "upload",
           "link": "/submission",
           "name": "Submit Data"
@@ -166,8 +188,11 @@
   },
   "requiredCerts": ["security_quiz"],
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "analysis": true,
+    "explorerPublic": true
   },
+  "analysisTools": [ ],
   "explorerConfig": [
       {
           "tabTitle": "Studies",
