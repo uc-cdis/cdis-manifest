@@ -5,14 +5,14 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
-      },
-      {
         "graphql": "_study_count",
         "name": "Study",
         "plural": "Studies"
+      },
+      {
+        "graphql": "_case_count",
+        "name": "Case",
+        "plural": "Cases"
       },
       {
         "graphql": "_aliquot_count",
@@ -22,12 +22,12 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
-      },
-      {
         "graphql": "_study_count",
         "name": "Study"
+      },
+      {
+        "graphql": "_case_count",
+        "name": "Case"
       },
       {
         "graphql": "_aliquot_count",
@@ -47,12 +47,12 @@
       },
       "homepageChartNodes": [
         {
-          "node": "case",
-          "name": "Cases"
-        },
-        {
           "node": "study",
           "name": "Studies"
+        },
+        {
+          "node": "case",
+          "name": "Cases"
         },
         {
           "node": "aliquot",
