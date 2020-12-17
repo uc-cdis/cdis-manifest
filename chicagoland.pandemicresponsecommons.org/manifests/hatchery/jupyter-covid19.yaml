@@ -6,9 +6,9 @@ services:
          - ${DATA_VOLUME}:/data
          - ${USER_VOLUME}:/home/jovyan/pd
       environment:
-        - NAMESPACE=qa-covid19
-        - HOSTNAME=qa-covid19.planx-pla.net
-        - FRAME_ANCESTORS=https://qa-covid19.planx-pla.net
+        - NAMESPACE=default
+        - HOSTNAME=chicagoland.pandemicresponsecommons.org
+        - FRAME_ANCESTORS=https://chicagoland.pandemicresponsecommons.org
       entrypoint:
         - "start-notebook.sh"
       command:
