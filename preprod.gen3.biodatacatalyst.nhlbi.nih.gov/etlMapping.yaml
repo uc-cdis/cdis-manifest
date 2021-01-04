@@ -124,7 +124,7 @@ mappings:
             src: data_type
             fn: set
           - name: file_count
-            src: _file_id
+            src: file_id
             fn: count
   - name: internalstaging_file
     doc_type: file
