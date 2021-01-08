@@ -467,17 +467,13 @@
           {
             "title": "Viral",
             "fields": [
-              "country_region",
-              "province_state",
-              "county",
-              "host",
-              "organism",
               "data_type",
               "data_format",
+              "location",
+              "host",
+              "organism",
               "sample_type",
-              "originating_lab",
-              "submitting_lab",
-              "submitting_lab_PI",
+              "isolation_source",
               "collection_date"
             ]
           }
@@ -490,15 +486,11 @@
           "project_code",
           "project_investigator_affiliation",
           "project_name",
-          "country_region",
-          "province_state",
-          "county",
+          "location",
           "host",
           "organism",
           "sample_type",
-          "originating_lab",
-          "submitting_lab",
-          "submitting_lab_PI",
+          "isolation_source",
           "collection_date",
           "file_name",
           "data_type",
@@ -551,18 +543,6 @@
           {
             "field": "object_id",
             "name": "GUID"
-          },
-          {
-            "field": "country_region",
-            "name": "Country or Region"
-          },
-          {
-            "field": "province_state",
-            "name": "Province or State"
-          },
-          {
-            "field": "submitting_lab_PI",
-            "name": "Submiting Lab PI"
           }
         ],
         "nodeCountTitle": "Files",
