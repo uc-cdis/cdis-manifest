@@ -70,6 +70,16 @@
         "resource": "/query_page",
         "method": "access",
         "service": "query_page"
+      },
+      "Data Dictionary": {
+        "resource": "/dictionary_page",
+        "method": "access",
+        "service": "dictionary_page"
+      },
+      "Dictionary": {
+        "resource": "/dictionary_page",
+        "method": "access",
+        "service": "dictionary_page"
       }
     },
     "components": {
@@ -130,7 +140,7 @@
         ]
     },
     "navigation": {
-        "title": "Beta",
+        "title": "Work in progress: in Beta",
         "items": [
           {
             "name": "Exploration",
