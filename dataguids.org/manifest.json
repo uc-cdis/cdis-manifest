@@ -9,7 +9,7 @@
 	"versions": {
 		"indexd": "quay.io/cdis/indexd:2.4.0",
 		"fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-		"portal": "quay.io/cdis/dataguids:test_relative-url",
+		"portal": "quay.io/cdis/dataguids:1.0.1",
 		"revproxy": "quay.io/cdis/nginx:1.15.5-ctds"
 	},
 	"jupyterhub": {
