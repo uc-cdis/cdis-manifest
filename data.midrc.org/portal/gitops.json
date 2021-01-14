@@ -214,15 +214,15 @@
           "tabTitle": "Cases",
           "charts": {
             "covid_test_positive": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "COVID-19 Positive"
             },
             "gender": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Gender"
             },
             "race": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Race"
             }
           },
@@ -369,15 +369,15 @@
           "tabTitle": "Images",
           "charts": {
             "modality": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Imaging Modalities"
             },
             "study_covid_status": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Case COVID-19 Status"
             },
             "gender": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Case Gender"
             }
           },
@@ -622,15 +622,15 @@
           "tabTitle": "Viral Genomics",
           "charts": {
             "organism": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Organism"
             },
             "data_format": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "File Format"
             },
             "data_category": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "File Category"
             }
           },
