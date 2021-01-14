@@ -404,6 +404,9 @@
               "data_format",
               "analyte_type",
               "sequencing_assay"
+            ],
+            "searchFields": [
+              "file_name"
             ]
           }, {
             "title": "Subject",
@@ -452,7 +455,8 @@
           "enabled": true,
           "type": "export-files-to-workspace",
           "title": "Export to Workspace",
-          "leftIcon": "datafile"
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         },
         {
           "enabled": true,
@@ -472,7 +476,10 @@
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
-          { "field": "object_id", "name": "GUID" }
+          {
+            "field": "object_id",
+            "name": "GUID"
+          }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
@@ -481,7 +488,9 @@
           "referenceIdFieldInResourceIndex": "object_id",
           "referenceIdFieldInDataIndex": "object_id"
         },
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       },
