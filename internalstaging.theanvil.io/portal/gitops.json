@@ -384,40 +384,28 @@
         }
       },
       "charts": {
-        "project_id": {
-          "chartType": "count",
-          "title": "Projects"
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
         },
-        "node_id": {
-          "chartType": "count",
-          "title": "Subjects"
-        },
-        "sex": {
-          "chartType": "pie",
-          "title": "Sex"
-        },
-        "ancestry": {
-          "chartType": "bar",
-          "title": "Ancestry"
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
         }
       },
       "filters": {
         "tabs": [
           {
-            "title": "Projects",
+            "title": "File",
             "fields": [
               "project_id",
-              "project_short_name",
-              "project_dbgap_accession_number",
-              "project_dbgap_consent_text",
-              "project_dbgap_phs",
-              "project_name",
+              "data_category",
               "data_type",
               "data_format",
-              "data_category"
+              "analyte_type",
+              "sequencing_assay"
             ]
-          },
-          {
+          }, {
             "title": "Subject",
             "fields": [
               "anvil_project_id",
@@ -433,28 +421,6 @@
               "age_of_onset",
               "phenotype_group"
             ]
-          },
-          {
-            "title": "Sample",
-            "fields": [
-              "sample_provider",
-              "tissue_affected_status",
-              "tissue_type",
-              "sample_type",
-              "original_material_type"
-            ]
-          },
-          {
-            "title": "Sequencing",
-            "fields": [
-              "library_prep_kit_method",
-              "exome_capture_platform",
-              "capture_region_bed_file",
-              "reference_genome_build",
-              "sequencing_assay",
-              "alignment_method",
-              "data_processing_pipeline"
-            ]
           }
         ]
       },
@@ -462,96 +428,65 @@
         "enabled": true,
         "fields": [
           "project_id",
-          "anvil_project_id",
-          "ancestry",
-          "sex",
-          "age_value",
-          "phenotype_group",
-          "_samples_count",
-          "_sequencings_count"
+          "subject_submitter_id",
+          "file_name",
+          "data_format",
+          "data_type",
+          "data_category",
+          "file_size",
+          "submitter_id",
+          "object_id",
+          "md5sum"
         ]
       },
-      "dropdowns": {
-        "download": {
-          "title": "Download"
-        }
-      },
       "buttons": [
-        {
+      {
           "enabled": true,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
-          "rightIcon": "download",
-          "fileName": "clinical.json",
-          "dropdownId": "download",
-          "tooltipText": "You have not selected any subjects to download. Please use the checkboxes on the left to select specific subjects you would like to download."
-        },
-        {
-          "enabled": true,
-          "type": "manifest",
+          "type": "file-manifest",
           "title": "Download Manifest",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "manifest.json",
-          "dropdownId": "download"
+          "fileName": "file-manifest.json"
         },
         {
           "enabled": true,
-          "type": "export",
-          "title": "Export All to Terra",
-          "rightIcon": "external-link"
-        },
-        {
-          "enabled": true,
-          "type": "export-to-pfb",
-          "title": "Export to PFB",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
-        },
-        {
-          "enabled": true,
-          "type": "export-to-workspace",
+          "type": "export-files-to-workspace",
           "title": "Export to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
+          "leftIcon": "datafile"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-pfb",
+          "title": "Export All to PFB",
+          "rightIcon": "external-link",
+          "tooltipText": "You have not selected any files to export. Please use the checkboxes on the left to select specific files you would like to export."
+        },
+        {
+          "enabled": true,
+          "type": "export-files",
+          "title": "Export All to Terra",
+          "rightIcon": "external-link",
+          "tooltipText": "You have not selected any files to export. Please use the checkboxes on the left to select specific files you would like to export."
         }
       ],
       "guppyConfig": {
-        "dataType": "subject",
-        "nodeCountTitle": "Subjects",
+        "dataType": "file",
         "fieldMapping": [
-          {
-            "field": "disease_id",
-            "name": "Disease ID"
-          },
-          {
-            "field": "age_of_onset",
-            "name": "Age of Onset"
-          },
-          {
-            "field": "project_dbgap_accession_number",
-            "name": "Project dbGaP Accession Number"
-          },
-          {
-            "field": "project_dbgap_consent_text",
-            "name": "Project dbGaP Consent Text"
-          },
-          {
-            "field": "project_dbgap_phs",
-            "name": "Project dbGaP Phs"
-          }
+          { "field": "object_id", "name": "GUID" }
         ],
+        "nodeCountTitle": "Files",
         "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "_subject_id",
-          "referenceIdFieldInDataIndex": "_subject_id"
+          "resourceIndexType": "subject",
+          "resourceIdField": "_subject_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
         },
-        "accessibleFieldCheckList": [
-          "project_id"
-        ],
-        "accessibleValidationField": "project_id"
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
+      },
+      "enableLimitedFilePFBExport": {
+        "sourceNodeField": "source_node"
       },
       "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
       "terraExportURL": "https://anvil.terra.bio/#import-data"
