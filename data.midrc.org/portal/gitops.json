@@ -96,7 +96,7 @@
               "icon": "data-explore",
               "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
               "link": "/explorer",
-              "label": "Explore data"
+              "label": "Explore Data"
             },
             {
               "name": "Data Dictionary",
@@ -110,14 +110,14 @@
               "icon": "data-access",
               "body": "Search and download subsets of data from the MIDRC Data Commons using GraphQL queries.",
               "link": "/query",
-              "label": "Query data"
+              "label": "Query Data"
             },
             {
               "name": "Analyze Data",
               "icon": "data-analyze",
               "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
               "link": "/workspace",
-              "label": "Run analysis"
+              "label": "Run Analysis"
             }
         ],
         "homepageChartNodes": [
@@ -214,15 +214,15 @@
           "tabTitle": "Cases",
           "charts": {
             "covid_test_positive": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "COVID-19 Positive"
             },
             "gender": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Gender"
             },
             "race": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Race"
             }
           },
@@ -369,15 +369,15 @@
           "tabTitle": "Viral Genomics",
           "charts": {
             "organism": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "Organism"
             },
             "data_format": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "File Format"
             },
             "data_category": {
-              "chartType": "pie",
+              "chartType": "fullPie",
               "title": "File Category"
             }
           },
