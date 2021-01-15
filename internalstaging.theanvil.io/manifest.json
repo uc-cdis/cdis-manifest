@@ -180,159 +180,6 @@
         }
       ],
       "restart_policy": "Never"
-    },
-    {
-      "name": "ingest-metadata-manifest",
-      "action": "ingest-metadata-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-internalstaging-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2020.12",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "get-dbgap-metadata",
-      "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-internalstaging-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2020.12",
-        "pull_policy": "Always",
-        "env": [],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "manifest-indexing",
-      "action": "index-object-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-internalstaging-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2020.12",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "indexd-manifest",
-      "action": "download-indexd-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-internalstaging-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2020.12",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
     }
   ],
   "google": {
@@ -349,16 +196,16 @@
   "guppy": {
     "indices": [
       {
-        "index": "internalstaging-anvil_etl",
+        "index": "internalstaging.theanvil.io_subject",
         "type": "subject"
       },
       {
-        "index": "internalstaging-anvil_file",
+        "index": "internalstaging.theanvil.io_file",
         "type": "file"
       }
     ],
     "auth_filter_field": "auth_resource_path",
-    "config_index": "internalstaging-anvil_array-config"
+    "config_index": "internalstaging.theanvil.io_array-config"
   },
   "canary": {
     "default": 0
