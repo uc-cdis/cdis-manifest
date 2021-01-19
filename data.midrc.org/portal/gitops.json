@@ -1,50 +1,8 @@
 {
     "gaTrackingId": "UA-119127212-1",
     "graphql": {
-      "boardCounts": [
-        {
-          "graphql": "_subject_count",
-          "name": "Case",
-          "plural": "Cases"
-        },
-        {
-          "graphql": "_imaging_study_count",
-          "name": "Imaging Study",
-          "plural": "Imaging Studies"
-        },
-        {
-          "graphql": "_dx_image_count",
-          "name": "Chest Radiograph",
-          "plural": "Chest Radiographs"
-        },
-        {
-          "graphql": "_imaging_series_count",
-          "name": "Thoracic CT Scans",
-          "plural": "Thoracic CT Scans"
-        }
-      ],
-      "chartCounts": [
-        {
-          "graphql": "_subject_count",
-          "name": "Case",
-          "plural": "Cases"
-        },
-        {
-          "graphql": "_imaging_study_count",
-          "name": "Imaging Study",
-          "plural": "Imaging Studies"
-        },
-        {
-          "graphql": "_dx_image_count",
-          "name": "Chest Radiograph",
-          "plural": "Chest Radiographs"
-        },
-        {
-          "graphql": "_imaging_series_count",
-          "name": "Thoracic CT Scans",
-          "plural": "Thoracic CT Scans"
-        }
-      ],
+      "boardCounts": [],
+      "chartCounts": [],
       "projectDetails": "boardCounts"
     },
     "useArboristUI": true,
@@ -120,12 +78,12 @@
               "name": "Imaging Studies"
             },
             {
-              "node": "imaging_series",
-              "name": "Imaging Series"
+              "node": "cr_image",
+              "name": "Chest Radiographs (CR)"
             },
             {
               "node": "dx_image",
-              "name": "Chest Radiographs"
+              "name": "Chest Radiographs (DX)"
             }
         ]
     },
