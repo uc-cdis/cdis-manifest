@@ -6,7 +6,7 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2020.12",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "covid19-etl": "quay.io/cdis/covid19-etl:4.5.3",
+    "covid19-etl": "quay.io/cdis/covid19-etl:4.6.1",
     "nb-etl": "quay.io/cdis/covid19-nb-etl:4.0.2",
     "fence": "quay.io/cdis/fence:2020.12",
     "indexd": "quay.io/cdis/indexd:2020.12",
@@ -14,7 +14,7 @@
     "pidgin": "quay.io/cdis/pidgin:2020.12",
     "revproxy": "quay.io/cdis/nginx:2020.12",
     "sheepdog": "quay.io/cdis/sheepdog:2020.12",
-    "portal": "quay.io/cdis/data-portal:2.40.0",
+    "portal": "quay.io/cdis/data-portal:2.41.0",
     "tube": "quay.io/cdis/tube:2020.12",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2020.12",
