@@ -35,7 +35,7 @@
     "environment": "healpreprod",
     "hostname": "preprod.healdata.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:205252583234:certificate/8bb3d424-be34-493c-a43b-e2c686c9dc6c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/heal_dictionary/1.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/heal_dictionary/1.1.0/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube-healprod-gen3",
