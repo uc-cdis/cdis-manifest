@@ -45,17 +45,20 @@
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
   },
   "guppy": {
-    "indices": [
-      {
-        "index": "dev_case",
-        "type": "case"
+    "indices": [{
+        "index": "preprod-heal_cmc",
+        "type": "clinical_trials"
       },
       {
-        "index": "dev_file",
-        "type": "file"
+        "index": "preprod-heal_ct-file",
+        "type": "ctfile"
+      },
+      {
+        "index": "preprod-heal_oa-file",
+        "type": "oafile"
       }
     ],
-    "config_index": "dev_case-array-config",
+    "config_index": "preprod-heal_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "canary": {
