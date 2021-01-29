@@ -120,11 +120,11 @@
       "rowAccessor": "cmc_unique_id",
       "listItemConfig": {
         "blockFields": ["brief_summary"],
-        "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications"]
+        "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
       },
       "singleItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"]
+        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
       },
       "fieldMapping": [
         { "field": "brief_summary", "name": "Brief Study Description" },
@@ -133,7 +133,10 @@
         { "field": "category", "name": "Study Type"},
         { "field": "clinical_trial_website", "name": "Websites"},
         { "field": "nct_number", "name": "NCT Number"},
-        { "field": "publications", "name": "Study Publications"}
+        { "field": "publications", "name": "Study Publications"},
+        { "field": "priniciple_investigator", "name": "Principle Investigator"},
+        { "field": "publisher", "name": "Administering IC"},
+        { "field": "source", "name": "Research Program"}
       ],
       "fileDataType": "ctfile",
       "docDataType": "oafile",
