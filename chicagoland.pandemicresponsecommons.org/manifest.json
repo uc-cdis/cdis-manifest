@@ -1,6 +1,6 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the PROD environment manifest",
     "That's all I have to say"
   ],
   "versions": {
@@ -14,7 +14,7 @@
     "pidgin": "quay.io/cdis/pidgin:2021.01",
     "revproxy": "quay.io/cdis/nginx:2021.01",
     "sheepdog": "quay.io/cdis/sheepdog:2021.01",
-    "portal": "quay.io/cdis/data-portal:2.43.0",
+    "portal": "quay.io/cdis/data-portal:2.43.2",
     "tube": "quay.io/cdis/tube:2021.01",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:2021.01",
@@ -25,7 +25,7 @@
     "guppy": "quay.io/cdis/guppy:0.10.0",
     "manifestservice": "quay.io/cdis/manifestservice:2021.01",
     "dashboard": "quay.io/cdis/gen3-statics:2021.01",
-    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.3",
+    "auspice": "quay.io/cdis/gen3-auspice:v2.16.gen3.4",
     "sower": "quay.io/cdis/sower:2021.01",
     "metadata": "quay.io/cdis/metadata-service:2021.01"
   },
