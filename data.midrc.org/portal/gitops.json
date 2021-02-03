@@ -161,10 +161,6 @@
         {
           "tabTitle": "Cases",
           "charts": {
-            "covid_test_positive": {
-              "chartType": "fullPie",
-              "title": "COVID-19 Positive"
-            },
             "gender": {
               "chartType": "fullPie",
               "title": "Gender"
@@ -185,39 +181,6 @@
                   "zip",
                   "project_id"
                 ]
-              },
-              {
-                "title": "Medical History",
-                "fields":[
-                  "covid_test_positive",
-                  "covid_test_name",
-                  "asplenia",
-                  "cancer",
-                  "chicken_pox",
-                  "chronic_kidney_disease",
-                  "current_pregnant",
-                  "cytomegalovirus",
-                  "diabetes_type_1",
-                  "diabetes_type_2",
-                  "extensive_burns",
-                  "hemodialysis_post_diagnosis",
-                  "hemodialysis_pre_diagnosis",
-                  "herpes_zoster",
-                  "hyposplenia",
-                  "icu_admit",
-                  "latest_bmi",
-                  "latest_height_inches",
-                  "latest_height_string",
-                  "latest_weight",
-                  "malnutrition",
-                  "measles",
-                  "mortality",
-                  "number_icu_admits",
-                  "rheumatoid_arthritis",
-                  "systemic_lupus_erythmatosus",
-                  "transplant",
-                  "tuberculosis"
-                ]
               }
             ]
           },
@@ -229,39 +192,6 @@
               "age",
               "race",
               "zip",
-              "covid_test_name",
-              "covid_test_positive",
-              "asplenia",
-              "cancer",
-              "chicken_pox",
-              "chronic_kidney_disease",
-              "current_pregnant",
-              "cytomegalovirus",
-              "diabetes_type_1",
-              "diabetes_type_2",
-              "extensive_burns",
-              "hemodialysis_post_diagnosis",
-              "hemodialysis_pre_diagnosis",
-              "herpes_zoster",
-              "hyposplenia",
-              "icu_admit",
-              "latest_bmi",
-              "latest_height_inches",
-              "latest_height_string",
-              "latest_weight",
-              "malnutrition",
-              "measles",
-              "mortality",
-              "number_icu_admits",
-              "rheumatoid_arthritis",
-              "systemic_lupus_erythmatosus",
-              "transplant",
-              "tuberculosis",
-              "_imaging_studies_count",
-              "_imaging_series_count",
-              "_ct_images_count",
-              "_cr_images_count",
-              "_dx_images_count",
               "project_id"
             ]
           },
@@ -275,7 +205,7 @@
               "fileName": "MIDRC_case_metadata.json"
             },
             {
-              "enabled": true,
+              "enabled": false,
               "type": "manifest",
               "title": "Download Imaging Files for Selected Cases",
               "leftIcon": "datafile",
@@ -354,13 +284,6 @@
                 "research_design",
                 "research_objective",
                 "research_setup",
-                "_subjects_count",
-                "_virus_genomes_count",
-                "_imaging_studies_count",
-                "_imaging_series_count",
-                "_ct_images_count",
-                "_cr_images_count",
-                "_dx_images_count",
                 "project_id",
                 "submitter_id"
               ],
@@ -378,7 +301,7 @@
                 "fileName": "MIDRC_dataset_descriptions.json"
               },
               {
-                "enabled": true,
+                "enabled": false,
                 "type": "manifest",
                 "title": "Download Imaging File Manifest for Datasets",
                 "leftIcon": "datafile",
