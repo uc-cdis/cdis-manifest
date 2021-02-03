@@ -352,7 +352,6 @@
                   "title": "Dataset Properties",
                   "fields":[
                     "data_contributor",
-                    "research_description",
                     "research_design",
                     "research_objective",
                     "research_setup",
@@ -422,134 +421,6 @@
               }
             ],
             "dropdowns": {}
-        },
-        {
-          "tabTitle": "Viral Genomics",
-          "charts": {
-            "organism": {
-              "chartType": "fullPie",
-              "title": "Organism"
-            },
-            "data_format": {
-              "chartType": "fullPie",
-              "title": "File Format"
-            },
-            "data_category": {
-              "chartType": "fullPie",
-              "title": "File Category"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Viral Sample Info",
-                "fields": [
-                  "organism",
-                  "ncbi_bioproject",
-                  "ncbi_biosample",
-                  "host",
-                  "location",
-                  "isolation_source",
-                  "isolate",
-                  "collection_date"
-                ]
-              },
-              {
-                "title": "Genomics File Properties",
-                "fields": [
-                  "project_id",
-                  "data_type",
-                  "data_format",
-                  "data_category",
-                  "file_size"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
-            "fields": [
-              "organism",
-              "ncbi_bioproject",
-              "ncbi_biosample",
-              "host",
-              "location",
-              "isolation_source",
-              "isolate",
-              "collection_date",
-              "file_name",
-              "object_id",
-              "file_size",
-              "md5sum",
-              "data_type",
-              "data_format",
-              "data_category",
-              "project_id",
-              "submitter_id"
-            ]
-          },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data",
-              "title": "Download Viral Genomics Metadata",
-              "leftIcon": "user",
-              "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics_metadata.json"
-            },
-            {
-              "enabled": true,
-              "type": "file-manifest",
-              "title": "Download Viral Genomics File Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics_manifest.json",
-              "dropdownId": "download"
-            },
-            {
-              "enabled": false,
-              "type": "export-files-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "guppyConfig": {
-            "dataType": "virus_data_file",
-            "fieldMapping": [
-              {
-                "field": "project_id",
-                "name": "Dataset ID"
-              },
-              {
-                "field": "submitter_id",
-                "name": "Viral Genome ID"
-              },
-              {
-                "field": "object_id",
-                "name": "GUID"
-              },
-              {
-                "field": "ncbi_bioproject",
-                "name": "NCBI Bioproject"
-              },
-              {
-                "field": "ncbi_biosample",
-                "name": "NCBI Biosample"
-              }
-            ],
-            "nodeCountTitle": "Viral Genomic Files",
-            "manifestMapping": {
-              "resourceIndexType": "case",
-              "resourceIdField": "_case_id",
-              "referenceIdFieldInResourceIndex": "object_id",
-              "referenceIdFieldInDataIndex": "object_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id",
-            "downloadAccessor": "object_id"
-          },
-          "dropdowns": {}
         },
         {
             "tabTitle": "Imaging Studies",
@@ -1219,6 +1090,134 @@
               "accessibleValidationField": "project_id"
             },
             "dropdowns": {}
+        },
+        {
+          "tabTitle": "Viral Genomics",
+          "charts": {
+            "organism": {
+              "chartType": "fullPie",
+              "title": "Organism"
+            },
+            "data_format": {
+              "chartType": "fullPie",
+              "title": "File Format"
+            },
+            "data_category": {
+              "chartType": "fullPie",
+              "title": "File Category"
+            }
+          },
+          "filters": {
+            "tabs": [
+              {
+                "title": "Viral Sample Info",
+                "fields": [
+                  "organism",
+                  "ncbi_bioproject",
+                  "ncbi_biosample",
+                  "host",
+                  "location",
+                  "isolation_source",
+                  "isolate",
+                  "collection_date"
+                ]
+              },
+              {
+                "title": "Genomics File Properties",
+                "fields": [
+                  "project_id",
+                  "data_type",
+                  "data_format",
+                  "data_category",
+                  "file_size"
+                ]
+              }
+            ]
+          },
+          "table": {
+            "enabled": true,
+            "fields": [
+              "organism",
+              "ncbi_bioproject",
+              "ncbi_biosample",
+              "host",
+              "location",
+              "isolation_source",
+              "isolate",
+              "collection_date",
+              "file_name",
+              "object_id",
+              "file_size",
+              "md5sum",
+              "data_type",
+              "data_format",
+              "data_category",
+              "project_id",
+              "submitter_id"
+            ]
+          },
+          "buttons": [
+            {
+              "enabled": true,
+              "type": "data",
+              "title": "Download Viral Genomics Metadata",
+              "leftIcon": "user",
+              "rightIcon": "download",
+              "fileName": "MIDRC_viral_genomics_metadata.json"
+            },
+            {
+              "enabled": true,
+              "type": "file-manifest",
+              "title": "Download Viral Genomics File Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_viral_genomics_manifest.json",
+              "dropdownId": "download"
+            },
+            {
+              "enabled": false,
+              "type": "export-files-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
+            }
+          ],
+          "guppyConfig": {
+            "dataType": "virus_data_file",
+            "fieldMapping": [
+              {
+                "field": "project_id",
+                "name": "Dataset ID"
+              },
+              {
+                "field": "submitter_id",
+                "name": "Viral Genome ID"
+              },
+              {
+                "field": "object_id",
+                "name": "GUID"
+              },
+              {
+                "field": "ncbi_bioproject",
+                "name": "NCBI Bioproject"
+              },
+              {
+                "field": "ncbi_biosample",
+                "name": "NCBI Biosample"
+              }
+            ],
+            "nodeCountTitle": "Viral Genomic Files",
+            "manifestMapping": {
+              "resourceIndexType": "case",
+              "resourceIdField": "_case_id",
+              "referenceIdFieldInResourceIndex": "object_id",
+              "referenceIdFieldInDataIndex": "object_id"
+            },
+            "accessibleFieldCheckList": ["project_id"],
+            "accessibleValidationField": "project_id",
+            "downloadAccessor": "object_id"
+          },
+          "dropdowns": {}
         }
     ]
 }
