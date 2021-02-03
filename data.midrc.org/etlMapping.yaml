@@ -13,10 +13,44 @@ mappings:
       - name: research_design
       - name: research_objective
       - name: research_setup
-  - name: midrc_subject
-    doc_type: subject
+    aggregated_props:
+      - name: _imaging_study_id
+        path: cases.imaging_studies
+        src: id
+        fn: min
+      - name: _ct_scan_id
+        path: cases.imaging_studies.ct_scans
+        src: id
+        fn: min
+      - name: _radiography_exam_id
+        path: cases.imaging_studies.radiography_exams
+        src: id
+        fn: min
+    joining_props:
+      - index: imaging_data_file
+        join_on: _dataset_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
+  - name: midrc_case
+    doc_type: case
     type: aggregator
-    root: subject
+    root: case
     props:
       - name: project_id
       - name: submitter_id
@@ -25,13 +59,65 @@ mappings:
       - name: age
       - name: zip
       - name: covid_status
+    parent_props:
+      - path: datasets[data_contributor]
+    flatten_props:
+      - path: conditions
+        props:
+          - name: asplenia
+          - name: cancer
+          - name: chicken_pox
+          - name: chronic_kidney_disease
+          - name: covid_test_positive
+          - name: covid_test_name
+          - name: current_pregnant
+          - name: cytomegalovirus
+          - name: diabetes_type_1
+          - name: diabetes_type_2
+          - name: extensive_burns
+          - name: hemodialysis_post_diagnosis
+          - name: hemodialysis_pre_diagnosis
+          - name: herpes_zoster
+          - name: hyposplenia
+          - name: icu_admit
+          - name: latest_bmi
+          - name: latest_height_inches
+          - name: latest_height_string
+          - name: latest_weight
+          - name: malnutrition
+          - name: measles
+          - name: mortality
+          - name: number_icu_admits
+          - name: rheumatoid_arthritis
+          - name: systemic_lupus_erythmatosus
+          - name: transplant
+          - name: tuberculosis
+        sorted_by: updated_datetime, desc
+    joining_props:
+      - index: imaging_data_file
+        join_on: _case_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
   - name: midrc_virus_data_file
     doc_type: virus_data_file
     type: collector
     root: None
     category: virus_data_file
     props:
-      - name: project_id
       - name: submitter_id
       - name: object_id
       - name: md5sum
@@ -40,13 +126,39 @@ mappings:
       - name: data_format
       - name: data_type
       - name: data_category
+    injecting_props:
+      sample:
+        props:
+          - name: ncbi_bioproject
+            src: ncbi_bioproject
+            fn: set
+          - name: ncbi_biosample
+            src: ncbi_biosample
+            fn: set
+          - name: host
+            src: host
+            fn: set
+          - name: location
+            src: location
+            fn: set
+          - name: organism
+            src: organism
+            fn: set
+          - name: isolation_source
+            src: isolation_source
+            fn: set
+          - name: isolate
+            src: isolate
+            fn: set
+          - name: collection_date
+            src: collection_date
+            fn: set
   - name: midrc_imaging_data_file
     doc_type: imaging_data_file
     type: collector
     root: None
     category: imaging_data_file
     props:
-      - name: project_id
       - name: submitter_id
       - name: object_id
       - name: md5sum
@@ -55,7 +167,6 @@ mappings:
       - name: data_format
       - name: data_type
       - name: data_category
-      - name: file_description
       - name: implementation_class_uid
       - name: implementation_version_name
       - name: transfer_syntax_uid
@@ -71,3 +182,340 @@ mappings:
       - name: contrast_bolus_agent_number
       - name: spacing_between_slices
       - name: lossy_image_compression
+    injecting_props:
+      dataset:
+        props:
+          - name: _dataset_id
+            src: id
+            fn: set
+          - name: data_contributor
+            src: data_contributor
+            fn: set
+      case:
+        props:
+          - name: _case_id
+            src: id
+            fn: set
+          - name: case_submitter_id
+            src: submitter_id
+            fn: set
+          - name: gender
+            src: gender
+            fn: set
+          - name: race
+            src: race
+            fn: set
+          - name: age
+            src: age
+            fn: max
+          - name: zip
+            src: zip
+            fn: set
+      imaging_study:
+        props:
+          - name: _imaging_study_id
+            src: id
+            fn: set
+          - name: study_modality
+            src: study_modality
+            fn: set
+          - name: days_to_study
+            src: days_to_study
+            fn: max
+          - name: hours_to_study
+            src: hours_to_study
+            fn: max
+          - name: study_description
+            src: study_description
+            fn: set
+          - name: FLO2_percentage
+            src: FLO2_percentage
+            fn: max
+          - name: radiologist_notes
+            src: radiologist_notes
+            fn: set
+          - name: age_at_imaging
+            src: age_at_imaging
+            fn: max
+          - name: study_year
+            src: study_year
+            fn: max
+          - name: study_covid_status
+            src: study_covid_status
+            fn: set
+      ct_scan:
+        props:
+          - name: _ct_scan_id
+            src: id
+            fn: set
+      radiography_exam:
+        props:
+          - name: _radiography_exam_id
+            src: id
+            fn: set
+      ct_series:
+        props:
+          - name: _ct_series_id
+            src: id
+            fn: set
+      cr_series:
+        props:
+          - name: _cr_series_id
+            src: id
+            fn: set
+      dx_series:
+        props:
+          - name: _dx_series_id
+            src: id
+            fn: set
+  - name: midrc_imaging_study
+    doc_type: imaging_study
+    type: aggregator
+    root: imaging_study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: study_modality
+      - name: days_to_study
+      - name: hours_to_study
+      - name: study_description
+      - name: study_type
+      - name: study_subtype
+      - name: FLO2_percentage
+      - name: radiologist_notes
+      - name: age_at_imaging
+      - name: study_year
+      - name: study_covid_status
+      - name: study_start_time
+      - name: study_body_site
+      - name: asplenia
+      - name: cancer
+      - name: chicken_pox
+      - name: chronic_kidney_disease
+      - name: covid_test_positive
+      - name: covid_test_name
+      - name: current_pregnant
+      - name: cytomegalovirus
+      - name: diabetes_type_1
+      - name: diabetes_type_2
+      - name: extensive_burns
+      - name: hemodialysis_post_diagnosis
+      - name: hemodialysis_pre_diagnosis
+      - name: herpes_zoster
+      - name: hyposplenia
+      - name: icu_admit
+      - name: latest_bmi
+      - name: latest_height_inches
+      - name: latest_height_string
+      - name: latest_weight
+      - name: malnutrition
+      - name: measles
+      - name: mortality
+      - name: number_icu_admits
+      - name: rheumatoid_arthritis
+      - name: systemic_lupus_erythmatosus
+      - name: transplant
+      - name: tuberculosis
+    parent_props:
+      - path: cases[case_submitter_id:submitter_id,gender,race,age,zip].datasets[data_contributor]
+    joining_props:
+      - index: imaging_data_file
+        join_on: _imaging_study_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+          - name: implementation_class_uid
+            src: implementation_class_uid
+            fn: set
+          - name: implementation_version_name
+            src: implementation_version_name
+            fn: set
+          - name: transfer_syntax_uid
+            src: transfer_syntax_uid
+            fn: set
+          - name: image_type
+            src: image_type
+            fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: view_position
+            src: view_position
+            fn: set
+          - name: slice_thickness
+            src: slice_thickness
+            fn: set
+          - name: contrast_bolus_agent_number
+            src: contrast_bolus_agent_number
+            fn: set
+          - name: spacing_between_slices
+            src: spacing_between_slices
+            fn: set
+          - name: lossy_image_compression
+            src: lossy_image_compression
+            fn: set
+  - name: midrc_ct_scan
+    doc_type: ct_scan
+    type: aggregator
+    root: ct_scan
+    props:
+      - name: project_id
+      - name: submitter_id
+    parent_props:
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
+    joining_props:
+      - index: imaging_data_file
+        join_on: _ct_scan_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+          - name: implementation_class_uid
+            src: implementation_class_uid
+            fn: set
+          - name: implementation_version_name
+            src: implementation_version_name
+            fn: set
+          - name: transfer_syntax_uid
+            src: transfer_syntax_uid
+            fn: set
+          - name: image_type
+            src: image_type
+            fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: view_position
+            src: view_position
+            fn: set
+          - name: slice_thickness
+            src: slice_thickness
+            fn: set
+          - name: contrast_bolus_agent_number
+            src: contrast_bolus_agent_number
+            fn: set
+          - name: spacing_between_slices
+            src: spacing_between_slices
+            fn: set
+          - name: lossy_image_compression
+            src: lossy_image_compression
+            fn: set
+  - name: midrc_radiography_exam
+    doc_type: radiography_exam
+    type: aggregator
+    root: radiography_exam
+    props:
+      - name: project_id
+      - name: submitter_id
+    parent_props:
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
+    joining_props:
+      - index: imaging_data_file
+        join_on: _radiography_exam_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+          - name: implementation_class_uid
+            src: implementation_class_uid
+            fn: set
+          - name: implementation_version_name
+            src: implementation_version_name
+            fn: set
+          - name: transfer_syntax_uid
+            src: transfer_syntax_uid
+            fn: set
+          - name: image_type
+            src: image_type
+            fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: view_position
+            src: view_position
+            fn: set
+          - name: slice_thickness
+            src: slice_thickness
+            fn: set
+          - name: contrast_bolus_agent_number
+            src: contrast_bolus_agent_number
+            fn: set
+          - name: spacing_between_slices
+            src: spacing_between_slices
+            fn: set
+          - name: lossy_image_compression
+            src: lossy_image_compression
+            fn: set

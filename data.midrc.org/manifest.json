@@ -50,16 +50,28 @@
         "type": "dataset"
       },
       {
-        "index": "midrc_subject",
-        "type": "subject"
+        "index": "midrc_case",
+        "type": "case"
+      },
+      {
+        "index": "midrc_virus_data_file",
+        "type": "virus_data_file"
       },
       {
         "index": "midrc_imaging_data_file",
         "type": "imaging_data_file"
       },
       {
-        "index": "midrc_virus_data_file",
-        "type": "virus_data_file"
+        "index": "midrc_imaging_study",
+        "type": "imaging_study"
+      },
+      {
+        "index": "midrc_ct_scan",
+        "type": "ct_scan"
+      },
+      {
+        "index": "midrc_radiography_exam",
+        "type": "radiography_exam"
       }
     ],
     "config_index": "midrc_array-config",
@@ -73,7 +85,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.4.1/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.4.2/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
