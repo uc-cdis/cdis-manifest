@@ -26,6 +26,42 @@ mappings:
         path: cases.imaging_studies.radiography_exams
         src: id
         fn: min
+      - name: _cases_count
+        path: cases
+        fn: count
+      - name: _samples_count
+        path: samples
+        fn: count
+      - name: _virus_genomes_count
+        path: samples.virus_genomes
+        fn: count
+      - name: _imaging_studies_count
+        path: cases.imaging_studies
+        fn: count
+      - name: _ct_scans_count
+        path: cases.imaging_studies.ct_scans
+        fn: count
+      - name: _radiography_exams_count
+        path: cases.imaging_studies.radiography_exams
+        fn: count
+      - name: _ct_series_count
+        path: cases.imaging_studies.ct_scans.ct_series
+        fn: count
+      - name: _cr_series_count
+        path: cases.imaging_studies.radiography_exams.cr_series
+        fn: count
+      - name: _dx_series_count
+        path: cases.imaging_studies.radiography_exams.dx_series
+        fn: count
+      - name: _ct_images_count
+        path: cases.imaging_studies.ct_scans.ct_series.ct_images
+        fn: count
+      - name: _cr_images_count
+        path: cases.imaging_studies.radiography_exams.cr_series.cr_images
+        fn: count
+      - name: _dx_images_count
+        path: cases.imaging_studies.radiography_exams.dx_series.dx_images
+        fn: count
     joining_props:
       - index: imaging_data_file
         join_on: _dataset_id
@@ -59,6 +95,34 @@ mappings:
       - name: age
       - name: zip
       - name: covid_status
+    aggregated_props:
+      - name: _imaging_studies_count
+        path: imaging_studies
+        fn: count
+      - name: _ct_scans_count
+        path: imaging_studies.ct_scans
+        fn: count
+      - name: _radiography_exams_count
+        path: imaging_studies.radiography_exams
+        fn: count
+      - name: _ct_series_count
+        path: imaging_studies.ct_scans.ct_series
+        fn: count
+      - name: _cr_series_count
+        path: imaging_studies.radiography_exams.cr_series
+        fn: count
+      - name: _dx_series_count
+        path: imaging_studies.radiography_exams.dx_series
+        fn: count
+      - name: _ct_images_count
+        path: imaging_studies.ct_scans.ct_series.ct_images
+        fn: count
+      - name: _cr_images_count
+        path: imaging_studies.radiography_exams.cr_series.cr_images
+        fn: count
+      - name: _dx_images_count
+        path: imaging_studies.radiography_exams.dx_series.dx_images
+        fn: count
     parent_props:
       - path: datasets[data_contributor]
     flatten_props:
@@ -316,6 +380,31 @@ mappings:
       - name: systemic_lupus_erythmatosus
       - name: transplant
       - name: tuberculosis
+    aggregated_props:
+      - name: _ct_scans_count
+        path: ct_scans
+        fn: count
+      - name: _radiography_exams_count
+        path: radiography_exams
+        fn: count
+      - name: _ct_series_count
+        path: ct_scans.ct_series
+        fn: count
+      - name: _cr_series_count
+        path: radiography_exams.cr_series
+        fn: count
+      - name: _dx_series_count
+        path: radiography_exams.dx_series
+        fn: count
+      - name: _ct_images_count
+        path: ct_scans.ct_series.ct_images
+        fn: count
+      - name: _cr_images_count
+        path: radiography_exams.cr_series.cr_images
+        fn: count
+      - name: _dx_images_count
+        path: radiography_exams.dx_series.dx_images
+        fn: count
     parent_props:
       - path: cases[case_submitter_id:submitter_id,gender,race,age,zip].datasets[data_contributor]
     joining_props:
@@ -386,6 +475,13 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
+    aggregated_props:
+      - name: _ct_series_count
+        path: ct_series
+        fn: count
+      - name: _ct_images_count
+        path: ct_series.ct_images
+        fn: count
     parent_props:
       - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
     joining_props:
@@ -456,6 +552,19 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
+    aggregated_props:
+      - name: _cr_series_count
+        path: cr_series
+        fn: count
+      - name: _dx_series_count
+        path: dx_series
+        fn: count
+      - name: _cr_images_count
+        path: cr_series.cr_images
+        fn: count
+      - name: _dx_images_count
+        path: dx_series.dx_images
+        fn: count
     parent_props:
       - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
     joining_props:
