@@ -413,6 +413,7 @@
               "enabled": true,
               "fields": [
                 "data_url",
+                "project_id",
                 "data_contributor",
                 "_imaging_studies_count",
                 "_ct_scans_count",
@@ -432,7 +433,6 @@
                 "license",
                 "publication_citation",
                 "data_citation",
-                "project_id",
                 "submitter_id"
               ],
               "linkFields": [
