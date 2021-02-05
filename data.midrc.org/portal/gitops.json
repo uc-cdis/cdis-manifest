@@ -278,6 +278,15 @@
               "systemic_lupus_erythmatosus",
               "transplant",
               "tuberculosis",
+              "_imaging_studies_count",
+              "_ct_scans_count",
+              "_radiography_exams_count",
+              "_ct_series_count",
+              "_ct_images_count",
+              "_dx_series_count",
+              "_dx_images_count",
+              "_cr_series_count",
+              "_cr_images_count",
               "project_id"
             ]
           },
@@ -310,14 +319,54 @@
             "dataType": "case",
             "nodeCountTitle": "Cases",
             "fieldMapping": [
-              {
-                "field": "project_id",
-                "name": "Dataset ID"
-              },
-              {
-                "field": "submitter_id",
-                "name": "Case ID"
-              }
+                {
+                    "field": "project_id",
+                    "name": "Dataset ID"
+                },
+                {
+                    "field": "submitter_id",
+                    "name": "Case ID"
+                },
+                {
+                    "field": "_imaging_studies_count",
+                    "name": "Imaging Studies Count"
+                },
+                {
+                    "field": "_ct_scans_count",
+                    "name": "CT Scans Count"
+                },
+                {
+                    "field": "_radiography_exams_count",
+                    "name": "Radiography Exams Count"
+                },
+                {
+                    "field": "_ct_series_count",
+                    "name": "CT Series Count"
+                },
+                {
+                    "field": "_ct_images_count",
+                    "name": "CT Images Count"
+                },
+                {
+                    "field": "_dx_series_count",
+                    "name": "DX Series Count"
+                },
+                {
+                    "field": "_dx_images_count",
+                    "name": "DX Images Count"
+                },
+                {
+                    "field": "_cr_series_count",
+                    "name": "CR Series Count"
+                },
+                {
+                    "field": "_cr_images_count",
+                    "name": "CR Images Count"
+                },
+                {
+                    "field": "_virus_genomes_count",
+                    "name": "Virus Genomes Count"
+                }
             ],
             "manifestMapping": {
               "resourceIndexType": "imaging_data_file",
@@ -365,6 +414,16 @@
               "fields": [
                 "data_url",
                 "data_contributor",
+                "_imaging_studies_count",
+                "_ct_scans_count",
+                "_radiography_exams_count",
+                "_ct_series_count",
+                "_ct_images_count",
+                "_dx_series_count",
+                "_dx_images_count",
+                "_cr_series_count",
+                "_cr_images_count",
+                "_virus_genomes_count",
                 "data_description",
                 "research_description",
                 "research_design",
@@ -384,6 +443,50 @@
                   {
                     "field": "project_id",
                     "name": "Dataset ID"
+                  },
+                  {
+                    "field": "submitter_id",
+                    "name": "Dataset Name"
+                  },
+                  {
+                    "field": "_imaging_studies_count",
+                    "name": "Imaging Studies Count"
+                  },
+                  {
+                    "field": "_ct_scans_count",
+                    "name": "CT Scans Count"
+                  },
+                  {
+                    "field": "_radiography_exams_count",
+                    "name": "Radiography Exams Count"
+                  },
+                  {
+                    "field": "_ct_series_count",
+                    "name": "CT Series Count"
+                  },
+                  {
+                    "field": "_ct_images_count",
+                    "name": "CT Images Count"
+                  },
+                  {
+                    "field": "_dx_series_count",
+                    "name": "DX Series Count"
+                  },
+                  {
+                    "field": "_dx_images_count",
+                    "name": "DX Images Count"
+                  },
+                  {
+                    "field": "_cr_series_count",
+                    "name": "CR Series Count"
+                  },
+                  {
+                    "field": "_cr_images_count",
+                    "name": "CR Images Count"
+                  },
+                  {
+                    "field": "_virus_genomes_count",
+                    "name": "Virus Genomes Count"
                   }
               ],
               "manifestMapping": {
@@ -527,6 +630,14 @@
               "fields": [
                 "submitter_id",
                 "study_modality",
+                "_ct_scans_count",
+                "_radiography_exams_count",
+                "_ct_series_count",
+                "_ct_images_count",
+                "_dx_series_count",
+                "_dx_images_count",
+                "_cr_series_count",
+                "_cr_images_count",
                 "days_to_study",
                 "hours_to_study",
                 "study_description",
@@ -621,14 +732,46 @@
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
               "fieldMapping": [
-                  {
+                {
                     "field": "project_id",
                     "name": "Dataset ID"
-                  },
-                  {
+                },
+                {
                     "field": "submitter_id",
                     "name": "Imaging Study ID"
-                  }
+                },
+                {
+                    "field": "_ct_scans_count",
+                    "name": "CT Scans Count"
+                },
+                {
+                    "field": "_radiography_exams_count",
+                    "name": "Radiography Exams Count"
+                },
+                {
+                    "field": "_ct_series_count",
+                    "name": "CT Series Count"
+                },
+                {
+                    "field": "_ct_images_count",
+                    "name": "CT Images Count"
+                },
+                {
+                    "field": "_dx_series_count",
+                    "name": "DX Series Count"
+                },
+                {
+                    "field": "_dx_images_count",
+                    "name": "DX Images Count"
+                },
+                {
+                    "field": "_cr_series_count",
+                    "name": "CR Series Count"
+                },
+                {
+                    "field": "_cr_images_count",
+                    "name": "CR Images Count"
+                }
               ],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
@@ -744,6 +887,10 @@
               "fields": [
                 "submitter_id",
                 "study_modality",
+                "_dx_series_count",
+                "_dx_images_count",
+                "_cr_series_count",
+                "_cr_images_count",
                 "days_to_study",
                 "hours_to_study",
                 "study_description",
@@ -838,14 +985,30 @@
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
               "fieldMapping": [
-                  {
+                {
                     "field": "project_id",
                     "name": "Dataset ID"
-                  },
-                  {
+                },
+                {
                     "field": "submitter_id",
                     "name": "Radiography Exam ID"
-                  }
+                },
+                {
+                    "field": "_dx_series_count",
+                    "name": "DX Series Count"
+                },
+                {
+                    "field": "_dx_images_count",
+                    "name": "DX Images Count"
+                },
+                {
+                    "field": "_cr_series_count",
+                    "name": "CR Series Count"
+                },
+                {
+                    "field": "_cr_images_count",
+                    "name": "CR Images Count"
+                }
               ],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
@@ -961,6 +1124,8 @@
               "enabled": true,
               "fields": [
                 "submitter_id",
+                "_ct_series_count",
+                "_ct_images_count",
                 "study_description",
                 "series_description",
                 "days_to_study",
@@ -1055,14 +1220,22 @@
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
               "fieldMapping": [
-                  {
+                {
                     "field": "project_id",
                     "name": "Dataset ID"
-                  },
-                  {
+                },
+                {
                     "field": "submitter_id",
                     "name": "CT Scan ID"
-                  }
+                },
+                {
+                    "field": "_ct_series_count",
+                    "name": "CT Series Count"
+                },
+                {
+                    "field": "_ct_images_count",
+                    "name": "CT Images Count"
+                }
               ],
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
