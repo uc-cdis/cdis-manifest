@@ -283,6 +283,8 @@ mappings:
       - name: sra_accession
       - name: assay_type
       - name: center_name
+      - name: nextstrain_clade
+      - name: submitter_id
     injecting_props:
       sample:
         props:
@@ -300,6 +302,9 @@ mappings:
             fn: set
           - name: county
             src: county
+            fn: set
+          - name: zipcode
+            src: zipcode
             fn: set
           - name: host
             src: host
