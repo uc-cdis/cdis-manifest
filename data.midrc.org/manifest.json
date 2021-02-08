@@ -13,7 +13,7 @@
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.09",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:4.1.2",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2020.09",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2.39.2",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2.41.0",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2020.09",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
@@ -50,16 +50,28 @@
         "type": "dataset"
       },
       {
-        "index": "midrc_subject",
-        "type": "subject"
+        "index": "midrc_case",
+        "type": "case"
+      },
+      {
+        "index": "midrc_virus_data_file",
+        "type": "virus_data_file"
       },
       {
         "index": "midrc_imaging_data_file",
         "type": "imaging_data_file"
       },
       {
-        "index": "midrc_virus_data_file",
-        "type": "virus_data_file"
+        "index": "midrc_imaging_study",
+        "type": "imaging_study"
+      },
+      {
+        "index": "midrc_ct_scan",
+        "type": "ct_scan"
+      },
+      {
+        "index": "midrc_radiography_exam",
+        "type": "radiography_exam"
       }
     ],
     "config_index": "midrc_array-config",
@@ -73,12 +85,12 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.3.0/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.4.4/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
     "public_datasets": true,
-    "tier_access_level": "regular",
+    "tier_access_level": "libre",
     "tier_access_limit": "50",
     "maintenance_mode": "off"
   },

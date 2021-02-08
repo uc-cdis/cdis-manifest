@@ -7,15 +7,15 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2020.09",
-    "dashboard": "quay.io/cdis/gen3-statics:2020.09",
-    "fence": "quay.io/cdis/fence:4.23.6",
-    "indexd": "quay.io/cdis/indexd:2020.09",
-    "peregrine": "quay.io/cdis/peregrine:2020.09",
-    "pidgin": "quay.io/cdis/pidgin:2020.09",
-    "revproxy": "quay.io/cdis/nginx:2020.09",
-    "sheepdog": "quay.io/cdis/sheepdog:2020.09",
-    "portal": "quay.io/cdis/data-portal:2020.09",
+    "arborist": "quay.io/cdis/arborist:2020.12",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.12",
+    "fence": "quay.io/cdis/fence:2020.12",
+    "indexd": "quay.io/cdis/indexd:2020.12",
+    "peregrine": "quay.io/cdis/peregrine:2020.12",
+    "pidgin": "quay.io/cdis/pidgin:2020.12",
+    "revproxy": "quay.io/cdis/nginx:2020.12",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.12",
+    "portal": "quay.io/cdis/data-portal:2020.12",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
   },
   "arborist": {

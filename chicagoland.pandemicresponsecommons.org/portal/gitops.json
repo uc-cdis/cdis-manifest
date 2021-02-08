@@ -104,6 +104,10 @@
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
         }
       ]
     },
@@ -202,7 +206,7 @@
           "title": "Dataset Source"
         },
         "gender": {
-          "chartType": "pie",
+          "chartType": "fullPie",
           "title": "Gender"
         },
         "country_region": {
@@ -226,7 +230,6 @@
           {
             "title": "Clinical",
             "fields": [
-              
               "covid_19_status",
               "vital_status",
               "icu_status",
@@ -344,6 +347,17 @@
           {
             "field": "study_doi",
             "name": "Study DOI"
+          },
+          { "field": "pO2_saturation",
+            "name": "pO2 Saturation (percent)"
+          },
+          {
+            "field": "leukocyte_count",
+            "name": "Leukocyte Count (10^3/µl)"
+          },
+          {
+            "field": "age",
+            "name": "Age (years)"
           }
         ],
         "manifestMapping": {
@@ -377,7 +391,7 @@
         "fields": [
           "project_url",
           "project_investigator_affiliation",
-          "project_name",  
+          "project_name",
           "title",
           "focus",
           "description",
@@ -467,13 +481,17 @@
           {
             "title": "Viral",
             "fields": [
-              "data_type",
-              "data_format",
-              "location",
+              "country_region",
+              "province_state",
+              "county",
               "host",
               "organism",
+              "data_type",
+              "data_format",
               "sample_type",
-              "isolation_source",
+              "originating_lab",
+              "submitting_lab",
+              "submitting_lab_PI",
               "collection_date"
             ]
           }
@@ -486,11 +504,15 @@
           "project_code",
           "project_investigator_affiliation",
           "project_name",
-          "location",
+          "country_region",
+          "province_state",
+          "county",
           "host",
           "organism",
           "sample_type",
-          "isolation_source",
+          "originating_lab",
+          "submitting_lab",
+          "submitting_lab_PI",
           "collection_date",
           "file_name",
           "data_type",
@@ -543,6 +565,22 @@
           {
             "field": "object_id",
             "name": "GUID"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "submitting_lab_PI",
+            "name": "Submiting Lab PI"
+          },
+          {
+            "field": "collection_date",
+            "name": "Collection Date (year-month-day)"
           }
         ],
         "nodeCountTitle": "Files",
@@ -590,7 +628,6 @@
               "deaths",
               "recovered",
               "testing",
-              "positive_rate",
               "staffed_all_beds",
               "staffed_icu_beds",
               "estimated_full_mech_ventilators"
@@ -662,6 +699,7 @@
           "community_area",
           "state_region_description",
           "reporting_org",
+          "date",
           "confirmed",
           "deaths",
           "recovered",
@@ -698,7 +736,17 @@
           "state_pct_hospital_beds_available",
           "state_icu_open_beds",
           "state_icu_beds_used",
-          "state_icu_open_beds_pct"
+          "state_icu_open_beds_pct",
+          "population_density",
+          "completed_high_school",
+          "college_degree",
+          "graduate_degree",
+          "job_density",
+          "jail",
+          "hhinc_mean",
+          "med_hhinc",
+          "cardiovasc_death_rate",
+          "diabetes_prevalence"
         ],
         "linkFields": [
           "project_url"
@@ -728,7 +776,7 @@
           },
           {
             "field": "deaths_per_10000",
-            "name": "Chicago Neighborhood Deaths per 10,000"
+            "name": "Chicago Neighborhood Deaths (per 10,000 residents)"
           },
           {
             "field": "staffed_all_beds",
@@ -840,7 +888,7 @@
           },
           {
             "field": "state_pct_hospital_beds_available",
-            "name": "IL Percentage Hospital Bed Available"
+            "name": "IL Hospital Bed Available (percent)"
           },
           {
             "field": "state_icu_open_beds",
@@ -852,7 +900,7 @@
           },
           {
             "field": "state_icu_open_beds_pct",
-            "name": "IL ICU Open Beds Percentage"
+            "name": "IL ICU Open Beds (percent)"
           },
           {
             "field": "state_covid_pui_patients",
@@ -860,7 +908,7 @@
           },
           {
             "field": "state_Ventilators_open_pct",
-            "name": "IL Ventilators Open Percentage"
+            "name": "IL Ventilators Open (percent)"
           },
           {
             "field": "state_ventilators_in_use",
@@ -868,7 +916,7 @@
           },
           {
             "field": "state_ventilators_covid_patients_pct",
-            "name": "IL Ventilators COVID-19 Patients Percentage"
+            "name": "IL Ventilators COVID-19 Patients (percent)"
           },
           {
             "field": "state_covid_patients_non_icu",
@@ -896,15 +944,31 @@
           },
           {
             "field": "hhinc_mean",
-            "name": "Mean Household Income"
+            "name": "Mean Household Income (USD)"
           },
           {
             "field": "med_hhinc",
-            "name": "Median Household Income"
+            "name": "Median Household Income (USD)"
           },
           {
             "field": "cardiovasc_death_rate",
-            "name": "Cardiovascular Death Rate"
+            "name": "Cardiovascular Death Rate (per 100,000 people)"
+          },
+          {
+            "field": "diabetes_prevalence",
+            "name": "Diabetes Prevalence (percent)"
+          },
+          { 
+            "field": "population_density",
+            "name": "Population Density (residents per square mile)"
+          },
+          {
+            "field": "job_density",
+            "name": "Job Density (per square mile)"
+          },
+          {
+            "field": "jail",
+            "name": "Incarcerated"
           }
         ],
         "nodeCountTitle": "Locations",
