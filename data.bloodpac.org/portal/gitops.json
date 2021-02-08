@@ -1,18 +1,16 @@
 {
   "gaTrackingId": "UA-119127212-2",
-  "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false,
   "graphql": {
     "boardCounts": [
-      {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
-      },
       {
         "graphql": "_study_count",
         "name": "Study",
         "plural": "Studies"
+      },
+      {
+        "graphql": "_case_count",
+        "name": "Case",
+        "plural": "Cases"
       },
       {
         "graphql": "_aliquot_count",
@@ -22,15 +20,52 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
       },
       {
-        "graphql": "_study_count",
-        "name": "Study"
+        "graphql": "_case_count",
+        "name": "Case",
+        "plural": "Cases"
+      },
+      {
+        "graphql": "_aliquot_count",
+        "name": "Aliquot",
+        "plural": "Aliquots"
       }
     ],
     "projectDetails": "boardCounts"
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Query": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    },
+    "Send Queries": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    },
+    "Data Dictionary": {
+      "resource": "/dictionary_page",
+      "method": "access",
+      "service": "dictionary_page"
+    },
+    "Dictionary": {
+      "resource": "/dictionary_page",
+      "method": "access",
+      "service": "dictionary_page"
+    }
   },
   "components": {
     "appName": "BloodPAC Metadata Submission Portal",
@@ -40,34 +75,48 @@
         "text": "The Blood Profiling Atlas in Cancer (BloodPAC) supports the management, analysis and sharing of liquid biopsy data for the oncology research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for cancer treatment and prevention. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
+      "homepageChartNodes": [
+        {
+          "node": "study",
+          "name": "Studies"
+        },
+        {
+          "node": "case",
+          "name": "Cases"
+        },
+        {
+          "node": "aliquot",
+          "name": "Aliquots"
+        }
+      ],
       "buttons": [
         {
-          "name": "Define Data Field",
+          "name": "Data Dictionary",
           "icon": "data-field-define",
-          "body": "The BloodPAC Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "The BloodPAC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions.",
           "link": "/DD",
           "label": "Learn more"
         },
         {
           "name": "Submit Data",
           "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
+          "body": "Browse the list of submitted data projects, or find your project and submit data.",
           "link": "/submission",
           "label": "Submit data"
         },
         {
           "name": "Explore Data",
           "icon": "data-files",
-          "body": "The Explorer page gives you insights and a clear overview of data.",
+          "body": "The Exploration app enables faceted search for cohort building, getting file download manifests, and browsing data across projects.",
           "link": "/explorer",
-          "label": "Explore data"
+          "label": "Exploration"
         },
         {
-          "name": "Access Data",
+          "name": "Send Queries",
           "icon": "data-access",
-          "body": "Getting metadata and other clinical variables exposed by API in our secure cloud environment.",
+          "body": "Build and send your own custom GraphQL queries to the database to pinpoint specific data.",
           "link": "/query",
-          "label": "Query data"
+          "label": "Send Queries"
         }
       ]
     },
@@ -75,28 +124,28 @@
       "title": "BloodPAC Data Commons",
       "items": [
         {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
-        },
-        {
           "icon": "exploration",
           "link": "/explorer",
           "color": "#a2a2a2",
           "name": "Exploration"
         },
         {
-          "icon": "query",
-          "link": "/query",
-          "color": "#a2a2a2",
-          "name": "Query"
-        },
-        {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
           "name": "Workspace"
+        },
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
+        },
+        {
+          "icon": "query",
+          "link": "/query",
+          "color": "#a2a2a2",
+          "name": "Query"
         },
         {
           "icon": "profile",
@@ -108,6 +157,10 @@
     },
     "topBar": {
       "items": [
+        {
+          "link": "https://bloodpac.org/",
+          "name": "About"
+        },
         {
           "icon": "upload",
           "link": "/submission",
@@ -145,8 +198,11 @@
   },
   "requiredCerts": ["security_quiz"],
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "analysis": true,
+    "explorerPublic": true
   },
+  "analysisTools": [ ],
   "explorerConfig": [
       {
           "tabTitle": "Studies",

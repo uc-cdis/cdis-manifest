@@ -125,6 +125,7 @@ mappings:
             fn: set
           - name: file_count
             src: file_id
+            alternate_src: _file_id
             fn: count
   - name: gen3.biodatacatalyst.nhlbi.nih.gov_file
     doc_type: file
@@ -136,12 +137,14 @@ mappings:
       - name: md5sum
       - name: file_name
       - name: file_size
+      - name: data_category
       - name: data_format
       - name: data_type
       - name: state
       - name: callset
       - name: bucket_path
       - name: source_node
+      - name: data_category
     injecting_props:
       subject:
         props:

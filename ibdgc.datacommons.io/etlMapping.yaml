@@ -21,7 +21,7 @@ mappings:
         props:
           - name: ibd_affection_status
           - name: diagnosis
-          - name: population_control
+          - name: control
         sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count
@@ -46,10 +46,6 @@ mappings:
     root: None
     category: supplementary_data_file
     props:
-      - name: pmid
-      - name: doi
-      - name: first_author
-      - name: year
       - name: object_id
       - name: md5sum
       - name: file_name
@@ -57,3 +53,18 @@ mappings:
       - name: data_format
       - name: data_type
       - name: data_category
+    injecting_props:
+      publication:
+        props:
+          - name: first_author
+            src: first_author
+            fn: set
+          - name: pmid
+            src: pmid
+            fn: set
+          - name: doi
+            src: doi
+            fn: set
+          - name: year
+            src: year
+            fn: set 
