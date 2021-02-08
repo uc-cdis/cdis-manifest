@@ -44,32 +44,46 @@
       },
       "buttons": [
         {
-          "name": "Data Model",
+          "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The ACCOuNT Data Commons ingests and exports data that conform to a graph-like relational data model.",
+          "body": "TThe ACCOuNT Data Commons ingests and exports data that conform to a graph-like relational data model. Study the dictionary to send GraphQL queries or format your data submissions.",
           "link": "/DD",
-          "label": "Learn more"
+          "label": "Learn more",
+          "color": "#1a3057"
         },
         {
           "name": "Explore Data",
           "icon": "data-explore",
-          "body": "The File Exploration Page supports browsing data files using filters and selection of files for download.",
-          "link": "/files",
-          "label": "Explore data"
+          "body": "Use the Exploration tool for cohort building via faceted search and downloading subsets of data from the ACCOuNT Data Commons.",
+          "link": "/explorer",
+          "label": "Explore data",
+          "color": "#1a3057"
         },
         {
           "name": "Access Data",
           "icon": "data-access",
-          "body": "Subject and file metadata can be queried using graphQL.",
+          "body": "Subject and file metadata can be queried using GraphQL.",
           "link": "/query",
-          "label": "Query data"
+          "label": "Query data",
+          "color": "#1a3057"
         },
         {
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "/workspace",
-          "label": "Run analysis"
+          "link": "#hostname#workspace/",
+          "label": "Run analysis",
+          "color": "#1a3057"
+        }
+      ],
+      "homepageChartNodes": [
+        {
+          "node": "project",
+          "name": "Projects"
+        },
+        {
+          "node": "subject",
+          "name": "Subjects"
         }
       ]
     },
@@ -79,253 +93,329 @@
         {
           "icon": "dictionary",
           "link": "/DD",
-          "color": "#a2a2a2",
+          "color": "#1a3057",
           "name": "Dictionary"
         },
         {
           "icon": "exploration",
-          "link": "/files",
-          "color": "#a2a2a2",
+          "link": "/explorer",
+          "color": "#1a3057",
           "name": "Exploration"
         },
         {
           "icon": "query",
           "link": "/query",
-          "color": "#a2a2a2",
+          "color": "#1a3057",
           "name": "query"
         },
         {
           "icon": "workspace",
-          "link": "/workspace",
-          "color": "#a2a2a2",
+          "link": "#hostname#workspace/",
+          "color": "#1a3057",
           "name": "Workspace"
         },
         {
           "icon": "profile",
           "link": "/identity",
-          "color": "#a2a2a2",
+          "color": "#1a3057",
           "name": "Profile"
         }
       ]
     },
-    "topBar": {
-      "items": [
-        {
-          "icon": "upload",
-          "link": "/submission",
-          "name": "Browse Data"
-        },
-        {
-          "link": "https://gen3.org/resources/user/",
-          "name": "Gen3 Documentation"
-        }
-      ]
-    },
     "login": {
-      "title": "ACCOuNT Data Commons",
+      "title": "ACCOuNT Data Commons (QA)",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website provides a centralized, cloud-based discovery portal for African American pharmacogenomics data and aims to accelerate discovery of novel genetic variants in African Americans related to clinically actionable cardiovascular phenotypes.",
-      "contact": "If you have any questions about access or the registration process, please contact support@datacommons.io"
+      "image": "/../../../../custom/sponsors/gitops-sponsors/gene_br2",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "support@datacommons.io"
     },
+    "categorical9Colors": [
+      "#1a3057",
+      "#C62C2E",
+      "#AEEBF2",
+      "#c46566",
+      "#2e59a2",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
+    "categorical2Colors": [
+      "#1a3057",
+      "#C62C2E"
+    ],
     "footerLogos": [
       {
-        "src": "/custom/sponsors/gitops-sponsors/nimhd.jpg",
+        "src": "/src/img/sponsors/nimhd.png",
         "href": "https://www.nimhd.nih.gov",
         "alt": "National Institute on Minority Health and Health Disparities (NIMHD)"
       }
-    ],
-    "footer": {
-      "links": [
-        {
-          "text": "This project has been funded in whole or in part with Federal funds from the National Institute on Minority Health and Health Disparities, Grant Number U54 MD010723.",
-          "href": "https://precisionmedicine4all.com/about/"
-        }
-      ]
-    }
+    ]
   },
-  "requiredCerts": [],
   "featureFlags": {
     "explorer": true
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "explorerConfig": [
+    {
+      "tabTitle": "Subject",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Projects"
+        },
+        "gender": {
+          "chartType": "bar",
+          "title": "Subjects"
+        },
+        "race": {
+          "chartType": "bar",
+          "title": "Subjects"
+        },
+        "clotting": {
+          "chartType": "fullPie",
+          "title": "Clotting"
+        },
+        "bleeding": {
+          "chartType": "fullPie",
+          "title": "Bleeding"
+        },
+        "mace": {
+          "chartType": "fullPie",
+          "title": "Mace"
+        }
       },
-      "node_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      }
-    },
-    "filters": {
-      "tabs": [
+      "filters": {
+        "tabs": [
+          {
+            "title": "Studies",
+            "fields": [
+              "project_id",
+              "arm"
+            ]
+          },
+          {
+            "title": "Demographics",
+            "fields": [
+              "gender",
+              "race",
+              "age_at_index",
+              "bmi"
+            ]
+          },
+          {
+            "title": "Clinical",
+            "searchFields": [
+              "submitter_id"
+            ],
+            "fields": [
+              "clotting",
+              "bleeding",
+              "mace",
+              "indication_for_noac_treatment",
+              "indication_for_warfarin_treatment",
+              "indication_for_clopidogrel_treatment",
+              "alcohol_intensity",
+              "pack_years_smoked",
+              "therapeutic_agents",
+              "disease_type",
+              "primary_site",
+              "primary_diagnosis",
+              "composition",
+              "tissue_type"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "race",
+          "alcohol_intensity",
+          "pack_years_smoked",
+          "years_smoked",
+          "bmi",
+          "clotting",
+          "bleeding",
+          "mace",
+          "disease_type",
+          "primary_site",
+          "therapeutic_agents",
+          "primary_diagnosis",
+          "species",
+          "gender",
+          "composition",
+          "tissue_type"
+        ]
+      },
+      "buttons": [
         {
-          "title": "Subjects",
-          "fields": [
-            "project_id",
-            "arm",
-            "gender",
-            "race",
-            "age_at_index",
-            "bmi",
-            "alcohol_intensity",
-            "pack_years_smoked"
-          ]
+          "enabled": true,
+          "type": "data",
+          "title": "Download Data",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "data.json"
         },
         {
-          "title": "Clinical",
-          "fields": [
-            "clotting",
-            "bleeding",
-            "mace",
-            "indication_for_noac_treatment",
-            "indication_for_warfarin_treatment",
-            "indication_for_clopidogrel_treatment",
-            "therapeutic_agents",
-            "disease_type",
-            "primary_site",
-            "primary_diagnosis",
-            "composition",
-            "tissue_type"
-          ]
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "submitter_id",
-        "disease_type",
-        "index_date",
-        "primary_site",
-        "species",
-        "strain",
-        "ethnicity",
-        "gender",
-        "race",
-        "primary_diagnosis",
-        "alcohol_intensity",
-        "bmi",
-        "pack_years_smoked",
-        "years_smoked",
-        "composition",
-        "tissue_type",
-        "therapeutic_agents"
-      ]
-    },
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "fieldMapping": [
-        { "field": "submitter_id", "name": "Subject ID" },
-        { "field": "age_at_index", "name": "Age" },
-        { "field": "indication_for_noac_treatment", "name": "Indication For NOAC Treatment" }
       ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "_subject_id",
-        "referenceIdFieldInDataIndex": "_subject_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "data",
-        "title": "Download Data",
-        "leftIcon": "user",
-        "rightIcon": "download",
-        "fileName": "data.json"
-      },
-      {
-        "enabled": true,
-        "type": "manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "manifest.json"
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping": [
+          {
+            "field": "submitter_id",
+            "name": "Subject ID"
+          },
+          {
+            "field": "age_at_index",
+            "name": "Age"
+          },
+          {
+            "field": "indication_for_noac_treatment",
+            "name": "Indication For NOAC Treatment"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "subject_id",
+          "referenceIdFieldInDataIndex": "subject_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
       }
-    ]
+    },
+    {
+      "tabTitle": "File",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Project ID"
+        },
+        "data_category": {
+          "chartType": "stackedBar",
+          "title": "File Category"
+        },
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "searchFields": [
+              "file_name"
+            ],
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format",
+              "data_category",
+              "experimental_strategy"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "subject_submitter_id",
+          "file_name",
+          "data_format",
+          "data_type",
+          "data_category",
+          "experimental_strategy",
+          "file_size",
+          "submitter_id",
+          "object_id",
+          "md5sum"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          {
+            "field": "object_id",
+            "name": "GUID"
+          },
+          {
+            "field": "data_type",
+            "name": "File Type"
+          },
+          {
+            "field": "data_format",
+            "name": "File Format"
+          },
+          {
+            "field": "data_category",
+            "name": "File Category"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "subject",
+          "resourceIdField": "subject_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "dropdowns": {}
+    }
+  ],
+  "dataExplorerConfig": {
+    "terraExportURL": null,
+    "sevenBridgesExportURL": null
   },
   "fileExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "pie",
-        "title": "Project ID"
-      },
-      "data_category": {
-        "chartType": "stackedBar",
-        "title": "File Category"
-      },
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
-      },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format",
-            "data_category",
-            "experimental_strategy"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "subject_submitter_id",
-        "file_name",
-        "data_format",
-        "data_type",
-        "data_category",
-        "experimental_strategy",
-        "file_size",
-        "submitter_id",
-        "object_id",
-        "md5sum"
-      ]
-    },
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
-      ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "subject",
-        "resourceIdField": "_subject_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
-      },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
-    },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "file-manifest",
-        "title": "Download Manifest",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "file-manifest.json"
-      }
-    ],
-    "dropdowns": {}
+    "terraExportURL": null,
+    "sevenBridgesExportURL": null
   }
 }
