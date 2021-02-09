@@ -296,13 +296,17 @@
         "gs_bucket_prefix": "gdc-ccle"
     },
     "CMI-ASC": {
-	"aws_bucket_prefix": "gdc-cmi-asc-phs001931",
-	"gs_bucket_prefix": "gdc-cmi-asc-phs001931"
+        "aws_bucket_prefix": "gdc-cmi-asc-phs001931",
+        "gs_bucket_prefix": "gdc-cmi-asc-phs001931"
     },
     "CMI-MBC": {
-	"aws_bucket_prefix": "gdc-cmi-mbc-phs001709",
-	"gs_bucket_prefix": "gdc-cmi-mbc-phs001709"
+        "aws_bucket_prefix": "gdc-cmi-mbc-phs001709",
+        "gs_bucket_prefix": "gdc-cmi-mbc-phs001709"
     },
+    "CMI-MPC": {
+        "aws_bucket_prefix": "gdc-cmi-mpc-phs001939",
+        "gs_bucket_prefix": "gdc-cmi-mpc-phs001939"
+        },
     "CPTAC-3": {
         "aws_bucket_prefix": "gdc-cptac-phs001287",
         "gs_bucket_prefix": "gdc-cptac-phs001287"
