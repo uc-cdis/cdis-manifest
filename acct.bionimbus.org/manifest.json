@@ -35,6 +35,9 @@
   "peregrine": {
     "sidecar": "True"
   },
+  "jupyterhub": {
+    "enabled": "yes"
+  },
   "global": {
     "environment": "accountprod",
     "hostname": "acct.bionimbus.org",
