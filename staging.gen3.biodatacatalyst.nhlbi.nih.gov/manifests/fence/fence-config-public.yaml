@@ -5,3 +5,440 @@
 # For displaying a privacy policy to users, we can either link to the URL specified by
 # PRIVACY_POLICY_URL, or default to the `static/privacy_policy.md` file in fence.
 PRIVACY_POLICY_URL: 'https://biodatacatalyst.nhlbi.nih.gov/privacy/'
+S3_BUCKETS:
+  bdcatprod-data-bucket:
+    cred: bdcatprod_fence-bot
+    region: us-east-1
+  cgp-commons-public:
+    cred: '*'
+    region: us-east-1
+  topmed_workflow_testing:
+    cred: '*'
+    region: us-east-1
+  gen3-copdgene-imaging:
+    cred: fence-bot
+    region: us-east-1
+  dcp-ds-bagit-databucket-gen3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhgri-datacommons:
+    cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_access_gtex
+    region: us-east-1
+  nih-nhlbi-datacommons:
+    cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_topmed
+    region: us-east-1
+  nih-nhlbi-biodata-catalyst-1000-genomes-high-coverage:
+    cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000007-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000007-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000179-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000179-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000200-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000200-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000209-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000209-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000280-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000280-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000284-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000286-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000286-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000286-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000286-c4:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000287-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000287-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000287-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000287-c4:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000289-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000741-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000784-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000820-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000914-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000920-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000921-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000946-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000951-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000951-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000954-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000956-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000964-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000964-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000964-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000964-c4:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000972-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000974-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000974-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000988-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000993-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000993-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000997-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001001-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001001-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001013-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001013-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001024-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001032-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001040-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001062-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001062-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001074-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001143-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001161-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001180-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001189-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001207-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001211-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001211-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001215-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001217-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001218-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001237-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001237-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001238-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001293-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001293-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001345-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001359-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001368-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001368-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001368-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001387-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001402-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001412-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001412-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001416-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001416-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001252-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001598-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001012-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-combined-exchange-area:
+    cred: fence-bot
+    region: us-east-1
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
+  nih-nhlbi-biodata-catalyst-tutorial-genome-data:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000166-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000422-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000703-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000810-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs000810-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001194-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001194-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001368-c4:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001395-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001395-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001434-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001435-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001446-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001466-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001466-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001466-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001467-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001468-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001472-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001514-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001514-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001515-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001543-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001544-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001545-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001546-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001547-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001602-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001604-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001605-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001606-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001607-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001607-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001607-c3:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001607-c4:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001607-c5:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001608-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001612-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001612-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001624-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001644-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001662-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001682-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001725-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001726-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001727-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001728-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001729-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001730-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001732-c2:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001735-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-topmed-released-phs001735-c2:
+    cred: fence-bot
+    region: us-east-1
+  topmed-workflow-testing:
+    cred: fence-bot
+    region: us-east-1
