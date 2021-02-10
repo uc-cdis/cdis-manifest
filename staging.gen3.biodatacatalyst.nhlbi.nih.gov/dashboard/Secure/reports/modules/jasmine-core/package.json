@@ -1,28 +1,32 @@
 {
-  "_from": "jasmine-core",
+  "_args": [
+    [
+      "jasmine-core@3.6.0",
+      "/home/bdcatprod/cloud-automation/files/dashboard/usage-reports"
+    ]
+  ],
+  "_from": "jasmine-core@3.6.0",
   "_id": "jasmine-core@3.6.0",
   "_inBundle": false,
   "_integrity": "sha512-8uQYa7zJN8hq9z+g8z1bqCfdC8eoDAeVnM5sfqs7KHv9/ifoJ500m018fpFc7RDaO6SWCLCXwo/wPSNcdYTgcw==",
   "_location": "/jasmine-core",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "jasmine-core",
+    "raw": "jasmine-core@3.6.0",
     "name": "jasmine-core",
     "escapedName": "jasmine-core",
-    "rawSpec": "",
+    "rawSpec": "3.6.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "3.6.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.6.0.tgz",
-  "_shasum": "491f3bb23941799c353ceb7a45b38a950ebc5a20",
-  "_spec": "jasmine-core",
-  "_where": "/home/reuben/Code/PlanX/cloud-automation/files/dashboard/usage-reports",
+  "_spec": "3.6.0",
+  "_where": "/home/bdcatprod/cloud-automation/files/dashboard/usage-reports",
   "browserslist": [
     "Safari >= 8",
     "last 2 Chrome versions",
@@ -34,8 +38,6 @@
   "bugs": {
     "url": "https://github.com/jasmine/jasmine/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Official packaging of Jasmine's core files for use by Node.js projects.",
   "devDependencies": {
     "acorn": "^6.0.0",
