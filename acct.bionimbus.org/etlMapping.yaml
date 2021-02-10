@@ -1,5 +1,5 @@
 mappings:
-  - name: acct_etl
+  - name: acct.bionimbus.org_subject
     doc_type: subject
     type: aggregator
     root: subject
@@ -14,8 +14,8 @@ mappings:
       - name: arm
     flatten_props:
       - path: demographics
-        props: 
-          - name: age_at_index    
+        props:
+          - name: age_at_index
     aggregated_props:
       - name: ethnicity
         path: demographics
@@ -45,10 +45,6 @@ mappings:
         path: exposures
         src: pack_years_smoked
         fn: max
-      - name: years_smoked
-        path: exposures
-        src: years_smoked
-        fn: set
       - name: composition
         path: samples
         src: composition
@@ -68,6 +64,10 @@ mappings:
       - name: mace
         path: follow_ups
         src: mace
+        fn: set
+      - name: years_smoked
+        path: exposures
+        src: years_smoked
         fn: set
       - name: indication_for_noac_treatment
         path: diagnoses.treatments
@@ -126,7 +126,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: _subject_id
+        join_on: subject_id
         props:
           - name: data_format
             src: data_format
@@ -137,7 +137,7 @@ mappings:
           - name: data_category
             src: data_type
             fn: set
-  - name: acct_file
+  - name: acct.bionimbus.org_file
     doc_type: file
     type: collector
     root: None
@@ -156,7 +156,7 @@ mappings:
     injecting_props:
       subject:
         props:
-          - name: _subject_id
+          - name: subject_id
             src: id
             fn: set
           - name: subject_submitter_id
