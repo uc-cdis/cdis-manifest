@@ -17,3 +17,5 @@ services:
     container_name: nginx
     ports:
       - ${SERVICE_PORT}:80
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:80"]
