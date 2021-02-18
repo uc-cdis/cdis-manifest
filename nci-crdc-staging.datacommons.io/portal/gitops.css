@@ -1,0 +1,4 @@
+/* Do not show Data Dictionary infor */
+.footer__version-area > div:nth-child(1) {
+  display: none;
+}
