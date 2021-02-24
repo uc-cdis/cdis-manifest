@@ -48,9 +48,19 @@
       "title": "Generic Data Commons",
       "items": [
         {
-          "icon": "query",
+          "icon": "cohort-tools",
           "link": "/study-viewer/clinical_trials",
           "name": "Study Viewer"
+        },
+        {
+          "icon": "query",
+          "link": "/discovery",
+          "name": "Discovery"
+        },
+        {
+          "icon": "exploration",
+          "link": "/explorer",
+          "name": "Exploration"
         },
         {
           "icon": "dictionary",
@@ -58,7 +68,7 @@
           "name": "Dictionary"
         },
         {
-          "icon": "query",
+          "icon": "analysis",
           "link": "/query",
           "name": "Query"
         },
@@ -88,7 +98,7 @@
       ]
     },
     "login": {
-      "title": "Generic Data Commons",
+      "title": "preprod HEAL Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -110,7 +120,8 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": false,
-    "analysis": false
+    "analysis": false,
+    "discovery": true
   },
   "studyViewerConfig": [
     {
@@ -149,6 +160,152 @@
       ]
     }
   ],
+    "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": false
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        }
+      },
+      "authorization": {
+        "enabled": false
+      }
+    },
+    "aggregations": [
+        {
+            "name": "Studies",
+            "field": "_unique_id",
+            "type": "count"
+        }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Project Title",
+        "field": "project_title"
+      },
+      {
+        "name": "Clinical Trial Link",
+        "field": "clinical_trial_link"
+      },
+      {
+        "name": "Administering IC",
+        "field": "administering_ic"
+      },
+      {
+        "name": "Host Institution",
+        "field": "host_institution"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Description",
+      "field": "study_description",
+      "contentType": "string",
+      "includeName": false,
+      "includeIfNotAvailable": true,
+      "valueIfNotAvailable": "No description has been provided for this study."
+    },
+    "studyPageFields": {
+      "header": {
+        "field": "project_title"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "HEAL Research Initiatives",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Research Focus Area",
+              "field": "research_focus_area"
+            },
+            {
+              "name": "Research Program",
+              "field": "research_program"
+            }
+          ]
+        },
+        {
+          "groupName": "Host Institution",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Host Insitution",
+              "field": "host_institution"
+            },
+            {
+              "name": "Location",
+              "field": "location"
+            },
+            {
+              "name": "Principal Investigator",
+              "field": "principal_investigator"
+            },
+            {
+              "name": "Year Grant Awarded",
+              "field": "year_awarded"
+            }
+          ]
+        },
+        {
+          "groupName": "Clinical Trial",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Number of Subjects",
+              "field": "_num_subjects"
+            },
+            {
+              "name": "Clinical Trial Link",
+              "field": "clinical_trial_link"
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Description",
+              "field": "study_description",
+              "contentType": "paragraphs",
+              "includeName": false,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "uid": "_unique_id"
+    },
+    "tagCategories": [
+      {
+        "name": "Program",
+        "color": "rgba(129, 211, 248, 1)",
+        "display": true
+      },
+      {
+        "name": "Research",
+        "color": "rgba(236, 128, 141, 1)",
+        "display": true
+      },
+      {
+        "name": "Focus Area",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": true
+      },
+      {
+        "name": "Medication Type",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": true
+      }
+    ]
+  },
   "useArboristUI": false,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
