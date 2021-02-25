@@ -151,11 +151,10 @@
             "title": "Projects",
             "fields": [
               "project_id",
-              "project_short_name",
-              "project_dbgap_accession_number",
-              "project_dbgap_consent_text",
+              "anvil_project_id",
+              "project_dbgap_accession_number",              
               "project_dbgap_phs",
-              "project_name"
+              "project_dbgap_consent_text"
             ]
           },
           {
@@ -164,16 +163,15 @@
               "_subject_id"
             ],
             "fields": [
-              "anvil_project_id",
               "sex",
-              "age_value",
               "ancestry",
-              "disease_description",
-              "phenotype_present",
-              "phenotype_absent",
-              "disease_id",
-              "solve_state",
-              "congenital_status",
+              "age_value",
+              "disease_description", 
+              "phenotype_present", 
+              "phenotype_absent", 
+              "disease_id", 
+              "solve_state", 
+              "congenital_status", 
               "age_of_onset",
               "phenotype_group"
             ]
@@ -181,11 +179,11 @@
           {
             "title": "Sample",
             "fields": [
-              "sample_provider",
-              "tissue_affected_status",
               "tissue_type",
               "sample_type",
-              "original_material_type"
+              "original_material_type",
+              "sample_provider",
+              "tissue_affected_status"
             ]
           },
           {
