@@ -189,12 +189,12 @@
           {
             "title": "Sequencing",
             "fields": [
-              "library_prep_kit_method",
-              "exome_capture_platform",
-              "capture_region_bed_file",
-              "reference_genome_build",
-              "sequencing_assay",
-              "alignment_method",
+              "sequencing_assay", 
+              "reference_genome_build", 
+              "library_prep_kit_method", 
+              "exome_capture_platform", 
+              "capture_region_bed_file", 
+              "alignment_method", 
               "data_processing_pipeline"
             ]
           }
