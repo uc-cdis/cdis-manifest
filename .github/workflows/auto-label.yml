@@ -8,6 +8,9 @@ jobs:
     name: Auto Label
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ GITHUB_REPOSITORY }}
       - uses: banyan/auto-label@1.2
         if: github.repository == 'uc-cdis/cdis-manifest'
         env:
