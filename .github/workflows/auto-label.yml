@@ -7,9 +7,9 @@ jobs:
   auto-label:
     name: Auto Label
     runs-on: ubuntu-latest
+    if: github.repository == 'uc-cdis/cdis-manifest'
     steps:
       - uses: banyan/auto-label@1.2
         if: github.repository == 'uc-cdis/cdis-manifest'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
