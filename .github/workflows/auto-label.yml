@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          repository: ${{ env.GITHUB_REPOSITORY }}
       - uses: banyan/auto-label@1.2
-        if: github.repository == 'uc-cdis/cdis-manifest'
+        if: github.repository.fork == false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
