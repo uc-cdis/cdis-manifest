@@ -627,10 +627,7 @@
               "confirmed",
               "deaths",
               "recovered",
-              "testing",
-              "staffed_all_beds",
-              "staffed_icu_beds",
-              "estimated_full_mech_ventilators"
+              "testing"
             ]
           },
           {
@@ -638,8 +635,6 @@
             "fields": [
               "community_area",
               "state_region_description",
-              "city",
-              "provider_type",
               "reporting_org",
               "deaths_per_10000",
               "region_icu_capacity",
@@ -679,9 +674,7 @@
               "job_density",
               "jail",
               "hhinc_mean",
-              "med_hhinc",
-              "cardiovasc_death_rate",
-              "diabetes_prevalence"
+              "med_hhinc"
             ]
           }
         ]
@@ -704,10 +697,7 @@
           "deaths",
           "recovered",
           "testing",
-          "staffed_all_beds",
-          "staffed_icu_beds",
           "population_gtr_65",
-          "estimated_full_mech_ventilators",
           "estimated_full_mech_pediatric_ventilators",
           "region_icu_avail",
           "region_icu_capacity",
@@ -744,9 +734,7 @@
           "job_density",
           "jail",
           "hhinc_mean",
-          "med_hhinc",
-          "cardiovasc_death_rate",
-          "diabetes_prevalence"
+          "med_hhinc"
         ],
         "linkFields": [
           "project_url"
@@ -949,14 +937,6 @@
           {
             "field": "med_hhinc",
             "name": "Median Household Income (USD)"
-          },
-          {
-            "field": "cardiovasc_death_rate",
-            "name": "Cardiovascular Death Rate (per 100,000 people)"
-          },
-          {
-            "field": "diabetes_prevalence",
-            "name": "Diabetes Prevalence (percent)"
           },
           { 
             "field": "population_density",
