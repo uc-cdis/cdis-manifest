@@ -23,5 +23,6 @@ jobs:
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@80acb0f883348dcfd0e526288f7d27a12b9333be"
+        if: github.repository == 'uc-cdis/cdis-manifest'
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
