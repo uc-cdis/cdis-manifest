@@ -2,7 +2,7 @@
 
 `ln -s $(pwd)/.githooks/pre-commit $(pwd)/.git/hooks/pre-commit`
 
-# TL; DR
+# TL;DR
 
 Centrally manage and log configuration including which versions of which services get deployed where.  Ex:
 
