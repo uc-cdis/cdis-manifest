@@ -12,4 +12,4 @@ jobs:
       - uses: banyan/auto-label@1.2
         if: github.repository.fork == false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "${{ secrets.GEN3_RELEASE_GH_TOKEN || '' }}"
