@@ -14,13 +14,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           filterOutClosed: true
-      - run: echo "Your PR is ${prNumber} and its JSON is ${prJSON}"
+      - run: echo "Your PR is ${prNumber} and its head.repo.full_name is ${prFullRepoName}"
         if: success() && steps.PR.outputs.number
         env:
           prNumber: ${{ steps.PR.outputs.number }}
-          prJSON: ${{ steps.PR.outputs.pr }
+          prFullRepoName: ${{ fromJson(steps.PR.outputs.pr).head.repo.full_name }}
       - uses: banyan/auto-label@1.2
-        if: github.repository.fork == false
+        if: fromJson(steps.PR.outputs.pr).head.repo.full_name == 'uc-cdis/cdis-manifest'
         env:
           GITHUB_TOKEN: ${{ secrets.GEN3_RELEASE_GH_TOKEN }}
           
