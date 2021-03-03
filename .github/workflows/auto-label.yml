@@ -15,7 +15,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           filterOutClosed: true
       - run: echo "Your PR is ${prNumber} and its JSON is ${prJSON}"
-        if: success() && steps.PR.outputs.number
         env:
           prNumber: ${{ steps.PR.outputs.number }}
           prJSON: ${{ steps.PR.outputs.pr }}
