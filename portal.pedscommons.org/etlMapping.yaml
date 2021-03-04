@@ -162,6 +162,9 @@ mappings:
       - name: data_contributor_id
       - name: treatment_arm
       - name: project_id
+      - name: age_at_enrollment
+      - name: year_at_enrollment
+      - name: enrolled_status
     # flatten_props:
     #   - path: studys
     #     props:
@@ -228,12 +231,9 @@ mappings:
       # TODO TO BE REMOVED ONCE nested object are supported
       - path: studys
         props:
-          - name: age_at_enrollment
-          - name: enrolled_status
           - name: study_id
           - name: study_phase
           - name: study_type
-          - name: year_at_enrollment
         sorted_by: submitter_id, desc
       - path: clinical_events
         props:
