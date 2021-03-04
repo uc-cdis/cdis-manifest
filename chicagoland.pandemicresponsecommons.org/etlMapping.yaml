@@ -176,7 +176,7 @@ mappings:
          - name: stringency_index
         sorted_by: updated_datetime, desc
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation,project_date_collected:date_collected]
   - name: covid19_subject
     doc_type: subject
     type: aggregator
@@ -236,7 +236,7 @@ mappings:
         src: image_location
         fn: set
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
       - path: studies[study_doi:study_doi]
   - name: covid19_clinical_trials
     doc_type: clinical_trials
@@ -257,7 +257,7 @@ mappings:
       - name: technology
       - name: title
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
   - name: covid19_genomic_file
     doc_type: genomic_file
     type: collector
@@ -353,6 +353,9 @@ mappings:
             fn: set
           - name: project_availability_type
             src: availability_type
+            fn: set
+          - name: project_date_collected
+            src: date_collected
             fn: set
   - name: covid19_dataset
     doc_type: dataset
