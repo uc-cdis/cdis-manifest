@@ -149,6 +149,7 @@
           {
             "title": "Details",
             "fields": [
+              "date_collected",
               "investigator_affiliation",
               "name",
               "data_description"
@@ -161,6 +162,7 @@
         "fields": [
           "url",
           "code",
+          "date_collected",
           "investigator_affiliation",
           "name",
           "data_description"
@@ -185,6 +187,10 @@
           {
             "field": "name",
             "name": "Dataset"
+          },
+          {
+            "field": "date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -262,6 +268,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "age",
@@ -354,6 +361,10 @@
           {
             "field": "age",
             "name": "Age (years)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -386,6 +397,7 @@
         "enabled": true,
         "fields": [
           "project_url",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "title",
@@ -428,6 +440,10 @@
           },
           {  "field": "nct_number",
              "name": "NCT Number"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -498,6 +514,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -514,7 +531,8 @@
           "data_type",
           "data_format",
           "file_size",
-          "object_id"
+          "object_id",
+          "project_date_collected"
         ],
         "linkFields": [
           "project_url"
@@ -577,6 +595,10 @@
           {
             "field": "collection_date",
             "name": "Collection Date (year-month-day)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Files",
@@ -680,6 +702,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -945,6 +968,10 @@
           {
             "field": "jail",
             "name": "Incarcerated"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Locations",
