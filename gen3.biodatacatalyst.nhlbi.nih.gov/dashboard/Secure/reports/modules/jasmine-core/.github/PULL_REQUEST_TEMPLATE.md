@@ -27,4 +27,3 @@
 - [ ] I have read the **CONTRIBUTING** document.
 - [ ] I have added tests to cover my changes.
 - [ ] All new and existing tests passed.
-
