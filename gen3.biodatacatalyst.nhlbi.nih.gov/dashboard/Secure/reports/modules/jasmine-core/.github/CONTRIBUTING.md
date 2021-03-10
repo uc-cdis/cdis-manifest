@@ -124,4 +124,3 @@ The easiest way to run the tests in **Internet Explorer** is to run a VM that ha
     * When we accept your pull request, we will generate these files as a separate commit and merge the entire branch into main
 
 Note that we use Travis for Continuous Integration. We only accept green pull requests.
-
