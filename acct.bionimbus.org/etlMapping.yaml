@@ -49,6 +49,10 @@ mappings:
         path: samples
         src: composition
         fn: set
+      - name: drug_treatment
+        path: samples
+        src: drug_treatment
+        fn: set
       - name: tissue_type
         path: samples
         src: tissue_type
