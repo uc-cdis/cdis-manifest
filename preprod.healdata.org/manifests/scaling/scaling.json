@@ -1,26 +1,57 @@
 {
   "arborist": {
-    "strategy": "auto",
     "min": 1,
-    "max": 1
+    "max": 1,
+    "strategy": "auto"
+  },
+  "dashboard": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
+  },
+  "portal": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
   },
   "fence": {
-    "strategy": "auto",
     "min": 1,
-    "max": 1
+    "max": 1,
+    "strategy": "auto"
+  },
+  "presigned-url-fence": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
   },
   "indexd": {
-    "strategy": "auto",
     "min": 1,
-    "max": 1
+    "max": 1,
+    "strategy": "auto"
+  },
+  "metadata": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
+  },
+  "peregrine": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
   },
   "revproxy": {
-    "strategy": "auto",
     "min": 1,
-    "max": 1
+    "max": 1,
+    "strategy": "auto"
   },
   "sheepdog": {
-    "strategy": "pin",
-    "num": 2
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
+  },
+  "guppy": {
+    "min": 1,
+    "max": 1,
+    "strategy": "auto"
   }
 }
