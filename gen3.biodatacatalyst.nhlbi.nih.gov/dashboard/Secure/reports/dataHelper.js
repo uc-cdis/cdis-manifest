@@ -485,4 +485,3 @@ export function fetchRecentData(reportType, reportGroup='all', dateRange=10) {
       }
     );
 }
-
