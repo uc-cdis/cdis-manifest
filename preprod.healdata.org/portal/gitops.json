@@ -6,18 +6,18 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "HEAL QA Data Commons Portal",
+    "appName": "HEAL Preprod Data Commons Portal",
     "index": {
       "introduction": {
         "heading": "Data Commons",
-        "text": "The HEAL QA Data Commons supports the management, analysis and sharing of data for the research community.",
+        "text": "The HEAL Preprod Data Commons supports the management, analysis and sharing of data for the research community.",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The HEAL QA Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "The HEAL Preprod Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
         },
@@ -45,17 +45,12 @@
       ]
     },
     "navigation": {
-      "title": "HEAL QA Data Commons",
+      "title": "HEAL Preprod Data Commons",
       "items": [
         {
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery"
-        },
-        {
-          "icon": "exploration",
-          "link": "/explorer",
-          "name": "Exploration"
         },
         {
           "icon": "dictionary",
