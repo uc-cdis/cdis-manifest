@@ -5,14 +5,12 @@
       "graphql": "_project_count",
       "name": "Project",
       "plural": "Projects"
-    }
-  ],
+    }],
     "chartCounts": [{
       "graphql": "_project_count",
       "name": "Project",
       "plural": "Projects"
-    }
-  ],
+    }],
     "projectDetails": "boardCounts"
   },
   "components": {
@@ -108,12 +106,40 @@
       "text": "This website supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
-    }
+    },
+    "categorical9Colors": [
+      "#99286B",
+      "#402264",
+      "#A1242E",
+      "#CF3626",
+      "#C2BACD",
+      "#E0C4D2",
+      "#E4BEB8",
+      "#F5D1D0",
+      "#F2F2F2"
+    ],
+    "categorical2Colors": [
+      "#99286B",
+      "#402264"
+    ],
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      }
+    ]
   },
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
-    "analysis": false
+    "analysis": false,
+    "discovery": true
   },
   "explorerConfig": [
     {
@@ -299,6 +325,192 @@
       }
     }
   ],
+  "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": false
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        }
+      },
+      "authorization": {
+        "enabled": false
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Studies",
+        "field": "project_number",
+        "type": "count"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Project Title",
+        "field": "project_title"
+      },
+      {
+        "name": "Research Focus Area",
+        "field": "research_focus_area"
+      },
+      {
+        "name": "Research Program",
+        "field": "research_program"
+      },
+      {
+        "name": "Administering IC(s)",
+        "field": "administering_ic"
+      },
+      {
+        "name": "Institution(s)",
+        "field": "institutions"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Summary",
+      "field": "summary",
+      "contentType": "string",
+      "includeName": false,
+      "includeIfNotAvailable": true,
+      "valueIfNotAvailable": "No summary has been provided for this study."
+    },
+    "studyPageFields": {
+      "header": {
+        "field": "project_title"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "HEAL Research Initiatives",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Project Number",
+              "field": "project_number"
+            },
+            {
+              "name": "Research Focus Area",
+              "field": "research_focus_area"
+            },
+            {
+              "name": "Research Program",
+              "field": "research_program"
+            },
+            {
+              "name": "Research Question",
+              "field": "research_question"
+            }
+          ]
+        },
+        {
+          "groupName": "Host Institution",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Institution(s)",
+              "field": "institutions"
+            },
+            {
+              "name": "Location",
+              "field": "location"
+            },
+            {
+              "name": "Investigator(s)",
+              "field": "investigators"
+            },
+            {
+              "name": "Year Grant Awarded",
+              "field": "year_awarded"
+            }
+          ]
+        },
+        {
+          "groupName": "Clinical Trial",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Study Type",
+              "field": "study_type"
+            },
+            {
+              "name": "Study Name",
+              "field": "study_name"
+            },
+            {
+              "name": "Study Description",
+              "field": "study_description"
+            },
+            {
+              "name": "Number of Subjects",
+              "field": "subjects"
+            },
+            {
+              "name": "Number of Sites",
+              "field": "sites"
+            },
+            {
+              "name": "Clinical Trial Link",
+              "field": "clinical_trial_link"
+            },
+            {
+              "name": "Protocol Name",
+              "field": "protocol_name"
+            },
+            {
+              "name": "Dataset Description",
+              "field": "dataset_description"
+            },
+            {
+              "name": "Dataset Category",
+              "field": "dataset_category"
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Summary",
+              "field": "summary",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "No summary has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "uid": "project_number"
+    },
+    "tagCategories": [
+      {
+        "name": "Enhancing Pain Management",
+        "color": "rgba(64, 34, 100, 1)",
+        "display": true
+      },
+      {
+        "name": "Improving Treatments for Opioid Misuse and Addiction",
+        "color": "rgba(153, 40, 107, 1)",
+        "display": true
+      },
+      {
+        "name": "Demographics",
+        "color": "rgba(161, 36, 46, 1)",
+        "display": true
+      },
+      {
+        "name": "Other",
+        "color": "rgba(207, 54, 38, 1)",
+        "display": true
+      }
+    ]
+  },
   "useArboristUI": false,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
