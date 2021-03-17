@@ -1,8 +1,18 @@
 {
   "gaTrackingId": "UA-119127212-3",
   "graphql": {
-    "boardCounts": [],
-    "chartCounts": [],
+    "boardCounts": [{
+      "graphql": "_project_count",
+      "name": "Project",
+      "plural": "Projects"
+    }
+  ],
+    "chartCounts": [{
+      "graphql": "_project_count",
+      "name": "Project",
+      "plural": "Projects"
+    }
+  ],
     "projectDetails": "boardCounts"
   },
   "components": {
