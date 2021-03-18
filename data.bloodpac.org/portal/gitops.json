@@ -292,12 +292,6 @@
               "rightIcon": "download"
             }
           ],
-          "arrangerConfig": {
-            "projectId": "search",
-            "graphqlField": "study",
-            "index": "",
-            "nodeCountField": "project_id"
-          },
           "guppyConfig": {
             "dataType": "study",
             "nodeCountTitle": "Studies",
@@ -404,12 +398,6 @@
             "rightIcon": "download"
           }
         ],
-        "arrangerConfig": {
-          "projectId": "search",
-          "graphqlField": "case",
-          "index": "",
-          "nodeCountField": "project_id"
-        },
         "guppyConfig": {
           "dataType": "case",
           "nodeCountTitle": "Cases",
@@ -553,12 +541,6 @@
               "rightIcon": "download"
             }
           ],
-          "arrangerConfig": {
-            "projectId": "search",
-            "graphqlField": "biospecimen",
-            "index": "",
-            "nodeCountField": "project_id"
-          },
           "guppyConfig": {
             "dataType": "biospecimen",
             "nodeCountTitle": "Biospecimens",
@@ -674,12 +656,6 @@
                 "rightIcon": "download"
               }
             ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "aliquot",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
             "guppyConfig": {
               "dataType": "aliquot",
               "nodeCountTitle": "Aliquots",
@@ -796,12 +772,6 @@
                 "rightIcon": "download"
               }
             ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "read_group",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
             "guppyConfig": {
               "dataType": "read_group",
               "nodeCountTitle": "Read Groups",
@@ -993,12 +963,6 @@
                 "rightIcon": "download"
               }
             ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "case",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
             "guppyConfig": {
               "dataType": "medical_history",
               "nodeCountTitle": "Medical History",
