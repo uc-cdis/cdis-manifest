@@ -308,6 +308,26 @@ mappings:
           - name: dosage
           - name: dosage_units
         sorted_by: updated_datetime, desc
+  - name: bloodpac_publication
+    doc_type: publication
+    type: aggregator
+    root: publication
+    props:
+      - name: project_id
+      - name: accession_id
+      - name: title
+      - name: abstract
+      - name: authors
+      - name: author_affiliations
+      - name: journal
+      - name: publication_url
+      - name: data_availability_date
+      - name: data_description
+      - name: sponsors
+      - name: study_codes
+      - name: condition
+      - name: study_type
+      - name: websites
   - name: bloodpac_file
     doc_type: file
     type: collector
