@@ -15,18 +15,11 @@
       },
       "buttons": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The HEAL Preprod Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
-        },
-        {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
-          "link": "/query",
-          "label": "Query data"
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover Study Metadata",
+          "link": "/discovery",
+          "label": "Discover Metadata"
         },
         {
           "name": "Submit Data",
@@ -41,24 +34,9 @@
       "title": "HEAL Preprod Data Commons",
       "items": [
         {
-          "icon": "cohort-tools",
-          "link": "/study-viewer/clinical_trials",
-          "name": "Study Viewer"
-        },
-        {
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery"
-        },
-        {
-          "icon": "dictionary",
-          "link": "/DD",
-          "name": "Dictionary"
-        },
-        {
-          "icon": "analysis",
-          "link": "/query",
-          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -127,43 +105,6 @@
     "analysis": false,
     "discovery": true
   },
-  "studyViewerConfig": [
-    {
-      "dataType": "clinical_trials",
-      "title": "Studies",
-      "titleField": "title",
-      "rowAccessor": "cmc_unique_id",
-      "listItemConfig": {
-        "blockFields": ["brief_summary"],
-        "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
-      },
-      "singleItemConfig": {
-        "blockFields": ["description"],
-        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
-      },
-      "fieldMapping": [
-        { "field": "brief_summary", "name": "Brief Study Description" },
-        { "field": "description", "name": "Detailed Description"},
-        { "field": "creator", "name": "Sponsor"},
-        { "field": "category", "name": "Study Type"},
-        { "field": "clinical_trial_website", "name": "Websites"},
-        { "field": "nct_number", "name": "NCT Number"},
-        { "field": "publications", "name": "Study Publications"},
-        { "field": "priniciple_investigator", "name": "Principle Investigator"},
-        { "field": "publisher", "name": "Administering IC"},
-        { "field": "source", "name": "Research Program"}
-      ],
-      "fileDataType": "ctfile",
-      "docDataType": "oafile",
-      "openMode": "open-first",
-      "defaultOrderBy": ["title", "asc"],
-      "buttons": [
-        {
-          "type": "download"
-        }
-      ]
-    }
-  ],
   "discoveryConfig": {
     "features": {
       "pageTitle": {
@@ -350,7 +291,7 @@
       }
     ]
   },
-  "useArboristUI": false,
+  "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "componentToResourceMapping": {}
