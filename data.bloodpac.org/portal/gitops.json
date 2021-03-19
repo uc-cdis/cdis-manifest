@@ -119,6 +119,12 @@
     "navigation": {
       "title": "BloodPAC Data Commons",
       "items": [{
+          "icon": "query",
+          "link": "/discovery",
+          "color": "#a2a2a2",
+          "name": "Discovery"
+        },
+        {
           "icon": "exploration",
           "link": "/explorer",
           "color": "#a2a2a2",
@@ -126,7 +132,7 @@
         },
         {
           "icon": "workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "color": "#a2a2a2",
           "name": "Workspace"
         },
@@ -192,7 +198,8 @@
   "featureFlags": {
     "explorer": true,
     "analysis": true,
-    "explorerPublic": true
+    "explorerPublic": true,
+    "discovery": true
   },
   "analysisTools": [],
   "explorerConfig": [{
@@ -1038,11 +1045,10 @@
       }
     },
     "aggregations": [{
-        "name": "Publications",
-        "field": "accession_id",
-        "type": "count"
-      }
-    ],
+      "name": "Publications",
+      "field": "accession_id",
+      "type": "count"
+    }],
     "tagSelector": {
       "title": "Tags by category"
     },
@@ -1121,62 +1127,61 @@
       "fieldsToShow": [{
           "groupName": "Publication Identifiers",
           "includeName": false,
-          "fields": [
-          {
-            "name": "Authors",
-            "field": "authors",
-            "contentType": "string"
-          },
-          {
-            "name": "Affiliations",
-            "field": "author_affiliations",
-            "contentType": "string"
-          },
-          {
-            "name": "Journal",
-            "field": "journal",
-            "contentType": "string"
-          },
-          {
-            "name": "Publication URL",
-            "field": "publication_url",
-            "contentType": "string"
-          },
-          {
-            "name": "Data Availability Date",
-            "field": "data_availability_date",
-            "contentType": "string"
-          },
-          {
-            "name": "Brief Description of Data Available",
-            "field": "data_description",
-            "contentType": "string"
-          },
-          {
-            "name": "Sponsors/Acknowledgements",
-            "field": "sponsors",
-            "contentType": "string"
-          },
-          {
-            "name": "Study Number/Codes",
-            "field": "study_codes",
-            "contentType": "string"
-          },
-          {
-            "name": "Condition",
-            "field": "condition",
-            "contentType": "string"
-          },
-          {
-            "name": "Study Type",
-            "field": "study_type",
-            "contentType": "string"
-          },
-          {
-            "name": "Websites",
-            "field": "websites",
-            "contentType": "string"
-          }
+          "fields": [{
+              "name": "Authors",
+              "field": "authors",
+              "contentType": "string"
+            },
+            {
+              "name": "Affiliations",
+              "field": "author_affiliations",
+              "contentType": "string"
+            },
+            {
+              "name": "Journal",
+              "field": "journal",
+              "contentType": "string"
+            },
+            {
+              "name": "Publication URL",
+              "field": "publication_url",
+              "contentType": "string"
+            },
+            {
+              "name": "Data Availability Date",
+              "field": "data_availability_date",
+              "contentType": "string"
+            },
+            {
+              "name": "Brief Description of Data Available",
+              "field": "data_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Sponsors/Acknowledgements",
+              "field": "sponsors",
+              "contentType": "string"
+            },
+            {
+              "name": "Study Number/Codes",
+              "field": "study_codes",
+              "contentType": "string"
+            },
+            {
+              "name": "Condition",
+              "field": "condition",
+              "contentType": "string"
+            },
+            {
+              "name": "Study Type",
+              "field": "study_type",
+              "contentType": "string"
+            },
+            {
+              "name": "Websites",
+              "field": "websites",
+              "contentType": "string"
+            }
           ]
         },
         {
@@ -1196,10 +1201,9 @@
       "uid": "accession_id"
     },
     "tagCategories": [{
-        "name": "Accession ID",
-        "color": "rgba(129, 211, 248, 1)",
-        "display": true
-      }
-    ]
+      "name": "Accession ID",
+      "color": "rgba(129, 211, 248, 1)",
+      "display": true
+    }]
   }
 }
