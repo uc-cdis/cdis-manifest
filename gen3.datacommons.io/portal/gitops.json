@@ -177,7 +177,7 @@
     "aggregations": [
         {
             "name": "Studies",
-            "field": "project_number",
+            "field": "accession_number",
             "type": "count"
         }
     ],
