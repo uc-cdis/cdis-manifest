@@ -1046,7 +1046,7 @@
     },
     "aggregations": [{
       "name": "Publications",
-      "field": "accession_id",
+      "field": "_publication_id",
       "type": "count"
     }],
     "tagSelector": {
@@ -1078,38 +1078,13 @@
         "contentType": "string"
       },
       {
-        "name": "Data Availability Date",
-        "field": "data_availability_date",
-        "contentType": "string"
-      },
-      {
         "name": "Brief Description of Data Available",
         "field": "data_description",
         "contentType": "string"
       },
       {
-        "name": "Sponsors/Acknowledgements",
-        "field": "sponsors",
-        "contentType": "string"
-      },
-      {
-        "name": "Study Number/Codes",
-        "field": "study_codes",
-        "contentType": "string"
-      },
-      {
         "name": "Condition",
         "field": "condition",
-        "contentType": "string"
-      },
-      {
-        "name": "Study Type",
-        "field": "study_type",
-        "contentType": "string"
-      },
-      {
-        "name": "Websites",
-        "field": "websites",
         "contentType": "string"
       }
     ],
@@ -1198,10 +1173,10 @@
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
       "authzField": "auth_resource_path",
-      "uid": "accession_id"
+      "uid": "_publication_id"
     },
     "tagCategories": [{
-      "name": "Accession ID",
+      "name": "Condition",
       "color": "rgba(129, 211, 248, 1)",
       "display": true
     }]
