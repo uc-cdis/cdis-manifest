@@ -49,7 +49,7 @@
     {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
-      "serviceAccountName": "jobs-qa-dcp-planx-pla-net",
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/manifest-indexing:integration202103",
@@ -89,7 +89,7 @@
     {
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
-      "serviceAccountName": "jobs-qa-dcp-planx-pla-net",
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/download-indexd-manifest:integration202103",
