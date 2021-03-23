@@ -29,8 +29,8 @@
   },
   "global": {
     "environment": "vhdcprod",
-    "hostname": "va.datacommons.io",
-    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/b9fe7c65-75be-4e2c-9abe-ffdce1c5ff33",
+    "hostname": "va.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/393e9cca-a115-4748-9ce7-928fc666b7f0",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-vhdcprod-gen3",
