@@ -1046,73 +1046,77 @@
     },
     "aggregations": [{
       "name": "Publications",
-      "field": "accession_id",
+      "field": "_publication_id",
       "type": "count"
     }],
     "tagSelector": {
       "title": "Tags by category"
     },
     "studyColumns": [{
-        "name": "Title",
-        "field": "title",
-        "contentType": "string"
-      },
-      {
-        "name": "Authors",
-        "field": "authors",
-        "contentType": "string"
-      },
-      {
-        "name": "Affiliations",
-        "field": "author_affiliations",
-        "contentType": "string"
-      },
-      {
-        "name": "Journal",
-        "field": "journal",
-        "contentType": "string"
-      },
-      {
-        "name": "Publication URL",
-        "field": "publication_url",
-        "contentType": "string"
-      },
-      {
-        "name": "Data Availability Date",
-        "field": "data_availability_date",
-        "contentType": "string"
-      },
-      {
-        "name": "Brief Description of Data Available",
-        "field": "data_description",
-        "contentType": "string"
-      },
-      {
-        "name": "Sponsors/Acknowledgements",
-        "field": "sponsors",
-        "contentType": "string"
-      },
-      {
-        "name": "Study Number/Codes",
-        "field": "study_codes",
-        "contentType": "string"
-      },
-      {
-        "name": "Condition",
-        "field": "condition",
-        "contentType": "string"
-      },
-      {
-        "name": "Study Type",
-        "field": "study_type",
-        "contentType": "string"
-      },
-      {
-        "name": "Websites",
-        "field": "websites",
-        "contentType": "string"
-      }
-    ],
+      "name": "Title",
+      "field": "title",
+      "contentType": "string",
+      "width": 200
+    },
+    {
+      "name": "Authors",
+      "field": "authors",
+      "contentType": "string",
+      "width": 300
+    },
+    {
+      "name": "Affiliations",
+      "field": "author_affiliations",
+      "contentType": "string",
+      "ellipsis": true
+    },
+    {
+      "name": "Journal",
+      "field": "journal",
+      "contentType": "string"
+    },
+    {
+      "name": "Publication URL",
+      "field": "publication_url",
+      "contentType": "string"
+    },
+    {
+      "name": "Data Availability Date",
+      "field": "data_availability_date",
+      "contentType": "string"
+    },
+    {
+      "name": "Brief Description of Data Available",
+      "field": "data_description",
+      "contentType": "string",
+      "ellipsis": true
+    },
+    {
+      "name": "Sponsors/Acknowledgements",
+      "field": "sponsors",
+      "contentType": "string"
+    },
+    {
+      "name": "Study Number/Codes",
+      "field": "study_codes",
+      "contentType": "string"
+    },
+    {
+      "name": "Condition",
+      "field": "condition",
+      "contentType": "string"
+    },
+    {
+      "name": "Study Type",
+      "field": "study_type",
+      "contentType": "string"
+    },
+    {
+      "name": "Websites",
+      "field": "websites",
+      "contentType": "string"
+    }
+  ],
     "studyPreviewField": {
       "name": "Abstract",
       "field": "abstract",
@@ -1198,10 +1202,10 @@
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
       "authzField": "auth_resource_path",
-      "uid": "accession_id"
+      "uid": "_publication_id"
     },
     "tagCategories": [{
-      "name": "Accession ID",
+      "name": "Condition",
       "color": "rgba(129, 211, 248, 1)",
       "display": true
     }]
