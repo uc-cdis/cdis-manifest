@@ -261,6 +261,60 @@
               "valueIfNotAvailable": "No summary has been provided for this study."
             }
           ]
+        },
+        {
+          "groupName": "Datasets",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Dataset 1 - Title",
+              "field": "dataset_1_title"
+            },
+            {
+              "name": "Dataset 1 - Description",
+              "field": "dataset_1_description"
+            },
+            {
+              "name": "Dataset 1 - Type",
+              "field": "dataset_1_type"
+            },
+            {
+              "name": "Dataset 2 - Title",
+              "field": "dataset_2_title"
+            },
+            {
+              "name": "Dataset 2 - Description",
+              "field": "dataset_2_description"
+            },
+            {
+              "name": "Dataset 2 - Type",
+              "field": "dataset_2_type"
+            },
+            {
+              "name": "Dataset 3 - Title",
+              "field": "dataset_3_title"
+            },
+            {
+              "name": "Dataset 3 - Description",
+              "field": "dataset_3_description"
+            },
+            {
+              "name": "Dataset 3 - Type",
+              "field": "dataset_3_type"
+            },
+            {
+              "name": "Dataset 4 - Title",
+              "field": "dataset_4_title"
+            },
+            {
+              "name": "Dataset 4 - Description",
+              "field": "dataset_4_description"
+            },
+            {
+              "name": "Dataset 4 - Type",
+              "field": "dataset_4_type"
+            }
+          ]
         }
       ]
     },
