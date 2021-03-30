@@ -6,11 +6,11 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "HEAL Preprod Data Commons Portal",
+    "appName": "HEAL QA Data Commons Portal",
     "index": {
       "introduction": {
         "heading": "Data Commons",
-        "text": "The HEAL Preprod Data Commons supports the management, analysis and sharing of data for the research community.",
+        "text": "The HEAL QA Data Commons supports the management, analysis and sharing of data for the research community.",
         "link": "/submission"
       },
       "buttons": [
@@ -31,7 +31,7 @@
       ]
     },
     "navigation": {
-      "title": "HEAL Preprod Data Commons",
+      "title": "HEAL QA Data Commons",
       "items": [
         {
           "icon": "query",
@@ -107,6 +107,15 @@
   },
   "discoveryConfig": {
     "features": {
+      "exportToWorkspaceBETA": {
+        "enabled": true,
+        "manifestFieldName": "_file_manifest",
+        "enableDownloadManifest": true,
+        "documentationLinks": {
+          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+        }
+      },
       "pageTitle": {
         "enabled": false
       },
@@ -259,6 +268,60 @@
               "includeName": true,
               "includeIfNotAvailable": true,
               "valueIfNotAvailable": "No summary has been provided for this study."
+            }
+          ]
+        },
+        {
+          "groupName": "Datasets",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Dataset 1 - Title",
+              "field": "dataset_1_title"
+            },
+            {
+              "name": "Dataset 1 - Description",
+              "field": "dataset_1_description"
+            },
+            {
+              "name": "Dataset 1 - Type",
+              "field": "dataset_1_type"
+            },
+            {
+              "name": "Dataset 2 - Title",
+              "field": "dataset_2_title"
+            },
+            {
+              "name": "Dataset 2 - Description",
+              "field": "dataset_2_description"
+            },
+            {
+              "name": "Dataset 2 - Type",
+              "field": "dataset_2_type"
+            },
+            {
+              "name": "Dataset 3 - Title",
+              "field": "dataset_3_title"
+            },
+            {
+              "name": "Dataset 3 - Description",
+              "field": "dataset_3_description"
+            },
+            {
+              "name": "Dataset 3 - Type",
+              "field": "dataset_3_type"
+            },
+            {
+              "name": "Dataset 4 - Title",
+              "field": "dataset_4_title"
+            },
+            {
+              "name": "Dataset 4 - Description",
+              "field": "dataset_4_description"
+            },
+            {
+              "name": "Dataset 4 - Type",
+              "field": "dataset_4_type"
             }
           ]
         }
