@@ -1,5 +1,5 @@
 mappings:
-  - name: covid19
+  - name: chicagoland.pandemicresponsecommons.org_location
     doc_type: location
     type: aggregator
     root: summary_location
@@ -12,6 +12,10 @@ mappings:
           - Korea, South: 'South Korea'
           - Taiwan*: 'Taiwan'
       - name: community_area
+        value_mappings:
+          - GREATER GRAND CROSSING: 'Grand Crossing'
+          - SOUTH LAWNDALE (LITTLE VILLAGE): 'Little Village'
+          - WEST ENGLEWOOD: 'W.Englewood'
       - name: province_state
         value_mappings:
           - AL: 'Alabama'
@@ -149,45 +153,45 @@ mappings:
         sorted_by: updated_datetime, desc
       - path: summary_socio_demographics
         props:
-         - name: population
-         - name: population_gtr_65
-         - name: population_density
-         - name: share_asian
-         - name: share_black
-         - name: share_hisp
-         - name: share_white
-         - name: college_degree
-         - name: graduate_degree
-         - name: completed_high_school
-         - name: employment
-         - name: job_density
-         - name: extreme_poverty
-         - name: jail
-         - name: hhinc_mean
-         - name: med_hhinc
-         - name: gdp_per_capita
-         - name: life_expectancy
-         - name: grocery_and_pharmacy_percent_change_from_baseline
-         - name: parks_percent_change_from_baseline
-         - name: retail_and_recreation_percent_change_from_baseline
-         - name: transit_stations_percent_change_from_baseline
-         - name: workplaces_percent_change_from_baseline
-         - name: handwashing_facilities
-         - name: stringency_index
+          - name: population
+          - name: population_gtr_65
+          - name: population_density
+          - name: share_asian
+          - name: share_black
+          - name: share_hisp
+          - name: share_white
+          - name: college_degree
+          - name: graduate_degree
+          - name: completed_high_school
+          - name: employment
+          - name: job_density
+          - name: extreme_poverty
+          - name: jail
+          - name: hhinc_mean
+          - name: med_hhinc
+          - name: gdp_per_capita
+          - name: life_expectancy
+          - name: grocery_and_pharmacy_percent_change_from_baseline
+          - name: parks_percent_change_from_baseline
+          - name: retail_and_recreation_percent_change_from_baseline
+          - name: transit_stations_percent_change_from_baseline
+          - name: workplaces_percent_change_from_baseline
+          - name: handwashing_facilities
+          - name: stringency_index
         sorted_by: updated_datetime, desc
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation,project_date_collected:date_collected]
-  - name: covid19_subject
+  - name: chicagoland.pandemicresponsecommons.org_subject
     doc_type: subject
     type: aggregator
     root: subject
     props:
       - name: project_id
       - name: vital_status
-      - name: covid_19_status  
-      - name: date_confirmation 
+      - name: covid_19_status
+      - name: date_confirmation
       - name: travel_history_location
-      - name: infected_by  
+      - name: infected_by
     flatten_props:
       - path: demographics
         props:
@@ -217,7 +221,7 @@ mappings:
           - name: hospital
           - name: pneumonia_type
           - name: ventilator_status
-        sorted_by: updated_datetime, desc          
+        sorted_by: updated_datetime, desc
       - path: follow_ups
         props:
           - name: extubated
@@ -238,7 +242,7 @@ mappings:
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
       - path: studies[study_doi:study_doi]
-  - name: covid19_clinical_trials
+  - name: chicagoland.pandemicresponsecommons.org_clinical_trials
     doc_type: clinical_trials
     type: aggregator
     root: clinical_trials
@@ -258,7 +262,7 @@ mappings:
       - name: title
     parent_props:
       - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
-  - name: covid19_genomic_file
+  - name: chicagoland.pandemicresponsecommons.org_genomic_file
     doc_type: genomic_file
     type: collector
     root: None
@@ -357,7 +361,7 @@ mappings:
           - name: project_date_collected
             src: date_collected
             fn: set
-  - name: covid19_dataset
+  - name: chicagoland.pandemicresponsecommons.org_dataset
     doc_type: dataset
     type: aggregator
     root: project
