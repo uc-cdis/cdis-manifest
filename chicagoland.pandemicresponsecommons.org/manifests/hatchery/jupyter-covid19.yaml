@@ -6,9 +6,9 @@ services:
          - ${DATA_VOLUME}:/data
          - ${USER_VOLUME}:/home/jovyan/pd
       environment:
-        - NAMESPACE=default
-        - HOSTNAME=chicagoland.pandemicresponsecommons.org
-        - FRAME_ANCESTORS=https://chicagoland.pandemicresponsecommons.org
+        - NAMESPACE=qa-covid19
+        - HOSTNAME=qa-covid19.planx-pla.net
+        - FRAME_ANCESTORS=https://qa-covid19.planx-pla.net
       entrypoint:
         - "start-notebook.sh"
       command:
@@ -26,8 +26,8 @@ services:
       deploy:
         resources:
           limits:
-            cpus: '4.0'
-            memory: 16Gi
+            cpus: '1.00'
+            memory: 1024M
           reservations:
             cpus: '0.5'
             memory: 512M
