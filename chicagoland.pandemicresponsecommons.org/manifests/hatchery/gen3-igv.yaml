@@ -4,7 +4,7 @@ version: "3.5"
 services:
   gen3-igv:
     container_name: gen3-igv
-    image: quay.io/cdis/gen3-igv:master
+    image: quay.io/cdis/gen3-igv:v1.2.7_gen3
     restart: on-failure
     environment:
       - PROTOCOL=https
@@ -13,7 +13,7 @@ services:
     volumes:
       - ${DATA_VOLUME}:/data
   nginx-igv:
-    image: "quay.io/cdis/nginx-igv:master"
+    image: "quay.io/cdis/nginx-igv:jupyter-covid1.1.12"
     container_name: nginx
     ports:
       - ${SERVICE_PORT}:80
