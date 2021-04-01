@@ -234,6 +234,7 @@
               "clotting",
               "bleeding",
               "mace",
+              "drug_treatment",
               "indication_for_noac_treatment",
               "indication_for_warfarin_treatment",
               "indication_for_clopidogrel_treatment",
@@ -307,6 +308,10 @@
           {
             "field": "age_at_index",
             "name": "Age"
+          },
+          {
+            "field": "mace",
+            "name": "MACE"
           },
           {
             "field": "indication_for_noac_treatment",

@@ -7,7 +7,7 @@
 
   --g3-color__bg-cloud: #F5F5F5;
   --g3-color__bg-coal: #4A4A4A;
-  --g3-color__gray: #606060;
+  --g3-color__gray: #525252;
   --g3-color__lightgray: #9B9B9B;
   --g3-color__smoke: #D1D1D1;
   --g3-color__silver: #E7E7E7;
@@ -50,7 +50,6 @@
 
 /* Buttons */
 
-.data-dictionary__switch-button--active,
 .popup__title {
   background-color: var(--primary-color);
 }
@@ -121,3 +120,41 @@ tspan.special-number,
 .data-explorer__charts .special-number {
   fill: var(--secondary-color);
 }
+
+/* Workspace */
+
+.resource-browser__title,
+.workspace__title {
+  /* Make it look like an h1 */
+  font-size: 32px;
+  letter-spacing: 0;
+
+  margin: 20px 10px 16px;
+  border-bottom: solid var(--primary-color) 2px;
+}
+.workspace__description {
+  text-align: justify;
+  padding: 10px 10px 0;
+}
+.workspace__description dt {
+  font-weight: bold;
+}
+.workspace__description dd {
+  line-height: 1em;
+}
+.workspace__options {
+  padding: 20px 0;
+}
+
+/* Notebook Browser */
+
+.resource-browser {
+  align-items: normal;
+}
+.resource-browser__title {
+  margin: 0 10px 16px;
+  padding: 0;
+}
+.resource-browser__description {
+  padding: 10px;
+} 

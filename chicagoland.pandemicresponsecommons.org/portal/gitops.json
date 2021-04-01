@@ -149,6 +149,7 @@
           {
             "title": "Details",
             "fields": [
+              "date_collected",
               "investigator_affiliation",
               "name",
               "data_description"
@@ -161,6 +162,7 @@
         "fields": [
           "url",
           "code",
+          "date_collected",
           "investigator_affiliation",
           "name",
           "data_description"
@@ -185,6 +187,10 @@
           {
             "field": "name",
             "name": "Dataset"
+          },
+          {
+            "field": "date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -262,6 +268,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "age",
@@ -354,6 +361,10 @@
           {
             "field": "age",
             "name": "Age (years)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -386,6 +397,7 @@
         "enabled": true,
         "fields": [
           "project_url",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "title",
@@ -428,6 +440,10 @@
           },
           {  "field": "nct_number",
              "name": "NCT Number"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -498,6 +514,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -514,7 +531,8 @@
           "data_type",
           "data_format",
           "file_size",
-          "object_id"
+          "object_id",
+          "project_date_collected"
         ],
         "linkFields": [
           "project_url"
@@ -577,6 +595,10 @@
           {
             "field": "collection_date",
             "name": "Collection Date (year-month-day)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Files",
@@ -680,6 +702,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -945,6 +968,10 @@
           {
             "field": "jail",
             "name": "Incarcerated"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Locations",
@@ -1021,9 +1048,17 @@
         "description": "This notebook is a replication of the DarkCovidNet model to classify COVID-19 x-ray images from \"No finding\" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper.",
         "link": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.html",
         "imageUrl": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.png"
+      },
+      {
+        "title": "Google Mobility Data Visualization",
+        "description": "In this notebook, we demonstrate how to query the google mobility data using the BigQuery API client python library, and visualize the mobility changes over time across the United States since February 2020.",
+        "link": "/dashboard/Public/notebooks/google_mobility.html",
+        "imageUrl": "/dashboard/Public/notebooks/google_mobility.png"
       }
     ]
   },
+  "workspacePageTitle": "Welcome to the Gen3 Workspace",
+  "workspacePageDescription": "<dl><dt>What is a Gen3 Workspace?</dt><dd>Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources, including Gen3 Data Commons.</dd><dt>What can I do with a Gen3 Workspace?</dt><dd>By default Gen3 Workspaces include Jupyter notebooks and RStudio but can be configured to host virtually any application, including analysis workflows, data processing pipelines, or data visualization apps.</dd><dt>How do I get started with Gen3 Workspaces?</dt><dd>Click on any of the images below to start analyzing data!</dd></dl>",
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,

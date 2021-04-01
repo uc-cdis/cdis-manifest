@@ -6,27 +6,20 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "Generic Data Commons Portal",
+    "appName": "HEAL Preprod Data Commons Portal",
     "index": {
       "introduction": {
         "heading": "Data Commons",
-        "text": "The HEAL preprod Data Commons supports the management, analysis and sharing of data for the research community.",
+        "text": "The HEAL Preprod Data Commons supports the management, analysis and sharing of data for the research community.",
         "link": "/submission"
       },
       "buttons": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The HEAL preprod Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
-        },
-        {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
-          "link": "/query",
-          "label": "Query data"
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover Study Metadata",
+          "link": "/discovery",
+          "label": "Discover Metadata"
         },
         {
           "name": "Submit Data",
@@ -38,27 +31,12 @@
       ]
     },
     "navigation": {
-      "title": "HEAL preprod Data Commons",
+      "title": "HEAL Preprod Data Commons",
       "items": [
-        {
-          "icon": "cohort-tools",
-          "link": "/study-viewer/clinical_trials",
-          "name": "Study Viewer"
-        },
         {
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery"
-        },
-        {
-          "icon": "dictionary",
-          "link": "/DD",
-          "name": "Dictionary"
-        },
-        {
-          "icon": "analysis",
-          "link": "/query",
-          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -90,8 +68,24 @@
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io"
+      "email": "support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/gene_heal"
     },
+    "categorical9Colors": [
+      "#99286B",
+      "#402264",
+      "#A1242E",
+      "#CF3626",
+      "#C2BACD",
+      "#E0C4D2",
+      "#E4BEB8",
+      "#F5D1D0",
+      "#F2F2F2"
+    ],
+    "categorical2Colors": [
+      "#99286B",
+      "#402264"
+    ],
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
@@ -111,44 +105,7 @@
     "analysis": false,
     "discovery": true
   },
-  "studyViewerConfig": [
-    {
-      "dataType": "clinical_trials",
-      "title": "Studies",
-      "titleField": "title",
-      "rowAccessor": "cmc_unique_id",
-      "listItemConfig": {
-        "blockFields": ["brief_summary"],
-        "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
-      },
-      "singleItemConfig": {
-        "blockFields": ["description"],
-        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications", "principle_investigator", "location", "publisher", "source"]
-      },
-      "fieldMapping": [
-        { "field": "brief_summary", "name": "Brief Study Description" },
-        { "field": "description", "name": "Detailed Description"},
-        { "field": "creator", "name": "Sponsor"},
-        { "field": "category", "name": "Study Type"},
-        { "field": "clinical_trial_website", "name": "Websites"},
-        { "field": "nct_number", "name": "NCT Number"},
-        { "field": "publications", "name": "Study Publications"},
-        { "field": "priniciple_investigator", "name": "Principle Investigator"},
-        { "field": "publisher", "name": "Administering IC"},
-        { "field": "source", "name": "Research Program"}
-      ],
-      "fileDataType": "ctfile",
-      "docDataType": "oafile",
-      "openMode": "open-first",
-      "defaultOrderBy": ["title", "asc"],
-      "buttons": [
-        {
-          "type": "download"
-        }
-      ]
-    }
-  ],
-    "discoveryConfig": {
+  "discoveryConfig": {
     "features": {
       "pageTitle": {
         "enabled": false
@@ -163,11 +120,11 @@
       }
     },
     "aggregations": [
-        {
-            "name": "Studies",
-            "field": "_unique_id",
-            "type": "count"
-        }
+      {
+        "name": "Studies",
+        "field": "project_number",
+        "type": "count"
+      }
     ],
     "tagSelector": {
       "title": "Tags by category"
@@ -178,25 +135,29 @@
         "field": "project_title"
       },
       {
-        "name": "Clinical Trial Link",
-        "field": "clinical_trial_link"
+        "name": "Research Focus Area",
+        "field": "research_focus_area"
       },
       {
-        "name": "Administering IC",
+        "name": "Research Program",
+        "field": "research_program"
+      },
+      {
+        "name": "Administering IC(s)",
         "field": "administering_ic"
       },
       {
-        "name": "Host Institution",
-        "field": "host_institution"
+        "name": "Institution(s)",
+        "field": "institutions"
       }
     ],
     "studyPreviewField": {
-      "name": "Description",
-      "field": "study_description",
+      "name": "Summary",
+      "field": "summary",
       "contentType": "string",
       "includeName": false,
       "includeIfNotAvailable": true,
-      "valueIfNotAvailable": "No description has been provided for this study."
+      "valueIfNotAvailable": "No summary has been provided for this study."
     },
     "studyPageFields": {
       "header": {
@@ -208,12 +169,20 @@
           "includeName": false,
           "fields": [
             {
+              "name": "Project Number",
+              "field": "project_number"
+            },
+            {
               "name": "Research Focus Area",
               "field": "research_focus_area"
             },
             {
               "name": "Research Program",
               "field": "research_program"
+            },
+            {
+              "name": "Research Question",
+              "field": "research_question"
             }
           ]
         },
@@ -222,16 +191,16 @@
           "includeName": false,
           "fields": [
             {
-              "name": "Host Insitution",
-              "field": "host_institution"
+              "name": "Institution(s)",
+              "field": "institutions"
             },
             {
               "name": "Location",
               "field": "location"
             },
             {
-              "name": "Principal Investigator",
-              "field": "principal_investigator"
+              "name": "Investigator(s)",
+              "field": "investigators"
             },
             {
               "name": "Year Grant Awarded",
@@ -244,24 +213,106 @@
           "includeName": false,
           "fields": [
             {
+              "name": "Study Type",
+              "field": "study_type"
+            },
+            {
+              "name": "Study Name",
+              "field": "study_name"
+            },
+            {
+              "name": "Study Description",
+              "field": "study_description"
+            },
+            {
               "name": "Number of Subjects",
-              "field": "_num_subjects"
+              "field": "subjects"
+            },
+            {
+              "name": "Number of Sites",
+              "field": "sites"
             },
             {
               "name": "Clinical Trial Link",
               "field": "clinical_trial_link"
+            },
+            {
+              "name": "Protocol Name",
+              "field": "protocol_name"
+            },
+            {
+              "name": "Dataset Description",
+              "field": "dataset_description"
+            },
+            {
+              "name": "Dataset Category",
+              "field": "dataset_category"
             }
           ]
         },
         {
           "fields": [
             {
-              "name": "Description",
-              "field": "study_description",
+              "name": "Summary",
+              "field": "summary",
               "contentType": "paragraphs",
-              "includeName": false,
+              "includeName": true,
               "includeIfNotAvailable": true,
-              "valueIfNotAvailable": "No description has been provided for this study."
+              "valueIfNotAvailable": "No summary has been provided for this study."
+            }
+          ]
+        },
+        {
+          "groupName": "Datasets",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Dataset 1 - Title",
+              "field": "dataset_1_title"
+            },
+            {
+              "name": "Dataset 1 - Description",
+              "field": "dataset_1_description"
+            },
+            {
+              "name": "Dataset 1 - Type",
+              "field": "dataset_1_type"
+            },
+            {
+              "name": "Dataset 2 - Title",
+              "field": "dataset_2_title"
+            },
+            {
+              "name": "Dataset 2 - Description",
+              "field": "dataset_2_description"
+            },
+            {
+              "name": "Dataset 2 - Type",
+              "field": "dataset_2_type"
+            },
+            {
+              "name": "Dataset 3 - Title",
+              "field": "dataset_3_title"
+            },
+            {
+              "name": "Dataset 3 - Description",
+              "field": "dataset_3_description"
+            },
+            {
+              "name": "Dataset 3 - Type",
+              "field": "dataset_3_type"
+            },
+            {
+              "name": "Dataset 4 - Title",
+              "field": "dataset_4_title"
+            },
+            {
+              "name": "Dataset 4 - Description",
+              "field": "dataset_4_description"
+            },
+            {
+              "name": "Dataset 4 - Type",
+              "field": "dataset_4_type"
             }
           ]
         }
@@ -269,32 +320,32 @@
     },
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
-      "uid": "_unique_id"
+      "uid": "project_number"
     },
     "tagCategories": [
       {
-        "name": "Program",
-        "color": "rgba(129, 211, 248, 1)",
+        "name": "Enhancing Pain Management",
+        "color": "rgba(64, 34, 100, 1)",
         "display": true
       },
       {
-        "name": "Research",
-        "color": "rgba(236, 128, 141, 1)",
+        "name": "Improving Treatments for Opioid Misuse and Addiction",
+        "color": "rgba(153, 40, 107, 1)",
         "display": true
       },
       {
-        "name": "Focus Area",
-        "color": "rgba(112, 182, 3, 1)",
+        "name": "Demographics",
+        "color": "rgba(161, 36, 46, 1)",
         "display": true
       },
       {
-        "name": "Medication Type",
-        "color": "rgba(112, 182, 3, 1)",
+        "name": "Other",
+        "color": "rgba(207, 54, 38, 1)",
         "display": true
       }
     ]
   },
-  "useArboristUI": false,
+  "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "componentToResourceMapping": {}

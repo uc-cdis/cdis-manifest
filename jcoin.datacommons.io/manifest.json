@@ -21,7 +21,9 @@
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.02",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.02",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.02",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2"
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.02",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.02"
   },
   "global": {
     "environment": "jcoin-prod",
@@ -174,5 +176,10 @@
     ],
     "config_index": "jcoin_array-config",
     "auth_filter_field": "auth_resource_path"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.03"
+    }
   }
 }

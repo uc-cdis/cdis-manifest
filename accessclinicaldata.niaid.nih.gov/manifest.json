@@ -8,9 +8,10 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:2021.02",
+    "audit-service": "quay.io/cdis/audit-service:0.1.0",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "dashboard": "quay.io/cdis/gen3-statics:2021.02",
-    "fence": "quay.io/cdis/fence:2021.02",
+    "fence": "quay.io/cdis/fence:4.28.0",
     "indexd": "quay.io/cdis/indexd:2021.02",
     "peregrine": "quay.io/cdis/peregrine:2021.02",
     "pidgin": "quay.io/cdis/pidgin:2021.02",
