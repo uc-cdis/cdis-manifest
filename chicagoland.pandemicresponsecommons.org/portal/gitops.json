@@ -65,7 +65,7 @@
         },
         {
           "name": "Workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "icon": "workspace",
           "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         },
@@ -151,7 +151,6 @@
             "fields": [
               "date_collected",
               "investigator_affiliation",
-              "name",
               "data_description"
             ]
           }
@@ -196,7 +195,9 @@
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "code"
         },
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id"
       }
     },
@@ -351,12 +352,13 @@
             "field": "study_doi",
             "name": "Study DOI"
           },
-          { "field": "pO2_saturation",
+          {
+            "field": "pO2_saturation",
             "name": "pO2 Saturation (percent)"
           },
           {
             "field": "leukocyte_count",
-            "name": "Leukocyte Count (10^3/µl)"
+            "name": "Leukocyte Count (10^3/\u00b5l)"
           },
           {
             "field": "age",
@@ -370,7 +372,9 @@
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "subject_id"
         },
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id"
       }
     },
@@ -435,11 +439,13 @@
             "field": "project_investigator_affiliation",
             "name": "Source"
           },
-          { "field": "title",
+          {
+            "field": "title",
             "name": "Intervention Name"
           },
-          {  "field": "nct_number",
-             "name": "NCT Number"
+          {
+            "field": "nct_number",
+            "name": "NCT Number"
           },
           {
             "field": "project_date_collected",
@@ -449,7 +455,9 @@
         "manifestMapping": {
           "referenceIdFieldInResourceIndex": "project_id"
         },
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id"
       }
     },
@@ -607,7 +615,9 @@
           "referenceIdFieldInDataIndex": "object_id"
         },
         "downloadAccessor": "object_id",
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id"
       }
     },
@@ -951,13 +961,13 @@
           },
           {
             "field": "hhinc_mean",
-            "name": "Mean Household Income (USD)"
+            "name": "Mean Household Income (US Currency"
           },
           {
             "field": "med_hhinc",
             "name": "Median Household Income (USD)"
           },
-          { 
+          {
             "field": "population_density",
             "name": "Population Density (residents per square mile)"
           },
@@ -979,7 +989,9 @@
           "referenceIdFieldInResourceIndex": "project_id",
           "referenceIdFieldInDataIndex": "project_id"
         },
-        "accessibleFieldCheckList": ["project_id"],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
         "accessibleValidationField": "project_id"
       }
     }
@@ -1008,7 +1020,7 @@
         "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
       },
       {
-        "title": "A Live View of COVID-19’s Global Presence",
+        "title": "A Live View of COVID-19\u2019s Global Presence",
         "description": "In this R notebook, we track COVID-19 local (US) and global cases with active, confirmed, recovered and death toll on the map at the latest time point. The interactive maps indicate the concentration of coronavirus cases across the US and around the world.",
         "link": "/dashboard/Public/notebooks/jhu_map.html",
         "imageUrl": "/dashboard/Public/notebooks/jhu_map.png"
@@ -1062,15 +1074,8 @@
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
-  "componentToResourceMapping": {
-    "Workspace": {
-      "resource": "/workspace",
-      "method": "access",
-      "service": "jupyterhub"
-    }
-  },
   "covid19DashboardConfig": {
-    "dataUrl": "https://opendata.datacommons.io/",
+    "dataUrl": "https://static.planx-pla.net/",
     "chartsConfig": {
       "world": [
         [
@@ -1135,6 +1140,30 @@
                 ]
               }
             }
+          },
+          {
+            "title": "Total Deaths per 10,000 in Chicago",
+            "description": "The source of the data used to compile this chart is the Cook County Data Portal.",
+            "xTitle": "",
+            "yTitle": "",
+            "type": "barChart",
+            "layout": "vertical",
+            "maxItems": 15,
+            "barColor": "#421C52",
+            "guppyConfig": {
+              "dataType": "location",
+              "xAxisProp": "community_area",
+              "yAxisProp": "deaths_per_10000",
+              "filters": {
+                "AND": [
+                  {
+                    "=": {
+                      "project_id": "open-CHI-NBHD"
+                    }
+                  }
+                ]
+              }
+            }
           }
         ],
         [
@@ -1175,6 +1204,13 @@
           "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
         }
       }
+    }
+  },
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
     }
   }
 }
