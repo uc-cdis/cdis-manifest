@@ -107,6 +107,15 @@
   },
   "discoveryConfig": {
     "features": {
+      "exportToWorkspaceBETA": {
+        "enabled": true,
+        "manifestFieldName": "__manifest",
+        "enableDownloadManifest": true,
+        "documentationLinks": {
+          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+        }
+      },
       "pageTitle": {
         "enabled": false
       },
