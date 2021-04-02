@@ -25,6 +25,9 @@
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.02",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.02"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "global": {
     "environment": "jcoin-prod",
     "hostname": "jcoin.datacommons.io",
