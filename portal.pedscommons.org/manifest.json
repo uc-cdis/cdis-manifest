@@ -68,7 +68,7 @@
     "environment": "devplanetv1",
     "hostname": "portal.pedscommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:242397368788:certificate/cc6714f9-91d7-485c-9fd8-53678c0de58e",
-    "dictionary_url": "https://pcdc-gen3-dictionaries.s3.amazonaws.com/pcdc-schema-dev.json",
+    "dictionary_url": "https://pcdc-gen3-dictionaries.s3.amazonaws.com/pcdc-schema-prod.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-commons-test-gen3",
     "logs_bucket": "logs-commons-test-gen3",
