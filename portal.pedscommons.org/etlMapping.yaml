@@ -182,6 +182,7 @@ mappings:
       - path: survival_characteristics
         props:
           - name: age_at_lkss
+          - name: cause_of_death
           - name: lkss
         # parent_props:
         #   - path: clinical_events[ce_submitter_id:submitter_id]
@@ -217,6 +218,7 @@ mappings:
         sorted_by: submitter_id, desc
       - path: histologys
         props:
+          - name: age_at_hist_assessment
           - name: histology
         sorted_by: submitter_id, desc
       - path: biopsy_surgical_procedures
@@ -226,6 +228,10 @@ mappings:
           - name: procedure_tumor_classification
           - name: procedure_type
         sorted_by: submitter_id, desc
+      - path: secondary_malignant_neoplasms
+        props:
+          - name: age_at_smn
+        sorted_by: submitter_id, desc
 
 
       # TODO TO BE REMOVED ONCE nested object are supported
@@ -234,6 +240,7 @@ mappings:
           - name: study_id
           - name: study_phase
           - name: study_type
+          
         sorted_by: submitter_id, desc
       - path: clinical_events
         props:
@@ -357,4 +364,3 @@ mappings:
     #   - name: _relapse_sites_specific_count
     #     path: relapse_sites_specific
     #     fn: count
-
