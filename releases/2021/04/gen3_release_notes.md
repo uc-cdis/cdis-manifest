@@ -1,4 +1,4 @@
-# Core Gen3 Release 202104
+# Core Gen3 Release 202104 (Old Town)
 
 ## uc-cdis/fence
 
