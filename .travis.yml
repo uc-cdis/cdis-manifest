@@ -41,6 +41,7 @@ script:
         else
           gen3utils validate-portal-config $etl $man $ptlcfg || exit 1
         fi
+      fi
     done
 
   # comment on PRs with relevant deployment changes:
