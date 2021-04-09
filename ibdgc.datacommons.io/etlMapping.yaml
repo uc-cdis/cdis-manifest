@@ -21,7 +21,7 @@ mappings:
         props:
           - name: ibd_affection_status
           - name: diagnosis
-          - name: population_control
+          - name: control
         sorted_by: updated_datetime, desc
     aggregated_props:
       - name: _samples_count

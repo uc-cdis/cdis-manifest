@@ -64,6 +64,7 @@ mappings:
             src: data_type
             fn: set
           - name: file_id
+            alternate_src: _file_id
             src: file_id
             fn: set
   - name: canine_file

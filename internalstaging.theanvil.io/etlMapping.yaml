@@ -125,3 +125,39 @@ mappings:
             fn: set
           - name: project_id
             fn: set
+          - name: anvil_project_id
+            src: anvil_project_id
+            fn: set
+          - name: sex
+            src: sex
+            fn: set
+          - name: age_value
+            src: age_value
+            fn: set
+          - name: ancestry
+            src: ancestry
+            fn: set
+          - name: disease_description
+            src: disease_description
+            fn: set
+          - name: phenotype_present
+            src: phenotype_present
+            fn: set
+          - name: phenotype_absent
+            src: phenotype_absent
+            fn: set
+          - name: disease_id
+            src: disease_id
+            fn: set
+          - name: solve_state
+            src: solve_state
+            fn: set
+          - name: congenital_status
+            src: congenital_status
+            fn: set
+          - name: age_of_onset
+            src: age_of_onset
+            fn: set
+          - name: phenotype_group
+            src: phenotype_group
+            fn: set

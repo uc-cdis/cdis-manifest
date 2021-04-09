@@ -156,7 +156,7 @@ tspan.special-number,
   filter: hue-rotate(45deg);
 }
 
-.index-button-bar__item, .index-button-bar__thumbnail-title {
+.index-button-bar__thumbnail-title {
   display: none;
 }
 
@@ -164,4 +164,14 @@ tspan.special-number,
   .index-button-bar {
     padding: 0 10%;
   }
+}
+
+/* MIDRC Submission Page Changes */
+
+.project-dashboard__title {
+  display: none;
+}
+
+.submission-header {
+  display: none;
 }

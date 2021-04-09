@@ -66,6 +66,13 @@
           "label": "Query data"
         },
         {
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover study descriptions and other metadata stored on the Data Commons",
+          "link": "/discovery",
+          "label": "Discover Study Metadata"
+        }, 
+        {
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "Perform analysis on the Open Access Data Commons data using Jupyter Notebooks.",
@@ -76,6 +83,11 @@
     },
     "navigation": {
       "items": [
+        {
+          "icon": "query",
+          "link": "/discovery",
+          "name": "Discovery"
+        },
         {
           "icon": "dictionary",
           "link": "/DD",
@@ -145,8 +157,132 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
-    "noIndex": true
+    "noIndex": true,
+    "discovery": true
   },
+  "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": false
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        }
+      },
+      "authorization": {
+        "enabled": false
+      }
+    },
+    "aggregations": [
+        {
+            "name": "Studies",
+            "field": "accession_number",
+            "type": "count"
+        }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Accession Number",
+        "field": "accession_number"
+      },
+      {
+        "name": "Study Title",
+        "field": "study_title"
+      },
+      {
+        "name": "Funding",
+        "field": "funding"
+      },
+      {
+        "name": "Source",
+        "field": "source"
+      },
+      {
+        "name": "Data Files",
+        "field": "data_files_count"
+      },
+      {
+        "name": "Subjects",
+        "field": "subjects_count"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Summary",
+      "field": "summary",
+      "contentType": "string",
+      "includeName": false,
+      "includeIfNotAvailable": true,
+      "valueIfNotAvailable": "No summary has been provided for this study."
+    },
+    "studyPageFields": {
+      "header": {
+        "field": "study_title"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "OADC studies",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Accession Number",
+              "field": "accession_number"
+            },
+            {
+              "name": "Study Title",
+              "field": "study_title"
+            },
+            {
+              "name": "Funding",
+              "field": "funding"
+            },
+            {
+              "name": "Source",
+              "field": "source"
+            },
+            {
+              "name": "Data Files",
+              "field": "data_files_count"
+            },
+            {
+              "name": "Subjects",
+              "field": "subjects_count"
+            },
+            {
+              "name": "Link",
+              "field": "link"
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Summary",
+              "field": "summary",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "No summary has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "uid": "accession_number"
+    },
+    "tagCategories": [
+      {
+        "name": "Data Type",
+        "color": "rgba(71, 130, 195, 1)",
+        "display": true
+      }
+    ]
+  }, 
   "dataExplorerConfig": {
     "charts": {
       "project_id": {

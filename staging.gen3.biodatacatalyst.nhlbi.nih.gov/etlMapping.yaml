@@ -91,9 +91,6 @@ mappings:
       - name: _aliquots_count
         path: samples.aliquots
         fn: count
-      - name: _submitted_snp_array_files_count
-        path: samples.aliquots.submitted_snp_array_files
-        fn: count
       - name: _read_groups_count
         path: samples.aliquots.read_groups
         fn: count
@@ -128,6 +125,7 @@ mappings:
             fn: set
           - name: file_count
             src: file_id
+            alternate_src: _file_id
             fn: count
   - name: staging.gen3.biodatacatalyst.nhlbi.nih.gov_file
     doc_type: file
@@ -139,12 +137,14 @@ mappings:
       - name: md5sum
       - name: file_name
       - name: file_size
+      - name: data_category
       - name: data_format
       - name: data_type
       - name: state
       - name: callset
       - name: bucket_path
       - name: source_node
+      - name: data_category
     injecting_props:
       subject:
         props:
@@ -152,4 +152,3 @@ mappings:
             src: id
             fn: set
           - name: project_id
-            fn: set

@@ -79,7 +79,6 @@ mappings:
       - name: reporting_org
       - name: state_hospital_region
       - name: state_region_description
-      - name: city
     flatten_props:
       - path: summary_clinicals
         props:
@@ -88,7 +87,6 @@ mappings:
           - name: date
           - name: deaths
           - name: deaths_per_10000
-          - name: estimated_full_mech_ventilators
           - name: estimated_full_mech_ventilators_per_100000
           - name: estimated_full_mech_pediatric_ventilators
           - name: estimated_full_mech_pediatric_ventilators_per_100000
@@ -109,8 +107,6 @@ mappings:
           - name: region_vents_available
           - name: region_vents_capacity
           - name: state_icu_capacity
-          - name: staffed_all_beds
-          - name: staffed_icu_beds
           - name: staffed_all_beds_per_1000
           - name: staffed_all_beds_per_1000_gtr_20
           - name: staffed_all_beds_per_1000_gtr_65
@@ -145,14 +141,11 @@ mappings:
           - name: total_in_use_beds_non_covid
           - name: total_in_use_beds_covid
           - name: totalTestsViral
-          - name: provider_type
           - name: provider_subtype
           - name: detailed_specialty
           - name: new_cases
           - name: new_deaths
           - name: positive_rate
-          - name: cardiovasc_death_rate
-          - name: diabetes_prevalence
         sorted_by: updated_datetime, desc
       - path: summary_socio_demographics
         props:
@@ -183,7 +176,7 @@ mappings:
          - name: stringency_index
         sorted_by: updated_datetime, desc
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation,project_date_collected:date_collected]
   - name: covid19_subject
     doc_type: subject
     type: aggregator
@@ -243,7 +236,7 @@ mappings:
         src: image_location
         fn: set
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
       - path: studies[study_doi:study_doi]
   - name: covid19_clinical_trials
     doc_type: clinical_trials
@@ -264,7 +257,7 @@ mappings:
       - name: technology
       - name: title
     parent_props:
-      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type]
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
   - name: covid19_genomic_file
     doc_type: genomic_file
     type: collector
@@ -283,6 +276,8 @@ mappings:
       - name: sra_accession
       - name: assay_type
       - name: center_name
+      - name: nextstrain_clade
+      - name: submitter_id
     injecting_props:
       sample:
         props:
@@ -300,6 +295,9 @@ mappings:
             fn: set
           - name: county
             src: county
+            fn: set
+          - name: zipcode
+            src: zipcode
             fn: set
           - name: host
             src: host
@@ -355,6 +353,9 @@ mappings:
             fn: set
           - name: project_availability_type
             src: availability_type
+            fn: set
+          - name: project_date_collected
+            src: date_collected
             fn: set
   - name: covid19_dataset
     doc_type: dataset

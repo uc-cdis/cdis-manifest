@@ -93,10 +93,6 @@
           "name": "About"
         },
         {
-          "link": "https://covidstoplight.org",
-          "name": "COVIDstoplight"
-        },
-        {
           "icon": "upload",
           "link": "/submission",
           "name": "Submit Data"
@@ -104,6 +100,10 @@
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
         }
       ]
     },
@@ -137,7 +137,8 @@
   "featureFlags": {
     "explorer": true,
     "analysis": true,
-    "explorerPublic": true
+    "explorerPublic": true,
+    "explorerHideEmptyFilterSection": true
   },
   "analysisTools": [],
   "explorerConfig": [
@@ -149,6 +150,7 @@
           {
             "title": "Details",
             "fields": [
+              "date_collected",
               "investigator_affiliation",
               "name",
               "data_description"
@@ -161,6 +163,7 @@
         "fields": [
           "url",
           "code",
+          "date_collected",
           "investigator_affiliation",
           "name",
           "data_description"
@@ -185,6 +188,10 @@
           {
             "field": "name",
             "name": "Dataset"
+          },
+          {
+            "field": "date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -202,7 +209,7 @@
           "title": "Dataset Source"
         },
         "gender": {
-          "chartType": "pie",
+          "chartType": "fullPie",
           "title": "Gender"
         },
         "country_region": {
@@ -226,7 +233,6 @@
           {
             "title": "Clinical",
             "fields": [
-              
               "covid_19_status",
               "vital_status",
               "icu_status",
@@ -263,6 +269,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "age",
@@ -344,6 +351,21 @@
           {
             "field": "study_doi",
             "name": "Study DOI"
+          },
+          { "field": "pO2_saturation",
+            "name": "pO2 Saturation (percent)"
+          },
+          {
+            "field": "leukocyte_count",
+            "name": "Leukocyte Count (10^3/µl)"
+          },
+          {
+            "field": "age",
+            "name": "Age (years)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -376,8 +398,9 @@
         "enabled": true,
         "fields": [
           "project_url",
+          "project_date_collected",
           "project_investigator_affiliation",
-          "project_name",  
+          "project_name",
           "title",
           "focus",
           "description",
@@ -418,6 +441,10 @@
           },
           {  "field": "nct_number",
              "name": "NCT Number"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "manifestMapping": {
@@ -488,6 +515,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -504,7 +532,8 @@
           "data_type",
           "data_format",
           "file_size",
-          "object_id"
+          "object_id",
+          "project_date_collected"
         ],
         "linkFields": [
           "project_url"
@@ -563,6 +592,14 @@
           {
             "field": "submitting_lab_PI",
             "name": "Submiting Lab PI"
+          },
+          {
+            "field": "collection_date",
+            "name": "Collection Date (year-month-day)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Files",
@@ -609,11 +646,7 @@
               "confirmed",
               "deaths",
               "recovered",
-              "testing",
-              "positive_rate",
-              "staffed_all_beds",
-              "staffed_icu_beds",
-              "estimated_full_mech_ventilators"
+              "testing"
             ]
           },
           {
@@ -621,8 +654,6 @@
             "fields": [
               "community_area",
               "state_region_description",
-              "city",
-              "provider_type",
               "reporting_org",
               "deaths_per_10000",
               "region_icu_capacity",
@@ -662,9 +693,7 @@
               "job_density",
               "jail",
               "hhinc_mean",
-              "med_hhinc",
-              "cardiovasc_death_rate",
-              "diabetes_prevalence"
+              "med_hhinc"
             ]
           }
         ]
@@ -674,6 +703,7 @@
         "fields": [
           "project_url",
           "project_code",
+          "project_date_collected",
           "project_investigator_affiliation",
           "project_name",
           "country_region",
@@ -682,14 +712,12 @@
           "community_area",
           "state_region_description",
           "reporting_org",
+          "date",
           "confirmed",
           "deaths",
           "recovered",
           "testing",
-          "staffed_all_beds",
-          "staffed_icu_beds",
           "population_gtr_65",
-          "estimated_full_mech_ventilators",
           "estimated_full_mech_pediatric_ventilators",
           "region_icu_avail",
           "region_icu_capacity",
@@ -718,7 +746,15 @@
           "state_pct_hospital_beds_available",
           "state_icu_open_beds",
           "state_icu_beds_used",
-          "state_icu_open_beds_pct"
+          "state_icu_open_beds_pct",
+          "population_density",
+          "completed_high_school",
+          "college_degree",
+          "graduate_degree",
+          "job_density",
+          "jail",
+          "hhinc_mean",
+          "med_hhinc"
         ],
         "linkFields": [
           "project_url"
@@ -748,7 +784,7 @@
           },
           {
             "field": "deaths_per_10000",
-            "name": "Chicago Neighborhood Deaths per 10,000"
+            "name": "Chicago Neighborhood Deaths (per 10,000 residents)"
           },
           {
             "field": "staffed_all_beds",
@@ -860,7 +896,7 @@
           },
           {
             "field": "state_pct_hospital_beds_available",
-            "name": "IL Percentage Hospital Bed Available"
+            "name": "IL Hospital Bed Available (percent)"
           },
           {
             "field": "state_icu_open_beds",
@@ -872,7 +908,7 @@
           },
           {
             "field": "state_icu_open_beds_pct",
-            "name": "IL ICU Open Beds Percentage"
+            "name": "IL ICU Open Beds (percent)"
           },
           {
             "field": "state_covid_pui_patients",
@@ -880,7 +916,7 @@
           },
           {
             "field": "state_Ventilators_open_pct",
-            "name": "IL Ventilators Open Percentage"
+            "name": "IL Ventilators Open (percent)"
           },
           {
             "field": "state_ventilators_in_use",
@@ -888,7 +924,7 @@
           },
           {
             "field": "state_ventilators_covid_patients_pct",
-            "name": "IL Ventilators COVID-19 Patients Percentage"
+            "name": "IL Ventilators COVID-19 Patients (percent)"
           },
           {
             "field": "state_covid_patients_non_icu",
@@ -916,15 +952,27 @@
           },
           {
             "field": "hhinc_mean",
-            "name": "Mean Household Income"
+            "name": "Mean Household Income (USD)"
           },
           {
             "field": "med_hhinc",
-            "name": "Median Household Income"
+            "name": "Median Household Income (USD)"
+          },
+          { 
+            "field": "population_density",
+            "name": "Population Density (residents per square mile)"
           },
           {
-            "field": "cardiovasc_death_rate",
-            "name": "Cardiovascular Death Rate"
+            "field": "job_density",
+            "name": "Job Density (per square mile)"
+          },
+          {
+            "field": "jail",
+            "name": "Incarcerated"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
         "nodeCountTitle": "Locations",
@@ -1001,9 +1049,17 @@
         "description": "This notebook is a replication of the DarkCovidNet model to classify COVID-19 x-ray images from \"No finding\" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper.",
         "link": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.html",
         "imageUrl": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.png"
+      },
+      {
+        "title": "Google Mobility Data Visualization",
+        "description": "In this notebook, we demonstrate how to query the google mobility data using the BigQuery API client python library, and visualize the mobility changes over time across the United States since February 2020.",
+        "link": "/dashboard/Public/notebooks/google_mobility.html",
+        "imageUrl": "/dashboard/Public/notebooks/google_mobility.png"
       }
     ]
   },
+  "workspacePageTitle": "Welcome to the Gen3 Workspace",
+  "workspacePageDescription": "<dl><dt>What is a Gen3 Workspace?</dt><dd>Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources, including Gen3 Data Commons.</dd><dt>What can I do with a Gen3 Workspace?</dt><dd>By default Gen3 Workspaces include Jupyter notebooks and RStudio but can be configured to host virtually any application, including analysis workflows, data processing pipelines, or data visualization apps.</dd><dt>How do I get started with Gen3 Workspaces?</dt><dd>Click on any of the images below to start analyzing data!</dd></dl>",
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
@@ -1080,6 +1136,84 @@
                 ]
               }
             }
+          },
+          {
+            "title": "Age Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by age groups and by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_age_demographic.svg"
+          },
+          {
+            "title": "Race Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_race_demographic.svg"
+          },
+          {
+            "title": "Gender Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by gender in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_gender_demographic.svg"
+          },
+          {
+            "title": "Daily Reported Administered Vaccine Doses in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the daily reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_vaccine.svg"
+          },
+          {
+            "title": "Cumulative Reported Administered Vaccine Doses in Illinois ",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the cumulative reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_vaccine.svg"
+          },
+          {
+            "title": "10 IL Counties With The Highest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the highest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_top10.svg"
+          },
+          {
+            "title": "10 IL Counties With The Lowest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the lowest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_bottom10.svg"
+          },
+          {
+            "title": "COVID-19 Google Mobility Data Visualization in Illinois In The Past 3 Months",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_IL_mobility.svg"
+          },
+          {
+            "title": "Using 4-Phase Sine-Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase sine-logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_sine_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-Phase Sine-Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase sine-logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_sine_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
           }
         ],
         [
@@ -1100,12 +1234,6 @@
             "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
             "type": "image",
             "path": "bayes-by-county/17031/Rt.png"
-          },
-          {
-            "title": "Average Rt Over Latest 7 Days Of Observations",
-            "description": "Latest Rt estimates for the IL counties most impacted by COVID-19.",
-            "type": "image",
-            "path": "bayes-by-county/Rt_All.png"
           }
         ]
       ],
