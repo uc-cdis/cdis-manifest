@@ -130,8 +130,8 @@
       "cpu-limit": "1.0",
       "memory-limit": "8096Mi",
       "name": "HEAL Demo",
-      "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.0",
-      "env": {},
+      "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.1",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
