@@ -125,7 +125,7 @@
         }
       },
       "authorization": {
-        "enabled": false
+        "enabled": true
       }
     },
     "aggregations": [
@@ -328,6 +328,7 @@
       ]
     },
     "minimalFieldMapping": {
+      "authzField": "authz",
       "tagsListFieldName": "tags",
       "uid": "project_number"
     },
