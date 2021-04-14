@@ -168,13 +168,3 @@ tspan.special-number,
 .protected-content {
   background-color: #f4f4f6;
 }
-
-/* Custom styling for Discovery page search bar, by order of Bob */
-/* Remove when no longer necessary */
-.discovery-search {
-  border: 1px solid var(--primary-color);
-  background-color: #f4f4f6;
-}
-.discovery-search input {
-  background-color: inherit;
-}
