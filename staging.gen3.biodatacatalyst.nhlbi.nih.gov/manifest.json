@@ -9,9 +9,8 @@
   "versions": {
     "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:2021.03",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.03",
-    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2021.03",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.28.2",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:4.27.1",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.03",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.03",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.03",
@@ -47,6 +46,86 @@
     "deployment_version": "2"
   },
   "sower": [
+    {
+      "name": "manifest-indexing",
+      "action": "index-object-manifest",
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/manifest-indexing:integration202103",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "indexd-manifest",
+      "action": "download-indexd-manifest",
+      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/download-indexd-manifest:integration202103",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
     {
       "name": "pelican-export",
       "action": "export",
@@ -109,89 +188,6 @@
           }
         }
       ],
-      "restart_policy": "Never",
-      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov"
-    },
-    {
-      "name": "manifest-indexing",
-      "action": "index-object-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2021.03",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "indexd-manifest",
-      "action": "download-indexd-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2021.03",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
       "restart_policy": "Never"
     }
   ],
@@ -222,7 +218,7 @@
     "environment": "stagingdatastage",
     "hostname": "staging.gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/1876fa51-031e-4aa9-ab95-7da182a52c7f",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.7/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
