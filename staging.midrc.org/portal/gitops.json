@@ -354,6 +354,8 @@
                     "research_design",
                     "research_objective",
                     "research_setup",
+                    "primary_site",
+                    "disease_type",
                     "project_id"
                   ]
                 }
@@ -362,7 +364,7 @@
             "table": {
               "enabled": true,
               "fields": [
-                "data_url",
+                "data_url_doi",
                 "project_id",
                 "data_contributor",
                 "_imaging_studies_count",
@@ -383,10 +385,12 @@
                 "license",
                 "publication_citation",
                 "data_citation",
+                "disease_type",
+                "primary_site",
                 "submitter_id"
               ],
               "linkFields": [
-                "data_url"
+                "data_url_doi"
               ]
             },
             "guppyConfig": {
@@ -514,9 +518,7 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format",
-                    "data_type",
-                    "data_category"
+                    "data_format"
                   ]
                 },
                 {
@@ -558,8 +560,6 @@
                 "_cr_series_count",
                 "_cr_images_count",
                 "data_format",
-                "data_type",
-                "data_category",
                 "covid19_positive",
                 "condition_name",
                 "age_at_index",
@@ -687,9 +687,7 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format",
-                    "data_type",
-                    "data_category"
+                    "data_format"
                   ]
                 },
                 {
@@ -732,8 +730,6 @@
                 "_cr_series_count",
                 "_cr_images_count",
                 "data_format",
-                "data_type",
-                "data_category",
                 "project_id"
               ]
             },
@@ -838,9 +834,7 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format",
-                    "data_type",
-                    "data_category"
+                    "data_format"
                   ]
                 },
                 {
@@ -881,8 +875,6 @@
                 "race",
                 "zip",
                 "data_format",
-                "data_type",
-                "data_category",
                 "project_id"
               ]
             },
