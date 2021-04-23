@@ -1140,65 +1140,6 @@
             "path": "charts_data/IL_tab_charts_vaccine_by_county_bottom10.svg"
           },
           {
-            "title": "Using 4-Phase Sine-Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase sine-logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_cumulative_sine_logistic_last180days.svg"
-          },
-          {
-            "title": "Using 4-Phase Sine-Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase sine-logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_cumulative_sine_logistic_last360.svg"
-          },
-          {
-            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
-          },
-          {
-            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
-          },
-          {
-            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
-          },
-          {
-            "title": "Cumulative Testing in Illinois",
-            "description": "The source of the data used to compile this chart is the Illinois Department of Public Health. This chart depicts the total number of tests to date per Illinois county for the top 15 counties that have administered the most tests in Illinois.",
-            "xTitle": "County",
-            "yTitle": "Number of Tests",
-            "type": "barChart",
-            "layout": "horizontal",
-            "maxItems": 15,
-            "barColor": "#421C52",
-            "guppyConfig": {
-              "dataType": "location",
-              "xAxisProp": "county",
-              "yAxisProp": "testing",
-              "filters": {
-                "AND": [
-                  {
-                    "=": {
-                      "project_id": "open-IDPH"
-                    }
-                  },
-                  {
-                    "!=": {
-                      "county": "Illinois"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          {
             "title": "Total Deaths per 10,000 in Chicago",
             "description": "The source of the data used to compile this chart is the Cook County Data Portal.",
             "xTitle": "",
@@ -1266,6 +1207,30 @@
             "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
             "type": "image",
             "path": "bayes-by-county/17031/Rt.png"
+          },
+          {
+            "title": "Average Rt Over Latest 7 Days Of Observations",
+            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
+            "type": "image",
+            "path": "bayes-by-county/Rt_Top20.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
           }
         ]
       ],
