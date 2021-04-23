@@ -26,7 +26,6 @@ script:
 
       # validate manifest.json
       if [ -f $man ]; then
-        echo "    Validating $dir"
         gen3utils validate-manifest $man || exit 1
       fi
 
