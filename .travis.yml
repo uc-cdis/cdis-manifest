@@ -21,6 +21,7 @@ script:
     echo "Updated: ${envs[@]}"
 
     for dir in "${envs[@]}"; do
+      echo " Validating $dir"
       man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
 
       # validate manifest.json
