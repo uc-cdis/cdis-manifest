@@ -154,7 +154,7 @@
       "serviceAccountName": "jobs-qa-ibd-planx-pla-net",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:integration202105",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:2021.02",
         "pull_policy": "Always",
         "env": [
           {
