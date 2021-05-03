@@ -21,6 +21,11 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github.event.pull_request) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.13.1"
         if: github.event.pull_request[0].head.repo.full_name == 'uc-cdis/cdis-manifest'
