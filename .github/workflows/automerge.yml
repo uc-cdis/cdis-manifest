@@ -21,12 +21,10 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: debug repo full_name output
         env:
-          GITHUB_CONTEXT: ${{ toJson(github.event.pull_request) }}
           HEAD_REPO_FULL_NAME: ${{ github.event.pull_request['head']['repo']['full_name'] }}
         run: |
-          echo "$GITHUB_CONTEXT"
           echo "$HEAD_REPO_FULL_NAME"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.13.1"
