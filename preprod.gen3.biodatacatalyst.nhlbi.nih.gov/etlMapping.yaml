@@ -112,7 +112,8 @@ mappings:
         src: ever_smoker_baseline
         fn: set
     parent_props:
-      - path: studies[studies_submitter_id:submitter_id]
+      - path: studies[studies_submitter_id:submitter_id].projects[code]
+      - path: studies[studies_submitter_id:submitter_id].projects[code].programs[programs_name:name]
     joining_props:
       - index: file
         join_on: _subject_id
@@ -152,3 +153,8 @@ mappings:
             src: id
             fn: set
           - name: project_id
+      program:
+        props:
+          - name: programs_name
+            src: name
+            fn: set
