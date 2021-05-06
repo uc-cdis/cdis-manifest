@@ -205,6 +205,8 @@ mappings:
         props:
           - name: irs_group
           - name: tnm_finding
+          - name: stage
+          - name: stage_system
         sorted_by: submitter_id, desc
       - path: molecular_analysiss
         props:
@@ -220,6 +222,8 @@ mappings:
         props:
           - name: age_at_hist_assessment
           - name: histology
+          - name: histology_grade
+          - name: histology_inpc
         sorted_by: submitter_id, desc
       - path: biopsy_surgical_procedures
         props:
@@ -240,8 +244,17 @@ mappings:
           - name: study_id
           - name: study_phase
           - name: study_type
-          
         sorted_by: submitter_id, desc
+        
+      - path: external_references
+        props:
+          - name: external_resource_name
+          - name: external_resource_icon_path
+          - name: external_subject_url
+          - name: external_subject_id
+          - name: external_links
+        sorted_by: external_resource_name, desc
+        
       - path: clinical_events
         props:
           - name: age_at_course_start
