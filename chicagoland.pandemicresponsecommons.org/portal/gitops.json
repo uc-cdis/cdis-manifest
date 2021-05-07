@@ -1155,9 +1155,9 @@
       },
       {
         "title": "COVID-19 X-ray images classification",
-        "description": "This notebook is a replication of the DarkCovidNet model to classify COVID-19 x-ray images from \"No finding\" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper.",
-        "link": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.html",
-        "imageUrl": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.png"
+        "description": "This notebook replicates the DarkCovidNet model and performes transfer learning with the GoogLeNet model to classify radiological images as indicative of either 'COVID-19', 'Normal' or 'Pneumonia' to assist in the diagnosis of COVID-19.",
+        "link": "/dashboard/Public/notebooks/CNN_XRAY_CF.html",
+        "imageUrl": "/dashboard/Public/notebooks/CNN_XRAY_CF.png"
       },
       {
         "title": "Google Mobility Data Visualization",
