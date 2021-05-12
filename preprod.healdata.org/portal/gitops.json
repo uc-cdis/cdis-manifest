@@ -1,5 +1,5 @@
 {
-  "gaTrackingId": "UA-119127212-3",
+  "gaTrackingId": "UA-119127212-19",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -20,13 +20,6 @@
           "body": "Discover Study Metadata",
           "link": "/discovery",
           "label": "Discover Metadata"
-        },
-        {
-          "name": "Submit Data",
-          "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
-          "link": "/submission",
-          "label": "Submit data"
         }
       ]
     },
@@ -52,11 +45,6 @@
     },
     "topBar": {
       "items": [
-        {
-          "icon": "upload",
-          "link": "/submission",
-          "name": "Submit Data"
-        },
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
@@ -148,8 +136,8 @@
         "field": "research_focus_area"
       },
       {
-        "name": "Research Program",
-        "field": "research_program"
+        "name": "Investigator(s)",
+        "field": "investigators"
       },
       {
         "name": "Administering IC(s)",

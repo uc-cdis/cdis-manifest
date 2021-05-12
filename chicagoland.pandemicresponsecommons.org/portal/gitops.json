@@ -65,7 +65,7 @@
         },
         {
           "name": "Workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "icon": "workspace",
           "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         },
@@ -153,7 +153,6 @@
             "fields": [
               "date_collected",
               "investigator_affiliation",
-              "name",
               "data_description"
             ]
           }
@@ -299,14 +298,38 @@
           "project_url"
         ]
       },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
         }
       ],
       "guppyConfig": {
@@ -370,7 +393,7 @@
           }
         ],
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "subject_id"
+          "referenceIdFieldInResourceIndex": "_subject_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -416,7 +439,40 @@
           "project_url"
         ]
       },
-      "buttons": [],
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
       "guppyConfig": {
         "dataType": "clinical_trials",
         "nodeCountTitle": "Interventions",
@@ -540,21 +596,51 @@
           "project_url"
         ]
       },
-      "dropdowns": {},
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "file-manifest",
-          "title": "Download Object Data Manifest",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "file-manifest.json",
-          "dropdownId": "download"
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Data Files Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
         },
         {
           "enabled": true,
           "type": "export-files-to-workspace",
-          "title": "Export to Workspace",
+          "title": "Export Data Files to Workspace",
           "leftIcon": "datafile",
           "rightIcon": "download"
         }
@@ -761,15 +847,38 @@
           "project_url"
         ]
       },
-      "dropdowns": {},
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
         }
       ],
       "guppyConfig": {
@@ -953,7 +1062,7 @@
           },
           {
             "field": "hhinc_mean",
-            "name": "Mean Household Income (USD)"
+            "name": "Mean Household Income (US Currency)"
           },
           {
             "field": "med_hhinc",
@@ -978,8 +1087,7 @@
         ],
         "nodeCountTitle": "Locations",
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "project_id",
-          "referenceIdFieldInDataIndex": "project_id"
+          "referenceIdFieldInResourceIndex": "project_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -1047,9 +1155,9 @@
       },
       {
         "title": "COVID-19 X-ray images classification",
-        "description": "This notebook is a replication of the DarkCovidNet model to classify COVID-19 x-ray images from \"No finding\" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper.",
-        "link": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.html",
-        "imageUrl": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.png"
+        "description": "This notebook replicates the DarkCovidNet model and performes transfer learning with the GoogLeNet model to classify radiological images as indicative of either 'COVID-19', 'Normal' or 'Pneumonia' to assist in the diagnosis of COVID-19.",
+        "link": "/dashboard/Public/notebooks/CNN_XRAY_CF.html",
+        "imageUrl": "/dashboard/Public/notebooks/CNN_XRAY_CF.png"
       },
       {
         "title": "Google Mobility Data Visualization",
