@@ -46,3 +46,7 @@ mappings:
       - name: data_format
       - name: data_type
       - name: state
+      - name: data_category
+    parent_props:
+      - path: core_metadata_collections[cmc_data_type:data_type]
+      - path: core_metadata_collections[cmc_title:title]
