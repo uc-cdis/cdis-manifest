@@ -22,7 +22,7 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.04",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.04",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.04",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2021.04",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:master",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.04",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.04",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.04",
@@ -192,7 +192,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:master",
         "pull_policy": "Always",
         "env": [
           {
@@ -232,7 +232,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:master",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -263,7 +263,7 @@
       "serviceAccountName": "jobs-internalstaging-theanvil-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:master",
         "pull_policy": "Always",
         "env": [
           {
