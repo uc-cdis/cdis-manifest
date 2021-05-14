@@ -95,6 +95,16 @@
   },
   "discoveryConfig": {
     "features": {
+      "advSearchFilters": {
+        "enabled": true,
+        "field": "advSearchFilters",
+        "filters": [
+          { "key": "Research Focus Area" },
+          { "key": "Administering IC(s)" },
+          { "key": "Year Grant Awarded" },
+          { "key": "Study Description" }
+        ]
+      },
       "exportToWorkspaceBETA": {
         "enabled": true,
         "manifestFieldName": "__manifest",
