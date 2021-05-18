@@ -1,7 +1,7 @@
 name: Auto Label
 on:
   pull_request:
-    types: [opened, push, synchronize]
+    types: [opened, synchronize]
 
 jobs:
   auto-label:
