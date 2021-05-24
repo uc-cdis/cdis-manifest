@@ -77,11 +77,6 @@
     "navigation": {
       "items": [
         {
-          "icon": "query",
-          "link": "/discovery",
-          "name": "Discovery"
-        },
-        {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
@@ -150,8 +145,7 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
-    "noIndex": true,
-    "discovery": true
+    "noIndex": true
   },
   "dataExplorerConfig": {
     "charts": {
