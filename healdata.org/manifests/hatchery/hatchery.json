@@ -132,7 +132,7 @@
       "name": "HEAL Demo",
       "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.3",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://healdata.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
