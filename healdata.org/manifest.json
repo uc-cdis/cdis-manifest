@@ -20,7 +20,7 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.05",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.05",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.05",
-    "portal": "quay.io/cdis/data-portal:feat_discovery-adv-search-filters",
+    "portal": "quay.io/cdis/data-portal:feat_discovery-export-to-workspace",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.05",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.05",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.05",
@@ -253,19 +253,19 @@
   "guppy": {
     "indices": [
       {
-        "index": "healdata.org_clinical_trials",
+        "index": "heal_cmc",
         "type": "clinical_trials"
       },
       {
-        "index": "healdata.org_ctfile",
+        "index": "heal_ct-file",
         "type": "ctfile"
       },
       {
-        "index": "healdata.org_oafile",
+        "index": "heal_oa-file",
         "type": "oafile"
       }
     ],
-    "config_index": "healdata.org_array-config",
+    "config_index": "heal_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "canary": {
