@@ -10,6 +10,7 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.05",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.05",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.05",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.10.2-debian-cloudwatch-1.0",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.05",
@@ -19,7 +20,7 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.05",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.05",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.05",
-    "portal": "quay.io/cdis/data-portal:feat_discovery-export-to-workspace",
+    "portal": "quay.io/cdis/data-portal:feat_discovery-adv-search-filters",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.05",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.05",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.05",
@@ -250,20 +251,21 @@
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
   },
   "guppy": {
-    "indices": [{
-        "index": "heal_cmc",
+    "indices": [
+      {
+        "index": "healdata.org_clinical_trials",
         "type": "clinical_trials"
       },
       {
-        "index": "heal_ct-file",
+        "index": "healdata.org_ctfile",
         "type": "ctfile"
       },
       {
-        "index": "heal_oa-file",
+        "index": "healdata.org_oafile",
         "type": "oafile"
       }
     ],
-    "config_index": "heal_array-config",
+    "config_index": "healdata.org_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "canary": {
