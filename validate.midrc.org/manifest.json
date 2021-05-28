@@ -1,0 +1,100 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "versions": {
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.05",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.05",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.05",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.05",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.05",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.05",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.05",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.05",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.05",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.05",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.05",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.05",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.05",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.05",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.05",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.05",
+    "data-ingestion-pipeline": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-ingestion-pipeline:2021.05",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "jupyterhub": {
+    "enabled": "no"
+  },
+  "peregrine": {
+    "sidecar": "True"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.05"
+    }
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "validate_dataset",
+        "type": "dataset"
+      },
+      {
+        "index": "validate_case",
+        "type": "case"
+      },
+      {
+        "index": "validate_virus_data_file",
+        "type": "virus_data_file"
+      },
+      {
+        "index": "validate_imaging_data_file",
+        "type": "imaging_data_file"
+      },
+      {
+        "index": "validate_imaging_study",
+        "type": "imaging_study"
+      },
+      {
+        "index": "validate_ct_scan",
+        "type": "ct_scan"
+      },
+      {
+        "index": "validate_radiography_exam",
+        "type": "radiography_exam"
+      }
+    ],
+    "config_index": "validate_array-config",
+    "auth_filter_field": "auth_resource_path"
+  },
+  "global": {
+    "environment": "midrcprod",
+    "hostname": "validate.midrc.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:813684607867:certificate/d4bdf325-afce-4e1d-b431-0dd062ee12c5",
+    "useryaml_s3path": "s3://cdis-gen3-users/midrc/user.yaml",
+    "kube_bucket": "kube-midrcprod-gen3",
+    "dispatcher_job_num": "10",
+    "logs_bucket": "logs-midrcprod-gen3",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.4.5/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "netpolicy": "on",
+    "public_datasets": true,
+    "tier_access_level": "libre",
+    "tier_access_limit": "50",
+    "maintenance_mode": "off"
+  },
+  "canary": {
+    "default": 0
+  }
+}
