@@ -11,6 +11,7 @@
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.05",
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:0.1.0",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.05",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.05",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.10.2-debian-cloudwatch-1.0",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.05",
@@ -251,7 +252,8 @@
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
   },
   "guppy": {
-    "indices": [{
+    "indices": [
+      {
         "index": "heal_cmc",
         "type": "clinical_trials"
       },
