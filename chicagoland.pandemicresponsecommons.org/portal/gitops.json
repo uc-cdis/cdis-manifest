@@ -767,7 +767,12 @@
               "state_pct_hospital_beds_available",
               "state_icu_open_beds",
               "state_icu_beds_used",
-              "state_icu_open_beds_pct"
+              "state_icu_open_beds_pct",
+              "vaccine_administered_count",
+              "vaccine_persons_fully_vaccinated_pct",
+              "vaccine_total_delivered_vaccine_doses",
+              "vaccine_community_reported_inventory",
+              "vaccine_reported_inventory"
             ]
           },
           {
@@ -800,6 +805,11 @@
           "state_region_description",
           "reporting_org",
           "date",
+          "vaccine_administered_count",
+          "vaccine_persons_fully_vaccinated_pct",
+          "vaccine_total_delivered_vaccine_doses",
+          "vaccine_community_reported_inventory",
+          "vaccine_reported_inventory",
           "confirmed",
           "deaths",
           "recovered",
@@ -1083,6 +1093,26 @@
           {
             "field": "project_date_collected",
             "name": "Data Collection Status"
+          },
+          {
+            "field": "vaccine_administered_count",
+            "name": "Vaccines Administered"
+          },
+          {
+            "field": "vaccine_persons_fully_vaccinated_pct",
+            "name": "Percent Vaccinated"
+          },
+          {
+            "field": "vaccine_total_delivered_vaccine_doses",
+            "name": "Vaccine Doses Delivered"
+          },
+          {
+            "field": "vaccine_community_reported_inventory",
+            "name": "Community Sites Vaccine Inventory"
+          },
+          {
+            "field": "vaccine_reported_inventory",
+            "name": "Total Vaccine Inventory"
           }
         ],
         "nodeCountTitle": "Locations",
