@@ -12,9 +12,16 @@
     "index": {
       "introduction": {
         "heading": "",
-        "text": "Biomedical Research Hub supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources."
+        "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations."
       },
       "buttons": [
+	{
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover Study Metadata",
+          "link": "/discovery",
+          "label": "Discover Metadata"
+        },
         {
           "name": "Analyze Data",
           "icon": "stage-analyze",
@@ -59,7 +66,7 @@
     "login": {
       "title": "Biomedical Research Hub",
       "subTitle": "Discover, Analyze, and Share Data",
-      "text": "This website supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
+      "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "contact_link": {
         "href": "https://brh.data-commons.org/contact"
@@ -68,22 +75,18 @@
     },
     "footerLogos": [
       {
-        "src": "/src/img/gen3.png",
+        "src": "/src/img/sponsors/gitops-sponsors/gen3_50.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
       },
       {
-        "src": "/src/img/createdby.png",
+        "src": "/src/img/sponsors/gitops-sponsors/createdby_50.png",
         "href": "https://ctds.uchicago.edu/",
         "alt": "Center for Translational Data Science at the University of Chicago"
       }
     ],
     "footer": {
       "links": [
-        {
-          "text": "USA.gov",
-          "href": "https://www.usa.gov"
-        }
       ]
     },
     "categorical9Colors": [
