@@ -71,7 +71,7 @@
           "body": "Discover study descriptions and other metadata stored on the Data Commons",
           "link": "/discovery",
           "label": "Discover Study Metadata"
-        }, 
+        },
         {
           "name": "Analyze Data",
           "icon": "data-analyze",
@@ -175,11 +175,11 @@
       }
     },
     "aggregations": [
-        {
-            "name": "Studies",
-            "field": "accession_number",
-            "type": "count"
-        }
+      {
+        "name": "Studies",
+        "field": "accession_number",
+        "type": "count"
+      }
     ],
     "tagSelector": {
       "title": "Tags by category"
@@ -282,7 +282,7 @@
         "display": true
       }
     ]
-  }, 
+  },
   "dataExplorerConfig": {
     "charts": {
       "project_id": {
@@ -342,11 +342,26 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        {"field": "_samples_count", "name": "Samples Count"},
-        {"field": "_imaging_files_count", "name": "Imaging Files Count"},
-        {"field": "_unaligned_reads_files_count", "name": "Unaligned Reads Count"},
-        {"field": "_aligned_reads_files_count", "name": "Aligned Reads Count"},
-        {"field": "_expression_arrays_count", "name": "Expression Arrays Count"}
+        {
+          "field": "_samples_count",
+          "name": "Samples Count"
+        },
+        {
+          "field": "_imaging_files_count",
+          "name": "Imaging Files Count"
+        },
+        {
+          "field": "_unaligned_reads_files_count",
+          "name": "Unaligned Reads Count"
+        },
+        {
+          "field": "_aligned_reads_files_count",
+          "name": "Aligned Reads Count"
+        },
+        {
+          "field": "_expression_arrays_count",
+          "name": "Expression Arrays Count"
+        }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -354,7 +369,9 @@
         "referenceIdFieldInResourceIndex": "subject_id",
         "referenceIdFieldInDataIndex": "subject_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
       "accessibleValidationField": "project_id"
     },
     "buttons": [
@@ -376,7 +393,7 @@
       }
     ]
   },
-   "fileExplorerConfig": {
+  "fileExplorerConfig": {
     "charts": {
       "data_type": {
         "chartType": "stackedBar",
@@ -412,7 +429,10 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+        {
+          "field": "object_id",
+          "name": "GUID"
+        }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
@@ -421,7 +441,9 @@
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
