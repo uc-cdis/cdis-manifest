@@ -7,23 +7,17 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.12",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.12",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.12",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.12",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.12",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.12",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.12",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.12",
+    "arborist": "quay.io/cdis/arborist:master",
+    "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.12",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2020.12",
-    "nb2": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nb2:2020.12",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2020.12",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2020.12",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2020.12"
+    "indexd": "quay.io/cdis/indexd:master",
+    "peregrine": "quay.io/cdis/peregrine:master",
+    "portal": "quay.io/cdis/data-portal:master",
+    "revproxy": "quay.io/cdis/nginx:master",
+    "sheepdog": "quay.io/cdis/sheepdog:master"
+  },
+  "peregrine": {
+    "sidecar": "False"
   },
   "arborist": {
     "deployment_version": "2"
@@ -31,115 +25,11 @@
   "indexd": {
     "arborist": "true"
   },
-  "hatchery": {
-    "user-namespace": "jupyter-pods",
-    "sub-dir": "/lw-workspace",
-    "user-volume-size": "500Gi",
-    "sidecar": {
-      "cpu-limit": "1.0",
-      "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:2020.12",
-      "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "portal.occ-data.org"
-      },
-      "args": [],
-      "command": [
-        "/bin/bash",
-        "/sidecarDockerrun.sh"
-      ],
-      "lifecycle-pre-stop": [
-        "su",
-        "-c",
-        "echo test",
-        "-s",
-        "/bin/sh",
-        "root"
-      ]
-    },
-    "containers": [
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "256Mi",
-        "name": "Earth - Python | Tiny",
-        "image": "quay.io/occ_data/jupyter-geo:1.9.1",
-        "env": {},
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      },
-      {
-        "target-port": 8888,
-        "cpu-limit": "2.0",
-        "memory-limit": "12000Mi",
-        "name": "Earth - Python | Large",
-        "image": "quay.io/occ_data/jupyter-geo:1.9.1",
-        "env": {},
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      },
-      {
-        "target-port": 8888,
-        "cpu-limit": "2.0",
-        "memory-limit": "12000Mi",
-        "name": "Swirlnet - Python | Medium",
-        "image": "djgagne/swirlnet:latest",
-        "env": {},
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      }
-    ]
+  "google": {
+    "enabled": "no"
+  },
+  "jupyterhub": {
+    "enabled": "no"
   },
   "global": {
     "environment": "edcprodv2",
@@ -172,9 +62,20 @@
       "min": 1,
       "max": 1
     },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
     "sheepdog": {
-      "strategy": "pin",
-      "num": 1
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
     }
   },
   "canary": {
