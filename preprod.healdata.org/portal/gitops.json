@@ -178,14 +178,6 @@
       {
         "name": "Investigator(s)",
         "field": "investigators"
-      },
-      {
-        "name": "Administering IC(s)",
-        "field": "administering_ic"
-      },
-      {
-        "name": "Institution(s)",
-        "field": "institutions"
       }
     ],
     "studyPreviewField": {
@@ -241,6 +233,10 @@
               "name": "Investigator(s)",
               "field": "investigators"
             },
+              {
+                "name": "Administering IC(s)",
+                "field": "administering_ic"
+              },
             {
               "name": "Year Grant Awarded",
               "field": "year_awarded"
