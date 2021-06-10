@@ -169,8 +169,13 @@
         {
           "link": "https://www.synapse.org/#!Synapse:syn8011461/wiki/411591",
           "name": "Documentation"
+        },
+        {
+          "link": "bpa-support@datacommons.io",
+          "name": "Email Support"
         }
-      ]
+      ],
+      "useProfileDropdown": false
     },
     "login": {
       "title": "BloodPAC Data Commons",
@@ -1059,18 +1064,6 @@
       "width": 200
     },
     {
-      "name": "Authors",
-      "field": "authors",
-      "contentType": "string",
-      "width": 300
-    },
-    {
-      "name": "Affiliations",
-      "field": "author_affiliations",
-      "contentType": "string",
-      "ellipsis": true
-    },
-    {
       "name": "Journal",
       "field": "journal",
       "contentType": "string"
@@ -1084,12 +1077,6 @@
       "name": "Data Availability Date",
       "field": "data_availability_date",
       "contentType": "string"
-    },
-    {
-      "name": "Brief Description of Data Available",
-      "field": "data_description",
-      "contentType": "string",
-      "ellipsis": true
     },
     {
       "name": "Sponsors/Acknowledgements",
@@ -1157,7 +1144,7 @@
               "contentType": "string"
             },
             {
-              "name": "Brief Description of Data Available",
+              "name": "Description of Data Available",
               "field": "data_description",
               "contentType": "string"
             },
