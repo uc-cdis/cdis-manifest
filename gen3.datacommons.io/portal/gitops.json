@@ -471,13 +471,13 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
     "resources": [
       {
-        "title": "Canine Data Commons data notebook",
+        "title": "Canine Data Commons Data Visualization Notebook",
         "description": "Download node files, show/select data, and plot with this notebook using data hosted on the Canine Data Commons(https://caninedc.org) stored under the NHGRI project.",
         "link": "https://github.com/uc-cdis/gen3.org/content/resources/user/analyze-data/notebook2_canine.html",
         "imageUrl": "/dashboard/Public/notebooks/notebook_canine.png"
       },
       {
-        "title": "Gene expression notebook",
+        "title": "Gene Expression Analysis Notebook",
         "description": "Download data files and metadata using the gen3-client and the Gen3 SDK, respectively, and bring them into the workspace. Run gene expression analysis and statistical analysis on the data files and metadata, respectively, and plot the outcome in different scenarios. This data analysis notebook uses data hosted on the generic Data Commons (gen3.datacommons.io).",
         "link": "https://github.com/uc-cdis/gen3.org/content/resources/user/analyze-data/notebook3_gen3datacommonsio.html",
         "imageUrl": "/dashboard/Public/notebooks/notebook_gene.png"
