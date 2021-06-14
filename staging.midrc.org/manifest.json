@@ -54,10 +54,6 @@
         "type": "case"
       },
       {
-        "index": "midrcstaging_virus_data_file",
-        "type": "virus_data_file"
-      },
-      {
         "index": "midrcstaging_imaging_data_file",
         "type": "imaging_data_file"
       },
@@ -72,6 +68,10 @@
       {
         "index": "midrcstaging_radiography_exam",
         "type": "radiography_exam"
+      },
+      {
+        "index": "midrcstaging_mr_exam",
+        "type": "mr_exam"
       }
     ],
     "config_index": "midrcstaging_array-config",

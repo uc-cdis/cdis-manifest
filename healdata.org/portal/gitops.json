@@ -20,13 +20,6 @@
           "body": "Discover Study Metadata",
           "link": "/discovery",
           "label": "Discover Metadata"
-        },
-        {
-          "name": "Submit Data",
-          "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
-          "link": "/submission",
-          "label": "Submit data"
         }
       ]
     },
@@ -36,27 +29,31 @@
         {
           "icon": "query",
           "link": "/discovery",
-          "name": "Discovery"
+          "name": "Discovery",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
         },
         {
           "icon": "workspace",
           "link": "/workspace",
-          "name": "Workspace"
+          "name": "Workspace",
+          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
+        },
+        {
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "icon": "analysis",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "profile",
           "link": "/identity",
-          "name": "Profile"
+          "name": "Profile",
+          "tooltip": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
         }
       ]
     },
     "topBar": {
       "items": [
-        {
-          "icon": "upload",
-          "link": "/submission",
-          "name": "Submit Data"
-        },
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
@@ -107,6 +104,24 @@
   },
   "discoveryConfig": {
     "features": {
+      "advSearchFilters": {
+        "enabled": true,
+        "field": "advSearchFilters",
+        "filters": [
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
+        ]
+      },
       "exportToWorkspaceBETA": {
         "enabled": true,
         "manifestFieldName": "__manifest",
@@ -148,8 +163,8 @@
         "field": "research_focus_area"
       },
       {
-        "name": "Research Program",
-        "field": "research_program"
+        "name": "Investigator(s)",
+        "field": "investigators"
       },
       {
         "name": "Administering IC(s)",
@@ -322,6 +337,18 @@
             {
               "name": "Dataset 4 - Type",
               "field": "dataset_4_type"
+            },
+            {
+              "name": "Dataset 5 - Title",
+              "field": "dataset_5_title"
+            },
+            {
+              "name": "Dataset 5 - Description",
+              "field": "dataset_5_description"
+            },
+            {
+              "name": "Dataset 5 - Type",
+              "field": "dataset_5_type"
             }
           ]
         }
@@ -352,6 +379,25 @@
         "name": "Other",
         "color": "rgba(207, 54, 38, 1)",
         "display": true
+      }
+    ]
+  },
+  "resourceBrowser": {
+    "title": "HEAL Jupyter Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
+    "resources": [
+      {
+        "title": "BACPAC synthetic data analysis",
+        "description": "In this Jupyter notebook, we used the synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+        "link": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.html",
+        "imageUrl": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.png"
+      },
+      {
+        "title": "Tracking Stigma related to Opioid Use Disorder",
+        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
+        "link": "/dashboard/Public/notebooks/NORC_JCOIN_data_demo.html",
+        "imageUrl": "/dashboard/Public/notebooks/NORC_JCOIN_notebook.png"
       }
     ]
   },

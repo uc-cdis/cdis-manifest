@@ -169,8 +169,13 @@
         {
           "link": "https://www.synapse.org/#!Synapse:syn8011461/wiki/411591",
           "name": "Documentation"
+        },
+        {
+          "link": "bpa-support@datacommons.io",
+          "name": "Email Support"
         }
-      ]
+      ],
+      "useProfileDropdown": false
     },
     "login": {
       "title": "BloodPAC Data Commons",
@@ -368,11 +373,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Cases",
+          "type": "data-tsv",
+          "title": "Download Case Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "cases.json"
+          "fileName": "BloodPAC_cases.tsv"
         },
         {
           "enabled": false,
@@ -509,11 +514,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Biospecimens",
+          "type": "data-tsv",
+          "title": "Download Biospecimen Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "biospecimens.json"
+          "fileName": "BloodPAC_biospecimens.tsv"
         },
         {
           "enabled": false,
@@ -622,11 +627,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Aliquots",
+          "type": "data-tsv",
+          "title": "Download Aliquot Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "aliquots.json"
+          "fileName": "aliquots.tsv"
         },
         {
           "enabled": false,
@@ -735,11 +740,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Read Groups",
+          "type": "data-tsv",
+          "title": "Download Read Group Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "read_groups.json"
+          "fileName": "BloodPAC_read_groups.tsv"
         },
         {
           "enabled": false,
@@ -924,11 +929,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
+          "type": "data-tsv",
           "title": "Download Medical History",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "medical_history.json"
+          "fileName": "medical_history.tsv"
         },
         {
           "enabled": false,
@@ -1059,18 +1064,6 @@
       "width": 200
     },
     {
-      "name": "Authors",
-      "field": "authors",
-      "contentType": "string",
-      "width": 300
-    },
-    {
-      "name": "Affiliations",
-      "field": "author_affiliations",
-      "contentType": "string",
-      "ellipsis": true
-    },
-    {
       "name": "Journal",
       "field": "journal",
       "contentType": "string"
@@ -1081,39 +1074,8 @@
       "contentType": "string"
     },
     {
-      "name": "Data Availability Date",
-      "field": "data_availability_date",
-      "contentType": "string"
-    },
-    {
-      "name": "Brief Description of Data Available",
-      "field": "data_description",
-      "contentType": "string",
-      "ellipsis": true
-    },
-    {
-      "name": "Sponsors/Acknowledgements",
-      "field": "sponsors",
-      "contentType": "string"
-    },
-    {
-      "name": "Study Number/Codes",
-      "field": "study_codes",
-      "contentType": "string"
-    },
-    {
       "name": "Condition",
       "field": "condition",
-      "contentType": "string"
-    },
-    {
-      "name": "Study Type",
-      "field": "study_type",
-      "contentType": "string"
-    },
-    {
-      "name": "Websites",
-      "field": "websites",
       "contentType": "string"
     }
   ],
@@ -1160,7 +1122,7 @@
               "contentType": "string"
             },
             {
-              "name": "Brief Description of Data Available",
+              "name": "Description of Data Available",
               "field": "data_description",
               "contentType": "string"
             },

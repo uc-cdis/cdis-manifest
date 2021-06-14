@@ -128,7 +128,28 @@
       },
       "search": {
         "searchBar": {
-          "enabled": true
+          "enabled": true,
+          "searchableTextFields": [
+            "summary",
+            "location",
+            "study_name",
+            "institutions",
+            "investigators",
+            "project_title",
+            "project_number",
+            "dataset_1_title",
+            "dataset_2_title",
+            "dataset_3_title",
+            "dataset_4_title",
+            "administering_ic",
+            "research_program",
+            "research_question",
+            "dataset_description",
+            "dataset_1_description",
+            "dataset_2_description",
+            "dataset_3_description",
+            "dataset_4_description"
+          ]
         }
       },
       "authorization": {
@@ -157,14 +178,6 @@
       {
         "name": "Investigator(s)",
         "field": "investigators"
-      },
-      {
-        "name": "Administering IC(s)",
-        "field": "administering_ic"
-      },
-      {
-        "name": "Institution(s)",
-        "field": "institutions"
       }
     ],
     "studyPreviewField": {
@@ -182,6 +195,7 @@
       "fieldsToShow": [
         {
           "groupName": "HEAL Research Initiatives",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -204,6 +218,7 @@
         },
         {
           "groupName": "Host Institution",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -218,6 +233,10 @@
               "name": "Investigator(s)",
               "field": "investigators"
             },
+              {
+                "name": "Administering IC(s)",
+                "field": "administering_ic"
+              },
             {
               "name": "Year Grant Awarded",
               "field": "year_awarded"
@@ -226,6 +245,7 @@
         },
         {
           "groupName": "Clinical Trial",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -267,6 +287,20 @@
           ]
         },
         {
+        "groupName": "Tags",
+        "includeName": false,
+        "groupWidth": "full",
+        "fields": [
+          {
+            "name": "Tags",
+            "field": "tags",
+            "contentType": "tags",
+            "includeIfNotAvailable": false
+          }
+        ]
+      },
+      {
+        "groupWidth": "full",
           "fields": [
             {
               "name": "Summary",
@@ -280,6 +314,7 @@
         },
         {
           "groupName": "Datasets",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {

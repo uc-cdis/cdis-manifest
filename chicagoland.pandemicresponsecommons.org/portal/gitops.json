@@ -767,7 +767,12 @@
               "state_pct_hospital_beds_available",
               "state_icu_open_beds",
               "state_icu_beds_used",
-              "state_icu_open_beds_pct"
+              "state_icu_open_beds_pct",
+              "vaccine_administered_count",
+              "vaccine_persons_fully_vaccinated_pct",
+              "vaccine_total_delivered_vaccine_doses",
+              "vaccine_community_reported_inventory",
+              "vaccine_reported_inventory"
             ]
           },
           {
@@ -800,6 +805,11 @@
           "state_region_description",
           "reporting_org",
           "date",
+          "vaccine_administered_count",
+          "vaccine_persons_fully_vaccinated_pct",
+          "vaccine_total_delivered_vaccine_doses",
+          "vaccine_community_reported_inventory",
+          "vaccine_reported_inventory",
           "confirmed",
           "deaths",
           "recovered",
@@ -1083,6 +1093,26 @@
           {
             "field": "project_date_collected",
             "name": "Data Collection Status"
+          },
+          {
+            "field": "vaccine_administered_count",
+            "name": "Vaccines Administered"
+          },
+          {
+            "field": "vaccine_persons_fully_vaccinated_pct",
+            "name": "Percent Vaccinated"
+          },
+          {
+            "field": "vaccine_total_delivered_vaccine_doses",
+            "name": "Vaccine Doses Delivered"
+          },
+          {
+            "field": "vaccine_community_reported_inventory",
+            "name": "Community Sites Vaccine Inventory"
+          },
+          {
+            "field": "vaccine_reported_inventory",
+            "name": "Total Vaccine Inventory"
           }
         ],
         "nodeCountTitle": "Locations",
@@ -1136,16 +1166,16 @@
         "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
       },
       {
-        "title": "Cross Dataset Analysis on COVID-19 Symptoms and Fatality Rate",
-        "description": "In this notebook, we are performing some visual analysis on the individual case reports that provide aggregated data on clinical states (e.g. deceased, recovered, alive, etc) and symptoms. We are looking at whether the fatality rates and symptoms are similar across different datasets.",
-        "link": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.html",
-        "imageUrl": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.png"
+        "title": "nCoV-2019 Data Visualization",
+        "description": "In this notebook, we are performing some visual analysis on the individual COVID-19 case reports that provide aggregated data on demographic data, geographic location and symptoms. Please note that the data is available from Jan 3, 2020 to April 30, 2020. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.png"
       },
       {
         "title": "Demo: Exploring clinical data from multiple commons",
         "description": "In this notebook, we obtain the clinical data for multiple projects from the Chicagoland Pandemic Response Commons and the NCI Genomic Data Commons (GDC) and visualize some of the clinical attributes. This notebook is for demonstration purposes only and not biologically meaningful.",
-        "link": "/dashboard/Public/notebooks/TCGA_OV_COVID.html",
-        "imageUrl": "/dashboard/Public/notebooks/TCGA_OV_COVID.png"
+        "link": "/dashboard/Public/notebooks/TCGA_COAD_COVID.html",
+        "imageUrl": "/dashboard/Public/notebooks/TCGA_COAD_COVID.png"
       },
       {
         "title": "Visualize Statistical Summary Reports from Partnering Healthcare Providers",
