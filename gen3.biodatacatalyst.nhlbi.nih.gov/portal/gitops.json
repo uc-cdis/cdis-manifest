@@ -234,6 +234,7 @@
         {
           "title": "Project",
           "fields": [
+            "programs_name",
             "project_id",
             "consent_codes",
             "studies_submitter_id",
@@ -506,6 +507,10 @@
         {
           "field": "studies_submitter_id",
           "name": "Study"
+        },
+        {
+          "field": "programs_name",
+          "name": "Program"
         }
       ],
       "manifestMapping": {
@@ -543,6 +548,7 @@
         {
           "title": "File",
           "fields": [
+            "programs_name",
             "project_id",
             "data_category",
             "data_type",
@@ -572,6 +578,10 @@
         {
           "field": "object_id",
           "name": "GUID"
+        },
+        {
+          "field": "programs_name",
+          "name": "Program"
         }
       ],
       "nodeCountTitle": "Files",
