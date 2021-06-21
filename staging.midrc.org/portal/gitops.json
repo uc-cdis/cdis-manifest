@@ -660,7 +660,19 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format"
+                    "data_format",
+                    "detector_type",
+                    "imager_pixel_spacing",
+                    "contrast_bolus_agent_number",
+                    "image_type",
+                    "lossy_image_compression",
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "modality",
+                    "pixel_spacing",
+                    "series_description",
+                    "series_uid",
+                    "spatial_resolution"
                   ]
                 },
                 {
@@ -698,6 +710,18 @@
                 "_cr_series_count",
                 "_cr_images_count",
                 "data_format",
+                "detector_type",
+                "imager_pixel_spacing",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
                 "project_id"
               ]
             },
@@ -802,7 +826,23 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format"
+                    "data_format",
+                    "acquisition_type",
+                    "convolution_kernel",
+                    "exposure_modulation_type",
+                    "patient_position",
+                    "slice_thickness",
+                    "spacing_between_slices",
+                    "contrast_bolus_agent_number",
+                    "image_type",
+                    "lossy_image_compression",
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "modality",
+                    "pixel_spacing",
+                    "series_description",
+                    "series_uid",
+                    "spatial_resolution"
                   ]
                 },
                 {
@@ -843,6 +883,22 @@
                 "race",
                 "zip",
                 "data_format",
+                "acquisition_type",
+                "convolution_kernel",
+                "exposure_modulation_type",
+                "patient_position",
+                "slice_thickness",
+                "spacing_between_slices",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
                 "project_id"
               ]
             },
@@ -937,7 +993,23 @@
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "data_format"
+                    "data_format",
+                    "slice_thickness",
+                    "spacing_between_slices",
+                    "mr_acquisition_type",
+                    "magnetic_field_strength",
+                    "scanning_sequence",
+                    "sequence_name",
+                    "contrast_bolus_agent_number",
+                    "image_type",
+                    "lossy_image_compression",
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "modality",
+                    "pixel_spacing",
+                    "series_description",
+                    "series_uid",
+                    "spatial_resolution"
                   ]
                 },
                 {
@@ -977,6 +1049,22 @@
                 "race",
                 "zip",
                 "data_format",
+                "slice_thickness",
+                "spacing_between_slices",
+                "mr_acquisition_type",
+                "magnetic_field_strength",
+                "scanning_sequence",
+                "sequence_name",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
                 "project_id"
               ]
             },
