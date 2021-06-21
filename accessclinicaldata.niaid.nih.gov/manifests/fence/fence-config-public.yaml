@@ -52,9 +52,6 @@ LOGIN_OPTIONS:
     fence_idp: shibboleth
     # "shib_idps" can be '*' or a list of one or more entity IDs
     shib_idps: '*'
-  - name: 'Dev Google Login'
-    idp: google
-    secondary: true
 
 # //////////////////////////////////////////////////////////////////////////////////////
 # LIBRARY CONFIGURATION (authlib & flask)
