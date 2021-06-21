@@ -123,8 +123,8 @@
           "name": "Submit Data"
         },
         {
-          "link": "https://ibdgc.datacommons.io/dashboard/Public/index.html",
-          "name": "Documentation"
+          "link": "https://ibd-browser.planx-pla.net",
+          "name": "IBD gnomAD Browser"
         }
       ]
     },
@@ -406,7 +406,10 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
     "resources": [
       {
-        "title": "NIDDK IBDGC Notebooks coming soon"
+        "title": "CD Ileal Single Cell Data",
+        "description": "Notebook showing differences in distribution of cell types between inflamed and uninflamed ileum in Crohn’s disease.",
+        "link": "/dashboard/Public/notebooks/CD.html",
+        "imageUrl": "/dashboard/Public/notebooks/CD.png"
       }
     ]
   },

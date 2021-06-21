@@ -132,6 +132,10 @@
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Gen3 Documentation"
+        },
+        {
+          "link": "https://acct.bionimbus.org/dashboard/Public/documentation-page/index.html",
+          "name": "ACCOuNT Documentation"
         }
       ]
     },
@@ -254,6 +258,7 @@
         "enabled": true,
         "fields": [
           "project_id",
+          "submitter_id",
           "race",
           "alcohol_intensity",
           "pack_years_smoked",
@@ -275,19 +280,11 @@
       "buttons": [
         {
           "enabled": true,
-          "type": "data",
-          "title": "Download Data",
+          "type": "data-tsv",
+          "title": "Download Table",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "data.json"
-        },
-        {
-          "enabled": true,
-          "type": "manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "manifest.json"
+          "fileName": "data.tsv"
         },
         {
           "enabled": true,
@@ -321,8 +318,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "subject_id",
-          "referenceIdFieldInDataIndex": "subject_id"
+          "referenceIdFieldInResourceIndex": "_subject_id",
+          "referenceIdFieldInDataIndex": "_subject_id"
         },
         "accessibleFieldCheckList": [
           "project_id"
@@ -406,7 +403,7 @@
         "nodeCountTitle": "Files",
         "manifestMapping": {
           "resourceIndexType": "subject",
-          "resourceIdField": "subject_id",
+          "resourceIdField": "_subject_id",
           "referenceIdFieldInResourceIndex": "object_id",
           "referenceIdFieldInDataIndex": "object_id"
         },
@@ -417,6 +414,14 @@
         "downloadAccessor": "object_id"
       },
       "buttons": [
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "Download Table",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "data.tsv"
+        },
         {
           "enabled": true,
           "type": "file-manifest",

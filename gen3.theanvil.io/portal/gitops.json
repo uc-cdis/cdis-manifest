@@ -151,11 +151,10 @@
             "title": "Projects",
             "fields": [
               "project_id",
-              "project_short_name",
+              "anvil_project_id",
               "project_dbgap_accession_number",
-              "project_dbgap_consent_text",
               "project_dbgap_phs",
-              "project_name"
+              "project_dbgap_consent_text"
             ]
           },
           {
@@ -164,10 +163,9 @@
               "_subject_id"
             ],
             "fields": [
-              "anvil_project_id",
               "sex",
-              "age_value",
               "ancestry",
+              "age_value",
               "disease_description",
               "phenotype_present",
               "phenotype_absent",
@@ -181,21 +179,21 @@
           {
             "title": "Sample",
             "fields": [
-              "sample_provider",
-              "tissue_affected_status",
               "tissue_type",
               "sample_type",
-              "original_material_type"
+              "original_material_type",
+              "sample_provider",
+              "tissue_affected_status"
             ]
           },
           {
             "title": "Sequencing",
             "fields": [
+              "sequencing_assay",
+              "reference_genome_build",
               "library_prep_kit_method",
               "exome_capture_platform",
               "capture_region_bed_file",
-              "reference_genome_build",
-              "sequencing_assay",
               "alignment_method",
               "data_processing_pipeline"
             ]
@@ -409,22 +407,6 @@
             "searchFields": [
               "file_name"
             ]
-          }, {
-            "title": "Subject",
-            "fields": [
-              "anvil_project_id",
-              "sex",
-              "age_value",
-              "ancestry",
-              "disease_description",
-              "phenotype_present",
-              "phenotype_absent",
-              "disease_id",
-              "solve_state",
-              "congenital_status",
-              "age_of_onset",
-              "phenotype_group"
-            ]
           }
         ]
       },
@@ -444,7 +426,7 @@
         ]
       },
       "buttons": [
-      {
+        {
           "enabled": true,
           "type": "file-manifest",
           "title": "Download Manifest",

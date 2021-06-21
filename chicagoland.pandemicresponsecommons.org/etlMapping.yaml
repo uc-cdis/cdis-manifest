@@ -146,6 +146,11 @@ mappings:
           - name: new_cases
           - name: new_deaths
           - name: positive_rate
+          - name: vaccine_administered_count
+          - name: vaccine_persons_fully_vaccinated_pct
+          - name: vaccine_total_delivered_vaccine_doses
+          - name: vaccine_community_reported_inventory
+          - name: vaccine_reported_inventory
         sorted_by: updated_datetime, desc
       - path: summary_socio_demographics
         props:

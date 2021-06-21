@@ -68,7 +68,7 @@
           "icon": "exploration",
           "link": "/explorer",
           "label": "Explorer",
-          "color": "#a2a2a2" 
+          "color": "#a2a2a2"
         },
         {
           "icon": "files",
@@ -96,6 +96,24 @@
         }
       ]
     },
+      "topBar": {
+        "items": [
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
+          },
+          {
+            "link": "https://gen3.org/resources/user/",
+            "name": "Documentation"
+          },
+          {
+            "link": "support@datacommons.io",
+            "name": "Email Support"
+          }
+        ],
+        "useProfileDropdown": false
+      },
     "login": {
       "title": "Veterans Affairs Data Commons",
       "subTitle": "search, compare, and download data",

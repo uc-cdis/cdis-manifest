@@ -4,7 +4,7 @@ before_script:
   - pip install gen3utils --upgrade
 
 script:
-  # validate manifest.json and etlMapping.yaml:
+  # validate manifest.json, etlMapping.yaml and gitops.json:
   - |
     # for push builds, TRAVIS_BRANCH is the current branch name; for PR
     # builds, it's the name of the branch targeted by the PR.
@@ -21,17 +21,26 @@ script:
     echo "Updated: ${envs[@]}"
 
     for dir in "${envs[@]}"; do
-      man=$dir/manifest.json; etl=$dir/etlMapping.yaml
+      echo " Validating $dir"
+      man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
 
       # validate manifest.json
       if [ -f $man ]; then
-        echo "    Validating $dir"
         gen3utils validate-manifest $man || exit 1
       fi
 
       # validate ETL mapping
       if [ -f $man ] && [ -f $etl ]; then
         gen3utils validate-etl-mapping $etl $man || exit 1
+      fi
+
+      # validate portal configuration
+      if [ -f $man ] && [ -f $etl ] && [ -f $ptlcfg ]; then
+        if [[ $TRAVIS_PULL_REQUEST != false ]]; then
+          gen3utils validate-portal-config $etl $man $ptlcfg uc-cdis/gitops-qa $TRAVIS_PULL_REQUEST || exit 1
+        else
+          gen3utils validate-portal-config $etl $man $ptlcfg || exit 1
+        fi
       fi
     done
 

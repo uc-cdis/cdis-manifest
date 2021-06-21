@@ -65,7 +65,7 @@
         },
         {
           "name": "Workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "icon": "workspace",
           "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         },
@@ -137,7 +137,9 @@
   "featureFlags": {
     "explorer": true,
     "analysis": true,
-    "explorerPublic": true
+    "explorerPublic": true,
+    "explorerHideEmptyFilterSection": true,
+    "explorerFilterValuesToHide": ["no data"]
   },
   "analysisTools": [],
   "explorerConfig": [
@@ -151,7 +153,6 @@
             "fields": [
               "date_collected",
               "investigator_affiliation",
-              "name",
               "data_description"
             ]
           }
@@ -297,14 +298,38 @@
           "project_url"
         ]
       },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
         }
       ],
       "guppyConfig": {
@@ -368,7 +393,7 @@
           }
         ],
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "subject_id"
+          "referenceIdFieldInResourceIndex": "_subject_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -414,7 +439,40 @@
           "project_url"
         ]
       },
-      "buttons": [],
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
       "guppyConfig": {
         "dataType": "clinical_trials",
         "nodeCountTitle": "Interventions",
@@ -538,21 +596,51 @@
           "project_url"
         ]
       },
-      "dropdowns": {},
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "file-manifest",
-          "title": "Download Object Data Manifest",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "file-manifest.json",
-          "dropdownId": "download"
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Data Files Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
         },
         {
           "enabled": true,
           "type": "export-files-to-workspace",
-          "title": "Export to Workspace",
+          "title": "Export Data Files to Workspace",
           "leftIcon": "datafile",
           "rightIcon": "download"
         }
@@ -679,7 +767,12 @@
               "state_pct_hospital_beds_available",
               "state_icu_open_beds",
               "state_icu_beds_used",
-              "state_icu_open_beds_pct"
+              "state_icu_open_beds_pct",
+              "vaccine_administered_count",
+              "vaccine_persons_fully_vaccinated_pct",
+              "vaccine_total_delivered_vaccine_doses",
+              "vaccine_community_reported_inventory",
+              "vaccine_reported_inventory"
             ]
           },
           {
@@ -712,6 +805,11 @@
           "state_region_description",
           "reporting_org",
           "date",
+          "vaccine_administered_count",
+          "vaccine_persons_fully_vaccinated_pct",
+          "vaccine_total_delivered_vaccine_doses",
+          "vaccine_community_reported_inventory",
+          "vaccine_reported_inventory",
           "confirmed",
           "deaths",
           "recovered",
@@ -759,15 +857,38 @@
           "project_url"
         ]
       },
-      "dropdowns": {},
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
       "buttons": [
         {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
         }
       ],
       "guppyConfig": {
@@ -951,7 +1072,7 @@
           },
           {
             "field": "hhinc_mean",
-            "name": "Mean Household Income (USD)"
+            "name": "Mean Household Income (US Currency)"
           },
           {
             "field": "med_hhinc",
@@ -972,12 +1093,31 @@
           {
             "field": "project_date_collected",
             "name": "Data Collection Status"
+          },
+          {
+            "field": "vaccine_administered_count",
+            "name": "Vaccines Administered"
+          },
+          {
+            "field": "vaccine_persons_fully_vaccinated_pct",
+            "name": "Percent Vaccinated"
+          },
+          {
+            "field": "vaccine_total_delivered_vaccine_doses",
+            "name": "Vaccine Doses Delivered"
+          },
+          {
+            "field": "vaccine_community_reported_inventory",
+            "name": "Community Sites Vaccine Inventory"
+          },
+          {
+            "field": "vaccine_reported_inventory",
+            "name": "Total Vaccine Inventory"
           }
         ],
         "nodeCountTitle": "Locations",
         "manifestMapping": {
-          "referenceIdFieldInResourceIndex": "project_id",
-          "referenceIdFieldInDataIndex": "project_id"
+          "referenceIdFieldInResourceIndex": "project_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -1026,16 +1166,16 @@
         "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
       },
       {
-        "title": "Cross Dataset Analysis on COVID-19 Symptoms and Fatality Rate",
-        "description": "In this notebook, we are performing some visual analysis on the individual case reports that provide aggregated data on clinical states (e.g. deceased, recovered, alive, etc) and symptoms. We are looking at whether the fatality rates and symptoms are similar across different datasets.",
-        "link": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.html",
-        "imageUrl": "/dashboard/Public/notebooks/symptoms_and_fatality_covid19.png"
+        "title": "nCoV-2019 Data Visualization",
+        "description": "In this notebook, we are performing some visual analysis on the individual COVID-19 case reports that provide aggregated data on demographic data, geographic location and symptoms. Please note that the data is available from Jan 3, 2020 to April 30, 2020. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.png"
       },
       {
         "title": "Demo: Exploring clinical data from multiple commons",
         "description": "In this notebook, we obtain the clinical data for multiple projects from the Chicagoland Pandemic Response Commons and the NCI Genomic Data Commons (GDC) and visualize some of the clinical attributes. This notebook is for demonstration purposes only and not biologically meaningful.",
-        "link": "/dashboard/Public/notebooks/TCGA_OV_COVID.html",
-        "imageUrl": "/dashboard/Public/notebooks/TCGA_OV_COVID.png"
+        "link": "/dashboard/Public/notebooks/TCGA_COAD_COVID.html",
+        "imageUrl": "/dashboard/Public/notebooks/TCGA_COAD_COVID.png"
       },
       {
         "title": "Visualize Statistical Summary Reports from Partnering Healthcare Providers",
@@ -1045,15 +1185,27 @@
       },
       {
         "title": "COVID-19 X-ray images classification",
-        "description": "This notebook is a replication of the DarkCovidNet model to classify COVID-19 x-ray images from \"No finding\" images to assist COVID-19 diagnosis and an extension of the notebook published along with the paper.",
-        "link": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.html",
-        "imageUrl": "/dashboard/Public/notebooks/DarkCovidNet_binary_classes.png"
+        "description": "This notebook replicates the DarkCovidNet model and performes transfer learning with the GoogLeNet model to classify radiological images as indicative of either 'COVID-19', 'Normal' or 'Pneumonia' to assist in the diagnosis of COVID-19.",
+        "link": "/dashboard/Public/notebooks/CNN_XRAY_CF.html",
+        "imageUrl": "/dashboard/Public/notebooks/CNN_XRAY_CF.png"
       },
       {
         "title": "Google Mobility Data Visualization",
         "description": "In this notebook, we demonstrate how to query the google mobility data using the BigQuery API client python library, and visualize the mobility changes over time across the United States since February 2020.",
         "link": "/dashboard/Public/notebooks/google_mobility.html",
         "imageUrl": "/dashboard/Public/notebooks/google_mobility.png"
+      },
+      {
+        "title": "COVID-19 Data Visualization in Illinois",
+        "description": "This notebook provides a snapshot of publicly available data related to COVID-19 in Illinois from the Illinois Department of Public Health, Google and Johns Hopkins CSSE. Graphics illustrate the demographics, administered vaccine doses, google mobility data and forecasted COVID-19 cases in Illinois.",
+        "link": "/dashboard/Public/notebooks/IL_tab_charts.html",
+        "imageUrl": "/dashboard/Public/notebooks/IL_tab_charts.png"
+      },
+      {
+        "title": "3D Coronavirus SARS-CoV-2 Protein Visualization",
+        "description": "This notebook provides an example to manipulate coronavirus SARS-CoV-2 DNA sequence, amino acid sequence and use visualization tools to present the three-dimensional (3D) structure of SARS-CoV-2 protein structures interactively.",
+        "link": "/dashboard/Public/notebooks/3D_Protein_Vis.html",
+        "imageUrl": "/dashboard/Public/notebooks/3D_Protein_Vis.png"
       }
     ]
   },
@@ -1108,33 +1260,77 @@
       "illinois": [
         [
           {
-            "title": "Cumulative Testing in Illinois",
-            "description": "The source of the data used to compile this chart is the Illinois Department of Public Health. This chart depicts the total number of tests to date per Illinois county for the top 15 counties that have administered the most tests in Illinois.",
-            "xTitle": "County",
-            "yTitle": "Number of Tests",
+            "title": "Daily Reported Administered Vaccine Doses in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the daily reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_vaccine.svg"
+          },
+          {
+            "title": "Cumulative Reported Administered Vaccine Doses in Illinois ",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the cumulative reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_vaccine.svg"
+          },
+          {
+            "title": "10 IL Counties With The Highest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the highest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_top10.svg"
+          },
+          {
+            "title": "10 IL Counties With The Lowest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the lowest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_bottom10.svg"
+          },
+          {
+            "title": "Total Deaths per 10,000 in Chicago",
+            "description": "The source of the data used to compile this chart is the Cook County Data Portal.",
+            "xTitle": "",
+            "yTitle": "",
             "type": "barChart",
-            "layout": "horizontal",
+            "layout": "vertical",
             "maxItems": 15,
             "barColor": "#421C52",
             "guppyConfig": {
               "dataType": "location",
-              "xAxisProp": "county",
-              "yAxisProp": "testing",
+              "xAxisProp": "community_area",
+              "yAxisProp": "deaths_per_10000",
               "filters": {
                 "AND": [
                   {
                     "=": {
-                      "project_id": "open-IDPH"
-                    }
-                  },
-                  {
-                    "!=": {
-                      "county": "Illinois"
+                      "project_id": "open-CHI-NBHD"
                     }
                   }
                 ]
               }
             }
+
+          },
+          {
+            "title": "Age Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by age groups and by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_age_demographic.svg"
+          },
+          {
+            "title": "Race Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_race_demographic.svg"
+          },
+          {
+            "title": "Gender Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by gender in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_gender_demographic.svg"
+          },
+          {
+            "title": "COVID-19 Google Mobility Data Visualization in Illinois In The Past 3 Months",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_IL_mobility.svg"
           }
         ],
         [
@@ -1158,9 +1354,27 @@
           },
           {
             "title": "Average Rt Over Latest 7 Days Of Observations",
-            "description": "Latest Rt estimates for the IL counties most impacted by COVID-19.",
+            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
             "type": "image",
-            "path": "bayes-by-county/Rt_All.png"
+            "path": "bayes-by-county/Rt_Top20.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
           }
         ]
       ],

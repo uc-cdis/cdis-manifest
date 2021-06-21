@@ -25,7 +25,8 @@
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.03",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.03",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.03",
-    "metadata": "quay.io/cdis/metadata-service:2021.03"
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.03",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.03"
   },
   "arborist": {
     "deployment_version": "2"
@@ -40,7 +41,7 @@
     "environment": "accountprod",
     "hostname": "acct.bionimbus.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:830067555646:certificate/ada3ae0c-0e2b-4c97-aeac-7f0923e03312",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/acctdictionary/0.6.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/acctdictionary/0.7.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-accountprod-gen3",
     "logs_bucket": "logs-accountprod-gen3",

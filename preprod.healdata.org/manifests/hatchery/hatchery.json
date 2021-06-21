@@ -1,13 +1,13 @@
 {
-  "user-namespace": "jupyter-pods",
+  "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:2021.03",
+    "image": "quay.io/cdis/gen3fuse-sidecar:2021.05",
     "env": {
-      "NAMESPACE": "default",
+      "NAMESPACE": "healpreprod",
       "HOSTNAME": "preprod.healdata.org"
     },
     "args": [],
@@ -124,6 +124,35 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "8096Mi",
+      "name": "HEAL Demo",
+      "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.3",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
     }
   ]
 }

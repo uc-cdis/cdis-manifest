@@ -54,13 +54,6 @@
           "label": "Explore data"
         },
         {
-          "name": "Access Data",
-          "icon": "stage-access",
-          "body": "Use our selected tool to filter out the data you need.",
-          "link": "/query",
-          "label": "Query data"
-        },
-        {
           "name": "Analyze Data",
           "icon": "stage-analyze",
           "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
@@ -82,12 +75,6 @@
     "navigation": {
       "items": [
         {
-          "icon": "query",
-          "link": "/discovery",
-          "color": "#a2a2a2",
-          "name": "Discovery"
-        },
-        {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
@@ -98,12 +85,6 @@
           "link": "/explorer",
           "color": "#a2a2a2",
           "name": "Exploration"
-        },
-        {
-          "icon": "analysis",
-          "link": "/query",
-          "color": "#a2a2a2",
-          "name": "Query"
         },
         {
           "icon": "workspace",
@@ -241,6 +222,7 @@
         {
           "title": "Project",
           "fields": [
+            "programs_name",
             "project_id",
             "consent_codes",
             "studies_submitter_id",
@@ -513,6 +495,10 @@
         {
           "field": "studies_submitter_id",
           "name": "Study"
+        },
+        {
+          "field": "programs_name",
+          "name": "Program"
         }
       ],
       "manifestMapping": {
@@ -550,6 +536,7 @@
         {
           "title": "File",
           "fields": [
+            "programs_name",
             "project_id",
             "data_category",
             "data_type",
@@ -579,6 +566,10 @@
         {
           "field": "object_id",
           "name": "GUID"
+        },
+        {
+          "field": "programs_name",
+          "name": "Program"
         }
       ],
       "nodeCountTitle": "Files",

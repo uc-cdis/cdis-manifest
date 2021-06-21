@@ -1,10 +1,11 @@
 version: '3'
 services:
    webapp:
-      image: "quay.io/cdis/jupyter-covid19:jupyter-covid1.1.12"
+      image: "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.4"
       volumes:
          - ${DATA_VOLUME}:/data
          - ${USER_VOLUME}:/home/jovyan/pd
+      fs_gid: 100
       environment:
         - NAMESPACE=default
         - HOSTNAME=chicagoland.pandemicresponsecommons.org
