@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:2021.05",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.06",
     "env": {
       "NAMESPACE": "healpreprod",
       "HOSTNAME": "preprod.healdata.org"
@@ -131,7 +131,9 @@
       "memory-limit": "8096Mi",
       "name": "HEAL Demo",
       "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.3",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
