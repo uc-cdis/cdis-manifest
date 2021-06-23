@@ -962,17 +962,9 @@
         {
             "tabTitle": "MR Exams",
             "charts": {
-              "age_at_imaging": {
+              "covid19_positive": {
                 "chartType": "fullPie",
-                "title": "Case Age at Imaging"
-              },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
-              "sex": {
-                "chartType": "fullPie",
-                "title": "Case Sex"
+                "title": "COVID-19 Positive"
               }
             },
             "filters": {
