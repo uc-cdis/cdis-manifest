@@ -103,7 +103,7 @@
       "memory-limit": "1024Mi",
       "name": "JCOIN (Tracking Opioid Stigma) Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -132,7 +132,7 @@
       "memory-limit": "1024Mi",
       "name": "Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
