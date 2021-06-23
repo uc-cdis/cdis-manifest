@@ -39,10 +39,10 @@
           "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
-          "name": "Notebook Browser",
+          "name": "Static Notebooks",
           "link": "/resource-browser",
           "icon": "analysis",
-          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "profile",
@@ -410,7 +410,7 @@
     ]
   },
   "resourceBrowser": {
-    "title": "HEAL Jupyter Notebooks",
+    "title": "Static HEAL Jupyter Notebooks",
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
     "resources": [
