@@ -39,10 +39,10 @@
           "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
-          "name": "Notebook Browser",
+          "name": "Static Notebooks",
           "link": "/resource-browser",
           "icon": "analysis",
-          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "profile",
@@ -108,18 +108,10 @@
         "enabled": true,
         "field": "advSearchFilters",
         "filters": [
-          {
-            "key": "Research Focus Area"
-          },
-          {
-            "key": "Administering IC(s)"
-          },
-          {
-            "key": "Year Grant Awarded"
-          },
-          {
-            "key": "Study Description"
-          }
+          { "key": "Research Focus Area" },
+          { "key": "Administering IC(s)" },
+          { "key": "Year Grant Awarded" },
+          { "key": "Study Description" }
         ]
       },
       "exportToWorkspaceBETA": {
@@ -137,6 +129,27 @@
       "search": {
         "searchBar": {
           "enabled": true
+          "searchableTextFields": [
+            "summary",
+            "location",
+            "study_name",
+            "institutions",
+            "investigators",
+            "project_title",
+            "project_number",
+            "dataset_1_title",
+            "dataset_2_title",
+            "dataset_3_title",
+            "dataset_4_title",
+            "administering_ic",
+            "research_program",
+            "research_question",
+            "dataset_description",
+            "dataset_1_description",
+            "dataset_2_description",
+            "dataset_3_description",
+            "dataset_4_description"
+          ]
         }
       },
       "authorization": {
@@ -165,14 +178,6 @@
       {
         "name": "Investigator(s)",
         "field": "investigators"
-      },
-      {
-        "name": "Administering IC(s)",
-        "field": "administering_ic"
-      },
-      {
-        "name": "Institution(s)",
-        "field": "institutions"
       }
     ],
     "studyPreviewField": {
@@ -190,6 +195,7 @@
       "fieldsToShow": [
         {
           "groupName": "HEAL Research Initiatives",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -212,6 +218,7 @@
         },
         {
           "groupName": "Host Institution",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -227,6 +234,10 @@
               "field": "investigators"
             },
             {
+              "name": "Administering IC(s)",
+              "field": "administering_ic"
+            },
+            {
               "name": "Year Grant Awarded",
               "field": "year_awarded"
             }
@@ -234,6 +245,7 @@
         },
         {
           "groupName": "Clinical Trial",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -275,7 +287,21 @@
           ]
         },
         {
+          "groupName": "Tags",
+          "includeName": false,
+          "groupWidth": "full",
           "fields": [
+            {
+              "name": "Tags",
+              "field": "tags",
+              "contentType": "tags",
+              "includeIfNotAvailable": false
+            }
+          ]
+        },
+        {
+          "groupWidth": "full",
+            "fields": [
             {
               "name": "Summary",
               "field": "summary",
@@ -288,6 +314,7 @@
         },
         {
           "groupName": "Datasets",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -383,7 +410,7 @@
     ]
   },
   "resourceBrowser": {
-    "title": "HEAL Jupyter Notebooks",
+    "title": "Static HEAL Jupyter Notebooks",
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
     "resources": [
