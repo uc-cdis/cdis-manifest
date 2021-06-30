@@ -1,4 +1,4 @@
-APP_NAME: 'Gen3 Data Commons'
+APP_NAME: IBDGC Data Commons
 # Where fence microservice is deployed
 BASE_URL: 'https://ibdgc.datacommons.io/user'
 
@@ -102,11 +102,6 @@ MAX_API_KEY_TTL: 2592000
 # The number of seconds after an access token is issued until it expires.
 MAX_ACCESS_TOKEN_TTL: 3600
 
-# TEMPORARY: The maximum number of projects allowed in token claims.
-# This config var should be removed after sheepdog and peregrine support
-# auth checks against Arborist, and no longer check the token.
-TOKEN_PROJECTS_CUTOFF: 15
-
 # //////////////////////////////////////////////////////////////////////////////////////
 # SHIBBOLETH
 #   - Support using `shibboleth` in LOGIN_OPTIONS
@@ -160,12 +155,15 @@ LOGIN_REDIRECT_WHITELIST: []
 ### DEPRECATED and replaced by OPENID_CONNECT + LOGIN_OPTIONS configs
 ENABLED_IDENTITY_PROVIDERS: {}
 
-S3_BUCKETS: {}
+S3_BUCKETS:
+  ibdgc-prod-data-bucket:
+    cred: 'ibdgc-prod_fence-bot'
+    region: us-east-1
 
 # `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
 # using the `/data/upload` endpoint. This must be one of the first keys under
 # `S3_BUCKETS` (since these are the buckets fence has credentials for).
-DATA_UPLOAD_BUCKET: ''
+DATA_UPLOAD_BUCKET: 'ibdgc-prod-data-bucket'
 
 # Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
 # setup for more info on Cloud Identity)
