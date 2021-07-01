@@ -11,7 +11,7 @@
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.05",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.05",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.05",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.05",
+    "sheepdog": "quay.io/cdis/sheepdog:3.1.1",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.05",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.05",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.05",
@@ -54,10 +54,6 @@
         "type": "case"
       },
       {
-        "index": "midrc_virus_data_file",
-        "type": "virus_data_file"
-      },
-      {
         "index": "midrc_imaging_data_file",
         "type": "imaging_data_file"
       },
@@ -72,6 +68,10 @@
       {
         "index": "midrc_radiography_exam",
         "type": "radiography_exam"
+      },
+      {
+        "index": "midrc_mr_exam",
+        "type": "mr_exam"
       }
     ],
     "config_index": "midrc_array-config",
@@ -85,7 +85,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.4.5/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.5.5/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
