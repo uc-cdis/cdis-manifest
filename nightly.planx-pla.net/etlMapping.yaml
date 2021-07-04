@@ -1,54 +1,163 @@
 mappings:
-  - name: bloodpac
-    doc_type: case
+  - name: gen3.theanvil.io_subject
+    doc_type: subject
     type: aggregator
-    root: case
+    root: subject
     props:
       - name: submitter_id
       - name: project_id
-    flatten_props:
-      - path: demographics
-        props:
-          - name: gender
-          - name: race
-          - name: ethnicity
+      - name: sex
+      - name: age_value
+      - name: ancestry
+      - name: disease_description
+      - name: phenotype_present
+      - name: phenotype_absent
+      - name: disease_id
+      - name: solve_state
+      - name: congenital_status
+      - name: age_of_onset
+      - name: phenotype_group
+      - name: anvil_project_id
+    #    flatten_props:
     aggregated_props:
-      - name: _biospecimens_count
-        path: biospecimens
-        fn: count
+      - name: sample_provider
+        path: samples
+        src: sample_provider
+        fn: set
+      - name: tissue_affected_status
+        path: samples
+        src: tissue_affected_status
+        fn: set
+      - name: tissue_type
+        path: samples
+        src: tissue_type
+        fn: set
+      - name: sample_type
+        path: samples
+        src: sample_type
+        fn: set
+      - name: original_material_type
+        path: samples
+        src: original_material_type
+        fn: set
+      - name: exome_capture_platform
+        path: samples.sequencings
+        src: exome_capture_platform
+        fn: set
+      - name: library_prep_kit_method
+        path: samples.sequencings
+        src: library_prep_kit_method
+        fn: set
+      - name: capture_region_bed_file
+        path: samples.sequencings
+        src: capture_region_bed_file
+        fn: set
+      - name: reference_genome_build
+        path: samples.sequencings
+        src: reference_genome_build
+        fn: set
+      - name: sequencing_assay
+        path: samples.sequencings
+        src: sequencing_assay
+        fn: set
+      - name: alignment_method
+        path: samples.sequencings
+        src: alignment_method
+        fn: set
+      - name: data_processing_pipeline
+        path: samples.sequencings
+        src: data_processing_pipeline
+        fn: set
       - name: _samples_count
-        path: biospecimens.samples
+        path: samples
         fn: count
-      - name: _aliquots_count
-        path: biospecimens.samples.aliquots
+      - name: _sequencings_count
+        path: samples.sequencings
         fn: count
-      - name: _analytes_count
-        path: biospecimens.samples.aliquots.analytes
-        fn: count
-      - name: _cell_images_count
-        path: biospecimens.samples.aliquots.analytes.cell_images
-        fn: count
-      - name: _mass_cytometry_assays_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
-        fn: count
-      - name: _mass_cytometry_images_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
-        fn: count
-      - name: _read_groups_count
-        path: biospecimens.samples.aliquots.analytes.read_groups
-        fn: count
-      - name: _slide_images_count
-        path: biospecimens.samples.aliquots.slide_images
-        fn: count
-      - name: _submitted_aligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
-        fn: count
-      - name: _submitted_methylations_count
-        path: biospecimens.samples.aliquots.analytes.submitted_methylation_files
-        fn: count
-      - name: _submitted_somatic_mutations_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
-        fn: count
-      - name: _submitted_unaligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
-        fn: count
+    joining_props:
+      - index: file
+        join_on: _subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+    parent_props:
+      - path: projects[project_code:code]
+      - path: projects[project_name:name]
+      - path: projects[project_dbgap_phs:dbgap_phs]
+      - path: projects[project_dbgap_consent_text:dbgap_consent_text]
+      - path: projects[project_short_name:short_name]
+      - path: projects[project_dbgap_accession_number:dbgap_accession_number]
+
+  - name: gen3.theanvil.io_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+      - name: data_category
+      - name: analyte_type
+      - name: sequencing_assay
+      - name: source_node
+    injecting_props:
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
+          - name: subject_submitter_id
+            src: submitter_id
+            fn: set
+          - name: project_id
+            fn: set
+          - name: anvil_project_id
+            src: anvil_project_id
+            fn: set
+          - name: sex
+            src: sex
+            fn: set
+          - name: age_value
+            src: age_value
+            fn: set
+          - name: ancestry
+            src: ancestry
+            fn: set
+          - name: disease_description
+            src: disease_description
+            fn: set
+          - name: phenotype_present
+            src: phenotype_present
+            fn: set
+          - name: phenotype_absent
+            src: phenotype_absent
+            fn: set
+          - name: disease_id
+            src: disease_id
+            fn: set
+          - name: solve_state
+            src: solve_state
+            fn: set
+          - name: congenital_status
+            src: congenital_status
+            fn: set
+          - name: age_of_onset
+            src: age_of_onset
+            fn: set
+          - name: phenotype_group
+            src: phenotype_group
+            fn: set
