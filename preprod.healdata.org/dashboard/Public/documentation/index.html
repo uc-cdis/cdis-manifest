@@ -1,11 +1,1114 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+        <link rel='stylesheet' type='text/css' href='index.css' />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:bold, regular, italic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel='icon' type='image/image/png' href="img/heal_logo.png" />
+        <title>Documentation</title>
+    </head>
+    <body>
+        <div class="arrow">
+            <a href="#Top" title="Back to Top"><span class="material-icons">arrow_upward</span></a>
+          </div>
+      
 
-</head>
 
-<body>
+      
+
+         
+
+    <div id="root">
+        <div class='top-bar'>
+            <div class='top-bar__header'>
+            </div>
+        </div>
+        <div class='nav-bar'>
+            <div class='nav-bar__header'>
+                <div class='nav-bar__logo'>
+                    <img src='img/heal_logo.png' class='nav-bar__logo-img' />
+                </div>
+            </div>
+        </div>
+
+        <div class='main-content-container'>
+
+        <div class="sidenav">
+            <div class="sidenav-head">
+                <a href="#HEALPlatform">1. The HEAL Platform</a>
+            </div>
+            <div class="sidenav-head">
+                <a href="#TypesOfHostedData">2. Types of hosted Data</a>
+            </div>
+                <div class="ul-sidenav">
+                    <a href="#HostedDataOverview">a) Overview</a>
+                    <a href="#DataManagementRepositories">b) Data Management and Repositories</a>
+                </div>
+    
+            <div class="sidenav-head">
+                <a href="#HowToGetStarted">3. How to get started</a>
+            </div>
+            <div class="ul-sidenav">
+                <a href="#PlatformOverview">a) HEAL Platform Overview</a>
+                <a href="#LoginPage">b) Login Page</a>
+                <a href="#AccessCheck">c) How to check and request access</a>
+                <div class="ul-sidenav-sub-sub">
+                    <a href="#AccessToIndividualStudies">Access to individual Studies</a>
+                    <a href="#CurrentOAStudies">Current (open-access) studies on HEAL</a>
+                    <a href="#OverviewOfAccessProfilePage">Overview of access to Datasets and Studies</a>
+                </div>
+    
+                <a href="#Discovery">d) Discovery Page</a>
+                <div class="ul-sidenav-sub-sub">
+                    <a href="#FindAvailableDatasets">Find individual Datasets</a>
+                    <a href="#SelectBringFilesDiscoveryToWorkspace">Select Files on the Discovery Page and bring them to the Workspace</a>
+                </div>
+    
+                <a href="#Workspaces">e) Workspaces</a>
+                <div class="ul-sidenav-sub-sub">
+                    <a href="#GuidelineToGetStarted">Guideline to get started</a>
+    
+                </div>
+    
+                <a href="#StaticNoteboks">f) Static Notebooks</a>
+                <div class="ul-sidenav-sub-sub">
+                    <a href="#CurrentlyAvailableNotebooks">Currently available Notebooks</a>
+                    <a href="#HowToWorkNotebooksInWorkspaces">How to find and work with the Notebooks in the workspaces</a>
+                </div>
+    
+                <a href="#ProfilePage">g) Profile Page</a>
+            </div>
+        <div class="sidenav-head">
+            <a href="#DownloadingDataFiles">4. Downloading Data and Data Files</a></strong>
+        </div>
+            <div class="ul-sidenav">
+            <a href="#DownloadFilesfromDiscovery">a) Download data files using the Gen3-client</a>
+            </div>
+        <div class="sidenav-head">
+            <a href="#FAQ">5. FAQ</a></strong>
+        </div>
+
+    
+        </div>
+
+        <div class='main-content'> 
+            <div class='main-content-text'>
+            
+                <h1 id="Top">HEAL Platform Documentation</h1>
+            
+            <img src='img/NIH_HEAL_header.jpg' width=70%/>
+        
+            <div class='other-info'>
+
+            <h2 id="HEALPlatform" class="section-title">1. The HEAL Platform</h2>
+
+            <p>
+                The HEAL Platform is a cloud-based and multifunctional web interface that provides a secure environment for discovery and
+                 analysis of HEAL results and data. It is designed to serve users with a variety of objectives, backgrounds, and specialties. 
+            </p>
+            <p>
+                The HEAL Platform represents a <a href="https://heal.nih.gov/about/heal-data-ecosystem">dynamic Data Ecosystem</a> that aggregates and  
+                <span style="font-weight: bold;">hosts</span> data from multiple 
+                resources to make data discovery and access <span style="font-weight: bold;">easy</span> for users.
+            </p>
+            <p>
+                The platform provides a way to <span style="font-weight: bold;">search and query</span> over 
+                study metadata and diverse data types, generated by different projects and organizations and 
+                stored across multiple secure repositories.
+            </p>
+            <p>
+                The HEAL platform also offers a secure and cost-effective cloud-computing environment for data analysis, 
+                empowering collaborative research and development of new analytical tools. New workflows and results of 
+                analyses can be <span style="font-weight: bold;">shared</span> with the HEAL community to enable collaborative, 
+                high-impact publications that address the opioid crisis. 
+            </p>
+            <p>
+                The HEAL Platform is powered by the open-source <span style="font-weight: bold;">software “Gen3” (gen3.org)</span>. Gen3 was created by
+                 and is actively developed at the University of Chicago’s Center for Translational Data Science (CTDS)
+                  with the aim of creating interoperable cloud-based data resources for the scientific research community.
+            </p>
+
+            <h2 id="TypesOfHostedData" class="section-title">2. Types of hosted Data</h2>
+
+            <h3 id="HostedDataOverview" class="section-title">a) Overview</h2>
+                <p>
+                    The HEAL Platform provides secure access to data that is the product of opioid research and will be the driving engine for new discovery. 
+                </p>
+                <p>
+                    On the highest level, the data hosted on the HEAL Platform range from <span style="font-weight: bold;">study metadata</span> that describe 
+                    available datasets at a high-level to <span style="font-weight: bold;">subject-level data</span>. The types of data represented are diverse 
+                    and include scientific research across multiple disciplines, as well as studies related to policy 
+                    making and community service leadership. For example, researchers can use this single platform to 
+                    find data ranging from clinical patient care data and public records to “omics” data files and 
+                    associated sample collection and processing data. 
+                </p>
+                <p>
+
+                </p>
+                    The HEAL platform aims to make data more accessible by following the <span style="font-weight: bold;">"FAIR"</span> principles:
+                </p>
+                <p>
+                    <span style="font-weight: bold;">F</span>indable
+                </p>
+                <ul>
+                    <li>
+                        Researchers are provided an intuitive interface to search over metadata for HEAL studies and related datasets.
+                    </li>
+                    <li>
+                        Each study and dataset will be assigned a unique, persistent identifier.
+                    </li>
+                </ul>
+                <p>
+                    <span style="font-weight: bold;">A</span>ccessible
+                </p>
+                <ul>
+                    <li>
+                        Authenticated users can request and receive access to controlled-access data by data providers.
+                    </li>
+                    <li>
+                        Metadata can be accessed via an open API.
+                    </li>
+                </ul>
+                <p>
+                    <span style="font-weight: bold;">I</span>nteroperable
+                </p>
+                <ul>
+                    <li>
+                        Standard metadata vocabularies facilitate discovery and joint analysis of HEAL and related datasets.
+                        Data can
+                    </li>
+                    <li>
+                        Data can be easily exported to various workspaces for analysis using a variety of software tools.
+                    </li>
+                </ul>
+                <p>
+                    <span style="font-weight: bold;">R</span>eusable
+                </p>
+                <ul>
+                    <li>
+                        Data can be easily reused to facilitate reproducibility of results, development and sharing of new tools, and collaboration between investigators. 
+                    </li>
+                </ul>
+
+            <h3 id="DataManagementRepositories" class="section-title">b) Data Management and Repositories</h2>
+                <p>
+                    The HEAL-funded RENCI/RTI (Renaissance Computing Institute) at the University of North Carolina at Chapel Hill 
+                    team will provide data management, stewardship, and support to help investigators make their data FAIR and connect 
+                    to the Platform. The HEAL Platform securely exposes data stored on multiple HEAL-approved repositories. 
+                    For more information, see <a href="https://heal.nih.gov/about/public-access-data">https://heal.nih.gov/about/public-access-data</a>. 
+                </p>
+
+            <h2 id="HowToGetStarted" class="section-title">3. How to get started</h2>
+
+            <h3 id="PlatformOverview" class="section-title">a) HEAL Platform Overview</h3>
+            <p>
+                Click on an icon to jump to the section
+            </p>
+            <br>
+            <p>
+
+                <ul class="image-list-small">
+                    <li>
+                      <a href="#LoginPage" style="background-image: url('img/grid_login_color.png');"></a>
+                      <div class="details">
+                        <h6><a href="#LoginPage">Login Page</a></h6>
+                        <p class="image-author">Log in here to unlock controlled-access data and workspace access with your credentials.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#Discovery" style="background-image: url('img/grid_discovery_color.png');"></a>
+                      <div class="details">
+                        <h6><a href="#Discovery">Discovery Page</a></h6>
+                        <p class="image-author">Discover datasets across multiple resources and export selected data files to the analysis workspace.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#Workspaces" style="background-image: url('img/grid_workspace_color.png');"></a>
+                      <div class="details">
+                        <h6><a href="#Workspaces">Workspaces</a></h6>
+                        <p class="image-author">Access data across multiple resources and perform analyses in a secure, cloud-based environment.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#StaticNoteboks" style="background-image: url('img/grid_notebooks_color.png');"></a>
+                      <div class="details">
+                        <h6><a href="#StaticNoteboks">Static Noteboks</a></h6>
+                        <p class="image-author">Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#ProfilePage" style="background-image: url('img/grid_profile_color.png');"></a>
+                      <div class="details">
+                        <h6><a href="#ProfilePage">Profile Page</a></h6>
+                        <p class="image-author">Review data access permissions and generate API credentials files used for programmatic access.</p>
+                      </div>
+                    </li>
+                </ul>
+            </p>
+
+            
+            <h3 id="LoginPage" class="section-title">b) Login Page</h2>
+                <blockquote>
+                    <p>
+                        Browsing the study metadata on the Discovery Page, following along the pre-made notebooks in the 
+                        “Static Notebooks” tab, and downloading the file manifest with publicly accessible data files does not require 
+                        authorization and is <span style="font-weight: bold">open-access.</span>
+                    </p>
+                </blockquote> 
+                <blockquote>
+                    <p>
+                        You will need <span style="font-weight: bold">to log in and obtain authorization (access)</span> in order to run analyses in workspaces.
+                    </p>
+                </blockquote> 
+                <blockquote>
+                    <p>
+                        Click <a href="#CurrentOAStudies">here</a> to see all open-access studies.
+                    </p>
+                </blockquote> 
+                <p>
+                    Clicking on a study containing controlled data will prompt users to log in.  
+                    In order to access controlled data available on the HEAL Platform  – for which you will be prompted once clicking on the study – 
+                    or perform analyses in the workspace, start by visiting the login page (<a href="https://healdata.org">https://healdata.org</a>).
+                </p>
+                <p>
+                    Choose between “Login from Google” or “ORCID Login” on the (<a href="https://healdata.org/login">homepage</a>) to authenticate. 
+                </p>
+                <p>
+                    <span style="font-weight: bold">Google:</span> You may log in using any Google account credentials, or a G-suite enabled institutional email.  
+                </p>
+                <p>
+                    <span style="font-weight: bold">ORCID:</span> Users with an ORCID account can log in using their ORCID credentials. 
+                </p>
+
+                <img class="drop-shadow" src="img/healdataorg_login.png" alt="Healdata-Login" style="width:80%">
+                <figcaption>
+                    Fig. 1. Login Page of the HEAL Platform.
+                </figcaption>
+
+                <p>
+                    After successfully logging in, your username will appear in the upper right-hand corner of the page. 
+                </p>
+
+
+            <h3 id="AccessCheck" class="section-title">c) How to check and request access</h3>
+                <p>
+                    Users can find out to which projects they have access to by navigating to <a href="http://healdata.org/discovery">the Discovery Page</a>
+                    and by selecting “Data Access” - “Accessible” - ”OK” as shown below. 
+                </p>
+
+                <img class="drop-shadow" src="img/access_box_1.png" alt="Access_Data" style="width:80%">
+                <figcaption>
+                    Fig. 2. Accessible data can be found when the box next to “Accessible” is selected. 
+                </figcaption>
+
+            
+            <h4 id="AccessToIndividualStudies" class="section-title">Access to individual Studies</h4>
+                <p>
+                    You can check access by clicking on a study in the Discovery Page, as shown below:
+                </p>
+
+                <img class="drop-shadow" src="img/discovery_study_page.png" alt="Discovery_Study_Page" style="width:80%">
+                    <figcaption>
+                        Fig. 3. The summary of a study will display access permissions in the top right corner. Click the “Permalink” button in the upper right to copy the link to the clipboard.
+                    </figcaption>
+
+                <p>
+                    If you have access, a green box will show “You have access to this study”; 
+                    if you do not have access, a yellow box will appear with “You do not have access to the study.
+                </p>
+                <img class="drop-shadow" src="img/access_NO.png" alt="No_Access" style="width:80%">
+                <img class="drop-shadow" src="img/access_YES.png" alt="Yes_Access" style="width:80%">
+                    <figcaption>
+                        Fig. 4. Access vs. no Access is displayed as a green (top) or yellow (bottom) box on top of each Study Page.
+                    </figcaption>
+
+
+            <h4 id="CurrentOAStudies" class="section-title">Current (open-access) studies on HEAL</h4>
+                <p>
+                    Users can download and/or export <span style="font-weight: bold">open-access</span> study files after logging in via Google or ORCID. 
+                    Currently, the HEAL Platform hosts the following studies. All are open-access except when noted.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>
+                            Project number
+                        </th>
+                        <th>
+                            Study Name
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            7e6de74d-b8a8-4e48-8a79-12d7a6567e1f
+                        </td>
+                        <td>
+                            Prescription Drug Abuse Policy System (PDAPS) 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            nmhss
+                        </td>
+                        <td>
+                            National Mental Health Services Survey (N-MHSS)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1U24AR076730-01
+                        </td>
+                        <td>
+                            A synthetic dataset from the Back Pain Consortium (BACPAC) Research Program Data Integration, Algorithm Development and Operations Management Center 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            nssats1
+                        </td>
+                        <td>
+                            National Survey of Substance Abuse Treatment Services (N-SSATS) 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            cdcwonder
+                        </td>
+                        <td>
+                        CDC Wide-ranging Online Data for Epidemiologic Research (CDC WONDER) Mortality Multiple Cause-of-Death Public Use Record
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            tedsd1
+                        </td>
+                        <td>
+                        Treatment Episode Data Set: Discharges (TEDS-D)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            deaarcos1
+                        </td>
+                        <td>
+                        Drug Enforcement Administration Controlled Substances Tracking (DEA ARCOS)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            a)  1U2CDA050098-01_a <br> b) 1U2CDA050098-01_b
+                        </td>
+                        <td>
+                            JCOIN - Methodology and Advanced Analytics Resource Center: <br>
+                            a) JCOIN 026: Amerispeak Brief Stigma Survey <br>
+                            b) The Opioid Environment Policy Scan
+                        </td>
+                    </tr>
+                </table>
+
+            <h4 id="OverviewOfAccessProfilePage" class="section-title">Overview of access to Datasets and Studies</h4>
+                <p>
+                    Users can visit the <a href="https://healdata.org/identity"> "Profile” page</a> to view a list of studies they 
+                    have access to under the “You have access to the following project(s)” section, as shown in the figure below. 
+                    
+                </p>
+                <img class="drop-shadow" src="img/profile_access.png" alt="Profile_Access" style="width:80%">
+                    <figcaption>
+                        Fig. 5. A user can view their study access in the Profile Page.
+                    </figcaption>
+
+                <p>
+                    <span style="font-weight: bold">From here users</span> can also view <span style="font-weight: bold">current API keys</span> 
+                    or create and download new keys. 
+                    API keys are required for downloads which require use of the Gen3-client. 
+                    More information in the chapter <a href="#DownloadingDataFiles">“Downloading Data and Data Files”</a>.
+                </p>
+                <img class="drop-shadow" src="img/profile_APIkey_active.png" alt="Profile_APIKey" style="width:80%">
+                    <figcaption>
+                        Fig. 6. API keys can be viewed, created, and downloaded on the Profile Page.
+                    </figcaption>
+
+                <p>
+                    <span style="font-weight: bold">From here users</span> can also view if they have access to projects or workspaces
+                </p>
+
+                <ul>
+                    <li>
+                        /dictionary_page: You have access to the data dictionary.
+                    </li>
+                    <li>
+                        /workspace: You have access to the workspace.
+                    </li>
+                    <li>
+                        /programs/open: You have access to open-access projects.
+                    </li>
+                </ul>
+
+            <h3 id="Discovery" class="section-title">d) Discovery Page</h3>
+                <p>
+                    <a href="http://healdata.org/discovery">The Discovery Page</a> provides users a venue to search and find studies and datasets displayed in the HEAL Platform. 
+                    Users <span style="font-weight: bold">can browse through the publicly accessible study-level metadata</span> without requiring authorization.
+                </p>
+
+                <blockquote>
+                    <p>
+                        Use text-based search, faceted search, and tags to rapidly and efficiently find relevant studies, 
+                        discover new datasets across multiple resources, and easily export selected data files to the analysis workspace.
+                    </p>
+                </blockquote> 
+
+                <img class="drop-shadow" src="img/discovery_landing.gif" alt="DiscoveryLanding" style="width:80%">
+                <figcaption>
+                    Fig. 7. The Discovery Page of the HEAL Platform. Browse through datasets and study-level metadata and 
+                    find studies using tags, keywords, or the advanced search side panel.
+                </figcaption>
+
+                <p>
+                    Finding studies is made easy using keywords (ex. study name, titles, investigator names, etc.) 
+                    in the text-based search bar, tags, or the advanced search side panel, see image below.
+                </p>
+                <img class="drop-shadow" src="img/discovery_adv_search.png" alt="DiscoveryAdvSearch" style="width:80%">
+                <figcaption>
+                    Fig. 8. The advanced search side panel, the free text search bar, or various tags help users to narrow down their search.
+                </figcaption>
+
+                <p>
+                    Clicking on a study entry will display the associated study page, which summarizes the available study-level metadata stored on the HEAL Platform.
+                </p>
+                <img class="drop-shadow" src="img/discovery_study_page_datafiles.png" alt="DiscoveryStudyPageDatafiles" style="width:80%">
+                <figcaption>
+                    Fig. 9. Clicking on any study will display the available study-level and dataset metadata.
+                </figcaption>
+
+            
+            <h4 id="FindAvailableDatasets" class="section-title">Find available datasets</h4>
+                <p>
+                    Users can select and filter studies from multiple resources and conduct analyses on the selected datasets 
+                    in a workspace. Users can find search only available data they have access to by selecting the data access button 
+                    in the top right corner of the study page and selecting “Data Access” as shown below. The Discovery Page will 
+                    automatically update the list of studies that have available datasets. 
+                </p>
+                <img class="drop-shadow" src="img/access_box_select_window.png" alt="Access_Box_Select_Window" style="width:80%">
+                <figcaption>
+                    Fig. 10. Select the symbol next to Data Access to open all Data Access options. Three options are available. 
+                    Find available datasets by clicking on the “Accessible” button.
+                </figcaption>
+
+                <br>
+                <br>
+
+                <img class="drop-shadow" src="img/access_boxes_3.png" alt="Access_boxes" style="width:50%">
+                <figcaption>
+                    Fig. 11. Three options for Data Access. 
+                </figcaption>
+
+                <ul>
+                    <li>
+                        <span style="font-weight: bold">Accessible:</span> This option will display only studies with datasets users have access to and entails 
+                        all open-access studies. Studies can be selected and exported to a workspace by clicking on the 
+                        associated checkbox on the left-hand side of the study entry and selecting “Open in Workspace” at 
+                        the top right corner. A detailed description of how to go from here can be found in the <a href="#Workspaces">"Workspaces" chapter</a>.<br><br>
+                        <img class="drop-shadow" src="img/discovery_select_and_open_in_workspace.png" alt="Discovery_Select_and_Open_In_Workspace" style="width:100%">
+                        <figcaption style="width:100%">
+                            Fig. 12. Export datasets to the workspace by selecting the study and clicking on “Open in workspace”. 
+                        </figcaption> <br> <br>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Access required:</span> This option will display all studies that have only metadata with no accompanying 
+                        data file objects download. <br> <br>
+                        <img class="drop-shadow" src="img/access_greyed_out_box.png" alt="Access_greyed_out_box" style="width:100%">
+                        <figcaption style="width:100%">
+                            Fig. 13. Export datasets to the workspace by selecting the study and clicking on “Open in workspace”. 
+                        </figcaption> <br> <br>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">No Data:</span> This option will filter out all studies that will only have
+                         metadata but no datasets available. The checkbox next to the study will be greyed out and non-clickable as shown above.
+                    </li>
+                </ul>
+            
+            <h4 id="SelectBringFilesDiscoveryToWorkspace" class="section-title">Select Files on the Discovery Page and bring them to the Workspace</h4>
+                <img class="drop-shadow" src="img/discovery_exporting_to_workspace.gif" alt="Discovery_exporting_to_workspace" style="width:80%">
+                
+                <p>
+                    The above gif shows the workflow used to import files into the workspace:
+                </p>
+                <ol>
+                    <li>
+                        Log in on <a href="https://healdata.org/login">healdata.org/login</a>.
+                    </li>
+                    <li>
+                        Find and select study on the Discovery Page using the checkbox on the left side. 
+                        See current open-access studies <a href="#CurrentOAStudies">here</a>.
+                    </li>
+                    <li>
+                        Click the “Open in Workspace” button on the upper right corner.
+                    </li>
+                    <li>
+                        Choose a workspace flavor. This step may take several minutes. 
+                    </li>
+                    <li>
+                        Find the files from the study under <code>data/healdata.org/manifest-xxxxx</code>. Note, that all exported data 
+                        files will be saved in the “data” folder. <br>
+                        Please also note, that the workspace mounts up to a <span style="font-weight: bold">maximum of 5 different manifests</span> while the workspace is 
+                        running but shows only the latest exported manifest in a newly launched workspace. Terminating 
+                        the workspace will result in the <span style="font-weight: bold">loss of all but the latests manifest</span>. 
+                    </li>
+                    <li>
+                        Users can now start a new notebook when navigating to <code>/data</code>. Click “New” (upper right corner) 
+                        or open a previously saved notebook on the landing drive to load the files into one of the cells, for example by running <br>
+                        <code>
+                            import os <br>
+                            import pandas as pd <br>
+                            os.chdir('/data') <br>
+                            demo_df = pd.read_csv('/data/new_folder/this_is_a_demo.txt', sep='\t') <br>
+                            demo_df.head() 
+                        </code>
+                    </li>
+                    <li>
+                        Make sure to terminate the workspace when the work is finished to reduce computational costs.
+                    </li>
+                </ol>
+
+
+            <h3 id="Workspaces" class="section-title">e) Workspaces</h3>
+                <p>
+                    HEAL Platform workspaces are secure data analysis environments in the cloud that can access data from one 
+                    or more data resources. By default, Workspaces include Jupyter notebooks, Python and RStudio, 
+                    but can be configured to host virtually any application, including analysis workflows, data 
+                    processing pipelines, or data visualization apps.
+                </p>
+
+            <h4 id="GuidelineToGetStarted" class="section-title">Guideline to get started</h4>
+            <ol>
+                <li>
+                    Users need to log in via <a href="https://healdata.org/login">healdata.org/login</a> 
+                    to access workspaces on <a href="https://healdata.org/workspace">healdata.org/workspace</a>.
+                </li> <br>
+                <li>
+                    After navigating to healdata.org/workspace, users will discover a list of pre-configured virtual machine (VM) images, as shown below.
+                 <br> <br> 
+                 <img class="drop-shadow" src="img/workspace_flavors_.png" alt="Workspace_flavors" style="width:80%">
+                 <figcaption style="width:100%">
+                    Fig. 14. Available workspaces on the HEAL Platform.
+                </figcaption> <br> <br>
+                </li>
+                    <ul>
+                        <li>
+                            <span style="font-weight: bold">BACPAC Synthetic Data Analysis, JCOIN (Tracking Opioid Stigma) Notebook - Tutorial</span>: 
+                            Explore our Jupyter Notebook tutorials, which pull data from various sources of the 
+                            HEAL Data Ecosystem to leverage statistical programs and data analysis tools. Feel 
+                            free to edit and experiment with this collection of notebooks. They are your personal 
+                            copies! More information in <a href="#StaticNotebooks">"Static Notebooks"</a>.
+                        </li>
+                        <li>
+                            <span style="font-weight: bold">Jupyter Notebook Bio Python 512 Mi</span>: Choose this VM if you are familiar with setting up Python-based Notebooks
+                        </li>
+                        <li>
+                            <span style="font-weight: bold">Jupyter Notebook Power Python 8192 Mi</span>: Choose this VM if your analyses demand high computational resources.
+                        </li>
+                        <li>
+                            <span style="font-weight: bold">R Studio</span>: Choose this VM if you are familiar with R Studio-based data analysis tools.
+                        </li>
+                    </ul> <br>
+                <li>
+                    Click “Launch” on any of the above workspace flavors to spin up a copy of that VM. Note: Launching the VM may take several minutes.<br><br>
+                    <img class="drop-shadow" src="img/workspace_launch.png" alt="Workspace_launch" style="width:100%">
+                </li><br>
+                <li>
+                    After launching, the home folder is displayed, which is a user's persistent drive. <br><br>
+                    <img class="drop-shadow" src="img/workspace_data_folder.png" alt="Workspace_data_folder" style="width:100%"> 
+                    <figcaption style="width:100%">
+                        Fig. 15. To save files, create directories in the “data” folder and save files there. Do <span style="font-weight: bold">not</span>
+                         save in the folder “data/healdata.org”.
+                    </figcaption> <br> 
+                    Only files saved in this folder will remain available after termination of a workspace session. 
+                    It is advisable to create a new folder in the “data” folder and save work there.
+                    <span style="font-weight: bold">Do not save files in the “data/healdata.org” folder. </span>
+                    The folder “healdata.org” in the “data” folder will host the data files you have exported from the Discovery Page (see next chapter). <br>
+                    <span style="font-weight: bold">Attention</span>: Any personal files outside this folder will be lost.
+                </li><br>
+            
+                <li>
+                    Start a new workspace by clicking “New” in the top right corner and choose between Python 3 or R Studio as the base programmatic language. <br><br>
+                    <img class="drop-shadow" src="img/workspace_new.png" alt="Workspace_new" style="width:100%"> 
+                    <figcaption style="width:100%">
+                        Fig. 16. Start a new notebook under “New”.
+                    </figcaption> <br> <br>
+                </li>
+                </ol>
+                <blockquote>
+                    <span style="font-weight: bold">STATA</span> code can be run in a regular Python 3 or R notebook and combined with other languages. 
+                    Enter 
+                   <code>%%stata</code> or <code>%%mata</code> at the top of the cell.<br>
+                </blockquote>
+                <blockquote> 
+                    Running <span style="font-weight: bold">STATA</span> code requires a license. 
+                    Copy <code>stata.lic</code> to <code>/usr/local/stata17/</code>.
+                </blockquote> 
+                <ol start="6">
+                <li>
+                    <span style="font-weight: bold">Experiment away!</span> 
+                    Code blocks are entered in cells, which can be executed individually or all at once. Code documentation and comments 
+                    can also be entered in cells, and the cell type can be set to support Markdown. Results, including plots, 
+                    tables, and graphics, can be generated in the workspace and downloaded as files. <br><br>
+
+                    Files can be uploaded to the current working directory by clicking on the “upload” 
+                    button (note, that uploading to the “data” folder is advised; but not in the “healdata.org” folder).  
+                    <br> <br>
+                    <img class="drop-shadow" src="img/workspace_upload.png" alt="Workspace_upload" style="width:100%"> 
+                    <figcaption style="width:100%">
+                        Fig. 17. Upload data files to the workspace by clicking on “Upload” in the top right corner. 
+                    </figcaption> <br> 
+                    Then run in the notebook, for example:<br>
+                    <code>
+                        import os <br>
+                        import pandas as pd <br>
+                        os.chdir('/data') <br>
+                        demo_df = pd.read_csv('/data/new_folder/this_is_a_demo.txt', sep='\t') <br>
+                        demo_df.head() <br>
+                    </code><br>
+                </li>
+                <li>
+                    You can save and download your notebook. Note: saving notebooks within the “data” directory is the advised option, but not in the “data/healdata.org” folder.<br><br>
+                    <img class="drop-shadow" src="img/workspace_download.png" alt="Workspace_download" style="width:100%"> 
+                    <figcaption style="width:100%">
+                        Fig. 18. Save and export your notebook under “File” in the top left corner.
+                    </figcaption> <br><br>
+                </li>
+                <li>
+                    Do not forget to terminate your workspace once your work is finished to be mindful of the cost-intensive computational effort.<br><br>
+                    <img class="drop-shadow" src="img/workspace_terminate_2.png" alt="Workspace_terminate" style="width:60%"> 
+                    <figcaption style="width:100%">
+                        Fig. 19. Do not forget to terminate your workspace once your work is finished. Unterminated workspaces continue to accrue 
+                        computational costs. 
+                    </figcaption> <br><br>
+                </li>
+                </ol>
+            
+            <h3 id="StaticNoteboks" class="section-title">f) Static Notebooks</h3>
+                <p>
+                    <a href="http://healdata.org/resource-browser">The Static Notebooks page</a> contains a collection of view-only 
+                    tutorial Jupyter Notebooks that provide demo analyses of datasets published on the HEAL platform. These notebooks 
+                    will allow users to learn how to analyze and visualize data available on the HEAL platform - without having to take 
+                    the additional steps of finding and exporting the data used by the tutorial first. 
+                </p>
+
+                <blockquote> 
+                    All tutorial notebooks are static and view-only but can be downloaded as <code>.html</code> files. 
+                    Find the notebooks in interactive mode in the <a href="https://healdata.org/login">workspaces tab</a>.
+                </blockquote> 
+
+
+                <p>These tutorial notebooks are meant to: 
+                </p>
+                <ul>
+                    <li>
+                        Give users a sense for how the platform can be used to analyze data.
+                    </li>
+                    <li>
+                        Bring complementary datasets together.
+                    </li>
+                    <li>
+                        Be used as a launching point for the users’ own custom analysis.
+                    </li>
+                    <li>
+                        Spark imagination about how users can incorporate the platform data access, analysis, and collaboration 
+                        tools into their own research and data analysis process and pipelines. 
+                    </li>
+                </ul>
+
+                    <img src="img/static_notebooks_landing.png" alt="static_notebooks_landing" style="width:80%">
+                    <figcaption>
+                        Fig. 20. The static HEAL Notebooks provide demo analyses of datasets published on the HEAL platform. Click on a notebook to explore.
+                    </figcaption>
+
+
+            <h4 id="CurrentlyAvailableNotebooks" class="section-title">Currently available Notebooks</h4>
+                <p>
+                    The static Notebooks tab acts as a <span style="font-weight: bold">visual ‘table of contents’</span> for all of the tutorial notebooks that 
+                    are available for users to interact with in the workspace. Find below a list of notebooks that are 
+                    currently available and which datasets they’re based on. 
+                </p>
+            
+                <table style="width:80%">
+                    <tr>
+                        <th>
+                            Notebook <br>Name
+                        </th>
+                        <th>
+                            Project Title
+                        </th>
+                        <th>
+                            Project <br>Number
+                        </th>
+                        <th>
+                            Datasets used
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            BACPAC synthetic data analysis
+                        </td>
+                        <td>
+                            Back Pain Consortium (BACPAC) Research Program Data Integration, Algorithm Development and Operations Management Center
+                        </td>
+                        <td>
+                            1U24AR076730-01
+                        </td>
+                        <td>
+                            1) participant_<br>SMART.tsv<br>
+                            2) substance_use_<br>SMART.tsv<br>
+                            3) physical_function_<br>SMART.tsv
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tracking Stigma related to Opioid Use Disorder
+                        </td>
+                        <td>
+                            Methodology and Advanced Analytics Resource Center
+                        </td>
+                        <td>
+                            1U2CDA050098-01_a
+                        </td>
+                        <td>
+                            1) JCOIN_NORC_<br>Omnibus_SURVEY1_<br>Feb2020.sav<br>
+                            2) JCOIN_NORC_<br>Omnibus_SURVEY2_<br>April2020.sav<br>
+                            3) JCOIN_NORC_<br>Omnibus_SURVEY3_<br>June2020.sav<br>
+                            4) JCOIN_NORC_<br>Omnibus_SURVEY4_<br>Oct2020.sav
+                        </td>
+                    </tr>
+                </table>
+                    <p>
+                    The “Static Notebooks” tab will be regularly updated with new and exciting tutorial data analysis notebooks, 
+                    as more datasets are published and brought together in novel ways on the Platform. 
+                    </p>
+
+            <h4 id="HowToWorkNotebooksInWorkspaces" class="section-title">How to find and work with the Notebooks in the workspaces</h4>
+                <p>
+                    Code in the notebooks is editable, and users can import additional datasets and extend their analysis. 
+                    In order to work with the tutorial Jupyter Notebooks in interactive mode, the data used by the tutorial 
+                    notebook must be exported to a workspace from the Discovery page. 
+                    Below we describe the steps to do so for the current tutorial Jupyter notebooks. Users must be 
+                    logged in to follow the steps below. 
+                </p>
+            
+            <h5 id="HEALNotebookBACPAC" class="section-title">a) HEAL_Workspace_Demo_BACPAC.ipynb (“BACPAC synthetic data analysis”)</h5>
+                <ol>
+                    <li>
+                        Find and select the study by the project number (1U24AR076730-01) on the <a href="http://healdata.org/discovery">Discovery Page</a>. Project numbers and datasets are given in the previous section.<br><br>
+                    </li>
+                    <li>
+                        Click the “Open in Workspace” button in the upper right corner. This step will create a manifest folder which you can find later in the Workspace’s folder "data/healdata.org".<br> <br>
+                        <img src="img/static_notebook_bacpac.png" alt="static_notebook_bacpac" style="width:90%">
+                        <figcaption>
+                            Fig. 21. Select the study and click on “Open in Workspace”.
+                        </figcaption><br><br>
+                    </li>
+                    <li>
+                        Go to the Workspace tab and click “Launch” on the “Bacpac Synthetic Data Analysis Notebook”. This may take a few minutes to load.<br>
+                        <img src="img/static_notebook_bacpac_demo_1.png" alt="static_notebook_bacpac_demo_1" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Find and open the notebook in the folder home/dockerHome. <br>
+                        <img src="img/workspace_stata_0.png" alt="workspace_stata_0" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Open the notebook by clicking on “HEAL_Workspace_Demo_BACPAC".<br>
+                        <img src="img/static_notebook_bacpac_demo.png" alt="notebook_browser_notebook1" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Click the first two cells and run them by clicking into the cell and either using shift+enter on the keyboard or selecting “Run”:<br>
+                        <img src="img/notebook_browser_run_cell.png" alt="notebook_browser_run_cell" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Run the next cell, making sure you copy the name of the exported manifest folder, as shown below:<br>
+                        <img src="img/static_notebook_bacpac_manifestname.png" alt="static_notebook_bacpac_manifestname" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Explore the rest of the notebook. Make sure to terminate the workspace when the work is finished to reduce computational costs.
+                    </li>
+                </ol>
+                <p>
+                    <span style="font-weight: bold">Note</span>:Work must be saved within the “data” directory in order to remain accessible after workspace termination.
+                </p>
+
+
+                <h5 id="HEALNotebookNORC" class="section-title">b) NORC_JCOIN_data_demo.ipynb (“Tracking Stigma related to Opioid Use Disorder”)</h5>
+                <p>This dataset requires Data Access.</p>
+                <ol>
+                    <li>
+                        Find and select the study by the project number (1U2CDA050098-01_a) on the <a href="http://healdata.org/discovery">Discovery Page</a>. 
+                        Two studies (a and b) are listed under the project number 1U2CDA050098-01. Make sure to select the project 1U2CDA050098-01_a, as shown when clicking on the study.<br><br>
+                    </li>
+                    <li>
+                        Click the “Open in Workspace” button in the upper right corner. This step will create a manifest folder which you can find later in the Workspace’s folder "data/healdata.org".<br> <br>
+                        <img src="img/static_notebook_jcoin_study_1.png" alt="static_notebook_jcoin_study_1" style="width:90%">
+                        <figcaption>
+                            Fig. 22. Find/select the project 1U2CDA050098-01<span style="font-weight: bold">_a</span> (as shown when clicking on the study) and select “Open in Workspace”.
+                        </figcaption><br><br>
+                    </li>
+                    <li>
+                        Go to the Workspace tab and click “Launch” on the “JCOIN (Tracking Opioid Stigma) Notebook”. This may take a few minutes to load.<br><br>
+                    </li>
+                    <li>
+                        Find and open the notebook in the folder home/dockerHome. <br><br>
+                    </li>
+                    <li>
+                        Open the notebook by clicking on "NORC_JCOIN_data_demo.ipynb".<br><br>
+                    </li>
+                    <li>
+                        Click the first two cells and run them by clicking into the cell and either using shift+enter on the keyboard or selecting “Run”.<br><br>
+                    </li>
+                    <li>
+                        Run the next cell, making sure you copy the name of the exported manifest folder, as shown below:<br>
+                        <img src="img/static_notebook_jcoin_manifestname.png" alt="static_notebook_jcoin_manifestname" style="width:90%"><br><br>
+                    </li>
+                    <li>
+                        Explore the rest of the notebook. Make sure to terminate the workspace when the work is finished to reduce computational costs.
+                    </li>
+                </ol>
+                <p>
+                    <span style="font-weight: bold">Note</span>:Work must be saved within the “data” directory in order to remain accessible after workspace termination.
+                </p>
+
+
+
+
+
+
+
+
+
+               
+            <h3 id="ProfilePage" class="section-title">g) Profile Page</h3>
+                <p>
+                    On the profile page users will find information regarding their access to projects, access to Gen3-specific tools 
+                    (e.g. access to the /workspace), and the function to create API keys for credential downloads. API keys are necessary 
+                    for the downloadof files using the Gen3-client; for more information see chapter 4.
+                </p>
+                <img src="img/profile_access.png" alt="profile_access" style="width:80%">
+                <figcaption>
+                    Fig. 23. Users can view their study access in the Profile Page.
+                </figcaption><br><br>
+
+                <img src="img/profile_APIkey_active.png" alt="profile_APIkey_active" style="width:80%">
+                <figcaption>
+                    Fig. 24. API keys can be viewed, created, and downloaded on the Profile Page.
+                </figcaption><br><br>
+
+
+
+
+
+
+
+            <h2 id="DownloadingDataFiles" class="section-title">4. Downloading Data and Data Files</h2>
+                <p>
+                    Users can download data files associated with a study by leveraging the programmatic tools “Gen3-client” and the CTDS-owned python software development kit (SDK). 
+                    
+                </p>
+
+        
+
+            <h3 id="DownloadFilesfromDiscovery" class="section-title">a) Download data files using the Gen3-client</h3>
+                <p>
+                    In order to download data files, users will need to utilize the Gen3-client command 
+                    line tool developed by the University of Chicago’s Center for Translational Data Science. The process consists of the following steps:
+                </p>
+                <ol>
+                    <li>
+                        Log in to the Data Commons on <a href="https://healdata.org/login">healdata.org/login</a> <br><br>
+                    </li>
+                    <li>
+                        Find and select one or multiple studies of interest on the <a href="http://healdata.org/discovery">Discovery Page</a>. 
+                        For multiple studies, select Data Access in the top right corner, click “Accessible”, and choose multiple studies. 
+                    </li> <br>
+                    <li>
+                        Click on the button “Download Manifest”. <br>
+                        <img src="img/discovery_select_study_download_manifest.png" alt="discovery_select_study_download_manifest" style="width:90%">
+                        <figcaption>
+                            Fig. 25. Select a study of interest, then click the button “Download Manifest”.
+                        </figcaption><br><br>  
+                    </li>
+                    <li>
+                        Create and download an API key from your <a href="http://healdata.org/identity">Profile Page</a>. Note where you save the API key on your local machine.<br>
+                        <img src="img/profile_APIkey.png" alt="profile_APIkey" style="width:90%">
+                        <figcaption>
+                            Fig. 26. Create an API key on the profile page.
+                        </figcaption><br><br>  
+                        <img src="img/profile_APIkey_created.png" alt="profile_APIkey_created" style="width:90%">
+                        <figcaption>
+                            Fig. 27. Download the API key as json file and note the directory where the API key was saved for step 6.
+                        </figcaption><br><br>  
+                    </li>
+                    <li>
+                        Download and configure the Gen3-client <br>
+                        a. Follow the download instructions of the Gen3-client <a href="https://gen3.org/resources/user/gen3-client/#1-installation-instructions">here</a>. 
+                        The client can be downloaded <a href="https://github.com/uc-cdis/cdis-data-client/releases/latest">here</a>.<br><br>
+                        b. In your terminal, configure your profile using the following command:<br><br>
+                        <code>
+                            gen3-client configure --profile=&#60;profile_name&#62; --cred=&#60;credentials.json&#62; --apiendpoint=&#60;api_endpoint_url&#62; <br><br>
+ 
+                                #Mac/Linux:<br>
+                                gen3-client configure --profile=demo<br>
+                                  --cred=~/Downloads/demo-credentials.json --apiendpoint=https://healdata.org/<br><br>
+                                 
+                                #Windows:<br>
+                                gen3-client configure --profile=demo<br>
+                                  --cred=C:\Users\demo\Downloads\demo-credentials.json --apiendpoint=https://healdata.org/
+                                  <br><br>
+                                #Output:<br>
+                                  10:08:20 Profile 'demo' has been configured successfully.<br>
+                        </code><br>
+                        If successfully executed, a configuration file will be stored under the directory the user specified under “cred”. 
+                        For troubleshooting, refer to the instructions found <a href="https://gen3.org/resources/user/gen3-client/#2-configure-a-profile-with-credentials">here</a>.
+                        <br><br>
+                        c.  Download files by using the following command, which references the manifest file name and its location: <br><br>
+                        <code>
+                            gen3-client download-multiple --profile=&#60;profile_name&#62; --manifest=&#60;manifest_file&#62; --download-path=&#60;path_for_files&#62; <br><br>
+ 
+                                gen3-client download-multiple --profile=demo --manifest=manifest.json --download-path=downloads<br><br>
+
+                                #Output:<br>
+                                 
+                                2021/06/03 16:48:46 Reading manifest...<br>
+                                 200 B / 200 B [===================] 100.00% 0s<br>
+                                WARNING: flag "rename" was set to false in "original" mode, duplicated files under "downloads/" will be overwritten<br>
+                                Proceed? [y/n]: y<br>
+                                2021/06/03 16:48:47 Total number of GUIDs: 1<br>
+                                2021/06/03 16:48:47 Preparing file info for each file, please wait...<br>
+                                 1 / 1 [============================================] 100.00% 0s<br>
+                                2021/06/03 16:48:47 File info prepared successfully<br>
+                                arcos_all_washpost.tsv.gz  6.41 GiB / 6.41 GiB [=======================================================]  100.00% 0s<br><br>
+                                
+                        </code>
+                    </li> <br>
+                </ol>
+
+
+
+                <h2 id="FAQ" class="section-title">5. FAQ</h2>
+                <ol>
+                    <li>
+                        <span style="font-weight: bold;">What can I do on the HEAL Platform?</span><br><br>
+                        The  HEAL Platform is  a cloud-based  and multifunctional  web  interface  that 
+                         provides a secure environment for discovery and analysis of HEAL results and data. 
+                         Explore all functionalities <a href="#HEALPlatform">here</a>. <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">Which datasets are currently open-access?</span><br><br>
+                        Find all open-access datasets <a href="#CurrentOAStudies">here</a>.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">Where can I see individual study metadata?</span><br><br>
+                        Individual study metadata is shown upon clicking on a study entry on the Discovery Page. 
+                        Click to read the full description 
+                         <a href="#Discovery">here</a>.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">How and where can I see if I have access to a study? </span><br><br>
+                        Clicking on an individual study on the Discovery Page will show in the top 
+                        right corner if they are accessible to the user. To see all studies 
+                        users have access to, users should navigate to the Discovery Page and 
+                        select “Data Access” - Accessible”. More information
+                         <a href="#AccessCheck">here</a>.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">I do not have access to a specific study, how can I get access? </span><br><br>
+                        RENCI/RTI (Renaissance Computing Institute) at the University of North Carolina 
+                        at Chapel Hill establishes and manages data access contacts over all 
+                        data contributors/sources. To request access to controlled data, users 
+                        should contact RENCI/RTI at HEALstewards@renci.org.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">The profile page says I have access but I don’t see it on the Discovery Page.  </span><br><br>
+                        Please contact our help desk at support@datacommons.io. <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">Do I need to store my data in a particular location, repository, or 
+                            database in to participate in the HEAL platform?   </span><br><br>
+                        You must store your data in a HEAL-approved repository. A HEAL-approved repository is a data repository 
+                        that is NIH-approved AND positively has an API for metadata, data, and data permissions calls. <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">How do I find a HEAL-approved repository in which to store my data? </span><br><br>
+                        Please reach out to HEALstewards@renci.org for further questions on this topic.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">Are there costs that will be the responsibility of individual investigators associated with data storage in a HEAL-approved repository now and in the future? </span><br><br>
+                        Please reach out to HEALstewards@renci.org for further questions on this topic.  <br><br> 
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">I would like to download data files from a specific study, what do I need to do? </span><br><br>
+                        Users need to use the Gen3-client command line tool to download data files, as described
+                        <a href="#DownloadingDataFiles">here</a>. 
+                        Additional information on the Gen3-client may be found 
+                        <a href="https://gen3.org/resources/user/gen3-client/">here</a>.
+                        <br><br>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">My data file download gets stuck, where can I get help?  </span><br><br>
+                        For troubleshooting, please see the Gen3-client documentation <a href="https://gen3.org/resources/user/gen3-client/">here</a>. 
+                        If errors persist, contact our help desk at support@datacommons.io.
+                        <br><br>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">The Gen3-client shows errors, where can I get help?  </span><br><br>
+                        To check that the client is working and to confirm the client version, type ‘gen3-client’ in the terminal. Typing ‘gen3-client help’ 
+                        will display the help menu. Users must provide the full path of the tool 
+                        in order for the commands to run, for example, ‘./gen3-client’ while 
+                        working from the directory containing the client.  <br>
+                        For more troubleshooting, please see the Gen3-client documentation <a href="https://gen3.org/resources/user/gen3-client/">here</a>. 
+                        If errors persist, contact our help desk at support@datacommons.io.
+                        <br><br>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold;">I want to report a bug!   </span><br><br>
+                        Please report any errors or bugs to our help desk at heal-support@datacommons.io. 
+                        <br><br>
+                    </li>
+                </ol>
+            
+ 
+        </div>
+
+            
+              
+        </div>
+        <div class='footer'>
+            <div class="footer__logo-area">
+                <img class='footer__img' src='img/gen3.png' />
+                <img class='footer__img' src='img/createdby.png' />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function readMore() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("read-more-btn");
+            var btnText = document.getElementById("read-more-explorer");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+
+    </script>
+
 
 </body>
 
