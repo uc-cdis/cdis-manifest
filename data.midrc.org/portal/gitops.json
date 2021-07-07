@@ -21,6 +21,11 @@
           "graphql": "_ct_scan_count",
           "name": "Thoracic CT Scans",
           "plural": "Thoracic CT Scans"
+        },
+        {
+          "graphql": "_mr_exam_count",
+          "name": "MR Exam",
+          "plural": "MR Exams"
         }
       ],
       "chartCounts": [],
@@ -29,7 +34,6 @@
     "useArboristUI": true,
     "showArboristAuthzOnProfile": true,
     "showFenceAuthzOnProfile": true,
-    "hideSubmissionIfIneligible": true,
     "componentToResourceMapping": {
       "Workspace": {
         "resource": "/workspace",
@@ -152,6 +156,10 @@
           {
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
+          },
+          {
+            "link": "midrc-support@datacommons.io",
+            "name": "Email Support"
           }
         ],
         "useProfileDropdown": true
@@ -183,13 +191,13 @@
         {
           "tabTitle": "Cases",
           "charts": {
-            "covid_test_positive": {
+            "covid19_positive": {
               "chartType": "fullPie",
               "title": "COVID-19 Positive"
             },
-            "gender": {
+            "sex": {
               "chartType": "fullPie",
-              "title": "Gender"
+              "title": "Sex"
             },
             "race": {
               "chartType": "fullPie",
@@ -201,44 +209,13 @@
               {
                 "title": "Demographics",
                 "fields":[
-                  "gender",
+                  "sex",
                   "race",
-                  "age",
+                  "age_at_index",
+                  "index_event",
                   "zip",
+                  "covid19_positive",
                   "project_id"
-                ]
-              },
-              {
-                "title": "Medical History",
-                "fields":[
-                  "covid_test_positive",
-                  "covid_test_name",
-                  "asplenia",
-                  "cancer",
-                  "chicken_pox",
-                  "chronic_kidney_disease",
-                  "current_pregnant",
-                  "cytomegalovirus",
-                  "diabetes_type_1",
-                  "diabetes_type_2",
-                  "extensive_burns",
-                  "hemodialysis_post_diagnosis",
-                  "hemodialysis_pre_diagnosis",
-                  "herpes_zoster",
-                  "hyposplenia",
-                  "icu_admit",
-                  "latest_bmi",
-                  "latest_height_inches",
-                  "latest_height_string",
-                  "latest_weight",
-                  "malnutrition",
-                  "measles",
-                  "mortality",
-                  "number_icu_admits",
-                  "rheumatoid_arthritis",
-                  "systemic_lupus_erythmatosus",
-                  "transplant",
-                  "tuberculosis"
                 ]
               }
             ]
@@ -247,38 +224,12 @@
             "enabled": true,
             "fields": [
               "submitter_id",
-              "gender",
-              "age",
+              "sex",
+              "age_at_index",
+              "index_event",
               "race",
               "zip",
-              "covid_test_name",
-              "covid_test_positive",
-              "asplenia",
-              "cancer",
-              "chicken_pox",
-              "chronic_kidney_disease",
-              "current_pregnant",
-              "cytomegalovirus",
-              "diabetes_type_1",
-              "diabetes_type_2",
-              "extensive_burns",
-              "hemodialysis_post_diagnosis",
-              "hemodialysis_pre_diagnosis",
-              "herpes_zoster",
-              "hyposplenia",
-              "icu_admit",
-              "latest_bmi",
-              "latest_height_inches",
-              "latest_height_string",
-              "latest_weight",
-              "malnutrition",
-              "measles",
-              "mortality",
-              "number_icu_admits",
-              "rheumatoid_arthritis",
-              "systemic_lupus_erythmatosus",
-              "transplant",
-              "tuberculosis",
+              "covid19_positive",
               "_imaging_studies_count",
               "_ct_scans_count",
               "_radiography_exams_count",
@@ -363,10 +314,6 @@
                 {
                     "field": "_cr_images_count",
                     "name": "CR Images Count"
-                },
-                {
-                    "field": "_virus_genomes_count",
-                    "name": "Virus Genomes Count"
                 }
             ],
             "manifestMapping": {
@@ -386,14 +333,6 @@
               "data_contributor": {
                 "chartType": "count",
                 "title": "Data Contributors"
-              },
-              "research_design": {
-                "chartType": "bar",
-                "title": "Research Design"
-              },
-              "research_setup": {
-                "chartType": "bar",
-                "title": "Research Setup"
               }
             },
             "filters": {
@@ -402,9 +341,6 @@
                   "title": "Dataset Properties",
                   "fields":[
                     "data_contributor",
-                    "research_design",
-                    "research_objective",
-                    "research_setup",
                     "project_id"
                   ]
                 }
@@ -413,7 +349,7 @@
             "table": {
               "enabled": true,
               "fields": [
-                "data_url",
+                "data_url_doi",
                 "project_id",
                 "data_contributor",
                 "_imaging_studies_count",
@@ -425,19 +361,15 @@
                 "_dx_images_count",
                 "_cr_series_count",
                 "_cr_images_count",
-                "_virus_genomes_count",
                 "data_description",
                 "research_description",
-                "research_design",
-                "research_objective",
-                "research_setup",
                 "license",
                 "publication_citation",
                 "data_citation",
                 "submitter_id"
               ],
               "linkFields": [
-                "data_url"
+                "data_url_doi"
               ]
             },
             "guppyConfig": {
@@ -540,9 +472,9 @@
                 "chartType": "fullPie",
                 "title": "Study COVID-19 Status"
               },
-              "gender": {
+              "sex": {
                 "chartType": "fullPie",
-                "title": "Case Gender"
+                "title": "Case Sex"
               }
             },
             "filters": {
@@ -551,80 +483,32 @@
                   "title": "Study Properties",
                   "fields":[
                     "study_modality",
-                    "days_to_study",
-                    "hours_to_study",
                     "study_description",
-                    "FLO2_percentage",
                     "age_at_imaging",
                     "study_year",
+                    "study_year_shifted",
                     "study_covid_status",
-                    "study_body_site",
+                    "body_part_examined",
+                    "study_location",
+                    "series_count",
                     "project_id"
                   ]
                 },
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "modality",
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "study_description",
-                    "series_description",
-                    "slice_thickness",
-                    "spacing_between_slices",
-                    "data_format",
-                    "data_type",
-                    "data_category",
-                    "implementation_class_uid",
-                    "implementation_version_name",
-                    "transfer_syntax_uid",
-                    "image_type",
-                    "body_part_examined",
-                    "view_position",
-                    "contrast_bolus_agent_number",
-                    "lossy_image_compression"
-                  ]
-                },
-                {
-                  "title": "Medical History",
-                  "fields":[
-                    "covid_test_name",
-                    "covid_test_positive",
-                    "asplenia",
-                    "cancer",
-                    "chicken_pox",
-                    "chronic_kidney_disease",
-                    "current_pregnant",
-                    "cytomegalovirus",
-                    "diabetes_type_1",
-                    "diabetes_type_2",
-                    "extensive_burns",
-                    "hemodialysis_post_diagnosis",
-                    "hemodialysis_pre_diagnosis",
-                    "herpes_zoster",
-                    "hyposplenia",
-                    "icu_admit",
-                    "latest_bmi",
-                    "latest_height_inches",
-                    "latest_height_string",
-                    "latest_weight",
-                    "malnutrition",
-                    "measles",
-                    "mortality",
-                    "number_icu_admits",
-                    "rheumatoid_arthritis",
-                    "systemic_lupus_erythmatosus",
-                    "transplant",
-                    "tuberculosis"
+                    "data_format"
                   ]
                 },
                 {
                   "title": "Case Demographics",
                   "fields":[
-                    "age",
-                    "gender",
+                    "covid19_positive",
+                    "age_at_index",
+                    "sex",
                     "race",
-                    "zip"
+                    "zip",
+                    "index_event"
                   ]
                 }
               ]
@@ -632,8 +516,21 @@
             "table": {
               "enabled": true,
               "fields": [
-                "submitter_id",
                 "study_modality",
+                "study_description",
+                "study_covid_status",
+                "body_part_examined",
+                "age_at_imaging",
+                "study_year",
+                "study_year_shifted",
+                "series_count",
+                "data_format",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
+                "race",
+                "zip",
                 "_ct_scans_count",
                 "_radiography_exams_count",
                 "_ct_series_count",
@@ -642,68 +539,7 @@
                 "_dx_images_count",
                 "_cr_series_count",
                 "_cr_images_count",
-                "days_to_study",
-                "hours_to_study",
-                "study_description",
-                "FLO2_percentage",
-                "radiologist_notes",
-                "age_at_imaging",
-                "study_year",
-                "study_covid_status",
-                "study_start_time",
-                "study_body_site",
-                "manufacturer",
-                "manufacturer_model_name",
-                "study_description",
-                "series_description",
-                "slice_thickness",
-                "spacing_between_slices",
-                "modality",
-                "data_format",
-                "data_type",
-                "data_category",
-                "implementation_class_uid",
-                "implementation_version_name",
-                "transfer_syntax_uid",
-                "image_type",
-                "body_part_examined",
-                "view_position",
-                "contrast_bolus_agent_number",
-                "lossy_image_compression",
-                "covid_test_name",
-                "covid_test_positive",
-                "asplenia",
-                "cancer",
-                "chicken_pox",
-                "chronic_kidney_disease",
-                "current_pregnant",
-                "cytomegalovirus",
-                "diabetes_type_1",
-                "diabetes_type_2",
-                "extensive_burns",
-                "hemodialysis_post_diagnosis",
-                "hemodialysis_pre_diagnosis",
-                "herpes_zoster",
-                "hyposplenia",
-                "icu_admit",
-                "latest_bmi",
-                "latest_height_inches",
-                "latest_height_string",
-                "latest_weight",
-                "malnutrition",
-                "measles",
-                "mortality",
-                "number_icu_admits",
-                "rheumatoid_arthritis",
-                "systemic_lupus_erythmatosus",
-                "transplant",
-                "tuberculosis",
-                "age",
-                "gender",
-                "race",
-                "zip",
-                "study_type",
-                "study_subtype",
+                "submitter_id",
                 "project_id"
               ]
             },
@@ -799,9 +635,9 @@
                 "chartType": "fullPie",
                 "title": "Study COVID-19 Status"
               },
-              "gender": {
+              "sex": {
                 "chartType": "fullPie",
-                "title": "Case Gender"
+                "title": "Case Sex"
               }
             },
             "filters": {
@@ -810,76 +646,42 @@
                   "title": "Study Properties",
                   "fields":[
                     "study_modality",
-                    "days_to_study",
-                    "hours_to_study",
                     "study_description",
-                    "FLO2_percentage",
                     "study_covid_status",
-                    "study_body_site",
+                    "body_part_examined",
+                    "age_at_imaging",
+                    "study_location",
+                    "series_count",
+                    "study_year",
+                    "study_year_shifted",
                     "project_id"
                   ]
                 },
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "modality",
+                    "data_format",
+                    "detector_type",
+                    "imager_pixel_spacing",
+                    "contrast_bolus_agent_number",
+                    "image_type",
+                    "lossy_image_compression",
                     "manufacturer",
                     "manufacturer_model_name",
-                    "study_description",
+                    "modality",
+                    "pixel_spacing",
                     "series_description",
-                    "slice_thickness",
-                    "spacing_between_slices",
-                    "data_format",
-                    "data_type",
-                    "data_category",
-                    "implementation_class_uid",
-                    "implementation_version_name",
-                    "transfer_syntax_uid",
-                    "image_type",
-                    "body_part_examined",
-                    "view_position",
-                    "contrast_bolus_agent_number",
-                    "lossy_image_compression"
-                  ]
-                },
-                {
-                  "title": "Medical History",
-                  "fields":[
-                    "covid_test_name",
-                    "covid_test_positive",
-                    "asplenia",
-                    "cancer",
-                    "chicken_pox",
-                    "chronic_kidney_disease",
-                    "current_pregnant",
-                    "cytomegalovirus",
-                    "diabetes_type_1",
-                    "diabetes_type_2",
-                    "extensive_burns",
-                    "hemodialysis_post_diagnosis",
-                    "hemodialysis_pre_diagnosis",
-                    "herpes_zoster",
-                    "hyposplenia",
-                    "icu_admit",
-                    "latest_bmi",
-                    "latest_height_inches",
-                    "latest_height_string",
-                    "latest_weight",
-                    "malnutrition",
-                    "measles",
-                    "mortality",
-                    "number_icu_admits",
-                    "rheumatoid_arthritis",
-                    "systemic_lupus_erythmatosus",
-                    "transplant",
-                    "tuberculosis"
+                    "series_uid",
+                    "spatial_resolution"
                   ]
                 },
                 {
                   "title": "Case Demographics",
                   "fields":[
-                    "age",
-                    "gender",
+                    "covid19_positive",
+                    "age_at_index",
+                    "index_event",
+                    "sex",
                     "race",
                     "zip"
                   ]
@@ -891,72 +693,35 @@
               "fields": [
                 "submitter_id",
                 "study_modality",
+                "study_description",
+                "age_at_imaging",
+                "study_year",
+                "study_year_shifted",
+                "study_covid_status",
+                "body_part_examined",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
+                "race",
+                "zip",
                 "_dx_series_count",
                 "_dx_images_count",
                 "_cr_series_count",
                 "_cr_images_count",
-                "days_to_study",
-                "hours_to_study",
-                "study_description",
-                "FLO2_percentage",
-                "radiologist_notes",
-                "age_at_imaging",
-                "study_year",
-                "study_covid_status",
-                "study_start_time",
-                "study_body_site",
+                "data_format",
+                "detector_type",
+                "imager_pixel_spacing",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
                 "manufacturer",
                 "manufacturer_model_name",
-                "study_description",
-                "series_description",
-                "slice_thickness",
-                "spacing_between_slices",
                 "modality",
-                "data_format",
-                "data_type",
-                "data_category",
-                "implementation_class_uid",
-                "implementation_version_name",
-                "transfer_syntax_uid",
-                "image_type",
-                "body_part_examined",
-                "view_position",
-                "contrast_bolus_agent_number",
-                "lossy_image_compression",
-                "covid_test_name",
-                "covid_test_positive",
-                "asplenia",
-                "cancer",
-                "chicken_pox",
-                "chronic_kidney_disease",
-                "current_pregnant",
-                "cytomegalovirus",
-                "diabetes_type_1",
-                "diabetes_type_2",
-                "extensive_burns",
-                "hemodialysis_post_diagnosis",
-                "hemodialysis_pre_diagnosis",
-                "herpes_zoster",
-                "hyposplenia",
-                "icu_admit",
-                "latest_bmi",
-                "latest_height_inches",
-                "latest_height_string",
-                "latest_weight",
-                "malnutrition",
-                "measles",
-                "mortality",
-                "number_icu_admits",
-                "rheumatoid_arthritis",
-                "systemic_lupus_erythmatosus",
-                "transplant",
-                "tuberculosis",
-                "age",
-                "gender",
-                "race",
-                "zip",
-                "study_type",
-                "study_subtype",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
                 "project_id"
               ]
             },
@@ -1028,17 +793,17 @@
         {
             "tabTitle": "CT Scans",
             "charts": {
-              "manufacturer": {
+              "age_at_imaging": {
                 "chartType": "fullPie",
-                "title": "Manufacturer"
+                "title": "Case Age at Imaging"
               },
               "study_covid_status": {
                 "chartType": "fullPie",
                 "title": "Study COVID-19 Status"
               },
-              "gender": {
+              "sex": {
                 "chartType": "fullPie",
-                "title": "Case Gender"
+                "title": "Case Sex"
               }
             },
             "filters": {
@@ -1046,79 +811,53 @@
                 {
                   "title": "Study Properties",
                   "fields":[
-                    "days_to_study",
-                    "hours_to_study",
-                    "study_description",
-                    "FLO2_percentage",
-                    "study_covid_status",
-                    "study_start_time",
-                    "study_body_site",
                     "study_modality",
+                    "study_description",
+                    "study_covid_status",
+                    "body_part_examined",
+                    "age_at_imaging",
+                    "study_location",
+                    "series_count",
+                    "study_year",
+                    "study_year_shifted",
                     "project_id"
                   ]
                 },
                 {
                   "title": "Image Properties",
                   "fields":[
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "study_description",
-                    "series_description",
+                    "data_format",
+                    "acquisition_type",
+                    "convolution_kernel",
+                    "exposure_modulation_type",
+                    "patient_position",
                     "slice_thickness",
                     "spacing_between_slices",
-                    "data_format",
-                    "data_type",
-                    "data_category",
-                    "implementation_class_uid",
-                    "implementation_version_name",
-                    "transfer_syntax_uid",
-                    "image_type",
-                    "body_part_examined",
-                    "view_position",
                     "contrast_bolus_agent_number",
+                    "image_type",
                     "lossy_image_compression",
-                    "modality"
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "modality",
+                    "pixel_spacing",
+                    "series_description",
+                    "series_uid",
+                    "spatial_resolution"
                   ]
                 },
                 {
                   "title": "Medical History",
                   "fields":[
-                    "covid_test_name",
-                    "covid_test_positive",
-                    "asplenia",
-                    "cancer",
-                    "chicken_pox",
-                    "chronic_kidney_disease",
-                    "current_pregnant",
-                    "cytomegalovirus",
-                    "diabetes_type_1",
-                    "diabetes_type_2",
-                    "extensive_burns",
-                    "hemodialysis_post_diagnosis",
-                    "hemodialysis_pre_diagnosis",
-                    "herpes_zoster",
-                    "hyposplenia",
-                    "icu_admit",
-                    "latest_bmi",
-                    "latest_height_inches",
-                    "latest_height_string",
-                    "latest_weight",
-                    "malnutrition",
-                    "measles",
-                    "mortality",
-                    "number_icu_admits",
-                    "rheumatoid_arthritis",
-                    "systemic_lupus_erythmatosus",
-                    "transplant",
-                    "tuberculosis"
+                    "covid19_positive"
                   ]
                 },
                 {
                   "title": "Case Demographics",
                   "fields":[
-                    "age",
-                    "gender",
+                    "sex",
                     "race",
+                    "age_at_index",
+                    "index_event",
                     "zip"
                   ]
                 }
@@ -1130,68 +869,36 @@
                 "submitter_id",
                 "_ct_series_count",
                 "_ct_images_count",
+                "study_modality",
                 "study_description",
-                "series_description",
-                "days_to_study",
-                "hours_to_study",
-                "FLO2_percentage",
-                "radiologist_notes",
                 "age_at_imaging",
                 "study_year",
+                "study_year_shifted",
                 "study_covid_status",
-                "study_start_time",
-                "study_body_site",
-                "manufacturer",
-                "manufacturer_model_name",
-                "slice_thickness",
-                "spacing_between_slices",
-                "data_format",
-                "data_type",
-                "data_category",
-                "implementation_class_uid",
-                "implementation_version_name",
-                "transfer_syntax_uid",
-                "image_type",
                 "body_part_examined",
-                "view_position",
-                "contrast_bolus_agent_number",
-                "lossy_image_compression",
-                "covid_test_name",
-                "covid_test_positive",
-                "asplenia",
-                "cancer",
-                "chicken_pox",
-                "chronic_kidney_disease",
-                "current_pregnant",
-                "cytomegalovirus",
-                "diabetes_type_1",
-                "diabetes_type_2",
-                "extensive_burns",
-                "hemodialysis_post_diagnosis",
-                "hemodialysis_pre_diagnosis",
-                "herpes_zoster",
-                "hyposplenia",
-                "icu_admit",
-                "latest_bmi",
-                "latest_height_inches",
-                "latest_height_string",
-                "latest_weight",
-                "malnutrition",
-                "measles",
-                "mortality",
-                "number_icu_admits",
-                "rheumatoid_arthritis",
-                "systemic_lupus_erythmatosus",
-                "transplant",
-                "tuberculosis",
-                "age",
-                "gender",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
                 "race",
                 "zip",
-                "study_modality",
+                "data_format",
+                "acquisition_type",
+                "convolution_kernel",
+                "exposure_modulation_type",
+                "patient_position",
+                "slice_thickness",
+                "spacing_between_slices",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
                 "modality",
-                "study_type",
-                "study_subtype",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
                 "project_id"
               ]
             },
@@ -1253,132 +960,162 @@
             "dropdowns": {}
         },
         {
-          "tabTitle": "Viral Genomics",
-          "charts": {
-            "organism": {
-              "chartType": "fullPie",
-              "title": "Organism"
-            },
-            "data_format": {
-              "chartType": "fullPie",
-              "title": "File Format"
-            },
-            "data_category": {
-              "chartType": "fullPie",
-              "title": "File Category"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Viral Sample Info",
-                "fields": [
-                  "organism",
-                  "ncbi_bioproject",
-                  "ncbi_biosample",
-                  "host",
-                  "location",
-                  "isolation_source",
-                  "isolate",
-                  "collection_date"
-                ]
-              },
-              {
-                "title": "Genomics File Properties",
-                "fields": [
-                  "project_id",
-                  "data_type",
-                  "data_format",
-                  "data_category",
-                  "file_size"
-                ]
+            "tabTitle": "MR Exams",
+            "charts": {
+              "covid19_positive": {
+                "chartType": "fullPie",
+                "title": "COVID-19 Positive"
               }
-            ]
-          },
-          "table": {
-            "enabled": true,
-            "fields": [
-              "organism",
-              "ncbi_bioproject",
-              "ncbi_biosample",
-              "host",
-              "location",
-              "isolation_source",
-              "isolate",
-              "collection_date",
-              "file_name",
-              "object_id",
-              "file_size",
-              "md5sum",
-              "data_type",
-              "data_format",
-              "data_category",
-              "project_id",
-              "submitter_id"
-            ]
-          },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data",
-              "title": "Download Viral Genomics Metadata",
-              "leftIcon": "user",
-              "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics_metadata.json"
             },
-            {
-              "enabled": true,
-              "type": "file-manifest",
-              "title": "Download Viral Genomics File Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_viral_genomics_manifest.json",
-              "dropdownId": "download"
+            "filters": {
+              "tabs": [
+                {
+                  "title": "Study Properties",
+                  "fields":[
+                    "study_description",
+                    "study_covid_status",
+                    "body_part_examined",
+                    "age_at_imaging",
+                    "study_location",
+                    "study_year",
+                    "study_year_shifted",
+                    "project_id"
+                  ]
+                },
+                {
+                  "title": "Image Properties",
+                  "fields":[
+                    "data_format",
+                    "slice_thickness",
+                    "spacing_between_slices",
+                    "mr_acquisition_type",
+                    "magnetic_field_strength",
+                    "scanning_sequence",
+                    "sequence_name",
+                    "contrast_bolus_agent_number",
+                    "image_type",
+                    "lossy_image_compression",
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "modality",
+                    "pixel_spacing",
+                    "series_description",
+                    "series_uid",
+                    "spatial_resolution"
+                  ]
+                },
+                {
+                  "title": "Medical History",
+                  "fields":[
+                    "covid19_positive"
+                  ]
+                },
+                {
+                  "title": "Case Demographics",
+                  "fields":[
+                    "sex",
+                    "race",
+                    "age_at_index",
+                    "index_event",
+                    "zip"
+                  ]
+                }
+              ]
             },
-            {
-              "enabled": false,
-              "type": "export-files-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "guppyConfig": {
-            "dataType": "virus_data_file",
-            "fieldMapping": [
+            "table": {
+              "enabled": true,
+              "fields": [
+                "submitter_id",
+                "_mr_series_count",
+                "_mr_images_count",
+                "study_description",
+                "age_at_imaging",
+                "study_year",
+                "study_year_shifted",
+                "study_covid_status",
+                "body_part_examined",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
+                "race",
+                "zip",
+                "data_format",
+                "slice_thickness",
+                "spacing_between_slices",
+                "mr_acquisition_type",
+                "magnetic_field_strength",
+                "scanning_sequence",
+                "sequence_name",
+                "contrast_bolus_agent_number",
+                "image_type",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "pixel_spacing",
+                "series_description",
+                "series_uid",
+                "spatial_resolution",
+                "project_id"
+              ]
+            },
+            "buttons": [
               {
-                "field": "project_id",
-                "name": "Dataset ID"
+                "enabled": true,
+                "type": "data",
+                "title": "Download MR Exam Metadata",
+                "leftIcon": "user",
+                "rightIcon": "download",
+                "fileName": "MIDRC_MR_Exam_metadata.json"
               },
               {
-                "field": "submitter_id",
-                "name": "Viral Genome ID"
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for MR Exams",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_MR_Exam_file_manifest.json"
               },
               {
-                "field": "object_id",
-                "name": "GUID"
-              },
-              {
-                "field": "ncbi_bioproject",
-                "name": "NCBI Bioproject"
-              },
-              {
-                "field": "ncbi_biosample",
-                "name": "NCBI Biosample"
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
-            "nodeCountTitle": "Viral Genomic Files",
-            "manifestMapping": {
-              "resourceIndexType": "case",
-              "resourceIdField": "_case_id",
-              "referenceIdFieldInResourceIndex": "object_id",
-              "referenceIdFieldInDataIndex": "object_id"
+            "guppyConfig": {
+              "dataType": "mr_exam",
+              "nodeCountTitle": "MR Exams",
+              "fieldMapping": [
+                {
+                    "field": "project_id",
+                    "name": "Dataset ID"
+                },
+                {
+                    "field": "submitter_id",
+                    "name": "MR Exam ID"
+                },
+                {
+                    "field": "_mr_series_count",
+                    "name": "MR Series Count"
+                },
+                {
+                    "field": "_mr_images_count",
+                    "name": "MR Images Count"
+                }
+              ],
+              "manifestMapping": {
+                "resourceIndexType": "imaging_data_file",
+                "resourceIdField": "object_id",
+                "referenceIdFieldInResourceIndex": "_mr_exam_id",
+                "referenceIdFieldInDataIndex": "_mr_exam_id"
+              },
+              "accessibleFieldCheckList": ["project_id"],
+              "accessibleValidationField": "project_id"
             },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id",
-            "downloadAccessor": "object_id"
-          },
-          "dropdowns": {}
+            "dropdowns": {}
         }
     ]
 }
