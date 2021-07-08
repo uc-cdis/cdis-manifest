@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.06",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.07",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "healdata.org"
@@ -103,7 +103,9 @@
       "memory-limit": "1024Mi",
       "name": "JCOIN (Tracking Opioid Stigma) Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
-      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -132,7 +134,9 @@
       "memory-limit": "1024Mi",
       "name": "Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
-      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
