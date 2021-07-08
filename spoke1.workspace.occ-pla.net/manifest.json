@@ -8,7 +8,7 @@
     "arborist": "quay.io/cdis/arborist:master",
     "dashboard": "quay.io/cdis/gen3-statics:chore_iam-test",
     "fence": "quay.io/cdis/fence:master",
-    "fluentd": "quay.io/cdis/fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "quay.io/cdis/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "hatchery": "quay.io/cdis/hatchery:master",
     "portal": "quay.io/cdis/data-portal:master",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
