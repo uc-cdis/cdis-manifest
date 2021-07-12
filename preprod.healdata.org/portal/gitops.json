@@ -174,15 +174,21 @@
     "studyColumns": [
       {
         "name": "Project Title",
-        "field": "project_title"
+        "field": "project_title",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Research Focus Area",
-        "field": "research_focus_area"
+        "field": "research_focus_area",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Investigator(s)",
-        "field": "investigators"
+        "field": "investigators",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
