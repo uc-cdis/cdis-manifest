@@ -104,7 +104,8 @@
   "featureFlags": {
     "explorer": false,
     "analysis": false,
-    "discovery": true
+    "discovery": true,
+    "discoveryUseAggMDS": true
   },
   "discoveryConfig": {
     "features": {
@@ -114,18 +115,16 @@
         "filters": [
           { "key": "Research Focus Area" },
           { "key": "Administering IC(s)" },
+          { "key": "Simulated vs. Real Data" },
           { "key": "Year Grant Awarded" },
           { "key": "Study Description" }
         ]
       },
-      "exportToWorkspaceBETA": {
+      "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
-        "enableDownloadManifest": true,
-        "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
-        }
+        "downloadManifestButtonText": "Download",
+        "enableDownloadManifest": true
       },
       "pageTitle": {
         "enabled": false
@@ -152,7 +151,8 @@
             "dataset_1_description",
             "dataset_2_description",
             "dataset_3_description",
-            "dataset_4_description"
+            "dataset_4_description",
+            "data_dictionary"
           ]
         }
       },
@@ -168,20 +168,27 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category"
+      "title": "Tags by category",
+      "showTagCategoryNames": true
     },
     "studyColumns": [
       {
         "name": "Project Title",
-        "field": "project_title"
+        "field": "project_title",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Research Focus Area",
-        "field": "research_focus_area"
+        "field": "research_focus_area",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Investigator(s)",
-        "field": "investigators"
+        "field": "investigators",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -392,17 +399,17 @@
     },
     "tagCategories": [
       {
-        "name": "Enhancing Pain Management",
+        "name": "Demographic Info",
         "color": "rgba(64, 34, 100, 1)",
         "display": true
       },
       {
-        "name": "Improving Treatments for Opioid Misuse and Addiction",
+        "name": "Study Design",
         "color": "rgba(153, 40, 107, 1)",
         "display": true
       },
       {
-        "name": "Demographics",
+        "name": "HEAL Specific",
         "color": "rgba(161, 36, 46, 1)",
         "display": true
       },
@@ -410,6 +417,10 @@
         "name": "Other",
         "color": "rgba(207, 54, 38, 1)",
         "display": true
+      },
+      {
+        "name": "Commons",
+        "color": "rgba(21, 6, 76, 1)"
       }
     ]
   },
@@ -420,7 +431,7 @@
     "resources": [
       {
         "title": "BACPAC synthetic data analysis",
-        "description": "In this Jupyter notebook, we used the synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+          "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
         "link": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.html",
         "imageUrl": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.png"
       },
@@ -429,6 +440,24 @@
         "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
         "link": "/dashboard/Public/notebooks/NORC_JCOIN_data_demo.html",
         "imageUrl": "/dashboard/Public/notebooks/NORC_JCOIN_notebook.png"
+        },
+        {
+         "title": "Opioid Related Deaths, Opioid Prevalence, and Public Policy",
+         "description": "In this Jupyter notebook, we used the CDC WONDER, DEA ARCOS, and PDAPS datasets to demonstate how multiple datasets may be utilized within the workspace in HEAL.",
+         "link": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.html",
+         "imageUrl": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.png"
+        },
+        {
+         "title": "Opioid Overdose Trajectories",
+         "description": "In this Jupyter notebook, we used the CDC WONDER dataset to explore opioid overdose death rate trajectories in the United States.",
+         "link": "/dashboard/Public/notebooks/cdc_wonder_demo.html",
+         "imageUrl": "/dashboard/Public/notebooks/cdc_wonder_demo.png"
+        },
+        {
+         "title": "The Opioid Environment Toolkit and OEPS",
+         "description": "In this Jupyter notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
+         "link": "/dashboard/Public/notebooks/oeps-toolkit-heal-platform-demo.html",
+         "imageUrl": "/dashboard/Public/notebooks/oeps-toolkit-heal-platform-demo.png"
       }
     ]
   },
