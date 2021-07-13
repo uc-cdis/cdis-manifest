@@ -115,6 +115,7 @@
         "filters": [
           { "key": "Research Focus Area" },
           { "key": "Administering IC(s)" },
+          { "key": "Simulated vs. Real Data" },
           { "key": "Year Grant Awarded" },
           { "key": "Study Description" }
         ]
@@ -170,7 +171,8 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category"
+      "title": "Tags by category",
+      "showTagCategoryNames": true
     },
     "studyColumns": [
       {
