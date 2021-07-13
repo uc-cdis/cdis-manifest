@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    height: 75vh; /* 80vh; max-conten*/
+    height: 75vh; /* PLEASE SET THIS TO 80vh again to make side nav stationary ; max-conten*/
 }
 
 .main-content-text {
@@ -108,6 +108,7 @@
   }
   .ul-sidenav {
     padding-left: 10px;
+
   }
 
   .ul-sidenav-sub-sub {
@@ -173,7 +174,7 @@
     height: 60px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
