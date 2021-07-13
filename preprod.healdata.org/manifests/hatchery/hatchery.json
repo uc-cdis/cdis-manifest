@@ -2,6 +2,38 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "pay-models": [
+    {
+      "user": "qureshi@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mshao1@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "craigrbarnes@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "cgmeyer@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "xritter@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    }
+  ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
