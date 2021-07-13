@@ -155,7 +155,8 @@
             "dataset_1_description",
             "dataset_2_description",
             "dataset_3_description",
-            "dataset_4_description"
+            "dataset_4_description",
+            "data_dictionary"
           ]
         }
       },
@@ -403,17 +404,17 @@
     },
     "tagCategories": [
       {
-        "name": "Enhancing Pain Management",
+        "name": "Demographic Info",
         "color": "rgba(64, 34, 100, 1)",
         "display": true
       },
       {
-        "name": "Improving Treatments for Opioid Misuse and Addiction",
+        "name": "Study Design",
         "color": "rgba(153, 40, 107, 1)",
         "display": true
       },
       {
-        "name": "Demographics",
+        "name": "HEAL Specific",
         "color": "rgba(161, 36, 46, 1)",
         "display": true
       },
@@ -435,7 +436,7 @@
     "resources": [
       {
         "title": "BACPAC synthetic data analysis",
-        "description": "In this Jupyter notebook, we used the synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+          "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
         "link": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.html",
         "imageUrl": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.png"
       },
