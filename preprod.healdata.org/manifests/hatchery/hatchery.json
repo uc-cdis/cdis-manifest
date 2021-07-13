@@ -61,7 +61,7 @@
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "R Studio (Generic)",
+      "name": "(Generic) R Studio",
       "image": "heliumdatastage/rstudio-server:1",
       "env": {
         "DISABLE_AUTH": "true"
@@ -75,7 +75,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "Jupyter Notebook (Generic)",
+      "name": "(Generic) Jupyter Notebook",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
       "env": {},
       "args": [
@@ -104,7 +104,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Stata Notebook (Generic)",
+      "name": "(Generic, User-licensed) Stata Notebook ",
       "image": "quay.io/cdis/stata-heal:master",
       "env": {},
       "args": [
@@ -133,7 +133,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "JCOIN Tracking Opioid Stigma Notebook (Tutorial)",
+      "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
@@ -164,7 +164,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Bacpac Synthetic Data Analysis Notebook (Tutorial)",
+      "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
@@ -195,7 +195,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Opioid Prevalence And Overdoses Notebook (Tutorial)",
+      "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
@@ -224,7 +224,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Opioid Overdose Trajectories Notebook (Tutorial)",
+      "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
@@ -253,7 +253,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "OEPS And Opioid Toolkit Notebook (Tutorial)",
+      "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
       "image": "quay.io/cdis/heal-notebooks:oeps__a6ce48313afd4f7b43a8c203b52c8394331f166c",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
