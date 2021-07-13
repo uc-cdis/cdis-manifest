@@ -101,7 +101,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "JCOIN (Tracking Opioid Stigma) Notebook",
+      "name": "JCOIN Tracking Opioid Stigma Notebook (Tutorial)",
       "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
@@ -132,7 +132,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Bacpac Synthetic Data Analysis Notebook",
+      "name": "Bacpac Synthetic Data Analysis Notebook (Tutorial)",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
@@ -159,12 +159,11 @@
       "fs-gid": 100,
       "user-volume-location": "/home/jovyan/pd"
     },
-    ,
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Opioid Prevalence And Overdoses Notebook",
+      "name": "Opioid Prevalence And Overdoses Notebook (Tutorial)",
       "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
@@ -193,7 +192,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "CDC WONDER Demo Notebook",
+      "name": "Opioid Overdose Trajectories Notebook (Tutorial)",
       "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
@@ -222,7 +221,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "OEPS And Opioid Toolkit Demo Notebook",
+      "name": "OEPS And Opioid Toolkit Notebook (Tutorial)",
       "image": "quay.io/cdis/heal-notebooks:oeps__a6ce48313afd4f7b43a8c203b52c8394331f166c",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
