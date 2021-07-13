@@ -2,10 +2,42 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "pay-models": [
+    {
+      "user": "qureshi@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mshao1@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "craigrbarnes@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "cgmeyer@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    },
+    {
+      "user": "xritter@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "rush2",
+      "region": "us-east-1"
+    }
+  ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.07",
+    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
     "env": {
       "NAMESPACE": "healpreprod",
       "HOSTNAME": "preprod.healdata.org"
@@ -29,7 +61,7 @@
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "R Studio (Generic)",
+      "name": "(Generic) R Studio",
       "image": "heliumdatastage/rstudio-server:1",
       "env": {
         "DISABLE_AUTH": "true"
@@ -43,7 +75,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "Jupyter Notebook (Generic)",
+      "name": "(Generic) Jupyter Notebook",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
       "env": {},
       "args": [
@@ -72,7 +104,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Stata Notebook (Generic)",
+      "name": "(Generic, User-licensed) Stata Notebook ",
       "image": "quay.io/cdis/stata-heal:master",
       "env": {},
       "args": [
@@ -91,6 +123,36 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
+        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
+      "image": "quay.io/cdis/stata-heal:gen3-licensed",
+      "env": {},
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "/bin/bash",
+        "/tmp/wait_for_license.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
         "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
@@ -101,7 +163,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "JCOIN (Tracking Opioid Stigma) Notebook",
+      "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
@@ -132,11 +194,98 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "Bacpac Synthetic Data Analysis Notebook",
+      "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
+      "image": "quay.io/cdis/heal-notebooks:oeps__a6ce48313afd4f7b43a8c203b52c8394331f166c",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
