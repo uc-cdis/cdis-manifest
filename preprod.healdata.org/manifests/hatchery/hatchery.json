@@ -37,7 +37,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
+    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support-external",
     "env": {
       "NAMESPACE": "healpreprod",
       "HOSTNAME": "preprod.healdata.org"
@@ -83,6 +83,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -112,6 +113,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -141,6 +143,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -173,6 +176,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -204,6 +208,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -233,6 +238,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -262,6 +268,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -291,6 +298,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
