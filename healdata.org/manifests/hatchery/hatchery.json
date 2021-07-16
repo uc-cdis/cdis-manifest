@@ -2,10 +2,210 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "pay-models": [
+    {
+      "user": "aprokh@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "atharvar@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "avantol@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "emalinowski@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "fan1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "haraprasadj@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mcannalte@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mpingram@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "nmetokishlubsky@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "ribeyre@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "svburke@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "tara@taralichtenberg.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "trevars@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "yilinxu@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "zgowani@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "qureshi@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "willhaley@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mbkranz@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "jmontmaxwell@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "rgrossman1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "Kranz-michael@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "tentner-andrea@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "LeClere-Felicia@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "Kantor-Liz@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "manorathan@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "kwroblewski@health.bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "rchua@bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "ahotton@medicine.bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "bryanb@medicine.bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mshao1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "craigrbarnes@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "cgmeyer@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "xritter@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    }
+  ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
+    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support-external",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "healdata.org"
@@ -51,6 +251,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -80,6 +281,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -109,6 +311,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -141,6 +344,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -172,6 +376,7 @@
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -195,12 +400,15 @@
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
-      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -224,12 +432,15 @@
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
-      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -246,19 +457,22 @@
       "user-uid": 1000,
       "fs-gid": 100,
       "user-volume-location": "/home/jovyan/pd"
-      },
+    },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
       "image": "quay.io/cdis/heal-notebooks:oeps__3213f41729a9206abbf2247cd294f2e0e0ee6261",
-      "env": {"FRAME_ANCESTORS": "https://healdata.org"},
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
