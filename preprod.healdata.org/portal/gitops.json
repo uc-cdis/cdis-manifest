@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-19",
+  "ddEnv": "healpreprod",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -424,7 +425,8 @@
         "display": true
       },
       {
-        "name": "Data Resources",
+        "name": "Commons",
+        "displayName": "Data Resources",
         "color": "rgba(21, 6, 76, 1)"
       }
     ]
