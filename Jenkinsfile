@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@master') _
+@Library('cdis-jenkins-lib@chore/correct_testedEnv_id') _
 testPipeline {
   MANIFEST = "True"
 }
