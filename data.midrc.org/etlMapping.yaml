@@ -200,7 +200,7 @@ mappings:
             fn: max
           - name: index_event
             src: index_event
-            fn: max
+            fn: set
           - name: zip
             src: zip
             fn: set
