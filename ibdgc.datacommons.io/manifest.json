@@ -71,11 +71,43 @@
     },
     "containers": [
       {
-        "target-port": 8787,
+        "target-port": 8885,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
-        "name": "R Studio",
+        "name": "RStudio 3.5.3",
         "image": "quay.io/cdis/rstudio:master",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/",
+        "user-volume-location": "/home/rstudio/pd",
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8886,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "RStudio 4.1.0",
+        "image": "quay.io/cdis/rstudio4.1:rstudio4.1-0.1.0",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/",
+        "user-volume-location": "/home/rstudio/pd",
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8887,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "RStudio 4.1.0 + base packages",
+        "image": "quay.io/cdis/rstudio4.1-with-base-packages:master",
         "env": {
           "DISABLE_AUTH": "true"
         },
@@ -90,10 +122,68 @@
         "target-port": 8888,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
-        "name": "Jupyter - Python/R",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "name": "Jupyter (Python 3.6.7, R 3.6.3)",
+        "image": "quay.io/cdis/jupyter-notebook:1.1.0",
         "env": {
-          "NAMESPACE": "default"
+          "NAMESPACE": "qa-ibd"
+        },
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8889,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "Jupyter (Python 3.9.5, R 4.1.0)",
+        "image": "quay.io/cdis/jupyter-6.4.0:latest",
+        "env": {
+          "NAMESPACE": "qa-ibd"
+        },
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8890,
+        "cpu-limit": "1.0",
+        "memory-limit": "1024Mi",
+        "name": "Jupyter (Python 3.9.5, R 4.1.0) + base packages",
+        "image": "quay.io/cdis/jupyter-6.4.0-with-base-packages:latest",
+        "env": {
+          "NAMESPACE": "qa-ibd"
         },
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
