@@ -1,54 +1,160 @@
 mappings:
-  - name: bloodpac
-    doc_type: case
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_subject
+    doc_type: subject
     type: aggregator
-    root: case
+    root: subject
     props:
       - name: submitter_id
       - name: project_id
+      - name: consent_codes
+      - name: geographic_site
     flatten_props:
       - path: demographics
         props:
-          - name: gender
-          - name: race
-          - name: ethnicity
+          - name: age_at_index
+          - name: hispanic_subgroup
+          - name: subcohort
+          - name: weight_baseline
+          - name: bmi_baseline
+          - name: height_baseline
+      - path: medical_histories
+        props:
+          - name: diabetes
+          - name: hypertension
+          - name: cerebrovascular_disease
+          - name: chronic_respiratory_disease
+          - name: coronary_artery_disease
+          - name: asthma
+          - name: cabg_presence
+          - name: copd
+          - name: emphysema
+          - name: heart_failure
+          - name: myocardial_infarction
+          - name: stroke
+          - name: cac_score
+          - name: cac_volume
+          - name: carotid_plaque
+          - name: carotid_stenosis
+          - name: cimt_1
+          - name: cimt_2
+          - name: vte_case_status
+          - name: vte_followup_start_age
+          - name: vte_prior_history
+      - path: blood_pressure_test
+        props:
+          - name: bp_systolic
+          - name: bp_diastolic
+      - path: medication_records
+        props:
+          - name: hypertension_meds
+          - name: antihypertensive_meds
+          - name: fasting_lipids
+          - name: lipid_lowering_medication
+      - path: lab_results
+        props:
+          - name: lymphocyte_ncnc_bld
+          - name: mch_entmass_rbc
+          - name: mcv_entvol_rbc
+          - name: mchc_mcnc_rbc
+          - name: monocyte_ncnc_bld
+          - name: neutrophil_ncnc_bld
+          - name: pmv_entvol_bld
+          - name: rbc_ncnc_bld
+          - name: rdw_ratio_rbc
+          - name: hemoglobin_mcnc_bld
+          - name: platelet_ncnc_bld
+          - name: hematocrit_vfr_bld
+          - name: wbc_ncnc_bld
+          - name: basophil_ncnc_bld
+          - name: eosinophil_ncnc_bld
+          - name: unit_triglycerides
+          - name: hdl
+          - name: ldl
+          - name: triglycerides
+          - name: total_cholesterol
     aggregated_props:
-      - name: _biospecimens_count
-        path: biospecimens
-        fn: count
+      - name: annotated_sex
+        path: demographics
+        src: annotated_sex
+        fn: set
+      - name: race
+        path: demographics
+        src: race
+        fn: set
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
+        fn: set
       - name: _samples_count
-        path: biospecimens.samples
+        path: samples
         fn: count
       - name: _aliquots_count
-        path: biospecimens.samples.aliquots
-        fn: count
-      - name: _analytes_count
-        path: biospecimens.samples.aliquots.analytes
-        fn: count
-      - name: _cell_images_count
-        path: biospecimens.samples.aliquots.analytes.cell_images
-        fn: count
-      - name: _mass_cytometry_assays_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
-        fn: count
-      - name: _mass_cytometry_images_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
+        path: samples.aliquots
         fn: count
       - name: _read_groups_count
-        path: biospecimens.samples.aliquots.analytes.read_groups
-        fn: count
-      - name: _slide_images_count
-        path: biospecimens.samples.aliquots.slide_images
-        fn: count
-      - name: _submitted_aligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
-        fn: count
-      - name: _submitted_methylations_count
-        path: biospecimens.samples.aliquots.analytes.submitted_methylation_files
-        fn: count
-      - name: _submitted_somatic_mutations_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
+        path: samples.aliquots.read_groups
         fn: count
       - name: _submitted_unaligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
         fn: count
+      - name: _submitted_aligned_reads_files_count
+        path: samples.aliquots.read_groups.submitted_aligned_reads_files
+        fn: count
+      - name: _simple_germline_variations_count
+        path: samples.aliquots.read_groups.simple_germline_variations
+        fn: count
+      - name: current_smoker_baseline
+        path: exposures
+        src: current_smoker_baseline
+        fn: set
+      - name: ever_smoker_baseline
+        path: exposures
+        src: ever_smoker_baseline
+        fn: set
+    parent_props:
+      - path: studies[studies_submitter_id:submitter_id].projects[code]
+      - path: studies[studies_submitter_id:submitter_id].projects[code].programs[programs_name:name]
+    joining_props:
+      - index: file
+        join_on: _subject_id
+        props:
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: file_count
+            src: file_id
+            alternate_src: _file_id
+            fn: count
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_category
+      - name: data_format
+      - name: data_type
+      - name: state
+      - name: callset
+      - name: bucket_path
+      - name: source_node
+      - name: data_category
+    injecting_props:
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
+          - name: project_id
+      program:
+        props:
+          - name: programs_name
+            src: name
+            fn: set
