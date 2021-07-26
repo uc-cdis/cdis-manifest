@@ -324,7 +324,7 @@
       "serviceAccountName": "jobs-ibdgc-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest::2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2021.04",
         "pull_policy": "Always",
         "env": [
           {
