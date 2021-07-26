@@ -622,6 +622,7 @@
       },
       "fieldsToShow": [{
           "groupName": "Study Identifiers",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [{
               "name": "Number of Subjects",
@@ -663,11 +664,12 @@
           ]
         },
         {
+          "groupWidth": "full",
           "fields": [{
             "name": "Description",
             "field": "study_description",
             "contentType": "paragraphs",
-            "includeName": false,
+            "includeName": true,
             "includeIfNotAvailable": true,
             "valueIfNotAvailable": "No description has been provided for this study."
           }]
