@@ -11,10 +11,9 @@
     "arborist": "quay.io/cdis/arborist:master",
     "fence": "quay.io/cdis/fence:2021.04",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:2021.04",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
-    "metadata": "quay.io/cdis/metadata-service:feat_aggregation",
-    "portal": "quay.io/cdis/data-portal:feat_ecosystem-browser-enhancements",
+    "hatchery": "quay.io/cdis/hatchery:feat_decouple_workspaces",
+    "metadata": "quay.io/cdis/metadata-service:feat_mds-adapter",
+    "portal": "quay.io/cdis/data-portal:master",
     "peregrine": "quay.io/cdis/peregrine:2021.04",
     "redis": "redislabs/rejson:latest",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
@@ -38,11 +37,14 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/brh/user.yaml",
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
     "netpolicy": "on"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "heal"
   },
   "canary": {
     "default": 0
