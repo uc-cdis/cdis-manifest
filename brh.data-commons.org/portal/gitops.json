@@ -593,7 +593,7 @@
         "width": "98px"
       },
       {
-        "name": "dbGaP Accession Number",
+        "name": "ID Number",
         "field": "study_id",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a",
@@ -643,7 +643,7 @@
               "valueIfNotAvailable": "N/A"
             },
             {
-              "name": "dbGaP Study Accession",
+              "name": "dbGaP Accession Number",
               "field": "dbgap_accession",
               "contentType": "string",
               "includeName": true,
