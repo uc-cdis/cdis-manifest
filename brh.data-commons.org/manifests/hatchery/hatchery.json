@@ -157,7 +157,7 @@
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -189,7 +189,7 @@
       "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -220,7 +220,7 @@
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -250,7 +250,7 @@
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
       "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -280,7 +280,7 @@
       "memory-limit": "1024Mi",
       "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
       "image": "quay.io/cdis/heal-notebooks:oeps__3213f41729a9206abbf2247cd294f2e0e0ee6261",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -306,10 +306,5 @@
     }
   ],
   "more-configs": [
-    {
-      "type": "dockstore-compose:1.0.0",
-      "path": "/hatchery-more-configs/jupyter-covid19.yaml",
-      "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19"
-    }
   ]
 }
