@@ -71,7 +71,7 @@
     },
     "containers": [
       {
-        "target-port": 8885,
+        "target-port": 8787,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "RStudio 3.5.3",
@@ -87,7 +87,7 @@
         "fs-gid": 100
       },
       {
-        "target-port": 8886,
+        "target-port": 8787,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "RStudio 4.1.0",
@@ -103,7 +103,7 @@
         "fs-gid": 100
       },
       {
-        "target-port": 8887,
+        "target-port": 8787,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "RStudio 4.1.0 + base packages",
@@ -148,7 +148,7 @@
         "user-volume-location": "/home/jovyan/pd"
       },
       {
-        "target-port": 8889,
+        "target-port": 8888,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "Jupyter (Python 3.9.5, R 4.1.0)",
@@ -177,7 +177,7 @@
         "user-volume-location": "/home/jovyan/pd"
       },
       {
-        "target-port": 8890,
+        "target-port": 8888,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "Jupyter (Python 3.9.5, R 4.1.0) + base packages",
