@@ -14308,7 +14308,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query the metadata of BACPAC using the project number &quot;1U24AR076730-01&quot;</span>
-<span class="n">response</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://preprod.healdata.org/mds/metadata/1U24AR076730-01&quot;</span><span class="p">)</span>
+<span class="n">response</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://healdata.org/mds/metadata/1U24AR076730-01&quot;</span><span class="p">)</span>
 <span class="n">metadata_text</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">text</span>
 <span class="n">metadata_object</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata_text</span><span class="p">)</span>
 <span class="n">meta_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">metadata_object</span><span class="p">[</span><span class="s2">&quot;gen3_discovery&quot;</span><span class="p">])</span>
@@ -14403,7 +14403,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># list the export manifest name inside data folder</span>
-<span class="n">HEAL_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/pd/data/preprod.healdata.org&quot;</span>
+<span class="n">HEAL_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/pd/data/healdata.org&quot;</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">HEAL_FOLDER</span><span class="p">)</span><span class="o">.</span><span class="n">iterdir</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">)</span>
 </pre></div>
 
@@ -14426,7 +14426,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[PosixPath(&#39;/home/jovyan/pd/data/preprod.healdata.org/manifest-2021-05-18T22-18-36.007017&#39;)]</pre>
+<pre>[PosixPath(&#39;/home/jovyan/pd/data/healdata.org/manifest-2021-05-18T22-18-36.007017&#39;)]</pre>
 </div>
 
 </div>
@@ -14443,7 +14443,7 @@ a.anchor-link {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List all the files in the latest manifest we exported</span>
 <span class="n">FILE_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">/by-filename&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">FILE_FOLDER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;/home/jovyan/pd/data/preprod.healdata.org/manifest-2021-05-18T22-18-36.007017&quot;</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">FILE_FOLDER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;/home/jovyan/pd/data/healdata.org/manifest-2021-05-18T22-18-36.007017&quot;</span><span class="p">))</span>
 <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 
