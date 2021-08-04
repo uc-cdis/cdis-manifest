@@ -20,29 +20,34 @@ script:
     envs=($(printf "%s\n" "${envs[@]}" | sort -u)); echo  "${uniq[@]}"
     echo "Updated: ${envs[@]}"
 
-    for dir in "${envs[@]}"; do
-      echo " Validating $dir"
-      man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
+    PR_LABELS=$(curl -s "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/labels")
+    if [[ $PR_LABELS == *"skip-gen3utils"* ]]; then
+      echo "skipping gen3utils checks..."
+    else
+      for dir in "${envs[@]}"; do
+        echo " Validating $dir"
+        man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
 
-      # validate manifest.json
-      if [ -f $man ]; then
-        gen3utils validate-manifest $man || exit 1
-      fi
-
-      # validate ETL mapping
-      if [ -f $man ] && [ -f $etl ]; then
-        gen3utils validate-etl-mapping $etl $man || exit 1
-      fi
-
-      # validate portal configuration
-      if [ -f $man ] && [ -f $etl ] && [ -f $ptlcfg ]; then
-        if [[ $TRAVIS_PULL_REQUEST != false ]]; then
-          gen3utils validate-portal-config $etl $man $ptlcfg uc-cdis/gitops-qa $TRAVIS_PULL_REQUEST || exit 1
-        else
-          gen3utils validate-portal-config $etl $man $ptlcfg || exit 1
+        # validate manifest.json
+        if [ -f $man ]; then
+          gen3utils validate-manifest $man || exit 1
         fi
-      fi
-    done
+
+        # validate ETL mapping
+        if [ -f $man ] && [ -f $etl ]; then
+          gen3utils validate-etl-mapping $etl $man || exit 1
+        fi
+
+        # validate portal configuration
+        if [ -f $man ] && [ -f $etl ] && [ -f $ptlcfg ]; then
+          if [[ $TRAVIS_PULL_REQUEST != false ]]; then
+            gen3utils validate-portal-config $etl $man $ptlcfg uc-cdis/gitops-qa $TRAVIS_PULL_REQUEST || exit 1
+          else
+            gen3utils validate-portal-config $etl $man $ptlcfg || exit 1
+          fi
+        fi
+      done
+    fi
 
   # comment on PRs with relevant deployment changes:
   - if [[ $TRAVIS_PULL_REQUEST != false ]]; then gen3utils post-deployment-changes uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST; fi
