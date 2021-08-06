@@ -33,6 +33,10 @@
   "arborist": {
     "deployment_version": "2"
   },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "healpreprod"
+  },
   "portal": {
     "GEN3_BUNDLE": "heal"
   },
