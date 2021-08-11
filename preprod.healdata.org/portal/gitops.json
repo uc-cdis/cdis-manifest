@@ -234,7 +234,7 @@
         },
         {
           "groupName": "Host Institution",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -249,10 +249,10 @@
               "name": "Investigator(s)",
               "field": "investigators"
             },
-              {
-                "name": "Administering IC(s)",
-                "field": "administering_ic"
-              },
+            {
+              "name": "Administering IC(s)",
+              "field": "administering_ic"
+            },
             {
               "name": "Year Grant Awarded",
               "field": "year_awarded"
@@ -261,7 +261,7 @@
         },
         {
           "groupName": "Clinical Trial",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -271,6 +271,11 @@
             {
               "name": "Study Name",
               "field": "study_name"
+            },
+            {
+              "name": "Study URL",
+              "field": "study_url",
+              "contentType": "link"
             },
             {
               "name": "Study Description",
