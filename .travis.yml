@@ -48,7 +48,6 @@ script:
         fi
       fi
     done
-  fi
 
   # comment on PRs with relevant deployment changes:
   - if [[ $TRAVIS_PULL_REQUEST != false ]]; then gen3utils post-deployment-changes uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST; fi
