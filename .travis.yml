@@ -20,6 +20,12 @@ script:
     envs=($(printf "%s\n" "${envs[@]}" | sort -u)); echo  "${uniq[@]}"
     echo "Updated: ${envs[@]}"
 
+    PR_LABELS=$(curl -s "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/labels")
+    if [[ $PR_LABELS == *"skip-gen3utils"* ]]; then
+      echo "skipping gen3utils checks..."
+      exit 0
+    fi
+
     for dir in "${envs[@]}"; do
       echo " Validating $dir"
       man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
