@@ -24,6 +24,7 @@ script:
     if [[ $PR_LABELS == *"skip-gen3utils"* ]]; then
       echo "skipping gen3utils checks..."
       exit 0
+    fi
 
     for dir in "${envs[@]}"; do
       echo " Validating $dir"
