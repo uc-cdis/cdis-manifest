@@ -100,13 +100,6 @@ SESSION_ALLOWED_SCOPES:
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'Login from Google'
     idp: google
-  - name: 'InCommon Login'
-    idp: fence
-    fence_idp: shibboleth
-    shib_idps: '*'
-  - name: 'ORCID Login'
-    idp: fence
-    fence_idp: orcid
 
 # Default login provider:
 # - must be configured in LOGIN_OPTIONS and OPENID_CONNECT
