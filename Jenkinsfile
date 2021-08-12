@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/show_mutatedEnv_in_nightly_build_slack_notification') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
