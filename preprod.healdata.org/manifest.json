@@ -230,6 +230,46 @@
         }
       ],
       "restart_policy": "Never"
+    },
+    {
+      "name": "batch-export",
+      "action": "batch-export",
+      "activeDeadlineSeconds": 1800,
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/batch-export:24",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "batch-export-creds-volume",
+            "readOnly": true,
+            "mountPath": "/batch-export-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "batch-export-creds-volume",
+          "secret": {
+            "secretName": "batch-export-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
     }
   ],
   "ssjdispatcher": {
