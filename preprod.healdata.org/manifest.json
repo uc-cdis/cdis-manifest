@@ -21,7 +21,7 @@
     "metadata": "quay.io/cdis/metadata-service:feat_mds-adapter",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.07",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.07",
-    "portal": "quay.io/cdis/data-portal:feat_heal",
+    "portal": "quay.io/cdis/data-portal:feat_download",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.07",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.07",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.07",
@@ -226,6 +226,46 @@
           "name": "sower-jobs-creds-volume",
           "secret": {
             "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "batch-export",
+      "action": "batch-export",
+      "activeDeadlineSeconds": 1800,
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/batch-export:24",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "batch-export-creds-volume",
+            "readOnly": true,
+            "mountPath": "/batch-export-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "batch-export-creds-volume",
+          "secret": {
+            "secretName": "batch-export-g3auto"
           }
         }
       ],
