@@ -234,7 +234,7 @@
     {
       "name": "batch-export",
       "action": "batch-export",
-      "activeDeadlineSeconds": 1800,
+      "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/batch-export:25",
