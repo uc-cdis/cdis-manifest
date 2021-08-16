@@ -120,10 +120,10 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
-        "enableDownloadManifest": false,
+        "enableDownloadManifest": true,
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
-        "downloadManifestButtonText": "Download",
+        "downloadManifestButtonText": "Download Manifest",
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
