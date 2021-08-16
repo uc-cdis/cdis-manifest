@@ -107,7 +107,7 @@
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": true,
+        "enabled": false,
         "field": "advSearchFilters",
         "filters": [
           { "key": "Research Focus Area" },
@@ -120,7 +120,9 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
-        "enableDownloadManifest": true,
+        "enableDownloadManifest": false,
+        "enableDownloadZip": true,
+        "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download",
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
@@ -230,7 +232,7 @@
         },
         {
           "groupName": "Host Institution",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -257,7 +259,7 @@
         },
         {
           "groupName": "Clinical Trial",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -267,6 +269,11 @@
             {
               "name": "Study Name",
               "field": "study_name"
+            },
+            {
+              "name": "Study URL",
+              "field": "study_url",
+              "contentType": "link"
             },
             {
               "name": "Study Description",
@@ -299,21 +306,21 @@
           ]
         },
         {
-          "groupName": "Tags",
-          "includeName": false,
-          "groupWidth": "full",
+        "groupName": "Tags",
+        "includeName": false,
+        "groupWidth": "full",
+        "fields": [
+          {
+            "name": "Tags",
+            "field": "tags",
+            "contentType": "tags",
+            "includeIfNotAvailable": false
+          }
+        ]
+      },
+      {
+        "groupWidth": "full",
           "fields": [
-            {
-              "name": "Tags",
-              "field": "tags",
-              "contentType": "tags",
-              "includeIfNotAvailable": false
-            }
-          ]
-        },
-        {
-          "groupWidth": "full",
-            "fields": [
             {
               "name": "Summary",
               "field": "summary",
