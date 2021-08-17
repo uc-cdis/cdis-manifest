@@ -1,7 +1,7 @@
 {
   "notes": [
     "This is the preprod environment manifest",
-    "That's all I have to say"
+    "That's all I have to say."
   ],
   "jenkins": {
     "autodeploy": "yes"
@@ -32,6 +32,10 @@
   },
   "arborist": {
     "deployment_version": "2"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "healpreprod"
   },
   "portal": {
     "GEN3_BUNDLE": "heal"
