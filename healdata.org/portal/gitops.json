@@ -56,10 +56,6 @@
     "topBar": {
       "items": [
         {
-          "link": "https://gen3.org/resources/user/",
-          "name": "Gen3 Documentation"
-        },
-        {
           "link": "https://healdata.org/dashboard/Public/documentation/index.html",
           "name": "HEAL Documentation"
         }
@@ -111,7 +107,7 @@
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": true,
+        "enabled": false,
         "field": "advSearchFilters",
         "filters": [
           { "key": "Research Focus Area" },
@@ -125,7 +121,9 @@
         "enabled": true,
         "manifestFieldName": "__manifest",
         "enableDownloadManifest": true,
-        "downloadManifestButtonText": "Download",
+        "enableDownloadZip": true,
+        "downloadZipButtonText": "Download Zip",
+        "downloadManifestButtonText": "Download Manifest",
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
@@ -137,6 +135,7 @@
       "search": {
         "searchBar": {
           "enabled": true,
+          "inputSubtitle": "Examples: pain, buprenorphine, intervention",
           "searchableTextFields": [
             "summary",
             "location",
@@ -234,7 +233,7 @@
         },
         {
           "groupName": "Host Institution",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -261,7 +260,7 @@
         },
         {
           "groupName": "Clinical Trial",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -271,6 +270,11 @@
             {
               "name": "Study Name",
               "field": "study_name"
+            },
+            {
+              "name": "Study URL",
+              "field": "study_url",
+              "contentType": "link"
             },
             {
               "name": "Study Description",
@@ -303,21 +307,21 @@
           ]
         },
         {
-          "groupName": "Tags",
-          "includeName": false,
-          "groupWidth": "full",
+        "groupName": "Tags",
+        "includeName": false,
+        "groupWidth": "full",
+        "fields": [
+          {
+            "name": "Tags",
+            "field": "tags",
+            "contentType": "tags",
+            "includeIfNotAvailable": false
+          }
+        ]
+      },
+      {
+        "groupWidth": "full",
           "fields": [
-            {
-              "name": "Tags",
-              "field": "tags",
-              "contentType": "tags",
-              "includeIfNotAvailable": false
-            }
-          ]
-        },
-        {
-          "groupWidth": "full",
-            "fields": [
             {
               "name": "Summary",
               "field": "summary",
