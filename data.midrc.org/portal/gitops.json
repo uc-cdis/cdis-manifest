@@ -268,7 +268,7 @@
               "rightIcon": "download"
             }
           ],
-          "registerUsersForDownload": false,
+          "loginForButtonFeature": true,
           "guppyConfig": {
             "dataType": "case",
             "nodeCountTitle": "Cases",
@@ -374,6 +374,7 @@
                 "data_url_doi"
               ]
             },
+            "loginForButtonFeature": true,
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
@@ -564,6 +565,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForButtonFeature": true,
             "guppyConfig": {
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
@@ -739,6 +741,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForButtonFeature": true,
             "guppyConfig": {
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
@@ -909,6 +912,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForButtonFeature": true,
             "guppyConfig": {
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
@@ -1064,6 +1068,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForButtonFeature": true,
             "guppyConfig": {
               "dataType": "mr_exam",
               "nodeCountTitle": "MR Exams",
