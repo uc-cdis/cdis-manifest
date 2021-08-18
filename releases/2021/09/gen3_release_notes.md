@@ -1,0 +1,229 @@
+# Core Gen3 Release
+
+## uc-cdis/fence
+
+#### New Features
+  - Use Azure Blob Storage with Fence (#946)
+  - Split the private fields from the public fields in the audit logging 
+    configuration (#949)
+
+#### Bug Fixes
+  - Bug fix in checking email claims for Azure AD (in case the `email` claim is 
+    missing from the AAD response) (#946)
+  - PXP-7690 (#948)
+
+#### Improvements
+  - Test suite update (#946)
+  - Update "/delete" endpoint documentation (#953)
+  - Fix the `/.well-known/openid-configuration` endpoint to always return the 
+    environment's base URL in the `issuer` field, instead of returning the 
+    upstream Fence IDP's base URL (#952)
+  - Add `samesite="Lax"` to cookies of `access_token` and `fence` (#951)
+  - Only try to update Google IAM with billing permissions for an SA if the SA 
+    creds are NOT cached, e.g. only do it once per cache of the creds to reduce 
+    unnecessary network calls to Google (#938)
+  - When deciding whether to sign a URL for download, do not rely on "acl" if 
+    the record has an "authz" (#949)
+
+#### Dependency Updates
+  - Python (#946)
+  - `azure-storage-blob=^12.6.0` (#946)
+  - `azure-core==1.13.0` (#946)
+  - `cryptography==2.8` (#946)
+  - `isodate==0.6.0` (#946)
+  - `msrest==0.6.21` (#946)
+  - `oauth==3.1.0` (#946)
+  - `requests-oauthlib==1.3.0` (#946)
+  - `six==1.16.0` (#946)
+
+## uc-cdis/guppy
+
+#### Improvements
+  - Add debug logs to `initialize()` and `query()` functions (#125)
+
+#### Bug Fixes
+  - Fixed a bug causing incorrectly putting `null` into filters that contain 
+    nested fields (#124)
+
+## uc-cdis/hatchery
+
+#### New Features
+  - Add DD APM support to Hatchery (#16)
+
+## uc-cdis/pelican
+
+#### New Features
+  - Fix encoding issue when exporting (#57)
+
+## uc-cdis/peregrine
+
+#### Bug Fixes
+  - Handle exceptions without 'message' attribute (#178)
+
+## uc-cdis/pidgin
+
+#### Improvements
+  - Do not crash when Peregrine returns a non-200 code, and try to parse the 
+    data anyway (#40)
+
+## uc-cdis/data-portal
+
+#### Improvements
+  - Core metadata / download page: remove empty values from the header (#910)
+  - Discovery page: Links in table and study pages now open in new tab instead 
+    of navigating away from Discovery page. (#901)
+  - Misc: change CSP for mapbox according to [this 
+    guide](https://docs.mapbox.com/mapbox-gl-js/api/#csp-directives) (#893)
+  - Misc: change CSP `connect-src: https://*.s3.amazonaws.com` to `connect-src: 
+    https://<DATA_UPLOAD_BUCKET_NAME>.s3.amazonaws.com` (#893)
+  - Do not log warnings for empty study viewer values (#894)
+
+#### New Features
+  - A user can select one or more studies to request for download. This 
+    dispatches a sower job which is monitored until it either sends back an s3 
+    presigned url, or fails with an error description. (#906)
+  - add vaccine total to IL page (#897)
+
+#### Deployment Changes
+  - Requires the configuration of the `batch-export` sower job: 
+    https://github.com/uc-cdis/sower-jobs/pull/29 in the environment's 
+    manifest. This job also has its own setup in cloud automation: 
+    https://github.com/uc-cdis/cloud-automation/pull/1708 (#906)
+  - 2 new fields in `gitops.json`: 
+    `discoveryconfig.features.exportToWorkspace.[enableDownloadZip (bool) 
+    downloadZipButtonText (string)]` (#906)
+  - Requires https://github.com/uc-cdis/cloud-automation/pull/1687, otherwsie 
+    `Indexing` page may not work properly (#893)
+
+#### Bug Fixes
+  - Fixed a bug in the Indexing page in which the download buttons would not 
+    function in Chrome. (#905)
+  - duplicate tags are removed (#898)
+  - subject count fields are converted to integer if type is a string (#898)
+  - cleaned up added fields in loadStudiesFromAggMDSRequests (x.name = 
+    x.short_name;) (#898)
+
+## uc-cdis/tube
+
+#### New Features
+  - Tube support for PostgreSQL SSL (#150)
+  - Multiple field for joining two indices (#153)
+
+#### Bug Fixes
+  - Bug fix for `Cannot run multiple SparkContexts at once` error when starting 
+    up `tube`. (#150)
+
+#### Improvements
+  - Update Readme and test suite to cover using PostgreSQL with SSL (#150)
+  - Update `wait_for_quay.sh` to support parsing option `-a` for number of 
+    attempts (#149)
+  - Update `travis` pipeline to use `-a` option from `wait_for_quay.sh` (#149)
+
+#### Dependency Updates
+  - Update `python` dependencies for `gdcdictionary` and `py2neo`. (#150)
+
+## uc-cdis/gen3-fuse
+
+#### New Features
+  - Manifest entries can optionally contain a `commons_url` field that points 
+    to an external host supporting the DRS API. The files related to each 
+    external object ID will be mounted alongside files from the host commons. 
+    (#34)
+
+## uc-cdis/mariner
+
+#### Improvements
+  - Update Mariner project repo and remove internal documentation. (#48)
+  - Updated detect secrets baseline to include `api_key` for Mariner quickstart 
+    example. (#48)
+
+#### Deployment Changes
+  - Removed netpolicy "off" from documentation for Mariner deployment, it has 
+    been resolved in this 
+    [PR](https://github.com/uc-cdis/cloud-automation/pull/1665). (#48)
+  - New pre commit config requires `detect-secrets==1.0.3` (#48)
+
+## uc-cdis/mariner
+
+#### Improvements
+  - Update Mariner project repo and remove internal documentation. (#48)
+  - Updated detect secrets baseline to include `api_key` for Mariner quickstart 
+    example. (#48)
+
+#### Deployment Changes
+  - Removed netpolicy "off" from documentation for Mariner deployment, it has 
+    been resolved in this 
+    [PR](https://github.com/uc-cdis/cloud-automation/pull/1665). (#48)
+  - New pre commit config requires `detect-secrets==1.0.3` (#48)
+
+## uc-cdis/mariner
+
+#### Improvements
+  - Update Mariner project repo and remove internal documentation. (#48)
+  - Updated detect secrets baseline to include `api_key` for Mariner quickstart 
+    example. (#48)
+
+#### Deployment Changes
+  - Removed netpolicy "off" from documentation for Mariner deployment, it has 
+    been resolved in this 
+    [PR](https://github.com/uc-cdis/cloud-automation/pull/1665). (#48)
+  - New pre commit config requires `detect-secrets==1.0.3` (#48)
+
+## uc-cdis/cloud-automation
+
+#### New Features
+  - Added jenkins-ci cleanup to jenkins cronjob (#1712)
+  - `save-failed-pod-logs` now will save both `initContainer` and `container` 
+    logs for specific pod (#1711)
+  - When sower config contains the "batch-export" job, set up s3 buckets + 
+    secrets to support this job (#1708)
+  - Adding `.data-commons.org` and `.va.data-commons.org` to squid proxy 
+    whitelist. (#1709)
+  - Create configuration scripts for metadata-service (#1701)
+  - Add DD APM support to Hatchery (#1695)
+  - Added sqs monitoring (#1677)
+  - Added little script to update the ssl cipher suite for revproxy (#1678)
+  - Added slack webhook alerts to standard ETL jobs (#1675)
+  - Added netpolicies to mariner (#1665)
+  - `distribute-licenses` cron job to scan running pods for unlicensed stata 
+    workspaces requresting a license, copy over demo licenses (#1663)
+  - Allow connecting to the monqcle API for PDAPS data (#1659)
+  - allow traffic to fwww.bc.edu, repec.org (ssc repositories) (#1658)
+  - https://ctds-planx.atlassian.net/browse/HP-239 (#1658)
+  - Added ability to configure cronjobs through manifest (#1640)
+  - Squid update to allow clinicaltrials.gov (#1655)
+
+#### Bug Fixes
+  - Made mariner creds optional so EKS IAM deployments can leverage the 
+    attached SA instead (#1654)
+
+#### Improvements
+  - Move aggregate MDS configuration to our standard manifest config process 
+    (#1701)
+  - Add `samesite="Lax"` to cookies of `session`, `visitor`, `csrftoken` and 
+    `service_releases` (#1703)
+  - MDS: Do not restrict body size for mds (#1706)
+  - Pass the data upload bucket name in fence-config into portal as 
+    `DATA_UPLOAD_BUCKET` when doing `kube-setup-portal` (#1687)
+  - Pass Datadog RUM application ID and client token into Portal (#1651)
+
+#### Dependency Updates
+  - Ruby 2.5 will be EOL 7/30, updating to latest tested ruby version to 
+    prevent deprecation (#1676)
+
+#### Deployment Changes
+  - Remove `USE_AGG_MDS` and `AGG_MDS_NAMESPACE` from 
+    `Gen3Secrets/g3auto/metadata/metadata.env` and set those variables in a 
+    `manifest: {}` block in `manifest.json` (#1701)
+  - Migrate the appropriate agg MDS config to the relevant manifest repo under 
+    a `metadata/aggregate_config.json` path (#1701)
+  - Run `gen3 kube-setup-metdata` and roll the metadata service in Kubernetes 
+    (#1701)
+  - Add cronjobs to the manifest by making a cdis-manifest/(commons 
+    folder)/manifests/cronjobs/cronjobs.json file with each cron name being a 
+    key and the cron schedule being the value. (#1640)
+
+#### Dependency Updates
+  - Bumps [lodash](https://github.com/lodash/lodash) from 4.17.19 to 4.17.21. 
+    (#1600)
+
