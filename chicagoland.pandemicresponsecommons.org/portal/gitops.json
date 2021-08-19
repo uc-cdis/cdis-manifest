@@ -1212,7 +1212,13 @@
         "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
         "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
         "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
-      }
+      },
+      {
+        "title": "Percentage ICU bed availability prediction in state of Illinois",
+        "description": "Since Covid-19 breakout, healthcare system in Illinois is under tremendous pressure to satisfy the increased needs of Covid-19 treatment. The Delta variant of coronavirus has been spreading rapidly throughout the US and worldwide, this variant is highly transmissible and more virulent. It's critical to prepare sufficient medical supplies to meet patients needs, such as ICU bed and ventilator. In this notebook, We construct Hierarchical Bayesian Binomial Regression model, Univariate/Multivariate LSTM model and Univariate/Multivariate CNN-LSTM model forecasting percentage ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
+      }  
     ]
   },
   "workspacePageTitle": "Welcome to the Gen3 Workspace",
