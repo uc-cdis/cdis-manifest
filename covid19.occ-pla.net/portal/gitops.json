@@ -202,5 +202,175 @@
   },
   "enableCovid19Dashboard": true,
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "covid19DashboardConfig": {
+    "dataUrl": "https://opendata.datacommons.io/",
+    "chartsConfig": {
+      "world": [
+        [
+          {
+            "title": "Cumulative Testing in the United States",
+            "description": "The source of the data used to compile this chart is the COVID Tracking Project. This chart depicts the total number of tests to date for the top 10 states that have administered the most tests in the US.",
+            "xTitle": "State",
+            "yTitle": "Number of Tests",
+            "type": "barChart",
+            "layout": "horizontal",
+            "maxItems": 10,
+            "barColor": "#421C52",
+            "guppyConfig": {
+              "dataType": "location",
+              "xAxisProp": "province_state",
+              "yAxisProp": "totalTestsViral",
+              "filters": {
+                "=": {
+                  "project_id": "open-CTP"
+                }
+              }
+            }
+          }
+        ],
+        [
+          {
+            "title": "Daily Confirmed Cases (5-day Moving Average)",
+            "description": "This plot visualizes the number of newly confirmed COVID-19 cases for the 10 most affected countries using a 5-day moving average. This is calculated for each plotted day by averaging the values of that day, the two previous days, and the two following days. This approach helps prevent major events from skewing the data.",
+            "yTitle": "Confirmed New Cases",
+            "type": "lineChart",
+            "prop": "top10ChartData"
+          }
+        ]
+      ],
+      "illinois": [
+        [
+          {
+            "title": "Daily Reported Administered Vaccine Doses in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the daily reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_vaccine.svg"
+          },
+          {
+            "title": "Cumulative Reported Administered Vaccine Doses in Illinois ",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the cumulative reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_vaccine.svg"
+          },
+          {
+            "title": "10 IL Counties With The Highest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the highest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_top10.svg"
+          },
+          {
+            "title": "10 IL Counties With The Lowest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the lowest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_bottom10.svg"
+          },
+          {
+            "title": "Total Deaths per 10,000 in Chicago",
+            "description": "The source of the data used to compile this chart is the Cook County Data Portal.",
+            "xTitle": "",
+            "yTitle": "",
+            "type": "barChart",
+            "layout": "vertical",
+            "maxItems": 15,
+            "barColor": "#421C52",
+            "guppyConfig": {
+              "dataType": "location",
+              "xAxisProp": "community_area",
+              "yAxisProp": "deaths_per_10000",
+              "filters": {
+                "AND": [
+                  {
+                    "=": {
+                      "project_id": "open-CHI-NBHD"
+                    }
+                  }
+                ]
+              }
+            }
+
+          },
+          {
+            "title": "Age Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by age groups and by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_age_demographic.svg"
+          },
+          {
+            "title": "Race Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_race_demographic.svg"
+          },
+          {
+            "title": "Gender Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by gender in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_gender_demographic.svg"
+          },
+          {
+            "title": "COVID-19 Google Mobility Data Visualization in Illinois In The Past 3 Months",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_IL_mobility.svg"
+          }
+        ],
+        [
+          {
+            "title": "Cook County Daily Cases",
+            "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "type": "image",
+            "path": "bayes-by-county/17031/cases.png"
+          },
+          {
+            "title": "Cook County Daily Deaths",
+            "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "type": "image",
+            "path": "bayes-by-county/17031/deaths.png"
+          },
+          {
+            "title": "Cook County Estimated Rt",
+            "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
+            "type": "image",
+            "path": "bayes-by-county/17031/Rt.png"
+          },
+          {
+            "title": "Average Rt Over Latest 7 Days Of Observations",
+            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
+            "type": "image",
+            "path": "bayes-by-county/Rt_Top20.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
+          }
+        ]
+      ],
+      "simulations": {
+        "imgCases": {
+          "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
+        },
+        "imgDeaths": {
+          "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts."
+        },
+        "imgRt": {
+          "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
+        }
+      }
+    }
+  }
 }

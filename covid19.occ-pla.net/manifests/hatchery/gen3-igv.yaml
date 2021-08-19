@@ -1,0 +1,21 @@
+# Docker-compose for software_application smartretail
+version: "3.5"
+
+services:
+  gen3-igv:
+    container_name: gen3-igv
+    image: quay.io/cdis/gen3-igv:master
+    restart: on-failure
+    environment:
+      - PROTOCOL=https
+      - HOSTNAME=localhost
+      - ROOT_URL=/lw-workspace/proxy/
+    volumes:
+      - ${DATA_VOLUME}:/data
+  nginx-igv:
+    image: "quay.io/cdis/nginx-igv:master"
+    container_name: nginx
+    ports:
+      - ${SERVICE_PORT}:80
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:80"]
