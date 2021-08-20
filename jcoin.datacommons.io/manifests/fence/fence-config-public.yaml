@@ -158,13 +158,6 @@ LOGIN_REDIRECT_WHITELIST: []
 ### DEPRECATED and replaced by OPENID_CONNECT + LOGIN_OPTIONS configs
 ENABLED_IDENTITY_PROVIDERS: {}
 
-S3_BUCKETS: {}
-
-# `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
-# using the `/data/upload` endpoint. This must be one of the first keys under
-# `S3_BUCKETS` (since these are the buckets fence has credentials for).
-DATA_UPLOAD_BUCKET: ''
-
 # Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
 # setup for more info on Cloud Identity)
 #
@@ -187,7 +180,15 @@ GOOGLE_SERVICE_ACCOUNT_PREFIX: ''
 # whether or not to allow access to the /link/google endpoints
 ALLOW_GOOGLE_LINKING: true
 
-ENABLE_DB_MIGRATION: false
-
 ENABLE_AUTOMATIC_BILLING_PERMISSION_SIGNED_URLS: false
 ENABLE_AUTOMATIC_BILLING_PERMISSION_SA_CREDS: false
+
+S3_BUCKETS:
+  jcoinprod-data-bucket:
+    cred: 'jcoinprod_fence-bot'
+  jcoinprod-default-258867494168-upload:
+    cred: 'jcoinprod_fence-bot'
+# `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
+# using the `/data/upload` endpoint. This must be one of the first keys under
+# `S3_BUCKETS` (since these are the buckets fence has credentials for).
+DATA_UPLOAD_BUCKET: 'jcoinprod-default-258867494168-upload'
