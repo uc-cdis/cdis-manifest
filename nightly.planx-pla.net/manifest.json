@@ -34,223 +34,7 @@
     "dashboard": "quay.io/cdis/gen3-statics:master",
     "requestor": "quay.io/cdis/requestor:master"
   },
-  "sower": [
-    {
-      "name": "ingest-metadata-manifest",
-      "action": "ingest-metadata-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-jenkins-blood-planx-pla-net",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:master",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "get-dbgap-metadata",
-      "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-jenkins-blood-planx-pla-net",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:master",
-        "pull_policy": "Always",
-        "env": [],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "manifest-indexing",
-      "action": "index-object-manifest",
-      "serviceAccountName": "jobs-jenkins-blood-planx-pla-net",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/manifest-indexing:master",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "indexd-manifest",
-      "action": "download-indexd-manifest",
-      "serviceAccountName": "jobs-jenkins-blood-planx-pla-net",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/download-indexd-manifest:master",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "pelican-export",
-      "action": "export",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:master",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "DICTIONARY_URL",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "dictionary_url"
-              }
-            }
-          },
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          },
-          {
-            "name": "ROOT_NODE",
-            "value": "subject"
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "pelican-creds-volume",
-            "readOnly": true,
-            "mountPath": "/pelican-creds.json",
-            "subPath": "config.json"
-          },
-          {
-            "name": "peregrine-creds-volume",
-            "readOnly": true,
-            "mountPath": "/peregrine-creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "4Gi"
-      },
-      "volumes": [
-        {
-          "name": "pelican-creds-volume",
-          "secret": {
-            "secretName": "pelicanservice-g3auto"
-          }
-        },
-        {
-          "name": "peregrine-creds-volume",
-          "secret": {
-            "secretName": "peregrine-creds"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    }
-  ],
+  "sower": [],
   "arborist": {
     "deployment_version": "2"
   },
@@ -264,14 +48,15 @@
     "environment": "qaplanetv1",
     "hostname": "nigthly.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/develop/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.4/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-qaplanetv1-gen3",
     "logs_bucket": "logs-qaplanetv1-gen3",
     "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml",
     "dispatcher_job_num": "5",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "mutatedEnvHostname": "vpodc.org"
   },
   "ssjdispatcher": {
     "job_images": {
@@ -281,15 +66,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "jenkins_subject_alias",
-        "type": "subject"
+        "index": "etl_mickey",
+        "type": "patients"
       },
       {
-        "index": "jenkins_file_alias",
+        "index": "file_etl_mickey",
         "type": "file"
       }
     ],
-    "config_index": "jenkins_configs_alias",
+    "config_index": "etl_mickey_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
@@ -325,5 +110,6 @@
     "guppy": {
       "strategy": "auto"
     }
-  }
+  },
+  "portal": null
 }
