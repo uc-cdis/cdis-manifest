@@ -277,7 +277,7 @@
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "(Generic) R Studio",
+      "name": "(Generic) RStudio"",
       "image": "heliumdatastage/rstudio-server:1",
       "env": {
         "DISABLE_AUTH": "true"
@@ -503,7 +503,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
+      "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
       "image": "quay.io/cdis/heal-notebooks:oeps__cf17b8bc5222194f746dde2cdcd3fa948090a81b",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
