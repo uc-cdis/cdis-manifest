@@ -277,7 +277,7 @@
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "(Generic) RStudio"",
+      "name": "(Generic) RStudio",
       "image": "heliumdatastage/rstudio-server:1",
       "env": {
         "DISABLE_AUTH": "true"
