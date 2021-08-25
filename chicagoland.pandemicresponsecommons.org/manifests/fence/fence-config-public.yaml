@@ -312,5 +312,5 @@ ENABLE_AUDIT_LOGS:
 PUSH_AUDIT_LOGS_CONFIG:
   type: aws_sqs
   aws_sqs_config:
-    sqs_url: https://sqs.us-east-1.amazonaws.com/707767160287/qaplanetv2--qa-covid19--audit-sqs
+    sqs_url: https://queue.amazonaws.com/236714345101/covid19prod--default--audit-sqs
     region: us-east-1
