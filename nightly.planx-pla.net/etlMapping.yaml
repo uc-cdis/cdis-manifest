@@ -1,54 +1,378 @@
 mappings:
-  - name: bloodpac
-    doc_type: case
+  - name: covid19
+    doc_type: location
     type: aggregator
-    root: case
+    root: summary_location
     props:
       - name: submitter_id
       - name: project_id
+      - name: country_region
+        value_mappings:
+          - US: 'United States'
+          - Korea, South: 'South Korea'
+          - Taiwan*: 'Taiwan'
+      - name: community_area
+      - name: province_state
+        value_mappings:
+          - AL: 'Alabama'
+          - AK: 'Alaska'
+          - AS: 'American Samoa'
+          - AZ: 'Arizona'
+          - AR: 'Arkansas'
+          - CA: 'California'
+          - CO: 'Colorado'
+          - CT: 'Connecticut'
+          - DE: 'Delaware'
+          - DC: 'District of Columbia'
+          - FL: 'Florida'
+          - GA: 'Georgia'
+          - GU: 'Guam'
+          - HI: 'Hawaii'
+          - ID: 'Idaho'
+          - IL: 'Illinois'
+          - IN: 'Indiana'
+          - IA: 'Iowa'
+          - KS: 'Kansas'
+          - KY: 'Kentucky'
+          - LA: 'Louisiana'
+          - ME: 'Maine'
+          - MD: 'Maryland'
+          - MA: 'Massachusetts'
+          - MI: 'Michigan'
+          - MN: 'Minnesota'
+          - MS: 'Mississippi'
+          - MO: 'Missouri'
+          - MT: 'Montana'
+          - NE: 'Nebraska'
+          - NV: 'Nevada'
+          - NH: 'New Hampshire'
+          - NJ: 'New Jersey'
+          - NM: 'New Mexico'
+          - NY: 'New York'
+          - NC: 'North Carolina'
+          - ND: 'North Dakota'
+          - MP: 'Northern Mariana Islands'
+          - OH: 'Ohio'
+          - OK: 'Oklahoma'
+          - OR: 'Oregon'
+          - PA: 'Pennsylvania'
+          - PR: 'Puerto Rico'
+          - RI: 'Rhode Island'
+          - SC: 'South Carolina'
+          - SD: 'South Dakota'
+          - TN: 'Tennessee'
+          - TX: 'Texas'
+          - VI: 'US Virgin Islands'
+          - UT: 'Utah'
+          - VT: 'Vermont'
+          - VA: 'Virginia'
+          - WA: 'Washington'
+          - WV: 'West Virginia'
+          - WI: 'Wisconsin'
+          - WY: 'Wyoming'
+      - name: county
+      - name: latitude
+      - name: longitude
+      - name: FIPS
+      - name: iso2
+      - name: iso3
+      - name: reporting_org
+      - name: state_hospital_region
+      - name: state_region_description
+    flatten_props:
+      - path: summary_clinicals
+        props:
+          - name: all_bed_occupancy_rate
+          - name: confirmed
+          - name: date
+          - name: deaths
+          - name: deaths_per_10000
+          - name: estimated_full_mech_ventilators_per_100000
+          - name: estimated_full_mech_pediatric_ventilators
+          - name: estimated_full_mech_pediatric_ventilators_per_100000
+          - name: icu_beds
+          - name: icu_bed_occupancy_rate
+          - name: icu_in_use_beds_non_covid
+          - name: icu_in_use_beds_covid
+          - name: icu_open_beds
+          - name: lastUpdateEt
+          - name: licensed_all_beds
+          - name: licensed_all_beds_per_1000
+          - name: licensed_all_beds_per_1000_gtr_20
+          - name: licensed_all_beds_per_1000_gtr_65
+          - name: negative
+          - name: recovered
+          - name: region_icu_avail
+          - name: region_icu_capacity
+          - name: region_vents_available
+          - name: region_vents_capacity
+          - name: state_icu_capacity
+          - name: staffed_all_beds_per_1000
+          - name: staffed_all_beds_per_1000_gtr_20
+          - name: staffed_all_beds_per_1000_gtr_65
+          - name: staffed_icu_beds_per_1000
+          - name: staffed_icu_beds_per_1000_gtr_20
+          - name: staffed_icu_beds_per_1000_gtr_65
+          - name: state_icu_covid_patients
+          - name: state_vent_capacity
+          - name: state_vent_covid_patients
+          - name: state_icu_available
+          - name: state_vents_available
+          - name: state_total_beds
+          - name: state_total_beds_available
+          - name: state_total_beds_used
+          - name: state_pct_hospital_beds_available
+          - name: state_adult_icu_capacity
+          - name: state_icu_open_beds
+          - name: state_icu_beds_used
+          - name: state_icu_open_beds_pct
+          - name: state_covid_pui_patients
+          - name: state_covid_pui_patients_pct
+          - name: state_covid_pui_patients_beds_in_use_pct
+          - name: state_Ventilators_open_pct
+          - name: state_ventilators_in_use
+          - name: state_ventilators_in_use_covid
+          - name: state_ventilators_covid_patients_pct
+          - name: state_covid_patients_non_icu
+          - name: state_total_covid_pui_in_icu
+          - name: state_total_covid_pui_in_hospital
+          - name: state_pct_beds_covid_pui
+          - name: testing
+          - name: total_in_use_beds_non_covid
+          - name: total_in_use_beds_covid
+          - name: totalTestsViral
+          - name: provider_subtype
+          - name: detailed_specialty
+          - name: new_cases
+          - name: new_deaths
+          - name: positive_rate
+          - name: vaccine_administered_count
+          - name: vaccine_persons_fully_vaccinated_pct
+          - name: vaccine_total_delivered_vaccine_doses
+          - name: vaccine_community_reported_inventory
+          - name: vaccine_reported_inventory
+        sorted_by: updated_datetime, desc
+      - path: summary_socio_demographics
+        props:
+         - name: population
+         - name: population_gtr_65
+         - name: population_density
+         - name: share_asian
+         - name: share_black
+         - name: share_hisp
+         - name: share_white
+         - name: college_degree
+         - name: graduate_degree
+         - name: completed_high_school
+         - name: employment
+         - name: job_density
+         - name: extreme_poverty
+         - name: jail
+         - name: hhinc_mean
+         - name: med_hhinc
+         - name: gdp_per_capita
+         - name: life_expectancy
+         - name: grocery_and_pharmacy_percent_change_from_baseline
+         - name: parks_percent_change_from_baseline
+         - name: retail_and_recreation_percent_change_from_baseline
+         - name: transit_stations_percent_change_from_baseline
+         - name: workplaces_percent_change_from_baseline
+         - name: handwashing_facilities
+         - name: stringency_index
+        sorted_by: updated_datetime, desc
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_url:url,project_investigator_affiliation:investigator_affiliation,project_date_collected:date_collected]
+  - name: covid19_subject
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: project_id
+      - name: vital_status
+      - name: covid_19_status  
+      - name: date_confirmation 
+      - name: travel_history_location
+      - name: infected_by  
     flatten_props:
       - path: demographics
         props:
           - name: gender
+          - name: age
           - name: race
           - name: ethnicity
+          - name: age_decade
+          - name: year_of_birth
+          - name: country_region
+          - name: province_state
+          - name: city
+      - path: observations
+        props:
+          - name: treatment_status
+          - name: isolation_status
+          - name: icu_status
+          - name: hospitalized_status
+          - name: needed_supplemental_O2
+          - name: condition
+          - name: symptoms
+          - name: reporting_date
+          - name: reporting_source
+          - name: date_onset_symptoms
+          - name: exposure
+          - name: released_date
+          - name: hospital
+          - name: pneumonia_type
+          - name: ventilator_status
+        sorted_by: updated_datetime, desc          
+      - path: follow_ups
+        props:
+          - name: extubated
+            value_mappings:
+              - Y: 'True'
+              - N: 'False'
+          - name: pO2_saturation
+          - name: leukocyte_count
+          - name: neutrophil_count
+          - name: lymphocyte_count
+          - name: view
+        sorted_by: updated_datetime, desc
     aggregated_props:
-      - name: _biospecimens_count
-        path: biospecimens
-        fn: count
-      - name: _samples_count
-        path: biospecimens.samples
-        fn: count
-      - name: _aliquots_count
-        path: biospecimens.samples.aliquots
-        fn: count
-      - name: _analytes_count
-        path: biospecimens.samples.aliquots.analytes
-        fn: count
-      - name: _cell_images_count
-        path: biospecimens.samples.aliquots.analytes.cell_images
-        fn: count
-      - name: _mass_cytometry_assays_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays
-        fn: count
-      - name: _mass_cytometry_images_count
-        path: biospecimens.samples.aliquots.analytes.mass_cytometry_assays.mass_cytometry_images
-        fn: count
-      - name: _read_groups_count
-        path: biospecimens.samples.aliquots.analytes.read_groups
-        fn: count
-      - name: _slide_images_count
-        path: biospecimens.samples.aliquots.slide_images
-        fn: count
-      - name: _submitted_aligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_aligned_reads_files
-        fn: count
-      - name: _submitted_methylations_count
-        path: biospecimens.samples.aliquots.analytes.submitted_methylation_files
-        fn: count
-      - name: _submitted_somatic_mutations_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_somatic_mutations
-        fn: count
-      - name: _submitted_unaligned_reads_files_count
-        path: biospecimens.samples.aliquots.analytes.read_groups.submitted_unaligned_reads_files
-        fn: count
+      - name: image_location
+        path: imaging_files
+        src: image_location
+        fn: set
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
+      - path: studies[study_doi:study_doi]
+  - name: covid19_clinical_trials
+    doc_type: clinical_trials
+    type: aggregator
+    root: clinical_trials
+    props:
+      - name: project_id
+      - name: completed_clinical_trials
+      - name: description
+      - name: development_stage
+      - name: fda_regulated_drug_product
+      - name: focus
+      - name: inprogress_clinical_trials
+      - name: location
+      - name: nct_number
+      - name: phase
+      - name: sponsor
+      - name: technology
+      - name: title
+    parent_props:
+      - path: projects[project_code:code,project_name:name,project_url:url,project_data_description:data_description,project_investigator_affiliation:investigator_affiliation,project_availability_type:availability_type,project_date_collected:date_collected]
+  - name: covid19_genomic_file
+    doc_type: genomic_file
+    type: collector
+    root: None
+    category: genomic_data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state
+      - name: accession
+      - name: genbank_accession
+      - name: sra_accession
+      - name: assay_type
+      - name: center_name
+      - name: nextstrain_clade
+      - name: submitter_id
+    injecting_props:
+      sample:
+        props:
+          - name: location
+            src: location
+            fn: set
+          - name: continent
+            src: continent
+            fn: set
+          - name: country_region
+            src: country_region
+            fn: set
+          - name: province_state
+            src: province_state
+            fn: set
+          - name: county
+            src: county
+            fn: set
+          - name: zipcode
+            src: zipcode
+            fn: set
+          - name: host
+            src: host
+            fn: set
+          - name: organism
+            src: organism
+            fn: set
+          - name: sample_type
+            src: sample_type
+            fn: set
+          - name: isolation_source
+            src: isolation_source
+            fn: set
+          - name: isolate
+            src: isolate
+            fn: set
+          - name: collection_date
+            src: collection_date
+            fn: set
+          - name: originating_lab
+            src: originating_lab
+            fn: set
+          - name: submitting_lab
+            src: submitting_lab
+            fn: set
+          - name: submitting_lab_PI
+            src: submitting_lab_PI
+            fn: set
+      study:
+        props:
+          - name: journal
+            src: journal
+            fn: set
+          - name: pmid
+            src: pmid
+            fn: set
+      project:
+        props:
+          - name: project_code
+            src: code
+            fn: set
+          - name: project_name
+            src: name
+            fn: set
+          - name: project_url
+            src: url
+            fn: set
+          - name: project_data_description
+            src: data_description
+            fn: set
+          - name: project_investigator_affiliation
+            src: investigator_affiliation
+            fn: set
+          - name: project_availability_type
+            src: availability_type
+            fn: set
+          - name: project_date_collected
+            src: date_collected
+            fn: set
+  - name: covid19_dataset
+    doc_type: dataset
+    type: aggregator
+    root: project
+    props:
+      - name: code
+      - name: name
+      - name: url
+      - name: data_description
+      - name: investigator_affiliation
+      - name: availability_type
+      - name: date_collected
+    parent_props:
+      - path: programs[program_name:name]
