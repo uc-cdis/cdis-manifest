@@ -115,7 +115,6 @@
         ]
     },
     "navigation": {
-        "title": "Work in progress: Beta Phase",
         "items": [
           {
             "name": "Exploration",
@@ -127,7 +126,8 @@
             "icon": "dictionary",
             "link": "/DD",
             "color": "#a2a2a2",
-            "name": "Dictionary"
+            "name": "Dictionary",
+            "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
           },
           {
             "name": "Query",
