@@ -18,6 +18,7 @@
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.07",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.07",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.07",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.4.0",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.07",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.07",
@@ -33,7 +34,7 @@
     "environment": "ibdgc-prod",
     "hostname": "ibdgc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:980870151884:certificate/d4bc881b-b404-4bef-912f-ed67785f953c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.6.4/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.6.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3",
@@ -217,15 +218,23 @@
     "indices": [
       {
         "index": "ibdgc_etl",
-        "type": "participant"
+        "type": "participant",
+        "tier_access_level": "private"
       },
       {
         "index": "ibdgc_file",
-        "type": "file"
+        "type": "file",
+        "tier_access_level": "private"
       },
       {
         "index": "ibdgc_supplementary_file",
-        "type": "supplementary_file"
+        "type": "supplementary_file",
+        "tier_access_level": "private"
+      },
+      {
+        "index": "ibdgc_project",
+        "type": "project",
+        "tier_access_level": "libre"
       }
     ],
     "config_index": "ibdgc_array-config",

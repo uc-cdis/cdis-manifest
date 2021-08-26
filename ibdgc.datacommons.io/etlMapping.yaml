@@ -68,3 +68,22 @@ mappings:
           - name: year
             src: year
             fn: set 
+  - name: ibdgc_project
+    doc_type: project
+    type: aggregator
+    root: project
+    props:
+      - name: name
+      - name: code
+      - name: title
+      - name: description
+      - name: principle_investigator
+      - name: publisher
+      - name: study_design_allocation
+      - name: study_design_primary_purpose
+      - name: study_phase
+      - name: verification_date
+      - name: source
+      - name: rights
+    parent_props:
+      - path: programs[program_name:name]
