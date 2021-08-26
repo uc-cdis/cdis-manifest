@@ -115,7 +115,6 @@
         ]
     },
     "navigation": {
-        "title": "Work in progress: Beta Phase",
         "items": [
           {
             "name": "Exploration",
@@ -127,7 +126,8 @@
             "icon": "dictionary",
             "link": "/DD",
             "color": "#a2a2a2",
-            "name": "Dictionary"
+            "name": "Dictionary",
+            "tooltip": "The Data Dictionary page provides users with a graphical visualization of the MIDRC data model and a table of node and property definitions. The data model is a graph-like relational model consisting of interconnected nodes that helps harmonize the properties of contributed datasets, allowing users to search across datasets in the data commons."
           },
           {
             "name": "Query",
