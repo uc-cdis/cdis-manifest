@@ -1057,10 +1057,14 @@
       "title": "Tags by category"
     },
     "studyColumns": [{
+      "name": "Short Name",
+      "field": "short_name",
+      "contentType": "string"
+    },
+    {
       "name": "Title",
       "field": "title",
-      "contentType": "string",
-      "width": 200
+      "contentType": "string"
     },
     {
       "name": "Journal",
