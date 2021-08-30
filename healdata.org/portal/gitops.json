@@ -441,19 +441,19 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
     "resources": [
       {
-        "title": "BACPAC synthetic data analysis",
+        "title": "BACPAC Synthetic Data Analysis",
           "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
-        "link": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.html",
-        "imageUrl": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.png"
+        "link": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.png"
       },
       {
-        "title": "Tracking Stigma related to Opioid Use Disorder",
+        "title": "JCOIN Tracking Opioid Stigma",
         "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/NORC_JCOIN_data_demo.html",
-        "imageUrl": "/dashboard/Public/notebooks/NORC_JCOIN_notebook.png"
+        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
       },
       {
-        "title": "Opioid Related Deaths, Opioid Prevalence, and Public Policy",
+        "title": "Opioid Prevalence And Overdoses",
         "description": "In this Jupyter notebook, we used the CDC WONDER, DEA ARCOS, and PDAPS datasets to demonstate how multiple datasets may be utilized within the workspace in HEAL.",
         "link": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.html",
         "imageUrl": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.png"
@@ -461,14 +461,14 @@
       {
         "title": "Opioid Overdose Trajectories",
         "description": "In this Jupyter notebook, we used the CDC WONDER dataset to explore opioid overdose death rate trajectories in the United States.",
-        "link": "/dashboard/Public/notebooks/cdc_wonder_demo.html",
-        "imageUrl": "/dashboard/Public/notebooks/cdc_wonder_demo.png"
+        "link": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.html",
+        "imageUrl": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.png"
       },
       {
-        "title": "The Opioid Environment Toolkit and OEPS",
+        "title": "Opioid Environment Toolkit And OEPS R",
         "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
-        "link": "/dashboard/Public/notebooks/oeps-toolkit-heal-platform-demo.html",
-        "imageUrl": "/dashboard/Public/notebooks/oeps-toolkit-heal-platform-demo.png"
+        "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
+        "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
       }
     ]
   },
