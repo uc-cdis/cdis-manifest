@@ -300,3 +300,17 @@ ENABLE_AUTOMATIC_BILLING_PERMISSION_SA_CREDS: false
 # //////////////////////////////////////////////////////////////////////////////////////
 # whether or not to allow access to the /link/google endpoints
 ALLOW_GOOGLE_LINKING: true
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+# `PUSH_AUDIT_LOGS_CONFIG.type` is one of: [api, aws_sqs].
+# - if type == api: logs are created by hitting the log creation endpoint.
+# - if type == aws_sqs: logs are pushed to an SQS and `aws_sqs_config` fields
+# `sqs_url` and `region` are required. Fields `aws_access_key_id` and
+# `aws_secret_access_key` are optional.
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://queue.amazonaws.com/236714345101/covid19prod--default--audit-sqs
+    region: us-east-1
