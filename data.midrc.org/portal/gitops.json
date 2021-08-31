@@ -469,10 +469,6 @@
                 "chartType": "fullPie",
                 "title": "Study Modality"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -488,7 +484,6 @@
                     "age_at_imaging",
                     "study_year",
                     "study_year_shifted",
-                    "study_covid_status",
                     "body_part_examined",
                     "study_location",
                     "series_count",
@@ -519,7 +514,6 @@
               "fields": [
                 "study_modality",
                 "study_description",
-                "study_covid_status",
                 "body_part_examined",
                 "age_at_imaging",
                 "study_year",
@@ -632,10 +626,6 @@
                 "chartType": "fullPie",
                 "title": "Study Modality"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -648,7 +638,6 @@
                   "fields":[
                     "study_modality",
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -664,7 +653,7 @@
                     "data_format",
                     "detector_type",
                     "imager_pixel_spacing",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -672,7 +661,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -698,7 +686,6 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -713,7 +700,7 @@
                 "data_format",
                 "detector_type",
                 "imager_pixel_spacing",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
@@ -798,10 +785,6 @@
                 "chartType": "fullPie",
                 "title": "Case Age at Imaging"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -814,7 +797,6 @@
                   "fields":[
                     "study_modality",
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -834,7 +816,7 @@
                     "patient_position",
                     "slice_thickness",
                     "spacing_between_slices",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -842,7 +824,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -875,7 +856,6 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -890,7 +870,7 @@
                 "patient_position",
                 "slice_thickness",
                 "spacing_between_slices",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
@@ -974,7 +954,6 @@
                   "title": "Study Properties",
                   "fields":[
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -993,7 +972,7 @@
                     "magnetic_field_strength",
                     "scanning_sequence",
                     "sequence_name",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -1001,7 +980,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -1033,7 +1011,6 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -1048,7 +1025,7 @@
                 "magnetic_field_strength",
                 "scanning_sequence",
                 "sequence_name",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
