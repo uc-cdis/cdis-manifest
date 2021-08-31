@@ -1214,11 +1214,10 @@
         "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
       },
       {
-        "title": "Percentage ICU bed availability prediction in state of Illinois",
-        "description": "Since Covid-19 breakout, healthcare system in Illinois is under tremendous pressure to satisfy the increased needs of Covid-19 treatment. The Delta variant of coronavirus has been spreading rapidly throughout the US and worldwide, this variant is highly transmissible and more virulent. It's critical to prepare sufficient medical supplies to meet patients needs, such as ICU bed and ventilator. In this notebook, We construct Hierarchical Bayesian Binomial Regression model, Univariate/Multivariate LSTM model and Univariate/Multivariate CNN-LSTM model forecasting percentage ICU bed availability for the next 14 days.",
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "Since the COVID-19 breakout, the healthcare system in Illinois is under tremendous pressure to satisfy the increased need for COVID-19 treatment. The Delta variant of the coronavirus has been spreading rapidly throughout the US and the world. This variant is highly transmissible and more virulent. It's critical to prepare sufficient medical supplies to meet patients needs, such as ICU beds and ventilators. In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days",
         "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
         "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
-      }  
     ]
   },
   "workspacePageTitle": "Welcome to the Gen3 Workspace",
