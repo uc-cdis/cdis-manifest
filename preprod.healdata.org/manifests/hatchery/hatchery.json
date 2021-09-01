@@ -362,7 +362,7 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
+      "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
