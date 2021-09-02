@@ -142,6 +142,15 @@ S3_BUCKETS:
 # `S3_BUCKETS` (since these are the buckets fence has credentials for).
 DATA_UPLOAD_BUCKET: 'bucket1'
 
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://queue.amazonaws.com/053927701465/prodv1--default--audit-sqs
+    region: us-east-1
+
 # Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
 # setup for more info on Cloud Identity)
 #
