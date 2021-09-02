@@ -423,7 +423,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__8eab157c6c6e07336a4d7a87cc67e4f9979c373c",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c223fa211212638a73436a5b38b81400bc25ace2",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -452,7 +452,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
-      "image": "quay.io/cdis/heal-notebooks:oeps__cf17b8bc5222194f746dde2cdcd3fa948090a81b",
+      "image": "quay.io/cdis/heal-notebooks:oeps__40061acd662f0a876170595c756b28d64d1a3a4a",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
