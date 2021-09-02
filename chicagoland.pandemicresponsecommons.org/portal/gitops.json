@@ -1212,6 +1212,12 @@
         "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
         "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
         "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
+      },
+      {
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
     ]
   },
