@@ -235,11 +235,11 @@
               "_ct_scans_count",
               "_radiography_exams_count",
               "_ct_series_count",
-              "_ct_images_count",
+              "_ct_instances_count",
               "_dx_series_count",
-              "_dx_images_count",
+              "_dx_instances_count",
               "_cr_series_count",
-              "_cr_images_count",
+              "_cr_instances_count",
               "project_id"
             ]
           },
@@ -297,7 +297,7 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
+                    "field": "_ct_instances_count",
                     "name": "CT Images Count"
                 },
                 {
@@ -305,7 +305,7 @@
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
+                    "field": "_dx_instances_count",
                     "name": "DX Images Count"
                 },
                 {
@@ -313,7 +313,7 @@
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
+                    "field": "_cr_instances_count",
                     "name": "CR Images Count"
                 }
             ],
@@ -357,11 +357,11 @@
                 "_ct_scans_count",
                 "_radiography_exams_count",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "data_description",
                 "research_description",
                 "license",
@@ -402,7 +402,7 @@
                     "name": "CT Series Count"
                   },
                   {
-                    "field": "_ct_images_count",
+                    "field": "_ct_instances_count",
                     "name": "CT Images Count"
                   },
                   {
@@ -410,7 +410,7 @@
                     "name": "DX Series Count"
                   },
                   {
-                    "field": "_dx_images_count",
+                    "field": "_dx_instances_count",
                     "name": "DX Images Count"
                   },
                   {
@@ -418,7 +418,7 @@
                     "name": "CR Series Count"
                   },
                   {
-                    "field": "_cr_images_count",
+                    "field": "_cr_instances_count",
                     "name": "CR Images Count"
                   },
                   {
@@ -529,11 +529,11 @@
                 "_ct_scans_count",
                 "_radiography_exams_count",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "submitter_id",
                 "project_id"
               ]
@@ -588,7 +588,7 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
+                    "field": "_ct_instances_count",
                     "name": "CT Images Count"
                 },
                 {
@@ -596,7 +596,7 @@
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
+                    "field": "_dx_instances_count",
                     "name": "DX Images Count"
                 },
                 {
@@ -604,7 +604,7 @@
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
+                    "field": "_cr_instances_count",
                     "name": "CR Images Count"
                 }
               ],
@@ -694,9 +694,9 @@
                 "race",
                 "zip",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "data_format",
                 "detector_type",
                 "imager_pixel_spacing",
@@ -755,7 +755,7 @@
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
+                    "field": "_dx_instances_count",
                     "name": "DX Images Count"
                 },
                 {
@@ -763,7 +763,7 @@
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
+                    "field": "_cr_instances_count",
                     "name": "CR Images Count"
                 }
               ],
@@ -850,7 +850,7 @@
               "fields": [
                 "submitter_id",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "study_modality",
                 "study_description",
                 "age_at_imaging",
@@ -925,7 +925,7 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
+                    "field": "_ct_instances_count",
                     "name": "CT Images Count"
                 }
               ],
@@ -1006,7 +1006,7 @@
               "fields": [
                 "submitter_id",
                 "_mr_series_count",
-                "_mr_images_count",
+                "_mr_instances_count",
                 "study_description",
                 "age_at_imaging",
                 "study_year",
@@ -1080,7 +1080,7 @@
                     "name": "MR Series Count"
                 },
                 {
-                    "field": "_mr_images_count",
+                    "field": "_mr_instances_count",
                     "name": "MR Images Count"
                 }
               ],

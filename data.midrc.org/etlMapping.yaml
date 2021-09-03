@@ -53,20 +53,20 @@ mappings:
       - name: _dx_series_count
         path: cases.imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: cases.imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: cases.imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: cases.imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: cases.imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: cases.imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: cases.imaging_studies.radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: cases.imaging_studies.mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: cases.imaging_studies.mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: cases.imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
     joining_props:
       - index: imaging_data_file
@@ -121,20 +121,20 @@ mappings:
       - name: _dx_series_count
         path: imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: imaging_studies.radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: imaging_studies.mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: imaging_studies.mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
     parent_props:
       - path: datasets[data_contributor]
@@ -283,20 +283,20 @@ mappings:
       - name: _dx_series_count
         path: radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: mr_exams.mr_series.mr_instances
         fn: count
     parent_props:
       - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
@@ -330,8 +330,8 @@ mappings:
       - name: _ct_series_count
         path: ct_series
         fn: count
-      - name: _ct_images_count
-        path: ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_series.ct_instances
         fn: count
       - name: acquisition_type
         path: ct_series
@@ -452,11 +452,11 @@ mappings:
       - name: _dx_series_count
         path: dx_series
         fn: count
-      - name: _cr_images_count
-        path: cr_series.cr_images
+      - name: _cr_instances_count
+        path: cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: dx_series.dx_images
+      - name: _dx_instances_count
+        path: dx_series.dx_instances
         fn: count
       - name: detector_type
         path: dx_series
@@ -535,8 +535,8 @@ mappings:
       - name: _mr_series_count
         path: mr_series
         fn: count
-      - name: _mr_images_count
-        path: mr_series.mr_images
+      - name: _mr_instances_count
+        path: mr_series.mr_instances
         fn: count
       - name: slice_thickness
         path: mr_series
