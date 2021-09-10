@@ -66,6 +66,12 @@
 				"host": "https://gen3.theanvil.io/index/",
 				"hints": [".*dg\\.ANV0.*"],
 				"type": "indexd"
+			},
+			{
+				"name": "JCOIN",
+				"host": "https://jcoin.datacommons.io/index",
+				"hints": [".*dg\\.6VTS.*"],
+				"type": "indexd"
 			}
 		]
 	}
