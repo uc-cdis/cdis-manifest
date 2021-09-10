@@ -14,7 +14,6 @@
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.06",
     "fence": "quay.io/cdis/fence:5.3.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.07",
     "hatchery": "quay.io/cdis/hatchery:feat_decouple_workspaces",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.07",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.07",
@@ -297,24 +296,6 @@
     "netpolicy": "on",
     "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
-  },
-  "guppy": {
-    "indices": [
-      {
-        "index": "preprod-heal_cmc",
-        "type": "clinical_trials"
-      },
-      {
-        "index": "preprod-heal_ct-file",
-        "type": "ctfile"
-      },
-      {
-        "index": "preprod-heal_oa-file",
-        "type": "oafile"
-      }
-    ],
-    "config_index": "preprod-heal_array-config",
-    "auth_filter_field": "auth_resource_path"
   },
   "canary": {
     "default": 0
