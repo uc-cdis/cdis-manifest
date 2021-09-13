@@ -332,7 +332,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
-      "image": "quay.io/cdis/jupyter-jcoin:master",
+      "image": "quay.io/cdis/heal-notebooks:jcoin__74c68bafc3a655def4423d252f9a6ba1e89273fc",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -363,7 +363,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
-      "image": "quay.io/cdis/jupyter-bacpac:master",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__3b9ce410d22c92859b827ea8c95dccd521671246",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
