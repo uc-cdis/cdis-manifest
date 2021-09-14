@@ -192,3 +192,17 @@ S3_BUCKETS:
 # using the `/data/upload` endpoint. This must be one of the first keys under
 # `S3_BUCKETS` (since these are the buckets fence has credentials for).
 DATA_UPLOAD_BUCKET: 'jcoinprod-default-258867494168-upload'
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+# `PUSH_AUDIT_LOGS_CONFIG.type` is one of: [api, aws_sqs].
+# - if type == api: logs are created by hitting the log creation endpoint.
+# - if type == aws_sqs: logs are pushed to an SQS and `aws_sqs_config` fields
+# `sqs_url` and `region` are required. Fields `aws_access_key_id` and
+# `aws_secret_access_key` are optional.
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://queue.amazonaws.com/258867494168/jcoinprod--default--audit-sqs
+    region: us-east-1
