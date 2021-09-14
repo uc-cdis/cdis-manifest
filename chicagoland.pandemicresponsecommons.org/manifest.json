@@ -129,6 +129,82 @@
   },
   "sower" : [
     {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:0.6.2",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "subject"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          },
+          {
+            "name": "indexd-creds-volume",
+            "readOnly": true,
+            "mountPath": "/indexd-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "4Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        },
+        {
+          "name": "indexd-creds-volume",
+          "secret": {
+            "secretName": "indexd-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
       "serviceAccountName": "jobs-chicagoland-pandemicresponsecommons-org",

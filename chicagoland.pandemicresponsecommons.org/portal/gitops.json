@@ -330,6 +330,13 @@
           "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "export-pfb-to-workspace",
+          "title": "Export PFB to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
       ],
       "guppyConfig": {
