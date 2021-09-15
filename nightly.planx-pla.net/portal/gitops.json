@@ -1,27 +1,22 @@
 {
-  "gaTrackingId": "UA-119127212-2",
+  "gaTrackingId": "UA-119127212-13",
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "graphql": "_summary_location_count",
+        "name": "Location",
+        "plural": "Locations"
       },
       {
-        "graphql": "_study_count",
-        "name": "Study",
-        "plural": "Studies"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot",
-        "plural": "Aliquots"
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_subject_count",
+        "name": "Subject"
       },
       {
         "graphql": "_study_count",
@@ -31,981 +26,1384 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "BloodPAC Metadata Submission Portal",
+    "appName": "Chicagoland COVID-19 Commons",
     "index": {
       "introduction": {
-        "heading": "BloodPAC Data Commons",
-        "text": "The Blood Profiling Atlas in Cancer (BloodPAC) supports the management, analysis and sharing of liquid biopsy data for the oncology research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for cancer treatment and prevention. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "heading": "Chicagoland COVID-19 Commons",
+        "text": "The Chicagoland COVID-19 Commons supports the management, analysis and sharing of COVID-19 data",
         "link": "/submission"
       },
-      "buttons": [
+      "buttons": [],
+      "homepageChartNodes": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The BloodPAC Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
+          "node": "summary_location",
+          "name": "Locations"
         },
         {
-          "name": "Submit Data",
-          "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
-          "link": "/submission",
-          "label": "Submit data"
+          "node": "summary_report",
+          "name": "Summary Reports"
         },
         {
-          "name": "Explore Data",
-          "icon": "data-files",
-          "body": "The Explorer page gives you insights and a clear overview of data.",
-          "link": "/explorer",
-          "label": "Explore data"
-        },
-        {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "Getting metadata and other clinical variables exposed by API in our secure cloud environment.",
-          "link": "/query",
-          "label": "Query data"
+          "node": "subject",
+          "name": "Subjects"
         }
       ]
     },
     "navigation": {
-      "title": "BloodPAC Data Commons",
       "items": [
         {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
-        },
-        {
-          "icon": "exploration",
-          "link": "/explorer",
-          "color": "#a2a2a2",
-          "name": "Exploration"
-        },
-        {
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
           "icon": "query",
-          "link": "/query",
-          "color": "#a2a2a2",
-          "name": "Query"
+          "tooltip": "The notebooks pull data from various external sources to generate and output useful tables, charts, graphs, and models."
         },
         {
-          "icon": "workspace",
+          "name": "Exploration",
+          "link": "/explorer",
+          "icon": "exploration",
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
+        },
+        {
+          "name": "Workspace",
           "link": "/workspace",
-          "color": "#a2a2a2",
-          "name": "Workspace"
+          "icon": "workspace",
+          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         },
         {
-          "icon": "profile",
+          "name": "Dictionary",
+          "link": "/DD",
+          "icon": "dictionary",
+          "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
+        },
+        {
+          "name": "Profile",
           "link": "/identity",
-          "color": "#a2a2a2",
-          "name": "Profile"
+          "icon": "profile"
         }
       ]
     },
     "topBar": {
       "items": [
         {
+          "link": "/",
+          "name": "Chicagoland COVID-19 Commons Home"
+        },
+        {
+          "link": "https://pandemicresponsecommons.org/chicagoland-covid-19-commons/",
+          "name": "About"
+        },
+        {
           "icon": "upload",
           "link": "/submission",
           "name": "Submit Data"
         },
         {
-          "link": "https://www.synapse.org/#!Synapse:syn8011461/wiki/411591",
+          "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
         }
       ]
     },
     "login": {
-      "title": "BloodPAC Data Commons",
-      "subTitle": "Explore, Analyze, and Share Data",
-      "text": "This website combines liquid biopsy data from academic, government, and industry partners and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for the treatment and prevention of cancer.",
+      "title": "Chicagoland COVID-19 Commons",
+      "subTitle": "Explore, Analyze, and Share Data to Improve Health Outcomes for COVID-19",
+      "text": "",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "bpa-support@datacommons.io"
-    }
+      "email": "support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
+    },
+    "categorical9Colors": [
+      "#B02F34",
+      "#421C52",
+      "#AEEBF2",
+      "#E0DD10",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      }
+    ]
   },
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "analysis": true,
+    "explorerPublic": true,
+    "explorerHideEmptyFilterSection": true,
+    "explorerFilterValuesToHide": ["no data"]
   },
+  "analysisTools": [],
   "explorerConfig": [
-      {
-          "tabTitle": "Studies",
-          "charts": {
-            "project_id": {
-              "chartType": "count",
-              "title": "Projects"
-            },
-            "study_setup": {
-              "chartType": "bar",
-              "title": "Study Setup"
-            },
-            "study_objective": {
-              "chartType": "bar",
-              "title": "Study Objective"
-            },
-            "study_design": {
-              "chartType": "bar",
-              "title": "Study Design"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Studies",
-                "fields":[
-                  "project_id",
-                  "study_setup",
-                  "study_objective",
-                  "study_design"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
+    {
+      "tabTitle": "Datasets",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
             "fields": [
-              "project_id",
-              "submitter_id",
-              "study_description",
-              "data_description",
-              "study_setup",
-              "study_objective",
-              "study_design",
-              "associated_study",
-              "_cases_count",
-              "_biospecimens_count",
-              "_samples_count",
-              "_aliquots_count",
-              "_analytes_count",
-              "_immunoassays_count",
-              "_pcr_assays_count",
-              "_pcr_assay_files_count",
-              "_read_groups_count",
-              "_cell_images_count",
-              "_mass_cytometry_assays_count",
-              "_mass_cytometry_images_count",
-              "_slide_images_count",
-              "_submitted_unaligned_reads_files_count",
-              "_submitted_aligned_reads_files_count",
-              "_submitted_somatic_mutations_count",
-              "_submitted_methylations_count"
+              "date_collected",
+              "investigator_affiliation",
+              "data_description"
             ]
-          },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data",
-              "title": "Download Studies",
-              "leftIcon": "user",
-              "rightIcon": "download",
-              "fileName": "studies.json"
-            },
-            {
-              "enabled": false,
-              "type": "manifest",
-              "title": "Download Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "manifest.json"
-            },
-            {
-              "enabled": true,
-              "type": "export-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "arrangerConfig": {
-            "projectId": "search",
-            "graphqlField": "study",
-            "index": "",
-            "nodeCountField": "project_id"
-          },
-          "guppyConfig": {
-            "dataType": "study",
-            "nodeCountTitle": "Studies",
-            "fieldMapping": [],
-            "manifestMapping": {
-              "resourceIndexType": "file",
-              "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "case_id",
-              "referenceIdFieldInDataIndex": "case_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id"
           }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "url",
+          "code",
+          "date_collected",
+          "investigator_affiliation",
+          "name",
+          "data_description"
+        ],
+        "linkFields": [
+          "url"
+        ]
+      },
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "dataset",
+        "nodeCountTitle": "Datasets",
+        "fieldMapping": [
+          {
+            "field": "url",
+            "name": "Source URL"
+          },
+          {
+            "field": "investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "name",
+            "name": "Dataset"
+          },
+          {
+            "field": "date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "code"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
     },
     {
-        "tabTitle": "Cases",
-        "charts": {
-          "project_id": {
-            "chartType": "count",
-            "title": "Projects"
-          },
-          "gender": {
-            "chartType": "pie",
-            "title": "Gender"
-          },
-          "race": {
-            "chartType": "bar",
-            "title": "Race"
-          },
-          "ethnicity": {
-            "chartType": "bar",
-            "title": "Ethnicity"
-          }
+      "tabTitle": "Subjects",
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
         },
-        "filters": {
-          "tabs": [
-            {
-              "title": "Cases",
-              "fields":[
-                "project_id",
-                "index_date",
-                "lost_to_followup",
-                "gender",
-                "days_to_birth",
-                "race",
-                "ethnicity"
-              ]
-            }
-          ]
+        "gender": {
+          "chartType": "fullPie",
+          "title": "Gender"
         },
-        "table": {
-          "enabled": true,
-          "fields": [
-            "project_id",
-            "submitter_id",
-            "index_date",
-            "lost_to_followup",
-            "gender",
-            "days_to_birth",
-            "race",
-            "ethnicity",
-            "data_format",
-            "data_type",
-            "_biospecimens_count",
-            "_samples_count",
-            "_aliquots_count",
-            "_analytes_count",
-            "_immunoassays_count",
-            "_pcr_assays_count",
-            "_pcr_assay_files_count",
-            "_read_groups_count",
-            "_cell_images_count",
-            "_mass_cytometry_assays_count",
-            "_mass_cytometry_images_count",
-            "_slide_images_count",
-            "_submitted_unaligned_reads_files_count",
-            "_submitted_aligned_reads_files_count",
-            "_submitted_somatic_mutations_count",
-            "_submitted_methylations_count"
-          ]
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
         },
-        "buttons": [
-          {
-            "enabled": true,
-            "type": "data",
-            "title": "Download Cases",
-            "leftIcon": "user",
-            "rightIcon": "download",
-            "fileName": "cases.json"
-          },
-          {
-            "enabled": false,
-            "type": "manifest",
-            "title": "Download Manifest",
-            "leftIcon": "datafile",
-            "rightIcon": "download",
-            "fileName": "manifest.json"
-          },
-          {
-            "enabled": true,
-            "type": "export-to-workspace",
-            "title": "Export to Workspace",
-            "leftIcon": "datafile",
-            "rightIcon": "download"
-          }
-        ],
-        "arrangerConfig": {
-          "projectId": "search",
-          "graphqlField": "case",
-          "index": "",
-          "nodeCountField": "project_id"
-        },
-        "guppyConfig": {
-          "dataType": "case",
-          "nodeCountTitle": "Cases",
-          "fieldMapping": [],
-          "manifestMapping": {
-            "resourceIndexType": "file",
-            "resourceIdField": "object_id",
-            "referenceIdFieldInResourceIndex": "case_id",
-            "referenceIdFieldInDataIndex": "case_id"
-          },
-          "accessibleFieldCheckList": ["project_id"],
-          "accessibleValidationField": "project_id"
+        "symptoms": {
+          "chartType": "bar",
+          "title": "Symptoms"
         }
       },
-      {
-          "tabTitle": "Biospecimens",
-          "charts": {
-            "project_id": {
-              "chartType": "count",
-              "title": "Projects"
-            },
-            "biospecimen_anatomic_site": {
-              "chartType": "bar",
-              "title": "Anatomic Site"
-            },
-            "biospecimen_type": {
-              "chartType": "pie",
-              "title": "Biospecimen Type"
-            },
-            "blood_tube_type": {
-              "chartType": "bar",
-              "title": "Blood Tube Type"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Biospecimens",
-                "fields":[
-                  "project_id",
-                  "biospecimen_anatomic_site",
-                  "biospecimen_type",
-                  "blood_tube_type",
-                  "days_to_collection",
-                  "days_to_procurement",
-                  "method_of_procurement",
-                  "procured_or_purchased",
-                  "tissue_type",
-                  "disease_type",
-                  "shipping_temperature",
-                  "tumor_code",
-                  "tumor_morphology",
-                  "days_to_collection_other",
-                  "days_to_procurement_other",
-                  "biospecimen_volume",
-                  "blood_draw_method",
-                  "clinical_site",
-                  "primary_site",
-                  "tumor_descriptor",
-                  "procurement_temperature",
-                  "metastatic_bone",
-                  "metastatic_visceral",
-                  "metastatic_lymph_node",
-                  "biospecimen_weight"
-                ]
-              },
-              {
-                "title": "Samples",
-                "fields":[
-                  "composition",
-                  "hours_to_fractionation_lower",
-                  "hours_to_fractionation_upper",
-                  "blood_fractionation_method",
-                  "sample_volume",
-                  "storage_agitation",
-                  "storage_agitation_hours"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
             "fields": [
-              "project_id",
-              "submitter_id",
-              "biospecimen_anatomic_site",
-              "biospecimen_type",
-              "blood_tube_type",
-              "days_to_collection",
-              "days_to_procurement",
-              "method_of_procurement",
-              "procured_or_purchased",
-              "tissue_type",
-              "disease_type",
-              "shipping_temperature",
-              "tumor_code",
-              "tumor_morphology",
-              "days_to_collection_other",
-              "days_to_procurement_other",
-              "biospecimen_volume",
-              "blood_draw_method",
-              "clinical_site",
-              "primary_site",
-              "tumor_descriptor",
-              "procurement_temperature",
-              "metastatic_bone",
-              "metastatic_visceral",
-              "metastatic_lymph_node",
-              "biospecimen_weight",
-              "composition",
-              "hours_to_fractionation_lower",
-              "hours_to_fractionation_upper",
-              "blood_fractionation_method",
-              "sample_volume",
-              "storage_agitation",
-              "storage_agitation_hours"
+              "project_investigator_affiliation",
+              "project_name"
             ]
           },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data",
-              "title": "Download Biospecimens",
-              "leftIcon": "user",
-              "rightIcon": "download",
-              "fileName": "biospecimens.json"
-            },
-            {
-              "enabled": false,
-              "type": "manifest",
-              "title": "Download Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "manifest.json"
-            },
-            {
-              "enabled": true,
-              "type": "export-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "arrangerConfig": {
-            "projectId": "search",
-            "graphqlField": "biospecimen",
-            "index": "",
-            "nodeCountField": "project_id"
+          {
+            "title": "Clinical",
+            "fields": [
+              "covid_19_status",
+              "vital_status",
+              "icu_status",
+              "hospital",
+              "condition",
+              "symptoms",
+              "reporting_source",
+              "exposure",
+              "pneumonia_type",
+              "ventilator_status",
+              "extubated",
+              "pO2_saturation",
+              "leukocyte_count",
+              "view",
+              "study_doi"
+            ]
           },
-          "guppyConfig": {
-            "dataType": "biospecimen",
-            "nodeCountTitle": "Biospecimens",
-            "fieldMapping": [],
-            "manifestMapping": {
-              "resourceIndexType": "file",
-              "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "case_id",
-              "referenceIdFieldInDataIndex": "case_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id"
+          {
+            "title": "Demographics",
+            "fields": [
+              "age",
+              "gender",
+              "ethnicity",
+              "country_region",
+              "province_state",
+              "city",
+              "travel_history_location"
+            ]
           }
-        },
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "age",
+          "gender",
+          "ethnicity",
+          "country_region",
+          "province_state",
+          "city",
+          "covid_19_status",
+          "vital_status",
+          "isolation_status",
+          "icu_status",
+          "ventilator_status",
+          "hospital",
+          "symptoms",
+          "exposure",
+          "pneumonia_type",
+          "extubated",
+          "pO2_saturation",
+          "leukocyte_count",
+          "view",
+          "study_doi",
+          "reporting_source"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
         {
-            "tabTitle": "Aliquots",
-            "charts": {
-              "aliquot_container": {
-                "chartType": "bar",
-                "title": "Aliquot Container"
-              },
-              "clinical_or_contrived": {
-                "chartType": "pie",
-                "title": "Clinical vs. Contrived"
-              },
-              "analyte_type": {
-                "chartType": "bar",
-                "title": "Analyte Type"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Aliquots",
-                  "fields":[
-                    "project_id",
-                    "aliquot_container",
-                    "clinical_or_contrived",
-                    "preservation_method",
-                    "storage_temperature",
-                    "aliquot_volume",
-                    "methanol_added",
-                    "hours_to_freezer_lower",
-                    "hours_to_freezer_lower_other",
-                    "hours_to_freezer_upper",
-                    "hours_to_freezer_upper_other",
-                    "aliquot_quantity",
-                    "contrivance_method"
-                  ]
-                },
-                {
-                  "title": "Analytes",
-                  "fields":[
-                    "analyte_isolation_method",
-                    "analyte_type",
-                    "cell_type",
-                    "cell_identifier",
-                    "frame_identifier",
-                    "run_identifier",
-                    "days_to_assay"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "project_id",
-                "submitter_id",
-                "aliquot_container",
-                "clinical_or_contrived",
-                "preservation_method",
-                "storage_temperature",
-                "aliquot_volume",
-                "methanol_added",
-                "hours_to_freezer_lower",
-                "hours_to_freezer_lower_other",
-                "hours_to_freezer_upper",
-                "hours_to_freezer_upper_other",
-                "aliquot_quantity",
-                "contrivance_method",
-                "analyte_isolation_method",
-                "analyte_type",
-                "cell_type",
-                "cell_identifier",
-                "frame_identifier",
-                "run_identifier",
-                "days_to_assay"
-              ]
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data",
-                "title": "Download Aliquots",
-                "leftIcon": "user",
-                "rightIcon": "download",
-                "fileName": "aliquots.json"
-              },
-              {
-                "enabled": false,
-                "type": "manifest",
-                "title": "Download Manifest",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "manifest.json"
-              },
-              {
-                "enabled": true,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "aliquot",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
-            "guppyConfig": {
-              "dataType": "aliquot",
-              "nodeCountTitle": "Aliquots",
-              "fieldMapping": [],
-              "manifestMapping": {
-                "resourceIndexType": "file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "Read Groups",
-            "charts": {
-              "instrument_model": {
-                "chartType": "bar",
-                "title": "Instrument Model"
-              },
-              "library_preparation_kit_name": {
-                "chartType": "bar",
-                "title": "Library Prep Kit"
-              },
-              "library_strategy": {
-                "chartType": "bar",
-                "title": "Library Strategy"
-              },
-              "platform": {
-                "chartType": "bar",
-                "title": "Platform"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Read Groups",
-                  "fields":[
-                    "project_id",
-                    "instrument_model",
-                    "is_paired_end",
-                    "library_preparation_kit_name",
-                    "library_preparation_kit_vendor",
-                    "library_preparation_kit_version",
-                    "library_strategy",
-                    "platform",
-                    "read_group_name",
-                    "read_length_lower",
-                    "read_length_upper",
-                    "barcoding_applied",
-                    "target_capture_kit_name",
-                    "library_name",
-                    "library_selection",
-                    "sequencing_center",
-                    "library_strand",
-                    "flow_cell_barcode",
-                    "adapter_sequence",
-                    "library_preparation_kit_catalog_number",
-                    "cycles"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "project_id",
-                "submitter_id",
-                "instrument_model",
-                "is_paired_end",
-                "library_preparation_kit_name",
-                "library_preparation_kit_vendor",
-                "library_preparation_kit_version",
-                "library_strategy",
-                "platform",
-                "read_group_name",
-                "read_length_lower",
-                "read_length_upper",
-                "barcoding_applied",
-                "target_capture_kit_name",
-                "library_name",
-                "library_selection",
-                "sequencing_center",
-                "library_strand",
-                "flow_cell_barcode",
-                "adapter_sequence",
-                "library_preparation_kit_catalog_number",
-                "cycles"
-              ]
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data",
-                "title": "Download Read Groups",
-                "leftIcon": "user",
-                "rightIcon": "download",
-                "fileName": "read_groups.json"
-              },
-              {
-                "enabled": false,
-                "type": "manifest",
-                "title": "Download Manifest",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "manifest.json"
-              },
-              {
-                "enabled": true,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "read_group",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
-            "guppyConfig": {
-              "dataType": "read_group",
-              "nodeCountTitle": "Read Groups",
-              "fieldMapping": [],
-              "manifestMapping": {
-                "resourceIndexType": "file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "Medical History",
-            "charts": {
-              "primary_diagnosis": {
-                "chartType": "bar",
-                "title": "Primary Diagnoses"
-              },
-              "comorbidity": {
-                "chartType": "bar",
-                "title": "Comorbidities"
-              },
-              "analyte_name": {
-                "chartType": "bar",
-                "title": "Diagnostic Tests"
-              },
-              "therapeutic_agents": {
-                "chartType": "bar",
-                "title": "Treatments"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Projects",
-                  "fields":[
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Comorbidities",
-                  "fields":[
-                    "comorbidity",
-                    "days_to_comorbidity"
-                  ]
-                },
-                {
-                  "title": "Diagnoses",
-                  "fields":[
-                    "age_at_diagnosis",
-                    "best_overall_response",
-                    "classification_of_tumor",
-                    "days_to_best_overall_response",
-                    "days_to_diagnosis",
-                    "morphology",
-                    "primary_diagnosis",
-                    "prior_treatment",
-                    "tissue_or_organ_of_origin",
-                    "tumor_grade",
-                    "ajcc_clinical_stage",
-                    "overall_survival",
-                    "progression_free_survival",
-                    "ajcc_pathologic_stage",
-                    "method_of_diagnosis",
-                    "ajcc_pathologic_n",
-                    "ajcc_pathologic_t",
-                    "ajcc_pathologic_m"
-                  ]
-                },
-                {
-                  "title": "Diagnostic Tests",
-                  "fields":[
-                    "analyte_name",
-                    "days_to_test",
-                    "test_result",
-                    "test_sample_composition",
-                    "test_type",
-                    "test_units",
-                    "test_value"
-                  ]
-                },
-                {
-                  "title": "Followups",
-                  "fields":[
-                    "days_to_followup",
-                    "time_from_alcohol",
-                    "time_from_biopsy",
-                    "time_from_exercise",
-                    "time_from_food",
-                    "time_from_physical_trauma",
-                    "time_from_recreational_drugs",
-                    "time_from_tobacco",
-                    "time_from_treatment"
-                  ]
-                },
-                {
-                  "title": "Treatments",
-                  "fields":[
-                    "therapeutic_agents",
-                    "treatment_intent_type",
-                    "treatment_type",
-                    "days_to_treatment_start",
-                    "regimen_or_line_of_therapy",
-                    "days_to_treatment_end",
-                    "treatment_class",
-                    "dosage",
-                    "dosage_units"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "project_id",
-                "submitter_id",
-                "comorbidity",
-                "days_to_comorbidity",
-                "age_at_diagnosis",
-                "best_overall_response",
-                "classification_of_tumor",
-                "days_to_best_overall_response",
-                "days_to_diagnosis",
-                "morphology",
-                "primary_diagnosis",
-                "prior_treatment",
-                "tissue_or_organ_of_origin",
-                "tumor_grade",
-                "ajcc_clinical_stage",
-                "overall_survival",
-                "progression_free_survival",
-                "ajcc_pathologic_stage",
-                "method_of_diagnosis",
-                "ajcc_pathologic_n",
-                "ajcc_pathologic_t",
-                "ajcc_pathologic_m",
-                "analyte_name",
-                "days_to_test",
-                "test_result",
-                "test_sample_composition",
-                "test_type",
-                "test_units",
-                "test_value",
-                "days_to_followup",
-                "time_from_alcohol",
-                "time_from_biopsy",
-                "time_from_exercise",
-                "time_from_food",
-                "time_from_physical_trauma",
-                "time_from_recreational_drugs",
-                "time_from_tobacco",
-                "time_from_treatment",
-                "therapeutic_agents",
-                "treatment_intent_type",
-                "treatment_type",
-                "days_to_treatment_start",
-                "regimen_or_line_of_therapy",
-                "days_to_treatment_end",
-                "treatment_class",
-                "dosage",
-                "dosage_units"
-              ]
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data",
-                "title": "Download Medical History",
-                "leftIcon": "user",
-                "rightIcon": "download",
-                "fileName": "medical_history.json"
-              },
-              {
-                "enabled": false,
-                "type": "manifest",
-                "title": "Download Manifest",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "manifest.json"
-              },
-              {
-                "enabled": true,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "arrangerConfig": {
-              "projectId": "search",
-              "graphqlField": "case",
-              "index": "",
-              "nodeCountField": "project_id"
-            },
-            "guppyConfig": {
-              "dataType": "medical_history",
-              "nodeCountTitle": "Medical History",
-              "fieldMapping": [],
-              "manifestMapping": {
-                "resourceIndexType": "file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "case_id",
-                "referenceIdFieldInDataIndex": "case_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-      {
-        "tabTitle": "Files",
-        "charts": {
-          "data_type": {
-            "chartType": "stackedBar",
-            "title": "File Type"
-          },
-          "data_format": {
-            "chartType": "stackedBar",
-            "title": "File Format"
-          }
-        },
-        "filters": {
-          "tabs": [
-            {
-              "title": "File",
-              "fields": [
-                "project_id",
-                "data_type",
-                "data_format"
-              ]
-            }
-          ]
-        },
-        "table": {
           "enabled": true,
-          "fields": [
-            "project_id",
-            "file_name",
-            "file_size",
-            "object_id"
-          ]
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
         },
-        "guppyConfig": {
-          "dataType": "file",
-          "fieldMapping": [
-            { "field": "object_id", "name": "GUID" }
-          ],
-          "nodeCountTitle": "Files",
-          "manifestMapping": {
-            "resourceIndexType": "case",
-            "resourceIdField": "case_id",
-            "referenceIdFieldInResourceIndex": "object_id",
-            "referenceIdFieldInDataIndex": "object_id"
-          },
-          "accessibleFieldCheckList": ["project_id"],
-          "accessibleValidationField": "project_id",
-          "downloadAccessor": "object_id"
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
         },
-        "buttons": [
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping": [
           {
-            "enabled": true,
-            "type": "file-manifest",
-            "title": "Download Manifest",
-            "leftIcon": "datafile",
-            "rightIcon": "download",
-            "fileName": "file-manifest.json",
-            "dropdownId": "download"
+            "field": "project_url",
+            "name": "Source URL"
           },
           {
-            "enabled": true,
-            "type": "export-files-to-workspace",
-            "title": "Export to Workspace",
-            "leftIcon": "datafile",
-            "rightIcon": "download"
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "covid_19_status",
+            "name": "COVID-19 Status"
+          },
+          {
+            "field": "icu_status",
+            "name": "ICU Status"
+          },
+          {
+            "field": "view",
+            "name": "X-ray View"
+          },
+          {
+            "field": "study_doi",
+            "name": "Study DOI"
+          },
+          { "field": "pO2_saturation",
+            "name": "pO2 Saturation (percent)"
+          },
+          {
+            "field": "leukocyte_count",
+            "name": "Leukocyte Count (10^3/µl)"
+          },
+          {
+            "field": "age",
+            "name": "Age (years)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
           }
         ],
-        "dropdowns": {}
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "_subject_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
+    },
+    {
+      "tabTitle": "Interventions",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name",
+              "title",
+              "focus",
+              "technology",
+              "development_stage",
+              "phase"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "title",
+          "focus",
+          "description",
+          "technology",
+          "development_stage",
+          "phase",
+          "sponsor",
+          "location",
+          "nct_number"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "clinical_trials",
+        "nodeCountTitle": "Interventions",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          { "field": "title",
+            "name": "Intervention Name"
+          },
+          {  "field": "nct_number",
+             "name": "NCT Number"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Genomics",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "Data Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "Data Format"
+        },
+        "host": {
+          "chartType": "bar",
+          "title": "Host"
+        },
+        "organism": {
+          "chartType": "bar",
+          "title": "Organism"
+        },
+        "sample_type": {
+          "chartType": "bar",
+          "title": "Sample Type"
+        },
+        "isolation_source": {
+          "chartType": "bar",
+          "title": "Isolation Source"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Viral",
+            "fields": [
+              "country_region",
+              "province_state",
+              "county",
+              "host",
+              "organism",
+              "data_type",
+              "data_format",
+              "sample_type",
+              "originating_lab",
+              "submitting_lab",
+              "submitting_lab_PI",
+              "collection_date"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "country_region",
+          "province_state",
+          "county",
+          "host",
+          "organism",
+          "sample_type",
+          "originating_lab",
+          "submitting_lab",
+          "submitting_lab_PI",
+          "collection_date",
+          "file_name",
+          "data_type",
+          "data_format",
+          "file_size",
+          "object_id",
+          "project_date_collected"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Data Files Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Data Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "genomic_file",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "object_id",
+            "name": "GUID"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "submitting_lab_PI",
+            "name": "Submiting Lab PI"
+          },
+          {
+            "field": "collection_date",
+            "name": "Collection Date (year-month-day)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Locations",
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
+        },
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
+        },
+        "county": {
+          "chartType": "bar",
+          "title": "County"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Global",
+            "fields": [
+              "country_region",
+              "province_state",
+              "county",
+              "confirmed",
+              "deaths",
+              "recovered",
+              "testing"
+            ]
+          },
+          {
+            "title": "Illinois",
+            "fields": [
+              "community_area",
+              "state_region_description",
+              "reporting_org",
+              "deaths_per_10000",
+              "region_icu_capacity",
+              "region_icu_avail",
+              "region_vents_capacity",
+              "region_vents_available",
+              "state_vent_covid_patients",
+              "state_icu_covid_patients",
+              "state_covid_patients_non_icu",
+              "state_covid_pui_patients",
+              "state_total_covid_pui_in_hospital",
+              "state_icu_capacity",
+              "state_icu_available",
+              "state_vent_capacity",
+              "state_vents_available",
+              "state_Ventilators_open_pct",
+              "state_ventilators_in_use",
+              "state_ventilators_in_use_covid",
+              "state_ventilators_covid_patients_pct",
+              "state_total_beds",
+              "state_total_beds_available",
+              "total_in_use_beds_covid",
+              "state_pct_beds_covid_pui",
+              "state_pct_hospital_beds_available",
+              "state_icu_open_beds",
+              "state_icu_beds_used",
+              "state_icu_open_beds_pct",
+              "vaccine_administered_count",
+              "vaccine_persons_fully_vaccinated_pct",
+              "vaccine_total_delivered_vaccine_doses",
+              "vaccine_community_reported_inventory",
+              "vaccine_reported_inventory"
+            ]
+          },
+          {
+            "title": "Public Health",
+            "fields": [
+              "population_density",
+              "completed_high_school",
+              "college_degree",
+              "graduate_degree",
+              "job_density",
+              "jail",
+              "hhinc_mean",
+              "med_hhinc"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "country_region",
+          "province_state",
+          "county",
+          "community_area",
+          "state_region_description",
+          "reporting_org",
+          "date",
+          "vaccine_administered_count",
+          "vaccine_persons_fully_vaccinated_pct",
+          "vaccine_total_delivered_vaccine_doses",
+          "vaccine_community_reported_inventory",
+          "vaccine_reported_inventory",
+          "confirmed",
+          "deaths",
+          "recovered",
+          "testing",
+          "population_gtr_65",
+          "estimated_full_mech_pediatric_ventilators",
+          "region_icu_avail",
+          "region_icu_capacity",
+          "region_vents_available",
+          "region_vents_capacity",
+          "state_vent_covid_patients",
+          "state_icu_covid_patients",
+          "state_covid_patients_non_icu",
+          "state_covid_pui_patients",
+          "state_total_covid_pui_in_hospital",
+          "state_total_covid_pui_in_icu",
+          "state_icu_capacity",
+          "state_icu_available",
+          "state_vent_capacity",
+          "state_vents_available",
+          "state_Ventilators_open_pct",
+          "state_ventilators_in_use",
+          "state_ventilators_in_use_covid",
+          "state_ventilators_covid_patients_pct",
+          "state_total_beds",
+          "state_total_beds_available",
+          "state_total_beds_used",
+          "total_in_use_beds_non_covid",
+          "total_in_use_beds_covid",
+          "state_pct_beds_covid_pui",
+          "state_pct_hospital_beds_available",
+          "state_icu_open_beds",
+          "state_icu_beds_used",
+          "state_icu_open_beds_pct",
+          "population_density",
+          "completed_high_school",
+          "college_degree",
+          "graduate_degree",
+          "job_density",
+          "jail",
+          "hhinc_mean",
+          "med_hhinc"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "location",
+        "fieldMapping": [
+          {
+            "field": "community_area",
+            "name": "Chicago Neigborhood"
+          },
+          {
+            "field": "reporting_org",
+            "name": "IL Reporting Organization"
+          },
+          {
+            "field": "deaths_per_10000",
+            "name": "Chicago Neighborhood Deaths (per 10,000 residents)"
+          },
+          {
+            "field": "staffed_all_beds",
+            "name": "Staffed Beds"
+          },
+          {
+            "field": "staffed_icu_beds",
+            "name": "ICU Beds"
+          },
+          {
+            "field": "population_gtr_65",
+            "name": "Population Greater Than 65"
+          },
+          {
+            "field": "estimated_full_mech_ventilators",
+            "name": "Estimated Ventilators"
+          },
+          {
+            "field": "estimated_full_mech_pediatric_ventilators",
+            "name": "Estimated Pediatric Ventilators"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "reporting_org",
+            "name": "Reporting Organization"
+          },
+          {
+            "field": "state_region_description",
+            "name": "IL Hospital Region"
+          },
+          {
+            "field": "region_icu_avail",
+            "name": "IL Region ICU Availability"
+          },
+          {
+            "field": "region_icu_capacity",
+            "name": "IL Region ICU Capacity"
+          },
+          {
+            "field": "region_vents_available",
+            "name": "IL Region Ventilators Available"
+          },
+          {
+            "field": "region_vents_capacity",
+            "name": "IL Region Ventilators Capacity"
+          },
+          {
+            "field": "state_icu_capacity",
+            "name": "IL ICU Capacity"
+          },
+          {
+            "field": "state_icu_covid_patients",
+            "name": "IL ICU COVID-19 Patients"
+          },
+          {
+            "field": "state_vent_capacity",
+            "name": "IL Ventilator Capacity"
+          },
+          {
+            "field": "state_vent_covid_patients",
+            "name": "IL Ventilator COVID-19 Patients"
+          },
+          {
+            "field": "state_ventilators_in_use_covid",
+            "name": "IL Ventilators In Use COVID-19"
+          },
+          {
+            "field": "state_icu_available",
+            "name": "IL ICU Available"
+          },
+          {
+            "field": "state_vents_available",
+            "name": "IL Ventilators Available"
+          },
+          {
+            "field": "state_total_beds",
+            "name": "IL Total Beds"
+          },
+          {
+            "field": "state_total_beds_available",
+            "name": "IL Total Beds Available "
+          },
+          {
+            "field": "state_total_beds_used",
+            "name": "IL Total Beds Used"
+          },
+          {
+            "field": "state_pct_hospital_beds_available",
+            "name": "IL Hospital Bed Available (percent)"
+          },
+          {
+            "field": "state_icu_open_beds",
+            "name": "IL ICU Open Beds"
+          },
+          {
+            "field": "state_icu_beds_used",
+            "name": "IL ICU Beds in Use"
+          },
+          {
+            "field": "state_icu_open_beds_pct",
+            "name": "IL ICU Open Beds (percent)"
+          },
+          {
+            "field": "state_covid_pui_patients",
+            "name": "IL COVID-19 PUI Patients"
+          },
+          {
+            "field": "state_Ventilators_open_pct",
+            "name": "IL Ventilators Open (percent)"
+          },
+          {
+            "field": "state_ventilators_in_use",
+            "name": "IL Ventilators In Use"
+          },
+          {
+            "field": "state_ventilators_covid_patients_pct",
+            "name": "IL Ventilators COVID-19 Patients (percent)"
+          },
+          {
+            "field": "state_covid_patients_non_icu",
+            "name": "IL COVID-19 Patients Non ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_icu",
+            "name": "IL Total COVID-19 PUI ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_hospital",
+            "name": "IL COVID-19 PUI Hospitalized"
+          },
+          {
+            "field": "state_pct_beds_covid_pui",
+            "name": "IL Percentage Beds COVID-19 PUI"
+          },
+          {
+            "field": "total_in_use_beds_non_covid",
+            "name": "IL Total In Use Non-COVID-19 Beds "
+          },
+          {
+            "field": "total_in_use_beds_covid",
+            "name": "IL Total In Use COVID-19 Beds"
+          },
+          {
+            "field": "hhinc_mean",
+            "name": "Mean Household Income (US Currency)"
+          },
+          {
+            "field": "med_hhinc",
+            "name": "Median Household Income (USD)"
+          },
+          { 
+            "field": "population_density",
+            "name": "Population Density (residents per square mile)"
+          },
+          {
+            "field": "job_density",
+            "name": "Job Density (per square mile)"
+          },
+          {
+            "field": "jail",
+            "name": "Incarcerated"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          },
+          {
+            "field": "vaccine_administered_count",
+            "name": "Vaccines Administered"
+          },
+          {
+            "field": "vaccine_persons_fully_vaccinated_pct",
+            "name": "Percent Vaccinated"
+          },
+          {
+            "field": "vaccine_total_delivered_vaccine_doses",
+            "name": "Vaccine Doses Delivered"
+          },
+          {
+            "field": "vaccine_community_reported_inventory",
+            "name": "Community Sites Vaccine Inventory"
+          },
+          {
+            "field": "vaccine_reported_inventory",
+            "name": "Total Vaccine Inventory"
+          }
+        ],
+        "nodeCountTitle": "Locations",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    }
+  ],
+  "resourceBrowser": {
+    "title": "COVID-19 Jupyter Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace and can be launched by following the instructions listed in the readme.md file. When running the notebooks from the Workspace the most recent data is pulled from the originating source in real time and the notebook will render the most updated information.",
+    "resources": [
+      {
+        "title": "Exploring the Demographics of COVID-19 Cases",
+        "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in the Chicagoland Pandemic Response Commons.",
+        "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
+      },
+      {
+        "title": "Chicago COVID-19 forecasting using SEIR models",
+        "description": "In this notebook, we construct an SEIR model for COVID-19 in Cook County, Illinois, using data sourced from Johns Hopkins University, but available within the Chicagoland COVID-19 Commons. We then perform an optimization of initial model parameter values and do some simple validation.",
+        "link": "/dashboard/Public/notebooks/covid19_seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_seir.png"
+      },
+      {
+        "title": "Visualizing Global COVID-19 data",
+        "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
+        "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
+        "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
+      },
+      {
+        "title": "A Live View of COVID-19’s Global Presence",
+        "description": "In this R notebook, we track COVID-19 local (US) and global cases with active, confirmed, recovered and death toll on the map at the latest time point. The interactive maps indicate the concentration of coronavirus cases across the US and around the world.",
+        "link": "/dashboard/Public/notebooks/jhu_map.html",
+        "imageUrl": "/dashboard/Public/notebooks/jhu_map.png"
+      },
+      {
+        "title": "An Extended SEIR Model For COVID-19",
+        "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
+        "link": "/dashboard/Public/notebooks/extended-seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
+      },
+      {
+        "title": "COVID-19 Testing Over Time in the US",
+        "description": "COVID-19 testing is very crucial to understand the spread of the pandemic. In this Python notebook, we have focused our efforts on visualizing the COVID-19 testing data across the U.S. States and Territories from the COVID Tracking Project. The animations will allow you to see how testing data has changed over time.",
+        "link": "/dashboard/Public/notebooks/CTP_testing.html",
+        "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
+      },
+      {
+        "title": "nCoV-2019 Data Visualization",
+        "description": "In this notebook, we are performing some visual analysis on the individual COVID-19 case reports that provide aggregated data on demographic data, geographic location and symptoms. Please note that the data is available from Jan 3, 2020 to April 30, 2020. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.png"
+      },
+      {
+        "title": "Demo: Exploring clinical data from multiple commons",
+        "description": "In this notebook, we obtain the clinical data for multiple projects from the Chicagoland Pandemic Response Commons and the NCI Genomic Data Commons (GDC) and visualize some of the clinical attributes. This notebook is for demonstration purposes only and not biologically meaningful.",
+        "link": "/dashboard/Public/notebooks/TCGA_COAD_COVID.html",
+        "imageUrl": "/dashboard/Public/notebooks/TCGA_COAD_COVID.png"
+      },
+      {
+        "title": "Visualize Statistical Summary Reports from Partnering Healthcare Providers",
+        "description": "This notebook provides an example on how to visualize the status of COVID-19 and general patients information at multiple regional healthcare providers using the demo Statistical Summary Report data from 03/10/2020 to 11/10/2020.",
+        "link": "/dashboard/Public/notebooks/SSR_notebook.html",
+        "imageUrl": "/dashboard/Public/notebooks/SSR_notebook.png"
+      },
+      {
+        "title": "COVID-19 X-ray images classification",
+        "description": "This notebook replicates the DarkCovidNet model and performes transfer learning with the GoogLeNet model to classify radiological images as indicative of either 'COVID-19', 'Normal' or 'Pneumonia' to assist in the diagnosis of COVID-19.",
+        "link": "/dashboard/Public/notebooks/CNN_XRAY_CF.html",
+        "imageUrl": "/dashboard/Public/notebooks/CNN_XRAY_CF.png"
+      },
+      {
+        "title": "Google Mobility Data Visualization",
+        "description": "In this notebook, we demonstrate how to query the google mobility data using the BigQuery API client python library, and visualize the mobility changes over time across the United States since February 2020.",
+        "link": "/dashboard/Public/notebooks/google_mobility.html",
+        "imageUrl": "/dashboard/Public/notebooks/google_mobility.png"
+      },
+      {
+        "title": "COVID-19 Data Visualization in Illinois",
+        "description": "This notebook provides a snapshot of publicly available data related to COVID-19 in Illinois from the Illinois Department of Public Health, Google and Johns Hopkins CSSE. Graphics illustrate the demographics, administered vaccine doses, google mobility data and forecasted COVID-19 cases in Illinois.",
+        "link": "/dashboard/Public/notebooks/IL_tab_charts.html",
+        "imageUrl": "/dashboard/Public/notebooks/IL_tab_charts.png"
+      },
+      {
+        "title": "3D Coronavirus SARS-CoV-2 Protein Visualization",
+        "description": "This notebook provides an example to manipulate coronavirus SARS-CoV-2 DNA sequence, amino acid sequence and use visualization tools to present the three-dimensional (3D) structure of SARS-CoV-2 protein structures interactively.",
+        "link": "/dashboard/Public/notebooks/3D_Protein_Vis.html",
+        "imageUrl": "/dashboard/Public/notebooks/3D_Protein_Vis.png"
+      },
+      {
+        "title": "Data Visualization of COVID-19 Vaccinations, Cases, and Deaths in Illinois",
+        "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
+        "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
+      },
+      {
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
+      }
+    ]
+  },
+  "workspacePageTitle": "Welcome to the Gen3 Workspace",
+  "workspacePageDescription": "<dl><dt>What is a Gen3 Workspace?</dt><dd>Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources, including Gen3 Data Commons.</dd><dt>What can I do with a Gen3 Workspace?</dt><dd>By default Gen3 Workspaces include Jupyter notebooks and RStudio but can be configured to host virtually any application, including analysis workflows, data processing pipelines, or data visualization apps.</dd><dt>How do I get started with Gen3 Workspaces?</dt><dd>Click on any of the images below to start analyzing data!</dd></dl>",
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  },
+  "covid19DashboardConfig": {
+    "dataUrl": "https://opendata.datacommons.io/",
+    "chartsConfig": {
+      "world": [
+        [
+          {
+            "title": "Cumulative Testing in the United States",
+            "description": "The source of the data used to compile this chart is the COVID Tracking Project. This chart depicts the total number of tests to date for the top 10 states that have administered the most tests in the US.",
+            "xTitle": "State",
+            "yTitle": "Number of Tests",
+            "type": "barChart",
+            "layout": "horizontal",
+            "maxItems": 10,
+            "barColor": "#421C52",
+            "guppyConfig": {
+              "dataType": "location",
+              "xAxisProp": "province_state",
+              "yAxisProp": "totalTestsViral",
+              "filters": {
+                "=": {
+                  "project_id": "open-CTP"
+                }
+              }
+            }
+          }
+        ],
+        [
+          {
+            "title": "Daily Confirmed Cases (5-day Moving Average)",
+            "description": "This plot visualizes the number of newly confirmed COVID-19 cases for the 10 most affected countries using a 5-day moving average. This is calculated for each plotted day by averaging the values of that day, the two previous days, and the two following days. This approach helps prevent major events from skewing the data.",
+            "yTitle": "Confirmed New Cases",
+            "type": "lineChart",
+            "prop": "top10ChartData"
+          }
+        ]
+      ],
+      "illinois": [
+        [
+          {
+            "title": "Daily Reported Administered Vaccine Doses in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the daily reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_vaccine.svg"
+          },
+          {
+            "title": "Cumulative Reported Administered Vaccine Doses in Illinois ",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the cumulative reported administered vaccine doses in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_vaccine.svg"
+          },
+          {
+            "title": "10 IL Counties With The Highest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the highest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_top10.svg"
+          },
+          {
+            "title": "10 IL Counties With The Lowest Administered Vaccine Doses As Of The Most Recent Date",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the 10 counties with the lowest administered vaccine doses as of the most recent date.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_vaccine_by_county_bottom10.svg"
+          },
+          {
+            "title": "Total Deaths per 10,000 in Chicago",
+            "description": "The source of the data used to compile this chart is the Cook County Data Portal.",
+            "xTitle": "",
+            "yTitle": "",
+            "type": "barChart",
+            "layout": "vertical",
+            "maxItems": 15,
+            "barColor": "#421C52",
+            "guppyConfig": {
+              "dataType": "location",
+              "xAxisProp": "community_area",
+              "yAxisProp": "deaths_per_10000",
+              "filters": {
+                "AND": [
+                  {
+                    "=": {
+                      "project_id": "open-CHI-NBHD"
+                    }
+                  }
+                ]
+              }
+            }
+
+          },
+          {
+            "title": "Age Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by age groups and by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_age_demographic.svg"
+          },
+          {
+            "title": "Race Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by race in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_race_demographic.svg"
+          },
+          {
+            "title": "Gender Demographics in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the Illinois Department of Public Health. This chart depicts the total number of confirmed cases to date by gender in Illinois.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_gender_demographic.svg"
+          },
+          {
+            "title": "COVID-19 Google Mobility Data Visualization in Illinois In The Past 3 Months",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_IL_mobility.svg"
+          }
+        ],
+        [
+          {
+            "title": "Cook County Daily Cases",
+            "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "type": "image",
+            "path": "bayes-by-county/17031/cases.png"
+          },
+          {
+            "title": "Cook County Daily Deaths",
+            "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "type": "image",
+            "path": "bayes-by-county/17031/deaths.png"
+          },
+          {
+            "title": "Cook County Estimated Rt",
+            "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
+            "type": "image",
+            "path": "bayes-by-county/17031/Rt.png"
+          },
+          {
+            "title": "Average Rt Over Latest 7 Days Of Observations",
+            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
+            "type": "image",
+            "path": "bayes-by-county/Rt_Top20.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 60 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 60 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
+          },
+          {
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 120 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 120 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
+          },
+          {
+            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "type": "image",
+            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
+          }
+        ]
+      ],
+      "simulations": {
+        "imgCases": {
+          "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
+        },
+        "imgDeaths": {
+          "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts."
+        },
+        "imgRt": {
+          "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
+        }
+      }
+    }
+  },
+  "connectSrcCSPWhitelist": [
+    "https://covd-map-occ-prc-prod.s3.amazonaws.com"
   ]
 }
