@@ -65,7 +65,7 @@
         },
         {
           "name": "Workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "icon": "workspace",
           "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         },
@@ -89,8 +89,8 @@
           "name": "Chicagoland COVID-19 Commons Home"
         },
         {
-          "link": "https://covid19.occ-pla.net/members/chicagoland-commons-partners/",
-          "name": "Partners"
+          "link": "https://pandemicresponsecommons.org/chicagoland-covid-19-commons/",
+          "name": "About"
         },
         {
           "icon": "upload",
@@ -100,6 +100,10 @@
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Documentation"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
         }
       ]
     },
@@ -111,7 +115,17 @@
       "email": "support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
     },
-    "categorical9Colors": ["#B02F34", "#421C52", "#AEEBF2", "#E0DD10", "#40476D", "#FFA630", "#AE8799", "#035C94", "#462255"],
+    "categorical9Colors": [
+      "#B02F34",
+      "#421C52",
+      "#AEEBF2",
+      "#E0DD10",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
@@ -122,59 +136,994 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "explorerPublic": true,
+    "explorerHideEmptyFilterSection": true,
+    "explorerFilterValuesToHide": ["no data"]
   },
-  "analysisTools": [ ],
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
+  "analysisTools": [],
+  "explorerConfig": [
+    {
+      "tabTitle": "Datasets",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "date_collected",
+              "investigator_affiliation",
+              "data_description"
+            ]
+          }
+        ]
       },
-      "symptoms": {
-        "chartType": "bar",
-        "title": "Symptoms"
+      "table": {
+        "enabled": true,
+        "fields": [
+          "url",
+          "code",
+          "date_collected",
+          "investigator_affiliation",
+          "name",
+          "data_description"
+        ],
+        "linkFields": [
+          "url"
+        ]
       },
-      "source": {
-        "chartType": "pie",
-        "title": "Source"
+      "buttons": [],
+      "guppyConfig": {
+        "dataType": "dataset",
+        "nodeCountTitle": "Datasets",
+        "fieldMapping": [
+          {
+            "field": "url",
+            "name": "Source URL"
+          },
+          {
+            "field": "investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "name",
+            "name": "Dataset"
+          },
+          {
+            "field": "date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "code"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     },
-    "filters": {
-      "tabs": [
-        {
-          "title": "subject",
-          "fields":[
-            "project_id",
-            "symptoms",
-            "country",
-            "visiting_wuhan",
-            "from_wuhan",
-            "death",
-            "recovered",
-            "reporting_date",
-            "source",
-            "age"
-          ]
+    {
+      "tabTitle": "Subjects",
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
+        },
+        "gender": {
+          "chartType": "fullPie",
+          "title": "Gender"
+        },
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
+        },
+        "symptoms": {
+          "chartType": "bar",
+          "title": "Symptoms"
         }
-      ]
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Clinical",
+            "fields": [
+              "covid_19_status",
+              "vital_status",
+              "icu_status",
+              "hospital",
+              "condition",
+              "symptoms",
+              "reporting_source",
+              "exposure",
+              "pneumonia_type",
+              "ventilator_status",
+              "extubated",
+              "pO2_saturation",
+              "leukocyte_count",
+              "view",
+              "study_doi"
+            ]
+          },
+          {
+            "title": "Demographics",
+            "fields": [
+              "age",
+              "gender",
+              "ethnicity",
+              "country_region",
+              "province_state",
+              "city",
+              "travel_history_location"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "age",
+          "gender",
+          "ethnicity",
+          "country_region",
+          "province_state",
+          "city",
+          "covid_19_status",
+          "vital_status",
+          "isolation_status",
+          "icu_status",
+          "ventilator_status",
+          "hospital",
+          "symptoms",
+          "exposure",
+          "pneumonia_type",
+          "extubated",
+          "pO2_saturation",
+          "leukocyte_count",
+          "view",
+          "study_doi",
+          "reporting_source"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "covid_19_status",
+            "name": "COVID-19 Status"
+          },
+          {
+            "field": "icu_status",
+            "name": "ICU Status"
+          },
+          {
+            "field": "view",
+            "name": "X-ray View"
+          },
+          {
+            "field": "study_doi",
+            "name": "Study DOI"
+          },
+          { "field": "pO2_saturation",
+            "name": "pO2 Saturation (percent)"
+          },
+          {
+            "field": "leukocyte_count",
+            "name": "Leukocyte Count (10^3/µl)"
+          },
+          {
+            "field": "age",
+            "name": "Age (years)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "_subject_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
     },
-    "table": {
-      "enabled": true
+    {
+      "tabTitle": "Interventions",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name",
+              "title",
+              "focus",
+              "technology",
+              "development_stage",
+              "phase"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "title",
+          "focus",
+          "description",
+          "technology",
+          "development_stage",
+          "phase",
+          "sponsor",
+          "location",
+          "nct_number"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "clinical_trials",
+        "nodeCountTitle": "Interventions",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          { "field": "title",
+            "name": "Intervention Name"
+          },
+          {  "field": "nct_number",
+             "name": "NCT Number"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
     },
-    "buttons": [
-    ],
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects",
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "node_id"
+    {
+      "tabTitle": "Genomics",
+      "charts": {
+        "data_type": {
+          "chartType": "bar",
+          "title": "Data Type"
+        },
+        "data_format": {
+          "chartType": "bar",
+          "title": "Data Format"
+        },
+        "host": {
+          "chartType": "bar",
+          "title": "Host"
+        },
+        "organism": {
+          "chartType": "bar",
+          "title": "Organism"
+        },
+        "sample_type": {
+          "chartType": "bar",
+          "title": "Sample Type"
+        },
+        "isolation_source": {
+          "chartType": "bar",
+          "title": "Isolation Source"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Viral",
+            "fields": [
+              "country_region",
+              "province_state",
+              "county",
+              "host",
+              "organism",
+              "data_type",
+              "data_format",
+              "sample_type",
+              "originating_lab",
+              "submitting_lab",
+              "submitting_lab_PI",
+              "collection_date"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "country_region",
+          "province_state",
+          "county",
+          "host",
+          "organism",
+          "sample_type",
+          "originating_lab",
+          "submitting_lab",
+          "submitting_lab_PI",
+          "collection_date",
+          "file_name",
+          "data_type",
+          "data_format",
+          "file_size",
+          "object_id",
+          "project_date_collected"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Data Files Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export Data Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "genomic_file",
+        "fieldMapping": [
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "object_id",
+            "name": "GUID"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "submitting_lab_PI",
+            "name": "Submiting Lab PI"
+          },
+          {
+            "field": "collection_date",
+            "name": "Collection Date (year-month-day)"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Locations",
+      "charts": {
+        "project_investigator_affiliation": {
+          "chartType": "bar",
+          "title": "Dataset Source"
+        },
+        "country_region": {
+          "chartType": "bar",
+          "title": "Country"
+        },
+        "county": {
+          "chartType": "bar",
+          "title": "County"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Details",
+            "fields": [
+              "project_investigator_affiliation",
+              "project_name"
+            ]
+          },
+          {
+            "title": "Global",
+            "fields": [
+              "country_region",
+              "province_state",
+              "county",
+              "confirmed",
+              "deaths",
+              "recovered",
+              "testing"
+            ]
+          },
+          {
+            "title": "Illinois",
+            "fields": [
+              "community_area",
+              "state_region_description",
+              "reporting_org",
+              "deaths_per_10000",
+              "region_icu_capacity",
+              "region_icu_avail",
+              "region_vents_capacity",
+              "region_vents_available",
+              "state_vent_covid_patients",
+              "state_icu_covid_patients",
+              "state_covid_patients_non_icu",
+              "state_covid_pui_patients",
+              "state_total_covid_pui_in_hospital",
+              "state_icu_capacity",
+              "state_icu_available",
+              "state_vent_capacity",
+              "state_vents_available",
+              "state_Ventilators_open_pct",
+              "state_ventilators_in_use",
+              "state_ventilators_in_use_covid",
+              "state_ventilators_covid_patients_pct",
+              "state_total_beds",
+              "state_total_beds_available",
+              "total_in_use_beds_covid",
+              "state_pct_beds_covid_pui",
+              "state_pct_hospital_beds_available",
+              "state_icu_open_beds",
+              "state_icu_beds_used",
+              "state_icu_open_beds_pct",
+              "vaccine_administered_count",
+              "vaccine_persons_fully_vaccinated_pct",
+              "vaccine_total_delivered_vaccine_doses",
+              "vaccine_community_reported_inventory",
+              "vaccine_reported_inventory"
+            ]
+          },
+          {
+            "title": "Public Health",
+            "fields": [
+              "population_density",
+              "completed_high_school",
+              "college_degree",
+              "graduate_degree",
+              "job_density",
+              "jail",
+              "hhinc_mean",
+              "med_hhinc"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_url",
+          "project_code",
+          "project_date_collected",
+          "project_investigator_affiliation",
+          "project_name",
+          "country_region",
+          "province_state",
+          "county",
+          "community_area",
+          "state_region_description",
+          "reporting_org",
+          "date",
+          "vaccine_administered_count",
+          "vaccine_persons_fully_vaccinated_pct",
+          "vaccine_total_delivered_vaccine_doses",
+          "vaccine_community_reported_inventory",
+          "vaccine_reported_inventory",
+          "confirmed",
+          "deaths",
+          "recovered",
+          "testing",
+          "population_gtr_65",
+          "estimated_full_mech_pediatric_ventilators",
+          "region_icu_avail",
+          "region_icu_capacity",
+          "region_vents_available",
+          "region_vents_capacity",
+          "state_vent_covid_patients",
+          "state_icu_covid_patients",
+          "state_covid_patients_non_icu",
+          "state_covid_pui_patients",
+          "state_total_covid_pui_in_hospital",
+          "state_total_covid_pui_in_icu",
+          "state_icu_capacity",
+          "state_icu_available",
+          "state_vent_capacity",
+          "state_vents_available",
+          "state_Ventilators_open_pct",
+          "state_ventilators_in_use",
+          "state_ventilators_in_use_covid",
+          "state_ventilators_covid_patients_pct",
+          "state_total_beds",
+          "state_total_beds_available",
+          "state_total_beds_used",
+          "total_in_use_beds_non_covid",
+          "total_in_use_beds_covid",
+          "state_pct_beds_covid_pui",
+          "state_pct_hospital_beds_available",
+          "state_icu_open_beds",
+          "state_icu_beds_used",
+          "state_icu_open_beds_pct",
+          "population_density",
+          "completed_high_school",
+          "college_degree",
+          "graduate_degree",
+          "job_density",
+          "jail",
+          "hhinc_mean",
+          "med_hhinc"
+        ],
+        "linkFields": [
+          "project_url"
+        ]
+      },
+      "dropdowns": {
+        "download-clinical": {
+          "title": "Download Clinical Data"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-clinical",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical.csv"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "location",
+        "fieldMapping": [
+          {
+            "field": "community_area",
+            "name": "Chicago Neigborhood"
+          },
+          {
+            "field": "reporting_org",
+            "name": "IL Reporting Organization"
+          },
+          {
+            "field": "deaths_per_10000",
+            "name": "Chicago Neighborhood Deaths (per 10,000 residents)"
+          },
+          {
+            "field": "staffed_all_beds",
+            "name": "Staffed Beds"
+          },
+          {
+            "field": "staffed_icu_beds",
+            "name": "ICU Beds"
+          },
+          {
+            "field": "population_gtr_65",
+            "name": "Population Greater Than 65"
+          },
+          {
+            "field": "estimated_full_mech_ventilators",
+            "name": "Estimated Ventilators"
+          },
+          {
+            "field": "estimated_full_mech_pediatric_ventilators",
+            "name": "Estimated Pediatric Ventilators"
+          },
+          {
+            "field": "province_state",
+            "name": "Province or State"
+          },
+          {
+            "field": "country_region",
+            "name": "Country or Region"
+          },
+          {
+            "field": "project_url",
+            "name": "Source URL"
+          },
+          {
+            "field": "project_code",
+            "name": "Code"
+          },
+          {
+            "field": "project_name",
+            "name": "Dataset"
+          },
+          {
+            "field": "project_investigator_affiliation",
+            "name": "Source"
+          },
+          {
+            "field": "reporting_org",
+            "name": "Reporting Organization"
+          },
+          {
+            "field": "state_region_description",
+            "name": "IL Hospital Region"
+          },
+          {
+            "field": "region_icu_avail",
+            "name": "IL Region ICU Availability"
+          },
+          {
+            "field": "region_icu_capacity",
+            "name": "IL Region ICU Capacity"
+          },
+          {
+            "field": "region_vents_available",
+            "name": "IL Region Ventilators Available"
+          },
+          {
+            "field": "region_vents_capacity",
+            "name": "IL Region Ventilators Capacity"
+          },
+          {
+            "field": "state_icu_capacity",
+            "name": "IL ICU Capacity"
+          },
+          {
+            "field": "state_icu_covid_patients",
+            "name": "IL ICU COVID-19 Patients"
+          },
+          {
+            "field": "state_vent_capacity",
+            "name": "IL Ventilator Capacity"
+          },
+          {
+            "field": "state_vent_covid_patients",
+            "name": "IL Ventilator COVID-19 Patients"
+          },
+          {
+            "field": "state_ventilators_in_use_covid",
+            "name": "IL Ventilators In Use COVID-19"
+          },
+          {
+            "field": "state_icu_available",
+            "name": "IL ICU Available"
+          },
+          {
+            "field": "state_vents_available",
+            "name": "IL Ventilators Available"
+          },
+          {
+            "field": "state_total_beds",
+            "name": "IL Total Beds"
+          },
+          {
+            "field": "state_total_beds_available",
+            "name": "IL Total Beds Available "
+          },
+          {
+            "field": "state_total_beds_used",
+            "name": "IL Total Beds Used"
+          },
+          {
+            "field": "state_pct_hospital_beds_available",
+            "name": "IL Hospital Bed Available (percent)"
+          },
+          {
+            "field": "state_icu_open_beds",
+            "name": "IL ICU Open Beds"
+          },
+          {
+            "field": "state_icu_beds_used",
+            "name": "IL ICU Beds in Use"
+          },
+          {
+            "field": "state_icu_open_beds_pct",
+            "name": "IL ICU Open Beds (percent)"
+          },
+          {
+            "field": "state_covid_pui_patients",
+            "name": "IL COVID-19 PUI Patients"
+          },
+          {
+            "field": "state_Ventilators_open_pct",
+            "name": "IL Ventilators Open (percent)"
+          },
+          {
+            "field": "state_ventilators_in_use",
+            "name": "IL Ventilators In Use"
+          },
+          {
+            "field": "state_ventilators_covid_patients_pct",
+            "name": "IL Ventilators COVID-19 Patients (percent)"
+          },
+          {
+            "field": "state_covid_patients_non_icu",
+            "name": "IL COVID-19 Patients Non ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_icu",
+            "name": "IL Total COVID-19 PUI ICU"
+          },
+          {
+            "field": "state_total_covid_pui_in_hospital",
+            "name": "IL COVID-19 PUI Hospitalized"
+          },
+          {
+            "field": "state_pct_beds_covid_pui",
+            "name": "IL Percentage Beds COVID-19 PUI"
+          },
+          {
+            "field": "total_in_use_beds_non_covid",
+            "name": "IL Total In Use Non-COVID-19 Beds "
+          },
+          {
+            "field": "total_in_use_beds_covid",
+            "name": "IL Total In Use COVID-19 Beds"
+          },
+          {
+            "field": "hhinc_mean",
+            "name": "Mean Household Income (US Currency)"
+          },
+          {
+            "field": "med_hhinc",
+            "name": "Median Household Income (USD)"
+          },
+          { 
+            "field": "population_density",
+            "name": "Population Density (residents per square mile)"
+          },
+          {
+            "field": "job_density",
+            "name": "Job Density (per square mile)"
+          },
+          {
+            "field": "jail",
+            "name": "Incarcerated"
+          },
+          {
+            "field": "project_date_collected",
+            "name": "Data Collection Status"
+          },
+          {
+            "field": "vaccine_administered_count",
+            "name": "Vaccines Administered"
+          },
+          {
+            "field": "vaccine_persons_fully_vaccinated_pct",
+            "name": "Percent Vaccinated"
+          },
+          {
+            "field": "vaccine_total_delivered_vaccine_doses",
+            "name": "Vaccine Doses Delivered"
+          },
+          {
+            "field": "vaccine_community_reported_inventory",
+            "name": "Community Sites Vaccine Inventory"
+          },
+          {
+            "field": "vaccine_reported_inventory",
+            "name": "Total Vaccine Inventory"
+          }
+        ],
+        "nodeCountTitle": "Locations",
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "project_id"
+        },
+        "accessibleFieldCheckList": ["project_id"],
+        "accessibleValidationField": "project_id"
       }
     }
-  },
+  ],
   "resourceBrowser": {
     "title": "COVID-19 Jupyter Notebooks",
     "public": true,
@@ -182,7 +1131,7 @@
     "resources": [
       {
         "title": "Exploring the Demographics of COVID-19 Cases",
-        "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in a Gen3 Data Commons.",
+        "description": "In this notebook, we explore some of the demographic data associated with COVID-19 cases in the Chicagoland Pandemic Response Commons.",
         "link": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.html",
         "imageUrl": "/dashboard/Public/notebooks/kaggle_data_analysis_04072020.png"
       },
@@ -197,12 +1146,93 @@
         "description": "We demonstrate the visualization of the Johns Hopkins COVID-19 data currently available in the Chicagoland Pandemic Response Commons. We plot the trend of confirmed, deaths and recovered infected cases for countries of interest.",
         "link": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.html",
         "imageUrl": "/dashboard/Public/notebooks/COVID-19-JHU_data_analysis_04072020.png"
+      },
+      {
+        "title": "A Live View of COVID-19’s Global Presence",
+        "description": "In this R notebook, we track COVID-19 local (US) and global cases with active, confirmed, recovered and death toll on the map at the latest time point. The interactive maps indicate the concentration of coronavirus cases across the US and around the world.",
+        "link": "/dashboard/Public/notebooks/jhu_map.html",
+        "imageUrl": "/dashboard/Public/notebooks/jhu_map.png"
+      },
+      {
+        "title": "An Extended SEIR Model For COVID-19",
+        "description": "In this notebook we implement an extended SEIR model of the COVID-19 outbreak, fit probability distributions to model parameters, and apply monte carlo methods to the resulting stochastic model.",
+        "link": "/dashboard/Public/notebooks/extended-seir.html",
+        "imageUrl": "/dashboard/Public/notebooks/extended-seir.png"
+      },
+      {
+        "title": "COVID-19 Testing Over Time in the US",
+        "description": "COVID-19 testing is very crucial to understand the spread of the pandemic. In this Python notebook, we have focused our efforts on visualizing the COVID-19 testing data across the U.S. States and Territories from the COVID Tracking Project. The animations will allow you to see how testing data has changed over time.",
+        "link": "/dashboard/Public/notebooks/CTP_testing.html",
+        "imageUrl": "/dashboard/Public/notebooks/CTP_testing.png"
+      },
+      {
+        "title": "nCoV-2019 Data Visualization",
+        "description": "In this notebook, we are performing some visual analysis on the individual COVID-19 case reports that provide aggregated data on demographic data, geographic location and symptoms. Please note that the data is available from Jan 3, 2020 to April 30, 2020. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/nCoV-2019_data_analysis.png"
+      },
+      {
+        "title": "Demo: Exploring clinical data from multiple commons",
+        "description": "In this notebook, we obtain the clinical data for multiple projects from the Chicagoland Pandemic Response Commons and the NCI Genomic Data Commons (GDC) and visualize some of the clinical attributes. This notebook is for demonstration purposes only and not biologically meaningful.",
+        "link": "/dashboard/Public/notebooks/TCGA_COAD_COVID.html",
+        "imageUrl": "/dashboard/Public/notebooks/TCGA_COAD_COVID.png"
+      },
+      {
+        "title": "Visualize Statistical Summary Reports from Partnering Healthcare Providers",
+        "description": "This notebook provides an example on how to visualize the status of COVID-19 and general patients information at multiple regional healthcare providers using the demo Statistical Summary Report data from 03/10/2020 to 11/10/2020.",
+        "link": "/dashboard/Public/notebooks/SSR_notebook.html",
+        "imageUrl": "/dashboard/Public/notebooks/SSR_notebook.png"
+      },
+      {
+        "title": "COVID-19 X-ray images classification",
+        "description": "This notebook replicates the DarkCovidNet model and performes transfer learning with the GoogLeNet model to classify radiological images as indicative of either 'COVID-19', 'Normal' or 'Pneumonia' to assist in the diagnosis of COVID-19.",
+        "link": "/dashboard/Public/notebooks/CNN_XRAY_CF.html",
+        "imageUrl": "/dashboard/Public/notebooks/CNN_XRAY_CF.png"
+      },
+      {
+        "title": "Google Mobility Data Visualization",
+        "description": "In this notebook, we demonstrate how to query the google mobility data using the BigQuery API client python library, and visualize the mobility changes over time across the United States since February 2020.",
+        "link": "/dashboard/Public/notebooks/google_mobility.html",
+        "imageUrl": "/dashboard/Public/notebooks/google_mobility.png"
+      },
+      {
+        "title": "COVID-19 Data Visualization in Illinois",
+        "description": "This notebook provides a snapshot of publicly available data related to COVID-19 in Illinois from the Illinois Department of Public Health, Google and Johns Hopkins CSSE. Graphics illustrate the demographics, administered vaccine doses, google mobility data and forecasted COVID-19 cases in Illinois.",
+        "link": "/dashboard/Public/notebooks/IL_tab_charts.html",
+        "imageUrl": "/dashboard/Public/notebooks/IL_tab_charts.png"
+      },
+      {
+        "title": "3D Coronavirus SARS-CoV-2 Protein Visualization",
+        "description": "This notebook provides an example to manipulate coronavirus SARS-CoV-2 DNA sequence, amino acid sequence and use visualization tools to present the three-dimensional (3D) structure of SARS-CoV-2 protein structures interactively.",
+        "link": "/dashboard/Public/notebooks/3D_Protein_Vis.html",
+        "imageUrl": "/dashboard/Public/notebooks/3D_Protein_Vis.png"
+      },
+      {
+        "title": "Data Visualization of COVID-19 Vaccinations, Cases, and Deaths in Illinois",
+        "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
+        "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
+      },
+      {
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
     ]
   },
-  "enableCovid19Dashboard": true,
+  "workspacePageTitle": "Welcome to the Gen3 Workspace",
+  "workspacePageDescription": "<dl><dt>What is a Gen3 Workspace?</dt><dd>Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources, including Gen3 Data Commons.</dd><dt>What can I do with a Gen3 Workspace?</dt><dd>By default Gen3 Workspaces include Jupyter notebooks and RStudio but can be configured to host virtually any application, including analysis workflows, data processing pipelines, or data visualization apps.</dd><dt>How do I get started with Gen3 Workspaces?</dt><dd>Click on any of the images below to start analyzing data!</dd></dl>",
+  "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    }
+  },
   "covid19DashboardConfig": {
     "dataUrl": "https://opendata.datacommons.io/",
     "chartsConfig": {
@@ -372,5 +1402,8 @@
         }
       }
     }
-  }
+  },
+  "connectSrcCSPWhitelist": [
+    "https://covd-map-occ-prc-prod.s3.amazonaws.com"
+  ]
 }
