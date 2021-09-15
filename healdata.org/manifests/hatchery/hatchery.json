@@ -380,7 +380,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
-      "image": "quay.io/cdis/heal-notebooks:jcoin__74c68bafc3a655def4423d252f9a6ba1e89273fc",
+      "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
