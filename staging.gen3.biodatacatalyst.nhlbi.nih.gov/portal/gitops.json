@@ -87,6 +87,12 @@
           "name": "Exploration"
         },
         {
+          "icon": "query",
+          "link": "/discovery",
+          "color": "#a2a2a2",
+          "name": "Discovery"
+        },
+        {
           "icon": "workspace",
           "link": "/workspace",
           "color": "#a2a2a2",
@@ -648,16 +654,16 @@
       }
     },
     "aggregations": [
-        {
-            "name": "Studies",
-            "field": "study_id",
-            "type": "count"
-        },
-        {
-            "name": "Total Subjects",
-            "field": "_subjects_count",
-            "type": "sum"
-        }
+      {
+        "name": "Studies",
+        "field": "study_id",
+        "type": "count"
+      },
+      {
+        "name": "Total Subjects",
+        "field": "_subjects_count",
+        "type": "sum"
+      }
     ],
     "tagSelector": {
       "title": "Tags by category"
