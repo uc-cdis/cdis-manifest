@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/use_normal_jenkins_pod') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
