@@ -1,1 +1,4 @@
-/* gitops default css */
+/* Hide Data Dictionary information */
+.footer__version-area > div:nth-child(1) {
+  display: none;
+}
