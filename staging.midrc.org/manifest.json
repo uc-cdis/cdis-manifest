@@ -23,7 +23,7 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.08",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.08",
-    "data-ingestion-pipeline": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-ingestion-pipeline:2021.06",
+    "data-ingestion-pipeline": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-ingestion-pipeline:2021.08",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.08"
   },
   "arborist": {
@@ -40,7 +40,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.06"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.08"
     }
   },
   "guppy": {
