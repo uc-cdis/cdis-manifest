@@ -1,10 +1,9 @@
 {
   "gaTrackingId": "UA-119127212-5",
+  "ddEnv": "brhprod",
   "graphql": {
-    "boardCounts": [
-    ],
-    "chartCounts": [
-    ],
+    "boardCounts": [],
+    "chartCounts": [],
     "projectDetails": "boardCounts"
   },
   "components": {
@@ -14,8 +13,7 @@
         "heading": "",
         "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations."
       },
-      "buttons": [
-	{
+      "buttons": [{
           "name": "Discover Data",
           "icon": "data-explore",
           "body": "Discover Data",
@@ -30,12 +28,10 @@
           "label": "Run analysis"
         }
       ],
-      "homepageChartNodes": [
-      ]
+      "homepageChartNodes": []
     },
     "navigation": {
-      "items": [
-        {
+      "items": [{
           "icon": "query",
           "link": "/discovery",
           "color": "#a2a2a2",
@@ -56,12 +52,10 @@
       ]
     },
     "topBar": {
-      "items": [
-        {
-          "link": "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data",
-          "name": "Documentation"
-        }
-      ]
+      "items": [{
+        "link": "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data",
+        "name": "Documentation"
+      }]
     },
     "login": {
       "title": "Biomedical Research Hub",
@@ -73,8 +67,7 @@
       },
       "image": "stage-icons/stage-gene"
     },
-    "footerLogos": [
-      {
+    "footerLogos": [{
         "src": "/src/img/sponsors/gitops-sponsors/gen3_50.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
@@ -86,8 +79,7 @@
       }
     ],
     "footer": {
-      "links": [
-      ]
+      "links": []
     },
     "categorical9Colors": [
       "#c0143c",
@@ -132,8 +124,7 @@
       "fileCounts": false
     },
     "filters": {
-      "tabs": [
-        {
+      "tabs": [{
           "title": "Project",
           "fields": [
             "project_id",
@@ -220,8 +211,7 @@
         "title": "Download"
       }
     },
-    "buttons": [
-      {
+    "buttons": [{
         "enabled": true,
         "type": "export",
         "title": "Export All to Terra",
@@ -264,8 +254,7 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fileCountField": "file_count",
-      "fieldMapping": [
-        {
+      "fieldMapping": [{
           "field": "_subject_id",
           "name": "Subject ID"
         },
@@ -441,22 +430,20 @@
       }
     },
     "filters": {
-      "tabs": [
-        {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_category",
-            "data_type",
-            "data_format",
-            "callset",
-            "bucket_path"
-          ],
-          "searchFields": [
-            "file_name"
-          ]
-        }
-      ]
+      "tabs": [{
+        "title": "File",
+        "fields": [
+          "project_id",
+          "data_category",
+          "data_type",
+          "data_format",
+          "callset",
+          "bucket_path"
+        ],
+        "searchFields": [
+          "file_name"
+        ]
+      }]
     },
     "table": {
       "enabled": true,
@@ -470,12 +457,10 @@
     },
     "guppyConfig": {
       "dataType": "file",
-      "fieldMapping": [
-        {
-          "field": "object_id",
-          "name": "GUID"
-        }
-      ],
+      "fieldMapping": [{
+        "field": "object_id",
+        "name": "GUID"
+      }],
       "nodeCountTitle": "Files",
       "manifestMapping": {
         "resourceIndexType": "subject",
@@ -489,8 +474,7 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
-    "buttons": [
-      {
+    "buttons": [{
         "enabled": true,
         "type": "file-manifest",
         "title": "Download Manifest",
@@ -538,6 +522,27 @@
   },
   "discoveryConfig": {
     "features": {
+      "advSearchFilters": {
+        "enabled": true,
+        "field": "advSearchFilters",
+        "filters": [
+          { "key": "Research Focus Area" },
+          { "key": "Administering IC(s)" },
+          { "key": "Simulated vs. Real Data" },
+          { "key": "Year Grant Awarded" },
+          { "key": "Study Description" }
+        ]
+      },
+      "exportToWorkspace": {
+        "enabled": true,
+        "manifestFieldName": "__manifest",
+        "enableDownloadManifest": true,
+        "downloadManifestButtonText": "Download",
+        "documentationLinks": {
+          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+        }
+      },
       "pageTitle": {
         "enabled": false,
         "text": "Study Discovery"
@@ -551,23 +556,21 @@
         "enabled": true
       }
     },
-    "aggregations": [
-        {
-            "name": "Studies",
-            "field": "frontend_uid",
-            "type": "count"
-        },
-        {
-            "name": "Total Subjects",
-            "field": "_subjects_count",
-            "type": "sum"
-        }
+    "aggregations": [{
+        "name": "Studies",
+        "field": "frontend_uid",
+        "type": "count"
+      },
+      {
+        "name": "Total Subjects",
+        "field": "_subjects_count",
+        "type": "sum"
+      }
     ],
     "tagSelector": {
       "title": "Tags by category"
     },
-    "studyColumns": [
-      {
+    "studyColumns": [{
         "name": "Study Name",
         "field": "name",
         "errorIfNotAvailable": false,
@@ -591,7 +594,7 @@
         "width": "98px"
       },
       {
-        "name": "dbGaP Accession Number",
+        "name": "ID Number",
         "field": "study_id",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a",
@@ -618,12 +621,11 @@
       "header": {
         "field": "name"
       },
-      "fieldsToShow": [
-        {
+      "fieldsToShow": [{
           "groupName": "Study Identifiers",
+          "groupWidth": "half",
           "includeName": false,
-          "fields": [
-            {
+          "fields": [{
               "name": "Number of Subjects",
               "field": "_subjects_count",
               "contentType": "number"
@@ -642,7 +644,7 @@
               "valueIfNotAvailable": "N/A"
             },
             {
-              "name": "dbGaP Study Accession",
+              "name": "dbGaP Accession Number",
               "field": "dbgap_accession",
               "contentType": "string",
               "includeName": true,
@@ -663,16 +665,15 @@
           ]
         },
         {
-          "fields": [
-            {
-              "name": "Description",
-              "field": "study_description",
-              "contentType": "paragraphs",
-              "includeName": false,
-              "includeIfNotAvailable": true,
-              "valueIfNotAvailable": "No description has been provided for this study."
-            }
-          ]
+          "groupWidth": "full",
+          "fields": [{
+            "name": "Description",
+            "field": "study_description",
+            "contentType": "paragraphs",
+            "includeName": true,
+            "includeIfNotAvailable": true,
+            "valueIfNotAvailable": "No description has been provided for this study."
+          }]
         }
       ]
     },
@@ -681,8 +682,7 @@
       "authzField": "authz",
       "uid": "frontend_uid"
     },
-    "tagCategories": [
-      {
+    "tagCategories": [{
         "name": "Commons",
         "color": "rgba(129, 211, 248, 1)",
         "display": true
@@ -731,4 +731,3 @@
     "message": "Warning: Your selected cohort contains more subjects than are currently supported for import by Terra. It is recommended that you slice your data into segments of no more than 120,000 subjects and then export each segment separately. Would you like to continue anyway?"
   }
 }
-

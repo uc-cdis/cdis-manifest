@@ -1,6 +1,6 @@
 {
   "notes": [
-    "This is the dev environment manifest",
+    "This is the occ environment manifest",
     "That's all I have to say"
   ],
   "jenkins": {
@@ -8,7 +8,7 @@
   },
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.12",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.12",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.12",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.12",

@@ -10,6 +10,7 @@
 		"indexd": "quay.io/cdis/indexd:2021.04",
 		"fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
 		"portal": "quay.io/cdis/dataguids:1.0.1",
+		"metadata": "quay.io/cdis/metadata-service:2021.06",
 		"revproxy": "quay.io/cdis/nginx:2021.04"
 	},
 	"jupyterhub": {
@@ -64,6 +65,18 @@
 				"name": "AnVIL",
 				"host": "https://gen3.theanvil.io/index/",
 				"hints": [".*dg\\.ANV0.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "JCOIN",
+				"host": "https://jcoin.datacommons.io/index/",
+				"hints": [".*dg\\.6VTS.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "External Data HEAL",
+				"host": "https://externaldata.healdata.org/index/",
+				"hints": [".*dg\\.H35L.*"],
 				"type": "indexd"
 			}
 		]

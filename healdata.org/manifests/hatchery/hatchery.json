@@ -2,10 +2,252 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "pay-models": [
+    {
+      "user": "anthony.juehne@nih.gov",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "aprokh@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "atharvar@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "avantol@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "emalinowski@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "fan1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "haraprasadj@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "kcbradford@renci.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mcannalte@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mpingram@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "nmetokishlubsky@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "ribeyre@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "svburke@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "tara@taralichtenberg.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "trevars@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "yilinxu@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "zgowani@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "qureshi@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mbkranz@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "jmontmaxwell@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "rgrossman1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "Kranz-michael@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "tentner-andrea@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "LeClere-Felicia@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "Kantor-Liz@norc.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "e.a.kantor@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "manorathan@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "kwroblewski@health.bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "rchua@bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "ahotton@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "kekasza@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "bryanb@medicine.bsd.uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "bryanlbrick@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "mshao1@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "craigrbarnes@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "cgmeyer@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "xritter@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "rhys@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "stein@rand.org",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "cgrogan@uchicago.edu",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    }
+  ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:2021.05",
+    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "healdata.org"
@@ -26,31 +268,17 @@
   },
   "containers": [
     {
-      "target-port": 8787,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "R Studio",
-      "image": "heliumdatastage/rstudio-server:1",
-      "env": {
-        "DISABLE_AUTH": "true"
-      },
-      "args": [],
-      "path-rewrite": "/",
-      "use-tls": "false",
-      "ready-probe": "/"
-    },
-    {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
-      "name": "Jupyter Notebook Bio Python",
+      "name": "(Generic) Jupyter Notebook",
       "image": "quay.io/occ_data/jupyternotebook:1.9.0",
       "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -62,7 +290,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -71,15 +299,15 @@
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "8192Mi",
-      "name": "Jupyter Notebook Power Python",
-      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "memory-limit": "1024Mi",
+      "name": "(Generic, User-licensed) Stata Notebook ",
+      "image": "quay.io/cdis/stata-heal:master",
       "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -91,7 +319,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -100,19 +328,20 @@
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "8096Mi",
-      "name": "Helium Autoencoder Demo",
-      "image": "quay.io/cdis/auntoencoder-copd-demo:latest",
+      "memory-limit": "1024Mi",
+      "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
+      "image": "quay.io/cdis/stata-heal:gen3-licensed",
       "env": {},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
-        "start-notebook.sh"
+        "/bin/bash",
+        "/tmp/wait_for_license.sh"
       ],
       "path-rewrite": "/lw-workspace/proxy/",
       "use-tls": "false",
@@ -120,17 +349,18 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
-      "fs-gid": 100
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "8096Mi",
-      "name": "HEAL Demo",
-      "image": "quay.io/cdis/jupyter-notebook:jupyter-heal1.0.3",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
+      "image": "quay.io/cdis/heal-notebooks:jcoin__74c68bafc3a655def4423d252f9a6ba1e89273fc",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -138,7 +368,7 @@
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
       "command": [
@@ -150,7 +380,131 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__3b9ce410d22c92859b827ea8c95dccd521671246",
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__f7afc9b185d904bd60a1449e0bfb6d56c50b6ba7",
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c223fa211212638a73436a5b38b81400bc25ace2",
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
+      "image": "quay.io/cdis/heal-notebooks:test_r-kernel",
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,

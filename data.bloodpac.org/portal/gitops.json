@@ -169,8 +169,13 @@
         {
           "link": "https://www.synapse.org/#!Synapse:syn8011461/wiki/411591",
           "name": "Documentation"
+        },
+        {
+          "link": "bpa-support@datacommons.io",
+          "name": "Email Support"
         }
-      ]
+      ],
+      "useProfileDropdown": false
     },
     "login": {
       "title": "BloodPAC Data Commons",
@@ -186,7 +191,7 @@
         "description": "",
         "questions": [{
           "name": "",
-          "question": "WARNING: To protect the system from unauthorized use and to ensure that the system is functioning properly, activities on this system are monitored and recorded and subject to audit. Use of this system is expressed consent to such monitoring and recording. Any unauthorized access or use of this system is prohibited and could be subject to criminal and civil penalties. Users are prohibited from using the system in a way that is inconsistent with the Data Use Agreement, Acceptable Use Policy and related agreements that you have signed.  Please pay particular attention to the restrictions on controlled access data and transfer it in an approved secure manner.",
+          "question": "NOTICE:  To protect the system from unauthorized use and to ensure that the system is functioning, activities on this system are monitored and recorded and subject to audit.  Use of this system is express consent to such monitoring and recording.  Any unauthorized access or use of this system is prohibited.  You may only use this system if you have been designated as an Authenticated Individual by your company or institution.  You may not use the system in any way that is inconsistent with the agreements between CCSR and your company or institution. Please pay particular attention to the restrictions on controlled access data and transfer it in an approved secure manner.",
           "options": ["I agree"],
           "answer": 0,
           "hint": "Click on I agree"
@@ -368,11 +373,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Cases",
+          "type": "data-tsv",
+          "title": "Download Case Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "cases.json"
+          "fileName": "BloodPAC_cases.tsv"
         },
         {
           "enabled": false,
@@ -509,11 +514,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Biospecimens",
+          "type": "data-tsv",
+          "title": "Download Biospecimen Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "biospecimens.json"
+          "fileName": "BloodPAC_biospecimens.tsv"
         },
         {
           "enabled": false,
@@ -622,11 +627,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Aliquots",
+          "type": "data-tsv",
+          "title": "Download Aliquot Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "aliquots.json"
+          "fileName": "aliquots.tsv"
         },
         {
           "enabled": false,
@@ -735,11 +740,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
-          "title": "Download Read Groups",
+          "type": "data-tsv",
+          "title": "Download Read Group Metadata",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "read_groups.json"
+          "fileName": "BloodPAC_read_groups.tsv"
         },
         {
           "enabled": false,
@@ -924,11 +929,11 @@
       },
       "buttons": [{
           "enabled": true,
-          "type": "data",
+          "type": "data-tsv",
           "title": "Download Medical History",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "medical_history.json"
+          "fileName": "medical_history.tsv"
         },
         {
           "enabled": false,
@@ -1028,7 +1033,6 @@
       "dropdowns": {}
     }
   ],
-
   "discoveryConfig": {
     "features": {
       "pageTitle": {
@@ -1059,18 +1063,6 @@
       "width": 200
     },
     {
-      "name": "Authors",
-      "field": "authors",
-      "contentType": "string",
-      "width": 300
-    },
-    {
-      "name": "Affiliations",
-      "field": "author_affiliations",
-      "contentType": "string",
-      "ellipsis": true
-    },
-    {
       "name": "Journal",
       "field": "journal",
       "contentType": "string"
@@ -1081,39 +1073,8 @@
       "contentType": "string"
     },
     {
-      "name": "Data Availability Date",
-      "field": "data_availability_date",
-      "contentType": "string"
-    },
-    {
-      "name": "Brief Description of Data Available",
-      "field": "data_description",
-      "contentType": "string",
-      "ellipsis": true
-    },
-    {
-      "name": "Sponsors/Acknowledgements",
-      "field": "sponsors",
-      "contentType": "string"
-    },
-    {
-      "name": "Study Number/Codes",
-      "field": "study_codes",
-      "contentType": "string"
-    },
-    {
       "name": "Condition",
       "field": "condition",
-      "contentType": "string"
-    },
-    {
-      "name": "Study Type",
-      "field": "study_type",
-      "contentType": "string"
-    },
-    {
-      "name": "Websites",
-      "field": "websites",
       "contentType": "string"
     }
   ],
@@ -1127,6 +1088,9 @@
     "studyPageFields": {
       "header": {
         "field": "title"
+      },
+      "downloadLinks": {
+        "field": "data_download_links"
       },
       "fieldsToShow": [{
           "groupName": "Publication Identifiers",
@@ -1157,7 +1121,7 @@
               "contentType": "string"
             },
             {
-              "name": "Brief Description of Data Available",
+              "name": "Description of Data Available",
               "field": "data_description",
               "contentType": "string"
             },

@@ -86,37 +86,49 @@
         {
           "icon": "query",
           "link": "/discovery",
-          "name": "Discovery"
+          "name": "Discovery",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies."
         },
         {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
-          "name": "Dictionary"
+          "name": "Dictionary",
+          "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
         },
         {
           "icon": "exploration",
           "link": "/explorer",
           "color": "#a2a2a2",
-          "name": "Exploration"
+          "name": "Exploration",
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
         },
         {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "Query"
+          "name": "Query",
+          "tooltip": "Query the databases using GraphiQL."
+        },
+        {
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "icon": "analysis",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
-          "name": "Workspace"
+          "name": "Workspace",
+          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
-          "name": "Profile"
+          "name": "Profile",
+          "tooltip": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
         }
       ]
     },
@@ -458,5 +470,24 @@
       }
     ],
     "dropdowns": {}
+  },
+  "resourceBrowser": {
+    "title": "Jupyter Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
+    "resources": [
+      {
+        "title": "Canine Data Commons Data Visualization Notebook",
+        "description": "Download node files, show/select data, and plot with this notebook using data hosted on the Canine Data Commons(https://caninedc.org) stored under the NHGRI project.",
+        "link": "https://gen3.org/resources/user/analyze-data/notebook2_canine.html",
+        "imageUrl": "/dashboard/Public/notebooks/notebook_canine.png"
+      },
+      {
+        "title": "Gene Expression Analysis Notebook",
+        "description": "Download data files and metadata using the gen3-client and the Gen3 SDK, respectively, and bring them into the workspace. Run gene expression analysis and statistical analysis on the data files and metadata, respectively, and plot the outcome in different scenarios. This data analysis notebook uses data hosted on the generic Data Commons (gen3.datacommons.io).",
+        "link": "https://gen3.org/resources/user/analyze-data/notebook3_gen3datacommonsio.html",
+        "imageUrl": "/dashboard/Public/notebooks/notebook_gene.png"
+      }
+    ]
   }
 }

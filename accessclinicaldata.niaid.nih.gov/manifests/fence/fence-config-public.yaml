@@ -1,0 +1,206 @@
+# //////////////////////////////////////////////////////////////////////////////////////
+# GENERAL
+#   - Fill out all variables!
+# //////////////////////////////////////////////////////////////////////////////////////
+APP_NAME: Gen3 Data Commons
+# Where fence microservice is deployed
+BASE_URL: https://accessclinicaldata.niaid.nih.gov/user
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# DEBUG & SECURITY SETTINGS
+#   - Modify based on whether you're in a dev environment or in production
+# //////////////////////////////////////////////////////////////////////////////////////
+# flask's debug setting
+# WARNING: DO NOT ENABLE IN PRODUCTION
+DEBUG: false
+# if true, will automatically login a user with username "test"
+MOCK_AUTH: false
+# if true, will only fake a successful login response from Google in /login/google
+MOCK_GOOGLE_AUTH: false
+# if true, will ignore anything configured in STORAGE_CREDENTIALS
+MOCK_STORAGE: true
+# allow OIDC traffic on http for development. By default it requires https.
+#
+# WARNING: ONLY set to true when fence will be deployed in such a way that it will
+#          ONLY receive traffic from internal clients and can safely use HTTP.
+AUTHLIB_INSECURE_TRANSPORT: true
+
+# set if you want browsers to only send cookies with requests over HTTPS
+SESSION_COOKIE_SECURE: true
+
+ENABLE_CSRF_PROTECTION: true
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# LOGIN
+#   - Modify based on which OIDC client(s) you configured above
+#   - NOTE: You can have multiple IDPs for users to login with, but one has to be set
+#           as the default
+# //////////////////////////////////////////////////////////////////////////////////////
+# Login url for identity provider (IDP):
+#   Google? Use: '{{BASE_URL}}/login/google'
+#   Multi-tenant fence (e.g. another fence instance)? Use: '{{BASE_URL}}/login/fence'
+#   Sibboleth? Use: '{{BASE_URL}}/login/shib'
+DEFAULT_LOGIN_URL: https://accessclinicaldata.niaid.nih.gov/user/login/fence
+DEFAULT_LOGIN_IDP: fence
+
+LOGIN_OPTIONS:
+  - name: 'ORCID Login'
+    idp: fence
+    fence_idp: orcid
+  - name: 'InCommon Login'
+    idp: fence
+    fence_idp: shibboleth
+    # "shib_idps" can be '*' or a list of one or more entity IDs
+    shib_idps: '*'
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# LIBRARY CONFIGURATION (authlib & flask)
+#   - Already contains reasonable defaults
+# //////////////////////////////////////////////////////////////////////////////////////
+# authlib-specific configs for OIDC flow and JWTs
+# NOTE: the OAUTH2_JWT_KEY cfg gets set automatically by fence if keys are setup
+#       correctly
+OAUTH2_JWT_ALG: 'RS256'
+OAUTH2_JWT_ENABLED: true
+OAUTH2_JWT_ISS: '{{BASE_URL}}'
+OAUTH2_PROVIDER_ERROR_URI: '/api/oauth2/errors'
+
+# used for flask, "path mounted under by the application / web server"
+# since we deploy as microservices, fence is typically under {{base}}/user
+# this is also why our BASE_URL default ends in /user
+APPLICATION_ROOT: '/user'
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# Tokens, Lifetimes, & Expirations
+#   - Already contains reasonable defaults
+# //////////////////////////////////////////////////////////////////////////////////////
+# The name of the browser cookie in which the access token will be stored.
+ACCESS_TOKEN_COOKIE_NAME: "access_token"
+
+# The name of the browser cookie in which the session token will be stored.
+# Note that the session token also stores information for the
+# ``flask.session`` in the ``context`` field of the token.
+SESSION_COOKIE_NAME: "fence"
+
+OAUTH2_TOKEN_EXPIRES_IN:
+  "authorization_code": 1200
+  "implicit": 1200
+
+# The number of seconds after an access token is issued until it expires.
+ACCESS_TOKEN_EXPIRES_IN: 1200
+
+# The number of seconds after a refresh token is issued until it expires.
+REFRESH_TOKEN_EXPIRES_IN: 2592000
+
+# The number of seconds after which a browser session is considered stale.
+SESSION_TIMEOUT: 1800
+
+# The maximum session lifetime in seconds.
+SESSION_LIFETIME: 28800
+
+# The number of seconds the user's Google service account key used for
+# url signing will last before being expired/rotated
+# 30 days: 2592000 seconds
+GOOGLE_SERVICE_ACCOUNT_KEY_FOR_URL_SIGNING_EXPIRES_IN: 2592000
+
+# The number of seconds after a User's Google Service account is added to bucket
+# access until it expires.
+# 7 days: 604800 seconds
+GOOGLE_USER_SERVICE_ACCOUNT_ACCESS_EXPIRES_IN: 604800
+
+# The number of seconds after a User's Google account is added to bucket
+# access until it expires.
+GOOGLE_ACCOUNT_ACCESS_EXPIRES_IN: 86400
+
+# The number of seconds after a pre-signed url is issued until it expires.
+MAX_PRESIGNED_URL_TTL: 3600
+
+# The number of seconds after an API KEY is issued until it expires.
+MAX_API_KEY_TTL: 2592000
+
+# The number of seconds after an access token is issued until it expires.
+MAX_ACCESS_TOKEN_TTL: 3600
+
+########################################################################################
+#                               OPTIONAL CONFIGURATIONS                                #
+########################################################################################
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# SUPPORT INFO
+# //////////////////////////////////////////////////////////////////////////////////////
+# If you want an email address to show up when an unhandled error occurs, provide one
+# here. Something like: support@example.com
+SUPPORT_EMAIL_FOR_ERRORS: null
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# SHIBBOLETH
+#   - Support using `shibboleth` in ENABLED_IDENTITY_PROVIDERS
+#   - Contains defaults for using NIH's Login.
+# //////////////////////////////////////////////////////////////////////////////////////
+# assumes shibboleth is deployed under {{BASE_URL}}/shibboleth
+SHIBBOLETH_HEADER: 'persistent_id'
+SSO_URL: 'https://auth.nih.gov/affwebservices/public/saml2sso?SPID={{BASE_URL}}/shibboleth&RelayState='
+ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=nih&AppReturnUrl='
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# STORAGE BACKENDS AND CREDENTIALS
+#   - Optional: Used for `/admin` & `/credentials` endpoints for user management.
+#               Also used during User Syncing process to automate managing Storage
+#               access for users.
+# //////////////////////////////////////////////////////////////////////////////////////
+# Configuration for various storage systems for the backend
+# NOTE: Remove the [] and supply backends if needed. Example in comments below
+STORAGE_CREDENTIALS: []
+# Google Cloud Storage backend
+#
+#  'google':
+#    backend: 'google'
+#    # this should be the project id where the Google Groups for data access are managed
+#    google_project_id: 'some-project-id-12378923'
+
+# Cleversafe data storage backend
+#
+#  'cleversafe-server-a':
+#    backend: 'cleversafe'
+#    aws_access_key_id: ''
+#    aws_secret_access_key: ''
+#    host: 'somemanager.osdc.io'
+#    public_host: 'someobjstore.example.com'
+#    port: 443
+#    is_secure: true
+#    username: 'someone'
+#    password: 'somepass'
+#    is_mocked: true
+
+# Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
+# setup for more info on Cloud Identity)
+#
+# NOTE: Make this short! Less than 8 characters if possible. Google has
+#       length restrictions on group names.
+GOOGLE_GROUP_PREFIX: 'gen3'
+
+S3_BUCKETS:
+  'niaiddata-data-bucket':
+    cred: 'niaiddata_fence-bot'
+    region: 'us-east-1'
+  'niaidprod-data-bucket':
+    cred: 'niaiddata_fence-bot'
+    region: 'us-east-1'
+  'niaiddev-generic-databucket':
+    cred: 'fence_bot'
+    region: 'us-east-1'
+# `#DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
+# using the `/data/upload` endpoint. This must be one of the first keys under
+# `S3_BUCKETS` (since these are the buckets fence has credentials for).
+DATA_UPLOAD_BUCKET: 'niaiddata-data-bucket'
+
+ENABLE_DB_MIGRATION: false
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://sqs.us-east-1.amazonaws.com/636151780898/niaiddata--clinicaltrial--audit-sqs
+    region: us-east-1

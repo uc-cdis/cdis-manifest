@@ -8,11 +8,8 @@ mappings:
       - name: submitter_id
       - name: data_contributor
       - name: data_description
-      - name: data_url
+      - name: data_url_doi
       - name: research_description
-      - name: research_design
-      - name: research_objective
-      - name: research_setup
       - name: license
       - name: publication_citation
       - name: data_citation
@@ -56,14 +53,20 @@ mappings:
       - name: _dx_series_count
         path: cases.imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: cases.imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: cases.imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: cases.imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: cases.imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: cases.imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: cases.imaging_studies.radiography_exams.dx_series.dx_instances
+        fn: count
+      - name: _mr_series_count
+        path: cases.imaging_studies.mr_exams.mr_series
+        fn: count
+      - name: _mr_instances_count
+        path: cases.imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
     joining_props:
       - index: imaging_data_file
@@ -93,11 +96,12 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
-      - name: gender
+      - name: sex
       - name: race
-      - name: age
+      - name: age_at_index
+      - name: index_event
       - name: zip
-      - name: covid_status
+      - name: covid19_positive
     aggregated_props:
       - name: _imaging_studies_count
         path: imaging_studies
@@ -117,49 +121,23 @@ mappings:
       - name: _dx_series_count
         path: imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: imaging_studies.radiography_exams.dx_series.dx_instances
+        fn: count
+      - name: _mr_series_count
+        path: imaging_studies.mr_exams.mr_series
+        fn: count
+      - name: _mr_instances_count
+        path: imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
     parent_props:
       - path: datasets[data_contributor]
-    flatten_props:
-      - path: conditions
-        props:
-          - name: asplenia
-          - name: cancer
-          - name: chicken_pox
-          - name: chronic_kidney_disease
-          - name: covid_test_positive
-          - name: covid_test_name
-          - name: current_pregnant
-          - name: cytomegalovirus
-          - name: diabetes_type_1
-          - name: diabetes_type_2
-          - name: extensive_burns
-          - name: hemodialysis_post_diagnosis
-          - name: hemodialysis_pre_diagnosis
-          - name: herpes_zoster
-          - name: hyposplenia
-          - name: icu_admit
-          - name: latest_bmi
-          - name: latest_height_inches
-          - name: latest_height_string
-          - name: latest_weight
-          - name: malnutrition
-          - name: measles
-          - name: mortality
-          - name: number_icu_admits
-          - name: rheumatoid_arthritis
-          - name: systemic_lupus_erythmatosus
-          - name: transplant
-          - name: tuberculosis
-        sorted_by: updated_datetime, desc
     joining_props:
       - index: imaging_data_file
         join_on: _case_id
@@ -179,47 +157,6 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrc_virus_data_file
-    doc_type: virus_data_file
-    type: collector
-    root: None
-    category: virus_data_file
-    props:
-      - name: submitter_id
-      - name: object_id
-      - name: md5sum
-      - name: file_name
-      - name: file_size
-      - name: data_format
-      - name: data_type
-      - name: data_category
-    injecting_props:
-      sample:
-        props:
-          - name: ncbi_bioproject
-            src: ncbi_bioproject
-            fn: set
-          - name: ncbi_biosample
-            src: ncbi_biosample
-            fn: set
-          - name: host
-            src: host
-            fn: set
-          - name: location
-            src: location
-            fn: set
-          - name: organism
-            src: organism
-            fn: set
-          - name: isolation_source
-            src: isolation_source
-            fn: set
-          - name: isolate
-            src: isolate
-            fn: set
-          - name: collection_date
-            src: collection_date
-            fn: set
   - name: midrc_imaging_data_file
     doc_type: imaging_data_file
     type: collector
@@ -234,21 +171,7 @@ mappings:
       - name: data_format
       - name: data_type
       - name: data_category
-      - name: implementation_class_uid
-      - name: implementation_version_name
-      - name: transfer_syntax_uid
-      - name: image_type
-      - name: modality
-      - name: manufacturer
-      - name: manufacturer_model_name
-      - name: study_description
-      - name: series_description
-      - name: body_part_examined
-      - name: view_position
-      - name: slice_thickness
-      - name: contrast_bolus_agent_number
-      - name: spacing_between_slices
-      - name: lossy_image_compression
+      - name: project_id
     injecting_props:
       dataset:
         props:
@@ -266,17 +189,23 @@ mappings:
           - name: case_submitter_id
             src: submitter_id
             fn: set
-          - name: gender
-            src: gender
+          - name: sex
+            src: sex
             fn: set
           - name: race
             src: race
             fn: set
-          - name: age
-            src: age
+          - name: age_at_index
+            src: age_at_index
             fn: max
+          - name: index_event
+            src: index_event
+            fn: set
           - name: zip
             src: zip
+            fn: set
+          - name: covid19_positive
+            src: covid19_positive
             fn: set
       imaging_study:
         props:
@@ -286,29 +215,26 @@ mappings:
           - name: study_modality
             src: study_modality
             fn: set
-          - name: days_to_study
-            src: days_to_study
-            fn: max
-          - name: hours_to_study
-            src: hours_to_study
-            fn: max
           - name: study_description
             src: study_description
-            fn: set
-          - name: FLO2_percentage
-            src: FLO2_percentage
-            fn: max
-          - name: radiologist_notes
-            src: radiologist_notes
             fn: set
           - name: age_at_imaging
             src: age_at_imaging
             fn: max
+          - name: body_part_examined
+            src: body_part_examined
+            fn: set
+          - name: study_location
+            src: study_location
+            fn: set
+          - name: series_count
+            src: series_count
+            fn: max
           - name: study_year
             src: study_year
             fn: max
-          - name: study_covid_status
-            src: study_covid_status
+          - name: study_year_shifted
+            src: study_year_shifted
             fn: set
       ct_scan:
         props:
@@ -320,19 +246,9 @@ mappings:
           - name: _radiography_exam_id
             src: id
             fn: set
-      ct_series:
+      mr_exam:
         props:
-          - name: _ct_series_id
-            src: id
-            fn: set
-      cr_series:
-        props:
-          - name: _cr_series_id
-            src: id
-            fn: set
-      dx_series:
-        props:
-          - name: _dx_series_id
+          - name: _mr_exam_id
             src: id
             fn: set
   - name: midrc_imaging_study
@@ -343,46 +259,14 @@ mappings:
       - name: project_id
       - name: submitter_id
       - name: study_modality
-      - name: days_to_study
-      - name: hours_to_study
       - name: study_description
-      - name: study_type
-      - name: study_subtype
-      - name: FLO2_percentage
-      - name: radiologist_notes
       - name: age_at_imaging
+      - name: days_to_study
+      - name: body_part_examined
+      - name: study_location
       - name: study_year
-      - name: study_covid_status
-      - name: study_start_time
-      - name: study_body_site
-      - name: asplenia
-      - name: cancer
-      - name: chicken_pox
-      - name: chronic_kidney_disease
-      - name: covid_test_positive
-      - name: covid_test_name
-      - name: current_pregnant
-      - name: cytomegalovirus
-      - name: diabetes_type_1
-      - name: diabetes_type_2
-      - name: extensive_burns
-      - name: hemodialysis_post_diagnosis
-      - name: hemodialysis_pre_diagnosis
-      - name: herpes_zoster
-      - name: hyposplenia
-      - name: icu_admit
-      - name: latest_bmi
-      - name: latest_height_inches
-      - name: latest_height_string
-      - name: latest_weight
-      - name: malnutrition
-      - name: measles
-      - name: mortality
-      - name: number_icu_admits
-      - name: rheumatoid_arthritis
-      - name: systemic_lupus_erythmatosus
-      - name: transplant
-      - name: tuberculosis
+      - name: study_year_shifted
+      - name: series_count
     aggregated_props:
       - name: _ct_scans_count
         path: ct_scans
@@ -399,17 +283,23 @@ mappings:
       - name: _dx_series_count
         path: radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: radiography_exams.dx_series.dx_instances
+        fn: count
+      - name: _mr_series_count
+        path: mr_exams.mr_series
+        fn: count
+      - name: _mr_instances_count
+        path: mr_exams.mr_series.mr_instances
         fn: count
     parent_props:
-      - path: cases[case_submitter_id:submitter_id,gender,race,age,zip].datasets[data_contributor]
+      - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _imaging_study_id
@@ -429,48 +319,6 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-          - name: implementation_class_uid
-            src: implementation_class_uid
-            fn: set
-          - name: implementation_version_name
-            src: implementation_version_name
-            fn: set
-          - name: transfer_syntax_uid
-            src: transfer_syntax_uid
-            fn: set
-          - name: image_type
-            src: image_type
-            fn: set
-          - name: modality
-            src: modality
-            fn: set
-          - name: manufacturer
-            src: manufacturer
-            fn: set
-          - name: manufacturer_model_name
-            src: manufacturer_model_name
-            fn: set
-          - name: series_description
-            src: series_description
-            fn: set
-          - name: body_part_examined
-            src: body_part_examined
-            fn: set
-          - name: view_position
-            src: view_position
-            fn: set
-          - name: slice_thickness
-            src: slice_thickness
-            fn: set
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
-            fn: set
-          - name: spacing_between_slices
-            src: spacing_between_slices
-            fn: set
-          - name: lossy_image_compression
-            src: lossy_image_compression
-            fn: set
   - name: midrc_ct_scan
     doc_type: ct_scan
     type: aggregator
@@ -482,11 +330,55 @@ mappings:
       - name: _ct_series_count
         path: ct_series
         fn: count
-      - name: _ct_images_count
-        path: ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_series.ct_instances
         fn: count
+      - name: acquisition_type
+        path: ct_series
+        fn: set
+      - name: convolution_kernel
+        path: ct_series
+        fn: set
+      - name: exposure_modulation_type
+        path: ct_series
+        fn: set
+      - name: patient_position
+        path: ct_series
+        fn: set
+      - name: slice_thickness
+        path: ct_series
+        fn: set
+      - name: spacing_between_slices
+        path: ct_series
+        fn: set
+# need to update data dictionary to add these two:
+      # - name: magnetic_field_sequence
+      #   path: ct_series
+      #   fn: set
+      # - name: scanning_sequence
+      #   path: ct_series
+      #   fn: set
+# these properties are from imaging_Series
+      # - name: contrast_bolus_agent
+      #   path: ct_series
+      #   fn: set
+      # - name: pixel_spacing
+      #   path: ct_series
+      #   fn: set
+      # - name: series_description
+      #   path: ct_series
+      #   fn: set
+      # - name: series_uid
+      #   path: ct_series
+      #   fn: set
+      # - name: series_type
+      #   path: ct_series
+      #   fn: set
+      # - name: series_name
+      #   path: ct_series
+      #   fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _ct_scan_id
@@ -506,20 +398,17 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-          - name: implementation_class_uid
-            src: implementation_class_uid
-            fn: set
-          - name: implementation_version_name
-            src: implementation_version_name
-            fn: set
-          - name: transfer_syntax_uid
-            src: transfer_syntax_uid
+      - index: imaging_series
+        join_on: _ct_scan_id
+        props:
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
             fn: set
           - name: image_type
             src: image_type
             fn: set
-          - name: modality
-            src: modality
+          - name: lossy_image_compression
+            src: lossy_image_compression
             fn: set
           - name: manufacturer
             src: manufacturer
@@ -527,26 +416,26 @@ mappings:
           - name: manufacturer_model_name
             src: manufacturer_model_name
             fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: pixel_spacing
+            src: pixel_spacing
+            fn: list
           - name: series_description
             src: series_description
             fn: set
-          - name: body_part_examined
-            src: body_part_examined
+          - name: series_name
+            src: series_name
             fn: set
-          - name: view_position
-            src: view_position
+          - name: series_type
+            src: series_type
             fn: set
-          - name: slice_thickness
-            src: slice_thickness
+          - name: series_uid
+            src: series_uid
             fn: set
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
-            fn: set
-          - name: spacing_between_slices
-            src: spacing_between_slices
-            fn: set
-          - name: lossy_image_compression
-            src: lossy_image_compression
+          - name: spatial_resolution
+            src: spatial_resolution
             fn: set
   - name: midrc_radiography_exam
     doc_type: radiography_exam
@@ -555,6 +444,7 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
+      - name: view_position
     aggregated_props:
       - name: _cr_series_count
         path: cr_series
@@ -562,14 +452,20 @@ mappings:
       - name: _dx_series_count
         path: dx_series
         fn: count
-      - name: _cr_images_count
-        path: cr_series.cr_images
+      - name: _cr_instances_count
+        path: cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: dx_series.dx_images
+      - name: _dx_instances_count
+        path: dx_series.dx_instances
         fn: count
+      - name: detector_type
+        path: dx_series
+        fn: set
+      - name: imager_pixel_spacing
+        path: dx_series
+        fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,days_to_study,hours_to_study,study_type,study_subtype,FLO2_percentage,radiologist_notes,age_at_imaging,study_year,study_covid_status,study_start_time,study_body_site,covid_test_name,covid_test_positive,asplenia,cancer,chicken_pox,chronic_kidney_disease,current_pregnant,cytomegalovirus,diabetes_type_1,diabetes_type_2,extensive_burns,hemodialysis_post_diagnosis,hemodialysis_pre_diagnosis,herpes_zoster,hyposplenia,icu_admit,latest_bmi,latest_height_inches,latest_height_string,latest_weight,malnutrition,measles,mortality,number_icu_admits,rheumatoid_arthritis,systemic_lupus_erythmatosus,transplant,tuberculosis].cases[_case_id:id,case_submitter_id:submitter_id,gender,race,age,zip].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _radiography_exam_id
@@ -589,20 +485,17 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-          - name: implementation_class_uid
-            src: implementation_class_uid
-            fn: set
-          - name: implementation_version_name
-            src: implementation_version_name
-            fn: set
-          - name: transfer_syntax_uid
-            src: transfer_syntax_uid
+      - index: imaging_series
+        join_on: _radiography_exam_id
+        props:
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
             fn: set
           - name: image_type
             src: image_type
             fn: set
-          - name: modality
-            src: modality
+          - name: lossy_image_compression
+            src: lossy_image_compression
             fn: set
           - name: manufacturer
             src: manufacturer
@@ -610,24 +503,180 @@ mappings:
           - name: manufacturer_model_name
             src: manufacturer_model_name
             fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: pixel_spacing
+            src: pixel_spacing
+            fn: list
           - name: series_description
             src: series_description
             fn: set
-          - name: body_part_examined
-            src: body_part_examined
+          - name: series_name
+            src: series_name
             fn: set
-          - name: view_position
-            src: view_position
+          - name: series_type
+            src: series_type
             fn: set
-          - name: slice_thickness
-            src: slice_thickness
+          - name: series_uid
+            src: series_uid
             fn: set
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
+          - name: spatial_resolution
+            src: spatial_resolution
             fn: set
-          - name: spacing_between_slices
-            src: spacing_between_slices
+  - name: midrc_mr_exam
+    doc_type: mr_exam
+    type: aggregator
+    root: mr_exam
+    props:
+      - name: project_id
+      - name: submitter_id
+    aggregated_props:
+      - name: _mr_series_count
+        path: mr_series
+        fn: count
+      - name: _mr_instances_count
+        path: mr_series.mr_instances
+        fn: count
+      - name: slice_thickness
+        path: mr_series
+        fn: set
+      - name: spacing_between_slices
+        path: mr_series
+        fn: set
+      - name: mr_acquisition_type
+        path: mr_series
+        fn: set
+      - name: magnetic_field_strength
+        path: mr_series
+        fn: set
+      - name: scanning_sequence
+        path: mr_series
+        fn: set
+      - name: sequence_name
+        path: mr_series
+        fn: set
+# These are covered by joining imaging_series
+      # - name: contrast_bolus_agent
+      #   path: mr_series
+      #   fn: set
+      # - name: image_type
+      #   path: mr_series
+      #   fn: set
+      # - name: lossy_image_compression
+      #   path: mr_series
+      #   fn: set
+      # - name: series_type
+      #   path: mr_series
+      #   fn: set
+      # - name: series_name
+      #   path: mr_series
+      #   fn: set
+      # - name: manufacturer
+      #   path: mr_series
+      #   fn: set
+      # - name: manufacturer_model_name
+      #   path: mr_series
+      #   fn: set
+      # - name: modality
+      #   path: mr_series
+      #   fn: set
+    parent_props:
+      - path: imaging_studies[_imaging_study_id:id,study_description,age_at_imaging,body_part_examined,study_location,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+    joining_props:
+      - index: imaging_data_file
+        join_on: _mr_exam_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
+      - index: imaging_series
+        join_on: _mr_exam_id
+        props:
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
+            fn: set
+          - name: image_type
+            src: image_type
             fn: set
           - name: lossy_image_compression
             src: lossy_image_compression
+            fn: set
+          - name: manufacturer
+            src: manufacturer
+            fn: set
+          - name: manufacturer_model_name
+            src: manufacturer_model_name
+            fn: set
+          - name: modality
+            src: modality
+            fn: set
+          - name: pixel_spacing
+            src: pixel_spacing
+            fn: list
+          - name: series_description
+            src: series_description
+            fn: set
+          - name: series_name
+            src: series_name
+            fn: set
+          - name: series_type
+            src: series_type
+            fn: set
+          - name: series_uid
+            src: series_uid
+            fn: set
+          - name: spatial_resolution
+            src: spatial_resolution
+            fn: set
+  - name: midrc_imaging_series
+    doc_type: imaging_series
+    type: collector
+    root: None
+    category: imaging_series
+    props:
+      - name: contrast_bolus_agent
+      - name: image_type
+      - name: lossy_image_compression
+      - name: manufacturer
+      - name: manufacturer_model_name
+      - name: modality
+      - name: pixel_spacing
+      - name: series_description
+      - name: series_name
+      - name: series_type
+      - name: series_uid
+      - name: spatial_resolution
+    injecting_props:
+      imaging_study:
+        props:
+          - name: _imaging_study_id
+            src: id
+            fn: set
+      ct_scan:
+        props:
+          - name: _ct_scan_id
+            src: id
+            fn: set
+      radiography_exam:
+        props:
+          - name: _radiography_exam_id
+            src: id
+            fn: set
+      mr_exam:
+        props:
+          - name: _mr_exam_id
+            src: id
             fn: set

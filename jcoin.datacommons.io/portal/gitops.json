@@ -91,6 +91,11 @@
           "name": "Query"
         },
         {
+          "name": "Notebook Browser",
+          "link": "/resource-browser",
+          "icon": "analysis"
+        },
+        {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
@@ -145,7 +150,142 @@
   "featureFlags": {
     "explorer": true
   },
+  "resourceBrowser": {
+    "title": "JCOIN Notebooks",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
+    "resources": [
+        {
+        "title": "JCOIN Notebooks coming soon",
+        "imageUrl": "/dashboard/Public/notebooks/placeholder.png"
+        }
+      ]
+    },
   "explorerConfig": [
+    {
+      "tabTitle": "Quarterly Report",
+      "charts": {
+        "gender": {
+          "chartType": "fullPie",
+          "title": "Gender identity"
+        },
+        "race": {
+          "chartType": "fullPie",
+          "title": "Race"
+        },
+        "hispanic": {
+          "chartType": "fullPie",
+          "title": "Hispanic ethnicity"
+        },
+        "quarter_recruited": {
+          "chartType": "bar",
+          "title": "Quarter enrolled"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Hubs",
+            "fields": [
+              "project_name",
+              "protocol",
+              "role_in_project"
+            ]
+          },
+          {
+            "title": "Quarter enrolled",
+            "fields": [
+              "quarter_recruited"
+            ]
+          }, 
+          {
+            "title": "Demographics",
+            "fields": [
+              "gender",
+              "race",
+              "hispanic"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_id",
+          "protocol",
+          "gender",
+          "race",
+          "hispanic",
+          "role_in_project",
+          "quarter_recruited"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": false,
+          "type": "data",
+          "title": "Download Staff and Participants",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "quarterly_report.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "participant",
+        "nodeCountTitle": "Total Enrolled",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Hub"
+          },
+          {
+            "field": "hispanic",
+            "name": "Hispanic ethnicity"
+          },
+          {
+            "field": "race",
+            "name": "Race"
+          },
+          {
+            "field": "gender",
+            "name": "Gender identity"
+          },
+          {
+            "field": "protocol",
+            "name": "Hub Study Protocol"
+          },
+          {
+            "field": "protocol_submitter_id",
+            "name": "Hub Study Protocol ID"
+          },
+          {
+            "field": "project_name",
+            "name": "Hub Name"
+          },
+          {
+            "field": "role_in_project",
+            "name": "Client or staff?"
+          },
+          {
+            "field": "quarter_recruited",
+            "name": "Quarter enrolled"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
+    },
     {
       "tabTitle": "Data",
       "charts": {
@@ -154,11 +294,11 @@
           "title": "Projects"
         },
         "gender": {
-          "chartType": "pie",
+          "chartType": "fullPie",
           "title": "Gender"
         },
         "race": {
-          "chartType": "pie",
+          "chartType": "fullPie",
           "title": "Race"
         },
         "center": {

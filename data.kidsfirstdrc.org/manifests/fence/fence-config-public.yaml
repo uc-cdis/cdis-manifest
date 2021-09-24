@@ -103,8 +103,8 @@ ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=ni
 #   Google? Use: '{{BASE_URL}}/login/google'
 #   Multi-tenant fence (e.g. another fence instance)? Use: '{{BASE_URL}}/login/fence'
 #   Sibboleth? Use: '{{BASE_URL}}/login/shib'
-DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/google'
-DEFAULT_LOGIN_IDP: google
+DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/fence'
+DEFAULT_LOGIN_IDP: fence
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'NIH Login'
     idp: fence
@@ -130,11 +130,26 @@ S3_BUCKETS:
   'kf-study-.*':
     cred: 'gen3prod'
     region: 'us-east-1'
+  'kf-strides-study-.*':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-seq-data-.*':
+    cred: 'gen3strides'
+    region: 'us-east-1'
 
 # `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
 # using the `/data/upload` endpoint. This must be one of the first keys under
 # `S3_BUCKETS` (since these are the buckets fence has credentials for).
 DATA_UPLOAD_BUCKET: 'bucket1'
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://queue.amazonaws.com/053927701465/prodv1--default--audit-sqs
+    region: us-east-1
 
 # Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
 # setup for more info on Cloud Identity)
