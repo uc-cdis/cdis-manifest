@@ -112,12 +112,6 @@
       "region": "us-east-1"
     },
     {
-      "user": "willhaley@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
       "user": "mbkranz@gmail.com",
       "aws_account_id": "252835817747",
       "name": "healworkspaces",
@@ -274,20 +268,6 @@
   },
   "containers": [
     {
-      "target-port": 8787,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "(Generic) RStudio",
-      "image": "heliumdatastage/rstudio-server:1",
-      "env": {
-        "DISABLE_AUTH": "true"
-      },
-      "args": [],
-      "path-rewrite": "/",
-      "use-tls": "false",
-      "ready-probe": "/"
-    },
-    {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
@@ -380,7 +360,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
-      "image": "quay.io/cdis/jupyter-jcoin:master",
+      "image": "quay.io/cdis/heal-notebooks:jcoin__74c68bafc3a655def4423d252f9a6ba1e89273fc",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -411,7 +391,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
-      "image": "quay.io/cdis/jupyter-bacpac:master",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__3b9ce410d22c92859b827ea8c95dccd521671246",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -504,7 +484,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
-      "image": "quay.io/cdis/heal-notebooks:oeps__cf17b8bc5222194f746dde2cdcd3fa948090a81b",
+      "image": "quay.io/cdis/heal-notebooks:test_r-kernel",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },

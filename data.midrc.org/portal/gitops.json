@@ -150,13 +150,17 @@
             "name": "About"
           },
           {
-            "icon": "upload",
-            "link": "/submission",
-            "name": "Submit Data"
+            "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
+            "name": "Quick Start Guide"
           },
           {
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
+          },
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
           },
           {
             "link": "midrc-support@datacommons.io",
@@ -268,6 +272,7 @@
               "rightIcon": "download"
             }
           ],
+          "loginForDownload": true,
           "guppyConfig": {
             "dataType": "case",
             "nodeCountTitle": "Cases",
@@ -373,6 +378,7 @@
                 "data_url_doi"
               ]
             },
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
@@ -563,6 +569,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
@@ -738,6 +745,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
@@ -908,6 +916,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
@@ -1063,6 +1072,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "mr_exam",
               "nodeCountTitle": "MR Exams",

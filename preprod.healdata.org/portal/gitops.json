@@ -66,8 +66,8 @@
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website supports the management, analysis and sharing of data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io",
-      "image": "/../../../../custom/sponsors/gitops-sponsors/gene_heal"
+      "email": "heal-support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/heal_login_color_sides"
     },
     "categorical9Colors": [
       "#99286B",
@@ -127,7 +127,8 @@
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
-        }
+        },
+        "verifyExternalLogins": true
       },
       "pageTitle": {
         "enabled": false
@@ -409,29 +410,56 @@
     },
     "tagCategories": [
       {
-        "name": "Demographic Info",
-        "color": "rgba(64, 34, 100, 1)",
+        "name": "Study Setting",
+        "displayName": "Study Setting",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Subject Characteristics",
+        "displayName": "Subject Characteristics",
+        "color": "#982568",
         "display": true
       },
       {
         "name": "Study Design",
-        "color": "rgba(153, 40, 107, 1)",
+        "displayName": "Study Design",
+        "color": "#981f32",
         "display": true
       },
       {
-        "name": "HEAL Specific",
-        "color": "rgba(161, 36, 46, 1)",
+        "name": "Intervention/Treatment",
+        "displayName": "Intervention/Treatment",
+        "color": "#bf362e",
+        "display": true
+      },
+            {
+        "name": "Pain",
+        "color": "#e07c3e",
         "display": true
       },
       {
-        "name": "Other",
-        "color": "rgba(207, 54, 38, 1)",
+        "name": "Substance Use",
+        "displayName": "Substance Use",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Data Type",
+        "displayName": "Data Type",
+        "color": "#982568",
         "display": true
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
-        "color": "rgba(21, 6, 76, 1)"
+        "color": "#981f32",
+        "display": true
+      },
+      {
+        "name": "Other",
+        "color": "#bf362e",
+        "display": false
       }
     ]
   },
