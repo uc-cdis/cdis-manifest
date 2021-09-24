@@ -1212,6 +1212,12 @@
         "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
         "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
         "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
+      },
+      {
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
     ]
   },
@@ -1365,14 +1371,14 @@
             "path": "bayes-by-county/Rt_Top20.svg"
           },
           {
-            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 60 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 60 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
             "type": "image",
             "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
           },
           {
-            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 120 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 120 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
             "type": "image",
             "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
           },
@@ -1396,5 +1402,8 @@
         }
       }
     }
-  }
+  },
+  "connectSrcCSPWhitelist": [
+    "https://covd-map-occ-prc-prod.s3.amazonaws.com"
+  ]
 }

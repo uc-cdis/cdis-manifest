@@ -34,6 +34,7 @@
     "useArboristUI": true,
     "showArboristAuthzOnProfile": true,
     "showFenceAuthzOnProfile": true,
+    "hideSubmissionIfIneligible": true,
     "componentToResourceMapping": {
       "Workspace": {
         "resource": "/workspace",
@@ -114,7 +115,6 @@
         ]
     },
     "navigation": {
-        "title": "Work in progress: Beta Phase",
         "items": [
           {
             "name": "Exploration",
@@ -126,7 +126,8 @@
             "icon": "dictionary",
             "link": "/DD",
             "color": "#a2a2a2",
-            "name": "Dictionary"
+            "name": "Dictionary",
+            "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
           },
           {
             "name": "Query",
@@ -254,7 +255,7 @@
             {
               "enabled": true,
               "type": "manifest",
-              "title": "Download Imaging Files for Selected Cases",
+              "title": "Download File Manifest for Cases",
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_imaging_file_manifest.json"
@@ -267,6 +268,7 @@
               "rightIcon": "download"
             }
           ],
+          "loginForDownload": true,
           "guppyConfig": {
             "dataType": "case",
             "nodeCountTitle": "Cases",
@@ -372,6 +374,7 @@
                 "data_url_doi"
               ]
             },
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
@@ -438,7 +441,7 @@
               {
                 "enabled": true,
                 "type": "data",
-                "title": "Download Dataset Descriptions",
+                "title": "Download Dataset Metadata",
                 "leftIcon": "user",
                 "rightIcon": "download",
                 "fileName": "MIDRC_dataset_descriptions.json"
@@ -446,7 +449,7 @@
               {
                 "enabled": true,
                 "type": "manifest",
-                "title": "Download Imaging File Manifest for Datasets",
+                "title": "Download File Manifest for Datasets",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_imaging_file_manifest.json"
@@ -568,6 +571,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
@@ -750,6 +754,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
@@ -927,6 +932,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
@@ -1085,6 +1091,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "mr_exam",
               "nodeCountTitle": "MR Exams",
