@@ -74,6 +74,12 @@
 				"type": "indexd"
 			},
 			{
+				"name": "HEAL",
+				"host": "https://healdata.org/index/",
+				"hints": [".*dg\\.H34L.*"],
+				"type": "indexd"
+			},
+			{
 				"name": "External Data HEAL",
 				"host": "https://externaldata.healdata.org/index/",
 				"hints": [".*dg\\.H35L.*"],

@@ -4,7 +4,7 @@
 
   --primary-color_light: #E0C4D2;
   --secondary-color_light: #C2BACD;
-  
+
   --g3-color__bg-cloud: #F5F5F5;
   --g3-color__bg-coal: #4A4A4A;
   --g3-color__gray: #606060;
@@ -12,7 +12,7 @@
   --g3-color__smoke: #D1D1D1;
   --g3-color__silver: #E7E7E7;
   --g3-color__black: #000000;
-  --g3-color__white: #FFFFFF;;
+  --g3-color__white: #FFFFFF;
 
   --g3-primary-btn__color: var(--g3-color__white);
   --g3-primary-btn__bg-color: var(--secondary-color);
@@ -48,6 +48,18 @@
   --g3-font__semi-bold-weight: 600;
 }
 
+h1, h2, h3, h4,
+body,
+.caption,
+.form-h1, .form-h2, .form-caption,
+.introduction,
+.body,
+.special-number,
+.form-body,
+.form-special-number {
+    font-family: 'Montserrat';
+}
+
 /* Buttons */
 
 .data-dictionary__switch-button--active,
@@ -62,7 +74,8 @@
   background-color: var(--primary-color)
 }
 
-.g3-button--default:active, .g3-button--default:active svg path {
+.g3-button--default:active,
+.g3-button--default:active svg path {
   border: 1px solid var(--secondary-color);
   color: 1px solid var(--secondary-color);
   fill: 1px solid var(--secondary-color);
@@ -70,9 +83,36 @@
 
 /* Discovery page specs */
 .discovery-header__stat-number {
-    color: #99286B;
-    font-size: 40px;
-    line-height: 50px;
+  color: #99286B;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.discovery-search {
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-modal__close-button {
+  color: rgb(139, 51, 105);
+}
+
+.discovery-adv-filter-button {
+  color: rgb(139, 51, 105);
+}
+
+.discovery-action-bar-button {
+  color: rgb(139, 51, 105);
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-header__dropdown-tags-control-button  {
+  color: rgb(139, 51, 105);
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-modal__attribute {
+  background-color: #dfe3e2;
+  border-radius: 4px;
 }
 
 .ant-table-thead {
@@ -95,6 +135,7 @@
 .button-active {
   border-bottom: 3px solid var(--primary-color);
 }
+
 .nav-bar__logo {
   padding: 15px 0;
 }
@@ -125,7 +166,7 @@
   color: var(--primary-color);
 }
 
-.tier-access-selector__radio-input:checked + .tier-access-selector__customized-radio-input::after {
+.tier-access-selector__radio-input:checked+.tier-access-selector__customized-radio-input::after {
   background-color: var(--primary-color);
 }
 
