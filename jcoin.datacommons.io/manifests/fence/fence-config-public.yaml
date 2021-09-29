@@ -1,0 +1,208 @@
+APP_NAME: 'Gen3 Data Commons'
+# Where fence microservice is deployed
+BASE_URL: 'https://jcoin.datacommons.io/user'
+
+# flask's debug setting
+# WARNING: DO NOT ENABLE IN PRODUCTION (for testing purposes only)
+DEBUG: false
+# if true, will automatically login a user with username "test"
+# WARNING: DO NOT ENABLE IN PRODUCTION (for testing purposes only)
+MOCK_AUTH: false
+# if true, will fake a successful login response from Google in /login/google
+#     NOTE: this will also modify the behavior of /link/google endpoints
+# WARNING: DO NOT ENABLE IN PRODUCTION (for testing purposes only)
+# will login as the username set in cookie DEV_LOGIN_COOKIE_NAME
+MOCK_GOOGLE_AUTH: false
+
+# if true, will ignore anything configured in STORAGE_CREDENTIALS
+MOCK_STORAGE: false
+# set if you want browsers to only send cookies with requests over HTTPS
+SESSION_COOKIE_SECURE: true
+
+ENABLE_CSRF_PROTECTION: true
+# fence (at the moment) attempts a migration on startup. setting this to false will disable that
+# WARNING: ONLY set to false if you do NOT want to automatically migrate your database.
+#          You should be careful about incompatible versions of your db schema with what
+#          fence expects. In other words, things could be broken if you update to a later
+#          fence that expects a schema your database isn't migrated to.
+# NOTE: We are working to improve the migration process in the near future
+ENABLE_DB_MIGRATION: false
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# LIBRARY CONFIGURATION (authlib & flask)
+#   - Already contains reasonable defaults
+# //////////////////////////////////////////////////////////////////////////////////////
+# authlib-specific configs for OIDC flow and JWTs
+# NOTE: the OAUTH2_JWT_KEY cfg gets set automatically by fence if keys are setup
+#       correctly
+OAUTH2_JWT_ALG: 'RS256'
+OAUTH2_JWT_ENABLED: true
+OAUTH2_JWT_ISS: '{{BASE_URL}}'
+OAUTH2_PROVIDER_ERROR_URI: '/api/oauth2/errors'
+
+# used for flask, "path mounted under by the application / web server"
+# since we deploy as microservices, fence is typically under {{base}}/user
+# this is also why our BASE_URL default ends in /user
+APPLICATION_ROOT: '/user'
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# Tokens, Lifetimes, & Expirations
+#   - Already contains reasonable defaults
+# //////////////////////////////////////////////////////////////////////////////////////
+# The name of the browser cookie in which the access token will be stored.
+ACCESS_TOKEN_COOKIE_NAME: "access_token"
+
+# The name of the browser cookie in which the session token will be stored.
+# Note that the session token also stores information for the
+# ``flask.session`` in the ``context`` field of the token.
+SESSION_COOKIE_NAME: "fence"
+
+# The domain of the browser cookie in which the session token will be stored.
+# Leave unset (not empty string!) for normal single-site deployment.
+SESSION_COOKIE_DOMAIN:
+
+OAUTH2_TOKEN_EXPIRES_IN:
+  "authorization_code": 1200
+  "implicit": 1200
+
+# The number of seconds after an access token is issued until it expires.
+ACCESS_TOKEN_EXPIRES_IN: 1200
+
+# The number of seconds after a refresh token is issued until it expires.
+REFRESH_TOKEN_EXPIRES_IN: 2592000
+
+# The number of seconds after which a browser session is considered stale.
+SESSION_TIMEOUT: 1800
+
+# The maximum session lifetime in seconds.
+SESSION_LIFETIME: 28800
+
+# The number of seconds the user's Google service account key used for
+# url signing will last before being expired/rotated
+# 30 days: 2592000 seconds
+GOOGLE_SERVICE_ACCOUNT_KEY_FOR_URL_SIGNING_EXPIRES_IN: 2592000
+
+# The number of seconds after a User's Google Service account is added to bucket
+# access until it expires.
+# 7 days: 604800 seconds
+GOOGLE_USER_SERVICE_ACCOUNT_ACCESS_EXPIRES_IN: 604800
+
+# The number of seconds after a User's Google account is added to bucket
+# access until it expires.
+GOOGLE_ACCOUNT_ACCESS_EXPIRES_IN: 86400
+
+# The number of seconds after a pre-signed url is issued until it expires.
+MAX_PRESIGNED_URL_TTL: 3600
+
+# The number of seconds after an API KEY is issued until it expires.
+MAX_API_KEY_TTL: 2592000
+
+# The number of seconds after an access token is issued until it expires.
+MAX_ACCESS_TOKEN_TTL: 3600
+
+# TEMPORARY: The maximum number of projects allowed in token claims.
+# This config var should be removed after sheepdog and peregrine support
+# auth checks against Arborist, and no longer check the token.
+TOKEN_PROJECTS_CUTOFF: 15
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# SHIBBOLETH
+#   - Support using `shibboleth` in LOGIN_OPTIONS
+#   - Contains defaults for using NIH's Login.
+# //////////////////////////////////////////////////////////////////////////////////////
+# assumes shibboleth is deployed under {{BASE_URL}}/shibboleth
+SHIBBOLETH_HEADER: 'persistent_id'
+SSO_URL: 'https://auth.nih.gov/affwebservices/public/saml2sso?SPID={{BASE_URL}}/shibboleth&RelayState='
+ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=nih&AppReturnUrl='
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# LOGIN
+#   - Modify based on which OIDC provider(s) you configured above
+#   - NOTE: You can have multiple IDPs for users to login with, but one has to be set
+#           as the default
+# //////////////////////////////////////////////////////////////////////////////////////
+
+# List of enabled login options (used by data-portal to display login buttons).
+# Each option must be configured with a "name" and an "idp".
+# - "idp" must be a configured provider in OPENID_CONNECT section.
+# Multiple options can be configured with the same idp.
+# - if provider_id is "fence", "fence_idp" can be any of the providers
+# supported by the other Fence. If not specified, will default to NIH login.
+# - if provider_id is "fence" and fence_idp is "shibboleth", a list of
+# "shib_idps" can be configured for InCommon login. If not specified, will
+# default to NIH login.
+# - Optional parameters: "desc" (description) and "secondary" (boolean - can
+# be used by the frontend to display secondary buttons differently).
+LOGIN_OPTIONS:
+  - name: 'Login from Google'
+    idp: google
+
+# Default login provider:
+# - must be configured in LOGIN_OPTIONS and OPENID_CONNECT
+# - if several options in LOGIN_OPTIONS are defined for this IDP, will default
+# to the first one.
+# Default login URL:
+# - Google? Use: '{{BASE_URL}}/login/google'
+# - Multi-tenant fence (e.g. another fence instance)? Use: '{{BASE_URL}}/login/fence'
+# - Sibboleth? Use: '{{BASE_URL}}/login/shib'
+DEFAULT_LOGIN_IDP: google
+DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/google'
+
+# `LOGIN_REDIRECT_WHITELIST` is a list of extra whitelisted URLs which can be redirected
+# to by the `/login/*` endpoints. Fence automatically populates this with the redirect
+# URLs for any registered OAuth clients, and its own URL. When validating the redirects,
+# fence chesk whether the domain for the redirect matches a domain in the whitelist (so
+# only the domains for the additional desired redirects are necessary here).
+LOGIN_REDIRECT_WHITELIST: []
+
+### DEPRECATED and replaced by OPENID_CONNECT + LOGIN_OPTIONS configs
+ENABLED_IDENTITY_PROVIDERS: {}
+
+# Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
+# setup for more info on Cloud Identity)
+#
+# NOTE: Make this short! Less than 8 characters if possible. Google has
+#       length restrictions on group names.
+GOOGLE_GROUP_PREFIX: jcoin
+
+# Prefix to namespace Google Service Accounts in a single Google Cloud Platform Project.
+# This is primarily to support multiple instances of fence references the same Google
+# project. If that is not something you need to support, then you can leave this blank.
+#
+# NOTE: Make this short! Less than 8 characters if possible. Google has
+#       length restrictions on service account names.
+GOOGLE_SERVICE_ACCOUNT_PREFIX: ''
+
+# //////////////////////////////////////////////////////////////////////////////////////
+# DATA ACCESS: GOOGLE LINKING & SERVICE ACCOUNT REGISTRATION
+#   - Support `/google/service_accounts` endpoints
+# //////////////////////////////////////////////////////////////////////////////////////
+# whether or not to allow access to the /link/google endpoints
+ALLOW_GOOGLE_LINKING: true
+
+ENABLE_AUTOMATIC_BILLING_PERMISSION_SIGNED_URLS: false
+ENABLE_AUTOMATIC_BILLING_PERMISSION_SA_CREDS: false
+
+S3_BUCKETS:
+  jcoinprod-data-bucket:
+    cred: 'jcoinprod_fence-bot'
+  jcoinprod-default-258867494168-upload:
+    cred: 'jcoinprod_fence-bot'
+# `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
+# using the `/data/upload` endpoint. This must be one of the first keys under
+# `S3_BUCKETS` (since these are the buckets fence has credentials for).
+DATA_UPLOAD_BUCKET: 'jcoinprod-default-258867494168-upload'
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+# `PUSH_AUDIT_LOGS_CONFIG.type` is one of: [api, aws_sqs].
+# - if type == api: logs are created by hitting the log creation endpoint.
+# - if type == aws_sqs: logs are pushed to an SQS and `aws_sqs_config` fields
+# `sqs_url` and `region` are required. Fields `aws_access_key_id` and
+# `aws_secret_access_key` are optional.
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://queue.amazonaws.com/258867494168/jcoinprod--default--audit-sqs
+    region: us-east-1

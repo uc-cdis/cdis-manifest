@@ -4,27 +4,29 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.04",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.09",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2021.09",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.04",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.04",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.04",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.04",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.04",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.04",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.04",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.04",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.09",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.09",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.09",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:3.1.0",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:1.2.1",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.09",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.09",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.5.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.04",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.04",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.04",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.04",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.09",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.09",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.09",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2021.09",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.09",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.04",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.04",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.04",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.04",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2021.04"
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.09",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.09",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.09",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.09",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2021.09"
   },
   "indexd": {
     "arborist": "true"
@@ -33,7 +35,7 @@
     "environment": "ibdgc-prod",
     "hostname": "ibdgc.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:980870151884:certificate/d4bc881b-b404-4bef-912f-ed67785f953c",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.6.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ibdgc-dictionary/1.6.6/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-ibdgc-prod-gen3",
     "logs_bucket": "s3logs-logs-ibdgc-prod-gen3",
@@ -43,170 +45,6 @@
     "useryaml_s3path": "s3://ibdgc-gen3-users/ibdgc/user.yaml",
     "maintenance_mode": "off"
   },
-  "hatchery": {
-    "user-namespace": "jupyter-pods",
-    "sub-dir": "/lw-workspace",
-    "user-volume-size": "10Gi",
-    "sidecar": {
-      "cpu-limit": "1.0",
-      "memory-limit": "256Mi",
-      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.04",
-      "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "ibdgc.datacommons.io"
-      },
-      "args": [],
-      "command": [
-        "/bin/bash",
-        "/sidecarDockerrun.sh"
-      ],
-      "lifecycle-pre-stop": [
-        "su",
-        "-c",
-        "echo test",
-        "-s",
-        "/bin/sh",
-        "root"
-      ]
-    },
-    "containers": [
-      {
-        "target-port": 8885,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "RStudio 3.5.3",
-        "image": "quay.io/cdis/rstudio:master",
-        "env": {
-          "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "user-volume-location": "/home/rstudio/pd",
-        "fs-gid": 100
-      },
-      {
-        "target-port": 8886,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "RStudio 4.1.0",
-        "image": "quay.io/cdis/rstudio4.1:rstudio4.1-0.1.0",
-        "env": {
-          "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "user-volume-location": "/home/rstudio/pd",
-        "fs-gid": 100
-      },
-      {
-        "target-port": 8887,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "RStudio 4.1.0 + base packages",
-        "image": "quay.io/cdis/rstudio4.1-with-base-packages:master",
-        "env": {
-          "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "user-volume-location": "/home/rstudio/pd",
-        "fs-gid": 100
-      },
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "Jupyter (Python 3.6.7, R 3.6.3)",
-        "image": "quay.io/cdis/jupyter-notebook:1.1.0",
-        "env": {
-          "NAMESPACE": "default"
-        },
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      },
-      {
-        "target-port": 8889,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "Jupyter (Python 3.9.5, R 4.1.0)",
-        "image": "quay.io/cdis/jupyter-6.4.0:latest",
-        "env": {
-          "NAMESPACE": "default"
-        },
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      },
-      {
-        "target-port": 8890,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "Jupyter (Python 3.9.5, R 4.1.0) + base packages",
-        "image": "quay.io/cdis/jupyter-6.4.0-with-base-packages:latest",
-        "env": {
-          "NAMESPACE": "default"
-        },
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      }
-    ]
-  },
   "canary": {
     "default": 0
   },
@@ -214,15 +52,23 @@
     "indices": [
       {
         "index": "ibdgc_etl",
-        "type": "participant"
+        "type": "participant",
+        "tier_access_level": "private"
       },
       {
         "index": "ibdgc_file",
-        "type": "file"
+        "type": "file",
+        "tier_access_level": "private"
       },
       {
         "index": "ibdgc_supplementary_file",
-        "type": "supplementary_file"
+        "type": "supplementary_file",
+        "tier_access_level": "private"
+      },
+      {
+        "index": "ibdgc_project",
+        "type": "project",
+        "tier_access_level": "libre"
       }
     ],
     "config_index": "ibdgc_array-config",
@@ -233,7 +79,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.04"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.09"
     }
   },
     "sower": [
@@ -244,7 +90,7 @@
       "serviceAccountName": "jobs-ibdgc-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2021.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -284,7 +130,7 @@
       "serviceAccountName": "jobs-ibdgc-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2021.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -324,7 +170,7 @@
       "serviceAccountName": "jobs-ibdgc-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2021.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2021.09",
         "pull_policy": "Always",
         "env": [
           {

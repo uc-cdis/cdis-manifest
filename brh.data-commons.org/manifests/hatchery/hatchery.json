@@ -20,6 +20,18 @@
       "aws_account_id": "354484406138",
       "name": "brhworkspaces",
       "region": "us-east-1"
+    },
+    {
+      "user": "craigrbarnes@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "brhworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user": "paredes@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "brhworkspaces",
+      "region": "us-east-1"
     }
   ],
   "sidecar": {
@@ -57,7 +69,10 @@
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
-      "ready-probe": "/"
+      "ready-probe": "/",
+      "lifecycle-post-start": ["/bin/sh", "-c", "ln -s /data /home/rstudio/pd/; true"],
+      "fs-gid": 100,
+      "user-volume-location": "/home/rstudio/pd"
     },
     {
       "target-port": 8888,
@@ -70,7 +85,6 @@
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -83,7 +97,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -100,7 +114,6 @@
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -113,7 +126,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -130,7 +143,6 @@
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -144,7 +156,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -157,13 +169,12 @@
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
       "image": "quay.io/cdis/jupyter-jcoin:master",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -176,7 +187,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -189,13 +200,12 @@
       "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
       "image": "quay.io/cdis/jupyter-bacpac:master",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -208,7 +218,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -219,13 +229,12 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcdea__1d2cc4ddf48babb9d86143c8f1f259a98a53e2f5",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__f7afc9b185d904bd60a1449e0bfb6d56c50b6ba7",
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -238,7 +247,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -249,13 +258,12 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__ce8feff3d1f4491b47523003fc89df42e233419b",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__8eab157c6c6e07336a4d7a87cc67e4f9979c373c",
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -268,7 +276,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -279,13 +287,12 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
-      "image": "quay.io/cdis/heal-notebooks:oeps__3213f41729a9206abbf2247cd294f2e0e0ee6261",
-      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
+      "image": "quay.io/cdis/heal-notebooks:oeps__cf17b8bc5222194f746dde2cdcd3fa948090a81b",
+      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
-        "--NotebookApp.notebook_dir='/home/jovyan/pd'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -298,7 +305,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -306,10 +313,5 @@
     }
   ],
   "more-configs": [
-    {
-      "type": "dockstore-compose:1.0.0",
-      "path": "/hatchery-more-configs/jupyter-covid19.yaml",
-      "name": "A collection of Jupyter notebooks to explore health outcomes for COVID-19"
-    }
   ]
 }
