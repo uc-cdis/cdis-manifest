@@ -159,6 +159,10 @@
             "dataset_4_description",
             "data_dictionary"
           ]
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Characteristics"
         }
       },
       "authorization": {
@@ -173,7 +177,6 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category",
       "showTagCategoryNames": true
     },
     "studyColumns": [
