@@ -14,7 +14,7 @@
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.08",
     "fence": "quay.io/cdis/fence:5.3.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:feat_decouple_workspaces",
+    "hatchery": "quay.io/cdis/hatchery:feat_ecs",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.08",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.08",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:1.6.1",
