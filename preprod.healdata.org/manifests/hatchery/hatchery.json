@@ -403,7 +403,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__ffca5fadbed66648bdd1de93ff81801e9e2764ad",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c7354ce26e2302dba64152f749753295b4918762",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
