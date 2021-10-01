@@ -199,7 +199,7 @@
     "args": [],
     "command": [
       "/bin/bash",
-      "/sidecar.sh"
+      "./sidecar.sh"
     ],
     "lifecycle-pre-stop": [
       "su",
