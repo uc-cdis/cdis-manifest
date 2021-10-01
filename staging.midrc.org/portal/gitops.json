@@ -115,7 +115,6 @@
         ]
     },
     "navigation": {
-        "title": "Work in progress: Beta Phase",
         "items": [
           {
             "name": "Exploration",
@@ -127,7 +126,8 @@
             "icon": "dictionary",
             "link": "/DD",
             "color": "#a2a2a2",
-            "name": "Dictionary"
+            "name": "Dictionary",
+            "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
           },
           {
             "name": "Query",
@@ -268,6 +268,7 @@
               "rightIcon": "download"
             }
           ],
+          "loginForDownload": true,
           "guppyConfig": {
             "dataType": "case",
             "nodeCountTitle": "Cases",
@@ -373,6 +374,7 @@
                 "data_url_doi"
               ]
             },
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
@@ -569,6 +571,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
@@ -751,6 +754,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
@@ -928,6 +932,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
@@ -1086,6 +1091,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "mr_exam",
               "nodeCountTitle": "MR Exams",

@@ -6,6 +6,7 @@
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.07",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2021.07",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.07",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:5.3.1",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.07",
@@ -33,7 +34,7 @@
     "environment": "jcoin-prod",
     "hostname": "jcoin.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:258867494168:certificate/a55f3922-fac6-4c64-9362-a5404520136d",
-    "dictionary_url": "https://dictionary-artifacts.s3.amazonaws.com/jcoin_datadictionary/1.1.0/schema.json",
+    "dictionary_url": "https://dictionary-artifacts.s3.amazonaws.com/jcoin_datadictionary/1.1.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-jcoin-prod-gen3",
     "logs_bucket": "s3logs-logs-jcoin-prod-gen3",
