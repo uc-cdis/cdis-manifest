@@ -106,7 +106,7 @@
                 <div class="ul-sidenav">
                     <a href="#DownloadFilesfromDiscovery">a) Download Data Files from the Discovery Page</a>
                     <a href="#DownloadFilesClientSDK">b) Download Data Files using the Gen3-client</a>
-                    <a href="#DownloadFilesSDKWorkspaces">c) Download Data Files using the Python SDK in the
+                    <a href="#DownloadFilesSDKWorkspaces">c) Download Data Files in Workspaces using the Python SDK in the
                         Workspaces</a>
                 </div>
                 <div class="sidenav-head">
@@ -1151,25 +1151,30 @@
                                 The above gif shows the workflow used to select data files from the
                                 Discovery Page and bring them into the workspace using Jupyter Notebooks. <br>
                             </p>
-                            <p>
-                                Please scroll to the end of this section to find
-                                instructions on how to find exported data files in the RStudio environment.
-                            </p>
                             <ol>
                                 <li>
-                                    Log in on <a href="https://healdata.org/login">healdata.org/login</a>.
-
+                                    Log in on <a href="https://healdata.org/login">healdata.org/login</a>. 
+                                    Link your account to all FAIR repositories as
+                                    described <a href="#LinkingAccessTo">here</a>.
                                     <br><br>
                                 </li>
                                 <li>
-                                    Find and select study on the Discovery Page using the checkbox on the left side and
-                                    clicking on "Open in Workspace". Link your account to all FAIR repositories as
-                                    described
-                                    <a href="#LinkingAccessTo">here</a>.
-                                    See current open-access studies <a href="#CurrentOAStudies">here</a>.<br><br>
+                                    Find and select the study by the project number (in this example: 1U24AR076730-01)
+                                    on the <a href="https://healdata.org/discovery">Discovery Page</a>. 
+                                    Find other current open-access studies <a href="#CurrentOAStudies">here</a>.<br><br>
                                 </li>
                                 <li>
-                                    Choose a workspace flavor. This step may take several minutes. <br><br>
+                                    Click the “Open in Workspace” button in the upper right corner. This step will
+                                    create a manifest folder which you can find later in the Workspace’s folder
+                                    "data/healdata.org".<br>
+                                    <img class="drop-shadow" src="img/static_notebook_bacpac.png"
+                                        alt="static_notebook_bacpac" style="width:90%">
+                                    <figcaption>
+                                        Select the study and click on “Open in Workspace”.
+                                    </figcaption><br><br>
+                                </li>
+                                <li>
+                                    Choose a workspace flavor and click "Launch". This step may take several minutes. <br><br>
                                 </li>
                                 <li>
                                     Navigate to the <code>/pd/data/healdata.org/</code> folder and find the manifests
@@ -1384,6 +1389,11 @@
                                     </figcaption> <br><br>
                                 </li>
                             </ol>
+
+                            <p>
+                                Further reading: read more about how to download data files into the Workspaces 
+                                <a href="#DownloadFilesSDKWorkspaces">here</a>. 
+                            </p>
 
 
                             <h4 id="UploadSaveDownload" class="section-title">Upload, save, and download Files/Notebooks
@@ -1843,21 +1853,6 @@
                                 Tutorial Notebooks in interactive mode</h4>
                             <ul>
                                 <li>
-                                    The data used by the tutorial
-                                    notebook <span style="font-weight: bold;">must be exported </span>
-                                    from the Discovery page to the workspace
-                                    to work with the tutorial Jupyter Notebooks in interactive mode.
-                                    <br>
-                                    The <a href="#CurrentlyAvailableNotebooks">previous section</a>
-                                    lists which data is required to import from the Discovery Page.
-                                </li>
-                            </ul>
-                            <blockquote>
-                                All exported data will be stored in the
-                                <code>pd/data/healdata.org/manifest-YYYY-MM-XXXX-XX-XX.XXXXXX</code> folder.
-                            </blockquote>
-                            <ul>
-                                <li>
                                     <span style="font-weight: bold;">Notebooks require linked access to all FAIR
                                         enabled repositories</span>,
                                     as described <a href="#LinkingAccessTo">here</a>.
@@ -1879,38 +1874,18 @@
                                 Below we describe the steps to export data from the Discovery Page tutorial Jupyter
                                 notebooks
                                 for one example tutorial notebook
-                                HEAL_Workspace_Demo_BACPAC.ipynb (“BACPAC synthetic data analysis”)
+                                BACPAC_Synthetic_Data_Analysis.ipynb (“BACPAC synthetic data analysis”)
                             </p>
-                            <blockquote>
-                                This example notebook does not require linking access to a FAIR repository.
-                                Please see the table in the <a href="#CurrentlyAvailableNotebooks">previous section</a>
-                                if
-                                the notebook of interest requires linking access.
-                            </blockquote>
                             <p>
-                                <span style="font-weight: bold;">Users must be logged in to follow the steps
+                                <span style="font-weight: bold;">Users must be logged in and have their accounts linked to the 
+                                    <a href="#LinkingAccessTo">FAIR repositories</a> 
+                                    in order to follow the steps
                                     below.</span>
                             </p>
-
                             <ol>
                                 <li>
-                                    Find and select the study by the project number (in this example: 1U24AR076730-01)
-                                    on the <a href="https://healdata.org/discovery">Discovery Page</a>.
-                                    Project numbers and datasets are given in the <a
-                                        href="#CurrentlyAvailableNotebooks">previous section</a>.<br><br>
-                                </li>
-                                <li>
-                                    Click the “Open in Workspace” button in the upper right corner. This step will
-                                    create a manifest folder which you can find later in the Workspace’s folder
-                                    "data/healdata.org".<br>
-                                    <img class="drop-shadow" src="img/static_notebook_bacpac.png"
-                                        alt="static_notebook_bacpac" style="width:90%">
-                                    <figcaption>
-                                        Select the study and click on “Open in Workspace”.
-                                    </figcaption><br><br>
-                                </li>
-                                <li>
-                                    Go to the Workspace tab and click “Launch” on the “BACPAC Synthetic Data Analysis
+                                    Go to the <a href="https://healdata.org/workspace">Workspace tab</a> and click “Launch” on the 
+                                    “BACPAC Synthetic Data Analysis 
                                     Notebook”. This may take a few minutes to load.<br>
                                     Note, that depending on the chosen notebook, this step varies to align with the name
                                     of the notebook/workspace.<br>
@@ -1918,20 +1893,18 @@
                                         alt="static_notebook_bacpac_demo_1" style="width:90%"><br><br>
                                 </li>
                                 <li>
-                                    Find and open the notebook in the landing directory. <br>
-                                    Open the notebook by clicking on “BACPAC_Synthetic_Data_Analysis.ipynb".<br>
+                                    Find and open the notebook in the landing directory by clicking on “BACPAC_Synthetic_Data_Analysis.ipynb".<br>
                                     <img class="drop-shadow" src="img/static_notebook_bacpac_demo.png"
                                         alt="notebook_browser_notebook1" style="width:90%"><br><br>
                                 </li>
                                 <li>
                                     Click the first two cells and run them by clicking into the cell and either using
-                                    shift+enter on the keyboard or selecting “Run”:<br>
+                                    shift+enter on the keyboard or selecting “Run”. Uncomment the commands as displayed below to install necessary packages.<br>
                                     <img class="drop-shadow" src="img/notebook_browser_run_cell.png"
                                         alt="notebook_browser_run_cell" style="width:90%"><br><br>
                                 </li>
                                 <li>
-                                    Run the next cell, making sure you copy the name of the exported manifest folder, as
-                                    shown below:<br>
+                                    Run the next cell to import the data files.<br>
                                     <img class="drop-shadow" src="img/static_notebook_bacpac_manifestname.png"
                                         alt="static_notebook_bacpac_manifestname" style="width:90%"><br><br>
                                 </li>
@@ -2176,8 +2149,8 @@
 
 
 
-                            <h3 id="DownloadFilesSDKWorkspaces" class="section-title">c) Download Data Files using the
-                                Python SDK in the Workspaces</h3>
+                            <h3 id="DownloadFilesSDKWorkspaces" class="section-title">c) Download Data Files in Workspaces using the
+                                Python SDK</h3>
 
                             <p>
                                 Users can download data files to the workspaces by leveraging the CTDS-owned python
@@ -2199,9 +2172,7 @@
                                     Select a study and click on "Open in Workspace". <br>
                                     <img class="drop-shadow" src="img/static_notebook_bacpac.png"
                                         alt="static_notebook_bacpac" style="width:90%">
-                                    <figcaption>
-                                        Select a study and click on “Open in Workspace”.
-                                    </figcaption><br>
+                                    <br> <br>
                                 </li>
                                 <li>
                                     Select a workspace VM and click "Launch". Choose the "(Generic) Jupyter Notebook with R kernel" if you
@@ -2220,28 +2191,24 @@
                                     </figcaption> <br> <br>
                                 </li>
                                 <li>
-                                    Find all files under /data/healdata.org/ with the ending "PLACEHOLDER": <br>
+                                    Find all files under /data/healdata.org/ with the ending "PLACEHOLDER". 
+                                    These files can be directly downloaded either in the terminal or in a notebook cell. <br>
                                     <img class="drop-shadow" src="img/workspace_placeholder.png" alt="workspace_placeholder"
                                     style="width:80%">
-                                <figcaption style="width:100%">
-                                    Placeholder files. 
-                                </figcaption> <br> <br>
+                                     <br> <br>
                                 </li>
                                 <li>
-                                    Click on one file and copy the command and GUID. <br>
+                                    Click on one file and copy the command and GUID.
+                                    <br>
                                     <img class="drop-shadow" src="img/workspace_placeholder_guid.png" alt="workspace_placeholder_guid"
                                     style="width:80%">
-                                <figcaption style="width:100%">
-                                    Copy the command.
-                                </figcaption> <br> <br>
+                                     <br><br>
                                 </li>
                                 <li>
-                                    Click on "New" - "Terminal".
+                                    Open a new terminal under "New".
                                     <img class="drop-shadow" src="img/workspace_terminal.png" alt="workspace_terminal"
                                     style="width:80%">
-                                <figcaption style="width:100%">
-                                    Open a new terminal under "New".
-                                </figcaption> <br> <br>
+                                    <br><br>
                                 </li>
                                 <li>
                                     Type in the following command to download the file to the workspace:<br>
@@ -2251,7 +2218,7 @@
                                     <img class="drop-shadow" src="img/workspace_terminal_download.png" alt="workspace_terminal_download"
                                     style="width:80%">
                                 <figcaption style="width:100%">
-                                    Type in the following command to download the file to the workspace.
+                                    Type in the following command to download the file to the workspace. 
                                 </figcaption> <br> <br>
                                 </li>
                                 <li>
@@ -2263,6 +2230,18 @@
                                 </figcaption> <br> <br>
                                 </li>
                             </ol>
+                            <blockquote>
+                                <span style="font-weight: bold;">Note, that the command above can be used either in the 
+                                    terminal or in a code cell </span>
+                                from within the notebook with 
+                                <code>
+                                    !gen3 pull_object "guid"
+                                </code>. 
+                                If you use the R kernel, change the command into 
+                                <code>
+                                    system("gen3 pull_object 'guid'")
+                                </code>
+                            </blockquote>
 
 
 
