@@ -432,7 +432,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
-      "image": "quay.io/cdis/heal-notebooks:test_r-kernel",
+      "image": "quay.io/cdis/heal-notebooks:oeps__69567adc7583405788eafc39ae8af51a6a5d7690",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
