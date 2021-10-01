@@ -194,7 +194,8 @@
     "memory-limit": "256Mi",
     "image": "quay.io/cdis/ecs-ws-sidecar:master",
     "env": {
-      "NAMESPACE": "healpreprod"
+      "NAMESPACE": "healpreprod",
+      "GEN3_ENDPOINT": "preprod.healdata.org"
     },
     "args": [],
     "command": [
