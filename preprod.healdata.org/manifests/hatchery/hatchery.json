@@ -312,7 +312,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
-      "image": "quay.io/cdis/heal-notebooks:jcoin__74c68bafc3a655def4423d252f9a6ba1e89273fc",
+      "image": "quay.io/cdis/heal-notebooks:jcoin__177f89f0fab8a13c606c68bab0b953aa3fed4b71",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -343,7 +343,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
-      "image": "quay.io/cdis/heal-notebooks:bacpac__3b9ce410d22c92859b827ea8c95dccd521671246",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__ee9b633f80525f98e809199584d9072437215ee4",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -374,10 +374,8 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcdea__f7afc9b185d904bd60a1449e0bfb6d56c50b6ba7",
-      "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
-      },
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__d79f640e135c6d863304f5f9fbd689886fb9fead",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -405,10 +403,8 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c223fa211212638a73436a5b38b81400bc25ace2",
-      "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
-      },
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c7354ce26e2302dba64152f749753295b4918762",
+      "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
