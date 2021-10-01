@@ -316,7 +316,7 @@
         "groupWidth": "full",
         "fields": [
           {
-            "name": "Tags",
+            "name": "Study Characteristics",
             "field": "tags",
             "contentType": "tags",
             "includeIfNotAvailable": false
@@ -403,7 +403,8 @@
             }
           ]
         }
-      ]
+      ],
+      "tagsDisplayName": "Study Characteristics"
     },
     "minimalFieldMapping": {
       "authzField": "authz",

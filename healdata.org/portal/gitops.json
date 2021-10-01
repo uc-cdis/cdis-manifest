@@ -316,7 +316,7 @@
         "groupWidth": "full",
         "fields": [
           {
-            "name": "Tags",
+            "name": "Study Characteristics",
             "field": "tags",
             "contentType": "tags",
             "includeIfNotAvailable": false
@@ -464,7 +464,8 @@
         "color": "#bf362e",
         "display": false
       }
-    ]
+    ],
+    "tagsDisplayName": "Study Characteristics"
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
