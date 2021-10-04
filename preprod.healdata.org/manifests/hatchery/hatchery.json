@@ -192,7 +192,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:master",
+    "image": "quay.io/cdis/ecs-ws-sidecar:fix_no_exit",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
