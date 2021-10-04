@@ -189,18 +189,18 @@
       "region": "us-east-1"
     }
   ],
-  "sidecar": {
+   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:master",
+    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
     "env": {
       "NAMESPACE": "healpreprod",
-      "GEN3_ENDPOINT": "preprod.healdata.org"
+      "HOSTNAME": "preprod.healdata.org"
     },
     "args": [],
     "command": [
       "/bin/bash",
-      "./sidecar.sh"
+      "/sidecarDockerrun.sh"
     ],
     "lifecycle-pre-stop": [
       "su",
