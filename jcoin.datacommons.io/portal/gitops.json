@@ -577,6 +577,145 @@
         "downloadAccessor": "object_id"
       },
       "dropdowns": {}
+    },
+    {
+      "tabTitle": "SAEs",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Total Serious Adverse Events"
+        },
+        "gender": {
+            "chartType": "fullPie",
+            "title": "Gender identity"
+          },
+          "race": {
+            "chartType": "fullPie",
+            "title": "Race"
+          },
+          "hispanic": {
+            "chartType": "fullPie",
+            "title": "Hispanic ethnicity"
+          },
+          "quarter_recruited": {
+            "chartType": "bar",
+            "title": "Quarter of SAE"
+          }
+        },
+        "filters": {
+          "tabs": [
+            {
+              "title": "Hubs",
+              "fields": [
+                "project_name",
+                "protocol"
+              ]
+            },
+            {
+              "title": "Quarter of SAE",
+              "fields": [
+                "quarter_of_sae"
+              ]
+            }, 
+            {
+              "title": "Demographics",
+              "fields": [
+                "gender",
+                "race",
+                "hispanic"
+              ]
+            },
+            {
+              "title": "SAE type",
+              "fields": [
+                "is_related_to_study",
+                "was_expected",
+                "on_opioid_medication"
+              ]
+            }
+          ]
+        },
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_id",
+          "project_name",
+          "protocol",
+          "gender",
+          "race",
+          "hispanic",
+          "quarter_of_sae",
+          "is_related_to_study",
+          "was_expected",
+          "on_opioid_medication"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "data",
+          "title": "Download SAEs",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "saes.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "serious_adverse_event",
+        "nodeCountTitle": "Total Serious Adverse Events",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Hub"
+          },
+          {
+            "field": "hispanic",
+            "name": "Hispanic ethnicity"
+          },
+          {
+            "field": "race",
+            "name": "Race"
+          },
+          {
+            "field": "gender",
+            "name": "Gender identity"
+          },
+          {
+            "field": "protocol",
+            "name": "Hub Study Protocol"
+          },
+          {
+            "field": "protocol_submitter_id",
+            "name": "Hub Study Protocol ID"
+          },
+          {
+            "field": "project_name",
+            "name": "Hub Name"
+          },
+          {
+            "field": "quarter_of_sae",
+            "name": "Quarter of SAE"
+          },
+          {
+            "field": "is_related_to_study",
+            "name": "Related to study?"
+          },
+          {
+            "field": "was_expected",
+            "name": "Was it expected?"
+          },
+          {
+            "field":"on_opioid_medication",
+            "name": "On MOUD?"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
     }
   ],
   "showArboristAuthzOnProfile": true,
