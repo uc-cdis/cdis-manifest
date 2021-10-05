@@ -34,7 +34,7 @@
     "environment": "jcoin-prod",
     "hostname": "jcoin.datacommons.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:258867494168:certificate/a55f3922-fac6-4c64-9362-a5404520136d",
-    "dictionary_url": "https://dictionary-artifacts.s3.amazonaws.com/jcoin_datadictionary/1.1.1/schema.json",
+    "dictionary_url": "https://dictionary-artifacts.s3.amazonaws.com/jcoin_datadictionary/1.2.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-jcoin-prod-gen3",
     "logs_bucket": "s3logs-logs-jcoin-prod-gen3",
@@ -177,6 +177,10 @@
       {
         "index": "jcoin_file",
         "type": "file"
+      },
+      {
+        "index": "jcoin_saes",
+        "type": "serious_adverse_event"
       }
     ],
     "config_index": "jcoin_array-config",
