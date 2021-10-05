@@ -66,6 +66,24 @@
 				"host": "https://gen3.theanvil.io/index/",
 				"hints": [".*dg\\.ANV0.*"],
 				"type": "indexd"
+			},
+			{
+				"name": "JCOIN",
+				"host": "https://jcoin.datacommons.io/index/",
+				"hints": [".*dg\\.6VTS.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "HEAL",
+				"host": "https://healdata.org/index/",
+				"hints": [".*dg\\.H34L.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "External Data HEAL",
+				"host": "https://externaldata.healdata.org/index/",
+				"hints": [".*dg\\.H35L.*"],
+				"type": "indexd"
 			}
 		]
 	}
