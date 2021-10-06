@@ -2,8 +2,7 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
-  "pay-models": [
-    {
+  "pay-models": [{
       "user": "anthony.juehne@nih.gov",
       "aws_account_id": "252835817747",
       "name": "healworkspaces",
@@ -272,18 +271,21 @@
       "root"
     ]
   },
-  "containers": [
-    {
+  "containers": [{
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "(Generic) Jupyter Notebook",
-      "image": "quay.io/occ_data/jupyternotebook:1.9.0",
-      "env": {},
+      "memory-limit": "2Gi",
+      "name": "(Generic) Jupyter Notebook with R Kernel",
+      "image": "quay.io/cdis/jupyter-superslim-r:master",
+      "env": {
+        "FRAME_ANCESTORS": "https://healdata.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
+        "--NotebookApp.ip='*'",
+        "--NotebookApp.notebook_dir='/home/jovyan'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
