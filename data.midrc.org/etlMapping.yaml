@@ -298,8 +298,8 @@ mappings:
       - name: _mr_instances_count
         path: mr_exams.mr_series.mr_instances
         fn: count
-    parent_props:
-      - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
+#    parent_props:
+#      - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _imaging_study_id
