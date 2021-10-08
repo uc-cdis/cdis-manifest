@@ -191,6 +191,10 @@
         "aws_bucket_prefix": "target",
         "gs_bucket_prefix": "gdc-target-phs000218"
     },
+    "TRIO-CRU": {
+        "aws_bucket_prefix": "gdc-trio-cru-phs001163",
+        "gs_bucket_prefix": "gdc-trio-cru-phs001163"
+    },
     "VAREPOP-APOLLO": {
         "aws_bucket_prefix": "gdc-varepop-apollo-phs001374",
         "gs_bucket_prefix": "gdc-varepop-apollo-phs001374"
@@ -346,6 +350,10 @@
     "CPTAC-2": {
         "aws_bucket_prefix": "gdc-cptac-2-phs000892",
         "gs_bucket_prefix": "gdc-cptac-2-phs000892"
+    },
+    "GDC-REBC-THYR": {
+        "aws_bucket_prefix": "gdc-rebc-thyr-phs001134",
+        "gs_bucket_prefix": "gdc-rebc-thyr-phs001134"
     },
     "GENIE-MSK": {
         "aws_bucket_prefix": "gdc-genie-phs001337",
