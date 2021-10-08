@@ -351,10 +351,6 @@
         "aws_bucket_prefix": "gdc-cptac-2-phs000892",
         "gs_bucket_prefix": "gdc-cptac-2-phs000892"
     },
-    "GDC-REBC-THYR": {
-        "aws_bucket_prefix": "gdc-rebc-thyr-phs001134",
-        "gs_bucket_prefix": "gdc-rebc-thyr-phs001134"
-    },
     "GENIE-MSK": {
         "aws_bucket_prefix": "gdc-genie-phs001337",
         "gs_bucket_prefix": "gdc-genie-phs001337"
@@ -386,6 +382,10 @@
     "GENIE-NKI": {
         "aws_bucket_prefix": "gdc-genie-phs001337",
         "gs_bucket_prefix": "gdc-genie-phs001337"
+    },
+    "REBC-THYR": {
+        "aws_bucket_prefix": "gdc-rebc-thyr-phs001134",
+        "gs_bucket_prefix": "gdc-rebc-thyr-phs001134"
     },
     "WCDT-MCRPC": {
         "aws_bucket_prefix": "gdc-wcdt-mcrpc-phs001648",
