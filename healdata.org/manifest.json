@@ -17,9 +17,6 @@
     "hatchery": "quay.io/cdis/hatchery:feat_ecs",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.09",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.09",
-    "hatchery": "quay.io/cdis/hatchery:feat_ecs",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.08",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.08",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:1.6.1",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.09",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.09",
@@ -240,7 +237,7 @@
     {
       "name": "batch-export",
       "action": "batch-export",
-      "activeDeadlineSeconds": 1800,
+      "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/batch-export:25",
