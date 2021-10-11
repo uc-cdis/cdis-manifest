@@ -113,31 +113,11 @@ mappings:
           - name: staffed_icu_beds_per_1000
           - name: staffed_icu_beds_per_1000_gtr_20
           - name: staffed_icu_beds_per_1000_gtr_65
-          - name: state_icu_covid_patients
-          - name: state_vent_capacity
-          - name: state_vent_covid_patients
-          - name: state_icu_available
-          - name: state_vents_available
           - name: state_total_beds
-          - name: state_total_beds_available
-          - name: state_total_beds_used
-          - name: state_pct_hospital_beds_available
-          - name: state_adult_icu_capacity
-          - name: state_icu_open_beds
-          - name: state_icu_beds_used
-          - name: state_icu_open_beds_pct
-          - name: state_covid_pui_patients
-          - name: state_covid_pui_patients_pct
-          - name: state_covid_pui_patients_beds_in_use_pct
-          - name: state_Ventilators_open_pct
-          - name: state_ventilators_in_use
-          - name: state_ventilators_in_use_covid
-          - name: state_ventilators_covid_patients_pct
-          - name: state_covid_patients_non_icu
-          - name: state_total_covid_pui_in_icu
-          - name: state_total_covid_pui_in_hospital
-          - name: state_pct_beds_covid_pui
           - name: testing
+          - name: ventilator_capacity
+          - name: ventilator_in_use_non_covid
+          - name: ventilator_in_use_covid
           - name: total_in_use_beds_non_covid
           - name: total_in_use_beds_covid
           - name: totalTestsViral

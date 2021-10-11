@@ -135,6 +135,12 @@
       "region": "us-east-1"
     },
     {
+      "user": "philschumm@gmail.com",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
       "user": "Kranz-michael@norc.org",
       "aws_account_id": "252835817747",
       "name": "healworkspaces",
@@ -242,7 +248,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -305,7 +312,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -336,7 +344,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -367,7 +376,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -396,7 +406,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -425,7 +436,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
@@ -456,7 +468,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     }
   ]
 }
