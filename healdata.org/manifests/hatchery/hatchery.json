@@ -399,7 +399,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
-      "image": "quay.io/cdis/heal-notebooks:bacpac__ee9b633f80525f98e809199584d9072437215ee4",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__10670ad79b4488cfa9f1b3681ce52bc3f1139b5a",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -430,7 +430,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcdea__dd7863d14a5b1422719858112f9d02ae63b53804",
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__2c94886708fbf7454b6e54f64eb844886d0c3a93",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -461,7 +461,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__c7354ce26e2302dba64152f749753295b4918762",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__b680b2a3568949ee8e895ffd3a90a6e1305a1fcc",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
