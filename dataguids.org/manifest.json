@@ -84,7 +84,26 @@
 				"host": "https://externaldata.healdata.org/index/",
 				"hints": [".*dg\\.H35L.*"],
 				"type": "indexd"
-			}
+			},
+			{
+                                 "name": "Proteomic Data",
+                                "host": "http://pdc.cancer.gov/index/",
+                                "hints": [".*dg\\.PDC87.*"],
+                                "type": "indexd"
+                        },
+                        {
+                                 "name": "Genomics Aotearoa Data",
+                                "host": "https://repo.data.nesi.org.nz/index/",
+                                "hints": [".*dg\\.GAD88.*"],
+                                "type": "indexd"
+                        },
+                        {
+                                 "name": "GAD",
+                                "host": "https://data.agdr.org.nz/index/",
+                                "hints": [".*dg\\.GAD89.*"],
+                                "type": "indexd"
+                        }
+
 		]
 	}
 }
