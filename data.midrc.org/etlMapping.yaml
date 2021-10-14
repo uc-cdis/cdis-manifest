@@ -136,8 +136,8 @@ mappings:
       - name: _mr_instances_count
         path: imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
-    parent_props:
-      - path: datasets[data_contributor]
+#    parent_props:
+#      - path: datasets[data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _case_id
