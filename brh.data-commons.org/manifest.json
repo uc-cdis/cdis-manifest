@@ -13,7 +13,7 @@
     "fence": "quay.io/cdis/fence:5.3.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "hatchery": "quay.io/cdis/hatchery:feat_decouple_workspaces",
-    "metadata": "quay.io/cdis/metadata-service:feat_mds-adapter",
+    "metadata": "quay.io/cdis/metadata-service:master",
     "portal": "quay.io/cdis/data-portal:master",
     "peregrine": "quay.io/cdis/peregrine:2021.07",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
