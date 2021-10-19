@@ -96,6 +96,12 @@
                                 "host": "https://data.agdr.org.nz/index/",
                                 "hints": [".*dg\\.GAD89.*"],
                                 "type": "indexd"
+                        },
+			{
+                                 "name": "UMCCR AGHA",
+                                "host": "https://gen3.agha.umccr.org/index/",
+                                "hints": [".*dg\\.UM33R90.*"],
+                                "type": "indexd"
                         }
 
 		]
