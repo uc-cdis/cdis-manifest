@@ -45,10 +45,11 @@
         "target-port": 8888,
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
-        "name": "Jupyter - Python/R",
-        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "name": "Jupyter (Python 3.9.5, R 4.1.0)",
+        "image": "quay.io/cdis/jupyter-6.4.0-with-base-packages:latest",
         "env": {
-          "NAMESPACE": "default"
+          "NAMESPACE": "default",
+          "FRAME_ANCESTORS": "https://accessclinicaldata.niaid.nih.gov/"
         },
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
