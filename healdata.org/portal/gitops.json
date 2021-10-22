@@ -159,6 +159,10 @@
             "dataset_4_description",
             "data_dictionary"
           ]
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Characteristics"
         }
       },
       "authorization": {
@@ -173,7 +177,6 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category",
       "showTagCategoryNames": true
     },
     "studyColumns": [
@@ -313,7 +316,7 @@
         "groupWidth": "full",
         "fields": [
           {
-            "name": "Tags",
+            "name": "Study Characteristics",
             "field": "tags",
             "contentType": "tags",
             "includeIfNotAvailable": false
@@ -410,31 +413,59 @@
     },
     "tagCategories": [
       {
-        "name": "Demographic Info",
-        "color": "rgba(64, 34, 100, 1)",
+        "name": "Study Setting",
+        "displayName": "Study Setting",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Subject Characteristics",
+        "displayName": "Subject Characteristics",
+        "color": "#982568",
         "display": true
       },
       {
         "name": "Study Design",
-        "color": "rgba(153, 40, 107, 1)",
+        "displayName": "Study Design",
+        "color": "#981f32",
         "display": true
       },
       {
-        "name": "HEAL Specific",
-        "color": "rgba(161, 36, 46, 1)",
+        "name": "Intervention/Treatment",
+        "displayName": "Intervention/Treatment",
+        "color": "#bf362e",
+        "display": true
+      },
+            {
+        "name": "Pain",
+        "color": "#e07c3e",
         "display": true
       },
       {
-        "name": "Other",
-        "color": "rgba(207, 54, 38, 1)",
+        "name": "Substance Use",
+        "displayName": "Substance Use",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Data Type",
+        "displayName": "Data Type",
+        "color": "#982568",
         "display": true
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
-        "color": "rgba(21, 6, 76, 1)"
+        "color": "#981f32",
+        "display": true
+      },
+      {
+        "name": "Other",
+        "color": "#bf362e",
+        "display": false
       }
-    ]
+    ],
+    "tagsDisplayName": "Study Characteristics"
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
