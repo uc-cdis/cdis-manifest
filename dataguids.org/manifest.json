@@ -84,7 +84,26 @@
 				"host": "https://externaldata.healdata.org/index/",
 				"hints": [".*dg\\.H35L.*"],
 				"type": "indexd"
-			}
+			},        
+                        {
+                                 "name": "Genomics Aotearoa Data",
+                                "host": "https://repo.data.nesi.org.nz/index/",
+                                "hints": [".*dg\\.GAD88.*"],
+                                "type": "indexd"
+                        },
+                        {
+                                 "name": "GAD",
+                                "host": "https://data.agdr.org.nz/index/",
+                                "hints": [".*dg\\.GAD89.*"],
+                                "type": "indexd"
+                        },
+			{
+                                 "name": "UMCCR AGHA",
+                                "host": "https://gen3.agha.umccr.org/index/",
+                                "hints": [".*dg\\.UM33R90.*"],
+                                "type": "indexd"
+                        }
+
 		]
 	}
 }
