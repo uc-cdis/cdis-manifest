@@ -150,13 +150,17 @@
             "name": "About"
           },
           {
-            "icon": "upload",
-            "link": "/submission",
-            "name": "Submit Data"
+            "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
+            "name": "Quick Start Guide"
           },
           {
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
+          },
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
           },
           {
             "link": "midrc-support@datacommons.io",
@@ -268,6 +272,7 @@
               "rightIcon": "download"
             }
           ],
+          "loginForDownload": true,
           "guppyConfig": {
             "dataType": "case",
             "nodeCountTitle": "Cases",
@@ -298,7 +303,7 @@
                 },
                 {
                     "field": "_ct_instances_count",
-                    "name": "CT Images Count"
+                    "name": "CT Instances Count"
                 },
                 {
                     "field": "_dx_series_count",
@@ -306,7 +311,7 @@
                 },
                 {
                     "field": "_dx_instances_count",
-                    "name": "DX Images Count"
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
@@ -314,7 +319,7 @@
                 },
                 {
                     "field": "_cr_instances_count",
-                    "name": "CR Images Count"
+                    "name": "CR Instances Count"
                 }
             ],
             "manifestMapping": {
@@ -373,6 +378,7 @@
                 "data_url_doi"
               ]
             },
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "dataset",
               "nodeCountTitle": "Datasets",
@@ -403,7 +409,7 @@
                   },
                   {
                     "field": "_ct_instances_count",
-                    "name": "CT Images Count"
+                    "name": "CT Instances Count"
                   },
                   {
                     "field": "_dx_series_count",
@@ -411,7 +417,7 @@
                   },
                   {
                     "field": "_dx_instances_count",
-                    "name": "DX Images Count"
+                    "name": "DX Instances Count"
                   },
                   {
                     "field": "_cr_series_count",
@@ -419,7 +425,7 @@
                   },
                   {
                     "field": "_cr_instances_count",
-                    "name": "CR Images Count"
+                    "name": "CR Instances Count"
                   },
                   {
                     "field": "_virus_genomes_count",
@@ -491,7 +497,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format"
                   ]
@@ -563,6 +569,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "imaging_study",
               "nodeCountTitle": "Imaging Studies",
@@ -589,7 +596,7 @@
                 },
                 {
                     "field": "_ct_instances_count",
-                    "name": "CT Images Count"
+                    "name": "CT Instances Count"
                 },
                 {
                     "field": "_dx_series_count",
@@ -597,7 +604,7 @@
                 },
                 {
                     "field": "_dx_instances_count",
-                    "name": "DX Images Count"
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
@@ -605,7 +612,7 @@
                 },
                 {
                     "field": "_cr_instances_count",
-                    "name": "CR Images Count"
+                    "name": "CR Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -648,7 +655,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "detector_type",
@@ -738,6 +745,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "radiography_exam",
               "nodeCountTitle": "Digital Radiography Exams",
@@ -756,7 +764,7 @@
                 },
                 {
                     "field": "_dx_instances_count",
-                    "name": "DX Images Count"
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
@@ -764,7 +772,7 @@
                 },
                 {
                     "field": "_cr_instances_count",
-                    "name": "CR Images Count"
+                    "name": "CR Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -807,7 +815,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "acquisition_type",
@@ -908,6 +916,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "ct_scan",
               "nodeCountTitle": "CT Scans",
@@ -926,7 +935,7 @@
                 },
                 {
                     "field": "_ct_instances_count",
-                    "name": "CT Images Count"
+                    "name": "CT Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -963,7 +972,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "slice_thickness",
@@ -1063,6 +1072,7 @@
                 "rightIcon": "download"
               }
             ],
+            "loginForDownload": true,
             "guppyConfig": {
               "dataType": "mr_exam",
               "nodeCountTitle": "MR Exams",
@@ -1081,7 +1091,7 @@
                 },
                 {
                     "field": "_mr_instances_count",
-                    "name": "MR Images Count"
+                    "name": "MR Instances Count"
                 }
               ],
               "manifestMapping": {
