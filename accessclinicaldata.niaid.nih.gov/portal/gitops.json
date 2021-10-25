@@ -15,6 +15,7 @@
         "multiLineTexts": [
           "AccessClinicalData@NIAID is a NIAID cloud-based, secure data platform that enables sharing of and access to reports and data sets from NIAID COVID-19 and other sponsored clinical trials for the basic and clinical research community.",
           "<b>How to View Available Data</b>",
+          "<i>Updated datasets for Adaptive COVID-19 Treatment Trials <a href='/study-viewer/clinical_trials/ACTT'>ACTT-1</a> and <a href='/study-viewer/clinical_trials/NCT04401579'>ACTT-2</a> are now available.</i>",
           "Go to <a href='https://accessclinicaldata.niaid.nih.gov/study-viewer/clinical_trials'>View Clinical Trials</a>. For each study listed, open the details and select the \"Learn More\" button to review a description of the clinical trial and data dictionary.",
           "<b>How to Request Data</b>",
           "Researchers looking to access NIAID COVID-19 and other sponsored clinical trials data may start the request process by completing the following steps:",
@@ -94,7 +95,7 @@
         "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"],
         "sideBoxes": [
           {
-            "title": "Data Access Agreements",
+            "title": "Data Access",
             "items": [
               {
                 "type": "pdf",

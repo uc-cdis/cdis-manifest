@@ -52,9 +52,6 @@ LOGIN_OPTIONS:
     fence_idp: shibboleth
     # "shib_idps" can be '*' or a list of one or more entity IDs
     shib_idps: '*'
-  - name: 'Dev Google Login'
-    idp: google
-    secondary: true
 
 # //////////////////////////////////////////////////////////////////////////////////////
 # LIBRARY CONFIGURATION (authlib & flask)
@@ -198,3 +195,12 @@ S3_BUCKETS:
 DATA_UPLOAD_BUCKET: 'niaiddata-data-bucket'
 
 ENABLE_DB_MIGRATION: false
+
+ENABLE_AUDIT_LOGS:
+  presigned_url: true
+  login: true
+PUSH_AUDIT_LOGS_CONFIG:
+  type: aws_sqs
+  aws_sqs_config:
+    sqs_url: https://sqs.us-east-1.amazonaws.com/636151780898/niaiddata--clinicaltrial--audit-sqs
+    region: us-east-1

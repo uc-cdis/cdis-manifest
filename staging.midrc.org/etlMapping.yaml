@@ -1,5 +1,5 @@
 mappings:
-  - name: midrcstaging_dataset
+  - name: midrc_staging_dataset
     doc_type: dataset
     type: aggregator
     root: dataset
@@ -53,20 +53,20 @@ mappings:
       - name: _dx_series_count
         path: cases.imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: cases.imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: cases.imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: cases.imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: cases.imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: cases.imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: cases.imaging_studies.radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: cases.imaging_studies.mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: cases.imaging_studies.mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: cases.imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
     joining_props:
       - index: imaging_data_file
@@ -89,7 +89,7 @@ mappings:
             fn: set
     parent_props:
       - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
-  - name: midrcstaging_case
+  - name: midrc_staging_case
     doc_type: case
     type: aggregator
     root: case
@@ -121,23 +121,23 @@ mappings:
       - name: _dx_series_count
         path: imaging_studies.radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: imaging_studies.ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: imaging_studies.ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: imaging_studies.radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: imaging_studies.radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: imaging_studies.radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: imaging_studies.radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: imaging_studies.mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: imaging_studies.mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: imaging_studies.mr_exams.mr_series.mr_instances
         fn: count
-    parent_props:
-      - path: datasets[data_contributor]
+#    parent_props:
+#      - path: datasets[data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _case_id
@@ -157,7 +157,7 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrcstaging_imaging_data_file
+  - name: midrc_staging_imaging_data_file
     doc_type: imaging_data_file
     type: collector
     root: None
@@ -200,7 +200,7 @@ mappings:
             fn: max
           - name: index_event
             src: index_event
-            fn: max
+            fn: set
           - name: zip
             src: zip
             fn: set
@@ -236,9 +236,6 @@ mappings:
           - name: study_year_shifted
             src: study_year_shifted
             fn: set
-          - name: study_covid_status
-            src: study_covid_status
-            fn: set
       ct_scan:
         props:
           - name: _ct_scan_id
@@ -254,7 +251,7 @@ mappings:
           - name: _mr_exam_id
             src: id
             fn: set
-  - name: midrcstaging_imaging_study
+  - name: midrc_staging_imaging_study
     doc_type: imaging_study
     type: aggregator
     root: imaging_study
@@ -269,7 +266,6 @@ mappings:
       - name: study_location
       - name: study_year
       - name: study_year_shifted
-      - name: study_covid_status
       - name: series_count
     aggregated_props:
       - name: _ct_scans_count
@@ -287,20 +283,20 @@ mappings:
       - name: _dx_series_count
         path: radiography_exams.dx_series
         fn: count
-      - name: _ct_images_count
-        path: ct_scans.ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_scans.ct_series.ct_instances
         fn: count
-      - name: _cr_images_count
-        path: radiography_exams.cr_series.cr_images
+      - name: _cr_instances_count
+        path: radiography_exams.cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: radiography_exams.dx_series.dx_images
+      - name: _dx_instances_count
+        path: radiography_exams.dx_series.dx_instances
         fn: count
       - name: _mr_series_count
         path: mr_exams.mr_series
         fn: count
-      - name: _mr_images_count
-        path: mr_exams.mr_series.mr_images
+      - name: _mr_instances_count
+        path: mr_exams.mr_series.mr_instances
         fn: count
     parent_props:
       - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
@@ -323,7 +319,7 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrcstaging_ct_scan
+  - name: midrc_staging_ct_scan
     doc_type: ct_scan
     type: aggregator
     root: ct_scan
@@ -334,8 +330,8 @@ mappings:
       - name: _ct_series_count
         path: ct_series
         fn: count
-      - name: _ct_images_count
-        path: ct_series.ct_images
+      - name: _ct_instances_count
+        path: ct_series.ct_instances
         fn: count
       - name: acquisition_type
         path: ct_series
@@ -363,7 +359,7 @@ mappings:
       #   path: ct_series
       #   fn: set
 # these properties are from imaging_Series
-      # - name: contrast_bolus_agent_number
+      # - name: contrast_bolus_agent
       #   path: ct_series
       #   fn: set
       # - name: pixel_spacing
@@ -382,7 +378,7 @@ mappings:
       #   path: ct_series
       #   fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_covid_status,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _ct_scan_id
@@ -405,8 +401,8 @@ mappings:
       - index: imaging_series
         join_on: _ct_scan_id
         props:
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
             fn: set
           - name: image_type
             src: image_type
@@ -441,7 +437,7 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrcstaging_radiography_exam
+  - name: midrc_staging_radiography_exam
     doc_type: radiography_exam
     type: aggregator
     root: radiography_exam
@@ -456,11 +452,11 @@ mappings:
       - name: _dx_series_count
         path: dx_series
         fn: count
-      - name: _cr_images_count
-        path: cr_series.cr_images
+      - name: _cr_instances_count
+        path: cr_series.cr_instances
         fn: count
-      - name: _dx_images_count
-        path: dx_series.dx_images
+      - name: _dx_instances_count
+        path: dx_series.dx_instances
         fn: count
       - name: detector_type
         path: dx_series
@@ -469,7 +465,7 @@ mappings:
         path: dx_series
         fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_covid_status,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _radiography_exam_id
@@ -492,8 +488,8 @@ mappings:
       - index: imaging_series
         join_on: _radiography_exam_id
         props:
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
             fn: set
           - name: image_type
             src: image_type
@@ -528,7 +524,7 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrcstaging_mr_exam
+  - name: midrc_staging_mr_exam
     doc_type: mr_exam
     type: aggregator
     root: mr_exam
@@ -539,8 +535,8 @@ mappings:
       - name: _mr_series_count
         path: mr_series
         fn: count
-      - name: _mr_images_count
-        path: mr_series.mr_images
+      - name: _mr_instances_count
+        path: mr_series.mr_instances
         fn: count
       - name: slice_thickness
         path: mr_series
@@ -561,7 +557,7 @@ mappings:
         path: mr_series
         fn: set
 # These are covered by joining imaging_series
-      # - name: contrast_bolus_agent_number
+      # - name: contrast_bolus_agent
       #   path: mr_series
       #   fn: set
       # - name: image_type
@@ -586,7 +582,7 @@ mappings:
       #   path: mr_series
       #   fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_description,age_at_imaging,body_part_examined,study_location,study_covid_status,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_description,age_at_imaging,body_part_examined,study_location,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _mr_exam_id
@@ -609,8 +605,8 @@ mappings:
       - index: imaging_series
         join_on: _mr_exam_id
         props:
-          - name: contrast_bolus_agent_number
-            src: contrast_bolus_agent_number
+          - name: contrast_bolus_agent
+            src: contrast_bolus_agent
             fn: set
           - name: image_type
             src: image_type
@@ -645,13 +641,13 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrcstaging_imaging_series
+  - name: midrc_staging_imaging_series
     doc_type: imaging_series
     type: collector
     root: None
     category: imaging_series
     props:
-      - name: contrast_bolus_agent_number
+      - name: contrast_bolus_agent
       - name: image_type
       - name: lossy_image_compression
       - name: manufacturer

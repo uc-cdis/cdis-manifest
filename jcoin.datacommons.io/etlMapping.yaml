@@ -6,8 +6,10 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
+      - name: quarter_recruited
+      - name: role_in_project
     parent_props:
-      - path: protocols[protocol]
+      - path: protocols[protocol,protocol_submitter_id:submitter_id].projects[project_name:name]
     flatten_props:
       - path: demographics
         props:
@@ -56,3 +58,19 @@ mappings:
           - name: cmc_title
             src: title
             fn: set
+  - name: jcoin_saes
+    doc_type: serious_adverse_event
+    type: aggregator
+    root: serious_adverse_event
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: quarter_of_sae
+      - name: is_related_to_study
+      - name: was_expected
+      - name: on_opioid_medication
+      - name: gender
+      - name: race
+      - name: hispanic
+    parent_props:
+      - path: protocols[protocol,protocol_submitter_id:submitter_id].projects[project_name:name]

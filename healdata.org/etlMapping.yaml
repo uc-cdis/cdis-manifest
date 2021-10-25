@@ -1,5 +1,5 @@
 mappings:
-  - name: prod-heal_cmc
+  - name: prod_heal_cmc
     doc_type: clinical_trials
     type: aggregator
     root: core_metadata_collection
@@ -30,7 +30,7 @@ mappings:
       - name: project_id
       - name: cmc_unique_id
         src: submitter_id
-  - name: prod-heal_ct-file
+  - name: prod_heal_ct-file
     doc_type: ctfile
     type: aggregator
     root: clinical_trial_file
@@ -44,7 +44,7 @@ mappings:
       - name: project_id
     parent_props:
       - path: core_metadata_collections[cmc_unique_id:submitter_id]
-  - name: prod-heal_oa-file
+  - name: prod_heal_oa-file
     doc_type: oafile
     type: aggregator
     root: open_access_doc

@@ -10,6 +10,7 @@
 		"indexd": "quay.io/cdis/indexd:2021.04",
 		"fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
 		"portal": "quay.io/cdis/dataguids:1.0.1",
+		"metadata": "quay.io/cdis/metadata-service:2021.06",
 		"revproxy": "quay.io/cdis/nginx:2021.04"
 	},
 	"jupyterhub": {
@@ -65,7 +66,44 @@
 				"host": "https://gen3.theanvil.io/index/",
 				"hints": [".*dg\\.ANV0.*"],
 				"type": "indexd"
-			}
+			},
+			{
+				"name": "JCOIN",
+				"host": "https://jcoin.datacommons.io/index/",
+				"hints": [".*dg\\.6VTS.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "HEAL",
+				"host": "https://healdata.org/index/",
+				"hints": [".*dg\\.H34L.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "External Data HEAL",
+				"host": "https://externaldata.healdata.org/index/",
+				"hints": [".*dg\\.H35L.*"],
+				"type": "indexd"
+			},        
+                        {
+                                 "name": "Genomics Aotearoa Data",
+                                "host": "https://repo.data.nesi.org.nz/index/",
+                                "hints": [".*dg\\.GAD88.*"],
+                                "type": "indexd"
+                        },
+                        {
+                                 "name": "GAD",
+                                "host": "https://data.agdr.org.nz/index/",
+                                "hints": [".*dg\\.GAD89.*"],
+                                "type": "indexd"
+                        },
+			{
+                                 "name": "UMCCR AGHA",
+                                "host": "https://gen3.agha.umccr.org/index/",
+                                "hints": [".*dg\\.UM33R90.*"],
+                                "type": "indexd"
+                        }
+
 		]
 	}
 }

@@ -86,43 +86,49 @@
         {
           "icon": "query",
           "link": "/discovery",
-          "name": "Discovery"
+          "name": "Discovery",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies."
         },
         {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
-          "name": "Dictionary"
+          "name": "Dictionary",
+          "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
         },
         {
           "icon": "exploration",
           "link": "/explorer",
           "color": "#a2a2a2",
-          "name": "Exploration"
+          "name": "Exploration",
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
         },
         {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "Query"
+          "name": "Query",
+          "tooltip": "Query the databases using GraphiQL."
         },
         {
           "name": "Notebook Browser",
           "link": "/resource-browser",
           "icon": "analysis",
-          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "workspace",
           "link": "#hostname#workspace/",
           "color": "#a2a2a2",
-          "name": "Workspace"
+          "name": "Workspace",
+          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
-          "name": "Profile"
+          "name": "Profile",
+          "tooltip": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
         }
       ]
     },

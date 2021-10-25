@@ -25,7 +25,7 @@
     ],
     "projectDetails": "boardCounts"
   },
-   "components": {
+  "components": {
     "appName": "IBDGC Portal",
     "index": {
       "introduction": {
@@ -96,10 +96,10 @@
           "name": "Query"
         },
         {
-          "name": "Notebook Browser",
+          "icon": "analysis",
           "link": "/resource-browser",
           "color": "#a2a2a2",
-          "icon": "query"
+          "name": "Notebook Browser"
         },
         {
           "icon": "workspace",
@@ -121,6 +121,10 @@
           "icon": "upload",
           "link": "/submission",
           "name": "Submit Data"
+        },
+        {
+          "link": "https://ibd-browser.planx-pla.net",
+          "name": "IBD gnomAD Browser"
         }
       ]
     },
@@ -396,6 +400,37 @@
       "dropdowns": {}
     }
   ],
+  "studyViewerConfig": [
+    {
+      "dataType": "project",
+      "title": "Projects",
+      "titleField": "title",
+      "rowAccessor": "project_id",
+      "listItemConfig": {
+        "blockFields": ["description"],
+        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_primary_purpose","study_phase","verification_date"]
+      },
+      "singleItemConfig": {
+        "blockFields": ["description"],
+        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_allocation","study_design_primary_purpose","study_phase","verification_date","source","rights"],
+        "sideBoxes": []
+      },
+      "fieldMapping": [
+        { "field": "title", "name": "Study Title" },
+        { "field": "principle_investigator", "name": "Principle Investigator"},
+        { "field": "study_design_allocation", "name": "Design Allocation"},
+        { "field": "study_design_primary_purpose", "name": "Primary Purpose"},
+        { "field": "verification_date", "name": "Verification Date"}
+      ],
+    "buttons": [
+        {
+          "type": "request_access",
+          "resourceDisplayNameField": "title"
+        }
+      ]
+    }
+  ],
+  "useArboristUI": true,
   "resourceBrowser": {
     "title": "NIDDK IBDGC Notebooks",
     "public": true,

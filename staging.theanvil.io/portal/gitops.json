@@ -118,7 +118,8 @@
     "categorical2Colors": [
       "#035C94",
       "#7EBAC0"
-    ]
+    ],
+    "footerLogos": []
   },
   "featureFlags": {
     "explorer": true
@@ -150,11 +151,10 @@
             "title": "Projects",
             "fields": [
               "project_id",
-              "project_short_name",
+              "anvil_project_id",
               "project_dbgap_accession_number",
-              "project_dbgap_consent_text",
               "project_dbgap_phs",
-              "project_name"
+              "project_dbgap_consent_text"
             ]
           },
           {
@@ -163,10 +163,9 @@
               "_subject_id"
             ],
             "fields": [
-              "anvil_project_id",
               "sex",
-              "age_value",
               "ancestry",
+              "age_value",
               "disease_description",
               "phenotype_present",
               "phenotype_absent",
@@ -180,21 +179,21 @@
           {
             "title": "Sample",
             "fields": [
-              "sample_provider",
-              "tissue_affected_status",
               "tissue_type",
               "sample_type",
-              "original_material_type"
+              "original_material_type",
+              "sample_provider",
+              "tissue_affected_status"
             ]
           },
           {
             "title": "Sequencing",
             "fields": [
+              "sequencing_assay",
+              "reference_genome_build",
               "library_prep_kit_method",
               "exome_capture_platform",
               "capture_region_bed_file",
-              "reference_genome_build",
-              "sequencing_assay",
               "alignment_method",
               "data_processing_pipeline"
             ]
@@ -373,6 +372,116 @@
       },
       "terraExportURL": "https://anvil.terra.bio/#import-data",
       "dropdowns": {}
+    },
+    {
+      "tabTitle": "Downloadable",
+      "adminAppliedPreFilters": {
+        "project_id": {
+          "selectedValues": [
+            "CF-GTEx"
+          ]
+        }
+      },
+      "charts": {
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "fields": [
+              "project_id",
+              "data_category",
+              "data_type",
+              "data_format",
+              "analyte_type",
+              "sequencing_assay"
+            ],
+            "searchFields": [
+              "file_name"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "subject_submitter_id",
+          "file_name",
+          "data_format",
+          "data_type",
+          "data_category",
+          "file_size",
+          "submitter_id",
+          "object_id",
+          "md5sum"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-pfb",
+          "title": "Export All to PFB",
+          "rightIcon": "external-link",
+          "tooltipText": "You have not selected any files to export. Please use the checkboxes on the left to select specific files you would like to export."
+        },
+        {
+          "enabled": true,
+          "type": "export-files",
+          "title": "Export All to Terra",
+          "rightIcon": "external-link",
+          "tooltipText": "You have not selected any files to export. Please use the checkboxes on the left to select specific files you would like to export."
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          {
+            "field": "object_id",
+            "name": "GUID"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "subject",
+          "resourceIdField": "_subject_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
+      },
+      "enableLimitedFilePFBExport": {
+        "sourceNodeField": "source_node"
+      },
+      "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
+      "terraExportURL": "https://anvil.terra.bio/#import-data"
     }
   ],
   "dataExplorerConfig": {

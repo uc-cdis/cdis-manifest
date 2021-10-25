@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-19",
+  "ddEnv": "healpreprod",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -39,10 +40,10 @@
           "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
-          "name": "Notebook Browser",
+          "name": "Static Notebooks",
           "link": "/resource-browser",
           "icon": "analysis",
-          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
           "icon": "profile",
@@ -55,8 +56,8 @@
     "topBar": {
       "items": [
         {
-          "link": "https://gen3.org/resources/user/",
-          "name": "Documentation"
+          "link": "https://preprod.healdata.org/dashboard/Public/documentation/index.html",
+          "name": "HEAL Documentation"
         }
       ]
     },
@@ -65,8 +66,8 @@
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "This website supports the management, analysis and sharing of data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "support@datacommons.io",
-      "image": "/../../../../custom/sponsors/gitops-sponsors/gene_heal"
+      "email": "heal-support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/heal_login_color_sides"
     },
     "categorical9Colors": [
       "#99286B",
@@ -100,28 +101,34 @@
   "featureFlags": {
     "explorer": false,
     "analysis": false,
-    "discovery": true
+    "discovery": true,
+    "discoveryUseAggMDS": true
   },
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": true,
+        "enabled": false,
         "field": "advSearchFilters",
         "filters": [
           { "key": "Research Focus Area" },
           { "key": "Administering IC(s)" },
+          { "key": "Simulated vs. Real Data" },
           { "key": "Year Grant Awarded" },
           { "key": "Study Description" }
         ]
       },
-      "exportToWorkspaceBETA": {
+      "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
         "enableDownloadManifest": true,
+        "enableDownloadZip": true,
+        "downloadZipButtonText": "Download Zip",
+        "downloadManifestButtonText": "Download Manifest",
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
-        }
+        },
+        "verifyExternalLogins": true
       },
       "pageTitle": {
         "enabled": false
@@ -129,6 +136,7 @@
       "search": {
         "searchBar": {
           "enabled": true,
+          "inputSubtitle": "Examples: pain, buprenorphine, intervention",
           "searchableTextFields": [
             "summary",
             "location",
@@ -148,8 +156,13 @@
             "dataset_1_description",
             "dataset_2_description",
             "dataset_3_description",
-            "dataset_4_description"
+            "dataset_4_description",
+            "data_dictionary"
           ]
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Characteristics"
         }
       },
       "authorization": {
@@ -164,20 +177,26 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category"
+      "showTagCategoryNames": true
     },
     "studyColumns": [
       {
         "name": "Project Title",
-        "field": "project_title"
+        "field": "project_title",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Research Focus Area",
-        "field": "research_focus_area"
+        "field": "research_focus_area",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Investigator(s)",
-        "field": "investigators"
+        "field": "investigators",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -218,7 +237,7 @@
         },
         {
           "groupName": "Host Institution",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -233,10 +252,10 @@
               "name": "Investigator(s)",
               "field": "investigators"
             },
-              {
-                "name": "Administering IC(s)",
-                "field": "administering_ic"
-              },
+            {
+              "name": "Administering IC(s)",
+              "field": "administering_ic"
+            },
             {
               "name": "Year Grant Awarded",
               "field": "year_awarded"
@@ -245,7 +264,7 @@
         },
         {
           "groupName": "Clinical Trial",
-          "groupWidth": "half",
+          "groupWidth": "full",
           "includeName": false,
           "fields": [
             {
@@ -255,6 +274,11 @@
             {
               "name": "Study Name",
               "field": "study_name"
+            },
+            {
+              "name": "Study URL",
+              "field": "study_url",
+              "contentType": "link"
             },
             {
               "name": "Study Description",
@@ -292,7 +316,7 @@
         "groupWidth": "full",
         "fields": [
           {
-            "name": "Tags",
+            "name": "Study Characteristics",
             "field": "tags",
             "contentType": "tags",
             "includeIfNotAvailable": false
@@ -379,57 +403,110 @@
             }
           ]
         }
-      ]
+      ],
+      "tagsDisplayName": "Study Characteristics"
     },
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
+      "dataAvailabilityField": "data_availability",
       "uid": "project_number"
     },
     "tagCategories": [
       {
-        "name": "Enhancing Pain Management",
-        "color": "rgba(64, 34, 100, 1)",
+        "name": "Study Setting",
+        "displayName": "Study Setting",
+        "color": "#532565",
         "display": true
       },
       {
-        "name": "Improving Treatments for Opioid Misuse and Addiction",
-        "color": "rgba(153, 40, 107, 1)",
+        "name": "Subject Characteristics",
+        "displayName": "Subject Characteristics",
+        "color": "#982568",
         "display": true
       },
       {
-        "name": "Demographics",
-        "color": "rgba(161, 36, 46, 1)",
+        "name": "Study Design",
+        "displayName": "Study Design",
+        "color": "#981f32",
+        "display": true
+      },
+      {
+        "name": "Intervention/Treatment",
+        "displayName": "Intervention/Treatment",
+        "color": "#bf362e",
+        "display": true
+      },
+            {
+        "name": "Pain",
+        "color": "#e07c3e",
+        "display": true
+      },
+      {
+        "name": "Substance Use",
+        "displayName": "Substance Use",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Data Type",
+        "displayName": "Data Type",
+        "color": "#982568",
+        "display": true
+      },
+      {
+        "name": "Commons",
+        "displayName": "Data Resources",
+        "color": "#981f32",
         "display": true
       },
       {
         "name": "Other",
-        "color": "rgba(207, 54, 38, 1)",
-        "display": true
+        "color": "#bf362e",
+        "display": false
       }
     ]
   },
   "resourceBrowser": {
-    "title": "HEAL Jupyter Notebooks",
+    "title": "Static HEAL Jupyter Notebooks",
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
     "resources": [
       {
-        "title": "BACPAC synthetic data analysis",
-        "description": "In this Jupyter notebook, we used the synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
-        "link": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.html",
-        "imageUrl": "/dashboard/Public/notebooks/HEAL_Workspace_Demo_BACPAC.png"
+        "title": "BACPAC Synthetic Data Analysis",
+          "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+        "link": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.png"
       },
       {
-        "title": "Tracking Stigma related to Opioid Use Disorder",
+        "title": "JCOIN Tracking Opioid Stigma",
         "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/NORC_JCOIN_data_demo.html",
-        "imageUrl": "/dashboard/Public/notebooks/NORC_JCOIN_notebook.png"
+        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
+      },
+      {
+        "title": "Opioid Prevalence And Overdoses",
+        "description": "In this Jupyter notebook, we used the CDC WONDER, DEA ARCOS, and PDAPS datasets to demonstate how multiple datasets may be utilized within the workspace in HEAL.",
+        "link": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.html",
+        "imageUrl": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.png"
+      },
+      {
+        "title": "Opioid Overdose Trajectories",
+        "description": "In this Jupyter notebook, we used the CDC WONDER dataset to explore opioid overdose death rate trajectories in the United States.",
+        "link": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.html",
+        "imageUrl": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.png"
+      },
+      {
+        "title": "Opioid Environment Toolkit And OEPS R",
+        "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
+        "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
+        "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
       }
     ]
   },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {}
 }

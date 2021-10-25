@@ -330,6 +330,13 @@
           "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "clinical.csv"
+        },
+        {
+          "enabled": true,
+          "type": "export-pfb-to-workspace",
+          "title": "Export PFB to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
       ],
       "guppyConfig": {
@@ -747,29 +754,12 @@
               "region_icu_avail",
               "region_vents_capacity",
               "region_vents_available",
-              "state_vent_covid_patients",
-              "state_icu_covid_patients",
-              "state_covid_patients_non_icu",
-              "state_covid_pui_patients",
-              "state_total_covid_pui_in_hospital",
-              "state_icu_capacity",
-              "state_icu_available",
-              "state_vent_capacity",
-              "state_vents_available",
-              "state_Ventilators_open_pct",
-              "state_ventilators_in_use",
-              "state_ventilators_in_use_covid",
-              "state_ventilators_covid_patients_pct",
               "state_total_beds",
-              "state_total_beds_available",
               "total_in_use_beds_covid",
-              "state_pct_beds_covid_pui",
-              "state_pct_hospital_beds_available",
-              "state_icu_open_beds",
-              "state_icu_beds_used",
-              "state_icu_open_beds_pct",
-              "vaccine_administered_count",
-              "vaccine_persons_fully_vaccinated_pct",
+              "icu_beds",
+              "icu_in_use_beds_covid",
+              "ventilator_capacity",
+              "ventilator_in_use_covid",
               "vaccine_total_delivered_vaccine_doses",
               "vaccine_community_reported_inventory",
               "vaccine_reported_inventory"
@@ -820,30 +810,15 @@
           "region_icu_capacity",
           "region_vents_available",
           "region_vents_capacity",
-          "state_vent_covid_patients",
-          "state_icu_covid_patients",
-          "state_covid_patients_non_icu",
-          "state_covid_pui_patients",
-          "state_total_covid_pui_in_hospital",
-          "state_total_covid_pui_in_icu",
-          "state_icu_capacity",
-          "state_icu_available",
-          "state_vent_capacity",
-          "state_vents_available",
-          "state_Ventilators_open_pct",
-          "state_ventilators_in_use",
-          "state_ventilators_in_use_covid",
-          "state_ventilators_covid_patients_pct",
           "state_total_beds",
-          "state_total_beds_available",
-          "state_total_beds_used",
           "total_in_use_beds_non_covid",
           "total_in_use_beds_covid",
-          "state_pct_beds_covid_pui",
-          "state_pct_hospital_beds_available",
-          "state_icu_open_beds",
-          "state_icu_beds_used",
-          "state_icu_open_beds_pct",
+          "icu_beds",
+          "icu_in_use_beds_non_covid",
+          "icu_in_use_beds_covid",
+          "ventilator_capacity",
+          "ventilator_in_use_non_covid",
+          "ventilator_in_use_covid",
           "population_density",
           "completed_high_school",
           "college_degree",
@@ -975,100 +950,40 @@
             "name": "IL Region Ventilators Capacity"
           },
           {
-            "field": "state_icu_capacity",
-            "name": "IL ICU Capacity"
-          },
-          {
-            "field": "state_icu_covid_patients",
-            "name": "IL ICU COVID-19 Patients"
-          },
-          {
-            "field": "state_vent_capacity",
-            "name": "IL Ventilator Capacity"
-          },
-          {
-            "field": "state_vent_covid_patients",
-            "name": "IL Ventilator COVID-19 Patients"
-          },
-          {
-            "field": "state_ventilators_in_use_covid",
-            "name": "IL Ventilators In Use COVID-19"
-          },
-          {
-            "field": "state_icu_available",
-            "name": "IL ICU Available"
-          },
-          {
-            "field": "state_vents_available",
-            "name": "IL Ventilators Available"
-          },
-          {
             "field": "state_total_beds",
             "name": "IL Total Beds"
           },
           {
-            "field": "state_total_beds_available",
-            "name": "IL Total Beds Available "
-          },
-          {
-            "field": "state_total_beds_used",
-            "name": "IL Total Beds Used"
-          },
-          {
-            "field": "state_pct_hospital_beds_available",
-            "name": "IL Hospital Bed Available (percent)"
-          },
-          {
-            "field": "state_icu_open_beds",
-            "name": "IL ICU Open Beds"
-          },
-          {
-            "field": "state_icu_beds_used",
-            "name": "IL ICU Beds in Use"
-          },
-          {
-            "field": "state_icu_open_beds_pct",
-            "name": "IL ICU Open Beds (percent)"
-          },
-          {
-            "field": "state_covid_pui_patients",
-            "name": "IL COVID-19 PUI Patients"
-          },
-          {
-            "field": "state_Ventilators_open_pct",
-            "name": "IL Ventilators Open (percent)"
-          },
-          {
-            "field": "state_ventilators_in_use",
-            "name": "IL Ventilators In Use"
-          },
-          {
-            "field": "state_ventilators_covid_patients_pct",
-            "name": "IL Ventilators COVID-19 Patients (percent)"
-          },
-          {
-            "field": "state_covid_patients_non_icu",
-            "name": "IL COVID-19 Patients Non ICU"
-          },
-          {
-            "field": "state_total_covid_pui_in_icu",
-            "name": "IL Total COVID-19 PUI ICU"
-          },
-          {
-            "field": "state_total_covid_pui_in_hospital",
-            "name": "IL COVID-19 PUI Hospitalized"
-          },
-          {
-            "field": "state_pct_beds_covid_pui",
-            "name": "IL Percentage Beds COVID-19 PUI"
-          },
-          {
             "field": "total_in_use_beds_non_covid",
-            "name": "IL Total In Use Non-COVID-19 Beds "
+            "name": "IL Total In Use Non-COVID-19 Beds"
           },
           {
             "field": "total_in_use_beds_covid",
             "name": "IL Total In Use COVID-19 Beds"
+          },
+          {
+            "field": "icu_beds",
+            "name": "IL Total ICU Beds"
+          },
+          {
+            "field": "icu_in_use_beds_non_covid",
+            "name": "IL Total In Use Non-COVID-19 ICU Beds"
+          },
+          {
+            "field": "icu_in_use_beds_covid",
+            "name": "IL Total In Use COVID-19 ICU Beds"
+          },
+          {
+            "field": "ventilator_capacity",
+            "name": "IL Total Ventilators"
+          },
+          {
+            "field": "ventilator_in_use_non_covid",
+            "name": "IL Total In Use Non-COVID-19 Ventilators"
+          },
+          {
+            "field": "ventilator_in_use_covid",
+            "name": "IL Total In Use COVID-19 Ventilators"
           },
           {
             "field": "hhinc_mean",
@@ -1206,6 +1121,18 @@
         "description": "This notebook provides an example to manipulate coronavirus SARS-CoV-2 DNA sequence, amino acid sequence and use visualization tools to present the three-dimensional (3D) structure of SARS-CoV-2 protein structures interactively.",
         "link": "/dashboard/Public/notebooks/3D_Protein_Vis.html",
         "imageUrl": "/dashboard/Public/notebooks/3D_Protein_Vis.png"
+      },
+      {
+        "title": "Data Visualization of COVID-19 Vaccinations, Cases, and Deaths in Illinois",
+        "description": "This notebook is a snapshot of publically available data and has data visualizations of administed vaccine doses, daily new cases, and daily deaths related to COVID-19.",
+        "link": "/dashboard/Public/notebooks/covid19_datavis_il.html",
+        "imageUrl": "/dashboard/Public/notebooks/covid19_datavis_il.png"
+      },
+      {
+        "title": "Percentage of ICU bed availability prediction in the state of Illinois",
+        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
+        "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
     ]
   },
@@ -1359,14 +1286,14 @@
             "path": "bayes-by-county/Rt_Top20.svg"
           },
           {
-            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 10 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 10 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
+            "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 60 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 60 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 180 days. R square values pertain to the fits of model (olive dash line) to the previous 180 days of observed data (pink dots).",
             "type": "image",
             "path": "charts_data/IL_tab_charts_cumulative_logistic_last180days.svg"
           },
           {
-            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
+            "title": "Using 4-phase Logistic Model And Data From Past 360 Days to Obtain Cumulative Cases Forecasts For Future 120 Days in Illinois",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 120 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
             "type": "image",
             "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
           },
@@ -1390,5 +1317,8 @@
         }
       }
     }
-  }
+  },
+  "connectSrcCSPWhitelist": [
+    "https://covd-map-occ-prc-prod.s3.amazonaws.com"
+  ]
 }
