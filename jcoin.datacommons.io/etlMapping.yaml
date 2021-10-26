@@ -58,6 +58,15 @@ mappings:
           - name: cmc_title
             src: title
             fn: set
+          - name: cmc_subject
+            src: subject
+            fn: set
+          - name: cmc_source
+            src: source
+            fn: set
+          - name: cmc_relation
+            src: relation
+            fn: set
   - name: jcoin_saes
     doc_type: serious_adverse_event
     type: aggregator
