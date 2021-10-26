@@ -12,7 +12,7 @@
   --g3-color__smoke: #D1D1D1;
   --g3-color__silver: #E7E7E7;
   --g3-color__black: #000000;
-  --g3-color__white: #FFFFFF;;
+  --g3-color__white: #FFFFFF;
 
   --g3-primary-btn__color: var(--g3-color__white);
   --g3-primary-btn__bg-color: var(--secondary-color);
@@ -72,7 +72,8 @@
   border-bottom: 3px solid var(--primary-color);
 }
 
-.nav-bar__link--right, .nav-bar__link--right:last-child {
+.nav-bar__link--right,
+.nav-bar__link--right:last-child {
   border: none;
 }
 
