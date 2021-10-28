@@ -2,19 +2,6 @@
 <html>
 
 <head>
-    <script src="https://www.datadoghq-browser-agent.com/datadog-rum-v3.js" type="text/javascript">
-    </script>
-    <script>
-        window.DD_RUM && window.DD_RUM.init({
-            applicationId: '56c2da45-6766-4699-a782-316cb15ff8f8',
-            clientToken: 'pubb074188785e5c14e7bb80e6df4229368',
-            site: 'datadoghq.com',
-            service: 'heal-documentation',
-            env: 'healprod',
-            sampleRate: 100,
-            trackInteractions: true
-        });
-    </script>
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
     <link rel='stylesheet' type='text/css' href='index.css' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -102,9 +89,9 @@
 
                     </div>
 
-                    <a href="#StaticNoteboks">f) Static Notebooks</a>
+                    <a href="#StaticNoteboks">f) Example Analysis</a>
                     <div class="ul-sidenav-sub-sub">
-                        <a href="#WhyStaticNotebooks">Why static Notebooks?</a>
+                        <a href="#WhyStaticNotebooks">Why tutorial Notebooks?</a>
                         <a href="#CurrentlyAvailableNotebooks">Currently available Notebooks</a>
                         <a href="#WorkingTutorialNotebooksInteractively">Working with the Tutorial Notebooks in
                             interactive mode</a>
@@ -540,7 +527,7 @@
                                 <li>
                                     <a href="#StaticNoteboks" style="background-image: url('img/grid_notebooks_color.png');"></a>
                                     <div class="details">
-                                        <h6><a href="#StaticNoteboks">Static Notebooks</a></h6>
+                                        <h6><a href="#StaticNoteboks">Example Analysis</a></h6>
                                         <p class="image-author">Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform.</p>
                                     </div>
                                 </li>
@@ -564,7 +551,7 @@
                                         Browse the study metadata on the Discovery Page
                                     </li>
                                     <li>
-                                        follow along the pre-made tutorial notebooks in the “Static Notebooks” tab
+                                        follow along the pre-made tutorial notebooks in the “Example Analysis” tab
                                     </li>
                                 </ul>
                             </p>
@@ -1015,8 +1002,7 @@
                                     Make sure to terminate the workspace when the work is finished to reduce computational costs.
                                 </li>
                                 <blockquote>
-                                    - "pd" means persistent directory. Saved files outside this directory will be lost.
-                                    <br><br> - The manifest.json lists metadata of all exported files and can be used to download in
+                                    - "pd" means persistent directory. Saved files outside this directory will be lost. <br><br> - The manifest.json lists metadata of all exported files and can be used to download in
                                     <a href="#DownloadFilesSDKWorkspaces">batches</a><br><br> - Note, that all exported data files will be saved in the
                                     <code>/pd/data/healdata.org/</code> folder.<br><br> - Please also note, that the workspace mounts up to a
                                     <span style="font-weight: bold">maximum of 5 different manifests</span> while the workspace is running but shows only the latest exported manifest in a newly launched workspace.
@@ -1051,8 +1037,7 @@
                                     <br> <br>
                                     <img class="drop-shadow" src="img/workspace_flavors.png" alt="Workspace_flavors" style="width:80%">
                                     <figcaption style="width:100%">
-                                        Available workspaces on the HEAL Platform (top). Users may need to link their accounts from other repositories (bottom; click <a href="#LinkingAccessTo">here
-                                            to see
+                                        Available workspaces on the HEAL Platform (top). Users may need to link their accounts from other repositories (bottom; click <a href="#LinkingAccessTo">here to see
                                             how</a>).
                                     </figcaption> <br> <br>
                                 </li>
@@ -1068,7 +1053,7 @@
                                         <span style="font-weight: bold">Tutorial Notebooks</span>: Explore our Jupyter Notebook tutorials written in Python or RStudio, which pull data from various sources of the HEAL Data Ecosystem to leverage statistical
                                         programs and data analysis tools. <br><br> All interactive tutorial notebooks can be also found as
                                         <a href="https://healdata.org/resource-browser">static version on the
-                                            Notebook Browser tab</a>; read more in the section <a href="#StaticNotebooks">"Static Notebooks"</a>.
+                                            Notebook Browser tab</a>; read more in the section <a href="#StaticNotebooks">"Example Analysis"</a>.
                                         <br> <br> Feel free to edit and experiment with this collection of notebooks. They are your personal copies! <br><br>
                                         <ul>
                                             <li>
@@ -1104,8 +1089,7 @@
 
                                     <blockquote>
                                         - <span style="font-weight: bold">Attention</span>: Any personal files in the folder “data” will be lost. Personal files in the directory /pd will persist.
-                                        <br> <br> - Do not save files in the "data" and “data/healdata.org” folders.
-                                        <br> <br> - The folder “healdata.org” in the “data” folder will host the data files you have exported from the Discovery Page. <br><br>
+                                        <br> <br> - Do not save files in the "data" and “data/healdata.org” folders. <br> <br> - The folder “healdata.org” in the “data” folder will host the data files you have exported from the Discovery Page. <br><br>
                                     </blockquote>
 
 
@@ -1264,8 +1248,7 @@
                 </code>. Then, create a file using vim:
                                 <code>
                     vim stata.lic
-                </code>. This will open the file in the terminal. Users can copy the license, then hit <code>:</code> +
-                                <code>wq</code>.
+                </code>. This will open the file in the terminal. Users can copy the license, then hit <code>:</code> + <code>wq</code>.
                             </p>
                             <p>
                                 Then, users need to start a new notebook under "New" (choose either R or Python). Run the following code in the first cell: <br>
@@ -1292,9 +1275,7 @@
                             <h4 id="TroubleshootingWorkspaces" class="section-title">Troubleshooting</h4>
                             <ul>
                                 <li>
-                                    If the kernel died, make sure to be logged in on 1) <a href="#LoginPage">the Login
-                                        Page</a> 2) <a href="#LinkingAccessTo">have enabled access to the FAIR enabled
-                                        repository</a>
+                                    If the kernel died, make sure to be logged in on 1) <a href="#LoginPage">the Login Page</a> 2) <a href="#LinkingAccessTo">have enabled access to the FAIR enabled repository</a>
                                 </li>
                             </ul>
 
@@ -1318,15 +1299,15 @@
 
 
 
-                            <h3 id="StaticNoteboks" class="section-title">f) Static Notebooks</h3>
+                            <h3 id="StaticNoteboks" class="section-title">f) Example Analysis</h3>
                             <p>
-                                <a href="https://healdata.org/resource-browser">The Static Notebooks page</a> contains a collection of view-only tutorial Jupyter Notebooks that provide demo analyses of datasets published on the HEAL platform.
+                                <a href="https://healdata.org/resource-browser">The Example Analysis page</a> contains a collection of view-only tutorial Jupyter Notebooks that provide demo analyses of datasets published on the HEAL platform.
                             </p>
                             <blockquote>
                                 This tab acts as a <a href=#CurrentlyAvailableNotebooks>'visual table of contents’</a> of available HEAL datasets.
                             </blockquote>
                             <p>
-                                <span style="font-weight: bold;">“HEAL Static Notebooks” </span> <br> This video introduces users to the Static Notebooks page, where users can browse Jupyter notebook demos to explore previous data analyses on the HEAL
+                                <span style="font-weight: bold;">“HEAL Example Analysis” </span> <br> This video introduces users to the Example Analysis page, where users can browse Jupyter notebook demos to explore previous data analyses on the HEAL
                                 platform.
                                 <br><br>
                                 <video controls width="500">
@@ -1344,7 +1325,7 @@
                                 Currently available static Jupter Notebooks.
                             </figcaption>
 
-                            <h4 id="WhyStaticNotebooks" class="section-title">Why static Notebooks?</h4>
+                            <h4 id="WhyStaticNotebooks" class="section-title">Why tutorial Notebooks?</h4>
 
                             <p>
                                 These notebooks will allow users to learn how to analyze and visualize data available on the HEAL platform - without having to take the additional steps of finding and exporting the data used by the tutorial first.
@@ -1377,7 +1358,7 @@
                             </ul>
 
                             <p>
-                                The “Static Notebooks” tab will be regularly updated with new and exciting tutorial data analysis notebooks, as more datasets are published and brought together in novel ways on the Platform.
+                                The “Example Analysis” tab will be regularly updated with new and exciting tutorial data analysis notebooks, as more datasets are published and brought together in novel ways on the Platform.
                             </p>
 
 
@@ -1425,8 +1406,7 @@
                                         1U24AR076730-01
                                     </td>
                                     <td>
-                                        1) participant_<br>SMART.tsv<br> 2) substance_use_<br>SMART.tsv<br> 3) physical_function_
-                                        <br>SMART.tsv
+                                        1) participant_<br>SMART.tsv<br> 2) substance_use_<br>SMART.tsv<br> 3) physical_function_<br>SMART.tsv
                                     </td>
                                     <td>
                                         Python
@@ -1443,10 +1423,7 @@
                                         1U2CDA050098-01_a
                                     </td>
                                     <td>
-                                        1) JCOIN_NORC_<br>Omnibus_SURVEY1_<br>Feb2020.sav<br> 2) JCOIN_NORC_
-                                        <br>Omnibus_SURVEY2_<br>April2020.sav<br> 3) JCOIN_NORC_
-                                        <br>Omnibus_SURVEY3_<br>June2020.sav<br> 4) JCOIN_NORC_
-                                        <br>Omnibus_SURVEY4_<br>Oct2020.sav
+                                        1) JCOIN_NORC_<br>Omnibus_SURVEY1_<br>Feb2020.sav<br> 2) JCOIN_NORC_<br>Omnibus_SURVEY2_<br>April2020.sav<br> 3) JCOIN_NORC_<br>Omnibus_SURVEY3_<br>June2020.sav<br> 4) JCOIN_NORC_<br>Omnibus_SURVEY4_<br>Oct2020.sav
                                     </td>
                                     <td>
                                         Python
@@ -1465,11 +1442,7 @@
                                     </td>
                                     <td>
                                         1a) dea_arcos_drug_list.tsv <br> 1b) dea_arcos_county_<br>population.tsv <br> 1c) dea_arcos_combined_<br>county_annual.tsv <br> 1d) dea_arcos_state_population.tsv <br><br> 2a) 20170216-RM-Stat-Data.xlsx <br> 2b)
-                                        Naloxone_Data_09112020.xlsx <br> 2c) 20180810_Good_Samaritan_
-                                        <br>Law_Stat_Data.xlsx <br><br> 3a) CDC_WONDER_unintentional_
-                                        <br>overdoses.tsv <br> 3b) CDC_WONDER_suicide_
-                                        <br>overdoses.tsv <br> 3c) monthly_unintentional_
-                                        <br>overdoses.tsv
+                                        Naloxone_Data_09112020.xlsx <br> 2c) 20180810_Good_Samaritan_<br>Law_Stat_Data.xlsx <br><br> 3a) CDC_WONDER_unintentional_<br>overdoses.tsv <br> 3b) CDC_WONDER_suicide_<br>overdoses.tsv <br> 3c) monthly_unintentional_<br>overdoses.tsv
                                         <br>
                                     </td>
                                     <td>
@@ -1506,9 +1479,7 @@
                                         cdcwonder
                                     </td>
                                     <td>
-                                        1) deaths_gender.xlsx <br> 2) deaths_age_cat.xlsx <br> 3) deaths_type_opioid.xlsx <br> 4) cdc_wonder_year_cause_
-                                        <br>hedegaard_et_al_2020.txt <br> 5) cdc_wonder_year_cause_
-                                        <br>state_hedegaard_et_al_2020.txt
+                                        1) deaths_gender.xlsx <br> 2) deaths_age_cat.xlsx <br> 3) deaths_type_opioid.xlsx <br> 4) cdc_wonder_year_cause_<br>hedegaard_et_al_2020.txt <br> 5) cdc_wonder_year_cause_<br>state_hedegaard_et_al_2020.txt
                                     </td>
                                     <td>
                                         Python
@@ -1632,8 +1603,7 @@
                                 </li>
                                 <li>
                                     Find the study of interest by using the <a href="#SearchFeatures">search
-                                        features</a> or the <a href="#FindAvailableDatasets">list of accessible
-                                        studies</a>.<br><br>
+                                        features</a> or the <a href="#FindAvailableDatasets">list of accessible studies</a>.<br><br>
                                 </li>
                                 <li>
                                     Select the clickable box next to the study. <br> Click on "Download ZIP", which will initiate the data download.<br>
@@ -1825,8 +1795,7 @@
                                     </ul>
                                     </li>
                                     <li>
-                                        The file(s) should be downloaded and is ready to be worked with in your Notebook.
-                                        <br>
+                                        The file(s) should be downloaded and is ready to be worked with in your Notebook. <br>
                                         <img class="drop-shadow" src="img/workspace_terminal_downloaded.png" alt="workspace_terminal_downloaded" style="width:80%">
                                         <figcaption style="width:100%">
                                             Downloaded files can be found in your home directory.
@@ -1914,8 +1883,7 @@
                                 <li>
                                     <span style="font-weight: bold;">My download is not working.</span><br><br> Please check if your file size exceeds 250 MB. If yes, please other tools as described
                                     <a href="#DownloadFilesClientSDK">here</a> to download the files. Note that the current studies that have datasets of more than 250 MB are those with the following project numbers: a) cdcwonder and b) deaarcos1. If
-                                    errors persist, please contact the <a href="mailto:heal-support@datacommons.io">help
-                                        desk</a>.
+                                    errors persist, please contact the <a href="mailto:heal-support@datacommons.io">help desk</a>.
                                     <br><br>
                                 </li>
                                 <li>
@@ -1928,8 +1896,8 @@
                                 <li>
                                     <span style="font-weight: bold;">The Gen3-client shows errors, where can I get help?
                                     </span><br><br> To check that the client is working and to confirm the client version, type ‘gen3-client’ in the terminal. Typing ‘gen3-client help’ will display the help menu. Users
-                                    must provide the full path of the tool in order for the commands to run, for example, ‘./gen3-client’ while working from the directory containing the client.
-                                    <br> For more troubleshooting, please see the Gen3-client documentation <a href="https://gen3.org/resources/user/gen3-client/">here</a>. If errors persist, contact our <a href="mailto:heal-support@datacommons.io">help
+                                    must provide the full path of the tool in order for the commands to run, for example, ‘./gen3-client’ while working from the directory containing the client. <br> For more troubleshooting, please see the Gen3-client
+                                    documentation <a href="https://gen3.org/resources/user/gen3-client/">here</a>. If errors persist, contact our <a href="mailto:heal-support@datacommons.io">help
                                         desk</a>.
                                     <br><br>
                                 </li>
@@ -1960,8 +1928,7 @@
                                     <br><br>
                                 </li>
                                 <li>
-                                    <span style="font-weight: bold;">I want to report a bug! </span><br><br> Please report any errors or bugs to our <a href="mailto:heal-support@datacommons.io">help
-                                        desk</a>.
+                                    <span style="font-weight: bold;">I want to report a bug! </span><br><br> Please report any errors or bugs to our <a href="mailto:heal-support@datacommons.io">help desk</a>.
                                     <br><br>
                                 </li>
                             </ol>
@@ -2011,7 +1978,7 @@
                                         video</a> instead. <br> <br>
                                 </li>
                                 <li>
-                                    <span style="font-weight: bold;">“HEAL Static Notebooks” </span> <br> This video introduces users to the Static Notebooks page, where users can browse Jupyter notebook demos to explore previous data analyses on the
+                                    <span style="font-weight: bold;">“HEAL Example Analysis” </span> <br> This video introduces users to the Example Analysis page, where users can browse Jupyter notebook demos to explore previous data analyses on the
                                     HEAL platform.<br><br>
                                     <video controls width="500">
 
