@@ -91,7 +91,8 @@
 					],
 					"data_availability": "available",
 					"authz": "/programs/open",
-					"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122"
+					"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122",
+					"dataset_1_title": "TEDS-D-2018-DS0001-bndl-data-spss.zip"
 				},
 				"10.3886/ICPSR37841.v1": {
 					"data_availability": "pending",
@@ -129,7 +130,8 @@
 						}
 					],
 					"data_availability": "available",
-					"authz": "/programs/open"
+					"authz": "/programs/open",
+					"dataset_1_title": "N-MHSS-2019-DS0001-bndl-data-tsv.zip"
 				},
 				"10.3886/ICPSR04256.v5": {
 					"__manifest": [
@@ -212,7 +214,8 @@
 						}
 					],
 					"data_availability": "available",
-					"authz": "/programs/open/projects/Preventing_Opioid_Use_Disorder"
+					"authz": "/programs/open/projects/Preventing_Opioid_Use_Disorder",
+					"dataset_1_title": "N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2009-DS0001-bndl-data-spss.zip, N-SSATS-2011-DS0001-bndl-data-spss.zip, N-SSATS-2013-DS0001-bndl-data-spss.zip, N-SSATS-2015-DS0001-bndl-data-spss.zip, N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2019-DS0001-bndl-data-spss.zip, N-SSATS-2003.sav, N-SSATS-2004.sav, N-SSATS-2005.sav, NSSATS_PUF_2019_SAV.sav"
 				}
 			}
 		},
@@ -440,23 +443,23 @@
 				"protocol_name": "",
 				"study_summary": { "path":" preview[0].description", "filters": ["strip_html"] },
 				"_file_manifest": "",
-				"dataset_1_type": "Data",
-				"dataset_2_type": "Codebook",
-				"dataset_3_type": "Protocol",
-				"dataset_4_type": "Final report",
+				"dataset_1_type": "",
+				"dataset_2_type": "",
+				"dataset_3_type": "",
+				"dataset_4_type": "",
 				"dataset_5_type": "",
 				"project_number": "path:display_id",
-				"dataset_1_title": "path:preview[0].data_data",
-				"dataset_2_title": "path:preview[0].data_codebook",
-				"dataset_3_title": "path:preview[0].data_protocol",
-				"dataset_4_title": "path:preview[0].final_report",
+				"dataset_1_title": "",
+				"dataset_2_title": "",
+				"dataset_3_title": "",
+				"dataset_4_title": "",
 				"dataset_5_title": "",
 				"administering_ic": "NIDA",
 				"advSearchFilters": [],
 				"dataset_category": "",
 				"research_program": "",
 				"research_question": "",
-				"study_description": "",
+				"study_description": "Observational",
 				"clinical_trial_link": "",
 				"dataset_description": "",
 				"research_focus_area": "",
@@ -494,7 +497,8 @@
 					],
 					"data_availability": "available",
 					"authz": "/programs/open",
-					"study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139"
+					"study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
+					"dataset_1_title": "Naloxone_Data_09112020.xlsx, 20180810_Good_Samaritan_Law_Stat_Data.xlsx, 20170216-RM-Stat-Data.xlsx"
 				}
 			}
 		}
