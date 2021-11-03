@@ -408,19 +408,17 @@
       "rowAccessor": "project_id",
       "listItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_primary_purpose","study_phase","verification_date"]
+        "tableFields": ["name", "code", "title", "principle_investigator", "estimated_study_completion", "data_type", "publisher","study_design_primary_purpose","study_phase","verification_date"]
       },
       "singleItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_allocation","study_design_primary_purpose","study_phase","verification_date","source","rights"],
+        "tableFields": ["name", "code", "title", "principle_investigator", "estimated_study_completion", "data_type", "publisher","study_design_allocation","study_design_primary_purpose","study_phase","verification_date","source","rights"],
         "sideBoxes": []
       },
       "fieldMapping": [
         { "field": "title", "name": "Study Title" },
-        { "field": "principle_investigator", "name": "Principle Investigator"},
         { "field": "study_design_allocation", "name": "Design Allocation"},
-        { "field": "study_design_primary_purpose", "name": "Primary Purpose"},
-        { "field": "verification_date", "name": "Verification Date"}
+        { "field": "study_design_primary_purpose", "name": "Primary Purpose"}
       ],
     "buttons": [
         {
