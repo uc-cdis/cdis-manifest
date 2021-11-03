@@ -1,0 +1,193 @@
+{
+  "gaTrackingId": "UA-119127212-10",
+  "graphql": {
+    "boardCounts": [
+      {
+        "graphql": "_clinical_supplement_count",
+        "name": "Clinical Supplement",
+        "plural": "Clinical Supplements"
+      }
+    ],
+    "chartCounts": [
+      {
+        "graphql": "_clinical_supplement_count",
+        "name": "Clinical Supplement"
+      }
+    ],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "VA Data Commons",
+    "index": {
+      "introduction": {
+        "heading": "VA Data Commons",
+        "text": "The VA Data Commons supports the management, analysis and sharing of US military veteran oncologic data for the research communityand aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for precision oncology. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "link": "/submission"
+      },
+      "buttons": [
+        {
+          "name": "Define Data Field",
+          "icon": "data-field-define",
+          "body": "The VA Data Commons defines the data in a general way. Please study the dictionary before you start browsing.",
+          "link": "/DD",
+          "label": "Learn more"
+        },
+        {
+          "name": "View/Submit Data",
+          "icon": "data-submit",
+          "body": "View or submit data to a project.",
+          "link": "/submission",
+          "label": "Submit data"
+        },
+        {
+          "name": "Access Data",
+          "icon": "data-access",
+          "body": "Use our selected tool to filter out the data you need.",
+          "link": "/query",
+          "label": "Query data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "link": "/workspace",
+          "label": "Run analysis"
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
+        },
+        {
+          "name": "Exploration",
+          "icon": "exploration",
+          "link": "/explorer",
+          "label": "Explorer",
+          "color": "#a2a2a2"
+        },
+        {
+          "icon": "workspace",
+          "link": "/workspace",
+          "color": "#a2a2a2",
+          "name": "Workspace"
+        },
+        {
+          "icon": "profile",
+          "link": "/identity",
+          "color": "#a2a2a2",
+          "name": "Profile"
+        }
+      ]
+    },
+      "topBar": {
+        "items": [
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
+          },
+          {
+            "link": "https://gen3.org/resources/user/",
+            "name": "Documentation"
+          },
+          {
+            "link": "support@datacommons.io",
+            "name": "Email Support"
+          }
+        ],
+        "useProfileDropdown": false
+      },
+    "login": {
+      "title": "Veterans Affairs Data Commons",
+      "subTitle": "search, compare, and analyze data",
+      "text": "The VA Data Commons supports the management, analysis and sharing of US military veteran oncologic data for the research communityand aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for precision oncology.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "support@datacommons.io"
+    },
+    "systemUse" : {
+      "systemUseTitle" : "VA systems are intended for Academic and Institutional Users",
+      "systemUseText" : ["VA systems are intended to be used by authorized VA network users for viewing and retrieving information; except as otherwise authorized for official business and limited personal use under VA policy. Information from this system resides on and transmits through computer systems and networks funded by VA. Access or use constitutes understanding and acceptance that there is no reasonable expectation of privacy in the use of Government networks or systems. Access or use of this system constitutes user understanding and acceptance of these terms and constitutes unconditional consent to review and action includes but is not limited to: monitoring; recording; copying; auditing; inspecting; investigating; restricting access; blocking; tracking; disclosing to authorized personnel; or other authorized actions by authorized VA and law enforcement personnel. Unauthorized user attempts or acts to (1) access; upload; download; change; or delete information on this system; (2) modify this system; (3) deny access to this system; (4) accrue resources for unauthorized use; or (5) otherwise misuse this system are strictly prohibited. Such attempts or acts are subject to action that result in criminal; civil; or administrative penalties."],
+      "displayUseMsg": "cookie"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/custom/sponsors/gitops-sponsors/OCC.png",
+        "href": "https://occ-data.org/",
+        "alt": "Open Commons Consortium"
+      }
+    ]
+  },
+  "featureFlags": {
+    "explorer": true
+  },
+  "arrangerConfig": {
+    "charts": {
+      "node_id": {
+        "chartType": "count",
+        "title": "Demographics"
+      },
+      "Gender":{
+        "chartType": "bar",
+        "title": "Gender"
+      },
+      "Race":{
+        "chartType": "pie",
+        "title": "Race"
+      },
+      "Ethnicity":{
+        "chartType": "bar",
+        "title": "Ethnicity"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Demographic",
+          "fields":[
+            "Gender",
+            "Race",
+            "Ethnicity"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "data",
+          "title": "Download Clinical",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": false,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        }
+      ]
+    },
+    "projectId": "search",
+    "graphqlField": "demographic",
+    "index": ""
+  }
+}
