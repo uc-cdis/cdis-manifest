@@ -213,7 +213,36 @@
           "_sequencings_count"
         ]
       },
+      "dropdowns": {
+        "sevenBridges": {
+          "title": "Export to Seven Bridges"
+        }
+      },
       "buttons": [
+        {
+          "enabled": true,
+          "type": "export-pfb-to-url",
+          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "title": "Export to CGC",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
+        {
+          "enabled": true,
+          "type": "export-pfb-to-url",
+          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "title": "Export to CAVATICA",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
+        {
+          "enabled": true,
+          "type": "export-pfb-to-url",
+          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "title": "Export to BDC (Seven Bridges)",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
         {
           "enabled": true,
           "type": "export",
