@@ -153,6 +153,12 @@
       "region": "us-east-1"
     },
     {
+      "user_id": "0000-0002-0093-3367",
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    {
       "user_id": "tentner-andrea@norc.org",
       "aws_account_id": "252835817747",
       "name": "healworkspaces",
@@ -420,7 +426,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__b680b2a3568949ee8e895ffd3a90a6e1305a1fcc",
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__fd15dab0198c6dd0da71e6806ac690c7c8632fa7",
       "env": {"FRAME_ANCESTORS": "https://preprod.healdata.org"},
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",

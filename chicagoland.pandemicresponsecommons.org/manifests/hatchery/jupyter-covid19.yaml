@@ -1,7 +1,7 @@
 version: '3'
 services:
    webapp:
-      image: "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.4"
+      image: "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.6"
       volumes:
          - ${DATA_VOLUME}:/data
          - ${USER_VOLUME}:/home/jovyan/pd
