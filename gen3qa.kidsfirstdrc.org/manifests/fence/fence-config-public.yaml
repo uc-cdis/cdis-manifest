@@ -112,6 +112,9 @@ LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
     secondary: True
   - name: 'NIH Login'
     idp: fence
+    fence_idp: shibboleth
+    shib_idps:
+      - https://auth.nih.gov/IDP
   - name: 'Login from RAS'
     idp: ras
 
