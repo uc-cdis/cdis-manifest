@@ -309,21 +309,39 @@
       ]
     },
     "dropdowns": {
-      "download": {
-        "title": "Download"
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
       }
     },
     "buttons": [
       {
         "enabled": true,
-        "type": "export",
-        "title": "Export All to Terra",
-        "rightIcon": "external-link"
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
       },
       {
         "enabled": true,
-        "type": "export-to-seven-bridges",
-        "title": "Export All to Seven Bridges",
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export",
+        "title": "Export All to Terra",
         "rightIcon": "external-link"
       },
       {
@@ -523,8 +541,7 @@
     "terraTemplate": [
       "bdc",
       "gen3"
-    ],
-    "sevenBridgesExportURL": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill"
+    ]
   },
   "fileExplorerConfig": {
     "charts": {
