@@ -1130,7 +1130,7 @@
       },
       {
         "title": "Percentage of ICU bed availability prediction in the state of Illinois",
-        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "description": "Since the COVID-19 breakout, the healthcare system in Illinois is under tremendous pressure to satisfy the increased need for COVID-19 treatment. The Delta variant of the coronavirus has been spreading rapidly throughout the US and the world. This variant is highly transmissible and more virulent. It's critical to prepare sufficient medical supplies to meet patients needs, such as ICU beds and ventilators. In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
         "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
         "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
@@ -1262,28 +1262,16 @@
         ],
         [
           {
-            "title": "Cook County Daily Cases",
-            "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "title": "Cook County Daily New Cases and Forecast",
+            "description": "Here we plot daily case counts over time in Cook county, where the red line is reported cases and the grey shaded area depicts the inferred posterior predicted cases. Forecasts (blue shaded area) show how new case numbers would have developed (95% Bayesian credible intervals).",
             "type": "image",
-            "path": "bayes-by-county/17031/cases.png"
+            "path": "generative_bayes_model/17031/cases.svg"
           },
           {
-            "title": "Cook County Daily Deaths",
-            "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "title": "Cook County Estimated Reproduction Rate (Rt)",
+            "description": "Here we plot estimated Rt over time in Cook county. We use a generative logic (primary infection, infection delay and onset delay) to explain how an initial pool of infected cases spreads the COVID-19 at each time-point, according to the time-varying reproduction factor. Shaded areas indicate 95% Bayesian credible intervals.",
             "type": "image",
-            "path": "bayes-by-county/17031/deaths.png"
-          },
-          {
-            "title": "Cook County Estimated Rt",
-            "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
-            "type": "image",
-            "path": "bayes-by-county/17031/Rt.png"
-          },
-          {
-            "title": "Average Rt Over Latest 7 Days Of Observations",
-            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
-            "type": "image",
-            "path": "bayes-by-county/Rt_Top20.svg"
+            "path": "generative_bayes_model/17031/rt.svg"
           },
           {
             "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 60 Days in Illinois",
@@ -1307,13 +1295,10 @@
       ],
       "simulations": {
         "imgCases": {
-          "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
-        },
-        "imgDeaths": {
-          "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts."
+          "description": "Here we plot daily case counts over time in Cook county, where the red line is reported cases and the grey shaded area depicts the inferred posterior predicted cases. Forecasts (blue shaded area) show how new case numbers would have developed (95% Bayesian credible intervals)."
         },
         "imgRt": {
-          "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
+          "description": "Here we plot estimated Rt over time in Cook county. We use a generative logic (primary infection, infection delay and onset delay) to explain how an initial pool of infected cases spreads the COVID-19 at each time-point, according to the time-varying reproduction factor. Shaded areas indicate 95% Bayesian credible intervals."
         }
       }
     }
