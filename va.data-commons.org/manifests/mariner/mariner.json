@@ -32,13 +32,14 @@
       "image": "quay.io/cdis/mariner-engine:1.2.4",
       "pull_policy": "always",
       "command": [
-        "/bin/sh",
-        "/engineDockerrun.sh"
+        "/mariner",
+        "run",
+        "$(RUN_ID)"
       ],
       "resources": {
         "limits": {
-          "memory": "1Gi",
-          "cpu": "400m"
+          "memory": "8Gi",
+          "cpu": "800m"
         }
       }
     },
@@ -47,20 +48,12 @@
       "image": "quay.io/cdis/mariner-s3sidecar:1.2.4",
       "pull_policy": "always",
       "command": [
-        "/bin/sh",
-        "/s3sidecarDockerrun.sh"
+        "/sidecar"
       ],
-      "lifecycle": {
-        "prestop": [
-          "/bin/sh",
-          "-c",
-          "fusermount -u -z /$ENGINE_WORKSPACE"
-        ]
-      },
       "resources": {
         "limits": {
-          "memory": "256Mi",
-          "cpu": "100m"
+          "memory": "4Gi",
+          "cpu": "500m"
         }
       },
       "securitycontext": {
