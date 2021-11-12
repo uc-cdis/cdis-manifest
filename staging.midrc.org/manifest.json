@@ -129,35 +129,35 @@
   "guppy": {
     "indices": [
       {
-        "index": "midrc_staging_dataset",
+        "index": "midrcstaging_dataset",
         "type": "dataset"
       },
       {
-        "index": "midrc_staging_case",
+        "index": "midrcstaging_case",
         "type": "case"
       },
       {
-        "index": "midrc_staging_imaging_data_file",
+        "index": "midrcstaging_imaging_data_file",
         "type": "imaging_data_file"
       },
       {
-        "index": "midrc_staging_imaging_study",
+        "index": "midrcstaging_imaging_study",
         "type": "imaging_study"
       },
       {
-        "index": "midrc_staging_ct_scan",
+        "index": "midrcstaging_ct_scan",
         "type": "ct_scan"
       },
       {
-        "index": "midrc_staging_radiography_exam",
+        "index": "midrcstaging_radiography_exam",
         "type": "radiography_exam"
       },
       {
-        "index": "midrc_staging_mr_exam",
+        "index": "midrcstaging_mr_exam",
         "type": "mr_exam"
       }
     ],
-    "config_index": "midrc_staging_array-config",
+    "config_index": "midrcstaging_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "global": {
