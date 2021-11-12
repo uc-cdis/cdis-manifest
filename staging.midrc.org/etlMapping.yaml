@@ -1,5 +1,5 @@
 mappings:
-  - name: midrc_staging_dataset
+  - name: midrcstaging_dataset
     doc_type: dataset
     type: aggregator
     root: dataset
@@ -89,7 +89,7 @@ mappings:
             fn: set
     parent_props:
       - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
-  - name: midrc_staging_case
+  - name: midrcstaging_case
     doc_type: case
     type: aggregator
     root: case
@@ -157,7 +157,7 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrc_staging_imaging_data_file
+  - name: midrcstaging_imaging_data_file
     doc_type: imaging_data_file
     type: collector
     root: None
@@ -251,7 +251,7 @@ mappings:
           - name: _mr_exam_id
             src: id
             fn: set
-  - name: midrc_staging_imaging_study
+  - name: midrcstaging_imaging_study
     doc_type: imaging_study
     type: aggregator
     root: imaging_study
@@ -319,7 +319,7 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrc_staging_ct_scan
+  - name: midrcstaging_ct_scan
     doc_type: ct_scan
     type: aggregator
     root: ct_scan
@@ -437,7 +437,7 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrc_staging_radiography_exam
+  - name: midrcstaging_radiography_exam
     doc_type: radiography_exam
     type: aggregator
     root: radiography_exam
@@ -524,7 +524,7 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrc_staging_mr_exam
+  - name: midrcstaging_mr_exam
     doc_type: mr_exam
     type: aggregator
     root: mr_exam
@@ -641,7 +641,7 @@ mappings:
           - name: spatial_resolution
             src: spatial_resolution
             fn: set
-  - name: midrc_staging_imaging_series
+  - name: midrcstaging_imaging_series
     doc_type: imaging_series
     type: collector
     root: None
