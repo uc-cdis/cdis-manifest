@@ -1,0 +1,178 @@
+:root {
+  --primary-color: #421C52;
+  --secondary-color: #421C52;
+
+  --primary-color_light: #B7474D;
+  --secondary-color_light: #90799b;
+
+  --g3-color__bg-cloud: #F5F5F5;
+  --g3-color__bg-coal: #4A4A4A;
+  --g3-color__gray: #606060;
+  --g3-color__lightgray: #9B9B9B;
+  --g3-color__smoke: #D1D1D1;
+  --g3-color__silver: #E7E7E7;
+  --g3-color__black: #000000;
+  --g3-color__white: #FFFFFF;
+
+  --g3-primary-btn__color: var(--g3-color__white);
+  --g3-primary-btn__bg-color: var(--secondary-color);
+  --g3-primary-btn__bg-color--hover: var(--secondary-color_light);
+  --g3-primary-btn__border-color: var(--g3-color__lightgray);
+  --g3-primary-btn__border-color--hover: var(--g3-color__gray);
+  --g3-primary-btn__border-color--active: var(--g3-color__lightgray);
+
+  --g3-secondary-btn__color: var(--g3-color__white);
+  --g3-secondary-btn__bg-color: var(--secondary-color);
+  --g3-secondary-btn__bg-color--hover: var(--secondary-color_light);
+  --g3-secondary-btn__border-color: var(--g3-color__lightgray);
+  --g3-secondary-btn__border-color--hover: var(--g3-color__gray);
+  --g3-secondary-btn__border-color--active: var(--g3-color__lightgray);
+
+  --g3-default-btn__color: var(--g3-color__gray);
+  --g3-default-btn__color--hover: var(--g3-color__black);
+  --g3-default-btn__color--active: var(--g3-color_lightgray);
+  --g3-default-btn__bg-color: var(--g3-color__white);
+  --g3-default-btn__border-color: var(--g3-color__gray);
+  --g3-default-btn__border-color--hover: var(--g3-color__black);
+
+  --g3-disabled-btn__color: var(--g3-color__lightgray);
+  --g3-disabled-btn__bg-color: var(--g3-color__white);
+  --g3-disabled-btn__border-color: var(--g3-color__silver);
+
+  --g3-dropdown-item__bg-color: var(--g3-color__gray);
+  --g3-dropdown-item__color: var(--g3-color__white);
+  --g3-dropdown-menu__border-color: var(--g3-color__gray);
+
+  --g3-footer-color: var(--g3-color__bg-coal);
+  --g3-font__medium-weight: 500;
+  --g3-font__semi-bold-weight: 600;
+}
+
+/* Buttons */
+
+.data-dictionary__switch-button--active,
+.popup__title {
+  background-color: var(--primary-color);
+}
+
+/* Nav Bars and Footer */
+
+.top-bar,
+.top-bar__header,
+.top-icon-button.body-typo {
+  background-color: var(--secondary-color);
+}
+
+.top-bar__link {
+  border-right: 2px solid #fff;
+}
+
+.nav-button:hover,
+.button-active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-bar__link--right,
+.nav-bar__link--right:last-child {
+  border: none;
+}
+
+.footer-container {
+  background-color: var(--secondary-color);
+}
+
+.footer__nav {
+  background-color: var(--secondary-color);
+  align-items: center;
+}
+
+.footer__version-area {
+  width: 300px;
+}
+
+.footer__logo-area {
+  order: -1;
+  width: auto;
+}
+
+/* Data Explorer */
+
+.aggregation-card .bucket-item .bucket-count {
+  color: var(--secondary-color);
+}
+
+.aggregation-card input[type='checkbox']:checked {
+  background: var(--secondary-color);
+}
+
+.g3-single-select-filter__checkbox:checked {
+  background: var(--primary-color);
+}
+
+/* .input-range__track--active,
+.rc-slider-track,
+.g3-single-select-filter__count .g3-icon--under {
+  background-color: var(--primary-color);
+} */
+
+/* Charts */
+
+tspan.special-number,
+.special-number,
+.form-special-number {
+  color: var(--primary-color);
+}
+
+.special-number {
+  fill: var(--primary-color);
+}
+
+.data-explorer__charts tspan.special-number,
+.data-explorer__charts .special-number,
+.data-explorer__charts .form-special-number {
+  color: var(--secondary-color);
+}
+
+.data-explorer__charts .special-number {
+  fill: var(--secondary-color);
+}
+
+/* MIDRC Index Changes */
+
+.introduction__icon {
+  display: none;
+}
+
+.index-button-bar {
+  width: 100%;
+  background-color: var(--g3-color__white);
+}
+
+.index-button-bar__thumbnail-button {
+  background-color: inherit;
+  border: none;
+}
+
+.index-button-bar__icon {
+  filter: hue-rotate(45deg);
+}
+
+.index-button-bar__thumbnail-title {
+  display: none;
+}
+
+@media screen and (max-width: 1170px) {
+  .index-button-bar {
+    padding: 0 10%;
+  }
+}
+
+/* MIDRC Submission Page Changes */
+
+.project-dashboard__title {
+  display: none;
+}
+
+.submission-header {
+  display: none;
+}
