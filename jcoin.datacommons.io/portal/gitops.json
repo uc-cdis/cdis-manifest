@@ -492,16 +492,20 @@
           {
             "title": "Constructs",
             "fields": [
-              "cmc_data_type",
+              "cmc_subject",
               "cmc_title"
+            ]
+          },
+          {
+            "title": "Spatial Scale",
+            "fields": [
+              "data_category"
             ]
           },
           {
             "title": "Files",
             "fields": [
-              "data_category",
-              "data_type",
-              "data_format"
+              "data_type"
             ],
             "searchFields": [
               "file_name"
@@ -543,24 +547,24 @@
             "name": "GUID"
           },
           {
-            "field": "cmc_data_type",
+            "field": "cmc_title",
+            "name": "Variable Construct"
+          },
+          {
+            "field": "cmc_subject",
             "name": "Theme"
           },
           {
-            "field": "cmc_title",
-            "name": "Title"
-          },
-          {
             "field": "data_category",
-            "name": "Category"
+            "name": "Spatial Scale"
           },
           {
             "field": "data_type",
-            "name": "File Type"
+            "name": "Data Type"
           },
           {
             "field": "data_format",
-            "name": "File Format"
+            "name": "Data Format"
           }
         ],
         "nodeCountTitle": "Files",

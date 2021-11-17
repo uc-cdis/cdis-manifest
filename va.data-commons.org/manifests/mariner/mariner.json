@@ -29,7 +29,7 @@
   "containers": {
     "engine": {
       "name": "mariner-engine",
-      "image": "quay.io/cdis/mariner-engine:1.0.4",
+      "image": "quay.io/cdis/mariner-engine:1.2.4",
       "pull_policy": "always",
       "command": [
         "/bin/sh",
@@ -44,7 +44,7 @@
     },
     "s3sidecar": {
       "name": "mariner-s3sidecar",
-      "image": "quay.io/cdis/mariner-s3sidecar:1.0.4",
+      "image": "quay.io/cdis/mariner-s3sidecar:1.2.4",
       "pull_policy": "always",
       "command": [
         "/bin/sh",

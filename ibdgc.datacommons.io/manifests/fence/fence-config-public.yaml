@@ -133,7 +133,10 @@ ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=ni
 LOGIN_OPTIONS:
   - name: 'Login from Google'
     idp: google
-
+  - name: 'ORCID Login'
+    idp: fence
+    fence_idp: orcid
+    secondary: False
 # Default login provider:
 # - must be configured in LOGIN_OPTIONS and OPENID_CONNECT
 # - if several options in LOGIN_OPTIONS are defined for this IDP, will default

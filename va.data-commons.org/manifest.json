@@ -16,7 +16,7 @@
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.10",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.10",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.10",
-    "mariner": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/mariner-server:2021.10",
+    "mariner": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/mariner-server:1.2.4",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.10",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.10",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.10",
@@ -45,6 +45,10 @@
     "job_images": {
       "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.10"
     }
+  },
+  "awsstoragegateway": {
+    "mariner_prod_ip": "172.31.52.158",
+    "mariner_prod_s3_bucket": "/va-storagegw-bucket"
   },
   "canary": {
     "default": 0
