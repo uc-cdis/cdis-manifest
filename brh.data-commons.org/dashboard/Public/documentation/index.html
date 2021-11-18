@@ -182,11 +182,11 @@
 
                             <h2 id="TypesOfSharedData" class="section-title">2. Types of shared Data</h2>
                             <p>
-                                The BRH provides secure access to data from multiple resources (Data Commons) and will be the driving engine for new discovery.
+                                The BRH provides secure access to study metadata from multiple resources (Data Commons) and will be the driving engine for new discovery. The types of data represented are diverse and include scientific research across multiple disciplines.
                             </p>
                             <p>
-                                The data hosted on the BRH range from <span style="font-weight: bold;">study metadata</span> to <span style="font-weight: bold;">subject-level
-                                data</span>. The types of data represented are diverse and include scientific research across multiple disciplines.
+                                <!-- The data hosted on the BRH range from <span style="font-weight: bold;">study metadata</span> to <span style="font-weight: bold;">subject-level
+                                data</span>. The types of data represented are diverse and include scientific research across multiple disciplines. -->
                                 <!-- For example, researchers can use this single platform to find data ranging from clinical patient care data
                                 and public records to “omics” data files and associated sample collection and processing data. -->
                             </p>
@@ -769,8 +769,8 @@
                                         <span style="font-weight: bold">Data Resources/Data Commons Tags</span>. Click on a tag to filter for a Data Resource/Data Commons. Selecting multiple tags work in an "OR" logic.
                                     </li>
                                     <li>
-                                        <span style="font-weight: bold">Free Text Search</span>. Finding studies is made easy using keywords in the free text-based search bar or using tags. The free-text search bar can be used to search for study title,
-                                        investigator name, or any keyword that is mentioned in the metadata of the study. Type in any keyword mentioned in the metadata, except for what is stored as Tags.
+                                        <span style="font-weight: bold">Free Text Search</span>. Finding studies is made easy using keywords in the free text-based search bar or using tags. The free-text search bar can be used to search for study name,
+                                        ID number, Data Commons, or any keyword that is mentioned in the metadata of the study.
                                     </li>
                                     <li>
                                         <span style="font-weight: bold">Advanced Search</span>. Narrow down your search using checkbox selections in Advanced Search.
@@ -778,15 +778,15 @@
 
 
                                     <li>
-                                        <span style="font-weight: bold">Export Options</span>. Login first to leverage the export options. Select one or multiple studies and download a file manifest or export the metadata and data files to a secure cloud
-                                        environment "Workspaces" to start your custom data analysis in Python, R, or STATA.
+                                        <span style="font-weight: bold">Export Options</span>. Login first to leverage the export options. Select one or multiple studies and download a file manifest or export the data files to a secure cloud environment
+                                        "Workspaces" to start your custom data analysis in Python, R, or STATA.
                                     </li>
                                     <li>
                                         <span style="font-weight: bold">Data Availability</span>. Filter on available, pending, and not-yet-available datasets.
                                         <a href="#DataAvailabilityOptions">Read further here</a>.
                                     </li>
                                     <li>
-                                        <span style="font-weight: bold">Studies</span>. This feature presents all current studies on BRH. Click on any study to show useful information about the study (metadata).
+                                        <span style="font-weight: bold">Studies</span>. This table feature presents all current studies on BRH. Click on any study to show useful information about the study (metadata).
                                         <a href="#FindStudyMetadata">Read further here</a>.
                                     </li>
 
@@ -837,7 +837,7 @@
                                 <ul>
                                     <li>
                                         <span style="font-weight: bold">Available:</span> This option will display only studies with datasets users have access to and entails all open-access studies. Studies can be selected and exported to a workspace
-                                        or downloaded by clicking on the associated checkbox on the left-hand side of the study entry and selecting one of the options in the top right.
+                                        or downloaded as a manifest by clicking on the associated checkbox on the left-hand side of the study entry and selecting one of the options in the top right.
 
                                         <!-- <br><br>
                                         <img class="drop-shadow" src="img/discovery_options.png" alt="discovery_options" style="width:100%">
@@ -855,7 +855,7 @@
                                     </li>
                                     <li>
                                         <span style="font-weight: bold">Pending:</span> This option will display studies located on any data resource or repository, for which attached datasets will be added in the near future. The checkbox next to the
-                                        study will be greyed out and non-clickable as shown above.
+                                        study will be greyed out and non-clickable.
                                         <br> <br>
                                     </li>
                                 </ul>
@@ -1009,7 +1009,7 @@
                                     </ul>
 
                                     <li>
-                                        Submit the request. Note that the process of granting access for a workspace account can take up to two weeks and users will be notified.
+                                        Submit the request. Note that the process of granting access for a workspace account can take up to two weeks and users will be notified. Following the approval, users will see the current workspace accounts and credits on the landing page.
                                     </li>
 
 
@@ -1133,7 +1133,8 @@
                                 </p>
                                 <img class="drop-shadow" src="img/workspace_upload.png" alt="Workspace_upload" style="width:80%">
                                 <figcaption style="width:100%">
-                                    Upload data files or Notebooks to the workspace by clicking on “Upload” in the top right corner. On the upload screen, find your text file (in this example it is "this_is_a_demo.txt") to upload from your local computer.
+                                    Upload data files or Notebooks to the workspace by clicking on “Upload” in the top right corner.
+                                    <!-- On the upload screen, find your text file (in this example it is "this_is_a_demo.txt") to upload from your local computer. -->
                                 </figcaption> <br> Then run in the cells, for example:<br>
                                 <code>
                 import os <br>
@@ -1156,7 +1157,7 @@
                                 </p>
                                 <img class="drop-shadow" src="img/workspace_notebook_download.png" alt="workspace_notebook_download" style="width:80%">
                                 <figcaption style="width:100%">
-                                    Download the notebook as ".ipynb".
+                                    Download the notebook for example as ".ipynb".
                                 </figcaption>
 
 
@@ -1584,7 +1585,9 @@
 
                                 <h2 id="DownloadingDataFiles" class="section-title">5. Downloading Data Files</h2>
                                 <p>
-                                    Users can download data files associated with a study by downloading the files directly from the Discovery page, or leveraging the CTDS-owned python software development kit (SDK) and the tool “Gen3-client” if the file size exceeds 250 MB.
+                                    Users can download data files associated with a study by
+                                    <!-- downloading the files directly from the Discovery page, or  -->
+                                    leveraging the CTDS-owned python software development kit (SDK) and the tool “Gen3-client” if the file size exceeds 250 MB.
                                 </p>
                                 <!-- <p>
                                     Note that current studies that have datasets of more than 250 MB are those with the following project numbers: a) cdcwonder and b) deaarcos1.
