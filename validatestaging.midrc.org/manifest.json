@@ -161,13 +161,13 @@
     "auth_filter_field": "auth_resource_path"
   },
   "global": {
-    "environment": "midrcprod",
-    "hostname": "validate.midrc.org",
+    "environment": "midrcvalidate",
+    "hostname": "validatestaging.midrc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:813684607867:certificate/d4bdf325-afce-4e1d-b431-0dd062ee12c5",
     "useryaml_s3path": "s3://cdis-gen3-users/midrcvalidate/user.yaml",
-    "kube_bucket": "kube-midrcprod-gen3",
+    "kube_bucket": "kube-midrcvalidate-gen3",
     "dispatcher_job_num": "10",
-    "logs_bucket": "logs-midrcprod-gen3",
+    "logs_bucket": "logs-midrcvalidate-gen3",
     "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.6.2/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
