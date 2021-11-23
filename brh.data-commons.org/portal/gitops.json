@@ -552,6 +552,10 @@
           "enabled": true
         }
       },
+      "tagSearchDropdown": {
+        "enabled": true,
+        "collapsibleButtonText": "Study Characteristics"
+      },
       "authorization": {
         "enabled": true
       }
@@ -568,7 +572,7 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category"
+      "showTagCategoryNames": true
     },
     "studyColumns": [{
         "name": "Study Name",
@@ -684,6 +688,7 @@
     },
     "tagCategories": [{
         "name": "Commons",
+        "displayName": "Data Commons",
         "color": "rgba(129, 211, 248, 1)",
         "display": true
       },
