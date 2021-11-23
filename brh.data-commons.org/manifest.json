@@ -7,20 +7,21 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "arborist": "quay.io/cdis/arborist:2021.07",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:1.1",
+    "arborist": "quay.io/cdis/arborist:2021.11",
     "dashboard": "quay.io/cdis/gen3-statics:2021.11",
-    "fence": "quay.io/cdis/fence:5.3.2",
+    "fence": "quay.io/cdis/fence:2021.11",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:feat_decouple_workspaces",
-    "metadata": "quay.io/cdis/metadata-service:feat_mds-adapter",
-    "portal": "quay.io/cdis/data-portal:master",
-    "peregrine": "quay.io/cdis/peregrine:2021.07",
+    "hatchery": "quay.io/cdis/hatchery:0.2.0",
+    "indexd": "quay.io/cdis/indexd:2021.11",
+    "metadata": "quay.io/cdis/metadata-service:2021.11",
+    "portal": "quay.io/cdis/data-portal:3.17.4",
+    "peregrine": "quay.io/cdis/peregrine:2021.11",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "manifestservice": "quay.io/cdis/manifestservice:2021.07",
-    "wts": "quay.io/cdis/workspace-token-service:2021.06",
-    "sheepdog": "quay.io/cdis/sheepdog:2021.07"
+    "manifestservice": "quay.io/cdis/manifestservice:2021.11",
+    "wts": "quay.io/cdis/workspace-token-service:2021.11",
+    "sheepdog": "quay.io/cdis/sheepdog:2021.11"
   },
   "arborist": {
     "deployment_version": "2"
@@ -45,7 +46,7 @@
     "netpolicy": "on"
   },
   "portal": {
-    "GEN3_BUNDLE": "heal"
+    "GEN3_BUNDLE": "ecosystem"
   },
   "canary": {
     "default": 0
