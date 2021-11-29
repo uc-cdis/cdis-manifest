@@ -15,7 +15,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "hatchery": "quay.io/cdis/hatchery:0.2.0",
     "indexd": "quay.io/cdis/indexd:2021.11",
-    "metadata": "quay.io/cdis/metadata-service:2021.11",
+    "metadata": "quay.io/cdis/metadata-service:1.6.2",
     "portal": "quay.io/cdis/data-portal:3.17.4",
     "peregrine": "quay.io/cdis/peregrine:2021.11",
     "pidgin": "quay.io/cdis/pidgin:2021.11",
@@ -45,6 +45,10 @@
     "tier_access_limit": 50,
     "public_datasets": true,
     "netpolicy": "on"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "brh"
   },
   "portal": {
     "GEN3_BUNDLE": "ecosystem"
