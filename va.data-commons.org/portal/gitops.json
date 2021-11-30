@@ -133,8 +133,17 @@
     ]
   },
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "analysis": true
   },
+  "analysisTools": [
+    {
+      "title": "OHDSI Atlas",
+      "description": "An Atlas App",
+      "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
+    }
+  ],
   "arrangerConfig": {
     "charts": {
       "node_id": {
