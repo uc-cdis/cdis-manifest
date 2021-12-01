@@ -88,11 +88,11 @@
       "rowAccessor": "cmc_unique_id",
       "listItemConfig": {
         "blockFields": ["brief_summary"],
-        "tableFields": ["data_availability_date", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications"]
+        "tableFields": ["data_availability_date", "most_recent_update", "previous_versions", "data_available", "creator", "nct_number", "condition", "category", "clinical_trial_website", "publications"]
       },
       "singleItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["data_availability_date", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"],
+        "tableFields": ["data_availability_date", "most_recent_update", "previous_versions", "data_available",  "creator", "nct_number", "condition", "category", "study_design_primary_purpose","study_design_allocation", "study_start_date", "study_completion_date",  "clinical_trial_website", "publications"],
         "sideBoxes": [
           {
             "title": "Data Access",
@@ -118,6 +118,7 @@
         { "field": "category", "name": "Study Type"},
         { "field": "clinical_trial_website", "name": "Websites"},
         { "field": "nct_number", "name": "NCT Number"},
+        { "field": "data_availability_date", "name": "Data First Available"},
         { "field": "publications", "name": "Study Publications"}
       ],
       "fileDataType": "ctfile",
