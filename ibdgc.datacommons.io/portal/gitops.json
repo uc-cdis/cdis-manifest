@@ -408,7 +408,7 @@
       "rowAccessor": "project_id",
       "openMode": "close-all",
       "listItemConfig": {
-        "blockFields": ["brief_summary"],
+        "blockFields": ["description"],
         "tableFields": ["name", "code", "title", "principle_investigator", "estimated_study_completion", "data_type", "publisher","study_design_primary_purpose","study_phase","verification_date"]
       },
       "singleItemConfig": {
