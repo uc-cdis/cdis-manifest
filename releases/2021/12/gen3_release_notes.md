@@ -360,3 +360,25 @@
   - Audit Service runs into a `CrashLoopBackOff` when there is an exception 
     instead of perpetually being in the `Running` state (#10)
 
+## uc-cdis/sower
+
+#### New Features
+  - adding golangci-lint (#27)
+
+#### Bug Fixes
+  - fix `Error: the given key ID was not found in the JWKs`, it was looking 
+    into the wrong URL for JWKs... (#31)
+  - fix for incorrect usage of `log.Debug` vs `log.Debugf` (#30)
+  - Fix for `x509: certificate signed by unknown authority` (#25)
+
+#### Improvements
+  - do not output authentication token to logs (#29)
+  - Proper verification of JWT token (#25)
+  - Update Go 1.17 (requirements to properly verify JWT token (#25)
+  - Build flags to make GitCommit and GitVersion available for the code (#25)
+
+#### Dependency Updates
+  - Remove unused dependencies with go mod tidy (#28)
+
+#### Deployment Changes
+  - PS: This is follow-up on this one: #24 (#25)
