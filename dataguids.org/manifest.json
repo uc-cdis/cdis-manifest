@@ -84,7 +84,19 @@
 				"host": "https://externaldata.healdata.org/index/",
 				"hints": [".*dg\\.H35L.*"],
 				"type": "indexd"
-			},        
+			},
+			{
+                                 "name": "MIDRC",
+                                "host": "https://data.midrc.org/index/",
+                                "hints": [".*dg\\.MD1R.*"],
+                                "type": "indexd"
+                        },
+			{
+                                 "name": "CRDC",
+                                "host": "https://nci-crdc.datacommons.io/index/",
+                                "hints": [".*dg\\.4DFC.*"],
+                                "type": "indexd"
+                        },
                         {
                                  "name": "Genomics Aotearoa Data",
                                 "host": "https://repo.data.nesi.org.nz/index/",
