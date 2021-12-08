@@ -74,7 +74,6 @@ mappings:
     root: project
     props:
       - name: name
-      - name: code
       - name: title
       - name: brief_summary
       - name: description
@@ -83,10 +82,7 @@ mappings:
       - name: data_type
       - name: publisher
       - name: study_design_allocation
-      - name: study_design_primary_purpose
       - name: study_phase
-      - name: verification_date
-      - name: source
-      - name: rights
+      - name: availability_type
     parent_props:
       - path: programs[program_name:name]
