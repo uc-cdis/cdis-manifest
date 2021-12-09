@@ -110,11 +110,21 @@
         "enabled": false,
         "field": "advSearchFilters",
         "filters": [
-          { "key": "Research Focus Area" },
-          { "key": "Administering IC(s)" },
-          { "key": "Simulated vs. Real Data" },
-          { "key": "Year Grant Awarded" },
-          { "key": "Study Description" }
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
         ]
       },
       "exportToWorkspace": {
@@ -403,7 +413,8 @@
             }
           ]
         }
-      ]
+      ],
+      "tagsDisplayName": "Study Characteristics"
     },
     "minimalFieldMapping": {
       "authzField": "authz",
@@ -464,8 +475,7 @@
         "color": "#bf362e",
         "display": false
       }
-    ],
-    "tagsDisplayName": "Study Characteristics"
+    ]
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
@@ -507,5 +517,6 @@
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {}
 }

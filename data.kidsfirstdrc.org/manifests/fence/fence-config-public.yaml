@@ -108,6 +108,9 @@ DEFAULT_LOGIN_IDP: fence
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'NIH Login'
     idp: fence
+    fence_idp: shibboleth
+    shib_idps:
+      - https://auth.nih.gov/IDP
   - name: 'Login from RAS'
     idp: ras
   - name: 'ORCID Login'

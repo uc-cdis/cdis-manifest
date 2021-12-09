@@ -105,13 +105,16 @@ ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=ni
 #   Multi-tenant fence (e.g. another fence instance)? Use: '{{BASE_URL}}/login/fence'
 #   Sibboleth? Use: '{{BASE_URL}}/login/shib'
 DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/google'
-DEFAULT_LOGIN_IDP: google
+DEFAULT_LOGIN_IDP: fence
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'Login from Google'
     desc: 'description'
     idp: google
   - name: 'NIH Login'
     idp: fence
+    fence_idp: shibboleth
+    shib_idps:
+      - https://auth.nih.gov/IDP
   - name: 'Login from RAS'
     idp: ras
   - name: 'ORCID Login'

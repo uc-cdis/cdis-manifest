@@ -142,3 +142,9 @@ body,
 .introduction__text {
   text-align: justify;
 }
+
+.introduction ul > li {
+  list-style: disc;
+  margin: 0 0 0 20px;
+  padding: 5px 0;
+}

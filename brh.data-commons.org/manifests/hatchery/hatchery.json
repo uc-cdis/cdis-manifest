@@ -4,34 +4,52 @@
   "user-volume-size": "10Gi",
   "pay-models": [
     {
-      "user": "mshao1@uchicago.edu",
+      "user_id": "mshao1@uchicago.edu",
       "aws_account_id": "354484406138",
       "name": "brhworkspaces",
       "region": "us-east-1"
     },
     {
-      "user": "qureshi@uchicago.edu",
+      "user_id": "qureshi@uchicago.edu",
       "aws_account_id": "354484406138",
       "name": "brhworkspaces",
       "region": "us-east-1"
     },
     {
-      "user": "cgmeyer@uchicago.edu",
+      "user_id": "cgmeyer@uchicago.edu",
       "aws_account_id": "354484406138",
       "name": "brhworkspaces",
       "region": "us-east-1"
     },
     {
-      "user": "craigrbarnes@uchicago.edu",
+      "user_id": "craigrbarnes@uchicago.edu",
       "aws_account_id": "354484406138",
       "name": "brhworkspaces",
       "region": "us-east-1"
     },
+    {
+      "user_id": "xritter@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "brhworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user_id": "jmontmaxwell@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "brhworkspaces",
+      "region": "us-east-1"
+    },
+    {
+      "user_id": "dongxiao@uchicago.edu",
+      "aws_account_id": "354484406138",
+      "name": "brhworkspaces",
+      "region": "us-east-1"
+    }
   ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/gen3fuse-sidecar:feat_drs-support",
+    "image": "quay.io/cdis/ecs-ws-sidecar:fix_no_exit",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "brh.data-commons.org"
@@ -39,7 +57,7 @@
     "args": [],
     "command": [
       "/bin/bash",
-      "/sidecarDockerrun.sh"
+      "./sidecar.sh"
     ],
     "lifecycle-pre-stop": [
       "su",
@@ -52,33 +70,20 @@
   },
   "containers": [
     {
-      "target-port": 8787,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "(Generic) R Studio",
-      "image": "heliumdatastage/rstudio-server:1",
-      "env": {
-        "DISABLE_AUTH": "true"
-      },
-      "args": [],
-      "path-rewrite": "/",
-      "use-tls": "false",
-      "ready-probe": "/",
-      "lifecycle-post-start": ["/bin/sh", "-c", "ln -s /data /home/rstudio/pd/; true"],
-      "fs-gid": 100,
-      "user-volume-location": "/home/rstudio/pd"
-    },
-    {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "(Generic) Jupyter Notebook",
-      "image": "quay.io/occ_data/jupyternotebook:1.9.0",
-      "env": {},
+      "memory-limit": "2Gi",
+      "name": "(Generic) Jupyter Notebook with R Kernel",
+      "image": "quay.io/cdis/jupyter-superslim-r:master",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
+        "--NotebookApp.ip='*'",
+        "--NotebookApp.notebook_dir='/home/jovyan'",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
         "--NotebookApp.quit_button=False"
       ],
@@ -95,15 +100,18 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "memory-limit": "2Gi",
       "name": "(Generic, User-licensed) Stata Notebook ",
       "image": "quay.io/cdis/stata-heal:master",
-      "env": {},
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -129,10 +137,12 @@
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "memory-limit": "2Gi",
       "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
       "image": "quay.io/cdis/stata-heal:gen3-licensed",
-      "env": {},
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -154,14 +164,15 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "memory-limit": "2Gi",
       "name": "(Tutorial) JCOIN Tracking Opioid Stigma Notebook",
-      "image": "quay.io/cdis/jupyter-jcoin:master",
+      "image": "quay.io/cdis/heal-notebooks:jcoin__177f89f0fab8a13c606c68bab0b953aa3fed4b71",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
@@ -185,14 +196,15 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
-      "name": "(Tutorial) Bacpac Synthetic Data Analysis Notebook",
-      "image": "quay.io/cdis/jupyter-bacpac:master",
+      "memory-limit": "2Gi",
+      "name": "(Tutorial) BACPAC Synthetic Data Analysis Notebook",
+      "image": "quay.io/cdis/heal-notebooks:bacpac__10670ad79b4488cfa9f1b3681ce52bc3f1139b5a",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
@@ -216,15 +228,18 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "memory-limit": "2Gi",
       "name": "(Tutorial) Opioid Prevalence And Overdoses Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcdea__f7afc9b185d904bd60a1449e0bfb6d56c50b6ba7",
-      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
+      "image": "quay.io/cdis/heal-notebooks:cdcdea__2c94886708fbf7454b6e54f64eb844886d0c3a93",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -245,15 +260,18 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
+      "memory-limit": "2Gi",
       "name": "(Tutorial) Opioid Overdose Trajectories Notebook",
-      "image": "quay.io/cdis/heal-notebooks:cdcwonder__8eab157c6c6e07336a4d7a87cc67e4f9979c373c",
-      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
+      "image": "quay.io/cdis/heal-notebooks:cdcwonder__fd15dab0198c6dd0da71e6806ac690c7c8632fa7",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -274,15 +292,18 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
-      "name": "(Tutorial) OEPS And Opioid Toolkit Notebook",
-      "image": "quay.io/cdis/heal-notebooks:oeps__cf17b8bc5222194f746dde2cdcd3fa948090a81b",
-      "env": {"FRAME_ANCESTORS": "https://brh.data-commons.org"},
+      "memory-limit": "2Gi",
+      "name": "(Tutorial) Opioid Environment Toolkit And OEPS R Notebook",
+      "image": "quay.io/cdis/heal-notebooks:oeps__69567adc7583405788eafc39ae8af51a6a5d7690",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -303,9 +324,8 @@
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     }
-  ],
-  "more-configs": [
   ]
 }

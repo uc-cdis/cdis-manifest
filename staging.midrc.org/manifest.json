@@ -23,7 +23,7 @@
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2021.10",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.10",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.10",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.10",
+    "tube": "quay.io/cdis/tube:master",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.10"
   },
   "arborist": {
@@ -129,35 +129,35 @@
   "guppy": {
     "indices": [
       {
-        "index": "midrc_staging_staging_dataset",
+        "index": "midrcstaging_dataset",
         "type": "dataset"
       },
       {
-        "index": "midrc_staging_case",
+        "index": "midrcstaging_case",
         "type": "case"
       },
       {
-        "index": "midrc_staging_imaging_data_file",
+        "index": "midrcstaging_imaging_data_file",
         "type": "imaging_data_file"
       },
       {
-        "index": "midrc_staging_imaging_study",
+        "index": "midrcstaging_imaging_study",
         "type": "imaging_study"
       },
       {
-        "index": "midrc_staging_ct_scan",
+        "index": "midrcstaging_ct_scan",
         "type": "ct_scan"
       },
       {
-        "index": "midrc_staging_radiography_exam",
+        "index": "midrcstaging_radiography_exam",
         "type": "radiography_exam"
       },
       {
-        "index": "midrc_staging_mr_exam",
+        "index": "midrcstaging_mr_exam",
         "type": "mr_exam"
       }
     ],
-    "config_index": "midrc_staging_array-config",
+    "config_index": "midrcstaging_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "global": {
