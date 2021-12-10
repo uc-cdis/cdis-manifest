@@ -93,12 +93,6 @@
           "name": "Discovery"
         },
         {
-          "icon": "workspace",
-          "link": "/workspace",
-          "color": "#a2a2a2",
-          "name": "Workspace"
-        },
-        {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
@@ -330,13 +324,6 @@
         "enabled": true,
         "type": "export-to-pfb",
         "title": "Export to PFB",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "download"
       }
@@ -600,13 +587,6 @@
         "rightIcon": "download",
         "fileName": "file-manifest.json",
         "dropdownId": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
       },
       {
         "enabled": true,
