@@ -24,7 +24,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "quay.io/cdis/gen3-spark:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
-    "tube": "quay.io/cdis/tube:master",
+    "tube": "quay.io/cdis/tube:test_mshao",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "guppy": "quay.io/cdis/guppy:master",
