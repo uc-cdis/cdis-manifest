@@ -31,7 +31,7 @@
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2021.05",
