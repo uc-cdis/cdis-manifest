@@ -31,7 +31,7 @@
       "name": "ingest-metadata-manifest",
       "action": "ingest-metadata-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2021.05",
@@ -71,7 +71,7 @@
     {
       "name": "get-dbgap-metadata",
       "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2021.05",
@@ -102,7 +102,7 @@
       "name": "manifest-indexing",
       "action": "index-object-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2021.05",
@@ -143,7 +143,7 @@
       "name": "manifest-merging",
       "action": "merge-manifests",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2021.05",
@@ -184,7 +184,7 @@
       "name": "indexd-manifest",
       "action": "download-indexd-manifest",
       "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-healdata-org",
+      "serviceAccountName": "jobs-externaldata-healdata-org",
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2021.05",
