@@ -17,7 +17,7 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "The VA Precision Oncology Data Commons",
+    "appName": "VA Data Commons",
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
@@ -71,22 +71,16 @@
           "color": "#a2a2a2"
         },
         {
-          "icon": "files",
-          "link": "/files",
-          "color": "#a2a2a2",
-          "name": "Files"
-        },
-        {
-          "icon": "query",
-          "link": "/query",
-          "color": "#a2a2a2",
-          "name": "Query"
-        },
-        {
           "icon": "workspace",
-          "link": "#hostname#workspace/",
+          "link": "/workspace",
           "color": "#a2a2a2",
           "name": "Workspace"
+        },
+        {
+          "icon": "analysis",
+          "link": "/analysis",
+          "color": "#a2a2a2",
+          "name": "Apps"
         },
         {
           "icon": "profile",
@@ -115,11 +109,16 @@
         "useProfileDropdown": false
       },
     "login": {
-      "title": "Veterans Affairs Data Commons",
+      "title": "VA Data Commons",
       "subTitle": "search, compare, and analyze data",
       "text": "The VA Data Commons supports the management, analysis and sharing of US military veteran oncologic data for the research communityand aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for precision oncology.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
+    },
+    "systemUse" : {
+      "systemUseTitle" : "VA systems are intended for Academic and Institutional Users",
+      "systemUseText" : ["VA systems are intended to be used by authorized VA network users for viewing and retrieving information; except as otherwise authorized for official business and limited personal use under VA policy. Information from this system resides on and transmits through computer systems and networks funded by VA. Access or use constitutes understanding and acceptance that there is no reasonable expectation of privacy in the use of Government networks or systems. Access or use of this system constitutes user understanding and acceptance of these terms and constitutes unconditional consent to review and action includes but is not limited to: monitoring; recording; copying; auditing; inspecting; investigating; restricting access; blocking; tracking; disclosing to authorized personnel; or other authorized actions by authorized VA and law enforcement personnel. Unauthorized user attempts or acts to (1) access; upload; download; change; or delete information on this system; (2) modify this system; (3) deny access to this system; (4) accrue resources for unauthorized use; or (5) otherwise misuse this system are strictly prohibited. Such attempts or acts are subject to action that result in criminal; civil; or administrative penalties."],
+      "displayUseMsg": "cookie"
     },
     "footerLogos": [
       {
@@ -133,15 +132,24 @@
         "alt": "Center for Translational Data Science at the University of Chicago"
       },
       {
-        "src": "/src/img/sponsors/OCC.png",
-        "href": "http://occ-data.org/",
+        "src": "/custom/sponsors/gitops-sponsors/OCC.png",
+        "href": "https://occ-data.org/",
         "alt": "Open Commons Consortium"
       }
     ]
   },
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "analysis": true
   },
+  "analysisTools": [
+    {
+      "title": "OHDSI Atlas",
+      "description": "An Atlas App",
+      "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
+    }
+  ],
   "arrangerConfig": {
     "charts": {
       "node_id": {

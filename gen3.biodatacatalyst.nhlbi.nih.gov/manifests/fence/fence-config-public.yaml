@@ -33,6 +33,10 @@ S3_BUCKETS:
     cred: fence-bot
     role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
+  nih-nhlbi-topmed-released-phs001600-c1:
+    cred: fence-bot
+    region: us-east-1
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
   nih-nhlbi-covid19-phs002299-c1:
     cred: fence-bot
     role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
@@ -497,6 +501,13 @@ S3_BUCKETS:
     role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-biodata-catalyst-biolincc-phs2415-c1:
+    cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
+    region: us-east-1
+  nih-nhlbi-pcgc-phs001843-c1:
+    cred: fence-bot
+    region: us-east-1
+  nih-nhlbi-covid19-phs002363-c1:
     cred: fence-bot
     role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1

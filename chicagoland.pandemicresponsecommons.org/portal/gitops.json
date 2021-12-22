@@ -754,29 +754,12 @@
               "region_icu_avail",
               "region_vents_capacity",
               "region_vents_available",
-              "state_vent_covid_patients",
-              "state_icu_covid_patients",
-              "state_covid_patients_non_icu",
-              "state_covid_pui_patients",
-              "state_total_covid_pui_in_hospital",
-              "state_icu_capacity",
-              "state_icu_available",
-              "state_vent_capacity",
-              "state_vents_available",
-              "state_Ventilators_open_pct",
-              "state_ventilators_in_use",
-              "state_ventilators_in_use_covid",
-              "state_ventilators_covid_patients_pct",
               "state_total_beds",
-              "state_total_beds_available",
               "total_in_use_beds_covid",
-              "state_pct_beds_covid_pui",
-              "state_pct_hospital_beds_available",
-              "state_icu_open_beds",
-              "state_icu_beds_used",
-              "state_icu_open_beds_pct",
-              "vaccine_administered_count",
-              "vaccine_persons_fully_vaccinated_pct",
+              "icu_beds",
+              "icu_in_use_beds_covid",
+              "ventilator_capacity",
+              "ventilator_in_use_covid",
               "vaccine_total_delivered_vaccine_doses",
               "vaccine_community_reported_inventory",
               "vaccine_reported_inventory"
@@ -827,30 +810,15 @@
           "region_icu_capacity",
           "region_vents_available",
           "region_vents_capacity",
-          "state_vent_covid_patients",
-          "state_icu_covid_patients",
-          "state_covid_patients_non_icu",
-          "state_covid_pui_patients",
-          "state_total_covid_pui_in_hospital",
-          "state_total_covid_pui_in_icu",
-          "state_icu_capacity",
-          "state_icu_available",
-          "state_vent_capacity",
-          "state_vents_available",
-          "state_Ventilators_open_pct",
-          "state_ventilators_in_use",
-          "state_ventilators_in_use_covid",
-          "state_ventilators_covid_patients_pct",
           "state_total_beds",
-          "state_total_beds_available",
-          "state_total_beds_used",
           "total_in_use_beds_non_covid",
           "total_in_use_beds_covid",
-          "state_pct_beds_covid_pui",
-          "state_pct_hospital_beds_available",
-          "state_icu_open_beds",
-          "state_icu_beds_used",
-          "state_icu_open_beds_pct",
+          "icu_beds",
+          "icu_in_use_beds_non_covid",
+          "icu_in_use_beds_covid",
+          "ventilator_capacity",
+          "ventilator_in_use_non_covid",
+          "ventilator_in_use_covid",
           "population_density",
           "completed_high_school",
           "college_degree",
@@ -982,100 +950,40 @@
             "name": "IL Region Ventilators Capacity"
           },
           {
-            "field": "state_icu_capacity",
-            "name": "IL ICU Capacity"
-          },
-          {
-            "field": "state_icu_covid_patients",
-            "name": "IL ICU COVID-19 Patients"
-          },
-          {
-            "field": "state_vent_capacity",
-            "name": "IL Ventilator Capacity"
-          },
-          {
-            "field": "state_vent_covid_patients",
-            "name": "IL Ventilator COVID-19 Patients"
-          },
-          {
-            "field": "state_ventilators_in_use_covid",
-            "name": "IL Ventilators In Use COVID-19"
-          },
-          {
-            "field": "state_icu_available",
-            "name": "IL ICU Available"
-          },
-          {
-            "field": "state_vents_available",
-            "name": "IL Ventilators Available"
-          },
-          {
             "field": "state_total_beds",
             "name": "IL Total Beds"
           },
           {
-            "field": "state_total_beds_available",
-            "name": "IL Total Beds Available "
-          },
-          {
-            "field": "state_total_beds_used",
-            "name": "IL Total Beds Used"
-          },
-          {
-            "field": "state_pct_hospital_beds_available",
-            "name": "IL Hospital Bed Available (percent)"
-          },
-          {
-            "field": "state_icu_open_beds",
-            "name": "IL ICU Open Beds"
-          },
-          {
-            "field": "state_icu_beds_used",
-            "name": "IL ICU Beds in Use"
-          },
-          {
-            "field": "state_icu_open_beds_pct",
-            "name": "IL ICU Open Beds (percent)"
-          },
-          {
-            "field": "state_covid_pui_patients",
-            "name": "IL COVID-19 PUI Patients"
-          },
-          {
-            "field": "state_Ventilators_open_pct",
-            "name": "IL Ventilators Open (percent)"
-          },
-          {
-            "field": "state_ventilators_in_use",
-            "name": "IL Ventilators In Use"
-          },
-          {
-            "field": "state_ventilators_covid_patients_pct",
-            "name": "IL Ventilators COVID-19 Patients (percent)"
-          },
-          {
-            "field": "state_covid_patients_non_icu",
-            "name": "IL COVID-19 Patients Non ICU"
-          },
-          {
-            "field": "state_total_covid_pui_in_icu",
-            "name": "IL Total COVID-19 PUI ICU"
-          },
-          {
-            "field": "state_total_covid_pui_in_hospital",
-            "name": "IL COVID-19 PUI Hospitalized"
-          },
-          {
-            "field": "state_pct_beds_covid_pui",
-            "name": "IL Percentage Beds COVID-19 PUI"
-          },
-          {
             "field": "total_in_use_beds_non_covid",
-            "name": "IL Total In Use Non-COVID-19 Beds "
+            "name": "IL Total In Use Non-COVID-19 Beds"
           },
           {
             "field": "total_in_use_beds_covid",
             "name": "IL Total In Use COVID-19 Beds"
+          },
+          {
+            "field": "icu_beds",
+            "name": "IL Total ICU Beds"
+          },
+          {
+            "field": "icu_in_use_beds_non_covid",
+            "name": "IL Total In Use Non-COVID-19 ICU Beds"
+          },
+          {
+            "field": "icu_in_use_beds_covid",
+            "name": "IL Total In Use COVID-19 ICU Beds"
+          },
+          {
+            "field": "ventilator_capacity",
+            "name": "IL Total Ventilators"
+          },
+          {
+            "field": "ventilator_in_use_non_covid",
+            "name": "IL Total In Use Non-COVID-19 Ventilators"
+          },
+          {
+            "field": "ventilator_in_use_covid",
+            "name": "IL Total In Use COVID-19 Ventilators"
           },
           {
             "field": "hhinc_mean",
@@ -1222,7 +1130,7 @@
       },
       {
         "title": "Percentage of ICU bed availability prediction in the state of Illinois",
-        "description": "In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
+        "description": "Since the COVID-19 breakout, the healthcare system in Illinois is under tremendous pressure to satisfy the increased need for COVID-19 treatment. The Delta variant of the coronavirus has been spreading rapidly throughout the US and the world. This variant is highly transmissible and more virulent. It's critical to prepare sufficient medical supplies to meet patients needs, such as ICU beds and ventilators. In this notebook, we construct an Hierarchical Bayesian Binomial Regression model, a Univariate/Multivariate LSTM model and a Univariate/Multivariate CNN-LSTM model forecasting the percentage of ICU bed availability for the next 14 days.",
         "link": "/dashboard/Public/notebooks/Percentage_ICU_prediction.html",
         "imageUrl": "/dashboard/Public/notebooks/Percentage_ICU_prediction.png"
       }
@@ -1354,28 +1262,16 @@
         ],
         [
           {
-            "title": "Cook County Daily Cases",
-            "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "title": "Cook County Daily New Cases and Forecast",
+            "description": "Here we plot daily case counts over time in Cook county, where the red line is reported cases and the grey shaded area depicts the inferred posterior predicted cases. Forecasts (blue shaded area) show how new case numbers would have developed (95% Bayesian credible intervals).",
             "type": "image",
-            "path": "bayes-by-county/17031/cases.png"
+            "path": "generative_bayes_model/17031/cases.svg"
           },
           {
-            "title": "Cook County Daily Deaths",
-            "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively.",
+            "title": "Cook County Estimated Reproduction Rate (Rt)",
+            "description": "Here we plot estimated Rt over time in Cook county. We use a generative logic (primary infection, infection delay and onset delay) to explain how an initial pool of infected cases spreads the COVID-19 at each time-point, according to the time-varying reproduction factor. Shaded areas indicate 95% Bayesian credible intervals.",
             "type": "image",
-            "path": "bayes-by-county/17031/deaths.png"
-          },
-          {
-            "title": "Cook County Estimated Rt",
-            "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data.",
-            "type": "image",
-            "path": "bayes-by-county/17031/Rt.png"
-          },
-          {
-            "title": "Average Rt Over Latest 7 Days Of Observations",
-            "description": "Latest Rt estimates for 20 of the IL counties most impacted by COVID-19.",
-            "type": "image",
-            "path": "bayes-by-county/Rt_Top20.svg"
+            "path": "generative_bayes_model/17031/rt.svg"
           },
           {
             "title": "Using 4-phase Logistic Model And Data From Past 180 Days to Obtain Cumulative Cases Forecasts For Future 60 Days in Illinois",
@@ -1388,24 +1284,15 @@
             "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 120 days forecasts for cumulative COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
             "type": "image",
             "path": "charts_data/IL_tab_charts_cumulative_logistic_last360.svg"
-          },
-          {
-            "title": "Using 4-Phase Logistic Model And Data From Past 360 Days to Obtain Daily New Cases Forecasts For Future 30 Days in Illinois",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University. This chart depicts the future 30 days forecasts for daily new COVID-19 cases using 4-phase logistic model and data from past 360 days. R square values pertain to the fits of model (olive dash line) to the previous 360 days of observed data (pink dots).",
-            "type": "image",
-            "path": "charts_data/IL_tab_charts_daily_logistic.svg"
           }
         ]
       ],
       "simulations": {
         "imgCases": {
-          "description": "Here we plot daily case counts over time, where the red bars are reported cases and the blue curve traces the estimated number of true (i.e., reported and not-reported) cases. The darker and lighter shaded regions correspond to 50% and 95% posterior credible intervals, respectively."
-        },
-        "imgDeaths": {
-          "description": "Here we plot daily death counts over time, where the red bars are observed deaths and the blue curve represents modeled death counts."
+          "description": "Here we plot daily case counts over time in Cook county, where the red line is reported cases and the grey shaded area depicts the inferred posterior predicted cases. Forecasts (blue shaded area) show how new case numbers would have developed (95% Bayesian credible intervals)."
         },
         "imgRt": {
-          "description": "Here we plot estimated Rt over time; Rt is estimated using Google mobility data."
+          "description": "Here we plot estimated Rt over time in Cook county. We use a generative logic (primary infection, infection delay and onset delay) to explain how an initial pool of infected cases spreads the COVID-19 at each time-point, according to the time-varying reproduction factor. Shaded areas indicate 95% Bayesian credible intervals."
         }
       }
     }

@@ -40,9 +40,9 @@
           "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
         },
         {
-          "name": "Static Notebooks",
+          "name": "Example Analysis",
           "link": "/resource-browser",
-          "icon": "analysis",
+          "icon": "bar-chart",
           "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available on the HEAL platform by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
@@ -110,11 +110,21 @@
         "enabled": false,
         "field": "advSearchFilters",
         "filters": [
-          { "key": "Research Focus Area" },
-          { "key": "Administering IC(s)" },
-          { "key": "Simulated vs. Real Data" },
-          { "key": "Year Grant Awarded" },
-          { "key": "Study Description" }
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
         ]
       },
       "exportToWorkspace": {
@@ -403,7 +413,8 @@
             }
           ]
         }
-      ]
+      ],
+      "tagsDisplayName": "Study Characteristics"
     },
     "minimalFieldMapping": {
       "authzField": "authz",
@@ -464,8 +475,7 @@
         "color": "#bf362e",
         "display": false
       }
-    ],
-    "tagsDisplayName": "Study Characteristics"
+    ]
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
@@ -507,5 +517,6 @@
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {}
 }

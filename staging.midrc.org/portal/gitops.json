@@ -114,6 +114,26 @@
             }
         ]
     },
+    "systemUse": {
+      "systemUseTitle" : "Data Use Agreement for Academic and Institutional Users",
+      "systemUseText" : [
+      "This Data Use Agreement for Academic and Institutional Users (this “Agreement”) is by and between you and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement.", 
+          "1. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data solely for your personal, Non-Commercial Research Purposes. Any commercial use, sale, or other monetization is prohibited. “Non-Commercial Research Purposes” means academic research or other not-for-profit scholarly purposes which are undertaken at a non-profit or government institution and publishing in connection therewith.", 
+          "2. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
+          "3. You will use the MIDRC Data only in compliance with all applicable laws and regulations.",
+          "4. You may make a verbatim copy of the MIDRC Data for personal, non-commercial research use. If another user within your organization wishes to use the MIDRC Data, they must separately download the data set and enter into an Agreement directly with the University.", 
+          "5. You may not distribute, publish, or reproduce a copy of any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
+          "6. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data.",
+          "7. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
+          "8. You will acknowledge your use of MIDRC Data in all oral or written presentations, disclosures, or publications arising from your use of the MIDRC Data.",
+          "9. You may not modify, reverse engineer, decompile, or create derivative works from the MIDRC Data. You must not remove or alter any copyright or other proprietary notices in the MIDRC Data. For avoidance of doubt, the University will have no right, title, or interest in any research results that you create, including any data analyses, results of algorithm validations, annotations and overlays, and outcomes or evaluations you create using the MIDRC Data.",
+          "10. The MIDRC Data has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, research use only. In no event shall data or images generated through the use of the MIDRC Data be used or relied upon in the diagnosis or provision of patient care.",
+          "11. THE MIDRC DATA IS PROVIDED ON AN \"AS IS\", “WHERE IS” BASIS. THE UNIVERSITY MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON INFRINGEMENT. THE UNIVERSITY WILL HAVE NO LIABILITY WHATSOEVER ARISING FROM YOUR ACCESS OR USE OF THE MIDRC DATA.",
+          "12. You will not make any attempt to re-identify any individual from the MIDRC Data. In the event that you identify any person whose data is included in the MIDRC Data, you will promptly notify the University in writing.",
+          "13. The University may terminate this Agreement at any time upon notice to you. The University shall have no liability in the event of any such termination. Upon such termination, the University may direct that you immediately return or destroy all copies of any MIDRC Data and, upon the University’s request, you will certify the foregoing to the University in writing."],
+      "displayUseMsg": "cookie",
+      "expireUseMsgDays" : 365
+    },
     "navigation": {
         "items": [
           {
@@ -150,13 +170,17 @@
             "name": "About"
           },
           {
-            "icon": "upload",
-            "link": "/submission",
-            "name": "Submit Data"
+            "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
+            "name": "Quick Start Guide"
           },
           {
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
+          },
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
           },
           {
             "link": "midrc-support@datacommons.io",
@@ -235,11 +259,11 @@
               "_ct_scans_count",
               "_radiography_exams_count",
               "_ct_series_count",
-              "_ct_images_count",
+              "_ct_instances_count",
               "_dx_series_count",
-              "_dx_images_count",
+              "_dx_instances_count",
               "_cr_series_count",
-              "_cr_images_count",
+              "_cr_instances_count",
               "project_id"
             ]
           },
@@ -298,24 +322,24 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
-                    "name": "CT Images Count"
+                    "field": "_ct_instances_count",
+                    "name": "CT Instances Count"
                 },
                 {
                     "field": "_dx_series_count",
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
-                    "name": "DX Images Count"
+                    "field": "_dx_instances_count",
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
-                    "name": "CR Images Count"
+                    "field": "_cr_instances_count",
+                    "name": "CR Instances Count"
                 }
             ],
             "manifestMapping": {
@@ -358,11 +382,11 @@
                 "_ct_scans_count",
                 "_radiography_exams_count",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "data_description",
                 "research_description",
                 "license",
@@ -404,24 +428,24 @@
                     "name": "CT Series Count"
                   },
                   {
-                    "field": "_ct_images_count",
-                    "name": "CT Images Count"
+                    "field": "_ct_instances_count",
+                    "name": "CT Instances Count"
                   },
                   {
                     "field": "_dx_series_count",
                     "name": "DX Series Count"
                   },
                   {
-                    "field": "_dx_images_count",
-                    "name": "DX Images Count"
+                    "field": "_dx_instances_count",
+                    "name": "DX Instances Count"
                   },
                   {
                     "field": "_cr_series_count",
                     "name": "CR Series Count"
                   },
                   {
-                    "field": "_cr_images_count",
-                    "name": "CR Images Count"
+                    "field": "_cr_instances_count",
+                    "name": "CR Instances Count"
                   },
                   {
                     "field": "_virus_genomes_count",
@@ -471,10 +495,6 @@
                 "chartType": "fullPie",
                 "title": "Study Modality"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -490,7 +510,6 @@
                     "age_at_imaging",
                     "study_year",
                     "study_year_shifted",
-                    "study_covid_status",
                     "body_part_examined",
                     "study_location",
                     "series_count",
@@ -498,7 +517,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format"
                   ]
@@ -521,7 +540,6 @@
               "fields": [
                 "study_modality",
                 "study_description",
-                "study_covid_status",
                 "body_part_examined",
                 "age_at_imaging",
                 "study_year",
@@ -537,11 +555,11 @@
                 "_ct_scans_count",
                 "_radiography_exams_count",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "submitter_id",
                 "project_id"
               ]
@@ -597,24 +615,24 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
-                    "name": "CT Images Count"
+                    "field": "_ct_instances_count",
+                    "name": "CT Instances Count"
                 },
                 {
                     "field": "_dx_series_count",
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
-                    "name": "DX Images Count"
+                    "field": "_dx_instances_count",
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
-                    "name": "CR Images Count"
+                    "field": "_cr_instances_count",
+                    "name": "CR Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -635,10 +653,6 @@
                 "chartType": "fullPie",
                 "title": "Study Modality"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -651,7 +665,6 @@
                   "fields":[
                     "study_modality",
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -662,12 +675,12 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "detector_type",
                     "imager_pixel_spacing",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -675,7 +688,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -701,7 +713,6 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -710,13 +721,13 @@
                 "race",
                 "zip",
                 "_dx_series_count",
-                "_dx_images_count",
+                "_dx_instances_count",
                 "_cr_series_count",
-                "_cr_images_count",
+                "_cr_instances_count",
                 "data_format",
                 "detector_type",
                 "imager_pixel_spacing",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
@@ -772,16 +783,16 @@
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_images_count",
-                    "name": "DX Images Count"
+                    "field": "_dx_instances_count",
+                    "name": "DX Instances Count"
                 },
                 {
                     "field": "_cr_series_count",
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_images_count",
-                    "name": "CR Images Count"
+                    "field": "_cr_instances_count",
+                    "name": "CR Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -802,10 +813,6 @@
                 "chartType": "fullPie",
                 "title": "Case Age at Imaging"
               },
-              "study_covid_status": {
-                "chartType": "fullPie",
-                "title": "Study COVID-19 Status"
-              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
@@ -818,7 +825,6 @@
                   "fields":[
                     "study_modality",
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -829,7 +835,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "acquisition_type",
@@ -838,7 +844,7 @@
                     "patient_position",
                     "slice_thickness",
                     "spacing_between_slices",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -846,7 +852,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -873,13 +878,12 @@
               "fields": [
                 "submitter_id",
                 "_ct_series_count",
-                "_ct_images_count",
+                "_ct_instances_count",
                 "study_modality",
                 "study_description",
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -894,7 +898,7 @@
                 "patient_position",
                 "slice_thickness",
                 "spacing_between_slices",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
@@ -950,8 +954,8 @@
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_images_count",
-                    "name": "CT Images Count"
+                    "field": "_ct_instances_count",
+                    "name": "CT Instances Count"
                 }
               ],
               "manifestMapping": {
@@ -979,7 +983,6 @@
                   "title": "Study Properties",
                   "fields":[
                     "study_description",
-                    "study_covid_status",
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
@@ -989,7 +992,7 @@
                   ]
                 },
                 {
-                  "title": "Image Properties",
+                  "title": "Imaging Properties",
                   "fields":[
                     "data_format",
                     "slice_thickness",
@@ -998,7 +1001,7 @@
                     "magnetic_field_strength",
                     "scanning_sequence",
                     "sequence_name",
-                    "contrast_bolus_agent_number",
+                    "contrast_bolus_agent",
                     "image_type",
                     "lossy_image_compression",
                     "manufacturer",
@@ -1006,7 +1009,6 @@
                     "modality",
                     "pixel_spacing",
                     "series_description",
-                    "series_uid",
                     "spatial_resolution"
                   ]
                 },
@@ -1033,12 +1035,11 @@
               "fields": [
                 "submitter_id",
                 "_mr_series_count",
-                "_mr_images_count",
+                "_mr_instances_count",
                 "study_description",
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "study_covid_status",
                 "body_part_examined",
                 "covid19_positive",
                 "age_at_index",
@@ -1053,7 +1054,7 @@
                 "magnetic_field_strength",
                 "scanning_sequence",
                 "sequence_name",
-                "contrast_bolus_agent_number",
+                "contrast_bolus_agent",
                 "image_type",
                 "lossy_image_compression",
                 "manufacturer",
@@ -1109,8 +1110,8 @@
                     "name": "MR Series Count"
                 },
                 {
-                    "field": "_mr_images_count",
-                    "name": "MR Images Count"
+                    "field": "_mr_instances_count",
+                    "name": "MR Instances Count"
                 }
               ],
               "manifestMapping": {

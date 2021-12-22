@@ -406,21 +406,24 @@
       "title": "Projects",
       "titleField": "title",
       "rowAccessor": "project_id",
+      "openMode": "close-all",
       "listItemConfig": {
-        "blockFields": ["description"],
-        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_primary_purpose","study_phase","verification_date"]
+        "blockFields": ["brief_summary"],
+        "tableFields": ["title", "principle_investigator", "data_type", "availability_type"]
       },
       "singleItemConfig": {
         "blockFields": ["description"],
-        "tableFields": ["name", "code", "title", "principle_investigator", "publisher","study_design_allocation","study_design_primary_purpose","study_phase","verification_date","source","rights"],
+        "tableFields": ["title", "principle_investigator", "data_type", "availability_type", "name", "estimated_study_completion", "publisher","study_design_allocation","study_phase"],
         "sideBoxes": []
       },
       "fieldMapping": [
         { "field": "title", "name": "Study Title" },
-        { "field": "principle_investigator", "name": "Principle Investigator"},
-        { "field": "study_design_allocation", "name": "Design Allocation"},
-        { "field": "study_design_primary_purpose", "name": "Primary Purpose"},
-        { "field": "verification_date", "name": "Verification Date"}
+        { "field": "brief_summary", "name": "Brief Description" },
+        { "field": "principle_investigator", "name": "Principle Investigator(s)" },
+        { "field": "availability_type", "name": "Data Accessibility" },
+        { "field": "name", "name": "Project Name" },
+        { "field": "publisher", "name": "Publications" },
+        { "field": "study_design_allocation", "name": "Design Allocation"}
       ],
     "buttons": [
         {

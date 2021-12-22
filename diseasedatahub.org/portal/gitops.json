@@ -1,0 +1,388 @@
+{
+  "subcommons": [ 
+    {
+      "URL": "https://tb.diseasedatahub.org/",
+      "name": "NDE: TB"
+    }, 
+    {
+      "URL": "https://aids.diseasedatahub.org/",
+      "name": "NDE: AIDS"
+    },
+    {
+      "URL": "https://flu.diseasedatahub.org/",
+      "name": "NDE: FLU"
+    },
+    {
+      "URL": "https://microbiome.diseasedatahub.org/",
+      "name": "NDE: Microbiome"
+    }
+  ],
+  "gaTrackingId": "UA-119127212-1",
+  "graphql": {
+    "boardCounts": [
+      {
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
+      },
+      {
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
+      },
+      {
+        "graphql": "_summary_lab_result_count",
+        "name": "Lab record",
+        "plural": "Lab records"
+      }
+    ],
+    "chartCounts": [
+      {
+        "graphql": "_subject_count",
+        "name": "Subject"
+      },
+      {
+        "graphql": "_study_count",
+        "name": "Study"
+      }
+    ],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "NIAID Data Ecosystem",
+    "index": {
+      "introduction": {
+        "heading": "NIAID Data Ecosystem Datasets",
+        "text": "Disciplines within NIAID can have their own independent data models while maintaining interoperability of the data ecosystem, facilitating individual research communities to work within the system. The data within all supported resources are findable, accessible, interoperable, and reusable (FAIR).", 
+        "link": "/datasets"
+      },
+      "buttons": [
+        {
+          "name": "ImmPort",
+          "body": "Visit ImmPort, a resource funded by the NIH, NIAID, and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
+          "external_link": "https://www.immport.org/home",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/logo/immport-main-icon.png"
+        },
+        {
+          "name": "NIAID TB Environment",
+          "icon": "data-explore",
+          "body": "Explore data from the NIAID <a href='https://tbportals.niaid.nih.gov/'>TB Portals</a> Program and <a href='https://www.patricbrc.org'>PATRIC</a>, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
+          "external_link": "https://tb.diseasedatahub.org"
+        },
+        {
+          "name": "NIAID AIDS Environment",
+          "logo": "/custom/sponsors/gitops-sponsors/macs-wihs-logo.png",
+          "body": "Explore data from the NIAID Multicenter AIDS Cohort Study <a href='https://www.niaid.nih.gov/research/multicenter-aids-cohort-study-public-data-set'>(MACS)</a> and Women's Interagency HIV Study <a href='https://www.niaid.nih.gov/research/womens-interagency-hiv-study'>(WIHS)</a>.",
+          "external_link": "https://aids.diseasedatahub.org"
+        },
+        {
+          "name": "NIAID Flu Environment",
+          "icon": "data-explore",
+          "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID) <a href='https://www.niaid.nih.gov/research/systems-biology-consortium'>Systems Biology Consortium for Infectious Diseases</a>.",
+          "external_link": "https://flu.diseasedatahub.org"
+        },
+        {
+          "name": "NIAID Microbiome Environment",
+          "icon": "data-explore",
+          "body": "Explore data from a collection of open-access microbiome related studies from <a href='https://www.immport.org/home'>ImmPort</a>.",
+          "external_link": "https://microbiome.diseasedatahub.org"
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://tbportals.niaid.nih.gov/",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/tb-logo.png",
+          "coming_soon": true
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://actgnetwork.org/",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/actg-logo.png",
+          "coming_soon": true
+        },
+        {
+          "name": "Coming Soon to the Ecosystem", 
+          "body": "This website is not yet supported by the Ecosystem.",
+          "external_link": "https://www.patricbrc.org",
+          "external_link_text": "Visit Website",
+          "logo": "/custom/sponsors/gitops-sponsors/patric-logo.png",
+          "coming_soon": true
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "query",
+          "link": "/datasets",
+          "color": "#a2a2a2",
+          "name": "Dataset Browser"
+        },
+        {
+          "icon": "exploration",
+          "link": "/explorer",
+          "color": "#a2a2a2",
+          "name": "Eco Explorer"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ]
+    },
+    "login": {
+      "title": "NIAID Data Ecosystem",
+      "subTitle": "Cross Environment Datasets",
+      "text": "The website combines government datasets from multiple disciplines of NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "support@datacommons.io"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/custom/logo/niaid.png",
+        "href": "https://diseasedatahub.org",
+        "alt": "NIAID Data Ecosystem"
+      }
+    ]
+  },
+  "requiredCerts": [],
+  "featureFlags": {
+    "explorer": true,
+    "analysis": true
+  },
+  "datasetBrowserConfig": {
+    "filterSections": [
+      {
+        "title": "Supported Data Resources", 
+        "options": [
+          { "text": "ImmPort", "filterType": "singleSelect"},
+          { "text": "NDE: TB", "filterType": "singleSelect"},
+          { "text": "NDE: AIDS", "filterType": "singleSelect"},
+          { "text": "NDE: Flu", "filterType": "singleSelect"},
+          { "text": "NDE: Microbiome", "filterType": "singleSelect"}
+        ]
+      },
+      { 
+        "title": "Research Focus",
+        "options": [
+          { "text": "AIDS", "filterType": "singleSelect"},
+          { "text": "TB", "filterType": "singleSelect"},
+          { "text": "Flu", "filterType": "singleSelect"},
+          { "text": "Immune Response", "filterType": "singleSelect"},
+          { "text": "Immune Phenotype", "filterType": "singleSelect"},
+          { "text": "Allergy", "filterType": "singleSelect"},
+          { "text": "Atopy", "filterType": "singleSelect"},
+          { "text": "Infection Response", "filterType": "singleSelect"},
+          { "text": "Vaccine Response", "filterType": "singleSelect"},
+          { "text": "Transplantation", "filterType": "singleSelect"},
+          { "text": "Oncology", "filterType": "singleSelect"},
+          { "text": "Autoimmune", "filterType": "singleSelect"},
+          { "text": "Preterm Birth", "filterType": "singleSelect"}
+        ]
+      }
+    ],
+    "fieldMapping" : [
+      { "field": "link", "name": "View" },
+      { "field": "dataset_name", "name": "Study" },
+      { "field": "supported_data_resource", "name": "Supported Data Resource" },
+      { "field": "research_focus", "name": "Research Focus" },
+      { "field": "description", "name": "Description of Dataset" }
+    ],
+    "filterConfig": {
+      "tabs": [{
+        "title": "Filters",
+        "fields": ["supported_data_resource", "research_focus"]
+      }]
+    }
+  },
+  "dataExplorerConfig": {
+    "charts": {
+      "project_id": {
+        "chartType": "count",
+        "title": "Projects"
+      },
+      "subject_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      },
+      "dataset": {
+        "chartType": "pie",
+        "title": "Resources",
+        "chartRow": 0
+      },
+      "data_format": {
+        "chartType": "bar",
+        "title": "Data Format",
+        "chartRow": 0
+      },
+      "data_type": {
+        "chartType": "pie",
+        "title": "Data Type",
+        "chartRow": 0
+      },
+      "experimental_strategies": {
+        "chartType": "bar",
+        "title": "Experimental Strategies",
+        "chartRow": 0
+      },
+      "species": {
+        "chartType": "bar",
+        "title": "Genus species",
+        "chartRow": 0
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender",
+        "chartRow": 1
+      },
+      "race": {
+        "chartType": "pie",
+        "title": "Race",
+        "chartRow": 1
+      },
+      "ethnicity": {
+        "chartType": "pie",
+        "title": "Ethnicity",
+        "chartRow": 1
+      },
+      "biospecimen_anatomic_site": {
+        "chartType": "pie",
+        "title": "Biospecimen Anatomic Site",
+        "chartRow": 1
+      }
+    },
+    "fieldMapping" : [
+      { "field": "dataset", "name": "Resource" },
+      { "field": "studyAccession", "name": "Study" },
+      { "field": "phenotype", "name": "Phenotype" },
+      { "field": "gender", "name": "Gender" },
+      { "field": "ethnicity", "name": "Ethnicity" },
+      { "field": "strain", "name": "Strain" },
+      { "field": "species", "name": "Genus species" },
+      { "field": "submitter_id", "name": "Submitter ID" },
+      { "field": "race", "name": "Race" },
+      { "field": "hiv_status", "name": "HIV Status" },
+      { "field": "study_submitter_id", "name": "Study"},
+      { "field": "frstdthd", "name": "Year of Death" },
+      { "field": "arthxbase", "name": "ART Use Prior to Baseline"},
+      { "field": "bshbvstat", "name": "Baseline HBV Sero-status"},
+      { "field": "bshcvstat", "name": "Baseline HCV Sero-status"},
+      { "field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
+      { "field": "status", "name": "Summarized HIV Sero-status"},
+      {"field": "project_id", "name": "Project ID"},
+      {"field": "frstcncrd", "name": "First Confirmed Cancer Year"},
+      {"field": "frstdmd", "name": "First Visit Year with Diabetes"},
+      {"field": "frstdmmd", "name": "First Visit Year with All Necessary Components to Determine Diabetes"},
+      {"field": "frsthtnd", "name": "First Visit Year with Hypertension"},
+      {"field": "frsthtnmd", "name": "First Visit Year with All Necessary Components to Determine Hypertension"},
+      {"field": "fcd4lowd", "name": "First Year Seen CD4N < 200 or CD4% < 14"},
+      {"field": "fposdate", "name": "First Year Seen Seropositive"},
+      {"field": "frstaidd", "name": "First Reported AIDS Year"},
+      {"field": "lastafrd", "name": "Last Reported AIDS Free Year"},
+      {"field": "lastcond", "name": "Year of Last Study Visit Attended"},
+      {"field": "lastcontact", "name": "Last Year of Contact"},
+      {"field": "lcd4higd", "name": "Last Year Seen with CD4N >= 200 and CD4% >= 14"},
+      {"field": "lnegdate", "name": "Last Year Seen Seronegative"},
+      {"field": "amikacin_res_phenotype", "name": "Amikacin Phenotype" },
+      {"field": "capreomycin_res_phenotype", "name": "Capreomycin Phenotype" },
+      {"field": "isoniazid_res_phenotype", "name": "Isoniazid Phenotype" },
+      {"field": "kanamycin_res_phenotype", "name": "Kanamycin Phenotype" },
+      {"field": "ofloxacin_res_phenotype", "name": "Ofloxacin Phenotype" },
+      {"field": "pyrazinamide_res_phenotype", "name": "Pyrazinamide Phenotype" },
+      {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
+      {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
+      {"field": "streptomycin_res_phenotype", "name": "streptomycin Phenotype" }
+    ],
+    "filterConfig": {
+      "tabs": [{
+        "title": "Resource",
+        "fields": ["dataset", "data_format", "data_type"]
+      },
+      {
+        "title": "Subject",
+        "fields": ["ethnicity", "gender", "species", "race"]
+      },
+      {
+        "title": "Diagnosis",
+        "fields": [
+          "arthxbase",
+          "bshbvstat",
+          "bshcvstat",
+          "cd4nadir",
+          "status",
+          "hiv_status"
+        ]
+      },
+      {
+        "title": "Comorbidity",
+        "fields": [
+          "frstcncrd",
+          "frstdmd",
+          "frstdmmd",
+          "frsthtnd",
+          "frsthtnmd"
+        ]
+      }, {
+        "title": "HIV History",
+        "fields": [
+          "cd4nadir",
+          "fcd4lowd",
+          "fposdate",
+          "frstaidd",
+          "lastafrd",
+          "lastcond",
+          "lastcontact",
+          "lcd4higd",
+          "lnegdate",
+          "status"
+        ]
+      },
+      {
+        "title": "Drug Resistance",
+        "fields": [
+          "amikacin_res_phenotype",
+          "capreomycin_res_phenotype",
+          "isoniazid_res_phenotype",
+          "kanamycin_res_phenotype",
+          "ofloxacin_res_phenotype",
+          "pyrazinamide_res_phenotype",
+          "rifampicin_res_phenotype",
+          "rifampin_res_phenotype",
+          "streptomycin_res_phenotype"
+        ]
+      },
+      {
+        "title": "Experiment",
+        "fields": [
+          "experimental_strategies",
+          "virus_type",
+          "virus_subtype",
+          "analyte_type",
+          "biospecimen_anatomic_site",
+          "cell_line",
+          "sample_type",
+          "composition",
+          "strain"
+        ]
+      }]
+    }
+  }
+}

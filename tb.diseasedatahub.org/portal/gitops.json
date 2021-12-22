@@ -1,0 +1,432 @@
+{
+  "gaTrackingId": "UA-119127212-1",
+  "homepageHref": "https://diseasedatahub.org/",
+  "graphql": {
+    "boardCounts": [
+      {
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
+      },
+      {
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
+      },
+      {
+        "graphql": "_tb_result_count",
+        "name": "TB Result",
+        "plural": "TB Results"
+      }
+    ],
+    "chartCounts": [
+      {
+        "graphql": "_subject_count",
+        "name": "Subject"
+      },
+      {
+        "graphql": "_study_count",
+        "name": "Study"
+      }
+    ],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "NIAID Data Ecosystem TB Environment",
+    "index": {
+      "introduction": {
+        "heading": "NIAID Data Ecosystem TB Environment",
+        "text": "The NIAID Data Ecosystem supports the management, analysis and sharing of immunologic data for the research community and aims to accelerate discovery and development of therapies, vaccines, diagnostic tests, and other technologies for the treatment and prevention of infectious, immunologic, and allergic diseases. The Data Ecosystem supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "link": "/submission"
+      },
+      "buttons": [
+        {
+          "name": "Define Data Field",
+          "icon": "data-field-define",
+          "body": "The NIAID Data Ecosystem defines the data in a general way. Please study the dictionary before you start browsing.",
+          "link": "/DD",
+          "label": "Learn more"
+        },
+        {
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "The Exploration Page provides insight and a clear overview of selected properties.",
+          "link": "/explorer",
+          "label": "Explore data"
+        },
+        {
+          "name": "Access Data",
+          "icon": "data-access",
+          "body": "An interactive interface provides the ability to query all nodes and properties in the data model.",
+          "link": "/query",
+          "label": "Query data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "The Workspace provides a secure cloud environment and features Jupyter Notebooks and RStudio",
+          "link": "#hostname#workspace/",
+          "label": "Run analysis"
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "dictionary",
+          "link": "/DD",
+          "color": "#a2a2a2",
+          "name": "Dictionary"
+        },
+        {
+          "icon": "exploration",
+          "link": "/explorer",
+          "color": "#a2a2a2",
+          "name": "Exploration"
+        },
+        {
+          "icon": "analysis",
+          "link": "/analysis",
+          "color": "#a2a2a2",
+          "name": "Apps"
+        },
+        {
+          "icon": "query",
+          "link": "/query",
+          "color": "#a2a2a2",
+          "name": "Query"
+        },
+        {
+          "icon": "workspace",
+          "link": "#hostname#workspace/",
+          "color": "#a2a2a2",
+          "name": "Workspace"
+        },
+        {
+          "icon": "profile",
+          "link": "/identity",
+          "color": "#a2a2a2",
+          "name": "Profile"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "/",
+          "name": "TB Environment Home"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ]
+    },
+    "login": {
+      "title": "NIAID Data Ecosystem TB Environment",
+      "subTitle": "Explore, Analyze, and Share Data",
+      "text": "The website intercalates government datasets from disciplines within NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "support@datacommons.io"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/src/img/sponsors/niaid.png",
+        "href": "https://diseasedatahub.org",
+        "alt": "NIAID Data Ecosystem"
+      }
+    ]
+  },
+  "featureFlags": {
+    "explorer": true,
+    "analysis": true
+  },
+  "analysisTools": [ ],
+  "dataExplorerConfig": {
+    "charts": {
+      "study_submitter_id": {
+        "chartType": "count",
+        "title": "Studies"
+      },
+      "gender": {
+        "chartType": "pie",
+        "title": "Gender"
+      },
+      "race": {
+        "chartType": "bar",
+        "title": "Race"
+      },
+      "species": {
+        "chartType": "bar",
+        "title": "Species"
+      },
+      "treatment_outcome": {
+        "chartType": "pie",
+        "title": "Treatment Outcome"
+      },
+      "type_of_resistance": {
+        "chartType": "pie",
+        "title": "Type of Resistance"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Subject",
+          "fields":[
+            "study_submitter_id",
+            "gender",
+            "race",
+            "ethnicity",
+            "vital_status",
+            "species",
+            "treatment_outcome",
+            "type_of_resistance",
+            "homeless",
+            "basenidu",
+            "smoke_status",
+            "ex_prisoner",
+            "worked_abroad",
+            "cokmtc",
+            "drink_status",
+            "tb_care_worker"
+          ]
+        },
+        {
+          "title": "Drug Resistance",
+          "fields": [
+            "amikacin_res_phenotype",
+            "capreomycin_res_phenotype",
+            "isoniazid_res_phenotype",
+            "kanamycin_res_phenotype",
+            "ofloxacin_res_phenotype",
+            "pyrazinamide_res_phenotype",
+            "rifampicin_res_phenotype",
+            "rifampin_res_phenotype",
+            "streptomycin_res_phenotype"
+          ]
+        },
+        {
+          "title": "Comorbidity",
+          "fields": [
+            "comorbidity_anemia",
+            "comorbidity_renal_disease",
+            "primary_diagnosis",
+            "type_of_resistance",
+            "comorbidity_hiv",
+            "comorbidity_diabetes",
+            "comorbidity_hepatic_disease"
+          ]
+        },
+        {
+          "title": "Diagnosis",
+          "fields": [
+            "_x_ray_count",
+            "_ct_count"
+          ]
+        },
+        {
+          "title": "Treatment",
+          "fields": [
+            "treatment_outcome",
+            "treatment_status"
+          ]
+        },
+        {
+          "title": "Experiment",
+          "fields": [
+            "library_strategy",
+            "platform",
+            "data_format",
+            "experimental_strategies"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": false
+    },
+    "dropdowns": {
+      "download": {
+        "title": "Download"
+      }
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "data",
+        "title": "Download All Clinical",
+        "leftIcon": "user",
+        "rightIcon": "download",
+        "fileName": "clinical.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-workspace",
+        "title": "Export To Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+  "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+        {"field": "amikacin_res_phenotype", "name": "Amikacin Phenotype" },
+        {"field": "capreomycin_res_phenotype", "name": "Capreomycin Phenotype" },
+        {"field": "isoniazid_res_phenotype", "name": "Isoniazid Phenotype" },
+        {"field": "kanamycin_res_phenotype", "name": "Kanamycin Phenotype" },
+        {"field": "ofloxacin_res_phenotype", "name": "Ofloxacin Phenotype" },
+        {"field": "pyrazinamide_res_phenotype", "name": "Pyrazinamide Phenotype" },
+        {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
+        {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
+        {"field": "streptomycin_res_phenotype", "name": "Streptomycin Phenotype" },
+        { "field": "study_submitter_id", "name": "Study" },
+        { "field": "comorbidity_anemia", "name": "Anemia" },
+        { "field": "comorbidity_renal_disease", "name": "Renal Disease" },
+        { "field": "primary_diagnosis", "name": "Primary Diagnosis" },
+        { "field": "type_of_resistance", "name": "TB Resistance Type" },
+        { "field": "comorbidity_hiv", "name": "HIV" },
+        { "field": "comorbidity_diabetes", "name": "Diabetes" },
+        { "field": "comorbidity_hepatic_disease", "name": "Hepatic Disease" },
+        { "field": "treatment_outcome", "name": "Treatment Outcome" },
+        { "field": "treatment_status", "name": "Treatment Status" },
+        { "field": "_x_ray_count", "name": "X-Rays" },
+        { "field": "_ct_count", "name": "CT Scans" },
+        { "field": "homeless", "name": "Homeless" },
+        { "field": "basenidu", "name": "Used Recreational Drugs" },
+        { "field": "smoke_status", "name": "Smoker" },
+        { "field": "ex_prisoner", "name": "Ex-Prisoner" },
+        { "field": "worked_abroad", "name": "Worked Abroad" },
+        { "field": "cokmtc", "name": "Exposed to MDR TB Case" },
+        { "field": "drink_status", "name": "Used Alchohol" },
+        { "field": "tb_care_worker", "name": "TB Care Worker" },
+        { "field": "library_strategy", "name": "Library Preparation" },
+        { "field": "platform", "name": "Sequencing Platform" },
+        { "field": "data_format", "name": "Sequencing Data Format" },
+        { "field": "experimental_strategy", "name": "Experimental Stategy" }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "subject_id",
+        "referenceIdFieldInDataIndex": "node_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    }
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "subject_id": {
+        "chartType": "count",
+        "title": "Subjects"
+      },
+      "data_type": {
+        "chartType": "pie",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "pie",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "subject_id",
+            "data_type",
+            "data_format"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "subject_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+    "dropdowns": {},
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "subject",
+        "resourceIdField": "subject_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    }
+  },
+  "dataAvailabilityToolConfig": {
+    "guppyConfig": {
+      "dataType": "subject",
+      "mainField": "_type_of_resistances",
+      "mainFieldTitle": "Type of Resistance",
+      "mainFieldIsNumeric": false,
+      "aggFields": [
+        "gender",
+        "race",
+        "ethnicity",
+        "vital_status",
+        "year_of_birth"
+      ],
+      "fieldMapping": []
+    }
+  }
+}
