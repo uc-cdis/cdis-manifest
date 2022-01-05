@@ -234,7 +234,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:jupyter_lab_switch",
+      "image": "quay.io/cdis/jupyter-superslim-r:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
