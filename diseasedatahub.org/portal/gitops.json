@@ -1,19 +1,19 @@
 {
   "subcommons": [ 
     {
-      "URL": "https://tb.niaiddata.org/",
+      "URL": "https://tb.diseasedatahub.org/",
       "name": "NDE: TB"
     }, 
     {
-      "URL": "https://aids.niaiddata.org/",
+      "URL": "https://aids.diseasedatahub.org/",
       "name": "NDE: AIDS"
     },
     {
-      "URL": "https://flu.niaiddata.org/",
+      "URL": "https://flu.diseasedatahub.org/",
       "name": "NDE: FLU"
     },
     {
-      "URL": "https://microbiome.niaiddata.org/",
+      "URL": "https://microbiome.diseasedatahub.org/",
       "name": "NDE: Microbiome"
     }
   ],
@@ -68,25 +68,25 @@
           "name": "NIAID TB Environment",
           "icon": "data-explore",
           "body": "Explore data from the NIAID <a href='https://tbportals.niaid.nih.gov/'>TB Portals</a> Program and <a href='https://www.patricbrc.org'>PATRIC</a>, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
-          "external_link": "https://tb.niaiddata.org"
+          "external_link": "https://tb.diseasedatahub.org"
         },
         {
           "name": "NIAID AIDS Environment",
           "logo": "/custom/sponsors/gitops-sponsors/macs-wihs-logo.png",
           "body": "Explore data from the NIAID Multicenter AIDS Cohort Study <a href='https://www.niaid.nih.gov/research/multicenter-aids-cohort-study-public-data-set'>(MACS)</a> and Women's Interagency HIV Study <a href='https://www.niaid.nih.gov/research/womens-interagency-hiv-study'>(WIHS)</a>.",
-          "external_link": "https://aids.niaiddata.org"
+          "external_link": "https://aids.diseasedatahub.org"
         },
         {
           "name": "NIAID Flu Environment",
           "icon": "data-explore",
           "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID) <a href='https://www.niaid.nih.gov/research/systems-biology-consortium'>Systems Biology Consortium for Infectious Diseases</a>.",
-          "external_link": "https://flu.niaiddata.org"
+          "external_link": "https://flu.diseasedatahub.org"
         },
         {
           "name": "NIAID Microbiome Environment",
           "icon": "data-explore",
           "body": "Explore data from a collection of open-access microbiome related studies from <a href='https://www.immport.org/home'>ImmPort</a>.",
-          "external_link": "https://microbiome.niaiddata.org"
+          "external_link": "https://microbiome.diseasedatahub.org"
         },
         {
           "name": "Coming Soon to the Ecosystem", 
@@ -158,7 +158,7 @@
       },
       {
         "src": "/custom/logo/niaid.png",
-        "href": "https://niaiddata.org",
+        "href": "https://diseasedatahub.org",
         "alt": "NIAID Data Ecosystem"
       }
     ]

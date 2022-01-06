@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-1",
-  "homepageHref": "https://niaiddata.org/",
+  "homepageHref": "https://diseasedatahub.org/",
   "graphql": {
     "boardCounts": [
       {
@@ -14,14 +14,9 @@
         "plural": "Studies"
       },
       {
-        "graphql": "_summary_lab_result_count",
-        "name": "Lab record",
-        "plural": "Lab records"
-      },
-      {
-        "graphql": "_visit_count",
-        "name": "Visit record",
-        "plural": "Visit records"
+        "graphql": "_tb_result_count",
+        "name": "TB Result",
+        "plural": "TB Results"
       }
     ],
     "chartCounts": [
@@ -37,10 +32,10 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NIAID Data Ecosystem AIDS Environment",
+    "appName": "NIAID Data Ecosystem TB Environment",
     "index": {
       "introduction": {
-        "heading": "NIAID Data Ecosystem AIDS Environment",
+        "heading": "NIAID Data Ecosystem TB Environment",
         "text": "The NIAID Data Ecosystem supports the management, analysis and sharing of immunologic data for the research community and aims to accelerate discovery and development of therapies, vaccines, diagnostic tests, and other technologies for the treatment and prevention of infectious, immunologic, and allergic diseases. The Data Ecosystem supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
@@ -119,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "AIDS Environment Home"
+          "name": "TB Environment Home"
         },
         {
           "icon": "upload",
@@ -133,7 +128,7 @@
       ]
     },
     "login": {
-      "title": "NIAID Data Ecosystem AIDS Environment",
+      "title": "NIAID Data Ecosystem TB Environment",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "The website intercalates government datasets from disciplines within NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -152,7 +147,7 @@
       },
       {
         "src": "/src/img/sponsors/niaid.png",
-        "href": "https://niaiddata.org",
+        "href": "https://diseasedatahub.org",
         "alt": "NIAID Data Ecosystem"
       }
     ]
@@ -161,8 +156,7 @@
     "explorer": true,
     "analysis": true
   },
-  "analysisTools": [ "ndhHIV" ],
-  "HIVAppIndexTypeName": "visit",
+  "analysisTools": [ ],
   "dataExplorerConfig": {
     "charts": {
       "study_submitter_id": {
@@ -177,9 +171,17 @@
         "chartType": "bar",
         "title": "Race"
       },
-      "status": {
+      "species": {
+        "chartType": "bar",
+        "title": "Species"
+      },
+      "treatment_outcome": {
         "chartType": "pie",
-        "title": "Summarized HIV Sero-status"
+        "title": "Treatment Outcome"
+      },
+      "type_of_resistance": {
+        "chartType": "pie",
+        "title": "Type of Resistance"
       }
     },
     "filters": {
@@ -191,40 +193,67 @@
             "gender",
             "race",
             "ethnicity",
-            "frstdthd"
+            "vital_status",
+            "species",
+            "treatment_outcome",
+            "type_of_resistance",
+            "homeless",
+            "basenidu",
+            "smoke_status",
+            "ex_prisoner",
+            "worked_abroad",
+            "cokmtc",
+            "drink_status",
+            "tb_care_worker"
           ]
-        }, {
-          "title": "Diagnosis",
+        },
+        {
+          "title": "Drug Resistance",
           "fields": [
-            "arthxbase",
-            "bshbvstat",
-            "bshcvstat",
-            "cd4nadir",
-            "status",
-            "hiv_status"
+            "amikacin_res_phenotype",
+            "capreomycin_res_phenotype",
+            "isoniazid_res_phenotype",
+            "kanamycin_res_phenotype",
+            "ofloxacin_res_phenotype",
+            "pyrazinamide_res_phenotype",
+            "rifampicin_res_phenotype",
+            "rifampin_res_phenotype",
+            "streptomycin_res_phenotype"
           ]
-        }, {
+        },
+        {
           "title": "Comorbidity",
           "fields": [
-            "frstcncrd",
-            "frstdmd",
-            "frstdmmd",
-            "frsthtnd",
-            "frsthtnmd"
+            "comorbidity_anemia",
+            "comorbidity_renal_disease",
+            "primary_diagnosis",
+            "type_of_resistance",
+            "comorbidity_hiv",
+            "comorbidity_diabetes",
+            "comorbidity_hepatic_disease"
           ]
-        }, {
-          "title": "HIV History",
+        },
+        {
+          "title": "Diagnosis",
           "fields": [
-            "cd4nadir",
-            "fcd4lowd",
-            "fposdate",
-            "frstaidd",
-            "lastafrd",
-            "lastcond",
-            "lastcontact",
-            "lcd4higd",
-            "lnegdate",
-            "status"
+            "_x_ray_count",
+            "_ct_count"
+          ]
+        },
+        {
+          "title": "Treatment",
+          "fields": [
+            "treatment_outcome",
+            "treatment_status"
+          ]
+        },
+        {
+          "title": "Experiment",
+          "fields": [
+            "library_strategy",
+            "platform",
+            "data_format",
+            "experimental_strategies"
           ]
         }
       ]
@@ -244,7 +273,17 @@
         "title": "Download All Clinical",
         "leftIcon": "user",
         "rightIcon": "download",
-        "fileName": "clinical.json"
+        "fileName": "clinical.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "manifest.json",
+        "dropdownId": "download"
       },
       {
         "enabled": true,
@@ -254,34 +293,43 @@
         "rightIcon": "download"
       }
     ],
-    "guppyConfig": {
+  "guppyConfig": {
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        {"field": "study_submitter_id", "name": "Study"},
-        {"field": "frstdthd", "name": "Year of Death"},
-        {"field": "arthxbase", "name": "ART Use Prior to Baseline"},
-        {"field": "bshbvstat", "name": "Baseline HBV Sero-status"},
-        {"field": "bshcvstat", "name": "Baseline HCV Sero-status"},
-        {"field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
-        {"field": "status", "name": "Summarized HIV Sero-status"},
-        {"field": "project_id", "name": "Project ID"},
-        {"field": "hiv_status", "name": "HIV Status"},
-        {"field": "frstcncrd", "name": "First Confirmed Cancer Year"},
-        {"field": "frstdmd", "name": "First Visit Year with Diabetes"},
-        {"field": "frstdmmd", "name": "First Visit Year with All Necessary Components to Determine Diabetes"},
-        {"field": "frsthtnd", "name": "First Visit Year with Hypertension"},
-        {"field": "frsthtnmd", "name": "First Visit Year with All Necessary Components to Determine Hypertension"},
-        {"field": "cd4nadir", "name": "CD4 Nadir Prior to HAART"},
-        {"field": "fcd4lowd", "name": "First Year Seen CD4N < 200 or CD4% < 14"},
-        {"field": "fposdate", "name": "First Year Seen Seropositive"},
-        {"field": "frstaidd", "name": "First Reported AIDS Year"},
-        {"field": "lastafrd", "name": "Last Reported AIDS Free Year"},
-        {"field": "lastcond", "name": "Year of Last Study Visit Attended"},
-        {"field": "lastcontact", "name": "Last Year of Contact"},
-        {"field": "lcd4higd", "name": "Last Year Seen with CD4N >= 200 and CD4% >= 14"},
-        {"field": "lnegdate", "name": "Last Year Seen Seronegative"},
-        {"field": "status", "name":"Summarized HIV Sero-status"}
+        {"field": "amikacin_res_phenotype", "name": "Amikacin Phenotype" },
+        {"field": "capreomycin_res_phenotype", "name": "Capreomycin Phenotype" },
+        {"field": "isoniazid_res_phenotype", "name": "Isoniazid Phenotype" },
+        {"field": "kanamycin_res_phenotype", "name": "Kanamycin Phenotype" },
+        {"field": "ofloxacin_res_phenotype", "name": "Ofloxacin Phenotype" },
+        {"field": "pyrazinamide_res_phenotype", "name": "Pyrazinamide Phenotype" },
+        {"field": "rifampicin_res_phenotype", "name": "Rifampicin Phenotype" },
+        {"field": "rifampin_res_phenotype", "name": "Rifampin Phenotype" },
+        {"field": "streptomycin_res_phenotype", "name": "Streptomycin Phenotype" },
+        { "field": "study_submitter_id", "name": "Study" },
+        { "field": "comorbidity_anemia", "name": "Anemia" },
+        { "field": "comorbidity_renal_disease", "name": "Renal Disease" },
+        { "field": "primary_diagnosis", "name": "Primary Diagnosis" },
+        { "field": "type_of_resistance", "name": "TB Resistance Type" },
+        { "field": "comorbidity_hiv", "name": "HIV" },
+        { "field": "comorbidity_diabetes", "name": "Diabetes" },
+        { "field": "comorbidity_hepatic_disease", "name": "Hepatic Disease" },
+        { "field": "treatment_outcome", "name": "Treatment Outcome" },
+        { "field": "treatment_status", "name": "Treatment Status" },
+        { "field": "_x_ray_count", "name": "X-Rays" },
+        { "field": "_ct_count", "name": "CT Scans" },
+        { "field": "homeless", "name": "Homeless" },
+        { "field": "basenidu", "name": "Used Recreational Drugs" },
+        { "field": "smoke_status", "name": "Smoker" },
+        { "field": "ex_prisoner", "name": "Ex-Prisoner" },
+        { "field": "worked_abroad", "name": "Worked Abroad" },
+        { "field": "cokmtc", "name": "Exposed to MDR TB Case" },
+        { "field": "drink_status", "name": "Used Alchohol" },
+        { "field": "tb_care_worker", "name": "TB Care Worker" },
+        { "field": "library_strategy", "name": "Library Preparation" },
+        { "field": "platform", "name": "Sequencing Platform" },
+        { "field": "data_format", "name": "Sequencing Data Format" },
+        { "field": "experimental_strategy", "name": "Experimental Stategy" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -351,7 +399,7 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        {"field": "object_id", "name": "GUID"}
+        { "field": "object_id", "name": "GUID" }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
@@ -367,79 +415,18 @@
   },
   "dataAvailabilityToolConfig": {
     "guppyConfig": {
-      "dataType": "visit",
-      "mainField": "harmonized_visit_number",
-      "mainFieldTitle": "Visit number",
-      "mainFieldIsNumeric": true,
+      "dataType": "subject",
+      "mainField": "_type_of_resistances",
+      "mainFieldTitle": "Type of Resistance",
+      "mainFieldIsNumeric": false,
       "aggFields": [
-        "age_at_visit",
-        "health_insurance",
-        "abcv",
-        "adh",
-        "thrpyv",
-        "trzv",
-        "chol",
-        "leu2n",
-        "leu3n",
-        "viral_load",
-        "cocuse",
-        "drinkcat",
-        "emotl",
-        "employ",
-        "income",
-        "insurance",
-        "baff",
-        "bca1",
-        "crp",
-        "eotaxin",
-        "gmcsf",
-        "gp130",
-        "ifng",
-        "il10",
-        "il12",
-        "il17",
-        "il1b",
-        "il2",
-        "il4",
-        "il6",
-        "il8",
-        "mcp1",
-        "sil2ra",
-        "tnfa"
+        "gender",
+        "race",
+        "ethnicity",
+        "vital_status",
+        "year_of_birth"
       ],
-      "fieldMapping": [
-        {"field": "abcv", "name": "Abacavir Use"},
-        {"field": "adh", "name": "Antiretroviral Use"},
-        {"field": "health_insurance", "name": "Health Insurance"},
-        {"field": "cocuse", "name": "Cocaine Use"},
-        {"field": "subject_id", "name": "Subject"},
-        {"field": "age_at_visit", "name": "Age"},
-        {"field": "leu2n", "name": "CD8 Counts"},
-        {"field": "employ", "name": "Employment Status"},
-        {"field": "thrpyv", "name": "Therapy Type"},
-        {"field": "trzv", "name": "Terazol Use"},
-        {"field": "chol", "name": "Cholesterol"},
-        {"field": "leu3n", "name": "CD4 Counts"},
-        {"field": "drinkcat", "name": "Alcohol Use"},
-        {"field": "emotl", "name": "Emotional Wellness"},
-        {"field": "baff", "name": "BAFF"},
-        {"field": "bca1", "name": "BCA-1"},
-        {"field": "crp", "name": "CRP"},
-        {"field": "gmcsf", "name": "GM-CSF"},
-        {"field": "gp130", "name": "IL6-beta"},
-        {"field": "ifng", "name": "IL1-beta"},
-        {"field": "il10", "name": "IL-10"},
-        {"field": "il12", "name": "IL-12"},
-        {"field": "il17", "name": "IL-17"},
-        {"field": "il1b", "name": "Interferon Gamma"},
-        {"field": "il2", "name": "IL-2"},
-        {"field": "il4", "name": "IL-14"},
-        {"field": "il6", "name": "IL-6"},
-        {"field": "il8", "name": "IL-8"},
-        {"field": "mcp1", "name": "MCP-1"},
-        {"field": "sil2ra", "name": "sIL-2Ra"},
-        {"field": "tnfa", "name": "TNF-alpha"}
-      ]
+      "fieldMapping": []
     }
   }
 }

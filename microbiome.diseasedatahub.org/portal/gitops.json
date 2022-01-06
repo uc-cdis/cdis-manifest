@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-1",
-  "homepageHref": "https://niaiddata.org/",
+  "homepageHref": "https://diseasedatahub.org/",
   "graphql": {
     "boardCounts": [
       {
@@ -14,9 +14,9 @@
         "plural": "Studies"
       },
       {
-        "graphql": "_summary_lab_result_count",
-        "name": "Lab record",
-        "plural": "Lab records"
+        "graphql": "_sample_count",
+        "name": "Sample",
+        "plural": "Samples"
       }
     ],
     "chartCounts": [
@@ -32,10 +32,10 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NIAID Data Ecosystem Flu Environment",
+    "appName": "NIAID Data Ecosystem Microbiome Environment",
     "index": {
       "introduction": {
-        "heading": "NIAID Data Ecosystem Flu Environment",
+        "heading": "NIAID Data Ecosystem Microbiome Environment",
         "text": "The NIAID Data Ecosystem supports the management, analysis and sharing of immunologic data for the research community and aims to accelerate discovery and development of therapies, vaccines, diagnostic tests, and other technologies for the treatment and prevention of infectious, immunologic, and allergic diseases. The Data Ecosystem supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
@@ -114,7 +114,7 @@
       "items": [
         {
           "link": "/",
-          "name": "Flu Environment Home"
+          "name": "Microbiome Environment Home"
         },
         {
           "icon": "upload",
@@ -128,7 +128,7 @@
       ]
     },
     "login": {
-      "title": "NIAID Data Ecosystem Flu Environment",
+      "title": "NIAID Data Ecosystem Microbiome Environment",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "The website intercalates government datasets from disciplines within NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -147,14 +147,14 @@
       },
       {
         "src": "/src/img/sponsors/niaid.png",
-        "href": "https://niaiddata.org",
+        "href": "https://diseasedatahub.org",
         "alt": "NIAID Data Ecosystem"
       }
     ]
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": false
   },
   "analysisTools": [ ],
   "dataExplorerConfig": {
@@ -163,13 +163,17 @@
         "chartType": "count",
         "title": "Studies"
       },
-      "virus_subtype": {
+      "gender": {
         "chartType": "pie",
-        "title": "Virus Subtype"
+        "title": "Gender"
       },
-      "strain": {
+      "race": {
+        "chartType": "bar",
+        "title": "Race"
+      },
+      "status": {
         "chartType": "pie",
-        "title": "Virus Strain"
+        "title": "Summarized HIV Sero-status"
       }
     },
     "filters": {
@@ -177,23 +181,24 @@
         {
           "title": "Subject",
           "fields":[
-            "study_submitter_id",
-            "gender",
+            "species",
             "race",
-            "ethnicity",
-            "vital_status"
+            "gender",
+            "ethnicity"
           ]
         }, {
-          "title": "Experiment",
+          "title": "Samples",
           "fields": [
-            "virus_type",
-            "virus_subtype",
-            "analyte_type",
-            "biospecimen_anatomic_site",
-            "cell_line",
-            "sample_type",
-            "composition",
-            "strain"
+            "study_submitter_id",
+            "study_organization",
+            "study_doi",
+            "is_clinical_trial",
+            "study_setup",
+            "cohort_name",
+            "compositions",
+            "biospecimen_anatomic_sites",
+            "experiment_types",
+            "experimental_strategies"
           ]
         }
       ]
@@ -237,7 +242,25 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
-        { "field": "study_submitter_id", "name": "Study" }
+        { "field": "study_submitter_id", "name": "Study" },
+        { "field": "study_organization", "name": "Study Organization" },
+        { "field": "study_doi", "name": "Study DOI" },
+        { "field": "is_clinical_trial", "name": "Clinical Trial" },
+        { "field": "study_setup", "name": "Study Design" },
+        { "field": "pmid", "name": "PMID" },
+        { "field": "journal", "name": "Journal" },
+        { "field": "cohort_name", "name": "Cohort" },
+        { "field": "species", "name": "Genus species" },
+        { "field": "race", "name": "Race" },
+        { "field": "gender", "name": "Gender" },
+        { "field": "ethnicity", "name": "Ethnincity" },
+        { "field": "compositions", "name": "Sample Composition" },
+        { "field": "biospecimen_anatomic_sites", "name": "Body Site" },
+        { "field": "visit_number", "name": "For DAT" },
+        { "field": "experiment_types", "name": "Experiment Types" },
+        { "field": "experimental_strategies", "name": "Experimental Strategies" },
+        { "field": "data_format", "name": "Data Format" },
+        { "field": "data_type", "name": "Data Type" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
@@ -324,18 +347,17 @@
   "dataAvailabilityToolConfig": {
     "guppyConfig": {
       "dataType": "subject",
-      "mainField": "virus_subtype",
-      "mainFieldTitle": "Virus subtype",
+      "mainField": "study_submitter_id",
+      "mainFieldTitle": "Study",
       "mainFieldIsNumeric": false,
       "aggFields": [
-        "biospecimen_anatomic_site",
-        "sample_type",
-        "composition",
-        "strain",
-        "species"
+        "gender",
+        "race",
+        "ethnicity",
+        "human_age_at_index"
       ],
       "fieldMapping": [
-        { "field": "subject_id", "name": "Subject" }
+        { "field": "human_age_at_index", "name": "Age at Index" }
       ]
     }
   }
