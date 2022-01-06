@@ -4,10 +4,10 @@
     "That's all I have to say"
   ],
   "versions": {
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "arborist": "quay.io/cdis/arborist:2.4.0",
     "fence": "quay.io/cdis/fence:4.15.0",
     "indexd": "quay.io/cdis/indexd:2.6.2",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "peregrine": "quay.io/cdis/peregrine:1.2.1",
     "pidgin": "quay.io/cdis/pidgin:1.1.0",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
@@ -21,56 +21,53 @@
     "tube": "quay.io/cdis/tube:0.3.16",
     "guppy": "quay.io/cdis/guppy:0.3.7"
   },
-  "arborist": {
-    "deployment_version": "2"
-  },
   "jupyterhub": {
     "enabled": "no"
   },
-  "peregrine": {
-    "peregrine_timeout": 60
-  },
   "global": {
     "environment": "niaiddata",
-    "hostname": "aids.niaiddata.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/07014a42-0e88-40f3-bc84-6ae664036fec",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/charlie-datadictionary/v1.3.2/schema.json",
+    "hostname": "tb.diseasedatahub.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/adc67d43-afe0-41e4-be66-28b8f705a848",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/tb-datadictionary/1.1.5/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "logs-niaiddata-gen3",
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/nde/user.yaml",
-    "fence_url": "https://niaiddata.org/user",
-    "indexd_url": "https://niaiddata.org/index/",
+    "fence_url": "https://diseasedatahub.org/user",
+    "indexd_url": "https://diseasedatahub.org/index/",
     "arborist_url": "http://arborist-service.default.svc.cluster.local",
-    "workspace_url": "https://niaiddata.org/lw-workspace",
-    "manifest_service_url": "https://niaiddata.org/manifests",
-    "wts_url": "https://niaiddata.org/wts/oauth2/",
-    "origins_allow_credentials": ["https://niaiddata.org"],
+    "workspace_url": "https://diseasedatahub.org/lw-workspace",
+    "manifest_service_url": "https://diseasedatahub.org/manifests",
+    "wts_url": "https://diseasedatahub.org/wts/oauth2/",
+    "origins_allow_credentials": ["https://diseasedatahub.org"],
     "netpolicy": "off",
-    "cookie_domain": "niaiddata.org",
+    "cookie_domain": "diseasedatahub.org",
     "des_namespace": "default"
   },
   "canary": {
     "default": 0
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "guppy": {
     "indices": [
       {
-        "index": "daids",
+        "index": "tb",
         "type": "subject"
       },
       {
-        "index": "daids_visit",
-        "type": "visit"
+        "index": "tb_follow_up",
+        "type": "follow_up"
       },
       {
-        "index": "daids_file",
+        "index": "tb_file",
         "type": "file"
       }
     ],
-    "config_index": "daids_array-config",
+    "config_index": "tb_array-config",
     "auth_filter_field": "auth_resource_path"
   }
 }
