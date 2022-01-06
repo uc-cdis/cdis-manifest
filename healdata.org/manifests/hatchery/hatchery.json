@@ -595,13 +595,14 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
-      "name": "(Generic) Jupyter Notebook with R Kernel",
+      "name": "(Generic) Jupyter Lab Notebook with R Kernel",
       "image": "quay.io/cdis/jupyter-superslim-r:master",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.ip='*'",
