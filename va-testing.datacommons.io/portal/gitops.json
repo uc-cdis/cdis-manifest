@@ -3,15 +3,33 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_clinical_supplement_count",
-        "name": "Clinical Supplement",
-        "plural": "Clinical Supplements"
+        "graphql": "_case_count",
+        "name": "Case",
+        "plural": "Cases"
+      },
+      {
+        "graphql": "_experiment_count",
+        "name": "Experiment",
+        "plural": "Experiments"
+      },
+      {
+        "graphql": "_aliquot_count",
+        "name": "Aliquot",
+        "plural": "Aliquots"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_clinical_supplement_count",
-        "name": "Clinical Supplement"
+        "graphql": "_case_count",
+        "name": "Case"
+      },
+      {
+        "graphql": "_experiment_count",
+        "name": "Experiment"
+      },
+      {
+        "graphql": "_aliquot_count",
+        "name": "Aliquot"
       }
     ],
     "projectDetails": "boardCounts"
