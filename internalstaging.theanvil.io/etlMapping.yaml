@@ -40,6 +40,10 @@ mappings:
         path: samples
         src: original_material_type
         fn: set
+      - name: sample_submitter_id
+        path: samples
+        src: submitter_id
+        fn: set
       - name: exome_capture_platform
         path: samples.sequencings
         src: exome_capture_platform
@@ -104,6 +108,8 @@ mappings:
       - name: project_id
       - name: submitter_id
       - name: object_id
+      - name: drs_uri
+        src: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
