@@ -1,109 +1,131 @@
 {
-	"notes": [
-		"This is the dev environment manifest ",
-		"That's all I have to say"
-	],
-	"jenkins": {
-		"autodeploy": "yes"
-	},
-	"versions": {
-		"indexd": "quay.io/cdis/indexd:2021.04",
-		"fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-		"portal": "quay.io/cdis/dataguids:1.0.1",
-		"metadata": "quay.io/cdis/metadata-service:2021.06",
-		"revproxy": "quay.io/cdis/nginx:2021.04"
-	},
-	"jupyterhub": {
-		"enabled": "no"
-	},
-	"global": {
-		"environment": "dataguids",
-		"hostname": "dataguids.org",
-		"revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/742b0502-bcd6-45b9-8a18-921560be4432",
-		"dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
-		"portal_app": "dev",
-		"kube_bucket": "kube-dataguids-gen3",
-		"logs_bucket": "logs-dataguids-gen3",
-		"sync_from_dbgap": "False",
-		"useryaml_s3path": "s3://cdis-gen3-users/dataguids/user.yaml"
-	},
-	"canary": {
-		"default": 0
-	},
-	"indexd": {
-		"dist": [{
-				"name": "DataSTAGE",
-				"host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
-				"hints": [".*dg\\.4503.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "OCC Environmental DC",
-				"host": "https://portal.occ-data.org/index/",
-				"hints": [".*dg\\.7C5B.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "Kids First",
-				"host": "https://data.kidsfirstdrc.org/index/",
-				"hints": [".*dg\\.F82A1A.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "DX DOI",
-				"host": "https://dx.doi.org/",
-				"hints": ["10\\..*"],
-				"type": "doi"
-			},
-			{
-				"name": "NCI CRDC",
-				"host": "https://nci-crdc.datacommons.io/index/",
-				"hints": [],
-				"type": "indexd"
-			},
-			{
-				"name": "AnVIL",
-				"host": "https://gen3.theanvil.io/index/",
-				"hints": [".*dg\\.ANV0.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "JCOIN",
-				"host": "https://jcoin.datacommons.io/index/",
-				"hints": [".*dg\\.6VTS.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "HEAL",
-				"host": "https://healdata.org/index/",
-				"hints": [".*dg\\.H34L.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "External Data HEAL",
-				"host": "https://externaldata.healdata.org/index/",
-				"hints": [".*dg\\.H35L.*"],
-				"type": "indexd"
-			},        
-                        {
-                                 "name": "Genomics Aotearoa Data",
-                                "host": "https://repo.data.nesi.org.nz/index/",
-                                "hints": [".*dg\\.GAD88.*"],
-                                "type": "indexd"
-                        },
-                        {
-                                 "name": "GAD",
-                                "host": "https://data.agdr.org.nz/index/",
-                                "hints": [".*dg\\.GAD89.*"],
-                                "type": "indexd"
-                        },
-			{
-                                 "name": "UMCCR AGHA",
-                                "host": "https://gen3.agha.umccr.org/index/",
-                                "hints": [".*dg\\.UM33R90.*"],
-                                "type": "indexd"
-                        }
-
-		]
-	}
+  "notes": [
+    "This is the dev environment manifest ",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.01",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.01",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.01",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.01"
+  },
+  "jupyterhub": {
+    "enabled": "no"
+  },
+  "global": {
+    "environment": "dataguids",
+    "hostname": "dataguids.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/742b0502-bcd6-45b9-8a18-921560be4432",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "portal_app": "dev",
+    "kube_bucket": "kube-dataguids-gen3",
+    "logs_bucket": "logs-dataguids-gen3",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/dataguids/user.yaml"
+  },
+  "canary": {
+    "default": 0
+  },
+  "indexd": {
+    "dist": [
+      {
+        "name": "DataSTAGE",
+        "host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
+        "hints": [
+          ".*dg\\.4503.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "OCC Environmental DC",
+        "host": "https://portal.occ-data.org/index/",
+        "hints": [
+          ".*dg\\.7C5B.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "Kids First",
+        "host": "https://data.kidsfirstdrc.org/index/",
+        "hints": [
+          ".*dg\\.F82A1A.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "DX DOI",
+        "host": "https://dx.doi.org/",
+        "hints": [
+          "10\\..*"
+        ],
+        "type": "doi"
+      },
+      {
+        "name": "NCI CRDC",
+        "host": "https://nci-crdc.datacommons.io/index/",
+        "hints": [],
+        "type": "indexd"
+      },
+      {
+        "name": "AnVIL",
+        "host": "https://gen3.theanvil.io/index/",
+        "hints": [
+          ".*dg\\.ANV0.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "JCOIN",
+        "host": "https://jcoin.datacommons.io/index/",
+        "hints": [
+          ".*dg\\.6VTS.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "HEAL",
+        "host": "https://healdata.org/index/",
+        "hints": [
+          ".*dg\\.H34L.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "External Data HEAL",
+        "host": "https://externaldata.healdata.org/index/",
+        "hints": [
+          ".*dg\\.H35L.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "Genomics Aotearoa Data",
+        "host": "https://repo.data.nesi.org.nz/index/",
+        "hints": [
+          ".*dg\\.GAD88.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "GAD",
+        "host": "https://data.agdr.org.nz/index/",
+        "hints": [
+          ".*dg\\.GAD89.*"
+        ],
+        "type": "indexd"
+      },
+      {
+        "name": "UMCCR AGHA",
+        "host": "https://gen3.agha.umccr.org/index/",
+        "hints": [
+          ".*dg\\.UM33R90.*"
+        ],
+        "type": "indexd"
+      }
+    ]
+  }
 }
