@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@gen3-qa-test') _
+@Library('cdis-jenkins-lib@chore/gen3-qa-test') _
 testPipeline {
   MANIFEST = "True"
 }
