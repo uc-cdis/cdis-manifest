@@ -97,29 +97,30 @@
         }
       ]
     },
+    "topBar": {
+        "items": [
+          {
+            "icon": "upload",
+            "link": "/submission",
+            "name": "Submit Data"
+          },
+          {
+            "link": "https://gen3.org/resources/user/",
+            "name": "Documentation"
+          },
+          {
+            "link": "https://hhs.responsibledisclosure.com/hc/en-us",
+            "name": "HHS Responsible Disclosure"
+          }
+        ],
+        "useProfileDropdown": true
+      },
     "login": {
       "title": "GenoMEL Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "The GenoMEL data commons supports the management, analysis and sharing of next generation sequencing data for the GenoMEL research community and aims to accelerate opportunities for discovery of susceptibility genes for melanoma. The data commons supports cross-project analyses by harmonizing data from different projects through the development of a data dictionary and utilization of common workflows, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources.",
       "contact": "If you have any questions about access or the registration process, please contact support@bionimbus.org."
     }
-  },
-      "footerLogos": [
-      {
-        "src": "/src/img/gen3.png",
-        "href": "https://ctds.uchicago.edu/gen3",
-        "alt": "Gen3 Data Commons"
-      },
-      {
-        "src": "/src/img/createdby.png",
-        "href": "https://ctds.uchicago.edu/",
-        "alt": "Center for Translational Data Science at the University of Chicago"
-      },
-      {
-        "text": "HHS Responsible Disclosure",
-        "href": "https://hhs.responsibledisclosure.com/hc/en-us"
-      }
-    ]
   },
   "featureFlags": {
     "explorer": true
