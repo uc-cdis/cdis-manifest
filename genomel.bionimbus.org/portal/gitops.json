@@ -104,6 +104,26 @@
       "contact": "If you have any questions about access or the registration process, please contact support@bionimbus.org."
     }
   },
+  "footerLogos": [
+    {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      }
+    ],
+    "footer": {
+      "links": [
+        {
+          "text": "HHS Responsible Disclosure Form",
+          "href": "https://hhs.responsibledisclosure.com/hc/en-us"
+        }
+      ]
+    },
   "featureFlags": {
     "explorer": true
   },
