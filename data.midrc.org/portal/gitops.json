@@ -303,6 +303,21 @@
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_Cases_table.csv"
+            },
+            {
+              "enabled": true,
+              "type": "manifest",
+              "title": "Download File Manifest for Cases",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_imaging_file_manifest.json"
+            },
+            {
+              "enabled": false,
+              "type": "export-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
             }
           ],
           "loginForDownload": true,
@@ -442,6 +457,21 @@
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_datasets_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for Datasets",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_imaging_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
             "loginForDownload": true,
@@ -616,6 +646,21 @@
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_Imaging_Studies_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for Imaging Studies",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_imaging_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
             "loginForDownload": true,
@@ -800,6 +845,21 @@
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_Radiography_Exams_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for Radiography Exams",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Radiography_Exam_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
             "loginForDownload": true,
@@ -979,6 +1039,21 @@
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_CT_Scans_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for CT Scans",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_CT_Scan_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
             "loginForDownload": true,
@@ -1143,6 +1218,21 @@
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_MR_Exams_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for MR Exams",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_MR_Exam_file_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
               }
             ],
             "loginForDownload": true,
