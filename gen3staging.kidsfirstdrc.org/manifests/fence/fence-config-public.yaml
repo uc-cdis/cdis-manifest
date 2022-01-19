@@ -108,7 +108,6 @@ DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/google'
 DEFAULT_LOGIN_IDP: fence
 LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
   - name: 'Login from Google'
-    desc: 'description'
     idp: google
   - name: 'NIH Login'
     idp: fence
