@@ -1,0 +1,314 @@
+{
+  "notes": [
+    "This is the release manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:2022.01",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
+    "fence": "quay.io/cdis/fence:2022.01",
+    "indexd": "quay.io/cdis/indexd:2022.01",
+    "peregrine": "quay.io/cdis/peregrine:2022.01",
+    "pidgin": "quay.io/cdis/pidgin:2022.01",
+    "revproxy": "quay.io/cdis/nginx:2022.01",
+    "sheepdog": "quay.io/cdis/sheepdog:2022.01",
+    "portal": "quay.io/cdis/data-portal:2022.01",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "quay.io/cdis/gen3-spark:2022.01",
+    "tube": "quay.io/cdis/tube:2022.01",
+    "guppy": "quay.io/cdis/guppy:2022.01",
+    "sower": "quay.io/cdis/sower:2022.01",
+    "hatchery": "quay.io/cdis/hatchery:2022.01",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "wts": "quay.io/cdis/workspace-token-service:2022.01",
+    "manifestservice": "quay.io/cdis/manifestservice:2022.01",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2022.01"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "sower": [
+    {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican-export:2022.01",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "subject"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "4Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
+  "hatchery": {
+    "user-namespace": "jupyter-pods",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "10Gi",
+    "sidecar": {
+      "cpu-limit": "0.8",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2022.01",
+      "env": {
+        "NAMESPACE": "<environment>",
+        "HOSTNAME": "<environment_fqdn>"
+      },
+      "args": [
+
+      ],
+      "command": [
+        "/bin/bash",
+        "/sidecarDockerrun.sh"
+      ],
+      "lifecycle-pre-stop": [
+        "su",
+        "-c",
+        "echo test",
+        "-s",
+        "/bin/sh",
+        "root"
+      ]
+    },
+    "containers": [
+      {
+        "target-port": 8888,
+        "cpu-limit": "0.8",
+        "memory-limit": "1.5Gi",
+        "name": "Brain - Python/R/Freesurfer",
+        "image": "quay.io/cdis/jupyterbrain:1.1",
+        "env": {
+
+        },
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "0.5",
+        "memory-limit": "256Mi",
+        "name": "Bioinfo - Python/R",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "env": {
+
+        },
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "0.8",
+        "memory-limit": "1024Mi",
+        "name": "Bioinfo - Python/R",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "env": {
+
+        },
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100,
+        "user-volume-location": "/home/jovyan/pd"
+      }
+    ]
+  },
+  "global": {
+    "environment": "<environment>",
+    "hostname": "<environment_fqdn>",
+    "revproxy_arn": "<aws_acm_cert_arn",
+    "dictionary_url": "<Gen3 Dictionary>",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-<environment>-gen3",
+    "logs_bucket": "logs-<environment>-gen3",
+    "sync_from_dbgap": "False",
+    "dispatcher_job_num": "5",
+    "useryaml_s3path": "<user yaml>",
+    "netpolicy": "on",
+    "tier_access_level": "regular",
+    "tier_access_limit": "50",
+    "public_datasets": true
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:2022.01"
+    }
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "<environment_prefix>_etl",
+        "type": "case"
+      },
+      {
+        "index": "<environment_prefix>_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "<environment_prefix>_array-config",
+    "auth_filter_field": "auth_resource_path"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 5,
+      "max": 15,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 15,
+      "max": 25,
+      "targetCpu": 40
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 4,
+      "targetCpu": 40
+    }
+  }
+}
