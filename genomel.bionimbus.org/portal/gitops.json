@@ -102,10 +102,9 @@
       "subTitle": "Explore, Analyze, and Share Data",
       "text": "The GenoMEL data commons supports the management, analysis and sharing of next generation sequencing data for the GenoMEL research community and aims to accelerate opportunities for discovery of susceptibility genes for melanoma. The data commons supports cross-project analyses by harmonizing data from different projects through the development of a data dictionary and utilization of common workflows, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources.",
       "contact": "If you have any questions about access or the registration process, please contact support@bionimbus.org."
-    }
-  },
-  "footerLogos": [
-    {
+    },
+    "footerLogos": [
+      {
         "src": "/src/img/gen3.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
@@ -123,7 +122,8 @@
           "href": "https://hhs.responsibledisclosure.com/hc/en-us"
         }
       ]
-    },
+    }
+  },
   "featureFlags": {
     "explorer": true
   },
@@ -144,8 +144,7 @@
     "guppyConfig": {
       "dataType": "case",
       "nodeCountTitle": "Cases",
-      "fieldMapping": [
-      ],
+      "fieldMapping": [],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
@@ -189,7 +188,10 @@
     "guppyConfig": {
       "dataType": "file",
       "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+        {
+          "field": "object_id",
+          "name": "GUID"
+        }
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
@@ -198,7 +200,9 @@
         "referenceIdFieldInResourceIndex": "object_id",
         "referenceIdFieldInDataIndex": "object_id"
       },
-      "accessibleFieldCheckList": ["project_id"],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },

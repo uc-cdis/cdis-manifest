@@ -9,3 +9,9 @@
 .login-page__side-box {
   background-repeat: round;
 }
+
+/* adjust spacing for added footer links */
+.protected-content,
+.login-page__side-box {
+  min-height: calc(100vh - 263px);
+}
