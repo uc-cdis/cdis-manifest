@@ -441,20 +441,7 @@
 			"adapter": "pdaps",
 			"filters": {
 				"datasets": [
-					"laws-regulating-administration-of-naloxone",
-                    "civil-commitment-for-substance-users-1562936854",
-                    "medicaid-funded-mat-for-justice-involved-persons-1565019015",
-                    "medication-assisted-treatment-in-correctional-facilities",
-                    "laws-regulating-administration-of-naloxone-1501695139",
-                    "good-samaritan-overdose-laws-1501695153",
-                    "medication-assisted-treatment-coverage-1580241551",
-                    "medication-assisted-treatment-licensure-and-operations-1580241579",
-                    "direct-dispensing-of-controlled-substances-laws",
-                    "opioid-prescribing-guidelines-for-acute-and-emergency-care",
-                    "pain-management-clinic-laws",
-                    "medicaid-funded-mat-for-justice-involved-persons-1565019237",
-                    "medication-assisted-treatment-with-methadone-mat-laws",
-                    "recreational-marijuana-laws"
+					"laws-regulating-administration-of-naloxone"
 				]
 			},
 			"keep_original_fields": false,
@@ -484,6 +471,107 @@
 				"dataset_4_type": "",
 				"dataset_5_type": "",
 				"project_number": "path:display_id",
+				"dataset_1_title": "",
+				"dataset_2_title": "",
+				"dataset_3_title": "",
+				"dataset_4_title": "",
+				"dataset_5_title": "",
+				"administering_ic": "NIDA",
+				"advSearchFilters": [],
+				"dataset_category": "",
+				"research_program": "",
+				"research_question": "",
+				"study_description": "Observational",
+				"clinical_trial_link": "",
+				"dataset_description": "",
+				"research_focus_area": "",
+				"dataset_1_description": "",
+				"dataset_2_description": "",
+				"dataset_3_description": "",
+				"dataset_4_description": "",
+				"dataset_5_description": "",
+				"data_availability": "pending"
+			},
+			"per_item_values": {
+				"599ddda695679f66768b4569": {
+					"__manifest": [
+						{
+							"md5sum": "40dcac42435d323ebdb92d615f42d0c3",
+							"file_name": "Naloxone_Data_09112020.xlsx",
+							"file_size": 88921,
+							"object_id": "dg.H35L/77045ea3-595b-4846-9ad0-6d48fe476925",
+							"commons_url": "externaldata.healdata.org"
+						},
+						{
+							"md5sum": "93b6b346a400978cde37ab8d778d6412",
+							"file_name": "20180810_Good_Samaritan_Law_Stat_Data.xlsx",
+							"file_size": 24100,
+							"object_id": "dg.H35L/065cf957-505e-4bf4-929e-c2327742bae1",
+							"commons_url": "externaldata.healdata.org"
+						},
+						{
+							"md5sum": "19ed44f408f221a7af860821c796972a",
+							"file_name": "20170216-RM-Stat-Data.xlsx",
+							"file_size": 36710,
+							"object_id": "dg.H35L/c3489b65-e8b7-42ac-9a74-2b19e034ce5a",
+							"commons_url": "externaldata.healdata.org"
+						}
+					],
+					"data_availability": "available",
+					"authz": "/programs/open",
+					"study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
+					"dataset_1_title": "Naloxone_Data_09112020.xlsx, 20180810_Good_Samaritan_Law_Stat_Data.xlsx, 20170216-RM-Stat-Data.xlsx"
+				}
+            }
+        },
+		"PDAPS2": {
+			"mds_url": "https://api.monqcle.com/",
+			"commons_url": "https://externaldata.healprod.org",
+			"adapter": "pdaps",
+			"filters": {
+				"datasets": [
+                    "civil-commitment-for-substance-users-1562936854",
+                    "medicaid-funded-mat-for-justice-involved-persons-1565019015",
+                    "medication-assisted-treatment-in-correctional-facilities",
+                    "laws-regulating-administration-of-naloxone-1501695139",
+                    "good-samaritan-overdose-laws-1501695153",
+                    "medication-assisted-treatment-coverage-1580241551",
+                    "medication-assisted-treatment-licensure-and-operations-1580241579",
+                    "direct-dispensing-of-controlled-substances-laws",
+                    "opioid-prescribing-guidelines-for-acute-and-emergency-care",
+                    "pain-management-clinic-laws",
+                    "medicaid-funded-mat-for-justice-involved-persons-1565019237",
+                    "medication-assisted-treatment-with-methadone-mat-laws",
+                    "recreational-marijuana-laws"
+				]
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"tags": [],
+				"authz": "",
+				"sites": "",
+				"summary": {
+					"path":"description",
+					"filters": ["strip_html"]
+				},
+				"location": "United States",
+				"subjects": "",
+				"__manifest": "",
+				"study_name": "",
+				"study_type": "",
+				"institutions": "Center for Public Health Law Research at the Temple University Beasley School of Law",
+				"year_awarded": "",
+				"investigators": "see https://pdaps.org/about",
+				"project_title": "path:title",
+				"protocol_name": "",
+				"study_summary": { "path":"description", "filters": ["strip_html"] },
+				"_file_manifest": "",
+				"dataset_1_type": "",
+				"dataset_2_type": "",
+				"dataset_3_type": "",
+				"dataset_4_type": "",
+				"dataset_5_type": "",
+				"project_number": "id",
 				"dataset_1_title": "",
 				"dataset_2_title": "",
 				"dataset_3_title": "",
