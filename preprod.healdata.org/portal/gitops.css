@@ -145,15 +145,21 @@ body,
 }
 
 .footer__version-area {
-  width: 300px;
+  display: none;
 }
 
 .footer {
+  background-color: #000;
+}
+
+.footer-container {
   align-items: center;
+  background-color: #000;
 }
 
 .footer__nav {
   align-items: center;
+  background-color: #000;
 }
 
 /* Data Explorer */
