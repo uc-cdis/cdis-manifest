@@ -94,36 +94,6 @@
 					"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122",
 					"dataset_1_title": "TEDS-D-2018-DS0001-bndl-data-spss.zip"
 				},
-				"XX.XXXX/ICPSRXXXXX.vX": {
-					"__manifest": [
-						{
-							"md5sum": "2114ffbd9a741f7bc4a9e178a212e85a",
-							"file_name": "test-study-00001-data.zip",
-							"file_size": 35610,
-							"object_id": "dg.XXXX/783f25e6-f161-477e-a83c-3eb3f564d93b",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "551559020a36933c28d46f110ab7a6fd",
-							"file_name": "test-study-00002-data.zip",
-							"file_size": 35648,
-							"object_id": "dg.XXXX/e13b3a4a-5628-4694-b1be-0cf773362646",
-							"commons_url": "externaldata.healdata.org"
-						}
-					],
-					"data_availability": "available",
-				 	"authz": "/programs/open",
-				 	"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37841",
-					"dataset_1_title": "test-study-00001-data.zip",
-					"dataset_2_title": "test-study-00002-data.zip",
-					"administering_ic": "TEST IC",
-					"dataset_description": "Test Description",
-					"institutions": "Test Institutions",
-					"project_title": "Test Title",
-					"research_focus_area": "Test Research Focus Ara",
-					"study_summary": "Test Study Summary",
-					"summary": "Test Summary"
-				},
 				"10.3886/ICPSR37841.v1": {
 					"data_availability": "pending",
 				 	"authz": "/programs/open",
@@ -442,14 +412,19 @@
 			"filters": {
 				"datasets": [
 					"laws-regulating-administration-of-naloxone",
-					"drug-induced-homicide",
-					"civil-commitment-for-substance-users",
-					"medicaid-funded-mat-for-justice-involved-persons",
-					"medication-assisted-treatment-in-correctional-facilities",
-					"direct-dispensing-of-controlled-substances-laws",
-					"opioid-prescribing-guidelines-for-acute-and-emergency-care",
-					"pain-management-clinic-laws",
-					"medication-assisted-treatment-licensure-and-operations"
+                    "civil-commitment-for-substance-users-1562936854",
+                    "medicaid-funded-mat-for-justice-involved-persons-1565019015",
+                    "medication-assisted-treatment-in-correctional-facilities",
+                    "laws-regulating-administration-of-naloxone-1501695139",
+                    "good-samaritan-overdose-laws-1501695153",
+                    "medication-assisted-treatment-coverage-1580241551",
+                    "medication-assisted-treatment-licensure-and-operations-1580241579",
+                    "direct-dispensing-of-controlled-substances-laws",
+                    "opioid-prescribing-guidelines-for-acute-and-emergency-care",
+                    "pain-management-clinic-laws",
+                    "medicaid-funded-mat-for-justice-involved-persons-1565019237",
+                    "medication-assisted-treatment-with-methadone-mat-laws",
+                    "recreational-marijuana-laws"
 				]
 			},
 			"keep_original_fields": false,
@@ -529,8 +504,572 @@
 					"authz": "/programs/open",
 					"study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
 					"dataset_1_title": "Naloxone_Data_09112020.xlsx, 20180810_Good_Samaritan_Law_Stat_Data.xlsx, 20170216-RM-Stat-Data.xlsx"
-				}
-			}
-		}
-	}
+				},
+                "57b45d83d6c9e7e8693ccdfb": {
+                    "__manifest": [
+                        {
+                            "md5sum": "43a9ac4c3bd4e38aede09f7d74b8d1a3",
+                            "file_size": 210648,
+                            "file_name": "20200911-naloxone-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/69e673e4-fc07-42d2-98ec-5742cc3c7ce4"
+                        },
+                        {
+                            "md5sum": "f21793883d2f60cc853513d9866d74c1",
+                            "file_size": 310928,
+                            "file_name": "20200911-naloxone-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/76b208a0-5375-47ab-969c-fe037480a0ea"
+                        },
+                        {
+                            "md5sum": "0942e24889a9c63da9559e3e01a14918",
+                            "file_size": 146754,
+                            "file_name": "20200911-naloxone-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/590ee657-133f-4c4a-afc2-2b375f6c5f8a"
+                        },
+                        {
+                            "md5sum": "9c459883102a6b239b786c3ba9c66b58",
+                            "file_size": 89270,
+                            "file_name": "naloxone-data-09112020.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/33394310-f706-48c6-9278-f54e0b3018f4"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_type": "protocol",
+                    "dataset_4_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_1_title": "20200911-naloxone-codebook.pdf",
+                    "dataset_3_title": "20200911-naloxone-protocol.pdf",
+                    "dataset_4_title": "20200911-naloxone-report.pdf",
+                    "dataset_2_title": "naloxone-data-09112020.xlsx"
+                },
+                "582e24f1f7d1b67268334875": {
+                    "__manifest": [
+                        {
+                            "md5sum": "8ab1a01b9e4f6c7a896dc5ae765cff5e",
+                            "file_size": 535337,
+                            "file_name": "20170216-recreational-marijuana-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/b6bf0351-03b9-4ed3-bcf2-f9b2d41aa16a"
+                        },
+                        {
+                            "md5sum": "784c0c897de48d1f14a89115ee1eeffb",
+                            "file_size": 419168,
+                            "file_name": "20170216-recreational-marijuana-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/5fb996c3-9153-4d69-9df8-1645368f37bb"
+                        },
+                        {
+                            "md5sum": "04c6b437459efcd29eb53f2eb55ccb96",
+                            "file_size": 36862,
+                            "file_name": "20170216-rm-stat-data.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/4862cc25-be99-4830-ac96-4aebf0bdc5b0"
+                        },
+                        {
+                            "md5sum": "ffe98ed1cb78dc1954ed881b23b22b2c",
+                            "file_size": 632795,
+                            "file_name": "20170404-rm-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/c99e497d-ed2c-44d6-91d4-325230dc8a15"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/recreational-marijuana-laws",
+                    "dataset_3_type": "protocol",
+                    "dataset_4_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_title": "20170216-recreational-marijuana-protocol.pdf",
+                    "dataset_4_title": "20170216-recreational-marijuana-report.pdf",
+                    "dataset_2_title": "20170216-rm-stat-data.xlsx",
+                    "dataset_1_title": "20170404-rm-codebook.pdf"
+                },
+                "596d0183d6c9e7476257c867": {
+                    "__manifest": [
+                        {
+                            "md5sum": "95262d889e1c64d918df0e14fae96bd4",
+                            "file_size": 72067,
+                            "file_name": "20180626-pain-clincs-reports.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/f459352b-4001-435d-9318-15739e5debd0"
+                        },
+                        {
+                            "md5sum": "6a921e1bb773b20390b48fdc48570343",
+                            "file_size": 53564,
+                            "file_name": "20180626-pain-clinic-stat-data.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/57a52b2e-121c-480f-85bb-2dcb0598c900"
+                        },
+                        {
+                            "md5sum": "93f8cd670fe61894e8aa54eb82311196",
+                            "file_size": 229150,
+                            "file_name": "20180626-pain-clinics-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/65e407cb-66dc-40b4-8dc5-ed98f2215773"
+                        },
+                        {
+                            "md5sum": "91d608577f2426ea7221714a53983c68",
+                            "file_size": 145715,
+                            "file_name": "20180626-pain-clinics-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/896e0492-55fb-498b-a62d-3bb99b1bce4e"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/pain-management-clinic-laws",
+                    "dataset_4_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_type": "protocol",
+                    "dataset_4_title": "20180626-pain-clincs-reports.pdf",
+                    "dataset_2_title": "20180626-pain-clinic-stat-data.xlsx",
+                    "dataset_1_title": "20180626-pain-clinics-codebook.pdf",
+                    "dataset_3_title": "20180626-pain-clinics-protocol.pdf"
+                },
+                "599321e2d6c9e7937a85fbdf": {
+                    "__manifest": [
+                        {
+                            "md5sum": "5121f954bcc21c8981ee526e46f5e065",
+                            "file_size": 280932,
+                            "file_name": "20210720-good-samaritan-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/258d16d2-835d-48a3-842c-d115dfd44754"
+                        },
+                        {
+                            "md5sum": "509d85e07d413318d2235b92b5481bac",
+                            "file_size": 133499,
+                            "file_name": "20210720-good-samaritan-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/012abb73-8eb3-4186-a7bf-fa4ec1164f3b"
+                        },
+                        {
+                            "md5sum": "7fb7b2e690de1535033c7a79f138ff77",
+                            "file_size": 248886,
+                            "file_name": "20210721-good-samaritan-researchprotocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/0dacce73-3a01-43f4-9cb1-56f3590e995c"
+                        },
+                        {
+                            "md5sum": "f717084965420757995b4949a9b2f99e",
+                            "file_size": 57971,
+                            "file_name": "good-samaritan-overdose-prevention-laws-7-21-2021.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/60ddf485-65f5-46a0-88fb-e64cb87dab53"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/good-samaritan-overdose-laws-1501695153",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "report",
+                    "dataset_3_type": "protocol",
+                    "dataset_2_type": "data",
+                    "dataset_1_title": "20210720-good-samaritan-codebook.pdf",
+                    "dataset_4_title": "20210720-good-samaritan-report.pdf",
+                    "dataset_3_title": "20210721-good-samaritan-researchprotocol.pdf",
+                    "dataset_2_title": "good-samaritan-overdose-prevention-laws-7-21-2021.xlsx"
+                },
+                "59c1525995679f19228b456d": {
+                    "__manifest": [
+                        {
+                            "md5sum": "4a8a7ef83986149fd9a8c48233520be0",
+                            "file_size": 401817,
+                            "file_name": "20161202-mat-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/6d13c961-ef6b-4ba1-a78a-56d316a75909"
+                        },
+                        {
+                            "md5sum": "21dacb93d05cc1c2f17dbcab898ca189",
+                            "file_size": 560876,
+                            "file_name": "20170404-mat-methadone-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/42e847b8-c40c-4874-bd41-e434e61c31a5"
+                        },
+                        {
+                            "md5sum": "db9016fcef3049666cbb180cbc8d1383",
+                            "file_size": 572868,
+                            "file_name": "20170404-mat-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/b367606a-70e0-4ade-90b0-79880b164d1f"
+                        },
+                        {
+                            "md5sum": "95532a16859027f3351e34a5e65ae097",
+                            "file_size": 33575,
+                            "file_name": "20170629-mat-stat-data.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/7c57df06-ae63-4d1f-a350-0d31e7bc43c5"
+                        },
+                        {
+                            "md5sum": "bcb57c8614f16b16ef44e1b63f5171bc",
+                            "file_size": 232689,
+                            "file_name": "cphlr-policy-brief-mat-regulation-in-the-united-states.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/432de5d3-fb14-4568-8257-b8c31db83713"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-with-methadone-mat-laws",
+                    "dataset_5_type": "report",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "protocol",
+                    "dataset_2_type": "data",
+                    "dataset_3_type": "other",
+                    "dataset_5_title": "20161202-mat-report.pdf",
+                    "dataset_1_title": "20170404-mat-methadone-codebook.pdf",
+                    "dataset_4_title": "20170404-mat-protocol.pdf",
+                    "dataset_2_title": "20170629-mat-stat-data.xlsx",
+                    "dataset_3_title": "cphlr-policy-brief-mat-regulation-in-the-united-states.pdf"
+                },
+                "59cab35df5f53cbd118b4568": {
+                    "__manifest": [
+                        {
+                            "md5sum": "fff27a4617b8670ce5b86951bb12dd96",
+                            "file_size": 13191,
+                            "file_name": "20170925-opg-stat-data-v-1.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/fd424ed1-30f9-4cce-b794-70a1d23f58f6"
+                        },
+                        {
+                            "md5sum": "39737fec23f84aab412f37b5ce88264e",
+                            "file_size": 473749,
+                            "file_name": "20170925-opioid-prescribing-guidelines-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/16b31ded-670a-4f37-b19b-45f1f83cb4ca"
+                        },
+                        {
+                            "md5sum": "789011636a1b76a11139b8dad9a6ddc1",
+                            "file_size": 44444,
+                            "file_name": "20170925-opioid-prescribing-guidelines-reports.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/6eef1c33-53f0-451b-b8d7-5384140e3f65"
+                        },
+                        {
+                            "md5sum": "fcfe613c122346ca3baf9e82f8f74c4c",
+                            "file_size": 181081,
+                            "file_name": "20170926-opioid-prescribing-guidelines-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/7215d5ed-010a-4fe5-9528-7201ee9139c0"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/opioid-prescribing-guidelines-for-acute-and-emergency-care",
+                    "dataset_2_type": "data",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "report",
+                    "dataset_3_type": "protocol",
+                    "dataset_2_title": "20170925-opg-stat-data-v-1.xlsx",
+                    "dataset_1_title": "20170925-opioid-prescribing-guidelines-codebook.pdf",
+                    "dataset_4_title": "20170925-opioid-prescribing-guidelines-reports.pdf",
+                    "dataset_3_title": "20170926-opioid-prescribing-guidelines-protocol.pdf"
+                },
+                "5a297e22f5f53c4b258b4568": {
+                    "__manifest": [
+                        {
+                            "md5sum": "389ff16d8a8489e60cbcc816aa6e1c7b",
+                            "file_size": 400337,
+                            "file_name": "20171206-direct-dispensing-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/670d2bd9-9656-439e-9d2b-9d6e7330ec04"
+                        },
+                        {
+                            "md5sum": "a4cff34cd240c24b83196212214612b9",
+                            "file_size": 178741,
+                            "file_name": "20171207-direct-dispensing-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/15042578-3dbf-4a45-b7d1-4f25dfe1624d"
+                        },
+                        {
+                            "md5sum": "27490955a4cef3e5edfc4501e258143d",
+                            "file_size": 217280,
+                            "file_name": "20171207-direct-dispensing-reports.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/14b55855-450f-4070-bb5d-508d49fd39e6"
+                        },
+                        {
+                            "md5sum": "0dfdc8292eb2967c0f2bff566423e761",
+                            "file_size": 16551,
+                            "file_name": "20171207-direct-dispensing-stat-data.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/2b861767-b897-4428-ad3c-ba4f47d6a6af"
+                        },
+                        {
+                            "md5sum": "18c3d92417887781e2467385fb72c9a4",
+                            "file_size": 167166,
+                            "file_name": "direct-dispensing-wp.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/18c8ae4d-c1d7-4f6f-af5b-6c23ebe895ad"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/direct-dispensing-of-controlled-substances-laws",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "protocol",
+                    "dataset_5_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_3_type": "other",
+                    "dataset_1_title": "20171206-direct-dispensing-codebook.pdf",
+                    "dataset_4_title": "20171207-direct-dispensing-protocol.pdf",
+                    "dataset_5_title": "20171207-direct-dispensing-reports.pdf",
+                    "dataset_2_title": "20171207-direct-dispensing-stat-data.xlsx",
+                    "dataset_3_title": "direct-dispensing-wp.pdf"
+                },
+                "5d44337d914abe53578b4568": {
+                    "__manifest": [
+                        {
+                            "md5sum": "e5f6cf3496eb6373886f160101f15eb5",
+                            "file_size": 137697,
+                            "file_name": "20210701-icsud-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/e3478265-8154-4107-9392-e827f962f626"
+                        },
+                        {
+                            "md5sum": "65bca3b10171ad86ed116cec3c796ae7",
+                            "file_size": 270412,
+                            "file_name": "20210701-involuntary-commitment-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/6d3a0a8c-7889-4913-84da-4001ef0abf9a"
+                        },
+                        {
+                            "md5sum": "dfb292722b227597271778cff819358c",
+                            "file_size": 139369,
+                            "file_name": "20210701-involuntary-commitment-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/42c0d5da-cf99-4f08-811e-aaf15c96113a"
+                        },
+                        {
+                            "md5sum": "35f4ff8a1fdbdaefaf74b736832f6632",
+                            "file_size": 65275,
+                            "file_name": "involuntary-commitment-for-substance-use-laws-data.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/ac289f7e-f2d2-46dd-929b-7974dd89759b"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/civil-commitment-for-substance-users-1562936854",
+                    "dataset_4_type": "report",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_type": "protocol",
+                    "dataset_2_type": "data",
+                    "dataset_4_title": "20210701-icsud-report.pdf",
+                    "dataset_1_title": "20210701-involuntary-commitment-codebook.pdf",
+                    "dataset_3_title": "20210701-involuntary-commitment-protocol.pdf",
+                    "dataset_2_title": "involuntary-commitment-for-substance-use-laws-data.xlsx"
+                },
+                "5d694a99f5f53c76538b456c": {
+                    "__manifest": [
+                        {
+                            "md5sum": "7f6448d41bd155527d4db2f0973e2a0a",
+                            "file_size": 5717,
+                            "file_name": "20190830medicaid-coverage-of-mat.csv",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/8ed2a80f-f8f6-4784-82fa-4e8058ab39cf"
+                        },
+                        {
+                            "md5sum": "7582577bc3df95e5d57507b8c8363622",
+                            "file_size": 159298,
+                            "file_name": "mat-medicaid-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/7d8f400c-117a-4218-a9f3-8e1cfcd7a3c2"
+                        },
+                        {
+                            "md5sum": "ee4d49c28df5979c3c0ac69bbeea74be",
+                            "file_size": 307477,
+                            "file_name": "mat-medicaid-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/3bdfaa7e-cefc-4f53-a3cb-6c2018406c1f"
+                        },
+                        {
+                            "md5sum": "a78525f39c42e912249340634e088594",
+                            "file_size": 64295,
+                            "file_name": "medicaid-mat-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/6830b567-d113-40e2-baa0-b22fd25d7169"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medicaid-funded-mat-for-justice-involved-persons-1565019015",
+                    "dataset_2_type": "data",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "report",
+                    "dataset_3_type": "protocol",
+                    "dataset_2_title": "20190830medicaid-coverage-of-mat.csv",
+                    "dataset_1_title": "mat-medicaid-codebook.pdf",
+                    "dataset_4_title": "mat-medicaid-report.pdf",
+                    "dataset_3_title": "medicaid-mat-protocol.pdf"
+                },
+                "5d694d4cf5f53cf0538b4569": {
+                    "__manifest": [
+                        {
+                            "md5sum": "783173b84e036687c00c43295e581f5b",
+                            "file_size": 111278,
+                            "file_name": "20190830incarceration-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/776889e1-16af-4445-94f9-87ead9cd22b9"
+                        },
+                        {
+                            "md5sum": "89e8beabaadf770599b5fade155ff406",
+                            "file_size": 336295,
+                            "file_name": "20190830incarceration-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/3e702c32-b6a8-4aae-8913-5bff99a79107"
+                        },
+                        {
+                            "md5sum": "af3df369456a0aa06c6dee839e13587c",
+                            "file_size": 2486,
+                            "file_name": "20190830jcoin-incarceration-effects-on-medicaid-status1567181702.csv",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/5ef93634-ee59-44cf-907b-30eb447ff2f3"
+                        },
+                        {
+                            "md5sum": "ac47f5419513c0d4ca51fcd64ee22c31",
+                            "file_size": 115207,
+                            "file_name": "incarceration-effects-on-medicaid-protocol--final.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/ec9b0d72-ea43-4624-89ad-4844df7137a9"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medicaid-funded-mat-for-justice-involved-persons-1565019237",
+                    "dataset_1_type": "codebook",
+                    "dataset_4_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_3_type": "protocol",
+                    "dataset_1_title": "20190830incarceration-codebook.pdf",
+                    "dataset_4_title": "20190830incarceration-report.pdf",
+                    "dataset_2_title": "20190830jcoin-incarceration-effects-on-medicaid-status1567181702.csv",
+                    "dataset_3_title": "incarceration-effects-on-medicaid-protocol--final.pdf"
+                },
+                "5d69a093914abeb8238b456d": {
+                    "__manifest": [
+                        {
+                            "md5sum": "fbbc6e8bc9d03986897b9cafd4e82fad",
+                            "file_size": 82686,
+                            "file_name": "08302019-mat-in-correctional-facilities-codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/44f1e6bc-d0a5-4991-95b3-8a7c6f77a3e5"
+                        },
+                        {
+                            "md5sum": "5e3e3e7c1c8c1152106b831adf2cbff4",
+                            "file_size": 107067,
+                            "file_name": "08302019-mat-in-correctional-facilities-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/aa3bd841-fd2d-488e-9aef-014d2935408f"
+                        },
+                        {
+                            "md5sum": "eabfda5f8d46f26a1f6ee9a910d9e08e",
+                            "file_size": 111195,
+                            "file_name": "08302019-mat-in-correctional-facilities-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/8bd0fd52-15ae-4a6e-bb6a-0ddd956f863b"
+                        },
+                        {
+                            "md5sum": "b225c8f61a5202648ef6767713a7dbab",
+                            "file_size": 11462,
+                            "file_name": "08302019-mat-in-correctional-facilities.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/808e3737-4ca8-4666-875a-ab87518a97ed"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-in-correctional-facilities",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_type": "protocol",
+                    "dataset_4_type": "report",
+                    "dataset_2_type": "data",
+                    "dataset_1_title": "08302019-mat-in-correctional-facilities-codebook.pdf",
+                    "dataset_3_title": "08302019-mat-in-correctional-facilities-protocol.pdf",
+                    "dataset_4_title": "08302019-mat-in-correctional-facilities-report.pdf",
+                    "dataset_2_title": "08302019-mat-in-correctional-facilities.xlsx"
+                },
+                "5e568e8ff5f53cb45f8b456c": {
+                    "__manifest": [
+                        {
+                            "md5sum": "60e7f38e44343291dfe59c3c3be5288e",
+                            "file_size": 314852,
+                            "file_name": "codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/420df54d-663c-4dc5-8f7c-c5957308f669"
+                        },
+                        {
+                            "md5sum": "7c80a46da8dba87210760ac598a9416c",
+                            "file_size": 72065,
+                            "file_name": "moud-licensure-data-12-07-20.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/5cb0fba4-386e-4016-b1d3-fde689f7a4e2"
+                        },
+                        {
+                            "md5sum": "a183d5469bdd566fe8b72a8a5e789106",
+                            "file_size": 219087,
+                            "file_name": "requirements-for-licensure-and-operations-of-moud-treatment-research-protocol.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/356b5b4f-fca1-4644-9c6b-6533b6dc5b07"
+                        },
+                        {
+                            "md5sum": "dab8f4b31266565992de0f7a22d3a828",
+                            "file_size": 205132,
+                            "file_name": "summary-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/c1e90d0a-55b9-4aca-881e-057c557638a2"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-licensure-and-operations-1580241579",
+                    "dataset_1_type": "codebook",
+                    "dataset_2_type": "data",
+                    "dataset_3_type": "protocol",
+                    "dataset_4_type": "report",
+                    "dataset_1_title": "codebook.pdf",
+                    "dataset_2_title": "moud-licensure-data-12-07-20.xlsx",
+                    "dataset_3_title": "requirements-for-licensure-and-operations-of-moud-treatment-research-protocol.pdf",
+                    "dataset_4_title": "summary-report.pdf"
+                },
+                "5e597441f5f53c9a178b456c": {
+                    "__manifest": [
+                        {
+                            "md5sum": "31a4c72fe0d0aef224e635cbf6a4937a",
+                            "file_size": 704260,
+                            "file_name": "codebook.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/ffe3e813-e6fb-4d02-a0ef-88b78109bb04"
+                        },
+                        {
+                            "md5sum": "a76d15c96141372b6ca73ea0faee5149",
+                            "file_size": 380031,
+                            "file_name": "commercial-insurance-and-medicaid-coverage-of-moud-protocol-final.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/464760ea-8d72-49ef-9e70-d1e0d7ba6e09"
+                        },
+                        {
+                            "md5sum": "e88c4228adc5f0f5551b2a9cf9d278eb",
+                            "file_size": 257198,
+                            "file_name": "moud-coverage-final.xlsx",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/1b98260b-7b9c-42aa-abe8-af0f22360fbd"
+                        },
+                        {
+                            "md5sum": "13594a92ac5c6242fd91b55a84f14241",
+                            "file_size": 334799,
+                            "file_name": "summary-report.pdf",
+                            "commons_url": "externaldata.healdata.org",
+                            "object_id": "dg.H35L/1edd16f7-21eb-406a-89d2-eab280673e74"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-coverage-1580241551",
+                    "dataset_1_type": "codebook",
+                    "dataset_3_type": "protocol",
+                    "dataset_2_type": "data",
+                    "dataset_4_type": "report",
+                    "dataset_1_title": "codebook.pdf",
+                    "dataset_3_title": "commercial-insurance-and-medicaid-coverage-of-moud-protocol-final.pdf",
+                    "dataset_2_title": "moud-coverage-final.xlsx",
+                    "dataset_4_title": "summary-report.pdf"
+                }
+            }
+        }
+    }
 }
