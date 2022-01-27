@@ -1,417 +1,411 @@
 {
-	"gen3_commons": {
-		"HEAL": {
-			"mds_url": "https://preprod.healdata.org",
-			"commons_url": "preprod.healdata.org"
+    "gen3_commons": {
+        "HEAL": {
+            "mds_url": "https://preprod.healdata.org",
+            "commons_url": "preprod.healdata.org"
 
-		},
-		"JCOIN": {
-			"mds_url": "https://jcoin.datacommons.io/",
-			"commons_url" : "jcoin.datacommons.io",
-			"columns_to_fields": {
-				"short_name": "name",
-				"full_name": "full_name",
-				"_subjects_count" : "_subjects_count",
-				"study_id" : "study_id",
-				"_unique_id" : "study_id",
-				"study_description" : "study_description"
-			}
-		}
-	},
-	"adapter_commons": {
-		"ICPSR": {
-			"mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
-			"commons_url": "https://www.icpsr.umich.edu",
-			"adapter": "icpsr",
-			"keep_original_fields": false,
-			"filters": {
-				"study_ids": [4256, 30122, 34945, 35197, 37887, 37833, 37842, 37841, 35197 ]
-			},
-			"field_mappings" : {
-				"tags": [],
-				"authz": "",
-				"sites": "",
-				"summary": {
-					"path":"description",
-					"filters": ["strip_html"]
-				},
-				"study_url" : {
-					"path":"ipcsr_study_id",
-					"filters": ["add_icpsr_source_url"]
-				},
-				"location": "path:coverage[0]",
-				"subjects": "",
-				"__manifest": "",
-				"study_name": "",
-				"study_type": "",
-				"institutions": "path:contributor",
-				"year_awarded": "",
-				"investigators": "path:creator",
-				"project_title": "path:title",
-				"protocol_name": "",
-				"study_summary": "",
-				"_file_manifest": "",
-				"dataset_1_type": "",
-				"dataset_2_type": "",
-				"dataset_3_type": "",
-				"dataset_4_type": "",
-				"dataset_5_type": "",
-				"project_number": "path:identifier",
-				"dataset_1_title": "",
-				"dataset_2_title": "",
-				"dataset_3_title": "",
-				"dataset_4_title": "",
-				"dataset_5_title": "",
-				"administering_ic": "",
-				"advSearchFilters": [],
-				"dataset_category": "path:type",
-				"research_program": "",
-				"research_question": "",
-				"study_description": "",
-				"clinical_trial_link": "",
-				"dataset_description": "",
-				"research_focus_area": "",
-				"dataset_1_description": "",
-				"dataset_2_description": "",
-				"dataset_3_description": "",
-				"dataset_4_description": "",
-				"dataset_5_description": "",
-				"data_availability": "pending"
-			},
-			"per_item_values" : {
-				"10.3886/ICPSR30122.v5": {
-					"__manifest": [
-						{
-							"md5sum": "7cf87ce47b91e3a766753222bc22d098",
-							"file_name": "TEDS-D-2018-DS0001-bndl-data-spss.zip",
-							"file_size": 69297783,
-							"object_id": "dg.H35L/208f4c52-771e-409a-b810-4bcba3c03c51",
-							"commons_url": "externaldata.healdata.org"
-						}
-					],
-					"data_availability": "available",
-					"authz": "/programs/open",
-					"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122",
-					"dataset_1_title": "TEDS-D-2018-DS0001-bndl-data-spss.zip"
-				},
-				"10.3886/ICPSR37841.v1": {
-					"data_availability": "pending",
-				 	"authz": "/programs/open",
-				 	"source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37841"
-				},
-				"10.3886/ICPSR37842.v1": {
-					 "data_availability": "pending",
-					 "authz": "/programs/open",
-					 "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37842"
-				},
-				"10.3886/ICPSR37887.v2": {
-					 "data_availability": "pending",
-					 "authz": "/programs/open",
-					 "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37887"
-				},
-				"10.3886/ICPSR37833.v1": {
-					 "data_availability": "pending",
-					 "authz": "/programs/open",
-					 "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37833"
-				},
-				"10.3886/ICPSR35197.v7": {
-					 "data_availability": "pending",
-					 "authz": "/programs/open",
-					 "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/35197"
-				},
-				"10.3886/ICPSR34945.v3": {
-					"__manifest": [
-						{
-							"md5sum": "f8334864a8e2ca52d64272a73d8a9021",
-							"file_name": "N-MHSS-2019-DS0001-bndl-data-tsv.zip",
-							"file_size": 288889 ,
-							"object_id": "dg.H35L/c6f5f04e-70e8-46ed-bf62-902e51d8d9b9",
-							"commons_url": "externaldata.healdata.org"
-						}
-					],
-					"data_availability": "available",
-					"authz": "/programs/open",
-					"dataset_1_title": "N-MHSS-2019-DS0001-bndl-data-tsv.zip"
-				},
-				"10.3886/ICPSR04256.v5": {
-					"__manifest": [
-						{
-							"md5sum": "eac267906a463fdca35e2cbf12bdb2fd",
-							"file_name": "N-SSATS-2017-DS0001-bndl-data-spss.zip",
-							"file_size": 501181,
-							"object_id": "dg.H35L/082a288e-3da2-4806-9438-bc974cdb1cd7",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "1797fb553dbf4f5bb0111415936783d9",
-							"file_name": "N-SSATS-2009-DS0001-bndl-data-spss.zip",
-							"file_size": 8653639,
-							"object_id": "dg.H35L/70453ef5-728a-4a4a-907b-e18ac374918d",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "89019e34fd116e7befc1abc300ea59dc",
-							"file_name": "N-SSATS-2011-DS0001-bndl-data-spss.zip",
-							"file_size": 2120680,
-							"object_id": "dg.H35L/6dd94d94-5fcf-43ee-94e5-87ff10230df0",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "8ded2f937933193c804e4e5cd07b1e86",
-							"file_name": "N-SSATS-2013-DS0001-bndl-data-spss.zip",
-							"file_size": 1988340,
-							"object_id": "dg.H35L/e374f214-21a1-4298-bb16-3bcb889bb6de",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "5fd5509171787d028a386ea203f27b39",
-							"file_name": "N-SSATS-2015-DS0001-bndl-data-spss.zip",
-							"file_size": 2204836,
-							"object_id": "dg.H35L/4d78774d-1768-4647-b113-6a9ad4932652",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "eac267906a463fdca35e2cbf12bdb2fd",
-							"file_name": "N-SSATS-2017-DS0001-bndl-data-spss.zip",
-							"file_size": 501181,
-							"object_id": "dg.H35L/082a288e-3da2-4806-9438-bc974cdb1cd7",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "01a920271b85b450e7897fd658661f06",
-							"file_name": "N-SSATS-2019-DS0001-bndl-data-spss.zip",
-							"file_size": 1346011,
-							"object_id": "dg.H35L/68fe4b6a-6e4a-4854-9078-86f5234d74f3",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "994b1a04912edf2b00e8118678faaf70",
-							"file_name": "N-SSATS-2003.sav",
-							"file_size": 2911525,
-							"object_id": "dg.H35L/1a76f3c0-e922-44a5-92fb-0b4c83770c02",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "bbd28d42097c06a2b61f225402055df3",
-							"file_name": "N-SSATS-2004.sav",
-							"file_size": 2975800,
-							"object_id": "dg.H35L/597033aa-73a0-4cce-8851-6bf3973648ab",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "e063579c1bf88455859d095453cfdace",
-							"file_name": "N-SSATS-2005.sav",
-							"file_size": 2604863,
-							"object_id": "dg.H35L/656c77cf-b762-4998-a4ce-54bc9928e8f3",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "69b172b4056ae45a228725501f2f0a8a",
-							"file_name": "NSSATS_PUF_2019_SAV.sav",
-							"file_size": 32853593,
-							"object_id": "dg.H35L/34b9f362-6104-4567-80a9-31fca2493603",
-							"commons_url": "externaldata.healdata.org"
-						}
-					],
-					"data_availability": "available",
-					"authz": "/programs/open/projects/Preventing_Opioid_Use_Disorder",
-					"dataset_1_title": "N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2009-DS0001-bndl-data-spss.zip, N-SSATS-2011-DS0001-bndl-data-spss.zip, N-SSATS-2013-DS0001-bndl-data-spss.zip, N-SSATS-2015-DS0001-bndl-data-spss.zip, N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2019-DS0001-bndl-data-spss.zip, N-SSATS-2003.sav, N-SSATS-2004.sav, N-SSATS-2005.sav, NSSATS_PUF_2019_SAV.sav"
-				}
-			}
-		},
-		"ClinicalTrials.gov": {
-			"mds_url": "https://clinicaltrials.gov/api/query/full_studies",
-			"commons_url": "http://clinicaltrials.gov",
-			"adapter": "clinicaltrials",
-			"filters": {
-				"term": "OUD",
-				"maxItems": 25
-			},
-			"keep_original_fields": false,
-			"field_mappings": {
-				"tags": [],
-				"authz": "/programs/open",
-				"sites": "",
-				"summary": "path:BriefSummary",
-				"study_url" : {
-					"path":"NCTId",
-					"filters": ["add_clinical_trials_source_url"]
-				},
-				"location": "",
-				"subjects": "path:EnrollmentCount",
-				"__manifest": "",
-				"study_name": "",
-				"study_type": "",
-				"institutions": "path:LeadSponsorName",
-				"year_awarded": "",
-				"investigators": "path:OverallOfficial[0].OverallOfficialName",
-				"project_title": "path:BriefTitle",
-				"protocol_name": "",
-				"study_summary": "",
-				"_file_manifest": "",
-				"dataset_1_type": "",
-				"dataset_2_type": "",
-				"dataset_3_type": "",
-				"dataset_4_type": "",
-				"dataset_5_type": "",
-				"project_number": "path:OrgStudyId",
-				"dataset_1_title": "",
-				"dataset_2_title": "",
-				"dataset_3_title": "",
-				"dataset_4_title": "",
-				"dataset_5_title": "",
-				"administering_ic": "",
-				"advSearchFilters": [],
-				"dataset_category": "",
-				"research_program": "",
-				"research_question": "",
-				"study_description": "",
-				"clinical_trial_link": "",
-				"dataset_description": "",
-				"research_focus_area": "",
-				"dataset_1_description": "",
-				"dataset_2_description": "",
-				"dataset_3_description": "",
-				"dataset_4_description": "",
-				"dataset_5_description": "",
-				"data_availability": "pending"
-			},
-			"per_item_values" : {
-			    "STU-2019-0743": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04059016?titles=Innovatively+Increasing+PCP+Prescribing+of+Buprenorphine%3A+Measurement+Based+Care+and+Integrated+Electronic+Solution&draw=2&rank=1"
-			    },
-				"1903499841": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03950492?titles=Feasibility+of+Deep+Brain+Stimulation+as+a+Novel+Treatment+for+Refractory+Opioid+Use+Disorder&draw=2&rank=1"
-				},
-				"2018-1-100-OUD": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03633929?titles=mHealth+for+Patient+Self-Management+of+Opioid+Use+Disorder&draw=2&rank=1"
-				},
-				"MHBB-010-17F": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03605342?titles=Optimal+Treatment+of+Veterans+With+PTSD+and+Comorbid+OUD&draw=2&rank=1"
-				},
-				"999920014": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04316559?titles=Biased+Opioid+Agonists+for+Treatment+of+Opioid+Withdrawal+in+OUD&draw=2&rank=1"
-				},
-				"2000026223": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04180020?titles=Coordinating+Opioid+Use+Treatment+Through+Medical+Management+With+Infection+Treatment+%28Project+COMMIT%29&draw=2&rank=1"
-				},
-				"2019-131-DCYF": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04901312?titles=Preventing+OUD+in+Justice-Involved+Youth&draw=2&rank=1"
-				},
-				"842717": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04401917?titles=FNOS+in+HIV+Subjects&draw=2&rank=1"
-				},
-				"HIC 2000023783": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03658642?titles=Clinical+Decision+Support+to+Implement+ED-initiated+Buprenorphine+for+OUD&draw=2&rank=1"
-				},
-				"MS057": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04027166?titles=Cognitive+Function+and+Pain+Threshold+in+People+Who+Are+Methadone+Maintained&draw=2&rank=1"
-				},
-				"2000028548(2000027149)": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04253782?titles=SafetyNet+Program+for+Opioid+Use+Disorder+%28OUD%29&draw=2&rank=1"
-				},
-				"CBOTDA049616": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04850664?titles=Computerized+Chemosensory-Based+Orbitofrontal+Cortex+%28CBOT%29+for+Opioid+Use+Disorder&draw=2&rank=1"
-				},
-				"CTN - 0095": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04198428?titles=Clinical+Decision+Support+for+Opioid+Use+Disorders+in+Medical+Settings+%28COMPUTE+2.0%29&draw=2&rank=1"
-				},
-				"2020P002928": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04759703?titles=Treatment+of+Restless+Legs+Symptoms+With+Pramipexole+to+Improve+the+Outcomes+of+Protracted+Opioid+Withdrawal+in+OUD&draw=2&rank=1"
-				},
-				"NIDA CTN 0098A": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04345718?titles=EXHIT+ENTRE+Comparative+Effectiveness+Trial&draw=2&rank=1"
-				},
-				"STUDY20060069": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04888962?titles=Quantitative+Sensory+Psychophysical+Correlates+of+Pain+in+Pregnant+Women+With+OUD&draw=2&rank=1"
-				},
-				"UF1MH121944": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04245423?titles=The+Whole+Health+Study%3A+Collaborative+Care+for+OUD+and+Mental+Health+Conditions&draw=1&rank=1"
-				},
-				"0076-ot": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03559179?titles=Clinical+Decision+Support+for+Opioid+Use+Disorders+in+Medical+Settings%3A+Usability+Testing+in+an+EMR&draw=2&rank=1"
-				},
-				"1906002463": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04240093?titles=CoMBAT+Opioid+Use+Disorder&draw=2&rank=1"
-				},
-				"2000030168": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04982627?titles=A+Brief+Negotiation+Interview+Chatbot+to+Improve+Buprenorphine+Engagement+Among+Justice-Involved+Individuals&draw=2&rank=1"
-				},
-				"CTN-0074": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT03407638?titles=PRimary+Care+Opioid+Use+Disorders+Treatment+%28PROUD%29+Trial&draw=2&rank=1"
-				},
-				"OUD001": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04197921?titles=Exablate+for+LIFU+Neuromodulation+in+Patients+With+Opioid+Use+Disorder+%28OUD%29&draw=2&rank=1"
-				},
-				"2000027031": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04240392?titles=Treatment+of+Pregnant+Women+With+OUD&draw=2&rank=1"
-				},
-				"A20-042": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04939727?titles=Suicide+Prediction+and+Prevention+for+People+at+Risk+for+Opioid+Use+Disorder%3A+Supplement+to+COMPUTE+2.0&draw=2&rank=1"
-				},
-				"2019B0287": {
-					"data_availability": "pending",
-					"authz": "/programs/open",
-					"source_url": "https://clinicaltrials.gov/ct2/show/NCT04135703?titles=Prevention+of+OUD%3A+The+HOME+Project+%28Housing%2C+Opportunities%2C+Motivation+and+Engagement%29&draw=2&rank=1"
-				}
-			}
+        },
+        "JCOIN": {
+            "mds_url": "https://jcoin.datacommons.io/",
+            "commons_url": "jcoin.datacommons.io",
+            "columns_to_fields": {
+                "short_name": "name",
+                "full_name": "full_name",
+                "_subjects_count": "_subjects_count",
+                "study_id": "study_id",
+                "_unique_id": "study_id",
+                "study_description": "study_description"
+            }
+        }
+    },
+    "adapter_commons": {
+        "ICPSR": {
+            "mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
+            "commons_url": "https://www.icpsr.umich.edu",
+            "adapter": "icpsr",
+            "keep_original_fields": false,
+            "filters": {
+                "study_ids": [4256, 30122, 34945, 35197, 37887, 37833, 37842, 37841, 35197]
+            },
+            "field_mappings": {
+                "tags": [],
+                "authz": "",
+                "sites": "",
+                "summary": {
+                    "path": "description",
+                    "filters": ["strip_html"]
+                },
+                "study_url": {
+                    "path": "ipcsr_study_id",
+                    "filters": ["add_icpsr_source_url"]
+                },
+                "location": "path:coverage[0]",
+                "subjects": "",
+                "__manifest": "",
+                "study_name": "",
+                "study_type": "",
+                "institutions": "path:contributor",
+                "year_awarded": "",
+                "investigators": "path:creator",
+                "project_title": "path:title",
+                "protocol_name": "",
+                "study_summary": "",
+                "_file_manifest": "",
+                "dataset_1_type": "",
+                "dataset_2_type": "",
+                "dataset_3_type": "",
+                "dataset_4_type": "",
+                "dataset_5_type": "",
+                "project_number": "path:identifier",
+                "dataset_1_title": "",
+                "dataset_2_title": "",
+                "dataset_3_title": "",
+                "dataset_4_title": "",
+                "dataset_5_title": "",
+                "administering_ic": "",
+                "advSearchFilters": [],
+                "dataset_category": "path:type",
+                "research_program": "",
+                "research_question": "",
+                "study_description": "",
+                "clinical_trial_link": "",
+                "dataset_description": "",
+                "research_focus_area": "",
+                "dataset_1_description": "",
+                "dataset_2_description": "",
+                "dataset_3_description": "",
+                "dataset_4_description": "",
+                "dataset_5_description": "",
+                "data_availability": "pending"
+            },
+            "per_item_values": {
+                "10.3886/ICPSR30122.v5": {
+                    "__manifest": [{
+                        "md5sum": "7cf87ce47b91e3a766753222bc22d098",
+                        "file_name": "TEDS-D-2018-DS0001-bndl-data-spss.zip",
+                        "file_size": 69297783,
+                        "object_id": "dg.H35L/208f4c52-771e-409a-b810-4bcba3c03c51",
+                        "commons_url": "externaldata.healdata.org"
+                    }],
+                    "data_availability": "available",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122",
+                    "dataset_1_title": "TEDS-D-2018-DS0001-bndl-data-spss.zip"
+                },
+                "10.3886/ICPSR37841.v1": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37841"
+                },
+                "10.3886/ICPSR37842.v1": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37842"
+                },
+                "10.3886/ICPSR37887.v2": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37887"
+                },
+                "10.3886/ICPSR37833.v1": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/37833"
+                },
+                "10.3886/ICPSR35197.v7": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/35197"
+                },
+                "10.3886/ICPSR34945.v3": {
+                    "__manifest": [{
+                        "md5sum": "f8334864a8e2ca52d64272a73d8a9021",
+                        "file_name": "N-MHSS-2019-DS0001-bndl-data-tsv.zip",
+                        "file_size": 288889,
+                        "object_id": "dg.H35L/c6f5f04e-70e8-46ed-bf62-902e51d8d9b9",
+                        "commons_url": "externaldata.healdata.org"
+                    }],
+                    "data_availability": "available",
+                    "authz": "/programs/open",
+                    "dataset_1_title": "N-MHSS-2019-DS0001-bndl-data-tsv.zip"
+                },
+                "10.3886/ICPSR04256.v5": {
+                    "__manifest": [{
+                            "md5sum": "eac267906a463fdca35e2cbf12bdb2fd",
+                            "file_name": "N-SSATS-2017-DS0001-bndl-data-spss.zip",
+                            "file_size": 501181,
+                            "object_id": "dg.H35L/082a288e-3da2-4806-9438-bc974cdb1cd7",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "1797fb553dbf4f5bb0111415936783d9",
+                            "file_name": "N-SSATS-2009-DS0001-bndl-data-spss.zip",
+                            "file_size": 8653639,
+                            "object_id": "dg.H35L/70453ef5-728a-4a4a-907b-e18ac374918d",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "89019e34fd116e7befc1abc300ea59dc",
+                            "file_name": "N-SSATS-2011-DS0001-bndl-data-spss.zip",
+                            "file_size": 2120680,
+                            "object_id": "dg.H35L/6dd94d94-5fcf-43ee-94e5-87ff10230df0",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "8ded2f937933193c804e4e5cd07b1e86",
+                            "file_name": "N-SSATS-2013-DS0001-bndl-data-spss.zip",
+                            "file_size": 1988340,
+                            "object_id": "dg.H35L/e374f214-21a1-4298-bb16-3bcb889bb6de",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "5fd5509171787d028a386ea203f27b39",
+                            "file_name": "N-SSATS-2015-DS0001-bndl-data-spss.zip",
+                            "file_size": 2204836,
+                            "object_id": "dg.H35L/4d78774d-1768-4647-b113-6a9ad4932652",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "eac267906a463fdca35e2cbf12bdb2fd",
+                            "file_name": "N-SSATS-2017-DS0001-bndl-data-spss.zip",
+                            "file_size": 501181,
+                            "object_id": "dg.H35L/082a288e-3da2-4806-9438-bc974cdb1cd7",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "01a920271b85b450e7897fd658661f06",
+                            "file_name": "N-SSATS-2019-DS0001-bndl-data-spss.zip",
+                            "file_size": 1346011,
+                            "object_id": "dg.H35L/68fe4b6a-6e4a-4854-9078-86f5234d74f3",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "994b1a04912edf2b00e8118678faaf70",
+                            "file_name": "N-SSATS-2003.sav",
+                            "file_size": 2911525,
+                            "object_id": "dg.H35L/1a76f3c0-e922-44a5-92fb-0b4c83770c02",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "bbd28d42097c06a2b61f225402055df3",
+                            "file_name": "N-SSATS-2004.sav",
+                            "file_size": 2975800,
+                            "object_id": "dg.H35L/597033aa-73a0-4cce-8851-6bf3973648ab",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "e063579c1bf88455859d095453cfdace",
+                            "file_name": "N-SSATS-2005.sav",
+                            "file_size": 2604863,
+                            "object_id": "dg.H35L/656c77cf-b762-4998-a4ce-54bc9928e8f3",
+                            "commons_url": "externaldata.healdata.org"
+                        },
+                        {
+                            "md5sum": "69b172b4056ae45a228725501f2f0a8a",
+                            "file_name": "NSSATS_PUF_2019_SAV.sav",
+                            "file_size": 32853593,
+                            "object_id": "dg.H35L/34b9f362-6104-4567-80a9-31fca2493603",
+                            "commons_url": "externaldata.healdata.org"
+                        }
+                    ],
+                    "data_availability": "available",
+                    "authz": "/programs/open/projects/Preventing_Opioid_Use_Disorder",
+                    "dataset_1_title": "N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2009-DS0001-bndl-data-spss.zip, N-SSATS-2011-DS0001-bndl-data-spss.zip, N-SSATS-2013-DS0001-bndl-data-spss.zip, N-SSATS-2015-DS0001-bndl-data-spss.zip, N-SSATS-2017-DS0001-bndl-data-spss.zip, N-SSATS-2019-DS0001-bndl-data-spss.zip, N-SSATS-2003.sav, N-SSATS-2004.sav, N-SSATS-2005.sav, NSSATS_PUF_2019_SAV.sav"
+                }
+            }
+        },
+        "ClinicalTrials.gov": {
+            "mds_url": "https://clinicaltrials.gov/api/query/full_studies",
+            "commons_url": "http://clinicaltrials.gov",
+            "adapter": "clinicaltrials",
+            "filters": {
+                "term": "OUD",
+                "maxItems": 25
+            },
+            "keep_original_fields": false,
+            "field_mappings": {
+                "tags": [],
+                "authz": "/programs/open",
+                "sites": "",
+                "summary": "path:BriefSummary",
+                "study_url": {
+                    "path": "NCTId",
+                    "filters": ["add_clinical_trials_source_url"]
+                },
+                "location": "",
+                "subjects": "path:EnrollmentCount",
+                "__manifest": "",
+                "study_name": "",
+                "study_type": "",
+                "institutions": "path:LeadSponsorName",
+                "year_awarded": "",
+                "investigators": "path:OverallOfficial[0].OverallOfficialName",
+                "project_title": "path:BriefTitle",
+                "protocol_name": "",
+                "study_summary": "",
+                "_file_manifest": "",
+                "dataset_1_type": "",
+                "dataset_2_type": "",
+                "dataset_3_type": "",
+                "dataset_4_type": "",
+                "dataset_5_type": "",
+                "project_number": "path:OrgStudyId",
+                "dataset_1_title": "",
+                "dataset_2_title": "",
+                "dataset_3_title": "",
+                "dataset_4_title": "",
+                "dataset_5_title": "",
+                "administering_ic": "",
+                "advSearchFilters": [],
+                "dataset_category": "",
+                "research_program": "",
+                "research_question": "",
+                "study_description": "",
+                "clinical_trial_link": "",
+                "dataset_description": "",
+                "research_focus_area": "",
+                "dataset_1_description": "",
+                "dataset_2_description": "",
+                "dataset_3_description": "",
+                "dataset_4_description": "",
+                "dataset_5_description": "",
+                "data_availability": "pending"
+            },
+            "per_item_values": {
+                "STU-2019-0743": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04059016?titles=Innovatively+Increasing+PCP+Prescribing+of+Buprenorphine%3A+Measurement+Based+Care+and+Integrated+Electronic+Solution&draw=2&rank=1"
+                },
+                "1903499841": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03950492?titles=Feasibility+of+Deep+Brain+Stimulation+as+a+Novel+Treatment+for+Refractory+Opioid+Use+Disorder&draw=2&rank=1"
+                },
+                "2018-1-100-OUD": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03633929?titles=mHealth+for+Patient+Self-Management+of+Opioid+Use+Disorder&draw=2&rank=1"
+                },
+                "MHBB-010-17F": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03605342?titles=Optimal+Treatment+of+Veterans+With+PTSD+and+Comorbid+OUD&draw=2&rank=1"
+                },
+                "999920014": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04316559?titles=Biased+Opioid+Agonists+for+Treatment+of+Opioid+Withdrawal+in+OUD&draw=2&rank=1"
+                },
+                "2000026223": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04180020?titles=Coordinating+Opioid+Use+Treatment+Through+Medical+Management+With+Infection+Treatment+%28Project+COMMIT%29&draw=2&rank=1"
+                },
+                "2019-131-DCYF": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04901312?titles=Preventing+OUD+in+Justice-Involved+Youth&draw=2&rank=1"
+                },
+                "842717": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04401917?titles=FNOS+in+HIV+Subjects&draw=2&rank=1"
+                },
+                "HIC 2000023783": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03658642?titles=Clinical+Decision+Support+to+Implement+ED-initiated+Buprenorphine+for+OUD&draw=2&rank=1"
+                },
+                "MS057": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04027166?titles=Cognitive+Function+and+Pain+Threshold+in+People+Who+Are+Methadone+Maintained&draw=2&rank=1"
+                },
+                "2000028548(2000027149)": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04253782?titles=SafetyNet+Program+for+Opioid+Use+Disorder+%28OUD%29&draw=2&rank=1"
+                },
+                "CBOTDA049616": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04850664?titles=Computerized+Chemosensory-Based+Orbitofrontal+Cortex+%28CBOT%29+for+Opioid+Use+Disorder&draw=2&rank=1"
+                },
+                "CTN - 0095": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04198428?titles=Clinical+Decision+Support+for+Opioid+Use+Disorders+in+Medical+Settings+%28COMPUTE+2.0%29&draw=2&rank=1"
+                },
+                "2020P002928": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04759703?titles=Treatment+of+Restless+Legs+Symptoms+With+Pramipexole+to+Improve+the+Outcomes+of+Protracted+Opioid+Withdrawal+in+OUD&draw=2&rank=1"
+                },
+                "NIDA CTN 0098A": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04345718?titles=EXHIT+ENTRE+Comparative+Effectiveness+Trial&draw=2&rank=1"
+                },
+                "STUDY20060069": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04888962?titles=Quantitative+Sensory+Psychophysical+Correlates+of+Pain+in+Pregnant+Women+With+OUD&draw=2&rank=1"
+                },
+                "UF1MH121944": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04245423?titles=The+Whole+Health+Study%3A+Collaborative+Care+for+OUD+and+Mental+Health+Conditions&draw=1&rank=1"
+                },
+                "0076-ot": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03559179?titles=Clinical+Decision+Support+for+Opioid+Use+Disorders+in+Medical+Settings%3A+Usability+Testing+in+an+EMR&draw=2&rank=1"
+                },
+                "1906002463": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04240093?titles=CoMBAT+Opioid+Use+Disorder&draw=2&rank=1"
+                },
+                "2000030168": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04982627?titles=A+Brief+Negotiation+Interview+Chatbot+to+Improve+Buprenorphine+Engagement+Among+Justice-Involved+Individuals&draw=2&rank=1"
+                },
+                "CTN-0074": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT03407638?titles=PRimary+Care+Opioid+Use+Disorders+Treatment+%28PROUD%29+Trial&draw=2&rank=1"
+                },
+                "OUD001": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04197921?titles=Exablate+for+LIFU+Neuromodulation+in+Patients+With+Opioid+Use+Disorder+%28OUD%29&draw=2&rank=1"
+                },
+                "2000027031": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04240392?titles=Treatment+of+Pregnant+Women+With+OUD&draw=2&rank=1"
+                },
+                "A20-042": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04939727?titles=Suicide+Prediction+and+Prevention+for+People+at+Risk+for+Opioid+Use+Disorder%3A+Supplement+to+COMPUTE+2.0&draw=2&rank=1"
+                },
+                "2019B0287": {
+                    "data_availability": "pending",
+                    "authz": "/programs/open",
+                    "source_url": "https://clinicaltrials.gov/ct2/show/NCT04135703?titles=Prevention+of+OUD%3A+The+HOME+Project+%28Housing%2C+Opportunities%2C+Motivation+and+Engagement%29&draw=2&rank=1"
+                }
+            }
 
-		},
-		"PDAPS": {
-			"mds_url": "https://api.monqcle.com/",
-			"commons_url": "https://externaldata.healprod.org",
-			"adapter": "pdaps",
-			"filters": {
-				"datasets": [
-					"laws-regulating-administration-of-naloxone",
+        },
+        "PDAPS": {
+            "mds_url": "https://api.monqcle.com/",
+            "commons_url": "https://externaldata.healprod.org",
+            "adapter": "pdaps",
+            "filters": {
+                "datasets": [
                     "civil-commitment-for-substance-users-1562936854",
                     "medicaid-funded-mat-for-justice-involved-persons-1565019015",
                     "medication-assisted-treatment-in-correctional-facilities",
@@ -425,89 +419,59 @@
                     "medicaid-funded-mat-for-justice-involved-persons-1565019237",
                     "medication-assisted-treatment-with-methadone-mat-laws",
                     "recreational-marijuana-laws"
-				]
-			},
-			"keep_original_fields": false,
-			"field_mappings": {
-				"tags": [],
-				"authz": "",
-				"sites": "",
-				"summary": {
-					"path":" preview[0].description",
-					"filters": ["strip_html"]
-				},
-				"location": "United States",
-				"subjects": "",
-				"__manifest": "",
-				"study_name": "",
-				"study_type": "",
-				"institutions": "Temple University",
-				"year_awarded": "",
-				"investigators": "path:preview[0].created_by",
-				"project_title": "path:preview[0].title",
-				"protocol_name": "",
-				"study_summary": { "path":" preview[0].description", "filters": ["strip_html"] },
-				"_file_manifest": "",
-				"dataset_1_type": "",
-				"dataset_2_type": "",
-				"dataset_3_type": "",
-				"dataset_4_type": "",
-				"dataset_5_type": "",
-				"project_number": "path:display_id",
-				"dataset_1_title": "",
-				"dataset_2_title": "",
-				"dataset_3_title": "",
-				"dataset_4_title": "",
-				"dataset_5_title": "",
-				"administering_ic": "NIDA",
-				"advSearchFilters": [],
-				"dataset_category": "",
-				"research_program": "",
-				"research_question": "",
-				"study_description": "Observational",
-				"clinical_trial_link": "",
-				"dataset_description": "",
-				"research_focus_area": "",
-				"dataset_1_description": "",
-				"dataset_2_description": "",
-				"dataset_3_description": "",
-				"dataset_4_description": "",
-				"dataset_5_description": "",
-				"data_availability": "pending"
-			},
-			"per_item_values": {
-				"599ddda695679f66768b4569": {
-					"__manifest": [
-						{
-							"md5sum": "40dcac42435d323ebdb92d615f42d0c3",
-							"file_name": "Naloxone_Data_09112020.xlsx",
-							"file_size": 88921,
-							"object_id": "dg.H35L/77045ea3-595b-4846-9ad0-6d48fe476925",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "93b6b346a400978cde37ab8d778d6412",
-							"file_name": "20180810_Good_Samaritan_Law_Stat_Data.xlsx",
-							"file_size": 24100,
-							"object_id": "dg.H35L/065cf957-505e-4bf4-929e-c2327742bae1",
-							"commons_url": "externaldata.healdata.org"
-						},
-						{
-							"md5sum": "19ed44f408f221a7af860821c796972a",
-							"file_name": "20170216-RM-Stat-Data.xlsx",
-							"file_size": 36710,
-							"object_id": "dg.H35L/c3489b65-e8b7-42ac-9a74-2b19e034ce5a",
-							"commons_url": "externaldata.healdata.org"
-						}
-					],
-					"data_availability": "available",
-					"authz": "/programs/open",
-					"study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
-					"dataset_1_title": "Naloxone_Data_09112020.xlsx, 20180810_Good_Samaritan_Law_Stat_Data.xlsx, 20170216-RM-Stat-Data.xlsx"
-				},
+                ]
+            },
+            "keep_original_fields": false,
+            "field_mappings": {
+                "tags": [],
+                "authz": "",
+                "sites": "",
+                "summary": {
+                    "path": "description",
+                    "filters": ["strip_html"]
+                },
+                "location": "United States",
+                "subjects": "",
+                "__manifest": "",
+                "study_name": "",
+                "study_type": "",
+                "institutions": "Center for Public Health Law Research at the Temple University Beasley School of Law",
+                "year_awarded": "",
+                "investigators": "",
+                "project_title": "path:title",
+                "protocol_name": "",
+                "study_summary": { "path": "description", "filters": ["strip_html"] },
+                "_file_manifest": "",
+                "dataset_1_type": "",
+                "dataset_2_type": "",
+                "dataset_3_type": "",
+                "dataset_4_type": "",
+                "dataset_5_type": "",
+                "project_number": "path:id",
+                "dataset_1_title": "",
+                "dataset_2_title": "",
+                "dataset_3_title": "",
+                "dataset_4_title": "",
+                "dataset_5_title": "",
+                "administering_ic": "NIDA",
+                "advSearchFilters": [],
+                "dataset_category": "",
+                "research_program": "",
+                "research_question": "",
+                "study_description": "Observational",
+                "clinical_trial_link": "",
+                "dataset_description": "",
+                "research_focus_area": "",
+                "dataset_1_description": "",
+                "dataset_2_description": "",
+                "dataset_3_description": "",
+                "dataset_4_description": "",
+                "dataset_5_description": "",
+                "data_availability": "pending"
+            },
+            "per_item_values": {
                 "57b45d83d6c9e7e8693ccdfb": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "43a9ac4c3bd4e38aede09f7d74b8d1a3",
                             "file_size": 210648,
                             "file_name": "20200911-naloxone-codebook.pdf",
@@ -537,6 +501,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/laws-regulating-administration-of-naloxone-1501695139",
                     "dataset_1_type": "codebook",
                     "dataset_3_type": "protocol",
@@ -548,8 +513,7 @@
                     "dataset_2_title": "naloxone-data-09112020.xlsx"
                 },
                 "582e24f1f7d1b67268334875": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "8ab1a01b9e4f6c7a896dc5ae765cff5e",
                             "file_size": 535337,
                             "file_name": "20170216-recreational-marijuana-protocol.pdf",
@@ -579,6 +543,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/recreational-marijuana-laws",
                     "dataset_3_type": "protocol",
                     "dataset_4_type": "report",
@@ -590,8 +555,7 @@
                     "dataset_1_title": "20170404-rm-codebook.pdf"
                 },
                 "596d0183d6c9e7476257c867": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "95262d889e1c64d918df0e14fae96bd4",
                             "file_size": 72067,
                             "file_name": "20180626-pain-clincs-reports.pdf",
@@ -621,6 +585,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/pain-management-clinic-laws",
                     "dataset_4_type": "report",
                     "dataset_2_type": "data",
@@ -632,8 +597,7 @@
                     "dataset_3_title": "20180626-pain-clinics-protocol.pdf"
                 },
                 "599321e2d6c9e7937a85fbdf": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "5121f954bcc21c8981ee526e46f5e065",
                             "file_size": 280932,
                             "file_name": "20210720-good-samaritan-codebook.pdf",
@@ -663,6 +627,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/good-samaritan-overdose-laws-1501695153",
                     "dataset_1_type": "codebook",
                     "dataset_4_type": "report",
@@ -674,8 +639,7 @@
                     "dataset_2_title": "good-samaritan-overdose-prevention-laws-7-21-2021.xlsx"
                 },
                 "59c1525995679f19228b456d": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "4a8a7ef83986149fd9a8c48233520be0",
                             "file_size": 401817,
                             "file_name": "20161202-mat-report.pdf",
@@ -712,6 +676,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-with-methadone-mat-laws",
                     "dataset_5_type": "report",
                     "dataset_1_type": "codebook",
@@ -725,8 +690,7 @@
                     "dataset_3_title": "cphlr-policy-brief-mat-regulation-in-the-united-states.pdf"
                 },
                 "59cab35df5f53cbd118b4568": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "fff27a4617b8670ce5b86951bb12dd96",
                             "file_size": 13191,
                             "file_name": "20170925-opg-stat-data-v-1.xlsx",
@@ -756,6 +720,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/opioid-prescribing-guidelines-for-acute-and-emergency-care",
                     "dataset_2_type": "data",
                     "dataset_1_type": "codebook",
@@ -767,8 +732,7 @@
                     "dataset_3_title": "20170926-opioid-prescribing-guidelines-protocol.pdf"
                 },
                 "5a297e22f5f53c4b258b4568": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "389ff16d8a8489e60cbcc816aa6e1c7b",
                             "file_size": 400337,
                             "file_name": "20171206-direct-dispensing-codebook.pdf",
@@ -805,6 +769,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/direct-dispensing-of-controlled-substances-laws",
                     "dataset_1_type": "codebook",
                     "dataset_4_type": "protocol",
@@ -818,8 +783,7 @@
                     "dataset_3_title": "direct-dispensing-wp.pdf"
                 },
                 "5d44337d914abe53578b4568": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "e5f6cf3496eb6373886f160101f15eb5",
                             "file_size": 137697,
                             "file_name": "20210701-icsud-report.pdf",
@@ -849,6 +813,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/civil-commitment-for-substance-users-1562936854",
                     "dataset_4_type": "report",
                     "dataset_1_type": "codebook",
@@ -860,8 +825,7 @@
                     "dataset_2_title": "involuntary-commitment-for-substance-use-laws-data.xlsx"
                 },
                 "5d694a99f5f53c76538b456c": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "7f6448d41bd155527d4db2f0973e2a0a",
                             "file_size": 5717,
                             "file_name": "20190830medicaid-coverage-of-mat.csv",
@@ -891,6 +855,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medicaid-funded-mat-for-justice-involved-persons-1565019015",
                     "dataset_2_type": "data",
                     "dataset_1_type": "codebook",
@@ -902,8 +867,7 @@
                     "dataset_3_title": "medicaid-mat-protocol.pdf"
                 },
                 "5d694d4cf5f53cf0538b4569": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "783173b84e036687c00c43295e581f5b",
                             "file_size": 111278,
                             "file_name": "20190830incarceration-codebook.pdf",
@@ -933,6 +897,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medicaid-funded-mat-for-justice-involved-persons-1565019237",
                     "dataset_1_type": "codebook",
                     "dataset_4_type": "report",
@@ -944,8 +909,7 @@
                     "dataset_3_title": "incarceration-effects-on-medicaid-protocol--final.pdf"
                 },
                 "5d69a093914abeb8238b456d": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "fbbc6e8bc9d03986897b9cafd4e82fad",
                             "file_size": 82686,
                             "file_name": "08302019-mat-in-correctional-facilities-codebook.pdf",
@@ -975,6 +939,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-in-correctional-facilities",
                     "dataset_1_type": "codebook",
                     "dataset_3_type": "protocol",
@@ -986,8 +951,7 @@
                     "dataset_2_title": "08302019-mat-in-correctional-facilities.xlsx"
                 },
                 "5e568e8ff5f53cb45f8b456c": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "60e7f38e44343291dfe59c3c3be5288e",
                             "file_size": 314852,
                             "file_name": "codebook.pdf",
@@ -1017,6 +981,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-licensure-and-operations-1580241579",
                     "dataset_1_type": "codebook",
                     "dataset_2_type": "data",
@@ -1028,8 +993,7 @@
                     "dataset_4_title": "summary-report.pdf"
                 },
                 "5e597441f5f53c9a178b456c": {
-                    "__manifest": [
-                        {
+                    "__manifest": [{
                             "md5sum": "31a4c72fe0d0aef224e635cbf6a4937a",
                             "file_size": 704260,
                             "file_name": "codebook.pdf",
@@ -1059,6 +1023,7 @@
                         }
                     ],
                     "data_availability": "available",
+                    "authz": "/programs/open",
                     "study_url": "https://pdaps.org/datasets/medication-assisted-treatment-coverage-1580241551",
                     "dataset_1_type": "codebook",
                     "dataset_3_type": "protocol",
