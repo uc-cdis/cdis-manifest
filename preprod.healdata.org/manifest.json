@@ -1,304 +1,268 @@
 {
     "notes": [
-      "This is the preprod environment manifest",
-      "That's all I have to say"
+        "This is the preprod environment manifest",
+        "That's all I have to say"
     ],
     "jenkins": {
-      "autodeploy": "yes"
+        "autodeploy": "yes"
     },
     "versions": {
-      "ambassador": "quay.io/datawire/ambassador:1.4.2",
-      "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.01",
-      "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.01",
-      "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-      "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.01",
-      "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.01",
-      "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-      "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.01",
-      "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.01",
-      "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.01",
-      "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:1.6.3",
-      "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.01",
-      "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.01",
-      "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.01",
-      "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.01",
-      "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.01",
-      "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.01",
-      "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.01",
-      "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.01",
-      "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.01",
-      "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.01"
+        "ambassador": "quay.io/datawire/ambassador:1.4.2",
+        "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.01",
+        "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.01",
+        "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
+        "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.01",
+        "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.01",
+        "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+        "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.01",
+        "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.01",
+        "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.01",
+        "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:1.6.3",
+        "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.01",
+        "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.01",
+        "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.01",
+        "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.01",
+        "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.01",
+        "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.01",
+        "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.01",
+        "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.01",
+        "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.01",
+        "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.01"
     },
     "arborist": {
-      "deployment_version": "2"
+        "deployment_version": "2"
     },
     "metadata": {
-      "USE_AGG_MDS": true,
-      "AGG_MDS_NAMESPACE": "healpreprod"
+        "USE_AGG_MDS": true,
+        "AGG_MDS_NAMESPACE": "healpreprod"
     },
     "portal": {
-      "GEN3_BUNDLE": "heal"
+        "GEN3_BUNDLE": "heal"
     },
-    "sower": [
-      {
-        "name": "ingest-metadata-manifest",
-        "action": "ingest-metadata-manifest",
-        "activeDeadlineSeconds": 86400,
-        "serviceAccountName": "jobs-preprod-healdata-org",
-        "container": {
-          "name": "job-task",
-          "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2022.01",
-          "pull_policy": "Always",
-          "env": [
-            {
-              "name": "GEN3_HOSTNAME",
-              "valueFrom": {
-                "configMapKeyRef": {
-                  "name": "manifest-global",
-                  "key": "hostname"
+    "sower": [{
+            "name": "ingest-metadata-manifest",
+            "action": "ingest-metadata-manifest",
+            "activeDeadlineSeconds": 86400,
+            "serviceAccountName": "jobs-preprod-healdata-org",
+            "container": {
+                "name": "job-task",
+                "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2022.01",
+                "pull_policy": "Always",
+                "env": [{
+                    "name": "GEN3_HOSTNAME",
+                    "valueFrom": {
+                        "configMapKeyRef": {
+                            "name": "manifest-global",
+                            "key": "hostname"
+                        }
+                    }
+                }],
+                "volumeMounts": [{
+                    "name": "creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/creds.json",
+                    "subPath": "creds.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "creds-volume",
+                "secret": {
+                    "secretName": "sower-jobs-g3auto"
                 }
-              }
-            }
-          ],
-          "volumeMounts": [
-            {
-              "name": "creds-volume",
-              "readOnly": true,
-              "mountPath": "/creds.json",
-              "subPath": "creds.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
+            }],
+            "restart_policy": "Never"
         },
-        "volumes": [
-          {
-            "name": "creds-volume",
-            "secret": {
-              "secretName": "sower-jobs-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      },
-      {
-        "name": "get-dbgap-metadata",
-        "action": "get-dbgap-metadata",
-        "serviceAccountName": "jobs-preprod-healdata-org",
-        "container": {
-          "name": "job-task",
-          "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2022.01",
-          "pull_policy": "Always",
-          "env": [],
-          "volumeMounts": [
-            {
-              "name": "creds-volume",
-              "readOnly": true,
-              "mountPath": "/creds.json",
-              "subPath": "creds.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
-        },
-        "volumes": [
-          {
-            "name": "creds-volume",
-            "secret": {
-              "secretName": "sower-jobs-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      },
-      {
-        "name": "manifest-indexing",
-        "action": "index-object-manifest",
-        "activeDeadlineSeconds": 86400,
-        "serviceAccountName": "jobs-preprod-healdata-org",
-        "container": {
-          "name": "job-task",
-          "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.01",
-          "pull_policy": "Always",
-          "env": [
-            {
-              "name": "GEN3_HOSTNAME",
-              "valueFrom": {
-                "configMapKeyRef": {
-                  "name": "manifest-global",
-                  "key": "hostname"
+        {
+            "name": "get-dbgap-metadata",
+            "action": "get-dbgap-metadata",
+            "serviceAccountName": "jobs-preprod-healdata-org",
+            "container": {
+                "name": "job-task",
+                "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2022.01",
+                "pull_policy": "Always",
+                "env": [],
+                "volumeMounts": [{
+                    "name": "creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/creds.json",
+                    "subPath": "creds.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "creds-volume",
+                "secret": {
+                    "secretName": "sower-jobs-g3auto"
                 }
-              }
-            }
-          ],
-          "volumeMounts": [
-            {
-              "name": "sower-jobs-creds-volume",
-              "readOnly": true,
-              "mountPath": "/creds.json",
-              "subPath": "creds.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
+            }],
+            "restart_policy": "Never"
         },
-        "volumes": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "secret": {
-              "secretName": "sower-jobs-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      },
-      {
-        "name": "manifest-merging",
-        "action": "merge-manifests",
-        "activeDeadlineSeconds": 86400,
-        "serviceAccountName": "jobs-preprod-healdata-org",
-        "container": {
-          "name": "job-task",
-          "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2022.01",
-          "pull_policy": "Always",
-          "env": [
-            {
-              "name": "GEN3_HOSTNAME",
-              "valueFrom": {
-                "configMapKeyRef": {
-                  "name": "manifest-global",
-                  "key": "hostname"
+        {
+            "name": "manifest-indexing",
+            "action": "index-object-manifest",
+            "activeDeadlineSeconds": 86400,
+            "serviceAccountName": "jobs-preprod-healdata-org",
+            "container": {
+                "name": "job-task",
+                "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.01",
+                "pull_policy": "Always",
+                "env": [{
+                    "name": "GEN3_HOSTNAME",
+                    "valueFrom": {
+                        "configMapKeyRef": {
+                            "name": "manifest-global",
+                            "key": "hostname"
+                        }
+                    }
+                }],
+                "volumeMounts": [{
+                    "name": "sower-jobs-creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/creds.json",
+                    "subPath": "creds.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "sower-jobs-creds-volume",
+                "secret": {
+                    "secretName": "sower-jobs-g3auto"
                 }
-              }
-            }
-          ],
-          "volumeMounts": [
-            {
-              "name": "sower-jobs-creds-volume",
-              "readOnly": true,
-              "mountPath": "/creds.json",
-              "subPath": "creds.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
+            }],
+            "restart_policy": "Never"
         },
-        "volumes": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "secret": {
-              "secretName": "sower-jobs-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      },
-      {
-        "name": "indexd-manifest",
-        "action": "download-indexd-manifest",
-        "activeDeadlineSeconds": 86400,
-        "serviceAccountName": "jobs-preprod-healdata-org",
-        "container": {
-          "name": "job-task",
-          "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.01",
-          "pull_policy": "Always",
-          "env": [
-            {
-              "name": "GEN3_HOSTNAME",
-              "valueFrom": {
-                "configMapKeyRef": {
-                  "name": "manifest-global",
-                  "key": "hostname"
+        {
+            "name": "manifest-merging",
+            "action": "merge-manifests",
+            "activeDeadlineSeconds": 86400,
+            "serviceAccountName": "jobs-preprod-healdata-org",
+            "container": {
+                "name": "job-task",
+                "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2022.01",
+                "pull_policy": "Always",
+                "env": [{
+                    "name": "GEN3_HOSTNAME",
+                    "valueFrom": {
+                        "configMapKeyRef": {
+                            "name": "manifest-global",
+                            "key": "hostname"
+                        }
+                    }
+                }],
+                "volumeMounts": [{
+                    "name": "sower-jobs-creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/creds.json",
+                    "subPath": "creds.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "sower-jobs-creds-volume",
+                "secret": {
+                    "secretName": "sower-jobs-g3auto"
                 }
-              }
-            }
-          ],
-          "volumeMounts": [
-            {
-              "name": "sower-jobs-creds-volume",
-              "readOnly": true,
-              "mountPath": "/creds.json",
-              "subPath": "creds.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
+            }],
+            "restart_policy": "Never"
         },
-        "volumes": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "secret": {
-              "secretName": "sower-jobs-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      },
-      {
-        "name": "batch-export",
-        "action": "batch-export",
-        "activeDeadlineSeconds": 600,
-        "container": {
-          "name": "job-task",
-          "image": "quay.io/cdis/batch-export:feat_zip",
-          "pull_policy": "Always",
-          "env": [
-            {
-              "name": "GEN3_HOSTNAME",
-              "valueFrom": {
-                "configMapKeyRef": {
-                  "name": "manifest-global",
-                  "key": "hostname"
+        {
+            "name": "indexd-manifest",
+            "action": "download-indexd-manifest",
+            "activeDeadlineSeconds": 86400,
+            "serviceAccountName": "jobs-preprod-healdata-org",
+            "container": {
+                "name": "job-task",
+                "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.01",
+                "pull_policy": "Always",
+                "env": [{
+                    "name": "GEN3_HOSTNAME",
+                    "valueFrom": {
+                        "configMapKeyRef": {
+                            "name": "manifest-global",
+                            "key": "hostname"
+                        }
+                    }
+                }],
+                "volumeMounts": [{
+                    "name": "sower-jobs-creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/creds.json",
+                    "subPath": "creds.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "sower-jobs-creds-volume",
+                "secret": {
+                    "secretName": "sower-jobs-g3auto"
                 }
-              }
-            }
-          ],
-          "volumeMounts": [
-            {
-              "name": "batch-export-creds-volume",
-              "readOnly": true,
-              "mountPath": "/batch-export-creds.json",
-              "subPath": "config.json"
-            }
-          ],
-          "cpu-limit": "1",
-          "memory-limit": "1Gi"
+            }],
+            "restart_policy": "Never"
         },
-        "volumes": [
-          {
-            "name": "batch-export-creds-volume",
-            "secret": {
-              "secretName": "batch-export-g3auto"
-            }
-          }
-        ],
-        "restart_policy": "Never"
-      }
+        {
+            "name": "batch-export",
+            "action": "batch-export",
+            "activeDeadlineSeconds": 600,
+            "container": {
+                "name": "job-task",
+                "image": "quay.io/cdis/batch-export:feat_zip",
+                "pull_policy": "Always",
+                "env": [{
+                    "name": "GEN3_HOSTNAME",
+                    "valueFrom": {
+                        "configMapKeyRef": {
+                            "name": "manifest-global",
+                            "key": "hostname"
+                        }
+                    }
+                }],
+                "volumeMounts": [{
+                    "name": "batch-export-creds-volume",
+                    "readOnly": true,
+                    "mountPath": "/batch-export-creds.json",
+                    "subPath": "config.json"
+                }],
+                "cpu-limit": "1",
+                "memory-limit": "1Gi"
+            },
+            "volumes": [{
+                "name": "batch-export-creds-volume",
+                "secret": {
+                    "secretName": "batch-export-g3auto"
+                }
+            }],
+            "restart_policy": "Never"
+        }
     ],
     "ssjdispatcher": {
-      "job_images": {
-        "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.01"
-      }
+        "job_images": {
+            "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.01"
+        }
     },
     "indexd": {
-      "arborist": "true"
+        "arborist": "true"
     },
     "global": {
-      "environment": "healpreprod",
-      "hostname": "preprod.healdata.org",
-      "revproxy_arn": "arn:aws:acm:us-east-1:205252583234:certificate/8bb3d424-be34-493c-a43b-e2c686c9dc6c",
-      "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/heal_dictionary/1.1.0/schema.json",
-      "portal_app": "gitops",
-      "sync_from_dbgap": "False",
-      "kube_bucket": "kube-healprod-gen3",
-      "logs_bucket": "logs-healprod-gen3",
-      "dispatcher_job_num": "10",
-      "netpolicy": "on",
-      "tier_access_level": "libre",
-      "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
+        "environment": "healpreprod",
+        "hostname": "preprod.healdata.org",
+        "revproxy_arn": "arn:aws:acm:us-east-1:205252583234:certificate/8bb3d424-be34-493c-a43b-e2c686c9dc6c",
+        "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/heal_dictionary/1.1.0/schema.json",
+        "portal_app": "gitops",
+        "sync_from_dbgap": "False",
+        "kube_bucket": "kube-healprod-gen3",
+        "logs_bucket": "logs-healprod-gen3",
+        "dispatcher_job_num": "10",
+        "netpolicy": "on",
+        "tier_access_level": "libre",
+        "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml"
     },
     "canary": {
-      "default": 0
+        "default": 0
     }
-  }
-  
+}
