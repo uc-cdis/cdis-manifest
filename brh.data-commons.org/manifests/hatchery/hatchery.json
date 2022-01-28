@@ -2,50 +2,11 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
-  "pay-models": [
-    {
-      "user_id": "mshao1@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "qureshi@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "cgmeyer@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "craigrbarnes@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "xritter@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "jmontmaxwell@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "dongxiao@uchicago.edu",
-      "aws_account_id": "354484406138",
-      "name": "brhworkspaces",
-      "region": "us-east-1"
-    }
-  ],
+  "default-pay-model": {
+    "aws_account_id": "354484406138",
+    "name": "brhworkspaces",
+    "region": "us-east-1"
+  },
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
