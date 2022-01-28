@@ -74,6 +74,12 @@
 				"type": "indexd"
 			},
 			{
+				"name": "AnVIL External Staging",
+				"host": "https://staging.theanvil.io/index/",
+				"hints": [".*dg\\.dg.4AE8.*"],
+				"type": "indexd"
+			},
+			{
 				"name": "JCOIN",
 				"host": "https://jcoin.datacommons.io/index/",
 				"hints": [".*dg\\.6VTS.*"],
