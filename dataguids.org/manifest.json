@@ -35,91 +35,91 @@
 				"name": "DataSTAGE",
 				"host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
 				"hints": [".*dg\\.4503.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "OCC Environmental DC",
 				"host": "https://portal.occ-data.org/index/",
 				"hints": [".*dg\\.7C5B.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "Kids First",
 				"host": "https://data.kidsfirstdrc.org/index/",
 				"hints": [".*dg\\.F82A1A.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "DX DOI",
 				"host": "https://dx.doi.org/",
 				"hints": ["10\\..*"],
-				"type": "doi"
+				"type": "doi",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "NCI CRDC",
 				"host": "https://nci-crdc.datacommons.io/index/",
 				"hints": [],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "AnVIL",
 				"host": "https://gen3.theanvil.io/index/",
 				"hints": [".*dg\\.ANV0.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "JCOIN",
 				"host": "https://jcoin.datacommons.io/index/",
 				"hints": [".*dg\\.6VTS.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "HEAL",
 				"host": "https://healdata.org/index/",
 				"hints": [".*dg\\.H34L.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "External Data HEAL",
 				"host": "https://externaldata.healdata.org/index/",
 				"hints": [".*dg\\.H35L.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},        
 			{
 				"name": "Genomics Aotearoa Data",
 				"host": "https://repo.data.nesi.org.nz/index/",
 				"hints": [".*dg\\.GAD88.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "no"
 			},
 			{
 				"name": "GAD",
 				"host": "https://data.agdr.org.nz/index/",
 				"hints": [".*dg\\.GAD89.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "no"
 			},
 			{
 				"name": "UMCCR AGHA",
 				"host": "https://gen3.agha.umccr.org/index/",
 				"hints": [".*dg\\.UM33R90.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			},
 			{
 				"name": "BloodPAC",
 				"host": "https://data.bloodpac.org/index/",
 				"hints": [".*dg\\.5B0D.*"],
-				"type": "indexd"
+				"type": "indexd",
 				"ownedByCTDS": "yes"
 			}   	    
 		]
