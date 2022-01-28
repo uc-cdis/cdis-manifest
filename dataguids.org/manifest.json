@@ -38,6 +38,12 @@
 				"type": "indexd"
 			},
 			{
+				"name": "BDCat External Staging",
+				"host": "https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/index/",
+				"hints": [".*dg\\.712C.*"],
+				"type": "indexd"
+			},
+			{
 				"name": "OCC Environmental DC",
 				"host": "https://portal.occ-data.org/index/",
 				"hints": [".*dg\\.7C5B.*"],
