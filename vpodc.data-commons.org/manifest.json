@@ -37,8 +37,8 @@
   },
   "global": {
     "environment": "vadcprod",
-    "hostname": "vpodc.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:663707118480:certificate/a8d0710c-f6b0-4e27-bb61-6d0ee353c4bd",
+    "hostname": "vpodc.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:663707118480:certificate/69ecb9e8-bcc8-4e91-9248-5eb3fcab5940",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.4/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-vadcprod-gen3",

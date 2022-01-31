@@ -1,6 +1,6 @@
 # TL;DR
 
-gen3 configuration for vpodc.org
+gen3 configuration for vpodc.data-commons.org
 
 ## Configuration Details
 
