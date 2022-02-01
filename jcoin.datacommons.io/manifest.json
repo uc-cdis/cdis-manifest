@@ -78,7 +78,7 @@
         "cpu-limit": "1.0",
         "memory-limit": "1024Mi",
         "name": "R Studio",
-        "image": "quay.io/cdis/rstudio:master",
+        "image": "quay.io/cdis/rstudio3.6:master",
         "env": {
           "DISABLE_AUTH": "true"
         },
