@@ -104,6 +104,96 @@
 				"type": "indexd"
 			},
 			{
+				 "name": "Accessclinicaldata",
+				 "host": "https://accessclinicaldata.niaid.nih.gov/index/",
+				 "hints": [".*dg\\.NACD.*"],
+				 "type": "indexd"
+			},
+			{
+				"name": "AcctBionimbus",
+				"host": "https://acct.bionimbus.org/index/",
+				"hints": [".*dg\\.4825.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Genomeldata",
+				"host": "https://genomel.bionimbus.org/index/",
+				"hints": [".*dg\\.80B6.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "ibdgcdata",
+				"host": "https://ibdgc.datacommons.io/index/",
+				"hints": [".*dg\\.EA80.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Stageprod",
+				"host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
+				"hints": [".*dg\\.4503.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Braincommons",
+				"host": "https://www.braincommons.org/index/",
+				"hints": [".*dg\\.7519.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "occ-edc",
+				"host": "https://portal.occ-data.org/index/",
+				"hints": [".*dg\\.7C5B.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "PDC",
+				"host": "https://icgc.bionimbus.org/index/",
+				"hints": [".*dg\\.4DFC.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Stagingdatastage",
+				"host": "https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/index/",
+				"hints": [".*dg\\.712C.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Covid19",
+				"host": "http://chicagoland.pandemicresponsecommons.org/index/",
+				"hints": [".*dg\\.63D5.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "occ-covid19",
+				"host": "http://covid19.occ-pla.net/index/",
+				"hints": [".*dg\\.6539.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "MIDRC",
+				"host": "https://data.midrc.org/index/",
+				"hints": [".*dg\\.MD1R.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "NCI CRDC",
+				"host": "https://nci-crdc.datacommons.io/index/",
+				"hints": [".*dg\\.NCI35.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "Canine",
+				"host": "https://caninedc.org/index/",
+				"hints": [".*dg\\.C78ne.*"],
+				"type": "indexd"
+			},
+			{
+				"name": "VPO",
+				"host": "https://vpodc.org/login/index/",
+				"hints": [".*dg\\.VP07.*"],
+				"type": "indexd"
+			},
+			{
 				"name": "BloodPAC",
 				"host": "https://data.bloodpac.org/index/",
 				"hints": [".*dg\\.5B0D.*"],
