@@ -222,7 +222,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CGC",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -230,7 +230,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CAVATICA",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -238,7 +238,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to BDC (Seven Bridges)",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -373,7 +373,36 @@
         "accessibleValidationField": "project_id",
         "downloadAccessor": "object_id"
       },
+      "dropdowns": {
+        "sevenBridges": {
+          "title": "Export to Seven Bridges"
+        }
+      },
       "buttons": [
+        {
+          "enabled": true,
+          "type": "export-file-pfb-to-url",
+          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "title": "Export to CGC",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
+        {
+          "enabled": true,
+          "type": "export-file-pfb-to-url",
+          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "title": "Export to CAVATICA",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
+        {
+          "enabled": true,
+          "type": "export-file-pfb-to-url",
+          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "title": "Export to BDC (Seven Bridges)",
+          "rightIcon": "external-link",
+          "dropdownId": "sevenBridges"
+        },
         {
           "enabled": true,
           "type": "export-files-to-workspace",
@@ -399,8 +428,7 @@
       "enableLimitedFilePFBExport": {
         "sourceNodeField": "source_node"
       },
-      "terraExportURL": "https://anvil.terra.bio/#import-data",
-      "dropdowns": {}
+      "terraExportURL": "https://anvil.terra.bio/#import-data"
     },
     {
       "tabTitle": "Downloadable",

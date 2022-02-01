@@ -1151,39 +1151,6 @@
   "covid19DashboardConfig": {
     "dataUrl": "https://opendata.datacommons.io/",
     "chartsConfig": {
-      "world": [
-        [
-          {
-            "title": "Cumulative Testing in the United States",
-            "description": "The source of the data used to compile this chart is the COVID Tracking Project. This chart depicts the total number of tests to date for the top 10 states that have administered the most tests in the US.",
-            "xTitle": "State",
-            "yTitle": "Number of Tests",
-            "type": "barChart",
-            "layout": "horizontal",
-            "maxItems": 10,
-            "barColor": "#421C52",
-            "guppyConfig": {
-              "dataType": "location",
-              "xAxisProp": "province_state",
-              "yAxisProp": "totalTestsViral",
-              "filters": {
-                "=": {
-                  "project_id": "open-CTP"
-                }
-              }
-            }
-          }
-        ],
-        [
-          {
-            "title": "Daily Confirmed Cases (5-day Moving Average)",
-            "description": "This plot visualizes the number of newly confirmed COVID-19 cases for the 10 most affected countries using a 5-day moving average. This is calculated for each plotted day by averaging the values of that day, the two previous days, and the two following days. This approach helps prevent major events from skewing the data.",
-            "yTitle": "Confirmed New Cases",
-            "type": "lineChart",
-            "prop": "top10ChartData"
-          }
-        ]
-      ],
       "illinois": [
         [
           {
