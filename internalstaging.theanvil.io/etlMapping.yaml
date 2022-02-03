@@ -173,6 +173,6 @@ mappings:
             fn: set
       sample:
         props:
-         - name: sample_submitter_id
-           src: submitter_id
-           fn: set
+          - name: sample_submitter_id
+            src: submitter_id
+            fn: set
