@@ -117,11 +117,11 @@
     "systemUse": {
       "systemUseTitle" : "Data Use Agreement for Academic and Institutional Users",
       "systemUseText" : [
-      "This Data Use Agreement for Academic and Institutional Users (this “Agreement”) is by and between you and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement.", 
-          "1. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data solely for your personal, Non-Commercial Research Purposes. Any commercial use, sale, or other monetization is prohibited. “Non-Commercial Research Purposes” means academic research or other not-for-profit scholarly purposes which are undertaken at a non-profit or government institution and publishing in connection therewith.", 
+          "This Data Use Agreement for Academic and Institutional Users (this “Agreement”) is by and between you and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement.",
+          "1. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data solely for your personal, Non-Commercial Research Purposes. Any commercial use, sale, or other monetization is prohibited. “Non-Commercial Research Purposes” means academic research or other not-for-profit scholarly purposes which are undertaken at a non-profit or government institution and publishing in connection therewith.",
           "2. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
           "3. You will use the MIDRC Data only in compliance with all applicable laws and regulations.",
-          "4. You may make a verbatim copy of the MIDRC Data for personal, non-commercial research use. If another user within your organization wishes to use the MIDRC Data, they must separately download the data set and enter into an Agreement directly with the University.", 
+          "4. You may make a verbatim copy of the MIDRC Data for personal, non-commercial research use. If another user within your organization wishes to use the MIDRC Data, they must separately download the data set and enter into an Agreement directly with the University.",
           "5. You may not distribute, publish, or reproduce a copy of any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
           "6. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data.",
           "7. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
@@ -176,6 +176,10 @@
           {
             "link": "https://gen3.org/resources/user/",
             "name": "Documentation"
+          },
+          {
+            "link": "https://hhs.responsibledisclosure.com/hc/en-us",
+            "name": "HHS Responsible Disclosure"
           },
           {
             "icon": "upload",
@@ -267,14 +271,38 @@
               "project_id"
             ]
           },
+          "dropdowns": {
+            "download-table": {
+              "title": "Download Case Metadata Table"
+            }
+          },
           "buttons": [
             {
               "enabled": true,
-              "type": "data",
-              "title": "Download Case Metadata",
-              "leftIcon": "user",
+              "type": "data-json",
+              "title": "JSON",
+              "dropdownId": "download-table",
+              "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "MIDRC_case_metadata.json"
+              "fileName": "MIDRC_Cases_table.json"
+            },
+            {
+              "enabled": true,
+              "type": "data-tsv",
+              "title": "TSV",
+              "dropdownId": "download-table",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_Cases_table.tsv"
+            },
+            {
+              "enabled": true,
+              "type": "data-csv",
+              "title": "CSV",
+              "dropdownId": "download-table",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_Cases_table.csv"
             },
             {
               "enabled": true,
@@ -282,7 +310,7 @@
               "title": "Download File Manifest for Cases",
               "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "MIDRC_imaging_file_manifest.json"
+              "fileName": "MIDRC_case_manifest.json"
             },
             {
               "enabled": false,
@@ -350,8 +378,7 @@
             },
             "accessibleFieldCheckList": ["project_id"],
             "accessibleValidationField": "project_id"
-          },
-          "dropdowns": {}
+          }
         },
         {
             "tabTitle": "Datasets",
@@ -398,6 +425,55 @@
                 "data_url_doi"
               ]
             },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download Dataset Table"
+              }
+            },
+            "buttons": [
+              {
+                "enabled": true,
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_datasets_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_datasets_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_datasets_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest for Datasets",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_dataset_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
+              }
+            ],
             "loginForDownload": true,
             "guppyConfig": {
               "dataType": "dataset",
@@ -460,33 +536,7 @@
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data",
-                "title": "Download Dataset Metadata",
-                "leftIcon": "user",
-                "rightIcon": "download",
-                "fileName": "MIDRC_dataset_descriptions.json"
-              },
-              {
-                "enabled": true,
-                "type": "manifest",
-                "title": "Download File Manifest for Datasets",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_imaging_file_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "dropdowns": {}
+            }
         },
         {
             "tabTitle": "Imaging Studies",
@@ -564,14 +614,38 @@
                 "project_id"
               ]
             },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download Imaging Studies Table"
+              }
+            },
             "buttons": [
               {
                 "enabled": true,
-                "type": "data",
-                "title": "Download Imaging Study Metadata",
-                "leftIcon": "user",
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_imaging_study_metadata.json"
+                "fileName": "MIDRC_Imaging_Studies_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Studies_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Studies_table.csv"
               },
               {
                 "enabled": true,
@@ -579,7 +653,7 @@
                 "title": "Download File Manifest for Imaging Studies",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_imaging_file_manifest.json"
+                "fileName": "MIDRC_imaging_study_manifest.json"
               },
               {
                 "enabled": false,
@@ -643,8 +717,7 @@
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
-            },
-            "dropdowns": {}
+            }
         },
         {
             "tabTitle": "Digital Radiography Exams",
@@ -740,14 +813,38 @@
                 "project_id"
               ]
             },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download Radiography Exams Table"
+              }
+            },
             "buttons": [
               {
                 "enabled": true,
-                "type": "data",
-                "title": "Download Radiography Exam Metadata",
-                "leftIcon": "user",
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_Radiography_Exam_metadata.json"
+                "fileName": "MIDRC_Radiography_Exams_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Radiography_Exams_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Radiography_Exams_table.csv"
               },
               {
                 "enabled": true,
@@ -803,8 +900,7 @@
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
-            },
-            "dropdowns": {}
+            }
         },
         {
             "tabTitle": "CT Scans",
@@ -911,14 +1007,38 @@
                 "project_id"
               ]
             },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download CT Scans Table"
+              }
+            },
             "buttons": [
               {
                 "enabled": true,
-                "type": "data",
-                "title": "Download CT Scan Metadata",
-                "leftIcon": "user",
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_CT_Scan_metadata.json"
+                "fileName": "MIDRC_CT_Scans_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_CT_Scans_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_CT_Scans_table.csv"
               },
               {
                 "enabled": true,
@@ -966,8 +1086,7 @@
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
-            },
-            "dropdowns": {}
+            }
         },
         {
             "tabTitle": "MR Exams",
@@ -1067,14 +1186,38 @@
                 "project_id"
               ]
             },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download MR Exams Table"
+              }
+            },
             "buttons": [
               {
                 "enabled": true,
-                "type": "data",
-                "title": "Download MR Exam Metadata",
-                "leftIcon": "user",
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_MR_Exam_metadata.json"
+                "fileName": "MIDRC_MR_Exams_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_MR_Exams_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_MR_Exams_table.csv"
               },
               {
                 "enabled": true,
@@ -1122,8 +1265,7 @@
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
-            },
-            "dropdowns": {}
+            }
         }
     ]
 }
