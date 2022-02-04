@@ -44,7 +44,7 @@ mappings:
         path: samples
         src: submitter_id
         fn: set
-      - name: sequencing_asssay_submitter_id
+      - name: sequencing_assay_submitter_id
         path: samples.sequencings
         src: submitter_id
         fn: set
@@ -174,5 +174,10 @@ mappings:
       sample:
         props:
           - name: sample_submitter_id
+            src: submitter_id
+            fn: set
+      sequencing:
+        props:
+          - name: sequencing_assay_submitter_id
             src: submitter_id
             fn: set
