@@ -2,209 +2,67 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
-  "pay-models": [{
-      "user_id": "aprokh@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "atharvar@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "avantol@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "emalinowski@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "fan1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "haraprasadj@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mcannalte@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mpingram@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "nmetokishlubsky@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "ribeyre@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "svburke@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mshao1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "craigrbarnes@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
+  "default-pay-model": {
+    "aws_account_id": "252835817747",
+    "name": "healworkspaces",
+    "region": "us-east-1"
+  },
+  "pay-models": [
     {
       "user_id": "cgmeyer@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 0
     },
     {
       "user_id": "xritter@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 2
     },
     {
-      "user_id": "planxdemo@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
+      "user_id": "egiger@uchicago.edu",
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 3
+    },
+    {
+      "user_id": "vzpgb@uchicago.edu",
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 4
+    },
+    {
+      "user_id": "ppischl@uchicago.edu",
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 5
+    },
+    {
+      "user_id": "fbooker@uchicago.edu",
+      "aws_account_id": "134208290168",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 6
     },
     {
       "user_id": "hughestr@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "tara@taralichtenberg.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "trevars@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "qureshi@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mbkranz@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "jmontmaxwell@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "rgrossman1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "philschumm@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "Kranz-michael@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "0000-0002-0093-3367",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "tentner-andrea@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "LeClere-Felicia@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "Kantor-Liz@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "manorathan@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "kwroblewski@health.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "rchua@bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "ahotton@medicine.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "bryanb@medicine.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
+      "aws_account_id": "052829097577",
+      "name": "strides_grant",
+      "region": "us-east-1",
+      "ecs": "true",
+      "subnet": 0
     }
   ],
   "sidecar": {
