@@ -434,9 +434,9 @@ mappings:
           - name: series_uid
             src: series_uid
             fn: set
-#           - name: spatial_resolution
-#             src: spatial_resolution
-#             fn: set
+          - name: spatial_resolution
+            src: spatial_resolution
+            fn: set
   - name: midrcstaging_radiography_exam
     doc_type: radiography_exam
     type: aggregator
@@ -521,9 +521,9 @@ mappings:
           - name: series_uid
             src: series_uid
             fn: set
-#           - name: spatial_resolution
-#             src: spatial_resolution
-#             fn: set
+          - name: spatial_resolution
+            src: spatial_resolution
+            fn: set
   - name: midrcstaging_mr_exam
     doc_type: mr_exam
     type: aggregator
@@ -638,9 +638,9 @@ mappings:
           - name: series_uid
             src: series_uid
             fn: set
-#           - name: spatial_resolution
-#             src: spatial_resolution
-#             fn: set
+          - name: spatial_resolution
+            src: spatial_resolution
+            fn: set
   - name: midrcstaging_imaging_series
     doc_type: imaging_series
     type: collector
@@ -658,7 +658,7 @@ mappings:
       - name: series_name
       - name: series_type
       - name: series_uid
-#       - name: spatial_resolution
+      - name: spatial_resolution
     injecting_props:
       imaging_study:
         props:
