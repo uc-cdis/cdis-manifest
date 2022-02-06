@@ -264,14 +264,15 @@
     "environment": "qaplanetv1",
     "hostname": "nigthly.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bpadictionary/develop/schema.json",
+    "dictionary_url": "",
     "portal_app": "gitops",
     "kube_bucket": "kube-qaplanetv1-gen3",
     "logs_bucket": "logs-qaplanetv1-gen3",
     "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml",
     "dispatcher_job_num": "5",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "mutatedEnvHostname": "vpodc.org"
   },
   "ssjdispatcher": {
     "job_images": {
