@@ -50,10 +50,10 @@
 				"type": "indexd"
 			},
 			{
-				"name": "DX DOI",
-				"host": "https://dx.doi.org/",
-				"hints": ["10\\..*"],
-				"type": "doi"
+				"name": "VA Data",
+				"host": "https://va.data-commons.org/index/",
+				"hints": [".*dg\\.F738.*"],
+				"type": "indexd"
 			},
 			{
 				"name": "NCI CRDC",
@@ -134,21 +134,9 @@
 				"type": "indexd"
 			},
 			{
-				"name": "Braincommons",
-				"host": "https://www.braincommons.org/index/",
-				"hints": [".*dg\\.7519.*"],
-				"type": "indexd"
-			},
-			{
 				"name": "occ-edc",
 				"host": "https://portal.occ-data.org/index/",
 				"hints": [".*dg\\.7C5B.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "PDC",
-				"host": "https://icgc.bionimbus.org/index/",
-				"hints": [".*dg\\.4DFC.*"],
 				"type": "indexd"
 			},
 			{
@@ -158,15 +146,9 @@
 				"type": "indexd"
 			},
 			{
-				"name": "Covid19",
+				"name": "PRC",
 				"host": "http://chicagoland.pandemicresponsecommons.org/index/",
 				"hints": [".*dg\\.63D5.*"],
-				"type": "indexd"
-			},
-			{
-				"name": "occ-covid19",
-				"host": "http://covid19.occ-pla.net/index/",
-				"hints": [".*dg\\.6539.*"],
 				"type": "indexd"
 			},
 			{
@@ -189,7 +171,7 @@
 			},
 			{
 				"name": "VPO",
-				"host": "https://vpodc.org/login/index/",
+				"host": "https://vpodc.data-commons.org/login/index/",
 				"hints": [".*dg\\.VP07.*"],
 				"type": "indexd"
 			},
