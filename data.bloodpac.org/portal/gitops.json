@@ -116,6 +116,13 @@
         }
       ]
     },
+    "systemUse": {
+      "systemUseTitle" : "BloodPAC User Agreement",
+      "systemUseText" : [
+        "NOTICE:  To protect the system from unauthorized use and to ensure that the system is functioning, activities on this system are monitored and recorded and subject to audit.  Use of this system is express consent to such monitoring and recording.  Any unauthorized access or use of this system is prohibited.  You may only use this system if you have been designated as an Authenticated Individual by your company or institution.  You may not use the system in any way that is inconsistent with the agreements between CCSR and your company or institution. Please pay particular attention to the restrictions on controlled access data and transfer it in an approved secure manner."],
+      "displayUseMsg": "cookie",
+      "expireUseMsgDays" : 365
+    },
     "navigation": {
       "title": "BloodPAC Data Commons",
       "items": [{
@@ -183,23 +190,8 @@
       "text": "This website combines liquid biopsy data from academic, government, and industry partners and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for the treatment and prevention of cancer.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "bpa-support@datacommons.io"
-    },
-    "certs": {
-      "security_quiz": {
-        "hasCorrectAnswers": true,
-        "title": "BloodPAC User agreement",
-        "description": "",
-        "questions": [{
-          "name": "",
-          "question": "NOTICE:  To protect the system from unauthorized use and to ensure that the system is functioning, activities on this system are monitored and recorded and subject to audit.  Use of this system is express consent to such monitoring and recording.  Any unauthorized access or use of this system is prohibited.  You may only use this system if you have been designated as an Authenticated Individual by your company or institution.  You may not use the system in any way that is inconsistent with the agreements between CCSR and your company or institution. Please pay particular attention to the restrictions on controlled access data and transfer it in an approved secure manner.",
-          "options": ["I agree"],
-          "answer": 0,
-          "hint": "Click on I agree"
-        }]
-      }
     }
   },
-  "requiredCerts": ["security_quiz"],
   "featureFlags": {
     "explorer": true,
     "analysis": true,
