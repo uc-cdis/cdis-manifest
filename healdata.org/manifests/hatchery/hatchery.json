@@ -775,7 +775,7 @@
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
       "image": "quay.io/cdis/heal-notebooks:combined_tutorials__0a64adf45de847ff1d824c2ce24e2983bf56eb24",
       "env": {
-        "FRAME_ANCESTORS": "https://preprod.healdata.org"
+        "FRAME_ANCESTORS": "https://healdata.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
