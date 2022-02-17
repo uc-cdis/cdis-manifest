@@ -2,7 +2,12 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
-  "pay-models": [{
+  "default-pay-model": {
+      "aws_account_id": "252835817747",
+      "name": "healworkspaces",
+      "region": "us-east-1"
+    },
+    "pay-models": [{
       "user_id": "JUEHNEAL",
       "aws_account_id": "252835817747",
       "name": "healworkspaces",
