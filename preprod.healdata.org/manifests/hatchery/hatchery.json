@@ -7,64 +7,6 @@
     "name": "healworkspaces",
     "region": "us-east-1"
   },
-  "pay-models": [
-    {
-      "user_id": "cgmeyer@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 0
-    },
-    {
-      "user_id": "xritter@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 2
-    },
-    {
-      "user_id": "egiger@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 3
-    },
-    {
-      "user_id": "vzpgb@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 4
-    },
-    {
-      "user_id": "ppischl@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 5
-    },
-    {
-      "user_id": "fbooker@uchicago.edu",
-      "aws_account_id": "134208290168",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 6
-    },
-    {
-      "user_id": "hughestr@uchicago.edu",
-      "aws_account_id": "052829097577",
-      "name": "strides_grant",
-      "region": "us-east-1",
-      "ecs": "true",
-      "subnet": 0
-    }
-  ],
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
