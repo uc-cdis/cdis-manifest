@@ -8,6 +8,12 @@ mappings:
       - name: project_id
       - name: consent_codes
       - name: geographic_site
+    nested_props:
+      - name: blood_pressure_test
+        path: blood_pressure_test
+        props:
+          - name: bp_systolic
+          - name: bp_diastolic
     flatten_props:
       - path: demographics
         props:
@@ -40,10 +46,7 @@ mappings:
           - name: vte_case_status
           - name: vte_followup_start_age
           - name: vte_prior_history
-      - path: blood_pressure_test
-        props:
-          - name: bp_systolic
-          - name: bp_diastolic
+
       - path: medication_records
         props:
           - name: hypertension_meds
