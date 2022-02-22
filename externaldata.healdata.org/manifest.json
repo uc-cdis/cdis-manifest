@@ -7,11 +7,9 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.02",
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:0.1.0",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.02",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:0.3.0",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.02",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.02",
