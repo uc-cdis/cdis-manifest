@@ -47,7 +47,9 @@
       "name": "Bioinfo - Python/R",
       "image": "quay.io/cdis/jupyter-notebook:1.2.0",
       "env": {
-        "NAMESPACE": "vadc"
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -76,7 +78,9 @@
       "name": "Bioinfo - Python/R (Lab Edition)",
       "image": "quay.io/cdis/jupyter-notebook:1.2.0",
       "env": {
-        "NAMESPACE": "vadc"
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -106,7 +110,9 @@
       "name": "Bioinfo - Python/R",
       "image": "quay.io/cdis/jupyter-notebook:1.2.0",
       "env": {
-        "NAMESPACE": "vadc"
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -135,7 +141,9 @@
       "name": "Bioinfo - Python/R (Lab Edition)",
       "image": "quay.io/cdis/jupyter-notebook:1.2.0",
       "env": {
-        "NAMESPACE": "vadc"
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
