@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2021.09",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2022.02",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "accessclinicaldata.niaid.nih.gov"
@@ -25,51 +25,51 @@
     ]
   },
   "containers": [
-      {
-        "target-port": 8787,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "R Studio",
-        "image": "quay.io/cdis/rstudio:master",
-        "env": {
-          "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "user-volume-location": "/home/rstudio/pd",
-        "fs-gid": 100
+    {
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio",
+      "image": "quay.io/cdis/rstudio:master",
+      "env": {
+        "DISABLE_AUTH": "true"
       },
-      {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "Jupyter (Python 3.9.5, R 4.1.0)",
-        "image": "quay.io/cdis/jupyter-6.4.0-with-base-packages:latest",
-        "env": {
-          "NAMESPACE": "default",
-          "FRAME_ANCESTORS": "https://accessclinicaldata.niaid.nih.gov/"
-        },
-        "args": [
-          "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''",
-          "--NotebookApp.token=''"
-        ],
-        "command": [
-          "start-notebook.sh"
-        ],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": [
-          "/bin/sh",
-          "-c",
-          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-        ],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-      }
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Jupyter (Python 3.9.5, R 4.1.0)",
+      "image": "quay.io/cdis/jupyter-6.4.0-with-base-packages:latest",
+      "env": {
+        "NAMESPACE": "default",
+        "FRAME_ANCESTORS": "https://accessclinicaldata.niaid.nih.gov/"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    }
   ]
 }
