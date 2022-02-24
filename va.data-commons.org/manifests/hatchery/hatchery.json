@@ -45,7 +45,7 @@
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R",
-      "image": "quay.io/cdis/jupyter-notebook:1.2.0",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
@@ -65,7 +65,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -76,7 +76,7 @@
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-notebook:1.2.0",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
@@ -97,7 +97,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -108,7 +108,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "8192Mi",
       "name": "Bioinfo - Python/R",
-      "image": "quay.io/cdis/jupyter-notebook:1.2.0",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
@@ -128,7 +128,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -139,7 +139,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "8192Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-notebook:1.2.0",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
@@ -160,7 +160,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
