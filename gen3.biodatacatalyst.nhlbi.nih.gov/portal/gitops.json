@@ -338,7 +338,7 @@
         "rightIcon": "download"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "type": "export-to-workspace",
         "title": "Export to Workspace",
         "leftIcon": "datafile",
@@ -606,26 +606,26 @@
         "dropdownId": "download"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "type": "export-files-to-workspace",
         "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "download"
       },
       {
-        "enabled": false,
+        "enabled": true,
         "type": "export-files-to-pfb",
         "title": "Export All to PFB",
         "rightIcon": "external-link"
       },
       {
-        "enabled": false,
+        "enabled": true,
         "type": "export-files",
         "title": "Export All to Terra",
         "rightIcon": "external-link"
       },
       {
-        "enabled": false,
+        "enabled": true,
         "type": "export-files-to-seven-bridges",
         "title": "Export All to Seven Bridges",
         "rightIcon": "external-link"
