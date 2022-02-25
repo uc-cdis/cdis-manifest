@@ -122,11 +122,21 @@
         "enabled": false,
         "field": "advSearchFilters",
         "filters": [
-          { "key": "Research Focus Area" },
-          { "key": "Administering IC(s)" },
-          { "key": "Simulated vs. Real Data" },
-          { "key": "Year Grant Awarded" },
-          { "key": "Study Description" }
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
         ]
       },
       "exportToWorkspace": {
@@ -174,7 +184,7 @@
         },
         "tagSearchDropdown": {
           "enabled": true,
-          "collapsibleButtonText": "Study Characteristics"
+          "collapsibleButtonText": "Study Filters"
         }
       },
       "authorization": {
@@ -323,20 +333,20 @@
           ]
         },
         {
-        "groupName": "Tags",
-        "includeName": false,
-        "groupWidth": "full",
-        "fields": [
-          {
-            "name": "Study Characteristics",
-            "field": "tags",
-            "contentType": "tags",
-            "includeIfNotAvailable": false
-          }
-        ]
-      },
-      {
-        "groupWidth": "full",
+          "groupName": "Tags",
+          "includeName": false,
+          "groupWidth": "full",
+          "fields": [
+            {
+              "name": "Study Characteristics",
+              "field": "tags",
+              "contentType": "tags",
+              "includeIfNotAvailable": false
+            }
+          ]
+        },
+        {
+          "groupWidth": "full",
           "fields": [
             {
               "name": "Summary",
@@ -415,9 +425,9 @@
             }
           ]
         }
-      ],
-      "tagsDisplayName": "Study Characteristics"
+      ]
     },
+    "tagsDisplayName": "Study Characteristics",
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
@@ -449,7 +459,7 @@
         "color": "#bf362e",
         "display": true
       },
-            {
+      {
         "name": "Pain",
         "color": "#e07c3e",
         "display": true
@@ -486,7 +496,7 @@
     "resources": [
       {
         "title": "BACPAC Synthetic Data Analysis",
-          "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+        "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
         "link": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.html",
         "imageUrl": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.png"
       },
