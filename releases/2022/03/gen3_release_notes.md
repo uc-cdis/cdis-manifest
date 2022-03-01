@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.03
+# Core Gen3 Release 2022.03 (Aquamarine)
 
 ## uc-cdis/fence
 
