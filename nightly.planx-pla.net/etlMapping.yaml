@@ -1,87 +1,122 @@
 mappings:
-  - name: gen3.theanvil.io_subject
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_subject
     doc_type: subject
     type: aggregator
     root: subject
     props:
       - name: submitter_id
       - name: project_id
-      - name: sex
-      - name: age_value
-      - name: ancestry
-      - name: disease_description
-      - name: phenotype_present
-      - name: phenotype_absent
-      - name: disease_id
-      - name: solve_state
-      - name: congenital_status
-      - name: age_of_onset
-      - name: phenotype_group
-      - name: anvil_project_id
-    #    flatten_props:
+      - name: consent_codes
+      - name: geographic_site
+    nested_props:
+      - name: blood_pressure_test
+        path: blood_pressure_test
+        props:
+          - name: bp_systolic
+          - name: bp_diastolic
+    flatten_props:
+      - path: demographics
+        props:
+          - name: age_at_index
+          - name: hispanic_subgroup
+          - name: subcohort
+          - name: weight_baseline
+          - name: bmi_baseline
+          - name: height_baseline
+      - path: medical_histories
+        props:
+          - name: diabetes
+          - name: hypertension
+          - name: cerebrovascular_disease
+          - name: chronic_respiratory_disease
+          - name: coronary_artery_disease
+          - name: asthma
+          - name: cabg_presence
+          - name: copd
+          - name: emphysema
+          - name: heart_failure
+          - name: myocardial_infarction
+          - name: stroke
+          - name: cac_score
+          - name: cac_volume
+          - name: carotid_plaque
+          - name: carotid_stenosis
+          - name: cimt_1
+          - name: cimt_2
+          - name: vte_case_status
+          - name: vte_followup_start_age
+          - name: vte_prior_history
+
+      - path: medication_records
+        props:
+          - name: hypertension_meds
+          - name: antihypertensive_meds
+          - name: fasting_lipids
+          - name: lipid_lowering_medication
+      - path: lab_results
+        props:
+          - name: lymphocyte_ncnc_bld
+          - name: mch_entmass_rbc
+          - name: mcv_entvol_rbc
+          - name: mchc_mcnc_rbc
+          - name: monocyte_ncnc_bld
+          - name: neutrophil_ncnc_bld
+          - name: pmv_entvol_bld
+          - name: rbc_ncnc_bld
+          - name: rdw_ratio_rbc
+          - name: hemoglobin_mcnc_bld
+          - name: platelet_ncnc_bld
+          - name: hematocrit_vfr_bld
+          - name: wbc_ncnc_bld
+          - name: basophil_ncnc_bld
+          - name: eosinophil_ncnc_bld
+          - name: unit_triglycerides
+          - name: hdl
+          - name: ldl
+          - name: triglycerides
+          - name: total_cholesterol
     aggregated_props:
-      - name: sample_provider
-        path: samples
-        src: sample_provider
+      - name: annotated_sex
+        path: demographics
+        src: annotated_sex
         fn: set
-      - name: tissue_affected_status
-        path: samples
-        src: tissue_affected_status
+      - name: race
+        path: demographics
+        src: race
         fn: set
-      - name: tissue_type
-        path: samples
-        src: tissue_type
-        fn: set
-      - name: sample_type
-        path: samples
-        src: sample_type
-        fn: set
-      - name: original_material_type
-        path: samples
-        src: original_material_type
-        fn: set
-      - name: sample_submitter_id
-        path: samples
-        src: submitter_id
-        fn: set
-      - name: sequencing_assay_submitter_id
-        path: samples.sequencings
-        src: submitter_id
-        fn: set
-      - name: exome_capture_platform
-        path: samples.sequencings
-        src: exome_capture_platform
-        fn: set
-      - name: library_prep_kit_method
-        path: samples.sequencings
-        src: library_prep_kit_method
-        fn: set
-      - name: capture_region_bed_file
-        path: samples.sequencings
-        src: capture_region_bed_file
-        fn: set
-      - name: reference_genome_build
-        path: samples.sequencings
-        src: reference_genome_build
-        fn: set
-      - name: sequencing_assay
-        path: samples.sequencings
-        src: sequencing_assay
-        fn: set
-      - name: alignment_method
-        path: samples.sequencings
-        src: alignment_method
-        fn: set
-      - name: data_processing_pipeline
-        path: samples.sequencings
-        src: data_processing_pipeline
+      - name: ethnicity
+        path: demographics
+        src: ethnicity
         fn: set
       - name: _samples_count
         path: samples
         fn: count
-      - name: _sequencings_count
-        path: samples.sequencings
+      - name: _aliquots_count
+        path: samples.aliquots
         fn: count
+      - name: _read_groups_count
+        path: samples.aliquots.read_groups
+        fn: count
+      - name: _submitted_unaligned_reads_files_count
+        path: samples.aliquots.read_groups.submitted_unaligned_reads_files
+        fn: count
+      - name: _submitted_aligned_reads_files_count
+        path: samples.aliquots.read_groups.submitted_aligned_reads_files
+        fn: count
+      - name: _simple_germline_variations_count
+        path: samples.aliquots.read_groups.simple_germline_variations
+        fn: count
+      - name: current_smoker_baseline
+        path: exposures
+        src: current_smoker_baseline
+        fn: set
+      - name: ever_smoker_baseline
+        path: exposures
+        src: ever_smoker_baseline
+        fn: set
+    parent_props:
+      - path: studies[studies_submitter_id:submitter_id].projects[code]
+      - path: studies[studies_submitter_id:submitter_id].projects[code].programs[programs_name:name]
     joining_props:
       - index: file
         join_on: _subject_id
@@ -92,92 +127,37 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-          - name: data_category
-            src: data_category
-            fn: set
-    parent_props:
-      - path: projects[project_code:code]
-      - path: projects[project_name:name]
-      - path: projects[project_dbgap_phs:dbgap_phs]
-      - path: projects[project_dbgap_consent_text:dbgap_consent_text]
-      - path: projects[project_short_name:short_name]
-      - path: projects[project_dbgap_accession_number:dbgap_accession_number]
-
-  - name: gen3.theanvil.io_file
+          - name: file_count
+            src: file_id
+            alternate_src: _file_id
+            fn: count
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_file
     doc_type: file
     type: collector
     root: None
     category: data_file
     props:
-      - name: project_id
-      - name: submitter_id
       - name: object_id
-      - name: drs_id
-        src: object_id
       - name: md5sum
       - name: file_name
       - name: file_size
+      - name: data_category
       - name: data_format
       - name: data_type
       - name: state
-      - name: data_category
-      - name: analyte_type
-      - name: sequencing_assay
+      - name: callset
+      - name: bucket_path
       - name: source_node
+      - name: data_category
     injecting_props:
       subject:
         props:
           - name: _subject_id
             src: id
             fn: set
-          - name: subject_submitter_id
-            src: submitter_id
-            fn: set
           - name: project_id
-            fn: set
-          - name: anvil_project_id
-            src: anvil_project_id
-            fn: set
-          - name: sex
-            src: sex
-            fn: set
-          - name: age_value
-            src: age_value
-            fn: set
-          - name: ancestry
-            src: ancestry
-            fn: set
-          - name: disease_description
-            src: disease_description
-            fn: set
-          - name: phenotype_present
-            src: phenotype_present
-            fn: set
-          - name: phenotype_absent
-            src: phenotype_absent
-            fn: set
-          - name: disease_id
-            src: disease_id
-            fn: set
-          - name: solve_state
-            src: solve_state
-            fn: set
-          - name: congenital_status
-            src: congenital_status
-            fn: set
-          - name: age_of_onset
-            src: age_of_onset
-            fn: set
-          - name: phenotype_group
-            src: phenotype_group
-            fn: set
-      sample:
+      program:
         props:
-          - name: sample_submitter_id
-            src: submitter_id
-            fn: set
-      sequencing:
-        props:
-          - name: sequencing_assay_submitter_id
-            src: submitter_id
+          - name: programs_name
+            src: name
             fn: set

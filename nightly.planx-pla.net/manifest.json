@@ -64,10 +64,6 @@
           {
             "name": "ROOT_NODE",
             "value": "subject"
-          },
-          {
-            "name": "EXTRA_NODES",
-            "value": "reference_file"
           }
         ],
         "volumeMounts": [
@@ -132,6 +128,10 @@
           {
             "name": "ROOT_NODE",
             "value": "file"
+          },
+          {
+            "name": "EXTRA_NODES",
+            "value": ""
           }
         ],
         "volumeMounts": [
@@ -166,77 +166,6 @@
         }
       ],
       "restart_policy": "Never"
-    },
-    {
-      "name": "ingest-metadata-manifest",
-      "action": "ingest-metadata-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-gen3-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:master",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "get-dbgap-metadata",
-      "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-gen3-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:master",
-        "pull_policy": "Always",
-        "env": [],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
     }
   ],
   "arborist": {
@@ -252,7 +181,7 @@
     "environment": "qaplanetv1",
     "hostname": "nigthly.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.3.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.2.1/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-qaplanetv1-gen3",
     "logs_bucket": "logs-qaplanetv1-gen3",
@@ -260,7 +189,7 @@
     "useryaml_s3path": "s3://cdis-gen3-users/qa/user.yaml",
     "dispatcher_job_num": "5",
     "netpolicy": "on",
-    "mutatedEnvHostname": "gen3.theanvil.io"
+    "mutatedEnvHostname": "gen3.biodatacatalyst.nhlbi.nih.gov"
   },
   "ssjdispatcher": {
     "job_images": {
@@ -270,16 +199,16 @@
   "guppy": {
     "indices": [
       {
-        "index": "gen3.theanvil.io_subject",
+        "index": "gen3.biodatacatalyst.nhlbi.nih.gov_subject",
         "type": "subject"
       },
       {
-        "index": "gen3.theanvil.io_file",
+        "index": "gen3.biodatacatalyst.nhlbi.nih.gov_file",
         "type": "file"
       }
     ],
-    "auth_filter_field": "auth_resource_path",
-    "config_index": "gen3.theanvil.io_array-config"
+    "config_index": "gen3.biodatacatalyst.nhlbi.nih.gov_array-config",
+    "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
     "arborist": {
