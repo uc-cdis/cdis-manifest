@@ -9,7 +9,7 @@
   "versions": {
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "portal": "quay.io/cdis/dataguids:1.0.1",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dataguids:2022.03",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.03",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.03"
   },
