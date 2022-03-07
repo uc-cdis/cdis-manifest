@@ -2,215 +2,15 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
-  "pay-models": [{
-      "user_id": "aprokh@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "atharvar@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "avantol@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "emalinowski@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "fan1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "haraprasadj@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mcannalte@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mpingram@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "nmetokishlubsky@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "ribeyre@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "svburke@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mshao1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "craigrbarnes@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "cgmeyer@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "xritter@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "planxdemo@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "hughestr@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "tara@taralichtenberg.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "trevars@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "qureshi@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "mbkranz@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "jmontmaxwell@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "rgrossman1@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "philschumm@gmail.com",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "Kranz-michael@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "0000-0002-0093-3367",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "tentner-andrea@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "LeClere-Felicia@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "Kantor-Liz@norc.org",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "manorathan@uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "kwroblewski@health.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "rchua@bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "ahotton@medicine.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    },
-    {
-      "user_id": "bryanb@medicine.bsd.uchicago.edu",
-      "aws_account_id": "252835817747",
-      "name": "healworkspaces",
-      "region": "us-east-1"
-    }
-  ],
+  "default-pay-model": {
+    "aws_account_id": "252835817747",
+    "name": "healworkspaces",
+    "region": "us-east-1"
+  },
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:fix_no_exit",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2022.03",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -229,12 +29,13 @@
       "root"
     ]
   },
-  "containers": [{
+  "containers": [
+    {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:master",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -333,7 +134,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__5c7432343b80a8c2b35d5e2e8948282dea221701",
+      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__fbd5ce467b9c2a8e4d59c2d7ec49ad6c5c80312a",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },

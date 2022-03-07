@@ -158,7 +158,7 @@
         },
         {
           "text": "HHS Responsible Disclosure Form",
-          "href": "https://hhs.responsibledisclosure.com/hc/en-us"
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
         },
         {
           "text": "Freedom of Information Act (FOIA)",
@@ -224,8 +224,7 @@
       "race": {
         "chartType": "bar",
         "title": "Race"
-      },
-      "fileCounts": false
+      }
     },
     "filters": {
       "tabs": [
@@ -612,15 +611,43 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
+    "dropdowns": {
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
+      }
+    },
     "buttons": [
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
       {
         "enabled": true,
         "type": "file-manifest",
         "title": "Download Manifest",
         "leftIcon": "datafile",
         "rightIcon": "download",
-        "fileName": "file-manifest.json",
-        "dropdownId": "download"
+        "fileName": "file-manifest.json"
       },
       {
         "enabled": true,
@@ -640,12 +667,6 @@
         "type": "export-files",
         "title": "Export All to Terra",
         "rightIcon": "external-link"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-seven-bridges",
-        "title": "Export All to Seven Bridges",
-        "rightIcon": "external-link"
       }
     ],
     "terraExportURL": "https://dev.terra.biodatacatalyst.nhlbi.nih.gov/#import-data",
@@ -656,8 +677,7 @@
     "sevenBridgesExportURL": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/windmill",
     "enableLimitedFilePFBExport": {
       "sourceNodeField": "source_node"
-    },
-    "dropdowns": {}
+    }
   },
   "discoveryConfig": {
     "features": {

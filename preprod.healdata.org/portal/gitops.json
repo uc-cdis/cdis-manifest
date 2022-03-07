@@ -104,7 +104,7 @@
         },
         {
           "text": "HHS Responsible Disclosure Form",
-          "href": "https://hhs.responsibledisclosure.com/hc/en-us"
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
         }
       ]
     }
@@ -122,11 +122,21 @@
         "enabled": false,
         "field": "advSearchFilters",
         "filters": [
-          { "key": "Research Focus Area" },
-          { "key": "Administering IC(s)" },
-          { "key": "Simulated vs. Real Data" },
-          { "key": "Year Grant Awarded" },
-          { "key": "Study Description" }
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
         ]
       },
       "exportToWorkspace": {
@@ -150,11 +160,11 @@
           "enabled": true,
           "inputSubtitle": "Examples: pain, buprenorphine, intervention",
           "searchableTextFields": [
-            "summary",
+            "study_description_summary",
             "location",
-            "study_name",
+            "study_description_name",
             "institutions",
-            "investigators",
+            "investigators_name",
             "project_title",
             "project_number",
             "dataset_1_title",
@@ -174,7 +184,7 @@
         },
         "tagSearchDropdown": {
           "enabled": true,
-          "collapsibleButtonText": "Study Characteristics"
+          "collapsibleButtonText": "Study Filters"
         }
       },
       "authorization": {
@@ -203,17 +213,17 @@
         "field": "research_focus_area",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
-      },
+      },      
       {
         "name": "Investigator(s)",
-        "field": "investigators",
+        "field": "investigators_name",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
       "name": "Summary",
-      "field": "summary",
+      "field": "study_description_summary",
       "contentType": "string",
       "includeName": false,
       "includeIfNotAvailable": true,
@@ -262,7 +272,7 @@
             },
             {
               "name": "Investigator(s)",
-              "field": "investigators"
+              "field": "investigators_name"
             },
             {
               "name": "Administering IC(s)",
@@ -285,7 +295,7 @@
             },
             {
               "name": "Study Name",
-              "field": "study_name"
+              "field": "study_description_name"
             },
             {
               "name": "Study URL",
@@ -323,24 +333,24 @@
           ]
         },
         {
-        "groupName": "Tags",
-        "includeName": false,
-        "groupWidth": "full",
-        "fields": [
-          {
-            "name": "Study Characteristics",
-            "field": "tags",
-            "contentType": "tags",
-            "includeIfNotAvailable": false
-          }
-        ]
-      },
-      {
-        "groupWidth": "full",
+          "groupName": "Tags",
+          "includeName": false,
+          "groupWidth": "full",
+          "fields": [
+            {
+              "name": "Study Characteristics",
+              "field": "tags",
+              "contentType": "tags",
+              "includeIfNotAvailable": false
+            }
+          ]
+        },
+        {
+          "groupWidth": "full",
           "fields": [
             {
               "name": "Summary",
-              "field": "summary",
+              "field": "study_description_summary",
               "contentType": "paragraphs",
               "includeName": true,
               "includeIfNotAvailable": true,
@@ -415,9 +425,9 @@
             }
           ]
         }
-      ],
-      "tagsDisplayName": "Study Characteristics"
+      ]
     },
+    "tagsDisplayName": "Study Characteristics",
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
@@ -449,7 +459,7 @@
         "color": "#bf362e",
         "display": true
       },
-            {
+      {
         "name": "Pain",
         "color": "#e07c3e",
         "display": true
@@ -486,7 +496,7 @@
     "resources": [
       {
         "title": "BACPAC Synthetic Data Analysis",
-          "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
+        "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
         "link": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.html",
         "imageUrl": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.png"
       },
@@ -513,6 +523,12 @@
         "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
         "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
         "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
+      },
+      {
+        "title": "JCOIN MOUD Accessibility Analysis",
+        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
+        "imageUrl": "/dashboard/Public/notebooks/jcoin_moud_analysis.png",
+        "link": "/dashboard/Public/notebooks/JCOIN-MOUD_accessibility_analysis_02092022.html"
       }
     ]
   },

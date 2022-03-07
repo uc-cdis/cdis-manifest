@@ -133,7 +133,7 @@
       "links": [
         {
           "text": "HHS Responsible Disclosure Form",
-          "href": "https://hhs.responsibledisclosure.com/hc/en-us"
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
         }
       ]
     },
@@ -164,8 +164,10 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
     "resources": [
         {
-        "title": "JCOIN Notebooks coming soon",
-        "imageUrl": "/dashboard/Public/notebooks/placeholder.png"
+        "title": "JCOIN MOUD Accessibility Analysis",
+        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
+        "imageUrl": "/dashboard/Public/notebooks/jcoin_moud_analysis.png",
+        "link": "/dashboard/Public/notebooks/JCOIN-MOUD_accessibility_analysis_02092022.html"
         }
       ]
     },

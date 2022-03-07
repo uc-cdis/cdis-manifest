@@ -7,15 +7,16 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2021.06",
-    "fence": "quay.io/cdis/fence:2021.06",
-    "indexd": "quay.io/cdis/indexd:2021.06",
-    "peregrine": "quay.io/cdis/peregrine:2021.06",
-    "revproxy": "quay.io/cdis/nginx:2021.06",
-    "sheepdog": "quay.io/cdis/sheepdog:2021.06",
-    "portal": "quay.io/cdis/data-portal:2021.06",
-    "pidgin": "quay.io/cdis/pidgin:2021.06",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch"
+    "arborist": "quay.io/cdis/arborist:2022.02",
+    "fence": "quay.io/cdis/fence:2022.02",
+    "indexd": "quay.io/cdis/indexd:2022.02",
+    "peregrine": "quay.io/cdis/peregrine:2022.02",
+    "revproxy": "quay.io/cdis/nginx:2022.02",
+    "sheepdog": "quay.io/cdis/sheepdog:2022.02",
+    "portal": "quay.io/cdis/data-portal:2022.02",
+    "pidgin": "quay.io/cdis/pidgin:2022.02",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "requestor": "quay.io/cdis/requestor:2022.02"
   },
   "arborist": {
     "deployment_version": "2"
