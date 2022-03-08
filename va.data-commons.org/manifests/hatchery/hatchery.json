@@ -37,15 +37,20 @@
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
-      "ready-probe": "/"
+      "ready-probe": "/",
+      "fs-gid": 100
     },
     {
       "target-port": 8888,
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R",
-      "image": "quay.io/occ_data/jupyternotebook:1.9.1",
-      "env": {},
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.password=''",
@@ -60,7 +65,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -68,38 +73,15 @@
     },
     {
       "target-port": 8888,
-      "cpu-limit": "4.0",
-      "memory-limit": "8192Mi",
-      "name": "Bioinfo - Python/R",
-      "image": "quay.io/occ_data/jupyternotebook:1.9.1",
-      "env": {},
-      "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''"
-      ],
-      "command": [
-        "start-notebook.sh"
-      ],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": [
-        "/bin/sh",
-        "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
-      ],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "4.0",
-      "memory-limit": "8192Mi",
+      "cpu-limit": "0.5",
+      "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/occ_data/jupyternotebook:1.9.1",
-      "env": {},
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
+      },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
         "--NotebookApp.default_url=/lab",
@@ -115,7 +97,70 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "ln -s /data /home/${NB_USER}/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "4.0",
+      "memory-limit": "8192Mi",
+      "name": "Bioinfo - Python/R",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "ln -s /data /home/${NB_USER}/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "4.0",
+      "memory-limit": "8192Mi",
+      "name": "Bioinfo - Python/R (Lab Edition)",
+      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "va.data-commons.org",
+        "FRAME_ANCESTORS": "https://va.data-commons.org/"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "ln -s /data /home/${NB_USER}/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
