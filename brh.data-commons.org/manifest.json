@@ -9,20 +9,20 @@
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
-    "arborist": "quay.io/cdis/arborist:2021.11",
-    "dashboard": "quay.io/cdis/gen3-statics:2021.11",
-    "fence": "quay.io/cdis/fence:2021.11",
+    "arborist": "quay.io/cdis/arborist:2022.03",
+    "dashboard": "quay.io/cdis/gen3-statics:2022.03",
+    "fence": "quay.io/cdis/fence:2022.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:feat_default_pay_model",
-    "indexd": "quay.io/cdis/indexd:2021.11",
-    "metadata": "quay.io/cdis/metadata-service:1.6.2",
-    "portal": "quay.io/cdis/data-portal:3.17.4",
-    "peregrine": "quay.io/cdis/peregrine:2021.11",
-    "pidgin": "quay.io/cdis/pidgin:2021.11",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "manifestservice": "quay.io/cdis/manifestservice:2021.11",
-    "wts": "quay.io/cdis/workspace-token-service:2021.11",
-    "sheepdog": "quay.io/cdis/sheepdog:2021.11"
+    "hatchery": "quay.io/cdis/hatchery:feat_multiple_paymodels",
+    "indexd": "quay.io/cdis/indexd:2022.03",
+    "metadata": "quay.io/cdis/metadata-service:1.6.4",
+    "portal": "quay.io/cdis/data-portal:feat_multiple_paymodels",
+    "peregrine": "quay.io/cdis/peregrine:2022.03",
+    "pidgin": "quay.io/cdis/pidgin:2022.03",
+    "revproxy": "quay.io/cdis/nginx:2022.03",
+    "manifestservice": "quay.io/cdis/manifestservice:2022.03",
+    "wts": "quay.io/cdis/workspace-token-service:2022.03",
+    "sheepdog": "quay.io/cdis/sheepdog:2022.03"
   },
   "arborist": {
     "deployment_version": "2"
