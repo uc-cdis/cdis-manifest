@@ -20,10 +20,6 @@
     ],
     "chartCounts": [
       {
-        "graphql": "_subject_count",
-        "name": "Subject"
-      },
-      {
         "graphql": "_study_count",
         "name": "Study"
       }
@@ -212,10 +208,6 @@
       "project_id": {
         "chartType": "count",
         "title": "Projects"
-      },
-      "_subject_id": {
-        "chartType": "count",
-        "title": "Subjects"
       },
       "annotated_sex": {
         "chartType": "pie",
