@@ -172,8 +172,8 @@
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
-    "public_datasets": true,
-    "tier_access_level": "libre",
+    "public_datasets": false,
+    "tier_access_level": "private",
     "tier_access_limit": "50",
     "maintenance_mode": "off",
     "dd_enabled": true
