@@ -730,6 +730,10 @@
     ]
   },
   "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true,
+  "stridesPortalURL": "https://brh-portal.org",
   "terraExportWarning": {
     "subjectThreshold": 120000,
     "title": "Warning: Data Transfer May Fail in Terra",
