@@ -4,22 +4,22 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "quay.io/cdis/arborist:2.4.0",
-    "fence": "quay.io/cdis/fence:4.15.0",
-    "indexd": "quay.io/cdis/indexd:2.6.2",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.06",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.06",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.06",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "peregrine": "quay.io/cdis/peregrine:1.2.1",
-    "pidgin": "quay.io/cdis/pidgin:1.1.0",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.12",
-    "portal": "quay.io/cdis/data-portal:2.24.1",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.06",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.06",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.06",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.06",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.06",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "wts": "quay.io/cdis/workspace-token-service:0.1.0",
-    "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
-    "tube": "quay.io/cdis/tube:0.3.15",
-    "guppy": "quay.io/cdis/guppy:0.3.3"
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.06",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.06",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.06",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.06",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2021.06"
   },
   "arborist": {
     "deployment_version": "2"
@@ -44,7 +44,9 @@
     "workspace_url": "https://diseasedatahub.org/lw-workspace",
     "manifest_service_url": "https://diseasedatahub.org/manifests",
     "wts_url": "https://diseasedatahub.org/wts/oauth2/",
-    "origins_allow_credentials": ["https://diseasedatahub.org"],
+    "origins_allow_credentials": [
+      "https://diseasedatahub.org"
+    ],
     "netpolicy": "off",
     "cookie_domain": "diseasedatahub.org",
     "des_namespace": "default"
