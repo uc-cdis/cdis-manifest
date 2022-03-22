@@ -5,26 +5,26 @@
   ],
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.02",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.03",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.02",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.02",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.03",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.02",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.02",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.02",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.02",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.02",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.02",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.02",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.02",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.02",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.02",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.02",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.02",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.02",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.02",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.02"
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.03",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.03",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.03",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.03",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.03",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.03",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.03",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.03",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.03",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.03",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.03",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.03",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.03",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.03",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.03"
   },
   "arborist": {
     "deployment_version": "2"
@@ -40,7 +40,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.02"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.03"
     }
   },
   "sower": [
@@ -51,7 +51,7 @@
       "serviceAccountName": "jobs-staging-midrc-org",
       "container": {
         "name": "manifest-indexing-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.02",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -91,7 +91,7 @@
       "serviceAccountName": "jobs-staging-midrc-org",
       "container": {
         "name": "indexd-manifest-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.02",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -164,16 +164,16 @@
     "environment": "midrcprod",
     "hostname": "staging.midrc.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:813684607867:certificate/d4bdf325-afce-4e1d-b431-0dd062ee12c5",
-    "useryaml_s3path": "s3://cdis-gen3-users/midrc/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/midrcstaging/user.yaml",
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.6.7/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.6.9/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
-    "public_datasets": true,
-    "tier_access_level": "libre",
+    "public_datasets": false,
+    "tier_access_level": "private",
     "tier_access_limit": "50",
     "maintenance_mode": "off",
     "dd_enabled": true
@@ -184,7 +184,7 @@
   "scaling": {
     "arborist": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
@@ -196,56 +196,56 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 5,
-      "max": 15,
+      "min": 1,
+      "max": 4,
       "targetCpu": 40
     },
     "guppy": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 4,
-      "max": 8,
+      "min": 1,
+      "max": 10,
       "targetCpu": 40
     },
     "metadata": {
       "strategy": "auto",
-      "min": 2,
-      "max": 5,
+      "min": 1,
+      "max": 10,
       "targetCpu": 40
     },
     "peregrine": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 1,
+      "max": 10,
       "targetCpu": 40
     },
     "portal": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 20,
-      "max": 25,
+      "min": 1,
+      "max": 10,
       "targetCpu": 40
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 4,
-      "max": 10,
+      "min": 1,
+      "max": 4,
       "targetCpu": 40
     },
     "sheepdog": {
       "strategy": "auto",
-      "min": 2,
-      "max": 4,
+      "min": 1,
+      "max": 10,
       "targetCpu": 40
     }
   }

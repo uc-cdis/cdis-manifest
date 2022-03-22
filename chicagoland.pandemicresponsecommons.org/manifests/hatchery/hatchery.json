@@ -5,11 +5,24 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2022.01",
-    "env": {"NAMESPACE":"default", "HOSTNAME": "chicagoland.pandemicresponsecommons.org"},
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2022.03",
+    "env": {
+      "NAMESPACE": "default",
+      "HOSTNAME": "chicagoland.pandemicresponsecommons.org"
+    },
     "args": [],
-    "command": ["/bin/bash", "/sidecarDockerrun.sh"],
-    "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+    "command": [
+      "/bin/bash",
+      "/sidecarDockerrun.sh"
+    ],
+    "lifecycle-pre-stop": [
+      "su",
+      "-c",
+      "echo test",
+      "-s",
+      "/bin/sh",
+      "root"
+    ]
   },
   "containers": [
     {
@@ -18,7 +31,9 @@
       "memory-limit": "1024Mi",
       "name": "R Studio-3.5",
       "image": "quay.io/cdis/rstudio:master",
-      "env": {"DISABLE_AUTH": "true"},
+      "env": {
+        "DISABLE_AUTH": "true"
+      },
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",
@@ -32,7 +47,9 @@
       "memory-limit": "1024Mi",
       "name": "R Studio-3.6",
       "image": "quay.io/cdis/rstudio3.6:rstudio3.6-1.0.0",
-      "env": {"DISABLE_AUTH": "true"},
+      "env": {
+        "DISABLE_AUTH": "true"
+      },
       "args": [],
       "path-rewrite": "/",
       "use-tls": "false",

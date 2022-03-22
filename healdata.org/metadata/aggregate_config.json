@@ -43,6 +43,10 @@
 					"path":"description",
 					"filters": ["strip_html"]
 				},
+				"study_description_summary": {
+					"path":"description",
+					"filters": ["strip_html"]
+				},
 				"study_url" : {
 					"path":"ipcsr_study_id",
 					"filters": ["add_icpsr_source_url"]
@@ -51,10 +55,12 @@
 				"subjects": "",
 				"__manifest": "",
 				"study_name": "",
+				"study_name_title": "",
 				"study_type": "",
 				"institutions": "path:contributor",
 				"year_awarded": "",
 				"investigators": "path:creator",
+				"investigators_name": "path:creator",
 				"project_title": "path:title",
 				"protocol_name": "",
 				"study_summary": "",
@@ -241,6 +247,7 @@
 				"authz": "/programs/open",
 				"sites": "",
 				"summary": "path:BriefSummary",
+				"study_description_summary": "path:BriefSummary",
 				"study_url" : {
 					"path":"NCTId",
 					"filters": ["add_clinical_trials_source_url"]
@@ -249,10 +256,12 @@
 				"subjects": "path:EnrollmentCount",
 				"__manifest": "",
 				"study_name": "",
+				"study_name_title": "",
 				"study_type": "",
 				"institutions": "path:LeadSponsorName",
 				"year_awarded": "",
 				"investigators": "path:OverallOfficial[0].OverallOfficialName",
+				"investigators_name": "path:OverallOfficial[0].OverallOfficialName",
 				"project_title": "path:BriefTitle",
 				"protocol_name": "",
 				"study_summary": "",
@@ -415,7 +424,7 @@
 		},
 		"PDAPS": {
             "mds_url": "https://api.monqcle.com/",
-            "commons_url": "https://externaldata.healprod.org",
+            "commons_url": "https://pdaps.org",
             "adapter": "pdaps",
             "filters": {
                 "datasets": [
@@ -431,7 +440,10 @@
                     "pain-management-clinic-laws",
                     "medicaid-funded-mat-for-justice-involved-persons-1565019237",
                     "medication-assisted-treatment-with-methadone-mat-laws",
-                    "recreational-marijuana-laws"
+                    "recreational-marijuana-laws",
+                    "covid-19-mitigation-laws-at-state-correctional-facilities-relating-to-opioi",
+                    "covid-19-state-medicaid-waivers",
+                    "increasing-access-to-buprenorphine-and-methadone-during-covid-19"
                 ]
             },
             "keep_original_fields": false,
@@ -443,14 +455,20 @@
                     "path": "description",
                     "filters": ["strip_html"]
                 },
+		"study_description_summary": {
+                    "path": "description",
+                    "filters": ["strip_html"]
+                },
                 "location": "United States",
                 "subjects": "",
                 "__manifest": "",
                 "study_name": "",
+		"study_name_title": "",
                 "study_type": "",
                 "institutions": "Center for Public Health Law Research at the Temple University Beasley School of Law",
                 "year_awarded": "",
                 "investigators": "",
+		"investigators_name": "",
                 "project_title": "path:title",
                 "protocol_name": "",
                 "study_summary": { "path": "description", "filters": ["strip_html"] },
@@ -1046,7 +1064,136 @@
                     "dataset_3_title": "commercial-insurance-and-medicaid-coverage-of-moud-protocol-final.pdf",
                     "dataset_2_title": "moud-coverage-final.xlsx",
                     "dataset_4_title": "summary-report.pdf"
-                }
+                },
+                "6169fa0ef5f53c24528b457a": {
+                    "__manifest": [
+                        {
+                            "md5sum": "ac59939d223337502a6463dc6e19e4df",
+                            "file_size": 162135,
+                            "file_name": "covid-19-moud-at-state-correctional-facilities-codebook-021022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/a0a8785a-8663-47b9-95ea-a1813612a2f1"
+                        },
+                        {
+                            "md5sum": "d30e39b94ddf6da73b714afacfd58813",
+                            "file_size": 25499,
+                            "file_name": "covid-19-moud-at-state-correctional-facilities-data-020222.xlsx",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/abe9cd49-fc86-4c9b-b9d0-f8c0280d8aaa"
+                        },
+                        {
+                            "md5sum": "7b9aa1a21f0f23502d104aae17a66c1f",
+                            "file_size": 129324,
+                            "file_name": "covid-19-moud-at-state-correctional-facilities-report-02102022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/e21ea6a6-edf9-467d-b9db-e2c8a55b2cf2"
+                        },
+                        {
+                            "md5sum": "098cbe362b2c7052e2e640ace9d78a3f",
+                            "file_size": 241957,
+                            "file_name": "covid-19-moud-at-state-correctional-facilities-research-protocol-02092022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/766b189b-ac97-4341-b8fb-252489a168ce"
+                        }
+                    ],
+                    "authz": "/programs/NIDA/projects/PDAPS",
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/covid-19-mitigation-laws-at-state-correctional-facilities-relating-to-opioi",
+                    "dataset_1_type": "Codebook",
+                    "dataset_2_type": "Data",
+                    "dataset_4_type": "Report",
+                    "dataset_3_type": "Protocol",
+                    "dataset_1_title": "covid-19-moud-at-state-correctional-facilities-codebook-021022.pdf",
+                    "dataset_2_title": "covid-19-moud-at-state-correctional-facilities-data-020222.xlsx",
+                    "dataset_4_title": "covid-19-moud-at-state-correctional-facilities-report-02102022.pdf",
+                    "dataset_3_title": "covid-19-moud-at-state-correctional-facilities-research-protocol-02092022.pdf"
+                },
+                "6169fbf6f5f53c46528b4568": {
+                    "__manifest": [
+                        {
+                            "md5sum": "062375ac4ec32990284f890a7fa58b0a",
+                            "file_size": 28502,
+                            "file_name": "covid-19-state-medicaid-waivers-data-020222.xlsx",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/5200158e-e9fe-44ef-96c9-e89ecd402fc4"
+                        },
+                        {
+                            "md5sum": "6830e7e17ed39453028d0fd8ebb67ea8",
+                            "file_size": 181168,
+                            "file_name": "covid-19-state-medicaid-waivers-for-sud-codebook-020222.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/2b83e419-8d3d-4569-b9a1-a52ecd387cba"
+                        },
+                        {
+                            "md5sum": "f344ba783f5cbd663796261a8a78135a",
+                            "file_size": 132725,
+                            "file_name": "covid-19-state-medicaid-waivers-for-sud-report-02102022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/443e2701-ad36-4caf-8a0e-19d65a49890e"
+                        },
+                        {
+                            "md5sum": "d53248bb7d83f29a466133da38531bc8",
+                            "file_size": 241142,
+                            "file_name": "covid-19-state-medicaid-waivers-for-sud-research-protocol-02092022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/d5973fa2-c95e-4674-80e9-56fce9384d94"
+                        }
+                    ],
+                    "authz": "/programs/NIDA/projects/PDAPS",
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/covid-19-state-medicaid-waivers",
+                    "dataset_2_type": "Data",
+                    "dataset_1_type": "Codebook",
+                    "dataset_4_type": "Report",
+                    "dataset_3_type": "Protocol",
+                    "dataset_2_title": "covid-19-state-medicaid-waivers-data-020222.xlsx",
+                    "dataset_1_title": "covid-19-state-medicaid-waivers-for-sud-codebook-020222.pdf",
+                    "dataset_4_title": "covid-19-state-medicaid-waivers-for-sud-report-02102022.pdf",
+                    "dataset_3_title": "covid-19-state-medicaid-waivers-for-sud-research-protocol-02092022.pdf"
+                },
+                "6169fccdf5f53c83528b456c": {
+                    "__manifest": [
+                        {
+                            "md5sum": "b410a5aee3a0ce7aeabf92883d18ebbd",
+                            "file_size": 185478,
+                            "file_name": "buprenorphine-and-methadone-during-covid-19-codebook-020222.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/dca15d95-aac5-4879-88cb-3a740398f26c"
+                        },
+                        {
+                            "md5sum": "3a674233b8cb2e067da16f1f9dc7beaa",
+                            "file_size": 23351,
+                            "file_name": "buprenorphine-and-methadone-during-covid-19-data-020222.xlsx",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/b7974ffe-2e46-47cf-9d57-4d8900d7a40f"
+                        },
+                        {
+                            "md5sum": "99c27f4283576bc8fac56ab9efc0d4ed",
+                            "file_size": 131332,
+                            "file_name": "buprenorphine-and-methadone-during-covid-19-report-02102022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/b6cfa7ba-1fcf-47e0-8fc2-7360dd3536ff"
+                        },
+                        {
+                            "md5sum": "5446941ca550031a0c6f7293fae4b15a",
+                            "file_size": 249103,
+                            "file_name": "buprenorphine-and-methadone-during-covid-19-research-protocol-02072022.pdf",
+                            "commons_url": "jcoin.datacommons.io",
+                            "object_id": "dg.6VTS/7744b857-c8cc-49e2-b8e9-7574c0241c71"
+                        }
+                    ],
+                    "authz": "/programs/NIDA/projects/PDAPS",
+                    "data_availability": "available",
+                    "study_url": "https://pdaps.org/datasets/increasing-access-to-buprenorphine-and-methadone-during-covid-19",
+                    "dataset_1_type": "Codebook",
+                    "dataset_2_type": "Data",
+                    "dataset_4_type": "Report",
+                    "dataset_3_type": "Protocol",
+                    "dataset_1_title": "buprenorphine-and-methadone-during-covid-19-codebook-020222.pdf",
+                    "dataset_2_title": "buprenorphine-and-methadone-during-covid-19-data-020222.xlsx",
+                    "dataset_4_title": "buprenorphine-and-methadone-during-covid-19-report-02102022.pdf",
+                    "dataset_3_title": "buprenorphine-and-methadone-during-covid-19-research-protocol-02072022.pdf"
+		}
             }
         }
     }
