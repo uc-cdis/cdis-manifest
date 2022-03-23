@@ -13,19 +13,24 @@
           "plural": "Imaging Studies"
         },
         {
-          "graphql": "_radiography_exam_count",
-          "name": "Digital Radiography Exams",
-          "plural": "Digital Radiography Exams"
+          "graphql": "_ct_series_file_count",
+          "name": "Computed Tomography (CT) Series",
+          "plural": "Computed Tomography (CT) Series"
         },
         {
-          "graphql": "_ct_scan_count",
-          "name": "Thoracic CT Scans",
-          "plural": "Thoracic CT Scans"
+          "graphql": "_dx_series_file_count",
+          "name": "Digital X-ray (DX) Series",
+          "plural": "Digital X-ray (DX) Series"
         },
         {
-          "graphql": "_mr_exam_count",
-          "name": "MR Exam",
-          "plural": "MR Exams"
+          "graphql": "_cr_series_file_count",
+          "name": "Computed Radiography (CR) Series",
+          "plural": "Computed Radiography (CR) Series"
+        },
+        {
+          "graphql": "_mr_series_file_count",
+          "name": "Magnetic Resonance (MR) Series",
+          "plural": "Magnetic Resonance (MR) Series"
         }
       ],
       "chartCounts": [],
@@ -105,12 +110,20 @@
               "name": "Imaging Studies"
             },
             {
-              "node": "radiography_exam",
-              "name": "Digital Radiography Exams"
+              "node": "ct_series_file",
+              "name": "CT Series"
             },
             {
-              "node": "ct_scan",
-              "name": "Thoracic CT Scans"
+              "node": "dx_series_file",
+              "name": "DX Series"
+            },
+            {
+              "node": "cr_series_file",
+              "name": "CR Series"
+            },
+            {
+              "node": "mr_series_file",
+              "name": "MR Series"
             }
         ]
     },
@@ -260,14 +273,10 @@
               "zip",
               "covid19_positive",
               "_imaging_studies_count",
-              "_ct_scans_count",
-              "_radiography_exams_count",
-              "_ct_series_count",
-              "_ct_instances_count",
-              "_dx_series_count",
-              "_dx_instances_count",
-              "_cr_series_count",
-              "_cr_instances_count",
+              "_ct_series_file_count",
+              "_dx_series_file_count",
+              "_cr_series_file_count",
+              "_mr_series_file_count",
               "project_id"
             ]
           },
@@ -327,7 +336,7 @@
             "fieldMapping": [
                 {
                     "field": "project_id",
-                    "name": "Dataset ID"
+                    "name": "Project ID"
                 },
                 {
                     "field": "submitter_id",
@@ -338,36 +347,20 @@
                     "name": "Imaging Studies Count"
                 },
                 {
-                    "field": "_ct_scans_count",
-                    "name": "CT Scans Count"
-                },
-                {
-                    "field": "_radiography_exams_count",
-                    "name": "Radiography Exams Count"
-                },
-                {
-                    "field": "_ct_series_count",
+                    "field": "_ct_series_file_count",
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_instances_count",
-                    "name": "CT Instances Count"
-                },
-                {
-                    "field": "_dx_series_count",
+                    "field": "_dx_series_file_count",
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_instances_count",
-                    "name": "DX Instances Count"
-                },
-                {
-                    "field": "_cr_series_count",
+                    "field": "_cr_series_file_count",
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_instances_count",
-                    "name": "CR Instances Count"
+                    "field": "_mr_series_file_count",
+                    "name": "MR Series Count"
                 }
             ],
             "manifestMapping": {
@@ -406,14 +399,10 @@
                 "project_id",
                 "data_contributor",
                 "_imaging_studies_count",
-                "_ct_scans_count",
-                "_radiography_exams_count",
-                "_ct_series_count",
-                "_ct_instances_count",
-                "_dx_series_count",
-                "_dx_instances_count",
-                "_cr_series_count",
-                "_cr_instances_count",
+                "_ct_series_file_count",
+                "_dx_series_file_count",
+                "_cr_series_file_count",
+                "_mr_series_file_count",
                 "data_description",
                 "research_description",
                 "license",
@@ -481,7 +470,7 @@
               "fieldMapping": [
                   {
                     "field": "project_id",
-                    "name": "Dataset ID"
+                    "name": "Project ID"
                   },
                   {
                     "field": "submitter_id",
@@ -492,40 +481,20 @@
                     "name": "Imaging Studies Count"
                   },
                   {
-                    "field": "_ct_scans_count",
-                    "name": "CT Scans Count"
+                      "field": "_ct_series_file_count",
+                      "name": "CT Series Count"
                   },
                   {
-                    "field": "_radiography_exams_count",
-                    "name": "Radiography Exams Count"
+                      "field": "_dx_series_file_count",
+                      "name": "DX Series Count"
                   },
                   {
-                    "field": "_ct_series_count",
-                    "name": "CT Series Count"
+                      "field": "_cr_series_file_count",
+                      "name": "CR Series Count"
                   },
                   {
-                    "field": "_ct_instances_count",
-                    "name": "CT Instances Count"
-                  },
-                  {
-                    "field": "_dx_series_count",
-                    "name": "DX Series Count"
-                  },
-                  {
-                    "field": "_dx_instances_count",
-                    "name": "DX Instances Count"
-                  },
-                  {
-                    "field": "_cr_series_count",
-                    "name": "CR Series Count"
-                  },
-                  {
-                    "field": "_cr_instances_count",
-                    "name": "CR Instances Count"
-                  },
-                  {
-                    "field": "_virus_genomes_count",
-                    "name": "Virus Genomes Count"
+                      "field": "_mr_series_file_count",
+                      "name": "MR Series Count"
                   }
               ],
               "manifestMapping": {
@@ -602,14 +571,10 @@
                 "sex",
                 "race",
                 "zip",
-                "_ct_scans_count",
-                "_radiography_exams_count",
-                "_ct_series_count",
-                "_ct_instances_count",
-                "_dx_series_count",
-                "_dx_instances_count",
-                "_cr_series_count",
-                "_cr_instances_count",
+                "_ct_series_file_count",
+                "_dx_series_file_count",
+                "_cr_series_file_count",
+                "_mr_series_file_count",
                 "submitter_id",
                 "project_id"
               ]
@@ -670,43 +635,27 @@
               "fieldMapping": [
                 {
                     "field": "project_id",
-                    "name": "Dataset ID"
+                    "name": "Project ID"
                 },
                 {
                     "field": "submitter_id",
                     "name": "Imaging Study ID"
                 },
                 {
-                    "field": "_ct_scans_count",
-                    "name": "CT Scans Count"
-                },
-                {
-                    "field": "_radiography_exams_count",
-                    "name": "Radiography Exams Count"
-                },
-                {
-                    "field": "_ct_series_count",
+                    "field": "_ct_series_file_count",
                     "name": "CT Series Count"
                 },
                 {
-                    "field": "_ct_instances_count",
-                    "name": "CT Instances Count"
-                },
-                {
-                    "field": "_dx_series_count",
+                    "field": "_dx_series_file_count",
                     "name": "DX Series Count"
                 },
                 {
-                    "field": "_dx_instances_count",
-                    "name": "DX Instances Count"
-                },
-                {
-                    "field": "_cr_series_count",
+                    "field": "_cr_series_file_count",
                     "name": "CR Series Count"
                 },
                 {
-                    "field": "_cr_instances_count",
-                    "name": "CR Instances Count"
+                    "field": "_mr_series_file_count",
+                    "name": "MR Series Count"
                 }
               ],
               "manifestMapping": {
@@ -714,554 +663,6 @@
                 "resourceIdField": "object_id",
                 "referenceIdFieldInResourceIndex": "_imaging_study_id",
                 "referenceIdFieldInDataIndex": "_imaging_study_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "Digital Radiography Exams",
-            "charts": {
-              "study_modality": {
-                "chartType": "fullPie",
-                "title": "Study Modality"
-              },
-              "sex": {
-                "chartType": "fullPie",
-                "title": "Case Sex"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_modality",
-                    "study_description",
-                    "body_part_examined",
-                    "age_at_imaging",
-                    "study_location",
-                    "series_count",
-                    "study_year",
-                    "study_year_shifted",
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Imaging Properties",
-                  "fields":[
-                    "data_format",
-                    "detector_type",
-                    "imager_pixel_spacing",
-                    "contrast_bolus_agent",
-                    "image_type",
-                    "lossy_image_compression",
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "modality",
-                    "pixel_spacing",
-                    "series_description",
-                    "spatial_resolution"
-                  ]
-                },
-                {
-                  "title": "Case Demographics",
-                  "fields":[
-                    "covid19_positive",
-                    "age_at_index",
-                    "index_event",
-                    "sex",
-                    "race",
-                    "zip"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "submitter_id",
-                "study_modality",
-                "study_description",
-                "age_at_imaging",
-                "study_year",
-                "study_year_shifted",
-                "body_part_examined",
-                "covid19_positive",
-                "age_at_index",
-                "index_event",
-                "sex",
-                "race",
-                "zip",
-                "_dx_series_count",
-                "_dx_instances_count",
-                "_cr_series_count",
-                "_cr_instances_count",
-                "data_format",
-                "detector_type",
-                "imager_pixel_spacing",
-                "contrast_bolus_agent",
-                "image_type",
-                "lossy_image_compression",
-                "manufacturer",
-                "manufacturer_model_name",
-                "modality",
-                "pixel_spacing",
-                "series_description",
-                "series_uid",
-                "spatial_resolution",
-                "project_id"
-              ]
-            },
-            "dropdowns": {
-              "download-table": {
-                "title": "Download Radiography Exams Table"
-              }
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data-json",
-                "title": "JSON",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Radiography_Exams_table.json"
-              },
-              {
-                "enabled": true,
-                "type": "data-tsv",
-                "title": "TSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Radiography_Exams_table.tsv"
-              },
-              {
-                "enabled": true,
-                "type": "data-csv",
-                "title": "CSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Radiography_Exams_table.csv"
-              },
-              {
-                "enabled": true,
-                "type": "manifest",
-                "title": "Download File Manifest for Radiography Exams",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Radiography_Exam_file_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "loginForDownload": true,
-            "guppyConfig": {
-              "dataType": "radiography_exam",
-              "nodeCountTitle": "Digital Radiography Exams",
-              "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Dataset ID"
-                },
-                {
-                    "field": "submitter_id",
-                    "name": "Radiography Exam ID"
-                },
-                {
-                    "field": "_dx_series_count",
-                    "name": "DX Series Count"
-                },
-                {
-                    "field": "_dx_instances_count",
-                    "name": "DX Instances Count"
-                },
-                {
-                    "field": "_cr_series_count",
-                    "name": "CR Series Count"
-                },
-                {
-                    "field": "_cr_instances_count",
-                    "name": "CR Instances Count"
-                }
-              ],
-              "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_radiography_exam_id",
-                "referenceIdFieldInDataIndex": "_radiography_exam_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "CT Scans",
-            "charts": {
-              "age_at_imaging": {
-                "chartType": "fullPie",
-                "title": "Case Age at Imaging"
-              },
-              "sex": {
-                "chartType": "fullPie",
-                "title": "Case Sex"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_modality",
-                    "study_description",
-                    "body_part_examined",
-                    "age_at_imaging",
-                    "study_location",
-                    "series_count",
-                    "study_year",
-                    "study_year_shifted",
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Imaging Properties",
-                  "fields":[
-                    "data_format",
-                    "acquisition_type",
-                    "convolution_kernel",
-                    "exposure_modulation_type",
-                    "patient_position",
-                    "slice_thickness",
-                    "spacing_between_slices",
-                    "contrast_bolus_agent",
-                    "image_type",
-                    "lossy_image_compression",
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "modality",
-                    "pixel_spacing",
-                    "series_description",
-                    "spatial_resolution"
-                  ]
-                },
-                {
-                  "title": "Medical History",
-                  "fields":[
-                    "covid19_positive"
-                  ]
-                },
-                {
-                  "title": "Case Demographics",
-                  "fields":[
-                    "sex",
-                    "race",
-                    "age_at_index",
-                    "index_event",
-                    "zip"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "submitter_id",
-                "_ct_series_count",
-                "_ct_instances_count",
-                "study_modality",
-                "study_description",
-                "age_at_imaging",
-                "study_year",
-                "study_year_shifted",
-                "body_part_examined",
-                "covid19_positive",
-                "age_at_index",
-                "index_event",
-                "sex",
-                "race",
-                "zip",
-                "data_format",
-                "acquisition_type",
-                "convolution_kernel",
-                "exposure_modulation_type",
-                "patient_position",
-                "slice_thickness",
-                "spacing_between_slices",
-                "contrast_bolus_agent",
-                "image_type",
-                "lossy_image_compression",
-                "manufacturer",
-                "manufacturer_model_name",
-                "modality",
-                "pixel_spacing",
-                "series_description",
-                "series_uid",
-                "spatial_resolution",
-                "project_id"
-              ]
-            },
-            "dropdowns": {
-              "download-table": {
-                "title": "Download CT Scans Table"
-              }
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data-json",
-                "title": "JSON",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_CT_Scans_table.json"
-              },
-              {
-                "enabled": true,
-                "type": "data-tsv",
-                "title": "TSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_CT_Scans_table.tsv"
-              },
-              {
-                "enabled": true,
-                "type": "data-csv",
-                "title": "CSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_CT_Scans_table.csv"
-              },
-              {
-                "enabled": true,
-                "type": "manifest",
-                "title": "Download File Manifest for CT Scans",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_CT_Scan_file_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "loginForDownload": true,
-            "guppyConfig": {
-              "dataType": "ct_scan",
-              "nodeCountTitle": "CT Scans",
-              "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Dataset ID"
-                },
-                {
-                    "field": "submitter_id",
-                    "name": "CT Scan ID"
-                },
-                {
-                    "field": "_ct_series_count",
-                    "name": "CT Series Count"
-                },
-                {
-                    "field": "_ct_instances_count",
-                    "name": "CT Instances Count"
-                }
-              ],
-              "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_ct_scan_id",
-                "referenceIdFieldInDataIndex": "_ct_scan_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "MR Exams",
-            "charts": {
-              "covid19_positive": {
-                "chartType": "fullPie",
-                "title": "COVID-19 Positive"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_description",
-                    "body_part_examined",
-                    "age_at_imaging",
-                    "study_location",
-                    "study_year",
-                    "study_year_shifted",
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Imaging Properties",
-                  "fields":[
-                    "data_format",
-                    "slice_thickness",
-                    "spacing_between_slices",
-                    "mr_acquisition_type",
-                    "magnetic_field_strength",
-                    "scanning_sequence",
-                    "sequence_name",
-                    "contrast_bolus_agent",
-                    "image_type",
-                    "lossy_image_compression",
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "modality",
-                    "pixel_spacing",
-                    "series_description",
-                    "spatial_resolution"
-                  ]
-                },
-                {
-                  "title": "Medical History",
-                  "fields":[
-                    "covid19_positive"
-                  ]
-                },
-                {
-                  "title": "Case Demographics",
-                  "fields":[
-                    "sex",
-                    "race",
-                    "age_at_index",
-                    "index_event",
-                    "zip"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "submitter_id",
-                "_mr_series_count",
-                "_mr_instances_count",
-                "study_description",
-                "age_at_imaging",
-                "study_year",
-                "study_year_shifted",
-                "body_part_examined",
-                "covid19_positive",
-                "age_at_index",
-                "index_event",
-                "sex",
-                "race",
-                "zip",
-                "data_format",
-                "slice_thickness",
-                "spacing_between_slices",
-                "mr_acquisition_type",
-                "magnetic_field_strength",
-                "scanning_sequence",
-                "sequence_name",
-                "contrast_bolus_agent",
-                "image_type",
-                "lossy_image_compression",
-                "manufacturer",
-                "manufacturer_model_name",
-                "modality",
-                "pixel_spacing",
-                "series_description",
-                "series_uid",
-                "spatial_resolution",
-                "project_id"
-              ]
-            },
-            "dropdowns": {
-              "download-table": {
-                "title": "Download MR Exams Table"
-              }
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data-json",
-                "title": "JSON",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_MR_Exams_table.json"
-              },
-              {
-                "enabled": true,
-                "type": "data-tsv",
-                "title": "TSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_MR_Exams_table.tsv"
-              },
-              {
-                "enabled": true,
-                "type": "data-csv",
-                "title": "CSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_MR_Exams_table.csv"
-              },
-              {
-                "enabled": true,
-                "type": "manifest",
-                "title": "Download File Manifest for MR Exams",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_MR_Exam_file_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "loginForDownload": true,
-            "guppyConfig": {
-              "dataType": "mr_exam",
-              "nodeCountTitle": "MR Exams",
-              "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Dataset ID"
-                },
-                {
-                    "field": "submitter_id",
-                    "name": "MR Exam ID"
-                },
-                {
-                    "field": "_mr_series_count",
-                    "name": "MR Series Count"
-                },
-                {
-                    "field": "_mr_instances_count",
-                    "name": "MR Instances Count"
-                }
-              ],
-              "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_mr_exam_id",
-                "referenceIdFieldInDataIndex": "_mr_exam_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
