@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.04
+# Core Gen3 Release 2022.04 (Azurite)
 
 ## uc-cdis/arborist
 
