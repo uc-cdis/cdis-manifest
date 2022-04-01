@@ -10,7 +10,7 @@
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "hatchery": "quay.io/cdis/hatchery:master",
-    "portal": "quay.io/cdis/data-portal:master",
+    "portal": "quay.io/cdis/data-portal:3.22.1",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "wts": "quay.io/cdis/workspace-token-service:master"
   },
