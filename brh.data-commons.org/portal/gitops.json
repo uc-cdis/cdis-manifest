@@ -13,7 +13,8 @@
         "heading": "",
         "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations."
       },
-      "buttons": [{
+      "buttons": [
+        {
           "name": "Discover Data",
           "icon": "data-explore",
           "body": "Discover Data",
@@ -31,7 +32,8 @@
       "homepageChartNodes": []
     },
     "navigation": {
-      "items": [{
+      "items": [
+        {
           "icon": "query",
           "link": "/discovery",
           "color": "#a2a2a2",
@@ -52,10 +54,12 @@
       ]
     },
     "topBar": {
-      "items": [{
-        "link": "https://brh.data-commons.org/dashboard/Public/index.html",
-        "name": "Documentation"
-      }]
+      "items": [
+        {
+          "link": "https://brh.data-commons.org/dashboard/Public/index.html",
+          "name": "Documentation"
+        }
+      ]
     },
     "login": {
       "title": "Biomedical Research Hub",
@@ -67,7 +71,8 @@
       },
       "image": "stage-icons/stage-gene"
     },
-    "footerLogos": [{
+    "footerLogos": [
+      {
         "src": "/src/img/sponsors/gitops-sponsors/gen3_50.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
@@ -109,11 +114,21 @@
         "enabled": true,
         "field": "advSearchFilters",
         "filters": [
-          { "key": "Research Focus Area" },
-          { "key": "Administering IC(s)" },
-          { "key": "Simulated vs. Real Data" },
-          { "key": "Year Grant Awarded" },
-          { "key": "Study Description" }
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
         ]
       },
       "exportToWorkspace": {
@@ -133,17 +148,18 @@
       "search": {
         "searchBar": {
           "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Characteristics"
         }
-      },
-      "tagSearchDropdown": {
-        "enabled": true,
-        "collapsibleButtonText": "Study Characteristics"
       },
       "authorization": {
         "enabled": true
       }
     },
-    "aggregations": [{
+    "aggregations": [
+      {
         "name": "Studies",
         "field": "frontend_uid",
         "type": "count"
@@ -157,7 +173,8 @@
     "tagSelector": {
       "title": "Tags by category"
     },
-    "studyColumns": [{
+    "studyColumns": [
+      {
         "name": "Study Name",
         "field": "name",
         "errorIfNotAvailable": false,
@@ -208,11 +225,13 @@
       "header": {
         "field": "name"
       },
-      "fieldsToShow": [{
+      "fieldsToShow": [
+        {
           "groupName": "Study Identifiers",
           "groupWidth": "half",
           "includeName": false,
-          "fields": [{
+          "fields": [
+            {
               "name": "Number of Subjects",
               "field": "_subjects_count",
               "contentType": "number"
@@ -253,14 +272,16 @@
         },
         {
           "groupWidth": "full",
-          "fields": [{
-            "name": "Description",
-            "field": "study_description",
-            "contentType": "paragraphs",
-            "includeName": true,
-            "includeIfNotAvailable": true,
-            "valueIfNotAvailable": "No description has been provided for this study."
-          }]
+          "fields": [
+            {
+              "name": "Description",
+              "field": "study_description",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
         }
       ]
     },
@@ -269,7 +290,8 @@
       "authzField": "authz",
       "uid": "frontend_uid"
     },
-    "tagCategories": [{
+    "tagCategories": [
+      {
         "name": "Commons",
         "displayName": "Data Commons",
         "color": "rgba(129, 211, 248, 1)",
