@@ -43,3 +43,13 @@ and where the data files are stored.
 The client provides us with various metadata files that we interact
 with outside of the normal gen3 metadata API's.  Andrew knows where
 those files live, and how we track them ...
+
+### Portal deployment
+
+In order for changes in va.data-commons.org/portal to be seen we must
+re-deploy portal. To do so please message planx devops or if one has 
+access to prod vm run 
+
+```
+adminvm$ gen3 kube-setup-portal
+```
