@@ -9,7 +9,9 @@
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.03",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:test-release-3.0",
+    "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:0.8",
+    "cohort-middleware": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cohort-middleware:0.1.4",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.03",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
@@ -21,14 +23,13 @@
     "ohdsi-webapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohdsi-webapi:master-2.8",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.03",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.03",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.22.1",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feat_gwas-ui-demo",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.03",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.03",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.03",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.03",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.03",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.03",
-    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:2022.03"
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.03"
   },
   "global": {
     "environment": "vhdcprod",
