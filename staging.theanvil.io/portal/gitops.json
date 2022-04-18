@@ -132,10 +132,6 @@
           "chartType": "count",
           "title": "Projects"
         },
-        "node_id": {
-          "chartType": "count",
-          "title": "Subjects"
-        },
         "sex": {
           "chartType": "pie",
           "title": "Sex"
@@ -165,14 +161,12 @@
             "fields": [
               "sex",
               "ancestry",
-              "age_value",
               "disease_description",
               "phenotype_present",
               "phenotype_absent",
               "disease_id",
               "solve_state",
               "congenital_status",
-              "age_of_onset",
               "phenotype_group"
             ]
           },
