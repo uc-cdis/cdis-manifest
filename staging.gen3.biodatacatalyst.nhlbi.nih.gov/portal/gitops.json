@@ -269,8 +269,6 @@
             "carotid_stenosis",
             "cimt_1",
             "cimt_2",
-            "bp_diastolic",
-            "bp_systolic",
             "antihypertensive_meds",
             "vte_case_status",
             "vte_followup_start_age",
@@ -302,7 +300,6 @@
         "race",
         "annotated_sex",
         "ethnicity",
-        "bp_diastolic",
         "hdl",
         "ldl"
       ]
@@ -410,14 +407,6 @@
         {
           "field": "vte_prior_history",
           "name": "VTE Prior History"
-        },
-        {
-          "field": "bp_diastolic",
-          "name": "BP Diastolic"
-        },
-        {
-          "field": "bp_systolic",
-          "name": "BP Systolic"
         },
         {
           "field": "basophil_ncnc_bld",
