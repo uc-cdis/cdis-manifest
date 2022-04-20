@@ -38,7 +38,7 @@
     "environment": "anvilprod",
     "hostname": "gen3.theanvil.io",
     "revproxy_arn": "arn:aws:acm:us-east-1:474789003679:certificate/9fd731e3-3366-4bd0-a3ef-0453dc07289a",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.3.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/anvil/2.3.2/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-anvilprod-gen3",
     "logs_bucket": "logs-anvilprod-gen3",
@@ -152,6 +152,10 @@
           {
             "name": "ROOT_NODE",
             "value": "file"
+          },
+          {
+            "name": "EXTRA_NODES",
+            "value": ""
           }
         ],
         "volumeMounts": [
@@ -182,77 +186,6 @@
           "name": "peregrine-creds-volume",
           "secret": {
             "secretName": "peregrine-creds"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "ingest-metadata-manifest",
-      "action": "ingest-metadata-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-gen3-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2022.03",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "get-dbgap-metadata",
-      "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-gen3-theanvil-io",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2022.03",
-        "pull_policy": "Always",
-        "env": [],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
