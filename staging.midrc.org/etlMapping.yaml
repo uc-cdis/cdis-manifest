@@ -134,6 +134,7 @@ mappings:
       - name: data_type
       - name: data_category
       - name: project_id
+      - name: case_ids
     injecting_props:
       dataset:
         props:
@@ -147,9 +148,6 @@ mappings:
         props:
           - name: _case_id
             src: id
-            fn: set
-          - name: case_submitter_id
-            src: submitter_id
             fn: set
           - name: sex
             src: sex
@@ -174,6 +172,9 @@ mappings:
           - name: _imaging_study_id
             src: id
             fn: set
+          - name: study_uid
+            src: study_uid
+            fn: set
           - name: study_modality
             src: study_modality
             fn: set
@@ -189,9 +190,6 @@ mappings:
           - name: study_location
             src: study_location
             fn: set
-          - name: series_count
-            src: series_count
-            fn: max
           - name: study_year
             src: study_year
             fn: max
@@ -214,6 +212,7 @@ mappings:
       - name: study_year
       - name: study_year_shifted
       - name: case_ids
+      - name: study_uid
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
