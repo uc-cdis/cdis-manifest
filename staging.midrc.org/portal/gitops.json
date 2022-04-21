@@ -531,7 +531,7 @@
                     "study_year_shifted",
                     "body_part_examined",
                     "study_location",
-                    "series_count",
+                    "days_to_study",
                     "project_id"
                   ]
                 },
@@ -563,7 +563,7 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "series_count",
+                "days_to_study",
                 "data_format",
                 "covid19_positive",
                 "age_at_index",
@@ -575,6 +575,7 @@
                 "_dx_series_file_count",
                 "_cr_series_file_count",
                 "_mr_series_file_count",
+                "case_ids",
                 "submitter_id",
                 "project_id"
               ]

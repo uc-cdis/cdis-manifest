@@ -1,44 +1,58 @@
 mappings:
-  - name: midrcstaging_dataset
-    doc_type: dataset
+  - name: midrcstaging_project
+    doc_type: project
     type: aggregator
-    root: dataset
+    root: project
     props:
       - name: project_id
-      - name: submitter_id
-      - name: data_contributor
-      - name: data_description
-      - name: data_url_doi
-      - name: research_description
-      - name: license
-      - name: publication_citation
-      - name: data_citation
     aggregated_props:
-      - name: _imaging_study_id
-        path: cases.imaging_studies
+      - name: _dataset_id
+        path: datasets
         src: id
         fn: min
+      - name: data_contributor
+        path: datasets
+        fn: set
+      - name: data_description
+        path: datasets
+        fn: set
+      - name: data_url_doi
+        path: datasets
+        fn: set
+      - name: research_description
+        path: datasets
+        fn: set
+      - name: license
+        path: datasets
+        fn: set
+      - name: publication_citation
+        path: datasets
+        fn: set
+      - name: data_citation
+        path: datasets
+        fn: set
+    aggregated_props:
       - name: _cases_count
-        path: cases
+        path: datasets.cases
         fn: count
       - name: _imaging_studies_count
-        path: cases.imaging_studies
+        path: datasets.cases.imaging_studies
         fn: count
       - name: _ct_series_file_count
-        path: cases.imaging_studies.ct_series_files
+        path: datasets.cases.imaging_studies.ct_series_files
         fn: count
       - name: _cr_series_file_count
-        path: cases.imaging_studies.cr_series_files
+        path: datasets.cases.imaging_studies.cr_series_files
         fn: count
       - name: _dx_series_file_count
-        path: cases.imaging_studies.dx_series_files
+        path: datasets.cases.imaging_studies.dx_series_files
         fn: count
       - name: _mr_series_file_count
-        path: cases.imaging_studies.mr_series_files
+        path: datasets.cases.imaging_studies.mr_series_files
         fn: count
     joining_props:
       - index: imaging_data_file
-        join_on: _dataset_id
+        join_on: project_id
         props:
           - name: object_id
             src: object_id
@@ -55,8 +69,6 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-    parent_props:
-      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
   - name: midrcstaging_case
     doc_type: case
     type: aggregator
@@ -201,7 +213,7 @@ mappings:
       - name: study_location
       - name: study_year
       - name: study_year_shifted
-      - name: series_count
+      - name: case_ids
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
