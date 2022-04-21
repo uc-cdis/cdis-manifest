@@ -32,7 +32,6 @@ mappings:
       - name: data_citation
         path: datasets
         fn: set
-    aggregated_props:
       - name: _cases_count
         path: datasets.cases
         fn: count
