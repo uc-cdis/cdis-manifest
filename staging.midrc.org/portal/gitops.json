@@ -407,8 +407,7 @@
                 "research_description",
                 "license",
                 "publication_citation",
-                "data_citation",
-                "submitter_id"
+                "data_citation"
               ],
               "linkFields": [
                 "data_url_doi"
@@ -465,16 +464,12 @@
             ],
             "loginForDownload": true,
             "guppyConfig": {
-              "dataType": "dataset",
+              "dataType": "project",
               "nodeCountTitle": "Datasets",
               "fieldMapping": [
                   {
                     "field": "project_id",
                     "name": "Project ID"
-                  },
-                  {
-                    "field": "submitter_id",
-                    "name": "Dataset Name"
                   },
                   {
                     "field": "_imaging_studies_count",
@@ -500,8 +495,8 @@
               "manifestMapping": {
                 "resourceIndexType": "imaging_data_file",
                 "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_dataset_id",
-                "referenceIdFieldInDataIndex": "_dataset_id"
+                "referenceIdFieldInResourceIndex": "project_id",
+                "referenceIdFieldInDataIndex": "project_id"
               },
               "accessibleFieldCheckList": ["project_id"],
               "accessibleValidationField": "project_id"
