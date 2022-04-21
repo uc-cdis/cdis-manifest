@@ -3,13 +3,14 @@ mappings:
     doc_type: project
     type: aggregator
     root: project
-    props:
-      - name: project_id
     aggregated_props:
       - name: _dataset_id
         path: datasets
         src: id
         fn: min
+      - name: project_id
+        path: datasets
+        fn: set
       - name: data_contributor
         path: datasets
         fn: set
