@@ -350,7 +350,7 @@
     "resources": [
       {
         "title": "JCOIN MOUD Accessibility Analysis",
-        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
+        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States.",
         "imageUrl": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.png",
         "link": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html"
       },
@@ -359,6 +359,12 @@
         "description": "In this notebook we used data from NIDA-PDAPS and CDC WONDER mortality data to visualize the relationship between statewide changes in opioid treatment policy and opioid overdose mortality rates in 2020.",
         "imageUrl": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.png",
         "link": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.html"
+      },
+      {
+        "title": "Gene Expression Analysis of Project TCGA-CHOL",
+        "description": "In this notebook, we demonstrated how to retrieve RNA expression data of project TCGA-CHOL from Genomic Data Commons (GDC) data portal, and perform data analysis and visualization using a pipeline provided by an R package GDCRNATools.",
+        "imageUrl": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.png",
+        "link": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html"
       }
     ]
   },
