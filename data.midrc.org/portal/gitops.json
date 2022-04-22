@@ -16,6 +16,7 @@
           "graphql": "_radiography_exam_count",
           "name": "Digital Radiography Exams",
           "plural": "Digital Radiography Exams"
+
         },
         {
           "graphql": "_ct_scan_count",
@@ -562,7 +563,6 @@
                     "study_year_shifted",
                     "body_part_examined",
                     "study_location",
-                    "series_count",
                     "project_id"
                   ]
                 },
@@ -588,13 +588,14 @@
             "table": {
               "enabled": true,
               "fields": [
+                "study_uid",
                 "study_modality",
                 "study_description",
                 "body_part_examined",
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "series_count",
+                "days_to_study",
                 "data_format",
                 "covid19_positive",
                 "age_at_index",
@@ -610,6 +611,7 @@
                 "_dx_instances_count",
                 "_cr_series_count",
                 "_cr_instances_count",
+                "case_ids",
                 "submitter_id",
                 "project_id"
               ]
@@ -741,7 +743,6 @@
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
-                    "series_count",
                     "study_year",
                     "study_year_shifted",
                     "project_id"
@@ -810,6 +811,7 @@
                 "series_description",
                 "series_uid",
                 "spatial_resolution",
+                "case_ids",
                 "project_id"
               ]
             },
@@ -924,7 +926,6 @@
                     "body_part_examined",
                     "age_at_imaging",
                     "study_location",
-                    "series_count",
                     "study_year",
                     "study_year_shifted",
                     "project_id"
@@ -1004,6 +1005,7 @@
                 "series_description",
                 "series_uid",
                 "spatial_resolution",
+                "case_ids",
                 "project_id"
               ]
             },
@@ -1183,6 +1185,7 @@
                 "series_description",
                 "series_uid",
                 "spatial_resolution",
+                "case_ids",
                 "project_id"
               ]
             },
