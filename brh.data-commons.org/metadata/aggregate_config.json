@@ -23,7 +23,7 @@
     "MIDRC": {
       "mds_url": "https://data.midrc.org",
       "commons_url": "data.midrc.org",
-      "study_data_field": "discovery_metadata",
+      "guid_type": "discovery_metadata",
       "columns_to_fields": {
         "_subjects_count": "cases_count",
         "study_description": "research_description",
