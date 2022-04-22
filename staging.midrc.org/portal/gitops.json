@@ -531,7 +531,6 @@
                     "study_year_shifted",
                     "body_part_examined",
                     "study_location",
-                    "series_count",
                     "project_id"
                   ]
                 },
@@ -563,7 +562,8 @@
                 "age_at_imaging",
                 "study_year",
                 "study_year_shifted",
-                "series_count",
+                "study_uid",
+                "days_to_study",
                 "data_format",
                 "covid19_positive",
                 "age_at_index",
@@ -576,6 +576,7 @@
                 "_cr_series_file_count",
                 "_mr_series_file_count",
                 "submitter_id",
+                "case_ids",
                 "project_id"
               ]
             },
@@ -640,6 +641,10 @@
                 {
                     "field": "submitter_id",
                     "name": "Imaging Study ID"
+                },
+                {
+                    "field": "case_ids",
+                    "name": "Patient ID"
                 },
                 {
                     "field": "_ct_series_file_count",

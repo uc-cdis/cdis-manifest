@@ -1,4 +1,34 @@
 mappings:
+  - name: midrcstaging_project
+    doc_type: project
+    type: aggregator
+    root: project
+    props:
+      - name: code
+      - name: name
+    aggregated_props:
+      - name: _imaging_study_id
+        path: datasets.cases.imaging_studies
+        src: id
+        fn: min
+      - name: _cases_count
+        path: datasets.cases
+        fn: count
+      - name: _imaging_studies_count
+        path: datasets.cases.imaging_studies
+        fn: count
+      - name: _ct_series_file_count
+        path: datasets.cases.imaging_studies.ct_series_files
+        fn: count
+      - name: _cr_series_file_count
+        path: datasets.cases.imaging_studies.cr_series_files
+        fn: count
+      - name: _dx_series_file_count
+        path: datasets.cases.imaging_studies.dx_series_files
+        fn: count
+      - name: _mr_series_file_count
+        path: datasets.cases.imaging_studies.mr_series_files
+        fn: count
   - name: midrcstaging_dataset
     doc_type: dataset
     type: aggregator
@@ -122,6 +152,7 @@ mappings:
       - name: data_type
       - name: data_category
       - name: project_id
+      - name: case_ids
     injecting_props:
       dataset:
         props:
@@ -135,9 +166,6 @@ mappings:
         props:
           - name: _case_id
             src: id
-            fn: set
-          - name: case_submitter_id
-            src: submitter_id
             fn: set
           - name: sex
             src: sex
@@ -177,9 +205,9 @@ mappings:
           - name: study_location
             src: study_location
             fn: set
-          - name: series_count
-            src: series_count
-            fn: max
+          - name: study_uid
+            src: study_uid
+            fn: set
           - name: study_year
             src: study_year
             fn: max
@@ -201,7 +229,7 @@ mappings:
       - name: study_location
       - name: study_year
       - name: study_year_shifted
-      - name: series_count
+      - name: study_uid
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
