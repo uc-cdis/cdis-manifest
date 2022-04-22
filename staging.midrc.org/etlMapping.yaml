@@ -230,6 +230,7 @@ mappings:
       - name: study_year
       - name: study_year_shifted
       - name: study_uid
+      - name: case_ids
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
