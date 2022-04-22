@@ -107,85 +107,6 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-  - name: midrcstaging_imaging_data_file
-    doc_type: imaging_data_file
-    type: collector
-    root: None
-    category: imaging_data_file
-    props:
-      - name: submitter_id
-      - name: object_id
-      - name: md5sum
-      - name: file_name
-      - name: file_size
-      - name: data_format
-      - name: data_type
-      - name: data_category
-      - name: project_id
-    injecting_props:
-      dataset:
-        props:
-          - name: _dataset_id
-            src: id
-            fn: set
-          - name: data_contributor
-            src: data_contributor
-            fn: set
-      case:
-        props:
-          - name: _case_id
-            src: id
-            fn: set
-          - name: case_submitter_id
-            src: submitter_id
-            fn: set
-          - name: sex
-            src: sex
-            fn: set
-          - name: race
-            src: race
-            fn: set
-          - name: age_at_index
-            src: age_at_index
-            fn: max
-          - name: index_event
-            src: index_event
-            fn: set
-          - name: zip
-            src: zip
-            fn: set
-          - name: covid19_positive
-            src: covid19_positive
-            fn: set
-      imaging_study:
-        props:
-          - name: _imaging_study_id
-            src: id
-            fn: set
-          - name: study_modality
-            src: study_modality
-            fn: set
-          - name: study_description
-            src: study_description
-            fn: set
-          - name: age_at_imaging
-            src: age_at_imaging
-            fn: max
-          - name: body_part_examined
-            src: body_part_examined
-            fn: set
-          - name: study_location
-            src: study_location
-            fn: set
-          - name: series_count
-            src: series_count
-            fn: max
-          - name: study_year
-            src: study_year
-            fn: max
-          - name: study_year_shifted
-            src: study_year_shifted
-            fn: set
   - name: midrcstaging_imaging_study
     doc_type: imaging_study
     type: aggregator
@@ -201,7 +122,8 @@ mappings:
       - name: study_location
       - name: study_year
       - name: study_year_shifted
-      - name: series_count
+      - name: study_uid
+      - name: case_ids
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
@@ -235,4 +157,37 @@ mappings:
             fn: set
           - name: data_category
             src: data_category
+            fn: set
+  - name: midrcstaging_imaging_data_file
+    doc_type: imaging_data_file
+    type: collector
+    root: None
+    category: imaging_data_file
+    props:
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+      - name: project_id
+      - name: series_uid
+      - name: case_ids
+    injecting_props:
+      dataset:
+        props:
+          - name: _dataset_id
+            src: id
+            fn: set
+      case:
+        props:
+          - name: _case_id
+            src: id
+            fn: set
+      imaging_study:
+        props:
+          - name: _imaging_study_id
+            src: id
             fn: set
