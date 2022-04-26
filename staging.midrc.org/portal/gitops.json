@@ -531,14 +531,15 @@
                     "study_year_shifted",
                     "body_part_examined",
                     "study_location",
-                    "series_count",
                     "project_id"
                   ]
                 },
                 {
                   "title": "Imaging Properties",
                   "fields":[
-                    "data_format"
+                    "data_format",
+                    "data_category",
+                    "data_type"
                   ]
                 },
                 {
@@ -561,9 +562,9 @@
                 "study_description",
                 "body_part_examined",
                 "age_at_imaging",
+                "days_to_study",
                 "study_year",
                 "study_year_shifted",
-                "series_count",
                 "data_format",
                 "covid19_positive",
                 "age_at_index",
@@ -575,7 +576,11 @@
                 "_dx_series_file_count",
                 "_cr_series_file_count",
                 "_mr_series_file_count",
-                "submitter_id",
+                "data_format",
+                "data_category",
+                "data_type",
+                "study_uid",
+                "case_ids",
                 "project_id"
               ]
             },
@@ -640,6 +645,10 @@
                 {
                     "field": "submitter_id",
                     "name": "Imaging Study ID"
+                },
+                {
+                    "field": "case_ids",
+                    "name": "Patient ID"
                 },
                 {
                     "field": "_ct_series_file_count",
