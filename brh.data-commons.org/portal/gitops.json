@@ -365,6 +365,18 @@
         "description": "In this notebook, we demonstrated how to retrieve RNA expression data of project TCGA-CHOL from Genomic Data Commons (GDC) data portal, and perform data analysis and visualization using a pipeline provided by an R package GDCRNATools.",
         "imageUrl": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.png",
         "link": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html"
+      },
+      {
+        "title": "PDC Clustergram",
+        "description": "This notebook attempts to demonstrate the use the PDC API to retrieve the associated clinical metadata for all samples, format the data for analysis using pandas and cluster and visualize the data using the Seaborn clustermap package.",
+        "imageUrl": "/dashboard/Public/notebooks/PDC_clustergram.png",
+        "link": "/dashboard/Public/notebooks/PDC_clustergram.html"
+      },
+      {
+        "title": "MIDRC CT Scan",
+        "description": "In this notebook we demonstrate how to pull in MIDRC CT scan data, how to view the CT scan images, how to convert the image file format, and how to extract clinical data and file metadata from the DICOM file headers.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.html"
       }
     ]
   },
