@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.05
+# Core Gen3 Release 2022.05 (Biotite)
 
 ## uc-cdis/fence
 
