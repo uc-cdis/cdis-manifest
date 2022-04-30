@@ -7,22 +7,22 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:1.2.1",
-    "arranger": "quay.io/cdis/arranger:1.0.3",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.05",
+    "arranger": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger:2022.05",
+    "arranger-dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger-gen3-statics:2022.05",
+    "arranger-adminapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger-adminapi:2022.05",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:2.7.1",
-    "indexd": "quay.io/cdis/indexd:1.1.1",
-    "peregrine": "quay.io/cdis/peregrine:1.0.9",
-    "pidgin": "quay.io/cdis/pidgin:1.0.0",
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
-    "sheepdog": "quay.io/cdis/sheepdog:1.1.8",
-    "portal": "quay.io/cdis/data-portal:2.7.4",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.05",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.05",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.05",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.05",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.05",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.05",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.05",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "spark": "quay.io/cdis/gen3-spark:1.0.0",
-    "tube": "quay.io/cdis/tube:0.3.15"
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.05",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.05"
   },
   "jupyterhub": {
     "enabled": "yes"
