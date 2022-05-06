@@ -43,7 +43,7 @@ script:
       # validate portal configuration
       if [ -f $man ] && [ -f $etl ] && [ -f $ptlcfg ]; then
         if [[ $TRAVIS_PULL_REQUEST != false ]]; then
-          gen3utils validate-portal-config $etl $man $ptlcfg uc-cdis/gitops-qa $TRAVIS_PULL_REQUEST || exit 1
+          gen3utils validate-portal-config $etl $man $ptlcfg uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST || exit 1
         else
           gen3utils validate-portal-config $etl $man $ptlcfg || exit 1
         fi

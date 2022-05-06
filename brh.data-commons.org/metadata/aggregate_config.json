@@ -23,7 +23,7 @@
     "MIDRC": {
       "mds_url": "https://data.midrc.org",
       "commons_url": "data.midrc.org",
-      "study_data_field": "discovery_metadata",
+      "guid_type": "discovery_metadata",
       "columns_to_fields": {
         "_subjects_count": "cases_count",
         "study_description": "research_description",
@@ -46,10 +46,12 @@
       "mds_url": "https://jcoin.datacommons.io/",
       "commons_url": "jcoin.datacommons.io/",
       "columns_to_fields": {
+        "study_description": "study_description_summary",
         "_subjects_count": "subjects",
-        "study_description": "summary",
-        "short_name": "study_name",
-        "full_name": "study_name"
+        "_unique_id" : "study_id",
+        "short_name": "project_title",
+        "name": "project_title",
+        "full_name": "study_name_title"
       }
     },
     "AnVIL": {
@@ -66,7 +68,6 @@
     "Genomic Data Commons": {
       "mds_url": "https://gen3.datacommons.io",
       "commons_url": "portal.gdc.cancer.gov",
-      "study_data_field": "discovery_metadata",
       "columns_to_fields": {
         "_subjects_count": "subjects_count",
         "dbgap_accession_number": "study_id",

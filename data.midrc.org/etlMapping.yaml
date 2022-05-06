@@ -172,6 +172,7 @@ mappings:
       - name: data_type
       - name: data_category
       - name: project_id
+      - name: case_ids
     injecting_props:
       dataset:
         props:
@@ -227,9 +228,6 @@ mappings:
           - name: study_location
             src: study_location
             fn: set
-          - name: series_count
-            src: series_count
-            fn: max
           - name: study_year
             src: study_year
             fn: max
@@ -266,7 +264,8 @@ mappings:
       - name: study_location
       - name: study_year
       - name: study_year_shifted
-      - name: series_count
+      - name: study_uid
+      - name: case_ids
     aggregated_props:
       - name: _ct_scans_count
         path: ct_scans
@@ -326,6 +325,7 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
+      - name: case_ids
     aggregated_props:
       - name: _ct_series_count
         path: ct_series
@@ -351,34 +351,8 @@ mappings:
       - name: spacing_between_slices
         path: ct_series
         fn: set
-# need to update data dictionary to add these two:
-      # - name: magnetic_field_sequence
-      #   path: ct_series
-      #   fn: set
-      # - name: scanning_sequence
-      #   path: ct_series
-      #   fn: set
-# these properties are from imaging_Series
-      # - name: contrast_bolus_agent
-      #   path: ct_series
-      #   fn: set
-      # - name: pixel_spacing
-      #   path: ct_series
-      #   fn: set
-      # - name: series_description
-      #   path: ct_series
-      #   fn: set
-      # - name: series_uid
-      #   path: ct_series
-      #   fn: set
-      # - name: series_type
-      #   path: ct_series
-      #   fn: set
-      # - name: series_name
-      #   path: ct_series
-      #   fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,study_uid,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _ct_scan_id
@@ -445,6 +419,7 @@ mappings:
       - name: project_id
       - name: submitter_id
       - name: view_position
+      - name: case_ids
     aggregated_props:
       - name: _cr_series_count
         path: cr_series
@@ -465,7 +440,7 @@ mappings:
         path: dx_series
         fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,series_count,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_modality,study_description,age_at_imaging,body_part_examined,study_location,study_uid,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _radiography_exam_id
@@ -531,6 +506,7 @@ mappings:
     props:
       - name: project_id
       - name: submitter_id
+      - name: case_ids
     aggregated_props:
       - name: _mr_series_count
         path: mr_series
@@ -556,33 +532,8 @@ mappings:
       - name: sequence_name
         path: mr_series
         fn: set
-# These are covered by joining imaging_series
-      # - name: contrast_bolus_agent
-      #   path: mr_series
-      #   fn: set
-      # - name: image_type
-      #   path: mr_series
-      #   fn: set
-      # - name: lossy_image_compression
-      #   path: mr_series
-      #   fn: set
-      # - name: series_type
-      #   path: mr_series
-      #   fn: set
-      # - name: series_name
-      #   path: mr_series
-      #   fn: set
-      # - name: manufacturer
-      #   path: mr_series
-      #   fn: set
-      # - name: manufacturer_model_name
-      #   path: mr_series
-      #   fn: set
-      # - name: modality
-      #   path: mr_series
-      #   fn: set
     parent_props:
-      - path: imaging_studies[_imaging_study_id:id,study_description,age_at_imaging,body_part_examined,study_location,study_year,study_year_shifted].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
+      - path: imaging_studies[_imaging_study_id:id,study_description,age_at_imaging,body_part_examined,study_location,study_year,study_year_shifted,study_uid].cases[_case_id:id,case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[_dataset_id:id,data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _mr_exam_id

@@ -1002,7 +1002,7 @@
                                     From the directory <code>/pd</code>, users can now start a new notebook. Click “New” (upper right corner) or open a previously saved notebook on the landing drive to load the files into one of the cells, for example
                                     by running <br>
                                     <code>
-                            ! gen3 pull_object "guid""<br>
+                            ! gen3 drs-pull object "guid""<br>
                             import pandas as pd <br>
                             os.chdir('/pd') <br>
                             demo_df = pd.read_csv('pd/demo_file.txt', sep='\t') <br>
@@ -1780,21 +1780,21 @@
                                     <ul>
                                         <li>Type in the following command to download the file to the terminal:<br>
                                             <code>
-                                        gen3 pull_object "guid"
+                                        gen3 drs-pull object "guid"
                                     </code><br><br>
                                             <img class="drop-shadow" src="img/workspace_terminal_download.png" alt="workspace_terminal_download" style="width:100%"><br><br>
                                         </li>
                                         <li>
                                             If you are working in a notebook, type in the following command into a code cell to download the file:<br>
                                             <code>
-                                        !gen3 pull_object "guid"
+                                        !gen3 drs-pull object "guid"
                                     </code><br><br>
                                             <img class="drop-shadow" src="img/workspace_download_one_file_sdk.png" alt="workspace_download_one_file_sdk" style="width:100%"><br><br>
                                         </li>
                                         <li>
                                             If you use the R kernel, change the command into
                                             <code>
-                                        system("gen3 pull_object 'guid'")
+                                        system("gen3 drs-pull object 'guid'")
                                     </code><br><br>
 
                                             <li>
