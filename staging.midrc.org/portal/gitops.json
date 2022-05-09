@@ -582,7 +582,9 @@
                 "study_uid",
                 "case_ids",
                 "project_id"
-              ]
+              ],
+              "dicomViewerId": "submitter_id",
+              "linkFields": ["submitter_id"]
             },
             "dropdowns": {
               "download-table": {
@@ -644,7 +646,7 @@
                 },
                 {
                     "field": "submitter_id",
-                    "name": "Imaging Study ID"
+                    "name": "Browse in DICOM viewer"
                 },
                 {
                     "field": "case_ids",
