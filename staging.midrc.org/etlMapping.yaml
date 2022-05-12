@@ -70,6 +70,7 @@ mappings:
       - name: index_event
       - name: zip
       - name: covid19_positive
+      - name: ethnicity
     aggregated_props:
       - name: _imaging_studies_count
         path: imaging_studies
@@ -138,7 +139,7 @@ mappings:
         path: mr_series_files
         fn: count
     parent_props:
-      - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive].datasets[data_contributor]
+      - path: cases[case_submitter_id:submitter_id,sex,race,age_at_index,index_event,zip,covid19_positive,ethnicity].datasets[data_contributor]
     joining_props:
       - index: imaging_data_file
         join_on: _imaging_study_id
