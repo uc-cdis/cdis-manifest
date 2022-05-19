@@ -254,14 +254,11 @@ mappings:
         - name: patient_position
         - name: pixel_spacing
         - name: radiopharmaceutical
-        - name: screening_diagnostic
         - name: series_description
         - name: series_uid
         - name: slice_thickness
         - name: spacing_between_slices
         - name: spatial_resolution
-        - name: spot_compression_spot_magnification
-        - name: tomosynthesis_images
         - name: transducer_type
         - name: view_position
     injecting_props:
