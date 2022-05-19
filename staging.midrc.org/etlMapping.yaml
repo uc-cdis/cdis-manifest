@@ -125,6 +125,8 @@ mappings:
       - name: study_year_shifted
       - name: study_uid
       - name: case_ids
+      - name: days_from_study_to_neg_covid_test
+      - name: days_from_study_to_pos_covid_test
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
@@ -262,4 +264,10 @@ mappings:
             fn: set
           - name: study_uid
             src: study_uid
+            fn: set
+          - name: days_from_study_to_pos_covid_test
+            src: days_from_study_to_pos_covid_test
+            fn: set
+          - name: days_from_study_to_neg_covid_test
+            src: days_from_study_to_neg_covid_test
             fn: set
