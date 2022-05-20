@@ -1,4 +1,64 @@
 mappings:
+  - name: midrcstaging_project
+    doc_type: project
+    type: aggregator
+    root: project
+    props:
+      - name: code
+      - name: name
+      - name: data_citation
+      - name: data_contributor
+      - name: data_description
+      - name: data_url_doi
+      - name: disease_type
+      - name: license
+      - name: longitudinal
+      - name: publication_citation
+      - name: research_description
+    parent_props:
+      - path: programs[program_name:name]
+    aggregated_props:
+      - name: _imaging_study_id
+        path: datasets.cases.imaging_studies
+        src: id
+        fn: min
+      - name: _cases_count
+        path: datasets.cases
+        fn: count
+      - name: _imaging_studies_count
+        path: datasets.cases.imaging_studies
+        fn: count
+      - name: _ct_series_file_count
+        path: datasets.cases.imaging_studies.ct_series_files
+        fn: count
+      - name: _cr_series_file_count
+        path: datasets.cases.imaging_studies.cr_series_files
+        fn: count
+      - name: _dx_series_file_count
+        path: datasets.cases.imaging_studies.dx_series_files
+        fn: count
+      - name: _mr_series_file_count
+        path: datasets.cases.imaging_studies.mr_series_files
+        fn: count
+    joining_props:
+      - index: imaging_data_file
+        join_on: _project_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+          - name: file_name
+            src: file_name
+            fn: set
+          - name: data_format
+            src: data_format
+            fn: set
+          - name: data_type
+            src: data_type
+            fn: set
+          - name: data_category
+            src: data_category
+            fn: set
   - name: midrcstaging_dataset
     doc_type: dataset
     type: aggregator
@@ -125,6 +185,8 @@ mappings:
       - name: study_year_shifted
       - name: study_uid
       - name: case_ids
+      - name: days_from_study_to_neg_covid_test
+      - name: days_from_study_to_pos_covid_test
     aggregated_props:
       - name: _ct_series_file_count
         path: ct_series_files
@@ -192,17 +254,19 @@ mappings:
         - name: patient_position
         - name: pixel_spacing
         - name: radiopharmaceutical
-        - name: screening_diagnostic
         - name: series_description
         - name: series_uid
         - name: slice_thickness
         - name: spacing_between_slices
         - name: spatial_resolution
-        - name: spot_compression_spot_magnification
-        - name: tomosynthesis_images
         - name: transducer_type
         - name: view_position
     injecting_props:
+      project:
+        props:
+          - name: _project_id
+            src: id
+            fn: set
       dataset:
         props:
           - name: _dataset_id
@@ -262,4 +326,10 @@ mappings:
             fn: set
           - name: study_uid
             src: study_uid
+            fn: set
+          - name: days_from_study_to_pos_covid_test
+            src: days_from_study_to_pos_covid_test
+            fn: set
+          - name: days_from_study_to_neg_covid_test
+            src: days_from_study_to_neg_covid_test
             fn: set
