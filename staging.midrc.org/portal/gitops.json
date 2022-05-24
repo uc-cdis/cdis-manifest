@@ -311,7 +311,7 @@
           },
           "dropdowns": {
             "download-table": {
-              "title": "Download Case Metadata Table"
+              "title": "Download Table"
             }
           },
           "buttons": [
@@ -345,10 +345,10 @@
             {
               "enabled": true,
               "type": "manifest",
-              "title": "Download File Manifest for Cases",
+              "title": "Download File Manifest",
               "leftIcon": "datafile",
               "rightIcon": "download",
-              "fileName": "MIDRC_case_manifest.json"
+              "fileName": "MIDRC_Cases_manifest.json"
             },
             {
               "enabled": false,
@@ -488,7 +488,7 @@
             },
             "dropdowns": {
               "download-table": {
-                "title": "Download Imaging Studies Table"
+                "title": "Download Table"
               }
             },
             "buttons": [
@@ -522,10 +522,10 @@
               {
                 "enabled": true,
                 "type": "manifest",
-                "title": "Download File Manifest for Imaging Studies",
+                "title": "Download File Manifest",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
-                "fileName": "MIDRC_imaging_study_manifest.json"
+                "fileName": "MIDRC_Imaging_Studies_manifest.json"
               },
               {
                 "enabled": false,
@@ -582,33 +582,25 @@
         {
             "tabTitle": "Imaging Series",
             "charts": {
+              "modality": {
+                "chartType": "fullPie",
+                "title": "Modality"
+              },
               "sex": {
                 "chartType": "fullPie",
                 "title": "Case Sex"
               },
               "covid19_positive": {
                 "chartType": "fullPie",
-                "title": "Cases that ever had COVID-19"
+                "title": "Case Ever Had COVID-19"
               }
             },
             "filters": {
               "tabs": [
                 {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_description",
-                    "age_at_imaging",
-                    "study_year",
-                    "study_year_shifted",
-                    "study_location",
-                    "days_from_study_to_pos_covid_test",
-                    "days_from_study_to_neg_covid_test",
-                    "project_id"
-                  ]
-                },
-                {
                   "title": "Series Properties",
                   "fields":[
+                    "modality",
                     "acquisition_type",
                     "contrast_bolus_agent",
                     "convolution_kernel",
@@ -619,7 +611,6 @@
                     "lossy_image_compression",
                     "manufacturer",
                     "manufacturer_model_name",
-                    "modality",
                     "multiframe_images",
                     "patient_position",
                     "pixel_spacing",
@@ -633,6 +624,19 @@
                     "data_format",
                     "data_category",
                     "data_type"
+                  ]
+                },
+                {
+                  "title": "Study Properties",
+                  "fields":[
+                    "project_id",
+                    "study_description",
+                    "age_at_imaging",
+                    "study_year",
+                    "study_year_shifted",
+                    "study_location",
+                    "days_from_study_to_pos_covid_test",
+                    "days_from_study_to_neg_covid_test"
                   ]
                 },
                 {
