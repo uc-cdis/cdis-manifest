@@ -732,7 +732,7 @@
               },
               {
                 "enabled": true,
-                "type": "manifest",
+                "type": "file-manifest",
                 "title": "Download File Manifest",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
@@ -761,8 +761,6 @@
                 }
               ],
               "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
                 "referenceIdFieldInResourceIndex": "object_id",
                 "referenceIdFieldInDataIndex": "object_id"
               },
