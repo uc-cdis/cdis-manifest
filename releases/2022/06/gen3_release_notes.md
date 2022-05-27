@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.06
+# Core Gen3 Release 2022.06 (Calcite)
 
 ## uc-cdis/fence
 
