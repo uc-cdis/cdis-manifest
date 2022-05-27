@@ -309,7 +309,7 @@
           },
           "dropdowns": {
             "download-table": {
-              "title": "Download Case Metadata Table"
+              "title": "Download Table"
             }
           },
           "buttons": [
@@ -343,7 +343,7 @@
             {
               "enabled": true,
               "type": "manifest",
-              "title": "Download File Manifest for Cases",
+              "title": "Download File Manifest",
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_case_manifest.json"
@@ -452,7 +452,6 @@
             "table": {
               "enabled": true,
               "fields": [
-                "submitter_id",
                 "study_modality",
                 "study_description",
                 "body_part_examined",
@@ -480,13 +479,11 @@
                 "file_name",
                 "object_id",
                 "project_id"
-              ],
-              "dicomViewerId": "submitter_id",
-              "linkFields": ["submitter_id"]
+              ]
             },
             "dropdowns": {
               "download-table": {
-                "title": "Download Imaging Studies Table"
+                "title": "Download Table"
               }
             },
             "buttons": [
@@ -520,7 +517,7 @@
               {
                 "enabled": true,
                 "type": "manifest",
-                "title": "Download File Manifest for Imaging Studies",
+                "title": "Download File Manifest",
                 "leftIcon": "datafile",
                 "rightIcon": "download",
                 "fileName": "MIDRC_imaging_study_manifest.json"
@@ -592,21 +589,9 @@
             "filters": {
               "tabs": [
                 {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_description",
-                    "age_at_imaging",
-                    "study_year",
-                    "study_year_shifted",
-                    "study_location",
-                    "days_from_study_to_pos_covid_test",
-                    "days_from_study_to_neg_covid_test",
-                    "project_id"
-                  ]
-                },
-                {
                   "title": "Series Properties",
                   "fields":[
+                    "modality",
                     "acquisition_type",
                     "contrast_bolus_agent",
                     "convolution_kernel",
@@ -617,7 +602,6 @@
                     "lossy_image_compression",
                     "manufacturer",
                     "manufacturer_model_name",
-                    "modality",
                     "multiframe_images",
                     "patient_position",
                     "pixel_spacing",
@@ -634,12 +618,26 @@
                   ]
                 },
                 {
+                  "title": "Study Properties",
+                  "fields":[
+                    "study_description",
+                    "age_at_imaging",
+                    "study_year",
+                    "study_year_shifted",
+                    "study_location",
+                    "days_from_study_to_pos_covid_test",
+                    "days_from_study_to_neg_covid_test",
+                    "project_id"
+                  ]
+                },
+                {
                   "title": "Case Demographics",
                   "fields":[
                     "covid19_positive",
                     "age_at_index",
                     "sex",
                     "race",
+                    "ethnicity",
                     "zip",
                     "index_event"
                   ]
@@ -649,6 +647,8 @@
             "table": {
               "enabled": true,
               "fields": [
+                "modality",
+                "study_description",
                 "acquisition_type",
                 "contrast_bolus_agent",
                 "convolution_kernel",
@@ -659,7 +659,6 @@
                 "lossy_image_compression",
                 "manufacturer",
                 "manufacturer_model_name",
-                "modality",
                 "multiframe_images",
                 "patient_position",
                 "pixel_spacing",
@@ -670,7 +669,6 @@
                 "spatial_resolution",
                 "transducer_type",
                 "view_position",
-                "study_description",
                 "age_at_imaging",
                 "days_to_study",
                 "study_year",
