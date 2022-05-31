@@ -2,15 +2,17 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
   "default-pay-model": {
-    "aws_account_id": "252835817747",
-    "name": "healworkspaces",
-    "region": "us-east-1"
+    "bmh_workspace_id": "blanket_billing_eks",
+    "region": "us-east-1",
+    "account_id": "252835817747",
+    "workspace_type": "healworkspaces"
   },
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2022.04",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2022.05",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"

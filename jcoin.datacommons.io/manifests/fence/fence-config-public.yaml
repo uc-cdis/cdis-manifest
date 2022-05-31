@@ -134,8 +134,11 @@ ITRUST_GLOBAL_LOGOUT: 'https://auth.nih.gov/siteminderagent/smlogout.asp?mode=ni
 # - Optional parameters: "desc" (description) and "secondary" (boolean - can
 # be used by the frontend to display secondary buttons differently).
 LOGIN_OPTIONS:
-  - name: 'Login from Google'
+  - name: 'Google Login'
     idp: google
+  - name: 'ORCID Login'
+    idp: fence
+    fence_idp: orcid
 
 # Default login provider:
 # - must be configured in LOGIN_OPTIONS and OPENID_CONNECT
