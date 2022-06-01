@@ -58,13 +58,6 @@
       },
       "buttons": [
         {
-          "name": "ImmPort",
-          "body": "Visit ImmPort, a resource funded by the NIH and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
-          "external_link": "https://www.immport.org/home",
-          "external_link_text": "Visit Website",
-          "logo": "/custom/logo/immport-main-icon.png"
-        },
-        {
           "name": "TB Environment",
           "icon": "data-explore",
           "body": "Explore TB data.",
@@ -85,7 +78,7 @@
         {
           "name": "Microbiome Environment",
           "icon": "data-explore",
-          "body": "Explore data from a collection of open-access microbiome related studies from <a href='https://www.immport.org/home'>ImmPort</a>.",
+          "body": "Explore data from a collection of open-access microbiome-related studies.",
           "external_link": "https://microbiome.diseasedatahub.org"
         }
       ]
@@ -144,7 +137,6 @@
       {
         "title": "Supported Data Resources",
         "options": [
-          { "text": "ImmPort", "filterType": "singleSelect"},
           { "text": "TB", "filterType": "singleSelect"},
           { "text": "AIDS", "filterType": "singleSelect"},
           { "text": "Flu", "filterType": "singleSelect"},
