@@ -13094,6 +13094,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#! pip install scipy sklearn matplotlib seaborn</span>
+<span class="o">!</span>pip install gen3 -U
 <span class="kn">import</span> <span class="nn">gen3</span><span class="o">,</span> <span class="nn">operator</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">scipy</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
@@ -13122,6 +13123,69 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: gen3 in /opt/conda/lib/python3.9/site-packages (4.10.1)
+Requirement already satisfied: drsclient&lt;0.3.0,&gt;=0.2.1 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.2.1)
+Requirement already satisfied: humanfriendly in /opt/conda/lib/python3.9/site-packages (from gen3) (10.0)
+Requirement already satisfied: tqdm&gt;=4.61.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (4.64.0)
+Requirement already satisfied: aiohttp in /opt/conda/lib/python3.9/site-packages (from gen3) (3.8.1)
+Requirement already satisfied: dataclasses-json in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.6)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.4.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (1.4.2)
+Requirement already satisfied: aiofiles&lt;0.9.0,&gt;=0.8.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.8.0)
+Requirement already satisfied: python-dateutil in /opt/conda/lib/python3.9/site-packages (from gen3) (2.8.2)
+Requirement already satisfied: click in /opt/conda/lib/python3.9/site-packages (from gen3) (7.1.2)
+Requirement already satisfied: httpx in /opt/conda/lib/python3.9/site-packages (from gen3) (0.15.5)
+Requirement already satisfied: jsonschema in /opt/conda/lib/python3.9/site-packages (from gen3) (4.6.0)
+Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from gen3) (2.27.1)
+Requirement already satisfied: pypfb&lt;1.0.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.0)
+Requirement already satisfied: backoff in /opt/conda/lib/python3.9/site-packages (from gen3) (1.11.1)
+Requirement already satisfied: indexclient&gt;=1.6.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (2.1.0)
+Requirement already satisfied: asyncio&lt;4.0.0,&gt;=3.4.3 in /opt/conda/lib/python3.9/site-packages (from drsclient&lt;0.3.0,&gt;=0.2.1-&gt;gen3) (3.4.3)
+Requirement already satisfied: sniffio in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.2.0)
+Requirement already satisfied: certifi in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (2022.5.18.1)
+Requirement already satisfied: httpcore==0.11.* in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (0.11.1)
+Requirement already satisfied: rfc3986[idna2008]&lt;2,&gt;=1.3 in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.5.0)
+Requirement already satisfied: h11&lt;0.10,&gt;=0.8 in /opt/conda/lib/python3.9/site-packages (from httpcore==0.11.*-&gt;httpx-&gt;gen3) (0.9.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (2022.1)
+Requirement already satisfied: numpy&gt;=1.18.5 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (1.22.3)
+Requirement already satisfied: PyYAML&lt;6.0.0,&gt;=5.3.1 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (5.4.1)
+Requirement already satisfied: python-json-logger&lt;0.2.0,&gt;=0.1.11 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (0.1.11)
+Requirement already satisfied: fastavro&lt;2.0.0,&gt;=1.0.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.4.9)
+Requirement already satisfied: dictionaryutils&lt;=3.0.2 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (3.0.0)
+Requirement already satisfied: gdcdictionary&lt;2.0.0,&gt;=1.2.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.2.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil-&gt;gen3) (1.16.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (1.26.9)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (2.0.12)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (3.3)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (6.0.2)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.7.2)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.3.0)
+Requirement already satisfied: aiosignal&gt;=1.1.2 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.2.0)
+Requirement already satisfied: attrs&gt;=17.3.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (21.4.0)
+Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (4.0.2)
+Requirement already satisfied: typing-inspect&gt;=0.4.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (0.7.1)
+Requirement already satisfied: marshmallow-enum&lt;2.0.0,&gt;=1.5.1 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (1.5.1)
+Requirement already satisfied: marshmallow&lt;4.0.0,&gt;=3.3.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (3.14.1)
+Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /opt/conda/lib/python3.9/site-packages (from jsonschema-&gt;gen3) (0.18.1)
+Requirement already satisfied: cdislogging~=1.0 in /opt/conda/lib/python3.9/site-packages (from dictionaryutils&lt;=3.0.2-&gt;pypfb&lt;1.0.0-&gt;gen3) (1.1.1)
+Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/python3.9/site-packages (from typing-inspect&gt;=0.4.0-&gt;dataclasses-json-&gt;gen3) (4.1.1)
+Requirement already satisfied: mypy-extensions&gt;=0.3.0 in /opt/conda/lib/python3.9/site-packages (from typing-inspect&gt;=0.4.0-&gt;dataclasses-json-&gt;gen3) (0.4.3)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13135,7 +13199,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.OADC/6c7dbb34-2c53-4fc7-bd3a-7e4e493f1fae
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.OADC/6c7dbb34-2c53-4fc7-bd3a-7e4e493f1fae --no-unpack-packages
 </pre></div>
 
     </div>
@@ -13231,10 +13295,10 @@ div#notebook {
 
 
 
-<div id="5267918a-d11e-4d03-93aa-228b7744e701"></div>
+<div id="7c76bcc2-828c-49e3-aeea-04a198174763"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5267918a-d11e-4d03-93aa-228b7744e701');
+var element = $('#7c76bcc2-828c-49e3-aeea-04a198174763');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -14273,10 +14337,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="08b9f9ae-cdb5-4476-890f-d1df85fbfcb1"></div>
+<div id="1e75c473-219d-4e78-a0dc-44d3b95f0f0d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#08b9f9ae-cdb5-4476-890f-d1df85fbfcb1');
+var element = $('#1e75c473-219d-4e78-a0dc-44d3b95f0f0d');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -15258,7 +15322,7 @@ if (IPython.notebook.kernel !== null) {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.OADC/41c3f1ac-2cc7-4b04-b09c-a9c5dbad2c98
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.OADC/41c3f1ac-2cc7-4b04-b09c-a9c5dbad2c98 --no-unpack-packages
 </pre></div>
 
     </div>
@@ -15345,10 +15409,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="91804c79-2f1c-4948-83c5-832b17255a25"></div>
+<div id="41504bad-7daa-4f61-93a2-34fdf2384062"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#91804c79-2f1c-4948-83c5-832b17255a25');
+var element = $('#41504bad-7daa-4f61-93a2-34fdf2384062');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -16363,10 +16427,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="726b3b8d-2a7e-4a13-a0da-4f1ebcd51d2b"></div>
+<div id="0ebd51ac-fe84-4895-bb0a-668bce5fc0e2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#726b3b8d-2a7e-4a13-a0da-4f1ebcd51d2b');
+var element = $('#0ebd51ac-fe84-4895-bb0a-668bce5fc0e2');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -17400,10 +17464,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="9e81c764-5405-46b9-92a3-d55612a91a08"></div>
+<div id="05f29c40-1b93-4d6d-a028-f902a9b080a2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9e81c764-5405-46b9-92a3-d55612a91a08');
+var element = $('#05f29c40-1b93-4d6d-a028-f902a9b080a2');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -18425,10 +18489,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="bf2317ad-936c-40fa-9f66-bcb39af3e276"></div>
+<div id="b3055095-df09-4ac4-9104-9ce5ee81f444"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bf2317ad-936c-40fa-9f66-bcb39af3e276');
+var element = $('#b3055095-df09-4ac4-9104-9ce5ee81f444');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -19433,10 +19497,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="01901984-d425-4a9f-b2c8-879d359e5464"></div>
+<div id="896b7b52-dea7-4ff2-b385-0f2a9b3f05d8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#01901984-d425-4a9f-b2c8-879d359e5464');
+var element = $('#896b7b52-dea7-4ff2-b385-0f2a9b3f05d8');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
