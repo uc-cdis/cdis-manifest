@@ -32,6 +32,11 @@
   "indexd": {
     "arborist": "true"
   },
+    "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.04"
+    }
+  },
   "global": {
     "environment": "icgc",
     "hostname": "icgc.bionimbus.org",
