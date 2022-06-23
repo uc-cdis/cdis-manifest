@@ -40,9 +40,6 @@ mappings:
       - name: _pcr_assays_count
         path: cases.biospecimens.samples.aliquots.analytes.pcr_assays
         fn: count
-      - name: _pcr_assay_files_count
-        path: cases.biospecimens.samples.aliquots.analytes.pcr_assays.pcr_assay_files
-        fn: count
       - name: _mass_cytometry_assays_count
         path: cases.biospecimens.samples.aliquots.analytes.mass_cytometry_assays
         fn: count
