@@ -43,8 +43,8 @@
       }
     },
     "JCOIN": {
-      "mds_url": "https://jcoin.datacommons.io/",
-      "commons_url": "jcoin.datacommons.io/",
+      "mds_url": "https://jcoin.datacommons.io",
+      "commons_url": "jcoin.datacommons.io",
       "columns_to_fields": {
         "study_description": "study_description_summary",
         "_subjects_count": "subjects",
@@ -94,7 +94,7 @@
     },
     "Cancer Imaging Data Commons": {
       "mds_url": "https://gen3.datacommons.io",
-      "commons_url": "imaging.datacommons.cancer.gov/",
+      "commons_url": "imaging.datacommons.cancer.gov",
       "columns_to_fields": {
         "_subjects_count": "cases_count",
         "study_id": "_unique_id",
@@ -108,7 +108,7 @@
   },
   "adapter_commons": {
     "Kids First": {
-      "mds_url": "https://gen3staging.kidsfirstdrc.org/",
+      "mds_url": "https://gen3staging.kidsfirstdrc.org",
       "commons_url": "kidsfirstdrc.org",
       "adapter": "gen3",
       "config": {
