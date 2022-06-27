@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.07
+# Core Gen3 Release 2022.07 (Citrine)
 
 ## uc-cdis/arborist
 
