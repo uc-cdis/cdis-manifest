@@ -29,8 +29,8 @@
   },
   "global": {
     "environment": "vhdcprod",
-    "hostname": "va-testing.datacommons.io",
-    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/38816815-2bd6-43d1-a6ee-96bbdc69e3ec",
+    "hostname": "va-testing.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/e6a9ff63-c3b1-4536-89cd-fd1684047370",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "kube_bucket": "kube-vhdcprod-gen3",
     "logs_bucket": "logs-vhdcprod-gen3",
