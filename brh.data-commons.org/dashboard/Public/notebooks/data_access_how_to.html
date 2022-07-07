@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>data_ingestion_how_to</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>data_access_how_to</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,11 +14579,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Ingestion:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">Data Ingestion: Ways to bring data into the Biomedical Research Hub (BRH) workspace<a class="anchor-link" href="#Data-Ingestion:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">&#182;</a></h1><p>As a new user, you may be interested in exploring different ways to ingest data in BRH. In this notebook we will use some open access data to demonstate a few different ways to bring data into the BRH workspace and use the Gen3 SDK to download files:</p>
+<h1 id="Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">Data Access: Ways to bring data into the Biomedical Research Hub (BRH) workspace<a class="anchor-link" href="#Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">&#182;</a></h1><p>As a new user, you may be interested in exploring different ways to access data in BRH. In this notebook we will use some open access data to demonstate a few different ways to bring data into the BRH workspace and use the Gen3 SDK to download files:</p>
 <ol>
 <li>Using a downloaded manifest.json</li>
 <li>Open in workspace</li>
-<li>Ingesting zip files using Gen3 SDK</li>
+<li>Downloading zip files using Gen3 SDK</li>
 <li>Using the gen3 SDK and GraphQL to explore data in a project</li>
 </ol>
 <h1 id="1.-Using-a-downloaded-manifest.json">1. Using a downloaded manifest.json<a class="anchor-link" href="#1.-Using-a-downloaded-manifest.json">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring in open access JCOIN study "OEPS" into this notebook using a manifest file</p>
@@ -14615,7 +14615,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python libraries to test ingestion</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python libraries to test data access</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">glob</span>
@@ -14698,44 +14698,44 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Requirement already satisfied: gen3 in /opt/conda/lib/python3.9/site-packages (4.10.1)
-Requirement already satisfied: aiohttp in /opt/conda/lib/python3.9/site-packages (from gen3) (3.8.1)
-Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from gen3) (2.28.0)
-Requirement already satisfied: httpx in /opt/conda/lib/python3.9/site-packages (from gen3) (0.15.5)
-Requirement already satisfied: python-dateutil in /opt/conda/lib/python3.9/site-packages (from gen3) (2.8.2)
-Requirement already satisfied: drsclient&lt;0.3.0,&gt;=0.2.1 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.2.1)
-Requirement already satisfied: click in /opt/conda/lib/python3.9/site-packages (from gen3) (7.1.2)
+Requirement already satisfied: indexclient&gt;=1.6.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (2.1.0)
+Requirement already satisfied: dataclasses-json in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.6)
 Requirement already satisfied: humanfriendly in /opt/conda/lib/python3.9/site-packages (from gen3) (10.0)
 Requirement already satisfied: jsonschema in /opt/conda/lib/python3.9/site-packages (from gen3) (4.6.0)
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.4.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (1.4.2)
-Requirement already satisfied: backoff in /opt/conda/lib/python3.9/site-packages (from gen3) (1.11.1)
-Requirement already satisfied: tqdm&gt;=4.61.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (4.64.0)
-Requirement already satisfied: indexclient&gt;=1.6.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (2.1.0)
 Requirement already satisfied: pypfb&lt;1.0.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.0)
-Requirement already satisfied: dataclasses-json in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.6)
+Requirement already satisfied: backoff in /opt/conda/lib/python3.9/site-packages (from gen3) (1.11.1)
+Requirement already satisfied: click in /opt/conda/lib/python3.9/site-packages (from gen3) (7.1.2)
+Requirement already satisfied: tqdm&gt;=4.61.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (4.64.0)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.4.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (1.4.2)
+Requirement already satisfied: drsclient&lt;0.3.0,&gt;=0.2.1 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.2.1)
+Requirement already satisfied: httpx in /opt/conda/lib/python3.9/site-packages (from gen3) (0.15.5)
+Requirement already satisfied: python-dateutil in /opt/conda/lib/python3.9/site-packages (from gen3) (2.8.2)
 Requirement already satisfied: aiofiles&lt;0.9.0,&gt;=0.8.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.8.0)
+Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from gen3) (2.28.0)
+Requirement already satisfied: aiohttp in /opt/conda/lib/python3.9/site-packages (from gen3) (3.8.1)
 Requirement already satisfied: asyncio&lt;4.0.0,&gt;=3.4.3 in /opt/conda/lib/python3.9/site-packages (from drsclient&lt;0.3.0,&gt;=0.2.1-&gt;gen3) (3.4.3)
-Requirement already satisfied: certifi in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (2022.6.15)
-Requirement already satisfied: rfc3986[idna2008]&lt;2,&gt;=1.3 in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.5.0)
-Requirement already satisfied: httpcore==0.11.* in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (0.11.1)
 Requirement already satisfied: sniffio in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.2.0)
+Requirement already satisfied: certifi in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (2022.6.15)
+Requirement already satisfied: httpcore==0.11.* in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (0.11.1)
+Requirement already satisfied: rfc3986[idna2008]&lt;2,&gt;=1.3 in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.5.0)
 Requirement already satisfied: h11&lt;0.10,&gt;=0.8 in /opt/conda/lib/python3.9/site-packages (from httpcore==0.11.*-&gt;httpx-&gt;gen3) (0.9.0)
 Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (2022.1)
 Requirement already satisfied: numpy&gt;=1.18.5 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (1.22.3)
+Requirement already satisfied: dictionaryutils&lt;=3.0.2 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (3.0.0)
+Requirement already satisfied: fastavro&lt;2.0.0,&gt;=1.0.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.4.9)
 Requirement already satisfied: gdcdictionary&lt;2.0.0,&gt;=1.2.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.2.0)
 Requirement already satisfied: PyYAML&lt;6.0.0,&gt;=5.3.1 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (5.4.1)
-Requirement already satisfied: dictionaryutils&lt;=3.0.2 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (3.0.0)
 Requirement already satisfied: python-json-logger&lt;0.2.0,&gt;=0.1.11 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (0.1.11)
-Requirement already satisfied: fastavro&lt;2.0.0,&gt;=1.0.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.4.9)
 Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil-&gt;gen3) (1.16.0)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (1.26.9)
-Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (2.0.12)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (2.0.12)
+Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (4.0.2)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.7.2)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.3.0)
 Requirement already satisfied: aiosignal&gt;=1.1.2 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.2.0)
 Requirement already satisfied: attrs&gt;=17.3.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (21.4.0)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.7.2)
 Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (6.0.2)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.3.0)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (4.0.2)
 Requirement already satisfied: marshmallow&lt;4.0.0,&gt;=3.3.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (3.14.1)
 Requirement already satisfied: typing-inspect&gt;=0.4.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (0.7.1)
 Requirement already satisfied: marshmallow-enum&lt;2.0.0,&gt;=1.5.1 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (1.5.1)
@@ -14792,7 +14792,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.11it/s]
+<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.01it/s]
                                Access01_T.csv;      7.46 MB; jcoin.datacommons.io; 04/06/2021, 11:20:05
 
                                Access01_Z.csv;       1.8 MB; jcoin.datacommons.io; 04/06/2021, 11:20:18
@@ -15090,7 +15090,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.62it/s]
+<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.93it/s]
 Access01_T.csv                               : 100%|████████████████████████████
 Access01_Z.csv                               : 100%|████████████████████████████
 Access02_T.csv                               : 100%|████████████████████████████
@@ -15994,26 +15994,26 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[{&#39;_subject_id&#39;: &#39;36a54ec0-aea7-4f2a-94d4-ed754d141d54&#39;,
+<pre>[{&#39;_subject_id&#39;: &#39;2d24b701-2d7e-4fd9-8082-28cdad8fd0ac&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;0c930d57-3bee-466f-a5b5-ec89aff3b979&#39;,
+ {&#39;_subject_id&#39;: &#39;870c6354-6d3e-46e0-8738-3193e1672c2c&#39;,
+  &#39;_samples_count&#39;: 0,
+  &#39;age_at_index&#39;: None,
+  &#39;annotated_sex&#39;: [&#39;male&#39;]},
+ {&#39;_subject_id&#39;: &#39;9fb5143e-5d64-49bf-9bb0-99676db5fca2&#39;,
+  &#39;_samples_count&#39;: 0,
+  &#39;age_at_index&#39;: None,
+  &#39;annotated_sex&#39;: [&#39;male&#39;]},
+ {&#39;_subject_id&#39;: &#39;33d756d1-95cc-4623-b81f-6bfb3439120b&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;afd69b98-cc98-4030-bdc6-015f7d18846c&#39;,
+ {&#39;_subject_id&#39;: &#39;22d890e2-76f3-4e6b-a3db-0a9958c270e9&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;403c2a9c-9482-4c48-b458-476840653685&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;2345438a-f5b6-4d51-a0ad-732aa2de0ac0&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;male&#39;]}]</pre>
+  &#39;annotated_sex&#39;: [&#39;female&#39;]}]</pre>
 </div>
 
 </div>
