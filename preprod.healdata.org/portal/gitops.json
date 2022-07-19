@@ -94,7 +94,8 @@
     "explorer": false,
     "analysis": false,
     "discovery": true,
-    "discoveryUseAggMDS": true
+    "discoveryUseAggMDS": true,
+    "studyRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -142,11 +143,12 @@
           "searchableTextFields": [
             "study_description_summary",
             "location",
-            "study_description_name",
+            "study_name_title",
             "institutions",
             "investigators_name",
             "project_title",
             "project_number",
+            "appl_id",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -193,7 +195,7 @@
         "field": "research_focus_area",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
-      },      
+      },
       {
         "name": "Investigator(s)",
         "field": "investigators_name",
@@ -211,8 +213,8 @@
     },
     "detailView": {
       "headerField": "project_title",
-      "tabs":[
-        { 
+      "tabs": [
+        {
           "tabName": "Study",
           "groups": [
             {
@@ -371,9 +373,9 @@
                 }
               ]
             }
-          ] 
-        }, 
-        { 
+          ]
+        },
+        {
           "tabName": "Datasets",
           "groups": [
             {
@@ -547,8 +549,8 @@
               ]
             }
           ]
-        }, 
-        { 
+        },
+        {
           "tabName": "Repositories",
           "groups": [
             {
@@ -576,13 +578,15 @@
                 },
                 {
                   "type": "tags",
-                  "categories": ["Commons"]
+                  "categories": [
+                    "Commons"
+                  ]
                 }
               ]
             }
           ]
-        }, 
-        { 
+        },
+        {
           "tabName": "Access",
           "groups": [
             {
@@ -606,7 +610,8 @@
         }
       ]
     },
-    "tagsDisplayName": "Study Characteristics",
+    "tagsDisplayName": "Study Filters",
+    "tagColumnWidth": "500px",
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
@@ -667,6 +672,11 @@
         "display": false
       }
     ]
+  },
+  "studyRegistrationConfig": {
+    "studyRegistrationTrackingField": "registrant_username",
+    "studyRegistrationValidationField": "is_registered",
+    "studyRegistrationAccessCheckField": "registration_authz"
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
