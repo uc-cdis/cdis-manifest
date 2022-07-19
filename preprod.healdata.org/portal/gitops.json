@@ -94,7 +94,8 @@
     "explorer": false,
     "analysis": false,
     "discovery": true,
-    "discoveryUseAggMDS": true
+    "discoveryUseAggMDS": true,
+    "studyRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -142,11 +143,12 @@
           "searchableTextFields": [
             "study_description_summary",
             "location",
-            "study_description_name",
+            "study_name_title",
             "institutions",
             "investigators_name",
             "project_title",
             "project_number",
+            "appl_id",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -193,7 +195,7 @@
         "field": "research_focus_area",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
-      },      
+      },
       {
         "name": "Investigator(s)",
         "field": "investigators_name",
@@ -211,8 +213,8 @@
     },
     "detailView": {
       "headerField": "project_title",
-      "tabs":[
-        { 
+      "tabs": [
+        {
           "tabName": "Study",
           "groups": [
             {
@@ -371,9 +373,9 @@
                 }
               ]
             }
-          ] 
-        }, 
-        { 
+          ]
+        },
+        {
           "tabName": "Datasets",
           "groups": [
             {
@@ -547,8 +549,8 @@
               ]
             }
           ]
-        }, 
-        { 
+        },
+        {
           "tabName": "Repositories",
           "groups": [
             {
@@ -576,13 +578,15 @@
                 },
                 {
                   "type": "tags",
-                  "categories": ["Commons"]
+                  "categories": [
+                    "Commons"
+                  ]
                 }
               ]
             }
           ]
-        }, 
-        { 
+        },
+        {
           "tabName": "Access",
           "groups": [
             {
@@ -606,7 +610,8 @@
         }
       ]
     },
-    "tagsDisplayName": "Study Characteristics",
+    "tagsDisplayName": "Study Filters",
+    "tagColumnWidth": "500px",
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
@@ -668,60 +673,10 @@
       }
     ]
   },
-  "resourceBrowser": {
-    "title": "Static HEAL Jupyter Notebooks",
-    "public": true,
-    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
-    "resources": [
-      {
-        "title": "BACPAC Synthetic Data Analysis",
-        "description": "In this Jupyter notebook, we used synthetic data of the BACPAC study as an example to demonstrate how to navigate datasets within the workspace in HEAL and conduct data analysis using Python libraries.",
-        "link": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.html",
-        "imageUrl": "/dashboard/Public/notebooks/BACPAC_Synthetic_Data_Analysis.png"
-      },
-      {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
-      },
-      {
-        "title": "Opioid Prevalence And Overdoses",
-        "description": "In this Jupyter notebook, we used the CDC WONDER, DEA ARCOS, and PDAPS datasets to demonstate how multiple datasets may be utilized within the workspace in HEAL.",
-        "link": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.html",
-        "imageUrl": "/dashboard/Public/notebooks/Opioid_Prevalence_And_Overdoses.png"
-      },
-      {
-        "title": "Opioid Overdose Trajectories",
-        "description": "In this Jupyter notebook, we used the CDC WONDER dataset to explore opioid overdose death rate trajectories in the United States.",
-        "link": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.html",
-        "imageUrl": "/dashboard/Public/notebooks/Opioid_Overdose_Trajectories.png"
-      },
-      {
-        "title": "Opioid Environment Toolkit And OEPS R",
-        "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
-        "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
-        "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
-      },
-      {
-        "title": "JCOIN MOUD Accessibility Analysis",
-        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
-        "imageUrl": "/dashboard/Public/notebooks/jcoin_moud_analysis.png",
-        "link": "/dashboard/Public/notebooks/JCOIN-MOUD_accessibility_analysis_02092022.html"
-      },
-      {
-        "title": "Changes In Opioid Treatment Policy During COVID-19",
-        "description": "In this notebook we used data from NIDA-PDAPS and CDC WONDER mortality data to visualize the relationship between statewide changes in opioid treatment policy and opioid overdose mortality rates in 2020.",
-        "imageUrl": "/dashboard/Public/notebooks/VisualizingChangesInOpioidTreatmentPolicy.png",
-        "link": "/dashboard/Public/notebooks/VisualizingChangesInOpioidTreatmentPolicy.html"
-      },
-      {
-        "title": "Rates Of Opioid Overdose Deaths And COVID-19 In 2020",
-        "description": "In this notebook we examine correlations between statewide rates of opioid overdose deaths and COVID-19 cases and deaths.",
-        "imageUrl": "/dashboard/Public/notebooks/COVID-19_and_Opioids_part1.png",
-        "link": "/dashboard/Public/notebooks/COVID-19_and_Opioids_part1.html"
-      }
-    ]
+  "studyRegistrationConfig": {
+    "studyRegistrationTrackingField": "registrant_username",
+    "studyRegistrationValidationField": "is_registered",
+    "studyRegistrationAccessCheckField": "registration_authz"
   },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
