@@ -20,8 +20,8 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:feat_serial-id2",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.06",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.06",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feat_study-reg-req-access",
-    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:feat_update-request-create-policy-for-role",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.29.0",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.7.0",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.06",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.06",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.06",
@@ -29,9 +29,9 @@
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.06",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.06",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.06",
-    "frontend-framework": "quay.io/cdis/frontend-framework:main",
-    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:master",
-    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:master"
+    "frontend-framework": "quay.io/cdis/frontend-framework:0.4.1",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.0",
+    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.1.0"
   },
   "arborist": {
     "deployment_version": "2"
@@ -300,6 +300,7 @@
     "netpolicy": "on",
     "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml",
+    "document_url": "https://heal.github.io/platform-documentation",
     "frontend_root": "gen3ff"
   },
   "canary": {
