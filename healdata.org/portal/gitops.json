@@ -1,6 +1,7 @@
 {
   "gaTrackingId": "UA-119127212-20",
   "ddEnv": "healprod",
+  "homepageHref": "https://healdata.org",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -57,8 +58,8 @@
     "topBar": {
       "items": [
         {
-          "link": "https://healdata.org/dashboard/Public/documentation/index.html",
-          "name": "HEAL Documentation"
+          "link": "https://healdata.org/documentation",
+          "name": "Help and Guidance"
         }
       ]
     },
@@ -85,29 +86,8 @@
       "#99286B",
       "#402264"
     ],
-    "footerLogos": [
-      {
-        "src": "/src/img/gen3.png",
-        "href": "https://ctds.uchicago.edu/gen3",
-        "alt": "Gen3 Data Commons"
-      },
-      {
-        "src": "/src/img/createdby.png",
-        "href": "https://ctds.uchicago.edu/",
-        "alt": "Center for Translational Data Science at the University of Chicago"
-      }
-    ],
     "footer": {
-      "links": [
-        {
-          "text": "HEAL Initiative",
-          "href": "https://heal.nih.gov/"
-        },
-        {
-          "text": "HHS Responsible Disclosure Form",
-          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
-        }
-      ]
+      "externalURL": "/external/footer"
     }
   },
   "requiredCerts": [],
@@ -354,7 +334,7 @@
           "fields": [
             {
               "name": "Summary",
-              "field":"study_description_summary",
+              "field": "study_description_summary",
               "contentType": "paragraphs",
               "includeName": true,
               "includeIfNotAvailable": true,
