@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.08
+# Core Gen3 Release 2022.08 (Diamond)
 
 ## uc-cdis/fence
 
