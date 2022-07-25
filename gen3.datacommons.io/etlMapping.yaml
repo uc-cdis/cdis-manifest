@@ -44,7 +44,7 @@ mappings:
         fn: count
     joining_props:
       - index: file
-        join_on: subject_id
+        join_on: _subject_id
         props:
           - name: data_format
             src: data_format
@@ -61,6 +61,7 @@ mappings:
     root: None
     category: data_file
     props:
+      - name: project_id
       - name: object_id
       - name: md5sum
       - name: file_name
@@ -72,6 +73,5 @@ mappings:
     injecting_props:
       subject:
         props:
-          - name: subject_id
+          - name: _subject_id
             src: id
-          - name: project_id
