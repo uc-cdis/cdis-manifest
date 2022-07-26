@@ -208,6 +208,7 @@
                 "fields":[
                   "sex",
                   "race",
+                  "ethnicity",
                   "age_at_index",
                   "index_event",
                   "zip",
@@ -225,14 +226,20 @@
               "age_at_index",
               "index_event",
               "race",
+              "ethnicity",
               "zip",
               "covid19_positive",
+              "_imaging_studies_count",
+              "_ct_series_file_count",
+              "_dx_series_file_count",
+              "_cr_series_file_count",
+              "_mr_series_file_count",
               "project_id"
             ]
           },
           "dropdowns": {
             "download-table": {
-              "title": "Download Case Metadata Table"
+              "title": "Download Table"
             }
           },
           "buttons": [
@@ -262,6 +269,21 @@
               "leftIcon": "datafile",
               "rightIcon": "download",
               "fileName": "MIDRC_Cases_table.csv"
+            },
+            {
+              "enabled": true,
+              "type": "manifest",
+              "title": "Download File Manifest",
+              "leftIcon": "datafile",
+              "rightIcon": "download",
+              "fileName": "MIDRC_case_manifest.json"
+            },
+            {
+              "enabled": false,
+              "type": "export-to-workspace",
+              "title": "Export to Workspace",
+              "leftIcon": "datafile",
+              "rightIcon": "download"
             }
           ],
           "loginForDownload": true,
@@ -271,17 +293,405 @@
             "fieldMapping": [
                 {
                     "field": "project_id",
-                    "name": "Dataset ID"
+                    "name": "Project ID"
                 },
                 {
                     "field": "submitter_id",
                     "name": "Case ID"
+                },
+                {
+                    "field": "_imaging_studies_count",
+                    "name": "Imaging Studies Count"
+                },
+                {
+                    "field": "_ct_series_file_count",
+                    "name": "CT Series Count"
+                },
+                {
+                    "field": "_dx_series_file_count",
+                    "name": "DX Series Count"
+                },
+                {
+                    "field": "_cr_series_file_count",
+                    "name": "CR Series Count"
+                },
+                {
+                    "field": "_mr_series_file_count",
+                    "name": "MR Series Count"
                 }
             ],
-            "manifestMapping": {},
+            "manifestMapping": {
+              "resourceIndexType": "imaging_data_file",
+              "resourceIdField": "object_id",
+              "referenceIdFieldInResourceIndex": "_case_id",
+              "referenceIdFieldInDataIndex": "_case_id"
+            },
             "accessibleFieldCheckList": ["project_id"],
             "accessibleValidationField": "project_id"
           }
+        },
+        {
+            "tabTitle": "Imaging Studies",
+            "charts": {
+              "study_modality": {
+                "chartType": "fullPie",
+                "title": "Study Modality"
+              },
+              "sex": {
+                "chartType": "fullPie",
+                "title": "Case Sex"
+              }
+            },
+            "filters": {
+              "tabs": [
+                {
+                  "title": "Study Properties",
+                  "fields":[
+                    "study_modality",
+                    "study_description",
+                    "age_at_imaging",
+                    "study_year",
+                    "study_year_shifted",
+                    "body_part_examined",
+                    "study_location",
+                    "project_id"
+                  ]
+                },
+                {
+                  "title": "Imaging Properties",
+                  "fields":[
+                    "data_format",
+                    "data_category",
+                    "data_type"
+                  ]
+                },
+                {
+                  "title": "Case Demographics",
+                  "fields":[
+                    "covid19_positive",
+                    "age_at_index",
+                    "sex",
+                    "race",
+                    "ethnicity",
+                    "zip",
+                    "index_event"
+                  ]
+                }
+              ]
+            },
+            "table": {
+              "enabled": true,
+              "fields": [
+                "study_modality",
+                "study_description",
+                "body_part_examined",
+                "age_at_imaging",
+                "days_to_study",
+                "study_year",
+                "study_year_shifted",
+                "data_format",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
+                "race",
+                "ethnicity",
+                "zip",
+                "_ct_series_file_count",
+                "_dx_series_file_count",
+                "_cr_series_file_count",
+                "_mr_series_file_count",
+                "data_format",
+                "data_category",
+                "data_type",
+                "study_uid",
+                "case_ids",
+                "file_name",
+                "object_id",
+                "project_id"
+              ]
+            },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download Table"
+              }
+            },
+            "buttons": [
+              {
+                "enabled": true,
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Studies_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Studies_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Studies_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "manifest",
+                "title": "Download File Manifest",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_imaging_study_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
+              }
+            ],
+            "loginForDownload": true,
+            "guppyConfig": {
+              "dataType": "imaging_study",
+              "nodeCountTitle": "Imaging Studies",
+              "fieldMapping": [
+                {
+                    "field": "project_id",
+                    "name": "Project ID"
+                },
+                {
+                    "field": "case_ids",
+                    "name": "Patient ID"
+                },
+                {
+                    "field": "_ct_series_file_count",
+                    "name": "CT Series Count"
+                },
+                {
+                    "field": "_dx_series_file_count",
+                    "name": "DX Series Count"
+                },
+                {
+                    "field": "_cr_series_file_count",
+                    "name": "CR Series Count"
+                },
+                {
+                    "field": "_mr_series_file_count",
+                    "name": "MR Series Count"
+                }
+              ],
+              "manifestMapping": {
+                "resourceIndexType": "imaging_data_file",
+                "resourceIdField": "object_id",
+                "referenceIdFieldInResourceIndex": "_imaging_study_id",
+                "referenceIdFieldInDataIndex": "_imaging_study_id"
+              },
+              "accessibleFieldCheckList": ["project_id"],
+              "accessibleValidationField": "project_id"
+            }
+        },
+        {
+            "tabTitle": "Imaging Series",
+            "charts": {
+              "sex": {
+                "chartType": "fullPie",
+                "title": "Case Sex"
+              },
+              "covid19_positive": {
+                "chartType": "fullPie",
+                "title": "Cases that ever had COVID-19"
+              }
+            },
+            "filters": {
+              "tabs": [
+                {
+                  "title": "Series Properties",
+                  "fields":[
+                    "modality",
+                    "acquisition_type",
+                    "contrast_bolus_agent",
+                    "convolution_kernel",
+                    "detector_type",
+                    "exposure_modulation_type",
+                    "image_type",
+                    "imager_pixel_spacing",
+                    "lossy_image_compression",
+                    "manufacturer",
+                    "manufacturer_model_name",
+                    "multiframe_images",
+                    "patient_position",
+                    "pixel_spacing",
+                    "radiopharmaceutical",
+                    "series_description",
+                    "slice_thickness",
+                    "spacing_between_slices",
+                    "spatial_resolution",
+                    "transducer_type",
+                    "view_position",
+                    "data_format",
+                    "data_category",
+                    "data_type"
+                  ]
+                },
+                {
+                  "title": "Study Properties",
+                  "fields":[
+                    "study_description",
+                    "age_at_imaging",
+                    "study_year",
+                    "study_year_shifted",
+                    "study_location",
+                    "days_from_study_to_pos_covid_test",
+                    "days_from_study_to_neg_covid_test",
+                    "project_id"
+                  ]
+                },
+                {
+                  "title": "Case Demographics",
+                  "fields":[
+                    "covid19_positive",
+                    "age_at_index",
+                    "sex",
+                    "race",
+                    "ethnicity",
+                    "zip",
+                    "index_event"
+                  ]
+                }
+              ]
+            },
+            "table": {
+              "enabled": true,
+              "fields": [
+                "modality",
+                "study_description",
+                "acquisition_type",
+                "contrast_bolus_agent",
+                "convolution_kernel",
+                "detector_type",
+                "exposure_modulation_type",
+                "image_type",
+                "imager_pixel_spacing",
+                "lossy_image_compression",
+                "manufacturer",
+                "manufacturer_model_name",
+                "multiframe_images",
+                "patient_position",
+                "pixel_spacing",
+                "radiopharmaceutical",
+                "series_description",
+                "slice_thickness",
+                "spacing_between_slices",
+                "spatial_resolution",
+                "transducer_type",
+                "view_position",
+                "age_at_imaging",
+                "days_to_study",
+                "study_year",
+                "study_year_shifted",
+                "days_from_study_to_pos_covid_test",
+                "days_from_study_to_neg_covid_test",
+                "data_format",
+                "covid19_positive",
+                "age_at_index",
+                "index_event",
+                "sex",
+                "race",
+                "zip",
+                "data_format",
+                "data_category",
+                "data_type",
+                "series_uid",
+                "study_uid",
+                "case_ids",
+                "file_name",
+                "object_id",
+                "project_id"
+              ],
+              "dicomViewerId": "submitter_id",
+              "linkFields": ["submitter_id"]
+            },
+            "dropdowns": {
+              "download-table": {
+                "title": "Download Table"
+              }
+            },
+            "buttons": [
+              {
+                "enabled": true,
+                "type": "data-json",
+                "title": "JSON",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Series_table.json"
+              },
+              {
+                "enabled": true,
+                "type": "data-tsv",
+                "title": "TSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Series_table.tsv"
+              },
+              {
+                "enabled": true,
+                "type": "data-csv",
+                "title": "CSV",
+                "dropdownId": "download-table",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Series_table.csv"
+              },
+              {
+                "enabled": true,
+                "type": "file-manifest",
+                "title": "Download File Manifest",
+                "leftIcon": "datafile",
+                "rightIcon": "download",
+                "fileName": "MIDRC_Imaging_Series_manifest.json"
+              },
+              {
+                "enabled": false,
+                "type": "export-to-workspace",
+                "title": "Export to Workspace",
+                "leftIcon": "datafile",
+                "rightIcon": "download"
+              }
+            ],
+            "loginForDownload": true,
+            "guppyConfig": {
+              "dataType": "imaging_data_file",
+              "nodeCountTitle": "Imaging Series",
+              "fieldMapping": [
+                {
+                    "field": "project_id",
+                    "name": "Project ID"
+                },
+                {
+                    "field": "case_ids",
+                    "name": "Patient ID"
+                }
+              ],
+              "manifestMapping": {
+                "referenceIdFieldInResourceIndex": "object_id",
+                "referenceIdFieldInDataIndex": "object_id"
+              },
+              "downloadAccessor": "object_id",
+              "accessibleFieldCheckList": ["project_id"],
+              "accessibleValidationField": "project_id"
+            }
         }
     ]
 }

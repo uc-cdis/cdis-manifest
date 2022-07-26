@@ -129,8 +129,20 @@
   "guppy": {
     "indices": [
       {
+        "index": "validate_dataset",
+        "type": "dataset"
+      },
+      {
         "index": "validate_case",
         "type": "case"
+      },
+      {
+        "index": "validate_imaging_data_file",
+        "type": "imaging_data_file"
+      },
+      {
+        "index": "validate_imaging_study",
+        "type": "imaging_study"
       }
     ],
     "config_index": "validate_array-config",
