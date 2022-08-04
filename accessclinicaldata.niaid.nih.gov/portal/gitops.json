@@ -131,10 +131,12 @@
       "defaultOrderBy": ["title", "asc"],
       "buttons": [
         {
-          "type": "download"
+          "type": "download",
+          "overrideUrlField": "external_url"
         },
         {
           "type": "request_access",
+          "requiredIdpField": "required_idp",
           "resourceDisplayNameField": "title",
           "redirectModalText": "the NIAID Data Access Request Form",
           "singleItemView": false,
