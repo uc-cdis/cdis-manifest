@@ -105,6 +105,12 @@ body,
   border-color: rgb(139, 51, 105);
 }
 
+.discovery-action-bar-button:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: var(--primary-color);
+}
+
 .discovery-header__dropdown-tags-control-button  {
   color: rgb(139, 51, 105);
   border-color: rgb(139, 51, 105);
@@ -160,6 +166,15 @@ body,
 .footer__nav {
   align-items: center;
   background-color: #373a3c;
+}
+
+.footer__link-area {
+  font-size: 0.625rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  margin: auto;
 }
 
 /* Data Explorer */

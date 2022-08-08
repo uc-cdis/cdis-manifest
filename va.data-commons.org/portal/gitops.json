@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-10",
+  "argoTemplate": "gwas-template",
   "graphql": {
     "boardCounts": [
       {
@@ -50,8 +51,8 @@
       "topBar": {
         "items": [
           {
-            "link": "https://gen3.org/resources/user/gen3-client/",
-            "name": "Gen3 Client tutorial"
+            "link": "https://va.data-commons.org/dashboard/Public/documentation/index.html",
+            "name": "VADC Documentation"
           },
           {
             "link": "support@datacommons.io",
@@ -97,7 +98,7 @@
   "analysisTools": [
     {
       "title": "OHDSI Atlas",
-      "description": "An Atlas App",
+      "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
       "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
@@ -157,5 +158,7 @@
     "projectId": "search",
     "graphqlField": "demographic",
     "index": ""
-  }
+  },
+  "showArboristAuthzOnProfile": false,
+  "showFenceAuthzOnProfile": false
 }
