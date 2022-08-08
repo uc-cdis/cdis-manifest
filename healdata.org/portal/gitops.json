@@ -121,6 +121,12 @@
           }
         ]
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
@@ -677,7 +683,8 @@
   "studyRegistrationConfig": {
     "studyRegistrationTrackingField": "registrant_username",
     "studyRegistrationValidationField": "is_registered",
-    "studyRegistrationAccessCheckField": "registration_authz"
+    "studyRegistrationAccessCheckField": "registration_authz",
+    "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards"
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
