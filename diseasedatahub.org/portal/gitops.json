@@ -1,20 +1,20 @@
 {
-  "subcommons": [ 
+  "subcommons": [
     {
       "URL": "https://tb.diseasedatahub.org/",
-      "name": "NDE: TB"
-    }, 
+      "name": "TB"
+    },
     {
       "URL": "https://aids.diseasedatahub.org/",
-      "name": "NDE: AIDS"
+      "name": "AIDS"
     },
     {
       "URL": "https://flu.diseasedatahub.org/",
-      "name": "NDE: FLU"
+      "name": "FLU"
     },
     {
       "URL": "https://microbiome.diseasedatahub.org/",
-      "name": "NDE: Microbiome"
+      "name": "Microbiome"
     }
   ],
   "gaTrackingId": "UA-119127212-1",
@@ -49,68 +49,37 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NIAID Data Ecosystem",
+    "appName": "Gen3 Disease Data Hub",
     "index": {
       "introduction": {
-        "heading": "NIAID Data Ecosystem Datasets",
-        "text": "Disciplines within NIAID can have their own independent data models while maintaining interoperability of the data ecosystem, facilitating individual research communities to work within the system. The data within all supported resources are findable, accessible, interoperable, and reusable (FAIR).", 
+        "heading": "Gen3 Disease Data Hub Datasets",
+        "text": "The Gen3 Disease Data Hub hosts data related to infectious diseases and aims to make data findable, accessible, interoperable, and reusable (FAIR).",
         "link": "/datasets"
       },
       "buttons": [
         {
-          "name": "ImmPort",
-          "body": "Visit ImmPort, a resource funded by the NIH, NIAID, and DAIT in support of the NIH mission to share data with the public. Data is provided by NIH-funded programs and other research organizations.",
-          "external_link": "https://www.immport.org/home",
-          "external_link_text": "Visit Website",
-          "logo": "/custom/logo/immport-main-icon.png"
-        },
-        {
-          "name": "NIAID TB Environment",
+          "name": "TB Environment",
           "icon": "data-explore",
-          "body": "Explore data from the NIAID <a href='https://tbportals.niaid.nih.gov/'>TB Portals</a> Program and <a href='https://www.patricbrc.org'>PATRIC</a>, the all-bacterial Bioinformatics Database and Analysis Resource Center.",
+          "body": "Explore TB data.",
           "external_link": "https://tb.diseasedatahub.org"
         },
         {
-          "name": "NIAID AIDS Environment",
-          "logo": "/custom/sponsors/gitops-sponsors/macs-wihs-logo.png",
-          "body": "Explore data from the NIAID Multicenter AIDS Cohort Study <a href='https://www.niaid.nih.gov/research/multicenter-aids-cohort-study-public-data-set'>(MACS)</a> and Women's Interagency HIV Study <a href='https://www.niaid.nih.gov/research/womens-interagency-hiv-study'>(WIHS)</a>.",
+          "name": "AIDS Environment",
+          "icon": "data-explore",
+          "body": "Explore AIDS data.",
           "external_link": "https://aids.diseasedatahub.org"
         },
         {
-          "name": "NIAID Flu Environment",
+          "name": "Flu Environment",
           "icon": "data-explore",
-          "body": "Explore data from a collection of Influenza related studies funded by the NIAID Divison of Microbiology & Infectious Diseases (DMID) <a href='https://www.niaid.nih.gov/research/systems-biology-consortium'>Systems Biology Consortium for Infectious Diseases</a>.",
+          "body": "Explore influenza data.",
           "external_link": "https://flu.diseasedatahub.org"
         },
         {
-          "name": "NIAID Microbiome Environment",
+          "name": "Microbiome Environment",
           "icon": "data-explore",
-          "body": "Explore data from a collection of open-access microbiome related studies from <a href='https://www.immport.org/home'>ImmPort</a>.",
+          "body": "Explore data from a collection of open-access microbiome-related studies.",
           "external_link": "https://microbiome.diseasedatahub.org"
-        },
-        {
-          "name": "Coming Soon to the Ecosystem", 
-          "body": "This website is not yet supported by the Ecosystem.",
-          "external_link": "https://tbportals.niaid.nih.gov/",
-          "external_link_text": "Visit Website",
-          "logo": "/custom/sponsors/gitops-sponsors/tb-logo.png",
-          "coming_soon": true
-        },
-        {
-          "name": "Coming Soon to the Ecosystem", 
-          "body": "This website is not yet supported by the Ecosystem.",
-          "external_link": "https://actgnetwork.org/",
-          "external_link_text": "Visit Website",
-          "logo": "/custom/sponsors/gitops-sponsors/actg-logo.png",
-          "coming_soon": true
-        },
-        {
-          "name": "Coming Soon to the Ecosystem", 
-          "body": "This website is not yet supported by the Ecosystem.",
-          "external_link": "https://www.patricbrc.org",
-          "external_link_text": "Visit Website",
-          "logo": "/custom/sponsors/gitops-sponsors/patric-logo.png",
-          "coming_soon": true
         }
       ]
     },
@@ -139,15 +108,15 @@
       ]
     },
     "login": {
-      "title": "NIAID Data Ecosystem",
+      "title": "Gen3 Disease Data Hub",
       "subTitle": "Cross Environment Datasets",
-      "text": "The website combines government datasets from multiple disciplines of NIAID to create clean, easy to navigate visualizations for data-driven discovery within Allergy and Infectious Diseases.",
+      "text": "The website combines open access datasets from multiple disciplines to create clean, easy to navigate visualizations for data-driven discovery within the fields of allergy and infectious diseases.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
     },
     "footerLogos": [
       {
-        "src": "/src/img/gen3.png",
+        "src": "/custom/sponsors/gitops-sponsors/gen3.png",
         "href": "https://ctds.uchicago.edu/gen3",
         "alt": "Gen3 Data Commons"
       },
@@ -155,11 +124,6 @@
         "src": "/src/img/createdby.png",
         "href": "https://ctds.uchicago.edu/",
         "alt": "Center for Translational Data Science at the University of Chicago"
-      },
-      {
-        "src": "/custom/logo/niaid.png",
-        "href": "https://diseasedatahub.org",
-        "alt": "NIAID Data Ecosystem"
       }
     ]
   },
@@ -171,16 +135,15 @@
   "datasetBrowserConfig": {
     "filterSections": [
       {
-        "title": "Supported Data Resources", 
+        "title": "Supported Data Resources",
         "options": [
-          { "text": "ImmPort", "filterType": "singleSelect"},
-          { "text": "NDE: TB", "filterType": "singleSelect"},
-          { "text": "NDE: AIDS", "filterType": "singleSelect"},
-          { "text": "NDE: Flu", "filterType": "singleSelect"},
-          { "text": "NDE: Microbiome", "filterType": "singleSelect"}
+          { "text": "TB", "filterType": "singleSelect"},
+          { "text": "AIDS", "filterType": "singleSelect"},
+          { "text": "Flu", "filterType": "singleSelect"},
+          { "text": "Microbiome", "filterType": "singleSelect"}
         ]
       },
-      { 
+      {
         "title": "Research Focus",
         "options": [
           { "text": "AIDS", "filterType": "singleSelect"},

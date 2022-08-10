@@ -1,0 +1,13 @@
+{
+    "scaling_groups" : {
+        "CTDS testing": "workflow",
+        "Scott.DuVall@va.gov": "workflow2",
+        "Hamid.Saoudian@va.gov": "workflow3",
+        "Craig.Teerlink@va.gov": "workflow4"
+    },
+    "s3-bucket": "argo-artifact-storage-downloadable",
+    "internal-s3-bucket": "gen3-argo-199578515826-vhdcprod",
+    "indexd_admin_user": "fence",
+    "environment": "va-testing",
+    "pvc": "parallel-test-pvc"
+}

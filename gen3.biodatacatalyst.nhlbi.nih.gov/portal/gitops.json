@@ -247,9 +247,6 @@
             "ethnicity",
             "hispanic_subgroup",
             "subcohort",
-            "weight_baseline",
-            "bmi_baseline",
-            "height_baseline",
             "current_smoker_baseline",
             "ever_smoker_baseline"
           ]
@@ -257,39 +254,13 @@
         {
           "title": "Harmonized Variables",
           "fields": [
-            "total_cholesterol",
-            "hdl",
-            "ldl",
-            "triglycerides",
             "fasting_lipids",
             "lipid_lowering_medication",
-            "cac_score",
-            "cac_volume",
             "carotid_plaque",
             "carotid_stenosis",
-            "cimt_1",
-            "cimt_2",
-            "bp_diastolic",
-            "bp_systolic",
             "antihypertensive_meds",
             "vte_case_status",
-            "vte_followup_start_age",
-            "vte_prior_history",
-            "basophil_ncnc_bld",
-            "eosinophil_ncnc_bld",
-            "hematocrit_vfr_bld",
-            "hemoglobin_mcnc_bld",
-            "lymphocyte_ncnc_bld",
-            "mch_entmass_rbc",
-            "mchc_mcnc_rbc",
-            "mcv_entvol_rbc",
-            "monocyte_ncnc_bld",
-            "neutrophil_ncnc_bld",
-            "platelet_ncnc_bld",
-            "pmv_entvol_bld",
-            "rbc_ncnc_bld",
-            "rdw_ratio_rbc",
-            "wbc_ncnc_bld"
+            "vte_prior_history"
           ]
         }
       ]
@@ -302,12 +273,40 @@
         "race",
         "annotated_sex",
         "ethnicity",
-        "bp_diastolic",
         "hdl",
         "ldl"
       ]
     },
+    "dropdowns": {
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
+      }
+    },
     "buttons": [
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
       {
         "enabled": true,
         "type": "export",
@@ -381,14 +380,6 @@
         {
           "field": "vte_prior_history",
           "name": "VTE Prior History"
-        },
-        {
-          "field": "bp_diastolic",
-          "name": "BP Diastolic"
-        },
-        {
-          "field": "bp_systolic",
-          "name": "BP Systolic"
         },
         {
           "field": "basophil_ncnc_bld",
@@ -579,7 +570,36 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
+    "dropdowns": {
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
+      }
+    },
     "buttons": [
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
       {
         "enabled": true,
         "type": "file-manifest",

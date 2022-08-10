@@ -1,5 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-10",
+  "argoTemplate": "gwas-template",
   "graphql": {
     "boardCounts": [
       {
@@ -21,55 +22,12 @@
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
-        "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources.",
-        "link": "/submission"
+        "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources."
       },
-      "buttons": [
-        {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The VA Data Commons defines the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
-        },
-        {
-          "name": "View/Submit Data",
-          "icon": "data-submit",
-          "body": "View or submit data to a project.",
-          "link": "/submission",
-          "label": "Submit data"
-        },
-        {
-          "name": "Access Data",
-          "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
-          "link": "/query",
-          "label": "Query data"
-        },
-        {
-          "name": "Analyze Data",
-          "icon": "data-analyze",
-          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "/workspace",
-          "label": "Run analysis"
-        }
-      ]
+      "buttons": []
     },
     "navigation": {
       "items": [
-        {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
-        },
-        {
-          "name": "Exploration",
-          "icon": "exploration",
-          "link": "/explorer",
-          "label": "Explorer",
-          "color": "#a2a2a2"
-        },
         {
           "icon": "workspace",
           "link": "/workspace",
@@ -93,13 +51,8 @@
       "topBar": {
         "items": [
           {
-            "icon": "upload",
-            "link": "/submission",
-            "name": "Submit Data"
-          },
-          {
-            "link": "https://gen3.org/resources/user/",
-            "name": "Documentation"
+            "link": "https://va.data-commons.org/dashboard/Public/documentation/index.html",
+            "name": "VADC Documentation"
           },
           {
             "link": "support@datacommons.io",
@@ -145,10 +98,11 @@
   "analysisTools": [
     {
       "title": "OHDSI Atlas",
-      "description": "An Atlas App",
+      "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
       "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
-    }
+    },
+    "GWASUIApp"
   ],
   "arrangerConfig": {
     "charts": {
@@ -204,5 +158,7 @@
     "projectId": "search",
     "graphqlField": "demographic",
     "index": ""
-  }
+  },
+  "showArboristAuthzOnProfile": false,
+  "showFenceAuthzOnProfile": false
 }
