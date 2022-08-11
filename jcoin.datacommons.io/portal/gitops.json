@@ -173,7 +173,7 @@
     },
   "explorerConfig": [
     {
-      "tabTitle": "Quarterly Report",
+      "tabTitle": "Participants (Staff and Clients)",
       "charts": {
         "gender": {
           "chartType": "fullPie",
@@ -198,8 +198,14 @@
             "title": "Hubs",
             "fields": [
               "project_name",
-              "protocol",
-              "role_in_project"
+              "protocol"
+            ]
+          },
+          {
+            "title":"Participant",
+            "fields": [
+              "role_in_project",
+              "current_client_status"
             ]
           },
           {
@@ -227,7 +233,8 @@
           "race",
           "hispanic",
           "role_in_project",
-          "quarter_recruited"
+          "quarter_recruited",
+          "current_client_status"
         ]
       },
       "buttons": [
@@ -286,6 +293,133 @@
           {
             "field": "quarter_recruited",
             "name": "Quarter enrolled"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
+    },
+    {
+      "tabTitle": "Time points (Clients)",
+      "charts": {
+        "visit_type": {
+          "chartType": "fullPie",
+          "title": "Visit Type"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Hub",
+            "fields": [
+              "project_name",
+              "protocol"
+            ]
+          },
+          {
+            "title":"Participant",
+            "fields": [
+              "role_in_project",
+              "quarter_recruited",
+              "current_client_status"
+
+            ]
+          },
+          {
+            "title": "Time Points",
+            "fields": [
+              "visit_number",
+              "visit_type",
+              "visit_name"
+
+            ]
+          }
+      
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_name",
+          "protocol"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "data",
+          "title": "Download Clinical Data",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical-data.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "time_point",
+        "nodeCountTitle": "Number of Time Points",
+        "fieldMapping": [
+          {
+            "field": "protocol",
+            "name": "Hub Study Protocol"
+          },
+          {
+            "field": "protocol_submitter_id",
+            "name": "Hub Study Protocol ID"
+          },
+          {
+            "field": "project_name",
+            "name": "Hub Name"
+          },
+          {
+            "field": "role_in_project",
+            "name": "Client or staff?"
+          },
+          {
+            "field": "quarter_recruited",
+            "name": "Quarter enrolled"
+          },
+          {
+            "field":"visit_name",
+            "name":"Visit Name"
+          },
+          {
+            "field":"visit_number",
+            "name":"Visit Number"
+          },
+          {
+            "field":"visit_type",
+            "name":"Visit Type"
+          },
+          {
+            "field": "hispanic",
+            "name": "Hispanic ethnicity"
+          },
+          {
+            "field": "race",
+            "name": "Race"
+          },
+          {
+            "field": "gender",
+            "name": "Gender identity"
           }
         ],
         "manifestMapping": {
