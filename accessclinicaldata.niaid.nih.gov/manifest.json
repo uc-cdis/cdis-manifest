@@ -37,7 +37,7 @@
   "global": {
     "environment": "niaiddata",
     "hostname": "accessclinicaldata.niaid.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/71019c00-6ba5-459d-a693-179a58eb298c",
+    "revproxy_arn": "arn:aws:iam::636151780898:server-certificate/accessclinical-2023",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.5.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
