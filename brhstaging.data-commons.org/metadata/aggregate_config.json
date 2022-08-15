@@ -97,15 +97,15 @@
 				"authz": "path:auth_resource_path",
 				"tags": "path:tags",
 				"_unique_id": "path:_unique_id",
-				"study_id": "path:_publication_id",
-				"study_description": "path:study_description_summary",
-				"full_name": "path:study_name_title",
-				"short_name": "path:study_name_title",
+				"study_id": "path:_unique_id",
+				"study_description": "path:data_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
 				"commons": "Medical Imaging and Data Resource Center (MIDRC)",
-				"study_url": "path:websites",
+				"study_url": "path:data_url",
 				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
 				"__manifest": "path:__manifest",
-				"commons_url" : "ibdgc.datacommons.io"
+				"commons_url" : "data.midrc.org"
 			}
 		},
 		"NIAID ClinicalData": {
