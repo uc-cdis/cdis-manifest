@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BDCat_Framingham_study_exploration_R.ipynb</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>BDCat_Framingham_study_exploration_R</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14520,7 +14520,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Exploration-of-Framingham-Heart-Study-Teaching-Dataset-In-R">Data Exploration of Framingham Heart Study Teaching Dataset In R<a class="anchor-link" href="#Data-Exploration-of-Framingham-Heart-Study-Teaching-Dataset-In-R">&#182;</a></h1><p>The following notebook was created by converting the python code in <a href="https://brh.data-commons.org/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html">Data Exploration of Framingham Heart Study Teaching Dataset</a> into R. If you wish to perform any of the data visualization or manipulation done in this notebook in python code please cite the original notebook.</p>
+<h1 id="Data-Exploration-of-Framingham-Heart-Study-Teaching-Dataset-In-R">Data Exploration of Framingham Heart Study Teaching Dataset In R<a class="anchor-link" href="#Data-Exploration-of-Framingham-Heart-Study-Teaching-Dataset-In-R">&#182;</a></h1><p><em>Please note: This notebook uses open access data</em></p>
+<p>The following notebook was created by converting the python code in <a href="https://brh.data-commons.org/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html">Data Exploration of Framingham Heart Study Teaching Dataset</a> into R. If you wish to perform any of the data visualization or manipulation done in this notebook in python code please cite the original notebook.</p>
 <p><strong>Original Author:</strong> <em>Qiong Liu</em></p>
 <p><strong>Notebook Author:</strong> <em>Owen Dominguez</em></p>
 <p>The dataset used in the following notebook was developed using the longitudinal <a href="https://biolincc.nhlbi.nih.gov/teaching/">Framingham heart study teaching dataset</a> as the data source. The teaching dataset includes three clinical examination and 20 year follow-up data based on a subset of the original Framingham cohort participants. This dataset was created for teaching and training purposes, and certain measures were used to created anonymous versions and thus the data is unsuitable for publication. Detailed documentation on the variables can be found <a href="https://biolincc.nhlbi.nih.gov/media/teachingstudies/FHS_Teaching_Longitudinal_Data_Documentation_2021a.pdf?link_time=2022-04-18_09:29:24.200176">here</a>.</p>
@@ -14542,10 +14543,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#Installing required libraries</span>
@@ -14557,35 +14558,10 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>Updating HTML index of packages in &#39;.Library&#39;
-
-Making &#39;packages.html&#39; ...
- done
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#Importing libraries</span>
@@ -14598,51 +14574,6 @@ Making &#39;packages.html&#39; ...
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>── <span class="ansi-bold">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.1 ──
-
-<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
-<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tibble </span> 3.1.6     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
-<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tidyr  </span> 1.2.0     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
-<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">readr  </span> 2.1.1     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
-
-── <span class="ansi-bold">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──
-<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
-<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
-
-
-Attaching package: ‘reshape’
-
-
-The following object is masked from ‘package:dplyr’:
-
-    rename
-
-
-The following objects are masked from ‘package:tidyr’:
-
-    expand, smiths
-
-
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
