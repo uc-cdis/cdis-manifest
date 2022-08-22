@@ -16,7 +16,7 @@
     "hatchery": "quay.io/cdis/hatchery:1.0.0",
     "indexd": "quay.io/cdis/indexd:2022.06",
     "manifestservice": "quay.io/cdis/manifestservice:2022.06",
-    "metadata": "quay.io/cdis/metadata-service:feat_agg_server_paging",
+    "metadata": "quay.io/cdis/metadata-service:2022.06",
     "peregrine": "quay.io/cdis/peregrine:2022.06",
     "pidgin": "quay.io/cdis/pidgin:2022.06",
     "portal": "quay.io/cdis/data-portal:3.27.1",
@@ -44,7 +44,8 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "dd_enabled": true
   },
   "metadata": {
     "USE_AGG_MDS": true,
