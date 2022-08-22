@@ -31,7 +31,7 @@
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.07"
   },
   "global": {
-    "environment": "vhdcprod",
+    "environment": "va-testing",
     "hostname": "va-testing.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/e6a9ff63-c3b1-4536-89cd-fd1684047370",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.3/schema.json",
@@ -41,7 +41,8 @@
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/vhdcprod/user.yaml",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "dd_enabled": true
   },
   "ssjdispatcher": {
     "job_images": {

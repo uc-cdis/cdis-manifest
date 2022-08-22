@@ -36,7 +36,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
+      "image": "quay.io/cdis/jupyter-superslim-r:feature_upgrade_gen3sdk_version",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
