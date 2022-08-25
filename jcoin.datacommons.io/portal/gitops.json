@@ -56,11 +56,11 @@
       "homepageChartNodes": [
         {
           "node": "participant",
-          "name": "Participants"
+          "name": "Total Participants"
         },
         {
-          "node": "follow_up",
-          "name": "Follow Ups"
+          "node": "time_point",
+          "name": "Total Time Points"
         }
       ]
     },
@@ -286,119 +286,6 @@
           {
             "field": "quarter_recruited",
             "name": "Quarter enrolled"
-          }
-        ],
-        "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "project_id",
-          "referenceIdFieldInDataIndex": "project_id"
-        }
-      }
-    },
-    {
-      "tabTitle": "Data",
-      "charts": {
-        "project_id": {
-          "chartType": "count",
-          "title": "Projects"
-        },
-        "gender": {
-          "chartType": "fullPie",
-          "title": "Gender"
-        },
-        "race": {
-          "chartType": "fullPie",
-          "title": "Race"
-        },
-        "center": {
-          "chartType": "bar",
-          "title": "center"
-        }
-      },
-      "filters": {
-        "tabs": [
-          {
-            "title": "Participant",
-            "fields": [
-              "project_id",
-              "gender",
-              "race",
-              "hispanic",
-              "drug_used",
-              "ever_transferred",
-              "pregnancy_status",
-              "protocol",
-              "health_insurance",
-              "center"
-            ]
-          }
-        ]
-      },
-      "table": {
-        "enabled": false,
-        "fields": [
-          "project_id",
-          "gender",
-          "race",
-          "jewish",
-          "hispanic",
-          "drug_used",
-          "ever_transferred",
-          "pregnancy_status",
-          "protocol",
-          "height",
-          "weight",
-          "weight_percentage",
-          "bmi",
-          "health_insurance",
-          "center"
-        ]
-      },
-      "buttons": [
-        {
-          "enabled": true,
-          "type": "export-to-workspace",
-          "title": "Export Files to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "external-link"
-        },
-        {
-          "enabled": true,
-          "type": "manifest",
-          "title": "Download File Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "file-manifest.json"
-        },
-        {
-          "enabled": true,
-          "type": "data",
-          "title": "Download Clinical Data",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "clinical-data.json"
-        }
-      ],
-      "guppyConfig": {
-        "dataType": "participant",
-        "nodeCountTitle": "Participants",
-        "fieldMapping": [
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "bmi",
-            "name": "BMI (kg/m^2)"
-          },
-          {
-            "field": "height",
-            "name": "Height (cm)"
-          },
-          {
-            "field": "weight",
-            "name": "Weight (g)"
           }
         ],
         "manifestMapping": {

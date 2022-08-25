@@ -16,7 +16,7 @@
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.07",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.07",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.07",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.07",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.29.1",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.07",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.07",
@@ -37,7 +37,7 @@
   "global": {
     "environment": "niaiddata",
     "hostname": "accessclinicaldata.niaid.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/61c84d3f-f5bb-4bb4-a90b-8b50216580ee",
+    "revproxy_arn": "arn:aws:iam::636151780898:server-certificate/accessclinical-2023",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.5.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",

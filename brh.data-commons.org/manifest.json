@@ -31,7 +31,7 @@
     "arborist": "true"
   },
   "global": {
-    "environment": "brhdemo",
+    "environment": "brhprod",
     "hostname": "brh.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
@@ -44,7 +44,8 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "dd_enabled": true
   },
   "metadata": {
     "USE_AGG_MDS": true,
