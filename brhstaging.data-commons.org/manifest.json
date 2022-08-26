@@ -16,13 +16,13 @@
     "hatchery": "quay.io/cdis/hatchery:1.0.0",
     "indexd": "quay.io/cdis/indexd:2022.06",
     "manifestservice": "quay.io/cdis/manifestservice:2022.06",
-    "metadata": "quay.io/cdis/metadata-service:feat_agg_server_paging",
+    "metadata": "quay.io/cdis/metadata-service:2022.08.1",
     "peregrine": "quay.io/cdis/peregrine:2022.06",
     "pidgin": "quay.io/cdis/pidgin:2022.06",
-    "portal": "quay.io/cdis/data-portal:3.27.1",
+    "portal": "quay.io/cdis/data-portal:2022.08.1",
     "revproxy": "quay.io/cdis/nginx:2022.06",
     "sheepdog": "quay.io/cdis/sheepdog:2022.06",
-    "wts": "quay.io/cdis/workspace-token-service:2022.06"
+    "wts": "quay.io/cdis/workspace-token-service:0.4.0"
   },
   "arborist": {
     "deployment_version": "2"
@@ -31,7 +31,7 @@
     "arborist": "true"
   },
   "global": {
-    "environment": "brhprod",
+    "environment": "brhstaging",
     "hostname": "brhstaging.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:885078588865:certificate/930ddba3-1e49-4194-8bb8-4ff970dd45a0",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
@@ -48,7 +48,7 @@
   },
   "metadata": {
     "USE_AGG_MDS": true,
-    "AGG_MDS_NAMESPACE": "brh"
+    "AGG_MDS_NAMESPACE": "brhstaging"
   },
   "portal": {
     "GEN3_BUNDLE": "ecosystem"
