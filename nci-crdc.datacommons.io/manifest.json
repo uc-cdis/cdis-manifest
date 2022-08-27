@@ -78,7 +78,7 @@
         {
           "name": "sower-jobs-creds-volume",
           "secret": {
-            "secretName": "sower-jobs-g3auto" //pragma: allowlist secret
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
@@ -119,7 +119,7 @@
         {
           "name": "sower-jobs-creds-volume",
           "secret": {
-            "secretName": "sower-jobs-g3auto" //pragma: allowlist secret
+            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
