@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.09
+# Core Gen3 Release 2022.09 (Emerald)
 
 ## uc-cdis/fence
 
