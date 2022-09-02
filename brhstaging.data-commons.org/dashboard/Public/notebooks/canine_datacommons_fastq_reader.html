@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>canine_datacommon_fastq_reader</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>canine_datacommon_fastq_reader_1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14454,25 +14454,85 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
-a.anchor-link {
-   display: none;
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
 }
+
+/* Misc */
+a.anchor-link {
+  display: none;
+}
+
 .highlight  {
-    margin: 0.4em;
+  margin: 0.4em;
 }
 
 /* Input area styling */
 .jp-InputArea {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .jp-InputArea-editor {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.CodeMirror pre {
+  margin: 0;
+  padding: 0;
+}
+
+/* Using table instead of flexbox so that we can use break-inside property */
+/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
+
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  min-width: calc(
+    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
+  );
+}
+
+.jp-OutputArea-child {
+  display: table;
+  width: 100%;
+}
+
+.jp-OutputPrompt {
+  display: table-cell;
+  vertical-align: top;
+  min-width: var(--jp-cell-prompt-width);
+}
+
+body[data-format='mobile'] .jp-OutputPrompt {
+  display: table-row;
+}
+
+.jp-OutputArea-output {
+  display: table-cell;
+  width: 100%;
+}
+
+body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
+  display: table-row;
+}
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  width: 100%;
+}
+
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
 }
 
 @media print {
-  body {
-    margin: 0;
+  .jp-Cell-inputWrapper,
+  .jp-Cell-outputWrapper {
+    display: block;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid-page;
   }
 }
 </style>
@@ -14499,12 +14559,12 @@ a.anchor-link {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14513,17 +14573,26 @@ a.anchor-link {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Installing-Gen3-SDK-client-and-import-modules">Installing Gen3 SDK client and import modules<a class="anchor-link" href="#Installing-Gen3-SDK-client-and-import-modules">&#182;</a></h2>
+<h2 id="Installing-Gen3-SDK-client-and-import-modules">Installing Gen3 SDK client and import modules<a class="anchor-link" href="#Installing-Gen3-SDK-client-and-import-modules">&#182;</a></h2><p><em>Please note: This notebook uses open access data</em></p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install gen3
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install <span class="nv">gen3</span><span class="o">==</span><span class="m">4</span>.13.0
 </pre></div>
 
      </div>
@@ -14533,6 +14602,8 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14550,18 +14621,26 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Setting-up-data-common-access">Setting up data common access<a class="anchor-link" href="#Setting-up-data-common-access">&#182;</a></h2>
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://caninedc.org/&quot;</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">refresh_file</span> <span class="o">=</span> <span class="s2">&quot;./credentials.json&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://caninedc.org&quot;</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">refresh_file</span> <span class="o">=</span> <span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
 <span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">Gen3File</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
 </pre></div>
@@ -14572,12 +14651,20 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Sample-code-to-pull-programs-and-projects">Sample code to pull programs and projects<a class="anchor-link" href="#Sample-code-to-pull-programs-and-projects">&#182;</a></h2>
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14591,6 +14678,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14613,8 +14702,22 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If the above returns {'links': []}, skip the next cell.</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14628,6 +14731,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14661,17 +14766,25 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-gen3-client-to-download-the-fastq-file-(guid-provided)">Use gen3-client to download the fastq file (guid provided)<a class="anchor-link" href="#Use-gen3-client-to-download-the-fastq-file-(guid-provided)">&#182;</a></h2>
+<h2 id="Use-gen3-sdk-to-download-a-sample-fastq-file-(guid-provided)">Use gen3 sdk to download a sample fastq file (guid provided)<a class="anchor-link" href="#Use-gen3-sdk-to-download-a-sample-fastq-file-(guid-provided)">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3-client configure --profile<span class="o">=</span>demo --cred<span class="o">=</span><span class="s2">&quot;./credentials.json&quot;</span> --apiendpoint<span class="o">=</span><span class="s2">&quot;https://caninedc.org/&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.C78ne/4527012c-3a5f-481d-820c-da7b77a26b48
 </pre></div>
 
      </div>
@@ -14679,24 +14792,35 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3-client download-single --profile<span class="o">=</span>demo --guid<span class="o">=</span>4527012c-3a5f-481d-820c-da7b77a26b48 --no-prompt --skip-completed
-</pre></div>
-
-     </div>
-</div>
-</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[2022-08-19 14:48:00,347][WARNING] Exceeded number of retries, unable to write to cache file.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gunzip SRR7012463_1.fastq.gz
@@ -14708,12 +14832,20 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Use-Bioinfokit-to-read-the-fastq-file,-get-information-such-as-sequence,-base-count-etc.">Use Bioinfokit to read the fastq file, get information such as sequence, base count etc.<a class="anchor-link" href="#Use-Bioinfokit-to-read-the-fastq-file,-get-information-such-as-sequence,-base-count-etc.">&#182;</a></h2>
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14728,22 +14860,27 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bioinfokit.analys</span> <span class="kn">import</span> <span class="n">fastq</span>
 <span class="n">records</span> <span class="o">=</span> <span class="n">fastq</span><span class="o">.</span><span class="n">fastq_reader</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;SRR7012463_1.fastq&#39;</span><span class="p">)</span>
 <span class="c1"># read fastq file</span>
-<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">sequence</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">quality</span> <span class="o">=</span> <span class="n">record</span>     <span class="c1"># process sequence, headers and related info</span>
-    <span class="n">base_count</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-    <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-    <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
-    <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
-    <span class="c1">#print(sequence, quality, base_count)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">base_count</span><span class="p">)</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>                       <span class="c1"># only process first ten records for demo purpose</span>
+    <span class="k">if</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">sequence</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">quality</span> <span class="o">=</span> <span class="n">record</span>     <span class="c1"># process sequence, headers and related info</span>
+        <span class="n">base_count</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+        <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+        <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+        <span class="n">base_count</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">quality</span><span class="p">,</span> <span class="n">base_count</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">break</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
      </div>
@@ -14752,6 +14889,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14763,37 +14902,16 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;A&#39;: 22, &#39;C&#39;: 5, &#39;G&#39;: 16, &#39;T&#39;: 8}
-{&#39;A&#39;: 16, &#39;C&#39;: 12, &#39;G&#39;: 20, &#39;T&#39;: 3}
-{&#39;A&#39;: 11, &#39;C&#39;: 20, &#39;G&#39;: 10, &#39;T&#39;: 10}
-{&#39;A&#39;: 11, &#39;C&#39;: 21, &#39;G&#39;: 10, &#39;T&#39;: 9}
-{&#39;A&#39;: 14, &#39;C&#39;: 12, &#39;G&#39;: 16, &#39;T&#39;: 9}
-{&#39;A&#39;: 16, &#39;C&#39;: 12, &#39;G&#39;: 17, &#39;T&#39;: 6}
-{&#39;A&#39;: 5, &#39;C&#39;: 22, &#39;G&#39;: 17, &#39;T&#39;: 7}
-{&#39;A&#39;: 12, &#39;C&#39;: 15, &#39;G&#39;: 11, &#39;T&#39;: 13}
-{&#39;A&#39;: 12, &#39;C&#39;: 13, &#39;G&#39;: 16, &#39;T&#39;: 10}
-{&#39;A&#39;: 5, &#39;C&#39;: 14, &#39;G&#39;: 14, &#39;T&#39;: 18}
-{&#39;A&#39;: 17, &#39;C&#39;: 6, &#39;G&#39;: 6, &#39;T&#39;: 22}
-{&#39;A&#39;: 14, &#39;C&#39;: 12, &#39;G&#39;: 14, &#39;T&#39;: 11}
-{&#39;A&#39;: 25, &#39;C&#39;: 2, &#39;G&#39;: 6, &#39;T&#39;: 18}
-{&#39;A&#39;: 20, &#39;C&#39;: 8, &#39;G&#39;: 11, &#39;T&#39;: 12}
-{&#39;A&#39;: 15, &#39;C&#39;: 15, &#39;G&#39;: 4, &#39;T&#39;: 17}
-{&#39;A&#39;: 11, &#39;C&#39;: 15, &#39;G&#39;: 11, &#39;T&#39;: 14}
-{&#39;A&#39;: 8, &#39;C&#39;: 17, &#39;G&#39;: 17, &#39;T&#39;: 9}
-{&#39;A&#39;: 7, &#39;C&#39;: 14, &#39;G&#39;: 16, &#39;T&#39;: 14}
-{&#39;A&#39;: 7, &#39;C&#39;: 20, &#39;G&#39;: 14, &#39;T&#39;: 10}
-{&#39;A&#39;: 9, &#39;C&#39;: 22, &#39;G&#39;: 13, &#39;T&#39;: 7}
-{&#39;A&#39;: 12, &#39;C&#39;: 13, &#39;G&#39;: 11, &#39;T&#39;: 15}
-{&#39;A&#39;: 7, &#39;C&#39;: 16, &#39;G&#39;: 5, &#39;T&#39;: 23}
-{&#39;A&#39;: 11, &#39;C&#39;: 13, &#39;G&#39;: 15, &#39;T&#39;: 12}
-{&#39;A&#39;: 12, &#39;C&#39;: 19, &#39;G&#39;: 3, &#39;T&#39;: 17}
-{&#39;A&#39;: 12, &#39;C&#39;: 11, &#39;G&#39;: 12, &#39;T&#39;: 15}
-{&#39;A&#39;: 10, &#39;C&#39;: 11, &#39;G&#39;: 3, &#39;T&#39;: 27}
-{&#39;A&#39;: 14, &#39;C&#39;: 12, &#39;G&#39;: 5, &#39;T&#39;: 20}
-{&#39;A&#39;: 17, &#39;C&#39;: 18, &#39;G&#39;: 9, &#39;T&#39;: 7}
-{&#39;A&#39;: 10, &#39;C&#39;: 24, &#39;G&#39;: 9, &#39;T&#39;: 8}
-{&#39;A&#39;: 13, &#39;C&#39;: 9, &#39;G&#39;: 5, &#39;T&#39;: 24}
-{&#39;A&#39;: 16, &#39;C&#39;: 10, &#39;G&#39;: 10, &#39;T&#39;: 15}
+<pre>CGCGGATCCTGAGAGAAATGGATCAAGAAGAGGAGGAAGAATAATTGTAAA BBBFFFBFFFFFFFIFFFFIIFIIIFIIFFFFIBFFBF7FBFBBFBF7BF# {&#39;A&#39;: 22, &#39;C&#39;: 5, &#39;G&#39;: 16, &#39;T&#39;: 8}
+CGAGAGGGAACGTCGAGTCAGGGACACAGCAAAGCTCCACAGGCAGGGAGG BBBFFFFBFFFFFFFFFIIIIFFFIFIIIFFFFIIIBFBFIBFIFI##### {&#39;A&#39;: 16, &#39;C&#39;: 12, &#39;G&#39;: 20, &#39;T&#39;: 3}
+GCGATGTTCTTCAGCCCTGCACGGTACTCCAGTCGCACAGACTCCAACCAC BBBFFFFFFFFFFIIIIIIIIIIIBFFIIIIIFFIIIIIIIIIIIIIIFII {&#39;A&#39;: 11, &#39;C&#39;: 20, &#39;G&#39;: 10, &#39;T&#39;: 10}
+CTGCTTACCAAAAGTGGCCCACTAGGCACTCGCATTCCACGCCCGGCTCCA BBBFFFFFFFFFFIFFFIIIFIFFFIIIIIIIIIIIIIFFFFFIIIIIBFF {&#39;A&#39;: 11, &#39;C&#39;: 21, &#39;G&#39;: 10, &#39;T&#39;: 9}
+CCGGGTCAGTGAAAAACGATAAGAGTAGTGGTATTTCACCGGCGGCCCGCA BBBFFFFFFFF&lt;&lt;BBBBFBFFBFBF&lt;BFBFFBBFIF&lt;B&lt;7FF&#39;BF7&lt;BB&lt;B {&#39;A&#39;: 14, &#39;C&#39;: 12, &#39;G&#39;: 16, &#39;T&#39;: 9}
+CTGGGCTTTAGGCCCCAGAAAGCAGGAGAAAAGGACCAGCGCTGGTGAAAC BBBFFFFFFFFFBFFIBFFBFFFFFIFIBFFIIFFFFFBFFIIIIIIBBFB {&#39;A&#39;: 16, &#39;C&#39;: 12, &#39;G&#39;: 17, &#39;T&#39;: 6}
+CCGTCCCTCTCGCGCGCGTCACCGACTGCCAGCGACGGCCGGGTATGGGCC BBBFFFFFFFFFFIIIIIIFFIIIIIIIIIIIIFBF&lt;BBBFBF77BFB0BB {&#39;A&#39;: 5, &#39;C&#39;: 22, &#39;G&#39;: 17, &#39;T&#39;: 7}
+CTCCTGGTCATTCCGAAACCACCGGACTTTGATCTGGCCTGGATAGAAATC BBBFFFFFFFFFFIIIIIIFFFFFIIIIIIIFIIIIIIIIFIBFFFFFBFB {&#39;A&#39;: 12, &#39;C&#39;: 15, &#39;G&#39;: 11, &#39;T&#39;: 13}
+GCCACTGTTGAGATGAAAGTCACGGAGATGGCCAGGGTGACGCTCCCTTCA &lt;00&lt;&lt;BBFB0B&lt;FFBBBFFBIB0&#39;BFB&lt;&#39;0&#39;0&lt;B0&lt;F&lt;BB&#39;B######### {&#39;A&#39;: 12, &#39;C&#39;: 13, &#39;G&#39;: 16, &#39;T&#39;: 10}
+CTTCTTCTCCTTTAAGTCCTTGGTGGTGATCTCGGAGCTGGTGTCCACGGC BBBFFFFFFFFFFIFI&lt;FBFFFBFFFFBFFFIIIFIIIIFF&lt;BFFBFFFIB {&#39;A&#39;: 5, &#39;C&#39;: 14, &#39;G&#39;: 14, &#39;T&#39;: 18}
 </pre>
 </div>
 </div>
@@ -14803,25 +14921,17 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Above code snippet prints out basic information from FASTQ file, such as sequence, quality and base counts.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Above code snippet prints out basic information from FASTQ file, such as sequence, quality and base counts. For detailed fastq file format information, <a href="https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html">https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html</a></p>
 
-     </div>
 </div>
 </div>
 </div>
-
 </div>
 </body>
 
