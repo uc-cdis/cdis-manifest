@@ -462,7 +462,19 @@
               "study_year_shifted",
               "body_part_examined",
               "study_location",
+              "days_from_study_to_pos_covid_test",
+              "days_from_study_to_neg_covid_test",
               "project_id"
+            ]
+          },
+          {
+            "title": "LOINC Properties",
+            "fields": [
+              "loinc_long_common_name",
+              "loinc_method",
+              "loinc_system",
+              "loinc_contrast",
+              "loinc_code"
             ]
           },
           {
@@ -498,6 +510,13 @@
           "days_to_study",
           "study_year",
           "study_year_shifted",
+          "loinc_long_common_name",
+          "loinc_method",
+          "loinc_system",
+          "loinc_contrast",
+          "loinc_code",
+          "days_from_study_to_pos_covid_test",
+          "days_from_study_to_neg_covid_test",
           "data_format",
           "covid19_positive",
           "age_at_index",
