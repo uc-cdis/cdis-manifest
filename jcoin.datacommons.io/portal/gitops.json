@@ -83,7 +83,7 @@
           "icon": "files",
           "link": "/files",
           "color": "#a2a2a2",
-          "name": "Files"
+          "name": "Datasets"
         },
         {
           "icon": "query",
@@ -203,7 +203,7 @@
             ]
           },
           {
-            "title":"Participant",
+            "title": "Participant",
             "fields": [
               "role_in_project",
               "current_client_status"
@@ -257,7 +257,7 @@
       ],
       "guppyConfig": {
         "dataType": "participant",
-        "nodeCountTitle": "Total Enrolled",
+        "nodeCountTitle": "Total Participants",
         "fieldMapping": [
           {
             "field": "project_id",
@@ -432,7 +432,7 @@
       }
     },
     {
-      "tabTitle": "Files",
+      "tabTitle": "Datasets",
       "charts": {
         "data_type": {
           "chartType": "stackedBar",
