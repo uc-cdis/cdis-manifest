@@ -1,767 +1,819 @@
 {
-    "gaTrackingId": "UA-119127212-1",
-    "graphql": {
-      "boardCounts": [
+  "gaTrackingId": "UA-119127212-1",
+  "graphql": {
+    "boardCounts": [
+      {
+        "graphql": "_case_count",
+        "name": "Case",
+        "plural": "Cases"
+      },
+      {
+        "graphql": "_imaging_study_count",
+        "name": "Imaging Study",
+        "plural": "Imaging Studies"
+      },
+      {
+        "graphql": "_ct_series_file_count",
+        "name": "Computed Tomography (CT) Series",
+        "plural": "Computed Tomography (CT) Series"
+      },
+      {
+        "graphql": "_dx_series_file_count",
+        "name": "Digital X-ray (DX) Series",
+        "plural": "Digital X-ray (DX) Series"
+      },
+      {
+        "graphql": "_cr_series_file_count",
+        "name": "Computed Radiography (CR) Series",
+        "plural": "Computed Radiography (CR) Series"
+      },
+      {
+        "graphql": "_mr_series_file_count",
+        "name": "Magnetic Resonance (MR) Series",
+        "plural": "Magnetic Resonance (MR) Series"
+      }
+    ],
+    "chartCounts": [],
+    "projectDetails": "boardCounts"
+  },
+  "resourceBrowser": {
+    "title": "Jupyter Notebook Tutorials",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
+    "resources": [
+      {
+        "title": "MIDRC Open-R1 Clinical Data Analysis",
+        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+      },
+      {
+        "title": "Query and Access MIDRC Data",
+        "description": "This notebook is intended to demonstrate a variety of ways to access file objects and structured data, also known as metadata, in the MIDRC Data Commons.",
+        "imageUrl": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.png",
+        "link": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.html"
+      }
+    ]
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": true,
+  "hideSubmissionIfIneligible": true,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Analyze Data": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Query": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    },
+    "Query Data": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    }
+  },
+  "components": {
+    "appName": "The Medical Imaging and Data Resource Center Commons",
+    "index": {
+      "introduction": {
+        "heading": "MIDRC Data Commons",
+        "text": "The Medical Imaging & Data Resource Center (MIDRC) Data Commons supports the management, analysis and sharing of medical imaging data for the improvement of patient outcomes.",
+        "link": "/submission"
+      },
+      "buttons": [
         {
-          "graphql": "_case_count",
-          "name": "Case",
-          "plural": "Cases"
+          "name": "Explore Data",
+          "icon": "data-explore",
+          "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
+          "link": "/explorer",
+          "label": "Explore Data"
         },
         {
-          "graphql": "_imaging_study_count",
-          "name": "Imaging Study",
-          "plural": "Imaging Studies"
+          "name": "Data Dictionary",
+          "icon": "data-field-define",
+          "body": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions.",
+          "link": "/DD",
+          "label": "View Dictionary"
         },
         {
-          "graphql": "_ct_series_file_count",
-          "name": "Computed Tomography (CT) Series",
-          "plural": "Computed Tomography (CT) Series"
+          "name": "Query Data",
+          "icon": "data-access",
+          "body": "Search and download subsets of data from the MIDRC Data Commons using GraphQL queries.",
+          "link": "/query",
+          "label": "Query Data"
         },
         {
-          "graphql": "_dx_series_file_count",
-          "name": "Digital X-ray (DX) Series",
-          "plural": "Digital X-ray (DX) Series"
-        },
-        {
-          "graphql": "_cr_series_file_count",
-          "name": "Computed Radiography (CR) Series",
-          "plural": "Computed Radiography (CR) Series"
-        },
-        {
-          "graphql": "_mr_series_file_count",
-          "name": "Magnetic Resonance (MR) Series",
-          "plural": "Magnetic Resonance (MR) Series"
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
+          "link": "/workspace",
+          "label": "Run Analysis"
         }
       ],
-      "chartCounts": [],
-      "projectDetails": "boardCounts"
-    },
-    "useArboristUI": true,
-    "showArboristAuthzOnProfile": true,
-    "showFenceAuthzOnProfile": true,
-    "hideSubmissionIfIneligible": true,
-    "componentToResourceMapping": {
-      "Workspace": {
-        "resource": "/workspace",
-        "method": "access",
-        "service": "jupyterhub"
-      },
-      "Analyze Data": {
-        "resource": "/workspace",
-        "method": "access",
-        "service": "jupyterhub"
-      },
-      "Query": {
-        "resource": "/query_page",
-        "method": "access",
-        "service": "query_page"
-      },
-      "Query Data": {
-        "resource": "/query_page",
-        "method": "access",
-        "service": "query_page"
-      }
-    },
-    "components": {
-      "appName": "The Medical Imaging and Data Resource Center Commons",
-      "index": {
-        "introduction": {
-          "heading": "MIDRC Data Commons",
-          "text": "The Medical Imaging & Data Resource Center (MIDRC) Data Commons supports the management, analysis and sharing of medical imaging data for the improvement of patient outcomes. For further clarification, series refers to, e.g, a 2D image or a 3D scan. For example, we may have data for a case/patient with a CT imaging study and this single \"imaging study\" might have the following 3 \"series\" in it: (1) a scout, (2) an axial CT scan, and (3) a sagittal MIP. Note that series does NOT mean a single slice within a CT scan.",
-          "link": "/submission"
+      "homepageChartNodes": [
+        {
+          "node": "case",
+          "name": "Cases"
         },
-        "buttons": [
-            {
-              "name": "Explore Data",
-              "icon": "data-explore",
-              "body": "Use the Exploration tool for cohort building via faceted search and downloading of subsets of data from the MIDRC Data Commons.",
-              "link": "/explorer",
-              "label": "Explore Data"
-            },
-            {
-              "name": "Data Dictionary",
-              "icon": "data-field-define",
-              "body": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions.",
-              "link": "/DD",
-              "label": "View Dictionary"
-            },
-            {
-              "name": "Query Data",
-              "icon": "data-access",
-              "body": "Search and download subsets of data from the MIDRC Data Commons using GraphQL queries.",
-              "link": "/query",
-              "label": "Query Data"
-            },
-            {
-              "name": "Analyze Data",
-              "icon": "data-analyze",
-              "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
-              "link": "/workspace",
-              "label": "Run Analysis"
-            }
-        ],
-        "homepageChartNodes": [
-            {
-              "node": "case",
-              "name": "Cases"
-            },
-            {
-              "node": "imaging_study",
-              "name": "Imaging Studies"
-            },
-            {
-              "node": "ct_series_file",
-              "name": "CT Series"
-            },
-            {
-              "node": "dx_series_file",
-              "name": "DX Series"
-            },
-            {
-              "node": "cr_series_file",
-              "name": "CR Series"
-            },
-            {
-              "node": "mr_series_file",
-              "name": "MR Series"
-            }
-        ]
+        {
+          "node": "imaging_study",
+          "name": "Imaging Studies"
+        },
+        {
+          "node": "ct_series_file",
+          "name": "CT Series"
+        },
+        {
+          "node": "dx_series_file",
+          "name": "DX Series"
+        },
+        {
+          "node": "cr_series_file",
+          "name": "CR Series"
+        },
+        {
+          "node": "mr_series_file",
+          "name": "MR Series"
+        }
+      ]
     },
     "systemUse": {
-      "systemUseTitle" : "Data Use Agreements",
-      "systemUseText" : [
+      "systemUseTitle": "Data Use Agreement for Academic and Institutional Users",
+      "systemUseText": [
         "Please see the below two Data Use Agreements: the first one is for Academic and Institutional users for non-commercial use; the second agreement is for commercial use.",
         "",
         "",
         "Data Use Agreement - Non-Commercial Research Use Only",
         "This Data Use Agreement for Academic and Institutional Users (this “Agreement”) is by and between you and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement.",
-            "1. The University is the legal entity that hosts Medical Imaging and Data Resource Center (MIDRC) data",
-            "2. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data solely for your personal, Non-Commercial Research Purposes. Any commercial use, sale, or other monetization is prohibited. “Non-Commercial Research Purposes” means academic research or other not-for-profit scholarly purposes which are undertaken at a non-profit or government institution and publishing in connection therewith.",
-            "3. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
-            "4. You will use the MIDRC Data only in compliance with all applicable laws and regulations.",
-            "5. You may make a verbatim copy of the MIDRC Data for personal, non-commercial research use. If another user within your organization wishes to use the MIDRC Data, they must separately download the data set and enter into an Agreement directly with the University.",
-            "6. You may not distribute, publish, or reproduce a copy of any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
-            "7. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data",
-            "8. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
-            "9. You will acknowledge your use of MIDRC Data in all oral or written presentations, disclosures, or publications arising from your use of the MIDRC Data",
-            "10. You may not modify, reverse engineer, decompile, or create derivative works from the MIDRC Data. For avoidance of doubt, users may create research results, including any data analyses, results of algorithm validations, annotations and overlays, and outcomes or evaluations using the MIDRC Data. The University will have no right, title, or interest in any such research results. You must not remove or alter any copyright or other proprietary notices in the MIDRC Data. You are encouraged to submit any annotations or overlays created using the MIDRC data.",
-            "11. The MIDRC Data has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, research use only. In no event shall data or images generated through the use of the MIDRC Data be used or relied upon in the diagnosis or provision of patient care",
-            "12. THE MIDRC DATA IS PROVIDED ON AN ”AS IS”, “WHERE IS” BASIS. THE UNIVERSITY MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON INFRINGEMENT. THE UNIVERSITY WILL HAVE NO LIABILITY WHATSOEVER ARISING FROM YOUR ACCESS OR USE OF THE MIDRC DATA",
-            "13. You will not make any attempt to re-identify any individual from the MIDRC Data. In the event that you identify any person whose data is included in the MIDRC Data, you will promptly delete the data and notify the University in writing.",
-            "14. The University may terminate this Agreement at any time upon notice to you. The University shall have no liability in the event of any such termination. Upon such termination, the University may direct that you immediately return or destroy all copies of any MIDRC Data and, upon the University’s request, you will certify the foregoing to the University in writing.",
-            "",
-            "",
-      "DATA USE AGREEMENT – COMMERCIAL USE PERMITTED",
-      "This Data Use Agreement (this “Agreement”) is by and between you or the entity you represent (“you”) and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement. If you are entering into this Agreement for an entity, such as the company you work for, you represent and warrant that you have legal authority to bind that entity",
-            "1. The University is the legal entity that hosts Medical Imaging and Data Resource Center (MIDRC) data",
-            "2. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data",
-            "3. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
-            "4. You will use the MIDRC Data only in compliance with all applicable laws and regulations",
-            "5. You may make a verbatim copy of the MIDRC Data.",
-            "6. You may not distribute any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
-            "7. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data.",
-            "8. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
-            "9. You will acknowledge your use of MIDRC Data in all oral or written presentations, disclosures, or publications arising from your use of the MIDRC Data.",
-            "10. You may not modify, reverse engineer, decompile, or create derivative works from the MIDRC Data. For avoidance of doubt, users may create research results, including any data analyses, results of algorithm validations, annotations and overlays, and outcomes or evaluations using the MIDRC Data. The University will have no right, title, or interest in any such research results. You must not remove or alter any copyright or other proprietary notices in the MIDRC Data. You are encouraged to submit any annotations or overlays created using the MIDRC data.",
-            "11. The MIDRC Data has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, research use only. In no event shall data or images generated through the use of the MIDRC Data be used or relied upon in the diagnosis or provision of patient care.",
-            "12. THE MIDRC DATA IS PROVIDED ON AN ”AS IS”, “WHERE IS” BASIS. THE UNIVERSITY MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE UNIVERSITY WILL HAVE NO LIABILITY WHATSOEVER ARISING FROM YOUR ACCESS OR USE OF THE MIDRC DATA, INCLUDING WITHOUT LIMITATION ANY LIABILITY ARISING FROM LOST PROFITS, COSTS OF PROCURING SUBSTITUTE GOODS OR SERVICES, LOST BUSINESS, ENHANCED DAMAGES FOR INTELLECTUAL PROPERTY INFRINGEMENT, OR FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, OR OTHER SPECIAL DAMAGES SUFFERED BY YOU OR YOUR SUBLICENSEES, JOINT VENTURES, OR AFFILIATES ARISING OUT OF OR RELATED TO THE AGREEMENT AND NON-EXCLUSIVE LICENSES GRANTED THEREUNDER FOR ALL CAUSES OF ACTION OF ANY KIND (INCLUDING TORT, CONTRACT, NEGLIGENCE, STRICT LIABILITY AND BREACH OF WARRANTY) EVEN IF THE UNIVERSITY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ALSO, UNIVERSITY WILL NOT BE LIABLE FOR ANY DIRECT DAMAGES SUFFERED BY YOU OR YOUR SUBLICENSEES, JOINT VENTURES, OR AFFILIATES ARISING OUT OF OR RELATED TO YOUR USE OF THE MIDRC DATA.",
-            "13. You will defend, indemnify, and hold harmless the University, its affiliates and licensors, and each of their respective employees, officers, directors, trustees, and representatives (“Representatives”) from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees and consultants’ fees) arising out of or relating to any third-party claim to the extent concerning or arising out of: (a) your use of the MIDRC Data; (b) breach of this Agreement or violation of applicable law by you; or (c) any allegation that your use of the MIDRC Data infringes or otherwise violates the patent, copyright, or other intellectual property rights of any third party.",
-            "14. You will not make any attempt to re-identify any individual from the MIDRC Data. In the event that you identify any person whose data is included in the MIDRC Data, you will promptly notify the University in writing.",
-            "15. The University may terminate this Agreement at any time upon notice to you. The University shall have no liability in the event of any such termination. Upon such termination, the University may direct that you immediately return or destroy all copies of any MIDRC Data and, upon the University’s request, you will certify the foregoing to the University in writing."
-        ],
+        "1. The University is the legal entity that hosts Medical Imaging and Data Resource Center (MIDRC) data",
+        "2. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data solely for your personal, Non-Commercial Research Purposes. Any commercial use, sale, or other monetization is prohibited. “Non-Commercial Research Purposes” means academic research or other not-for-profit scholarly purposes which are undertaken at a non-profit or government institution and publishing in connection therewith.",
+        "3. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
+        "4. You will use the MIDRC Data only in compliance with all applicable laws and regulations.",
+        "5. You may make a verbatim copy of the MIDRC Data for personal, non-commercial research use. If another user within your organization wishes to use the MIDRC Data, they must separately download the data set and enter into an Agreement directly with the University.",
+        "6. You may not distribute, publish, or reproduce a copy of any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
+        "7. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data",
+        "8. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
+        "9. You will acknowledge your use of MIDRC Data in all oral or written presentations, disclosures, or publications arising from your use of the MIDRC Data",
+        "10. You may not modify, reverse engineer, decompile, or create derivative works from the MIDRC Data. For avoidance of doubt, users may create research results, including any data analyses, results of algorithm validations, annotations and overlays, and outcomes or evaluations using the MIDRC Data. The University will have no right, title, or interest in any such research results. You must not remove or alter any copyright or other proprietary notices in the MIDRC Data. You are encouraged to submit any annotations or overlays created using the MIDRC data.",
+        "11. The MIDRC Data has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, research use only. In no event shall data or images generated through the use of the MIDRC Data be used or relied upon in the diagnosis or provision of patient care",
+        "12. THE MIDRC DATA IS PROVIDED ON AN ”AS IS”, “WHERE IS” BASIS. THE UNIVERSITY MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON INFRINGEMENT. THE UNIVERSITY WILL HAVE NO LIABILITY WHATSOEVER ARISING FROM YOUR ACCESS OR USE OF THE MIDRC DATA",
+        "13. You will not make any attempt to re-identify any individual from the MIDRC Data. In the event that you identify any person whose data is included in the MIDRC Data, you will promptly delete the data and notify the University in writing.",
+        "14. The University may terminate this Agreement at any time upon notice to you. The University shall have no liability in the event of any such termination. Upon such termination, the University may direct that you immediately return or destroy all copies of any MIDRC Data and, upon the University’s request, you will certify the foregoing to the University in writing.",
+        "",
+        "",
+        "DATA USE AGREEMENT – COMMERCIAL USE PERMITTED",
+        "This Data Use Agreement (this “Agreement”) is by and between you or the entity you represent (“you”) and the University of Chicago (the “University”) and governs your access to and use of the deidentified imaging and associated demographic and clinical data provided to you by the University (“MIDRC Data”). By accessing, using, or downloading any MIDRC Data, you are agreeing to be bound by the terms and conditions of this Agreement. If you are entering into this Agreement for an entity, such as the company you work for, you represent and warrant that you have legal authority to bind that entity",
+        "1. The University is the legal entity that hosts Medical Imaging and Data Resource Center (MIDRC) data",
+        "2. The University grants you a limited, personal, worldwide, non-exclusive, non-transferable, royalty-free license to view and use the MIDRC Data",
+        "3. Other than the rights granted herein, the University retains all rights, title, and interest in the MIDRC Dataset.",
+        "4. You will use the MIDRC Data only in compliance with all applicable laws and regulations",
+        "5. You may make a verbatim copy of the MIDRC Data.",
+        "6. You may not distribute any portion or all of the MIDRC Data to others without specific prior written permission from the University.",
+        "7. You will promptly report to the University in writing any unauthorized access or use of the MIDRC Data.",
+        "8. You will register with and provide current contact information to the University. By accessing, using, or downloading the MIDRC Data, you consent to be contacted by the University. The University may use, and you hereby grant the University a non-exclusive, worldwide, perpetual, irrevocable license to use, any data you provide to the University, including any personally identifiable information.",
+        "9. You will acknowledge your use of MIDRC Data in all oral or written presentations, disclosures, or publications arising from your use of the MIDRC Data.",
+        "10. You may not modify, reverse engineer, decompile, or create derivative works from the MIDRC Data. For avoidance of doubt, users may create research results, including any data analyses, results of algorithm validations, annotations and overlays, and outcomes or evaluations using the MIDRC Data. The University will have no right, title, or interest in any such research results. You must not remove or alter any copyright or other proprietary notices in the MIDRC Data. You are encouraged to submit any annotations or overlays created using the MIDRC data.",
+        "11. The MIDRC Data has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, research use only. In no event shall data or images generated through the use of the MIDRC Data be used or relied upon in the diagnosis or provision of patient care.",
+        "12. THE MIDRC DATA IS PROVIDED ON AN ”AS IS”, “WHERE IS” BASIS. THE UNIVERSITY MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE UNIVERSITY WILL HAVE NO LIABILITY WHATSOEVER ARISING FROM YOUR ACCESS OR USE OF THE MIDRC DATA, INCLUDING WITHOUT LIMITATION ANY LIABILITY ARISING FROM LOST PROFITS, COSTS OF PROCURING SUBSTITUTE GOODS OR SERVICES, LOST BUSINESS, ENHANCED DAMAGES FOR INTELLECTUAL PROPERTY INFRINGEMENT, OR FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, OR OTHER SPECIAL DAMAGES SUFFERED BY YOU OR YOUR SUBLICENSEES, JOINT VENTURES, OR AFFILIATES ARISING OUT OF OR RELATED TO THE AGREEMENT AND NON-EXCLUSIVE LICENSES GRANTED THEREUNDER FOR ALL CAUSES OF ACTION OF ANY KIND (INCLUDING TORT, CONTRACT, NEGLIGENCE, STRICT LIABILITY AND BREACH OF WARRANTY) EVEN IF THE UNIVERSITY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ALSO, UNIVERSITY WILL NOT BE LIABLE FOR ANY DIRECT DAMAGES SUFFERED BY YOU OR YOUR SUBLICENSEES, JOINT VENTURES, OR AFFILIATES ARISING OUT OF OR RELATED TO YOUR USE OF THE MIDRC DATA.",
+        "13. You will defend, indemnify, and hold harmless the University, its affiliates and licensors, and each of their respective employees, officers, directors, trustees, and representatives (“Representatives”) from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees and consultants’ fees) arising out of or relating to any third-party claim to the extent concerning or arising out of: (a) your use of the MIDRC Data; (b) breach of this Agreement or violation of applicable law by you; or (c) any allegation that your use of the MIDRC Data infringes or otherwise violates the patent, copyright, or other intellectual property rights of any third party.",
+        "14. You will not make any attempt to re-identify any individual from the MIDRC Data. In the event that you identify any person whose data is included in the MIDRC Data, you will promptly notify the University in writing.",
+        "15. The University may terminate this Agreement at any time upon notice to you. The University shall have no liability in the event of any such termination. Upon such termination, the University may direct that you immediately return or destroy all copies of any MIDRC Data and, upon the University’s request, you will certify the foregoing to the University in writing."
+      ],
       "displayUseMsg": "cookie",
-      "expireUseMsgDays" : 365
+      "expireUseMsgDays": 365
     },
     "navigation": {
-        "items": [
-          {
-            "name": "Exploration",
-            "link": "/explorer",
-            "icon": "exploration",
-            "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
-          },
-          {
-            "icon": "dictionary",
-            "link": "/DD",
-            "color": "#a2a2a2",
-            "name": "Dictionary",
-            "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
-          },
-          {
-            "name": "Query",
-            "link": "/query",
-            "icon": "query",
-            "tooltip": "Query the databases using GraphQL."
-          },
-          {
-            "name": "Workspace",
-            "link": "/workspace",
-            "icon": "workspace",
-            "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
-          }
-        ]
-      },
-      "topBar": {
-        "items": [
-          {
-            "link": "https://www.midrc.org/",
-            "name": "About"
-          },
-          {
-            "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
-            "name": "Quick Start Guide"
-          },
-          {
-            "link": "https://gen3.org/resources/user/",
-            "name": "Documentation"
-          },
-          {
-            "link": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html",
-            "name": "HHS Responsible Disclosure"
-          },
-          {
-            "icon": "upload",
-            "link": "/submission",
-            "name": "Submit Data"
-          },
-          {
-            "link": "midrc-support@datacommons.io",
-            "name": "Email Support"
-          }
-        ],
-        "useProfileDropdown": true
-      },
-      "login": {
-        "title": "Medical Imaging & Data Resource Center Data Commons",
-        "subTitle": "Explore, Analyze, and Share Medical Imaging Data to Improve Patient Outcomes",
-        "text": "",
-        "contact": "If you have any questions about access or the registration process, please contact ",
-        "email": "midrc-support@datacommons.io",
-        "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
-      },
-      "categorical9Colors": ["#B02F34", "#421C52", "#AEEBF2", "#E0DD10", "#40476D", "#FFA630", "#AE8799", "#035C94", "#462255"],
-      "footerLogos": [
+      "items": [
         {
-          "src": "/src/img/gen3.png",
-          "href": "https://ctds.uchicago.edu/gen3",
-          "alt": "Gen3 Data Commons"
+          "name": "Exploration",
+          "link": "/explorer",
+          "icon": "exploration",
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
+        },
+        {
+          "name": "Dictionary",
+          "link": "/DD",
+          "icon": "dictionary",
+          "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Query",
+          "link": "/query",
+          "icon": "query",
+          "tooltip": "Query the databases using GraphQL."
+        },
+        {
+          "name": "Example Analysis",
+          "link": "/resource-browser",
+          "icon": "bar-chart",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the MIDRC Data Commons by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Workspace",
+          "link": "/workspace",
+          "icon": "workspace",
+          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         }
       ]
     },
-    "featureFlags": {
-      "explorer": true,
-      "analysis": true,
-      "explorerPublic": true
-    },
-    "analysisTools": [ ],
-    "explorerConfig": [
+    "topBar": {
+      "items": [
         {
-          "tabTitle": "Cases",
-          "charts": {
-            "covid19_positive": {
-              "chartType": "fullPie",
-              "title": "COVID-19 Positive"
-            },
-            "sex": {
-              "chartType": "fullPie",
-              "title": "Sex"
-            },
-            "race": {
-              "chartType": "fullPie",
-              "title": "Race"
-            }
-          },
-          "filters": {
-            "tabs": [
-              {
-                "title": "Demographics",
-                "fields":[
-                  "sex",
-                  "race",
-                  "ethnicity",
-                  "age_at_index",
-                  "index_event",
-                  "zip",
-                  "covid19_positive",
-                  "project_id"
-                ]
-              }
-            ]
-          },
-          "table": {
-            "enabled": true,
+          "link": "https://www.midrc.org/",
+          "name": "About"
+        },
+        {
+          "link": "https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf",
+          "name": "Quick Start Guide"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        },
+        {
+          "link": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html",
+          "name": "HHS Responsible Disclosure"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "midrc-support@datacommons.io",
+          "name": "Email Support"
+        }
+      ],
+      "useProfileDropdown": true
+    },
+    "login": {
+      "title": "Medical Imaging & Data Resource Center Data Commons",
+      "subTitle": "Explore, Analyze, and Share Medical Imaging Data to Improve Patient Outcomes",
+      "text": "",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "midrc-support@datacommons.io",
+      "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
+    },
+    "categorical9Colors": [
+      "#B02F34",
+      "#421C52",
+      "#AEEBF2",
+      "#E0DD10",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#035C94",
+      "#462255"
+    ],
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      }
+    ]
+  },
+  "featureFlags": {
+    "explorer": true,
+    "analysis": true,
+    "explorerPublic": true
+  },
+  "analysisTools": [],
+  "explorerConfig": [
+    {
+      "tabTitle": "Cases",
+      "charts": {
+        "covid19_positive": {
+          "chartType": "fullPie",
+          "title": "COVID-19 Positive"
+        },
+        "sex": {
+          "chartType": "fullPie",
+          "title": "Sex"
+        },
+        "race": {
+          "chartType": "fullPie",
+          "title": "Race"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Demographics",
             "fields": [
-              "submitter_id",
               "sex",
-              "age_at_index",
-              "index_event",
               "race",
               "ethnicity",
+              "age_at_index",
+              "index_event",
               "zip",
               "covid19_positive",
-              "_imaging_studies_count",
-              "_ct_series_file_count",
-              "_dx_series_file_count",
-              "_cr_series_file_count",
-              "_mr_series_file_count",
+              "project_id"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "submitter_id",
+          "sex",
+          "age_at_index",
+          "index_event",
+          "race",
+          "ethnicity",
+          "zip",
+          "covid19_positive",
+          "_imaging_studies_count",
+          "_ct_series_file_count",
+          "_dx_series_file_count",
+          "_cr_series_file_count",
+          "_mr_series_file_count",
+          "project_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Case Metadata Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Cases_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Cases_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Cases_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest for Cases",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_case_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "case",
+        "nodeCountTitle": "Cases",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Case ID"
+          },
+          {
+            "field": "_imaging_studies_count",
+            "name": "Imaging Studies Count"
+          },
+          {
+            "field": "_ct_series_file_count",
+            "name": "CT Series Count"
+          },
+          {
+            "field": "_dx_series_file_count",
+            "name": "DX Series Count"
+          },
+          {
+            "field": "_cr_series_file_count",
+            "name": "CR Series Count"
+          },
+          {
+            "field": "_mr_series_file_count",
+            "name": "MR Series Count"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "imaging_data_file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Imaging Studies",
+      "charts": {
+        "study_modality": {
+          "chartType": "fullPie",
+          "title": "Study Modality"
+        },
+        "sex": {
+          "chartType": "fullPie",
+          "title": "Case Sex"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Study Properties",
+            "fields": [
+              "study_modality",
+              "study_description",
+              "age_at_imaging",
+              "study_year",
+              "study_year_shifted",
+              "body_part_examined",
+              "study_location",
               "project_id"
             ]
           },
-          "dropdowns": {
-            "download-table": {
-              "title": "Download Table"
-            }
+          {
+            "title": "Imaging Properties",
+            "fields": [
+              "data_format",
+              "data_category",
+              "data_type"
+            ]
           },
-          "buttons": [
-            {
-              "enabled": true,
-              "type": "data-json",
-              "title": "JSON",
-              "dropdownId": "download-table",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_Cases_table.json"
-            },
-            {
-              "enabled": true,
-              "type": "data-tsv",
-              "title": "TSV",
-              "dropdownId": "download-table",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_Cases_table.tsv"
-            },
-            {
-              "enabled": true,
-              "type": "data-csv",
-              "title": "CSV",
-              "dropdownId": "download-table",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_Cases_table.csv"
-            },
-            {
-              "enabled": true,
-              "type": "manifest",
-              "title": "Download File Manifest",
-              "leftIcon": "datafile",
-              "rightIcon": "download",
-              "fileName": "MIDRC_case_manifest.json"
-            },
-            {
-              "enabled": false,
-              "type": "export-to-workspace",
-              "title": "Export to Workspace",
-              "leftIcon": "datafile",
-              "rightIcon": "download"
-            }
-          ],
-          "loginForDownload": true,
-          "guppyConfig": {
-            "dataType": "case",
-            "nodeCountTitle": "Cases",
-            "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Project ID"
-                },
-                {
-                    "field": "submitter_id",
-                    "name": "Case ID"
-                },
-                {
-                    "field": "_imaging_studies_count",
-                    "name": "Imaging Studies Count"
-                },
-                {
-                    "field": "_ct_series_file_count",
-                    "name": "CT Series Count"
-                },
-                {
-                    "field": "_dx_series_file_count",
-                    "name": "DX Series Count"
-                },
-                {
-                    "field": "_cr_series_file_count",
-                    "name": "CR Series Count"
-                },
-                {
-                    "field": "_mr_series_file_count",
-                    "name": "MR Series Count"
-                }
-            ],
-            "manifestMapping": {
-              "resourceIndexType": "imaging_data_file",
-              "resourceIdField": "object_id",
-              "referenceIdFieldInResourceIndex": "_case_id",
-              "referenceIdFieldInDataIndex": "_case_id"
-            },
-            "accessibleFieldCheckList": ["project_id"],
-            "accessibleValidationField": "project_id"
+          {
+            "title": "Case Demographics",
+            "fields": [
+              "covid19_positive",
+              "age_at_index",
+              "sex",
+              "race",
+              "ethnicity",
+              "zip",
+              "index_event"
+            ]
           }
-        },
-        {
-            "tabTitle": "Imaging Studies",
-            "charts": {
-              "study_modality": {
-                "chartType": "fullPie",
-                "title": "Study Modality"
-              },
-              "sex": {
-                "chartType": "fullPie",
-                "title": "Case Sex"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_modality",
-                    "study_description",
-                    "age_at_imaging",
-                    "study_year",
-                    "study_year_shifted",
-                    "body_part_examined",
-                    "study_location",
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Imaging Properties",
-                  "fields":[
-                    "data_format",
-                    "data_category",
-                    "data_type"
-                  ]
-                },
-                {
-                  "title": "Case Demographics",
-                  "fields":[
-                    "covid19_positive",
-                    "age_at_index",
-                    "sex",
-                    "race",
-                    "ethnicity",
-                    "zip",
-                    "index_event"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "study_modality",
-                "study_description",
-                "body_part_examined",
-                "age_at_imaging",
-                "days_to_study",
-                "study_year",
-                "study_year_shifted",
-                "data_format",
-                "covid19_positive",
-                "age_at_index",
-                "index_event",
-                "sex",
-                "race",
-                "ethnicity",
-                "zip",
-                "_ct_series_file_count",
-                "_dx_series_file_count",
-                "_cr_series_file_count",
-                "_mr_series_file_count",
-                "data_format",
-                "data_category",
-                "data_type",
-                "study_uid",
-                "case_ids",
-                "file_name",
-                "object_id",
-                "project_id"
-              ]
-            },
-            "dropdowns": {
-              "download-table": {
-                "title": "Download Table"
-              }
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data-json",
-                "title": "JSON",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Studies_table.json"
-              },
-              {
-                "enabled": true,
-                "type": "data-tsv",
-                "title": "TSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Studies_table.tsv"
-              },
-              {
-                "enabled": true,
-                "type": "data-csv",
-                "title": "CSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Studies_table.csv"
-              },
-              {
-                "enabled": true,
-                "type": "manifest",
-                "title": "Download File Manifest",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_imaging_study_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "loginForDownload": true,
-            "guppyConfig": {
-              "dataType": "imaging_study",
-              "nodeCountTitle": "Imaging Studies",
-              "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Project ID"
-                },
-                {
-                    "field": "case_ids",
-                    "name": "Patient ID"
-                },
-                {
-                    "field": "_ct_series_file_count",
-                    "name": "CT Series Count"
-                },
-                {
-                    "field": "_dx_series_file_count",
-                    "name": "DX Series Count"
-                },
-                {
-                    "field": "_cr_series_file_count",
-                    "name": "CR Series Count"
-                },
-                {
-                    "field": "_mr_series_file_count",
-                    "name": "MR Series Count"
-                }
-              ],
-              "manifestMapping": {
-                "resourceIndexType": "imaging_data_file",
-                "resourceIdField": "object_id",
-                "referenceIdFieldInResourceIndex": "_imaging_study_id",
-                "referenceIdFieldInDataIndex": "_imaging_study_id"
-              },
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
-        },
-        {
-            "tabTitle": "Imaging Series",
-            "charts": {
-              "sex": {
-                "chartType": "fullPie",
-                "title": "Case Sex"
-              },
-              "covid19_positive": {
-                "chartType": "fullPie",
-                "title": "Cases that ever had COVID-19"
-              }
-            },
-            "filters": {
-              "tabs": [
-                {
-                  "title": "Series Properties",
-                  "fields":[
-                    "modality",
-                    "acquisition_type",
-                    "contrast_bolus_agent",
-                    "convolution_kernel",
-                    "detector_type",
-                    "exposure_modulation_type",
-                    "image_type",
-                    "imager_pixel_spacing",
-                    "lossy_image_compression",
-                    "manufacturer",
-                    "manufacturer_model_name",
-                    "multiframe_images",
-                    "patient_position",
-                    "pixel_spacing",
-                    "radiopharmaceutical",
-                    "series_description",
-                    "slice_thickness",
-                    "spacing_between_slices",
-                    "spatial_resolution",
-                    "transducer_type",
-                    "view_position",
-                    "data_format",
-                    "data_category",
-                    "data_type"
-                  ]
-                },
-                {
-                  "title": "Study Properties",
-                  "fields":[
-                    "study_description",
-                    "age_at_imaging",
-                    "study_year",
-                    "study_year_shifted",
-                    "study_location",
-                    "days_from_study_to_pos_covid_test",
-                    "days_from_study_to_neg_covid_test",
-                    "project_id"
-                  ]
-                },
-                {
-                  "title": "Case Demographics",
-                  "fields":[
-                    "covid19_positive",
-                    "age_at_index",
-                    "sex",
-                    "race",
-                    "ethnicity",
-                    "zip",
-                    "index_event"
-                  ]
-                }
-              ]
-            },
-            "table": {
-              "enabled": true,
-              "fields": [
-                "modality",
-                "study_description",
-                "acquisition_type",
-                "contrast_bolus_agent",
-                "convolution_kernel",
-                "detector_type",
-                "exposure_modulation_type",
-                "image_type",
-                "imager_pixel_spacing",
-                "lossy_image_compression",
-                "manufacturer",
-                "manufacturer_model_name",
-                "multiframe_images",
-                "patient_position",
-                "pixel_spacing",
-                "radiopharmaceutical",
-                "series_description",
-                "slice_thickness",
-                "spacing_between_slices",
-                "spatial_resolution",
-                "transducer_type",
-                "view_position",
-                "age_at_imaging",
-                "days_to_study",
-                "study_year",
-                "study_year_shifted",
-                "days_from_study_to_pos_covid_test",
-                "days_from_study_to_neg_covid_test",
-                "data_format",
-                "covid19_positive",
-                "age_at_index",
-                "index_event",
-                "sex",
-                "race",
-                "zip",
-                "data_format",
-                "data_category",
-                "data_type",
-                "series_uid",
-                "study_uid",
-                "case_ids",
-                "file_name",
-                "object_id",
-                "project_id"
-              ],
-              "dicomViewerId": "submitter_id",
-              "linkFields": ["submitter_id"]
-            },
-            "dropdowns": {
-              "download-table": {
-                "title": "Download Table"
-              }
-            },
-            "buttons": [
-              {
-                "enabled": true,
-                "type": "data-json",
-                "title": "JSON",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Series_table.json"
-              },
-              {
-                "enabled": true,
-                "type": "data-tsv",
-                "title": "TSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Series_table.tsv"
-              },
-              {
-                "enabled": true,
-                "type": "data-csv",
-                "title": "CSV",
-                "dropdownId": "download-table",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Series_table.csv"
-              },
-              {
-                "enabled": true,
-                "type": "file-manifest",
-                "title": "Download File Manifest",
-                "leftIcon": "datafile",
-                "rightIcon": "download",
-                "fileName": "MIDRC_Imaging_Series_manifest.json"
-              },
-              {
-                "enabled": false,
-                "type": "export-to-workspace",
-                "title": "Export to Workspace",
-                "leftIcon": "datafile",
-                "rightIcon": "download"
-              }
-            ],
-            "loginForDownload": true,
-            "guppyConfig": {
-              "dataType": "imaging_data_file",
-              "nodeCountTitle": "Imaging Series",
-              "fieldMapping": [
-                {
-                    "field": "project_id",
-                    "name": "Project ID"
-                },
-                {
-                    "field": "case_ids",
-                    "name": "Patient ID"
-                }
-              ],
-              "manifestMapping": {
-                "referenceIdFieldInResourceIndex": "object_id",
-                "referenceIdFieldInDataIndex": "object_id"
-              },
-              "downloadAccessor": "object_id",
-              "accessibleFieldCheckList": ["project_id"],
-              "accessibleValidationField": "project_id"
-            }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "submitter_id",
+          "study_modality",
+          "study_description",
+          "body_part_examined",
+          "age_at_imaging",
+          "days_to_study",
+          "study_year",
+          "study_year_shifted",
+          "data_format",
+          "covid19_positive",
+          "age_at_index",
+          "index_event",
+          "sex",
+          "race",
+          "ethnicity",
+          "zip",
+          "_ct_series_file_count",
+          "_dx_series_file_count",
+          "_cr_series_file_count",
+          "_mr_series_file_count",
+          "data_format",
+          "data_category",
+          "data_type",
+          "study_uid",
+          "case_ids",
+          "file_name",
+          "object_id",
+          "project_id"
+        ],
+        "dicomViewerId": "submitter_id",
+        "linkFields": [
+          "submitter_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Imaging Studies Table"
         }
-    ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Studies_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Studies_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Studies_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest for Imaging Studies",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_imaging_study_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "imaging_study",
+        "nodeCountTitle": "Imaging Studies",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          },
+          {
+            "field": "_ct_series_file_count",
+            "name": "CT Series Count"
+          },
+          {
+            "field": "_dx_series_file_count",
+            "name": "DX Series Count"
+          },
+          {
+            "field": "_cr_series_file_count",
+            "name": "CR Series Count"
+          },
+          {
+            "field": "_mr_series_file_count",
+            "name": "MR Series Count"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "imaging_data_file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "_imaging_study_id",
+          "referenceIdFieldInDataIndex": "_imaging_study_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Imaging Series",
+      "charts": {
+        "sex": {
+          "chartType": "fullPie",
+          "title": "Case Sex"
+        },
+        "covid19_positive": {
+          "chartType": "fullPie",
+          "title": "Cases that ever had COVID-19"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Study Properties",
+            "fields": [
+              "study_description",
+              "age_at_imaging",
+              "study_year",
+              "study_year_shifted",
+              "study_location",
+              "days_from_study_to_pos_covid_test",
+              "days_from_study_to_neg_covid_test",
+              "project_id"
+            ]
+          },
+          {
+            "title": "Series Properties",
+            "fields": [
+              "acquisition_type",
+              "contrast_bolus_agent",
+              "convolution_kernel",
+              "detector_type",
+              "exposure_modulation_type",
+              "image_type",
+              "imager_pixel_spacing",
+              "lossy_image_compression",
+              "manufacturer",
+              "manufacturer_model_name",
+              "modality",
+              "multiframe_images",
+              "patient_position",
+              "pixel_spacing",
+              "radiopharmaceutical",
+              "series_description",
+              "slice_thickness",
+              "spacing_between_slices",
+              "spatial_resolution",
+              "transducer_type",
+              "view_position",
+              "data_format",
+              "data_category",
+              "data_type"
+            ]
+          },
+          {
+            "title": "Case Demographics",
+            "fields": [
+              "covid19_positive",
+              "age_at_index",
+              "sex",
+              "race",
+              "zip",
+              "index_event"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "acquisition_type",
+          "contrast_bolus_agent",
+          "convolution_kernel",
+          "detector_type",
+          "exposure_modulation_type",
+          "image_type",
+          "imager_pixel_spacing",
+          "lossy_image_compression",
+          "manufacturer",
+          "manufacturer_model_name",
+          "modality",
+          "multiframe_images",
+          "patient_position",
+          "pixel_spacing",
+          "radiopharmaceutical",
+          "series_description",
+          "slice_thickness",
+          "spacing_between_slices",
+          "spatial_resolution",
+          "transducer_type",
+          "view_position",
+          "study_description",
+          "age_at_imaging",
+          "days_to_study",
+          "study_year",
+          "study_year_shifted",
+          "days_from_study_to_pos_covid_test",
+          "days_from_study_to_neg_covid_test",
+          "data_format",
+          "covid19_positive",
+          "age_at_index",
+          "index_event",
+          "sex",
+          "race",
+          "zip",
+          "data_format",
+          "data_category",
+          "data_type",
+          "series_uid",
+          "study_uid",
+          "case_ids",
+          "file_name",
+          "object_id",
+          "project_id"
+        ],
+        "dicomViewerId": "submitter_id",
+        "linkFields": [
+          "submitter_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Series_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Series_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Series_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Imaging_Series_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "imaging_data_file",
+        "nodeCountTitle": "Imaging Series",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    }
+  ]
 }

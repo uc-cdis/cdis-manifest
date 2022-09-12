@@ -24,6 +24,9 @@
 			"study_url": {},
 			"project_id": {},
 			"short_name": {},
+			"_subjects_count": {
+				"type": "integer"
+			},
 			"full_name": {},
 			"commons_url": {},
 			"commons" : {},
@@ -55,7 +58,7 @@
 				"short_name": "path:dataset_code",
 				"commons": "NIDDK IBD Genetics Consortium Data Commons",
 				"study_url": "path:link",
-				"_subjects_count" : "path:subjects_count",
+				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
 				"__manifest": "path:__manifest",
 				"commons_url" : "ibdgc.datacommons.io"
 			}
@@ -97,15 +100,15 @@
 				"authz": "path:auth_resource_path",
 				"tags": "path:tags",
 				"_unique_id": "path:_unique_id",
-				"study_id": "path:_publication_id",
-				"study_description": "path:study_description_summary",
-				"full_name": "path:study_name_title",
-				"short_name": "path:study_name_title",
+				"study_id": "path:_unique_id",
+				"study_description": "path:data_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
 				"commons": "Medical Imaging and Data Resource Center (MIDRC)",
-				"study_url": "path:websites",
-				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
+				"study_url": "path:data_url",
+				"_subjects_count" : {"path":"cases_count", "default" : 0 },
 				"__manifest": "path:__manifest",
-				"commons_url" : "ibdgc.datacommons.io"
+				"commons_url" : "data.midrc.org"
 			}
 		},
 		"NIAID ClinicalData": {
@@ -129,7 +132,7 @@
 				"study_url": "path:publications",
 				"_subjects_count" : {
 					"path":"subjects_count",
-					"default_value": 0
+					"default": 0
 				},
 				"__manifest": "path:__manifest",
 				"commons_url" : "accessclinicaldata.niaid.nih.gov"
@@ -151,10 +154,7 @@
 				"commons": "JCOIN",
 				"study_url": "path:publications",
 				"data_availability": "path:data_availability",
-				"_subjects_count" : {
-					"path":"subjects",
-					"default_value": 0
-				},
+				"_subjects_count" : { "path":"subjects", "default": 0 },
 				"__manifest": "path:__manifest",
 				"commons_url" : "jcoin.datacommons.io"
 			}
@@ -258,28 +258,53 @@
 				"commons_url" : "imaging.datacommons.cancer.gov"
 			}
 		},
-		"Kids First": {
-			"mds_url": "https://gen3staging.kidsfirstdrc.org/",
-			"commons_url": "kidsfirstdrc.org",
+		"Open Access Data Commons": {
+			"mds_url": "https://gen3.datacommons.io/",
+			"commons_url" : "gen3.datacommons.io",
 			"adapter": "gen3",
 			"config" : {
-				"guid_type": "metadata_object",
-				"study_field": "dbgap"
+				"guid_type": "discovery_metadata",
+				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
 			"field_mappings" : {
 				"authz": "path:authz",
-				"tags": "path:gen3_discovery.tags",
-				"_unique_id": "path:_unique_id",
-				"study_id": "path:_unique_id",
-				"study_description": "path:description",
+				"tags": "path:tags",
+				"_unique_id": "path:study_id",
+				"study_id": "path:study_id",
+				"study_description": "path:study_description",
 				"full_name": "path:full_name",
-				"short_name": "path:full_name",
-				"commons": "Kids First Data Resource Center",
-				"study_url": "path:link",
+				"short_name": "path:short_name",
+				"commons": "Open Access Data Commons",
+				"study_url": "path:study_url",
+				"_subjects_count" : {"path":"_subjects_count", "default" : 0 },
 				"__manifest": "path:__manifest",
-				"commons_url" : "kidsfirstdrc.org"
+				"commons_url" : "gen3.datacommons.io"
 			}
-		}
+		},
+		"Canine Data Commons": {
+      			"mds_url": "https://caninedc.org/",
+      			"commons_url": "caninedc.org",
+      			"config": {
+        			"guid_type": "discovery_metadata",
+        			"study_field": "gen3_discovery"
+      			},
+      			"adapter": "gen3",
+      			"keep_original_fields": false,
+      			"field_mappings": {
+        			"authz": "path:authz",
+        			"tags": "path:tags",
+        			"short_name": "path:short_name",
+        			"full_name": "path:full_name",
+        			"_subjects_count" : {"path":"subjects", "default" : 0 },
+        			"study_id": "path:project_id",
+        			"_unique_id": "path:project_id",
+        			"commons": "path:commons",
+        			"study_url": {"path":"publications", "default": ""},
+       				"__manifest": "path:__manifest",
+        			"study_description": "path:study_description"
+      			}
+    		}
+
 	}
 }
