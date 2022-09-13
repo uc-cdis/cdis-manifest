@@ -439,6 +439,106 @@
       }
     },
     {
+      "tabTitle": "Measurements",
+      "charts": {
+        "test_method": {
+          "chartType": "fullPie",
+          "title": "Test Method"
+        },
+        "test_result_text": {
+          "chartType": "fullPie",
+          "title": "COVID-19 Test Result"
+        },
+        "test_name": {
+          "chartType": "fullPie",
+          "title": "Test Name"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "COVID-19 Tests",
+            "fields": [
+              "test_method",
+              "test_result_text",
+              "test_name",
+              "test_days_from_index",
+              "project_id"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "case_ids",
+          "test_method",
+          "test_result_text",
+          "test_name",
+          "test_days_from_index",
+          "submitter_id",
+          "project_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Measurements Metadata Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.csv"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "measurement",
+        "nodeCountTitle": "Measurements",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Measurement ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Case ID"
+          }
+        ],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
       "tabTitle": "Imaging Studies",
       "charts": {
         "study_modality": {
