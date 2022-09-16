@@ -21,7 +21,7 @@
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.08",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.08",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.08",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.08",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:5.0.0",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.08",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.08",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.08",
@@ -137,6 +137,10 @@
       {
         "index": "midrcstaging_case",
         "type": "case"
+      },
+      {
+        "index": "midrcstaging_measurement",
+        "type": "measurement"
       },
       {
         "index": "midrcstaging_imaging_data_file",
