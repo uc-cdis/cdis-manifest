@@ -679,12 +679,6 @@
       }
     ]
   },
-  "studyRegistrationConfig": {
-    "studyRegistrationTrackingField": "registrant_username",
-    "studyRegistrationValidationField": "is_registered",
-    "studyRegistrationAccessCheckField": "registration_authz",
-    "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards"
-  },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
     "public": true,
@@ -745,5 +739,18 @@
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {},
-  "stridesPortalURL": "https://healportal.org"
+  "stridesPortalURL": "https://healportal.org",
+  "registrationConfigs": {
+    "features":{
+      "studyRegistrationConfig": {
+        "studyRegistrationTrackingField": "registrant_username",
+        "studyRegistrationValidationField": "is_registered",
+        "studyRegistrationAccessCheckField": "registration_authz",
+        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards"
+      }
+    },
+    "kayakoConfig":{
+      "kayakoDepartmentId": 21        
+    }
+  }
 }

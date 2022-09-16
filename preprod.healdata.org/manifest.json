@@ -20,8 +20,8 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:1.8.2",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.08",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.08",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.32.1",
-    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.7.1",
+    "portal": "quay.io/cdis/data-portal:feat_workspace-registration",
+    "requestor": "quay.io/cdis/requestor:1.7.1",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.08",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.08",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.08",
@@ -30,7 +30,7 @@
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.08",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.08",
     "frontend-framework": "quay.io/cdis/frontend-framework:0.4.2",
-    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.0",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
     "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.1.4"
   },
   "arborist": {
