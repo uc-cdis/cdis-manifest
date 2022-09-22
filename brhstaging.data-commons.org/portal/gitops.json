@@ -116,7 +116,6 @@
     "explorer": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
-    "discoveryUseAggWTS": true,
     "workspaceRegistration": true
   },
   "discoveryConfig": {
@@ -162,28 +161,11 @@
         },
         "tagSearchDropdown": {
           "enabled": true,
-          "collapsibleButtonText": "Data Commons"
+          "collapsibleButtonText": "Study Characteristics"
         }
       },
       "authorization": {
-        "enabled": true,
-        "columnTooltip": "Filter by data access. Accessible indicates you are authorized to access. Not accessible indicates you are not authorized to access.",
-        "supportedValues": {
-          "accessible": {
-            "enabled": true,
-            "menuText": "Accessible"
-          },
-          "unaccessible": {
-            "enabled": true,
-            "menuText": "Not Accessible"
-          },
-          "pending": {
-            "enabled": false
-          },
-          "notAvailable": {
-            "enabled": false
-          }
-        }
+        "enabled": true
       }
     },
     "aggregations": [
@@ -238,12 +220,6 @@
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a",
         "hrefValueFromField": "commons_url"
-      },
-      {
-        "name": "DATA ACCESS METHOD",
-        "field": "data_access_method",
-        "errorIfNotAvailable": false,
-        "valueIfNotAvailable": "API"
       }
     ],
     "studyPreviewField": {
@@ -301,13 +277,6 @@
               "field": "commons",
               "contentType": "string",
               "includeIfNotAvailable": false
-            },
-            {
-              "name": "Tutorial Notebook",
-              "field": "tutorial_notebook",
-              "contentType": "string",
-              "includeIfNotAvailable": true,
-              "valueIfNotAvailable": "NO"
             }
           ]
         },
@@ -373,24 +342,6 @@
         "color": "rgba(112, 182, 3, 1)",
         "display": false
       }
-    ],
-    "studies": [
-      {
-        "match": {
-          "short_name": "Methodology and Advanced Analytics Resource Center"
-        },
-        "fieldsToValues": [
-          {
-            "data_access_method": "API, Manifest"
-          },
-          {
-            "tutorial_notebook": "YES"
-          },
-          {
-            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html"
-          }
-        ]
-      }
     ]
   },
   "resourceBrowser": {
@@ -436,7 +387,7 @@
       },
       {
         "title": "Data Exploration using Python of Framingham Heart Study Teaching Dataset",
-        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
+        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from the BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
         "imageUrl": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png",
         "link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
       },
@@ -503,10 +454,10 @@
   "stridesPortalURL": "https://brh-portal.org",
   "registrationConfigs": {
     "features": {
-      "workspaceRegistrationConfig" : {
+      "workspaceRegistrationConfig": {
         "workspacePolicyId": "workspace_strides_integrated",
         "workspaceInfoMessage": "The BRH workspace provides a standardized computational environment for accessing and analyzing data from multiple data commons. Please fill out this form to request access to the workspace and start computing!",
-        "successRedirect" : {
+        "successRedirect": {
           "link": "/discovery",
           "text": "Go to Discovery Page"
         }
