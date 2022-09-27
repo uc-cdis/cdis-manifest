@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.10
+# Core Gen3 Release 2022.10 (Fluorite)
 
 ## uc-cdis/fence
 
