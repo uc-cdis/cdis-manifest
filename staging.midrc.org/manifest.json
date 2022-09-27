@@ -21,7 +21,7 @@
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.08",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.08",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.08",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.08",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:5.0.0",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.08",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.08",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.08",
@@ -139,6 +139,10 @@
         "type": "case"
       },
       {
+        "index": "midrcstaging_measurement",
+        "type": "measurement"
+      },
+      {
         "index": "midrcstaging_imaging_data_file",
         "type": "imaging_data_file"
       },
@@ -158,7 +162,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.7.8/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/0.7.9/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",

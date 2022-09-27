@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>data_access_how_to</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>How_to_access_data_updated</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14581,13 +14582,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">Data Access: Ways to bring data into the Biomedical Research Hub (BRH) workspace<a class="anchor-link" href="#Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">&#182;</a></h1><p>As a new user, you may be interested in exploring different ways to access data in BRH. In this notebook we will use some open access data to demonstate a few different ways to bring data into the BRH workspace and use the Gen3 SDK to download files:</p>
 <ol>
-<li>Using a downloaded manifest.json</li>
-<li>Open in workspace</li>
-<li>Downloading zip files using Gen3 SDK</li>
-<li>Using the gen3 SDK and GraphQL to explore data in a project</li>
+<li>Using a downloaded manifest.json (Manifest)</li>
+<li>Download a single file using its identifier (Single file)</li>
+<li>Open project in workspace</li>
+<li>Download zip files using Gen3 SDK</li>
+<li>Using the gen3 SDK and GraphQL to explore data in a project (API)</li>
 </ol>
-<h1 id="1.-Using-a-downloaded-manifest.json">1. Using a downloaded manifest.json<a class="anchor-link" href="#1.-Using-a-downloaded-manifest.json">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring in open access JCOIN study "OEPS" into this notebook using a manifest file</p>
-<h2 id="Pre-requiste">Pre-requiste<a class="anchor-link" href="#Pre-requiste">&#182;</a></h2><ol>
+<h1 id="1.-Using-a-downloaded-manifest.json-(Manifest-method)">1. Using a downloaded manifest.json (Manifest method)<a class="anchor-link" href="#1.-Using-a-downloaded-manifest.json-(Manifest-method)">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring in open access JCOIN study "OEPS" into this notebook using a manifest file</p>
+<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
 <li>JCOIN Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
 </ol>
 <h2 id="Steps-to-download-manifest-file">Steps to download manifest file<a class="anchor-link" href="#Steps-to-download-manifest-file">&#182;</a></h2><ol>
@@ -14620,6 +14622,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
 </pre></div>
 
@@ -14663,94 +14668,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="We-will-use-gen3-SDK-to-download-project-files.-Lets-install-the-latest-version-of-gen3">We will use gen3 SDK to download project files. Lets install the latest version of gen3<a class="anchor-link" href="#We-will-use-gen3-SDK-to-download-project-files.-Lets-install-the-latest-version-of-gen3">&#182;</a></h4>
+<h4 id="We-will-use-gen3-SDK-to-download-project-files.-Its-already-installed-in-the-tutorial-base-image">We will use gen3 SDK to download project files. Its already installed in the tutorial base image<a class="anchor-link" href="#We-will-use-gen3-SDK-to-download-project-files.-Its-already-installed-in-the-tutorial-base-image">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install gen3 -U
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Requirement already satisfied: gen3 in /opt/conda/lib/python3.9/site-packages (4.10.1)
-Requirement already satisfied: indexclient&gt;=1.6.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (2.1.0)
-Requirement already satisfied: dataclasses-json in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.6)
-Requirement already satisfied: humanfriendly in /opt/conda/lib/python3.9/site-packages (from gen3) (10.0)
-Requirement already satisfied: jsonschema in /opt/conda/lib/python3.9/site-packages (from gen3) (4.6.0)
-Requirement already satisfied: pypfb&lt;1.0.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.5.0)
-Requirement already satisfied: backoff in /opt/conda/lib/python3.9/site-packages (from gen3) (1.11.1)
-Requirement already satisfied: click in /opt/conda/lib/python3.9/site-packages (from gen3) (7.1.2)
-Requirement already satisfied: tqdm&gt;=4.61.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (4.64.0)
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.4.2 in /opt/conda/lib/python3.9/site-packages (from gen3) (1.4.2)
-Requirement already satisfied: drsclient&lt;0.3.0,&gt;=0.2.1 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.2.1)
-Requirement already satisfied: httpx in /opt/conda/lib/python3.9/site-packages (from gen3) (0.15.5)
-Requirement already satisfied: python-dateutil in /opt/conda/lib/python3.9/site-packages (from gen3) (2.8.2)
-Requirement already satisfied: aiofiles&lt;0.9.0,&gt;=0.8.0 in /opt/conda/lib/python3.9/site-packages (from gen3) (0.8.0)
-Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from gen3) (2.28.0)
-Requirement already satisfied: aiohttp in /opt/conda/lib/python3.9/site-packages (from gen3) (3.8.1)
-Requirement already satisfied: asyncio&lt;4.0.0,&gt;=3.4.3 in /opt/conda/lib/python3.9/site-packages (from drsclient&lt;0.3.0,&gt;=0.2.1-&gt;gen3) (3.4.3)
-Requirement already satisfied: sniffio in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.2.0)
-Requirement already satisfied: certifi in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (2022.6.15)
-Requirement already satisfied: httpcore==0.11.* in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (0.11.1)
-Requirement already satisfied: rfc3986[idna2008]&lt;2,&gt;=1.3 in /opt/conda/lib/python3.9/site-packages (from httpx-&gt;gen3) (1.5.0)
-Requirement already satisfied: h11&lt;0.10,&gt;=0.8 in /opt/conda/lib/python3.9/site-packages (from httpcore==0.11.*-&gt;httpx-&gt;gen3) (0.9.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (2022.1)
-Requirement already satisfied: numpy&gt;=1.18.5 in /opt/conda/lib/python3.9/site-packages (from pandas&lt;2.0.0,&gt;=1.4.2-&gt;gen3) (1.22.3)
-Requirement already satisfied: dictionaryutils&lt;=3.0.2 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (3.0.0)
-Requirement already satisfied: fastavro&lt;2.0.0,&gt;=1.0.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.4.9)
-Requirement already satisfied: gdcdictionary&lt;2.0.0,&gt;=1.2.0 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (1.2.0)
-Requirement already satisfied: PyYAML&lt;6.0.0,&gt;=5.3.1 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (5.4.1)
-Requirement already satisfied: python-json-logger&lt;0.2.0,&gt;=0.1.11 in /opt/conda/lib/python3.9/site-packages (from pypfb&lt;1.0.0-&gt;gen3) (0.1.11)
-Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil-&gt;gen3) (1.16.0)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (1.26.9)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (3.3)
-Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests-&gt;gen3) (2.0.12)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (4.0.2)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.7.2)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.3.0)
-Requirement already satisfied: aiosignal&gt;=1.1.2 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (1.2.0)
-Requirement already satisfied: attrs&gt;=17.3.0 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (21.4.0)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/conda/lib/python3.9/site-packages (from aiohttp-&gt;gen3) (6.0.2)
-Requirement already satisfied: marshmallow&lt;4.0.0,&gt;=3.3.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (3.14.1)
-Requirement already satisfied: typing-inspect&gt;=0.4.0 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (0.7.1)
-Requirement already satisfied: marshmallow-enum&lt;2.0.0,&gt;=1.5.1 in /opt/conda/lib/python3.9/site-packages (from dataclasses-json-&gt;gen3) (1.5.1)
-Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /opt/conda/lib/python3.9/site-packages (from jsonschema-&gt;gen3) (0.18.1)
-Requirement already satisfied: cdislogging~=1.0 in /opt/conda/lib/python3.9/site-packages (from dictionaryutils&lt;=3.0.2-&gt;pypfb&lt;1.0.0-&gt;gen3) (1.1.1)
-Requirement already satisfied: mypy-extensions&gt;=0.3.0 in /opt/conda/lib/python3.9/site-packages (from typing-inspect&gt;=0.4.0-&gt;dataclasses-json-&gt;gen3) (0.4.3)
-Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/python3.9/site-packages (from typing-inspect&gt;=0.4.0-&gt;dataclasses-json-&gt;gen3) (4.1.1)
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14767,7 +14688,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull ls manifest.json
@@ -14792,7 +14713,8 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.01it/s]
+<pre>[2022-09-02 18:57:47,005][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 18.83it/s]
                                Access01_T.csv;      7.46 MB; jcoin.datacommons.io; 04/06/2021, 11:20:05
 
                                Access01_Z.csv;       1.8 MB; jcoin.datacommons.io; 04/06/2021, 11:20:18
@@ -15065,7 +14987,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3  drs-pull manifest manifest.json
@@ -15090,7 +15012,8 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/pyt
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 19.93it/s]
+<pre>[2022-09-02 18:57:55,546][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+Resolving objects: 100%|██████████████████████| 124/124 [02:18&lt;00:00,  1.12s/it]
 Access01_T.csv                               : 100%|████████████████████████████
 Access01_Z.csv                               : 100%|████████████████████████████
 Access02_T.csv                               : 100%|████████████████████████████
@@ -15230,7 +15153,18 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="You-can-also-pull-individual-files-from-the-manifest-instead-of-all-files.-Lets-check-first-five-records-in-manifest_data">You can also pull individual files from the manifest instead of all files. Lets check first five records in manifest_data<a class="anchor-link" href="#You-can-also-pull-individual-files-from-the-manifest-instead-of-all-files.-Lets-check-first-five-records-in-manifest_data">&#182;</a></h4>
+<h1 id="2.-Download-a-single-file-using-its-identifier-(Single-file)">2. Download a single file using its identifier (Single file)<a class="anchor-link" href="#2.-Download-a-single-file-using-its-identifier-(Single-file)">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="You-can-also-pull-individual-files-instead-of-all-files.-For-example,-let's-check-first-five-records-in-manifest_data">You can also pull individual files instead of all files. For example, let's check first five records in manifest_data<a class="anchor-link" href="#You-can-also-pull-individual-files-instead-of-all-files.-For-example,-let's-check-first-five-records-in-manifest_data">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15239,7 +15173,7 @@ zctas2018.shx                                : 100%|█████████�
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">manifest_data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
@@ -15260,7 +15194,7 @@ zctas2018.shx                                : 100%|█████████�
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -15306,16 +15240,16 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK">The object_id field shows the Global Unique Identifier (GUID) for the file, a permanent identifier for the file that can be used to pull the file using the Gen3 SDK<a class="anchor-link" href="#The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK">&#182;</a></h4>
+<h4 id="The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK.-This-is-the-Single-File-method,-where-given-a-GUID,-you-can-pull-the-file-into-the-workspace">The object_id field shows the Global Unique Identifier (GUID) for the file, a permanent identifier for the file that can be used to pull the file using the Gen3 SDK. This is the Single File method, where given a GUID, you can pull the file into the workspace<a class="anchor-link" href="#The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK.-This-is-the-Single-File-method,-where-given-a-GUID,-you-can-pull-the-file-into-the-workspace">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pull dg.6VTS/342e89bd-3d37-49be-8f97-ffb283649b9a</span>
@@ -15327,6 +15261,29 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[2022-09-02 19:00:48,276][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15334,8 +15291,8 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.-Using-'open-in-workspace'-feature">2. Using 'open in workspace' feature<a class="anchor-link" href="#2.-Using-'open-in-workspace'-feature">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Making use of "open in workspace" feature to open the project files in the workspace</p>
-<h2 id="Pre-requiste">Pre-requiste<a class="anchor-link" href="#Pre-requiste">&#182;</a></h2><ol>
+<h1 id="3.-Using-'open-in-workspace'-feature">3. Using 'open in workspace' feature<a class="anchor-link" href="#3.-Using-'open-in-workspace'-feature">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Making use of "open in workspace" feature to open the project files in the workspace</p>
+<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
 <li>JCOIN Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
 </ol>
 <h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
@@ -15362,105 +15319,6 @@ manifest.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exported_manifest_dirs</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;pd/data/brh.data-commons.org/*&#39;</span><span class="p">)</span>
-<span class="n">latest_manifest_dir</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">exported_manifest_dirs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">latest_manifest_dir</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;pd/data/brh.data-commons.org/exported-manifest-2022-06-27T19-44-40.872069&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">latest_manifest_dir</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;manifest.json&#39;, &#39;data.ipynb&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15468,8 +15326,8 @@ manifest.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="3.-Downloading-a-zip-file-using-Gen3-SDK">3. Downloading a zip file using Gen3 SDK<a class="anchor-link" href="#3.-Downloading-a-zip-file-using-Gen3-SDK">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring Canine Data Commons zip file <em>(caninepmed_sample_data.zip)</em> directly into BRH workspace using Gen3 APIs</p>
-<h2 id="Pre-requiste">Pre-requiste<a class="anchor-link" href="#Pre-requiste">&#182;</a></h2><ol>
+<h1 id="4.-Downloading-a-zip-file-using-Gen3-SDK">4. Downloading a zip file using Gen3 SDK<a class="anchor-link" href="#4.-Downloading-a-zip-file-using-Gen3-SDK">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring Canine Data Commons zip file <em>(caninepmed_sample_data.zip)</em> directly into BRH workspace using Gen3 APIs</p>
+<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
 <li>Canine Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
 <li>Canine Data Object ID is known</li>
 </ol>
@@ -15484,12 +15342,12 @@ directory</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.C78ne/b2d9ad49-979d-4de2-9f7f-b3d054593de0 --no-unpack-packages
@@ -15500,12 +15358,35 @@ directory</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[2022-09-02 19:00:51,962][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;caninepmed_sample_data.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">canine_zip</span><span class="p">:</span>
@@ -15553,7 +15434,7 @@ Done!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="4.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project">4. Using the Gen3 SDK and GraphQL to explore a project<a class="anchor-link" href="#4.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Make use of graphQL query with Gen3 SDK to bring in data into BRH Workspace.</p>
+<h1 id="5.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project-(API-method)">5. Using the Gen3 SDK and GraphQL to explore a project (API method)<a class="anchor-link" href="#5.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project-(API-method)">&#182;</a></h1><h2 id="Example:-Framingham-heart-study-from-BioDataCatalyst">Example: Framingham heart study from BioDataCatalyst<a class="anchor-link" href="#Example:-Framingham-heart-study-from-BioDataCatalyst">&#182;</a></h2><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>The API method makes use of graphQL query with Gen3 SDK to bring in data from Biodatacatalyst into BRH Workspace.</p>
 <blockquote><p>In this tutorial, we will be bringing in the longitudinal Framingham
 heart study from <a href="https://gen3.biodatacatalyst.nhlbi.nih.gov">Biodatacatalyst Data Commons</a></p>
 </blockquote>
@@ -15578,7 +15459,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gen3.file</span> <span class="kn">import</span> <span class="n">Gen3File</span>
@@ -15598,11 +15479,11 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">commons_url</span> <span class="o">=</span> <span class="s2">&quot;https://gen3.biodatacatalyst.nhlbi.nih.gov&quot;</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;credentials.json&quot;</span><span class="p">)</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
 <span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="c1"># Initialize an instance this class, using your creds in &#39;auth&#39;</span>
 <span class="n">query</span> <span class="o">=</span> <span class="n">Gen3Query</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
 </pre></div>
@@ -15617,7 +15498,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">framingham_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
@@ -15643,7 +15524,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">framingham_files</span>
@@ -15664,16 +15545,36 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>{&#39;data&#39;: {&#39;file&#39;: [{&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
+    &#39;file_name&#39;: &#39;frmgham2.sav&#39;,
+    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
+    &#39;object_id&#39;: &#39;dg.4503/c97507dd-bb79-45ce-9186-3d14ad823f81&#39;},
+   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
+    &#39;file_name&#39;: &#39;FRAMINGHAM_teaching_2019a.zip&#39;,
+    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
+    &#39;object_id&#39;: &#39;dg.4503/7be3c6bb-602c-402a-88d2-50394bf8b433&#39;},
+   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
+    &#39;file_name&#39;: &#39;Framingham Longitudinal Data Documentation.pdf&#39;,
+    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
+    &#39;object_id&#39;: &#39;dg.4503/f87f27ed-f70b-485b-8631-00c1216681fd&#39;},
+   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
     &#39;file_name&#39;: &#39;frmgham2.sas7bdat&#39;,
     &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
     &#39;object_id&#39;: &#39;dg.4503/f2c2d44c-a099-4bc6-bc8b-7012a28b73d7&#39;},
+   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
+    &#39;file_name&#39;: &#39;frmgham2.csv&#39;,
+    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
+    &#39;object_id&#39;: &#39;dg.4503/9c277b3d-3fab-401e-b1dd-d2e6c7991cbc&#39;},
+   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
+    &#39;file_name&#39;: &#39;tutorial-biolincc_framingham_structured_data.zip&#39;,
+    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
+    &#39;object_id&#39;: &#39;dg.4503/6cb03533-c079-47e2-a1af-29c92280a9cc&#39;},
    {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
     &#39;file_name&#39;: &#39;frmgham2.xls&#39;,
     &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
@@ -15681,27 +15582,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
    {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
     &#39;file_name&#39;: &#39;frmgham2.dta&#39;,
     &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/8ac6d3f5-29fa-42ff-870c-5ba143455083&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.csv&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/9c277b3d-3fab-401e-b1dd-d2e6c7991cbc&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;Framingham Longitudinal Data Documentation.pdf&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/f87f27ed-f70b-485b-8631-00c1216681fd&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;FRAMINGHAM_teaching_2019a.zip&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/7be3c6bb-602c-402a-88d2-50394bf8b433&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;tutorial-biolincc_framingham_structured_data.zip&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/6cb03533-c079-47e2-a1af-29c92280a9cc&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.sav&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/c97507dd-bb79-45ce-9186-3d14ad823f81&#39;}]}}</pre>
+    &#39;object_id&#39;: &#39;dg.4503/8ac6d3f5-29fa-42ff-870c-5ba143455083&#39;}]}}</pre>
 </div>
 
 </div>
@@ -15726,7 +15607,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">framingham_files</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
@@ -15747,7 +15628,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -15778,7 +15659,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aggregate_file_count_query_string</span> <span class="o">=</span> <span class="s2">&quot;{_aggregation{file(filter: {eq: {project_id:</span><span class="se">\&quot;</span><span class="s2">tutorial-biolincc_framingham</span><span class="se">\&quot;</span><span class="s2">}})</span><span class="si">{_totalCount}</span><span class="s2">}}&quot;</span>
@@ -15794,7 +15675,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">graphql_query</span><span class="p">(</span><span class="n">aggregate_file_count_query_string</span><span class="p">)</span>
@@ -15810,7 +15691,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_files</span>
@@ -15831,7 +15712,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -15862,7 +15743,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aggregate_subject_count_query_string</span> <span class="o">=</span> <span class="s2">&quot;{_aggregation{subject(filter: {eq: {project_id:</span><span class="se">\&quot;</span><span class="s2">tutorial-biolincc_framingham</span><span class="se">\&quot;</span><span class="s2">}})</span><span class="si">{_totalCount}</span><span class="s2">}}&quot;</span>
@@ -15878,7 +15759,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">graphql_query</span><span class="p">(</span><span class="n">aggregate_subject_count_query_string</span><span class="p">)</span>
@@ -15894,7 +15775,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_subjects</span>
@@ -15915,7 +15796,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -15946,7 +15827,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
@@ -15967,7 +15848,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
@@ -15988,29 +15869,29 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[{&#39;_subject_id&#39;: &#39;2d24b701-2d7e-4fd9-8082-28cdad8fd0ac&#39;,
+<pre>[{&#39;_subject_id&#39;: &#39;a093fceb-b9e7-496f-88a6-7620c6e6fec9&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;870c6354-6d3e-46e0-8738-3193e1672c2c&#39;,
+ {&#39;_subject_id&#39;: &#39;b6e6a49f-9f63-474a-8739-8b20d724eb42&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;male&#39;]},
- {&#39;_subject_id&#39;: &#39;9fb5143e-5d64-49bf-9bb0-99676db5fca2&#39;,
+ {&#39;_subject_id&#39;: &#39;7ddb542d-7355-46b9-91db-3892acdfa503&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;male&#39;]},
- {&#39;_subject_id&#39;: &#39;33d756d1-95cc-4623-b81f-6bfb3439120b&#39;,
+ {&#39;_subject_id&#39;: &#39;d9895b57-ecff-470b-bb29-f009c624ac09&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;22d890e2-76f3-4e6b-a3db-0a9958c270e9&#39;,
+ {&#39;_subject_id&#39;: &#39;6e2aea45-6cc4-46b5-bf62-8b6e829bd329&#39;,
   &#39;_samples_count&#39;: 0,
   &#39;age_at_index&#39;: None,
   &#39;annotated_sex&#39;: [&#39;female&#39;]}]</pre>
@@ -16038,7 +15919,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">female_subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
@@ -16059,7 +15940,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">female_subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">])</span>
@@ -16080,7 +15961,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -16100,7 +15981,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gender</span> <span class="o">=</span> <span class="p">[</span><span class="n">sub</span><span class="p">[</span><span class="s1">&#39;annotated_sex&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">female_subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">]]</span>
@@ -16116,7 +15997,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">gender</span><span class="p">)</span>
@@ -16137,7 +16018,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -16150,6 +16031,687 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 
 </div>
 
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Example:-1000-genomes-open-access-data-from-Open-access-data-commons-(OADC)">Example: 1000 genomes open access data from Open access data commons (OADC)<a class="anchor-link" href="#Example:-1000-genomes-open-access-data-from-Open-access-data-commons-(OADC)">&#182;</a></h2><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>The API method makes use of graphQL query with Gen3 SDK to bring in OADC data into BRH Workspace.</p>
+<blockquote><p>In this tutorial, we will be bringing in the 1000 genomes data
+from <a href="https://gen3.datacommons.io/">Open access data commons</a></p>
+</blockquote>
+<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
+<li>Open access data commons  is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
+<li>Structure of the <a href="https://gen3.datacommons.io/DD">OADC Dictionary</a> is known</li>
+</ol>
+<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
+<li>Use relevant gen3 API query function to pass the graphql query and bring in data <a href="https://uc-cdis.github.io/gen3sdk-python/_build/html/_modules/gen3/query.html#Gen3Query.query">Reference</a> </li>
+</ol>
+<blockquote><p>You can search for the 1000 genomes data in the BRH discovery page. Search
+for "OpenAccess-1000_Genomes_Project" in the <a href="https://brh.data-commons.org/discovery">discovery page</a>. Click on the study. In this case there is no project_id defined in the study description. We are working on standardizing study level metadata for BRH. For now, let's check if the project_id is defined in the <a href="https://gen3.datacommons.io/mds/metadata?data=True">OADC Metadata</a>. You can see that project_id is "OpenAccess-1000_Genomes_Project" for 1000_Genomes_Project.
+We will use this project ID to construct our query. You can learn
+about the fields parameter for File in the docs (search for "File" in the Schema) [here] (<a href="https://gen3.datacommons.io/query">https://gen3.datacommons.io/query</a>)</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commons_url</span> <span class="o">=</span> <span class="s2">&quot;https://gen3.datacommons.io&quot;</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="c1"># Initialize an instance this class, using your creds in &#39;auth&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">Gen3Query</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">open_access_1k_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
+    <span class="n">first</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;data_type&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;project_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;object_id&quot;</span>
+    <span class="p">],</span>
+    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenAccess-1000_Genomes_Project&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">open_access_1k_files</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;data&#39;: {&#39;file&#39;: [{&#39;data_type&#39;: &#39;Genotyping VCF&#39;,
+    &#39;file_name&#39;: &#39;ALL.chrY.phase3_integrated_v2b.20130502.genotypes.vcf.gz.tbi&#39;,
+    &#39;project_id&#39;: &#39;OpenAccess-1000_Genomes_Project&#39;,
+    &#39;object_id&#39;: &#39;dg.OADC/fded0c2c-8a18-413f-91e2-f132853ed91a&#39;},
+   {&#39;data_type&#39;: &#39;Integrated Cell Sample Pedigree&#39;,
+    &#39;file_name&#39;: &#39;integrated_call_samples_v3.20200731.ALL.ped&#39;,
+    &#39;project_id&#39;: &#39;OpenAccess-1000_Genomes_Project&#39;,
+    &#39;object_id&#39;: &#39;dg.OADC/096880f8-07e4-4a76-ba53-b4b6402d4dc3&#39;},
+   {&#39;data_type&#39;: &#39;Genotyping VCF&#39;,
+    &#39;file_name&#39;: &#39;ALL.chrY.phase3_integrated_v2b.20130502.genotypes.vcf.gz&#39;,
+    &#39;project_id&#39;: &#39;OpenAccess-1000_Genomes_Project&#39;,
+    &#39;object_id&#39;: &#39;dg.OADC/60afa140-d2ab-4e32-bf73-40bf48787655&#39;},
+   {&#39;data_type&#39;: &#39;IGSR Populations&#39;,
+    &#39;file_name&#39;: &#39;igsr_populations.tsv&#39;,
+    &#39;project_id&#39;: &#39;OpenAccess-1000_Genomes_Project&#39;,
+    &#39;object_id&#39;: &#39;dg.OADC/9baeeb42-563f-47fe-87f7-a6ae17fc3d20&#39;}]}}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Lets-pull-the-chrY-genotyping-VCF-and-the-associated-tbi-file">Lets pull the chrY genotyping VCF and the associated tbi file<a class="anchor-link" href="#Lets-pull-the-chrY-genotyping-VCF-and-the-associated-tbi-file">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3 drs-pull object dg.OADC/60afa140-d2ab-4e32-bf73-40bf48787655
+<span class="o">!</span>gen3 drs-pull object dg.OADC/fded0c2c-8a18-413f-91e2-f132853ed91a
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[2022-09-02 19:01:03,255][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+[2022-09-02 19:01:07,481][WARNING] Unable to write access token to cache file. Exceeded number of retries.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Check-the-downloaded-VCFs">Check the downloaded VCFs<a class="anchor-link" href="#Check-the-downloaded-VCFs">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_files</span> <span class="o">=</span> <span class="p">[</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="k">if</span> <span class="s1">&#39;vcf&#39;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_files</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;ALL.chrY.phase3_integrated_v2b.20130502.genotypes.vcf.gz&#39;,
+ &#39;ALL.chrY.phase3_integrated_v2b.20130502.genotypes.vcf.gz.tbi&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Plot-a-histogram-of-variant-depths">Plot a histogram of variant depths<a class="anchor-link" href="#Plot-a-histogram-of-variant-depths">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Parse-the-VCF-using-cyvcf2">Parse the VCF using cyvcf2<a class="anchor-link" href="#Parse-the-VCF-using-cyvcf2">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install cyvcf2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span>Requirement already satisfied: cyvcf2 in /opt/conda/lib/python3.9/site-packages (0.30.16)
+Requirement already satisfied: click in /opt/conda/lib/python3.9/site-packages (from cyvcf2) (8.1.3)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.9/site-packages (from cyvcf2) (1.23.2)
+Requirement already satisfied: coloredlogs in /opt/conda/lib/python3.9/site-packages (from cyvcf2) (15.0.1)
+Requirement already satisfied: humanfriendly&gt;=9.1 in /opt/conda/lib/python3.9/site-packages (from coloredlogs-&gt;cyvcf2) (10.0)
+<span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yyaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution -yaml (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: Ignoring invalid distribution - (/opt/conda/lib/python3.9/site-packages)</span><span class="ansi-yellow-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">cyvcf2</span> <span class="kn">import</span> <span class="n">VCF</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">variant_depths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">variant</span><span class="o">.</span><span class="n">INFO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DP&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">variant</span> <span class="ow">in</span> <span class="n">VCF</span><span class="p">(</span><span class="s1">&#39;ALL.chrY.phase3_integrated_v2b.20130502.genotypes.vcf.gz&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_chr_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">variant_depths</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;variant_depth&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_chr_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>variant_depth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>84761.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>72067.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20409.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11595.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4904.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">y_chr_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;variant_depth&#39;</span><span class="p">,</span>  <span class="n">log_scale</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;AxesSubplot:xlabel=&#39;variant_depth&#39;, ylabel=&#39;Count&#39;&gt;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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XYMGDVJISIguvfRSPf7446qpqTG3OxwOvfTSS8rIyFBoaKiSk5P19ttvm9uTk5MlSQMGDJDD4dDw4cM99t/QOQG4SAYAeEFRUZERFBRk5ObmmuuOHz9uBAUFGcuXLzfy8vKMl19+2diyZYvx5ZdfGg8//LAREhJiHDhwwGyflJRkREZGGs8884yxe/duY/fu3ca+ffsMScZ//vMfwzAMo6qqynj00UeNDRs2GF999ZWxZMkSIywszHjrrbfM/UycONGIjIw07r33XmPnzp3G3//+dyMsLMx45ZVXzFo7d+5sPPHEE0Z+fr6Rn59/3vNbt26d4XA4jDlz5hi7du0yXnjhBaN9+/aG0+k022RnZxuRkZHGokWLjL179xofffSR0bVrV2P27NlmG0lGx44djVdffdXYtWuX8etf/9rw9/c3duzYYRiGYWzYsMGQZOTm5hr5+flGUVFRo84JwMUhEAHwmjFjxhh33nmnubxgwQIjLi7OqKmpOWv7Pn36GPPmzTOXk5KSjLFjx3q0OTMQnc19991n3HLLLebyxIkTjaSkJI/j3nrrrcbtt9/ucay5c+c29tSMH//4x8bIkSM91t1+++0egeiqq64ynnrqKY82ixcvNuLj481lSca9997r0Wbo0KHGz372M8MwGj7fxpwTgKbjkhkAr7njjjv0t7/9TZWVlZKkrKwsjR8/Xv7+/iovL9dDDz2kPn36qH379mrXrp2++OILHTx40GMfgwcPPu9xXn75ZQ0ePFidOnVSu3bt9Oqrr9bbz2WXXSZ/f39zOT4+XoWFhU0+t507dyo1NdVj3ZnLmzZt0hNPPKF27dqZ05QpU5Sfn68TJ040+LnU1FTt3LnzvDV4+5wAfItB1QC8ZvTo0aqrq9MHH3ygIUOGaNWqVXruueckSb/85S+1fPly/f73v1f37t0VGhqqH/3oR6qqqvLYR3h4+DmP8de//lW/+MUv9Oyzzyo1NVURERF65plntH79eo92gYGBHssOh6Pe+KYLYRjGedvU1dXp8ccf17hx4+ptCwkJOednGzOOydvnBOBbBCIAXhMaGqpx48YpKytLe/bsUc+ePTVo0CBJ0qpVqzRp0iTdfPPNkqSysjLt37//go+xatUqpaWl6b777jPX7d2794L3ExQUpNra2ka379Onj9atW+ex7szlgQMHateuXerevfs597Vu3Tr99Kc/9VgeMGCAWZekC6oNwMUjEAHwqjvuuEOjR4/W9u3b9ZOf/MRc3717d73zzjsaPXq0HA6HHnnkkSb1bnTv3l1vvPGGli9fruTkZC1evFgbN240785qrK5du+rTTz/V+PHjFRwcrOjo6HO2f/DBB5WWlqann35aY8eO1UcffaTs7GyPNo8++qhGjRqlxMRE3XrrrfLz89OWLVu0detWPfnkk2a7t99+W4MHD9aVV16prKwsbdiwQQsXLpQkxcTEKDQ0VNnZ2ercubNCQkLkdDov6NwAXDjGEAHwqmuvvVZRUVHatWuXJkyYYK6fO3euOnTooLS0NI0ePVojRozQwIEDL3j/9957r8aNG6fbb79dQ4cOVVFRkUdvUWM98cQT2r9/v7p166ZOnTqdt/2wYcP0pz/9SfPmzVP//v310Ucf6de//rVHmxEjRugf//iHcnJyNGTIEA0bNkzPPfeckpKSPNo9/vjjWrp0qS6//HK9/vrrysrKUp8+fSRJAQEB+sMf/qAFCxYoISFBN9100wWfG4AL5zAac2EcAOAVDodDy5Yt4zUcgI+hhwgAANgegQgAJGVkZHjcLv/d6amnnrK6PADNjEtmACDp66+/1smTJ8+6LSoqSlFRUS1cEYCWRCACAAC2xyUzAABgewQiAABgewQiAABgewQiAABgewQiAABgewQiAABgewQiAABge/8/FQilyW8t8TQAAAAASUVORK5CYII=
+"
+class="
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Example:-TCIA-COVID-19_CT_Images-study-from-MIDRC">Example: TCIA-COVID-19_CT_Images study from MIDRC<a class="anchor-link" href="#Example:-TCIA-COVID-19_CT_Images-study-from-MIDRC">&#182;</a></h2><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>The API method makes use of graphQL query with Gen3 SDK to bring in data from MIDRC into BRH Workspace.</p>
+<blockquote><p>In this tutorial, we will be bringing in the longitudinal Framingham
+heart study from <a href="https://data.midrc.org">MIDRC Data Commons</a></p>
+</blockquote>
+<h2 id="Pre-requiste">Pre-requiste<a class="anchor-link" href="#Pre-requiste">&#182;</a></h2><ol>
+<li>MIDRC  is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
+<li>Structure of the <a href="https://data.midrc.org/DD">MIDRC Dictionary</a> is known</li>
+</ol>
+<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
+<li>Use relevant gen3 API query function to pass the graphql query and bring in data <a href="https://uc-cdis.github.io/gen3sdk-python/_build/html/_modules/gen3/query.html#Gen3Query.query">Reference</a> </li>
+</ol>
+<blockquote><p>You can search for the TCIA-COVID-19_CT_Images in the BRH discovery page. Search
+for "TCIA-COVID-19_CT_Images" in the <a href="https://brh.data-commons.org/discovery">discovery page</a>. Click on the study. In this case there is no project_id defined in the study description. Let's check the MIDRC MDS for project_id field.
+Note, this data needs to be re-ingested in the MDS. 
+Testing using "TCIA-COVID-19_CT_Images" as the project ID to construct our query
+You can learn about the fields parameter for imaging_data_file in the docs (search for "imaging_data_file" in the Schema) [here] (<a href="https://data.midrc.org/query">https://data.midrc.org/query</a>)</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commons_url</span> <span class="o">=</span> <span class="s2">&quot;https://data.midrc.org&quot;</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="c1"># Initialize an instance this class, using your creds in &#39;auth&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">Gen3Query</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This project_id field is not in MIDRC MDS yet, so tcia_files returns empty results</span>
+<span class="c1"># This will be re-ingested in MIDRC and a project_id defined and then this query will</span>
+<span class="c1"># work</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tcia_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span>
+    <span class="n">first</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;data_type&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;project_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;object_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_id&quot;</span>
+    <span class="p">],</span>
+    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TCIA-COVID-19_CT_Images&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tcia_files</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;data&#39;: {&#39;dataset&#39;: []}}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>

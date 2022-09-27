@@ -108,6 +108,18 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
+  - name: midrcstaging_measurement
+    doc_type: measurement
+    type: aggregator
+    root: measurement
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: case_ids
+      - name: test_days_from_index
+      - name: test_method
+      - name: test_name
+      - name: test_result_text
   - name: midrcstaging_imaging_study
     doc_type: imaging_study
     type: aggregator
@@ -121,6 +133,11 @@ mappings:
       - name: days_from_study_to_neg_covid_test
       - name: days_from_study_to_pos_covid_test
       - name: days_to_study
+      - name: loinc_code
+      - name: loinc_contrast
+      - name: loinc_long_common_name
+      - name: loinc_method
+      - name: loinc_system
       - name: study_description
       - name: study_location
       - name: study_modality
@@ -247,9 +264,6 @@ mappings:
             fn: set
           - name: days_to_study
             src: days_to_study
-            fn: set
-          - name: midrc_harmonized_study_description
-            src: midrc_harmonized_study_description
             fn: set
           - name: study_description
             src: study_description

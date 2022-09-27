@@ -234,7 +234,7 @@
           "name": "About"
         },
         {
-          "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
+          "link": "https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf",
           "name": "Quick Start Guide"
         },
         {
@@ -518,10 +518,6 @@
           "file_name",
           "object_id",
           "project_id"
-        ],
-        "dicomViewerId": "submitter_id",
-        "linkFields": [
-          "submitter_id"
         ]
       },
       "dropdowns": {
@@ -581,10 +577,6 @@
           {
             "field": "project_id",
             "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Browse in DICOM viewer"
           },
           {
             "field": "case_ids",
@@ -735,10 +727,6 @@
           "file_name",
           "object_id",
           "project_id"
-        ],
-        "dicomViewerId": "submitter_id",
-        "linkFields": [
-          "submitter_id"
         ]
       },
       "dropdowns": {
