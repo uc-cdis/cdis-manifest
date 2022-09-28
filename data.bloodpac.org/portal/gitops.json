@@ -1032,6 +1032,10 @@
         "text": "Publication Discovery"
       },
       "search": {
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
+        },
         "searchBar": {
           "enabled": true
         }
@@ -1161,12 +1165,54 @@
       "uid": "_publication_id"
     },
     "tagCategories": [
+    {
+        "name": "Study Setting",
+        "displayName": "Study Setting",
+        "color": "#532565",
+        "display": true
+      },
+    {
+        "name": "Study Type",
+        "displayName": "Study Type",
+        "color": "#981f32",
+        "display": true
+      },
+    {
+        "name": "Study Objectives",
+        "displayName": "Study Objectives",
+        "color": "#532565",
+        "display": true
+      },
       {
-      "name": "Condition",
-      "color": "rgba(129, 211, 248, 1)",
-      "display": true
-    }]
-  
+          "name": "Cancer type",
+          "color": "#e07c3e",
+          "display": true
+        },
+      {
+          "name": "Cancer stage",
+          "displayName": "Cancer stage",
+          "color": "#982568",
+          "display": true
+        },
+      {
+          "name": "Specimen type",
+          "displayName": "Specimen type",
+          "color": "#982568",
+        "display": true
+      },
+    {
+        "name": "Data Type",
+        "displayName": "Data Type",
+        "color": "#bf362e",
+        "display": true
+      },
+    {
+        "name": "Analytical Method",
+        "displayName": "Analytical Method",
+        "color": "#981f32",
+        "display": true
+      }] 
+    }
   }
-}
   
+       
