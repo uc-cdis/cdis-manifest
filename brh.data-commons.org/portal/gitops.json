@@ -115,7 +115,9 @@
   "featureFlags": {
     "explorer": false,
     "discovery": true,
-    "discoveryUseAggMDS": true
+    "discoveryUseAggMDS": true,
+    "discoveryUseAggWTS": true,
+    "workspaceRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -140,6 +142,12 @@
           }
         ]
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
@@ -160,11 +168,28 @@
         },
         "tagSearchDropdown": {
           "enabled": true,
-          "collapsibleButtonText": "Study Characteristics"
+          "collapsibleButtonText": "Data Commons"
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+	"columnTooltip": "Filter by data access. Accessible indicates you are authorized to access. Not accessible indicates you are not authorized to access.",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Accessible"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": false
+          },
+          "notAvailable": {
+            "enabled": false
+          }
+        }
       }
     },
     "aggregations": [
@@ -219,6 +244,12 @@
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a",
         "hrefValueFromField": "commons_url"
+      },
+      {
+        "name": "DATA ACCESS METHOD",
+        "field": "data_access_method",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "API"
       }
     ],
     "studyPreviewField": {
@@ -276,6 +307,13 @@
               "field": "commons",
               "contentType": "string",
               "includeIfNotAvailable": false
+            },
+            {
+              "name": "Tutorial Notebook",
+              "field": "tutorial_notebook",
+              "contentType": "string",
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "NO"
             }
           ]
         },
@@ -341,6 +379,136 @@
         "color": "rgba(112, 182, 3, 1)",
         "display": false
       }
+    ],
+    "studies": [
+      {
+        "match": {
+          "short_name": "Methodology and Advanced Analytics Resource Center"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Manifest"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Prescription Drug Abuse Policy System (NIDA)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Cholangiocarcinoma"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "CPTAC CCRCC Discovery Study - Proteome"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/PDC_clustergram.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "study_id": "tutorial-biolincc_framingham"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Amerispeak Brief Stigma Survey (JCOIN 026)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Manifest"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Adaptive COVID-19 Treatment Trial (ACTT-1)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/ACTT1_accessclinical_notebook.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Prostate Adenocarcinoma"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/TCGA_PRAD_Analysis.html"
+          }
+        ]
+      }
     ]
   },
   "resourceBrowser": {
@@ -386,7 +554,7 @@
       },
       {
         "title": "Data Exploration using Python of Framingham Heart Study Teaching Dataset",
-        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from the BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
+        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
         "imageUrl": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png",
         "link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
       },
@@ -462,5 +630,20 @@
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
-  "stridesPortalURL": "https://brh-portal.org"
+  "stridesPortalURL": "https://brh-portal.org",
+  "registrationConfigs": {
+    "features": {
+      "workspaceRegistrationConfig" : {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The BRH workspace provides a standardized computational environment for accessing and analyzing data from multiple data commons. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect" : {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
+      }
+    },
+    "kayakoConfig": {
+      "kayakoDepartmentId": 22
+    }
+  }
 }
