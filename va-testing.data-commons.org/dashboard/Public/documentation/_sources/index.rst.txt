@@ -183,7 +183,7 @@ have access to.
 
 ATLAS is an open source software application developed as a part of
 `OHDSI <https://www.ohdsi.org/>`__ community intended to provide a
-unified interface to patient level data and analytics. Atlas software us
+unified interface to patient level data and analytics. Atlas software
 used to define cohorts, typically dichotomous variables, for analysis.
 
 ATLAS currently includes functionality for searching and navigating the
@@ -197,11 +197,15 @@ standardized to the OMOP Common Data Model V5 and can facilitate
 exchange of analysis designs with any other organizations across the
 OHDSI community.
 
-Tutorial for the ATLAS tool can be found
-`here <https://github.com/OHDSI/Atlas/wiki>`__. It is highly advisable
-that you familiarize yourself with these resources before proceeding. We
-have also provided a brief step-by-step guide to creating dichotomous
-variables here:
+Tutorials for the ATLAS tool can be found
+`here <https://github.com/OHDSI/Atlas/wiki>`__ and the book about the
+OHDSI can be found `here <https://ohdsi.github.io/TheBookOfOhdsi/>`__.
+These resources contain a lot of useful information, particularly you
+might find it useful to read about `Cohort
+Definition <https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html#Cohorts>`__.
+It is highly advisable that you familiarize yourself with these
+resources before proceeding. We have also provided a brief step-by-step
+guide to creating dichotomous variables here:
 
 **Steps to Generate a Cohort**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -233,13 +237,22 @@ concept variables.
 
 .. image:: _static/slide_14.png
 
-Select desired concepts, click “Add To Concept Set”. Repat Search and
+Select desired concepts, click “Add To Concept Set”. Repeat Search and
 Add steps as needed, then click “Concept Sets”.
 
 .. image:: _static/slide_15.png
 
 Make sure all desired concepts are included, then click the save icon to
 the right of the name of the Concept Set.
+
+To add new concepts, please use the “Add Concepts” button again as
+described above.
+
+.. image:: _static/atlas_remove_concepts.png
+
+To delete the concepts from the concept set, select the concepts and
+click on the “Remove Selected” button, then click the save icon to save
+your changes.
 
 **Step 2 Create Cohort Definition**
 
@@ -308,10 +321,16 @@ Cohort size will be displayed under the column “People”. Use View
 Reports to see if you have inclusion criteria that causes cohort
 attrition.
 
+.. image:: _static/atlas_export_cohort.png
+
+The “Export” tab provides a text version of how a cohort was created.
+Click on the “Export” tab and then on the “Copy to clipboard” to copy
+the cohort’s information.
+
 We expect that this documentation in addition to the OHDSI tutorials are
 sufficient for most analyses that users will attempt. If your phenotype
 and analysis variables are more complex than this documentation covers,
-please contact us for consultation at- craig.teerlink@va.gov
+please contact us for consultation at craig.teerlink@va.gov
 
 **Gen3 GWAS**
 -------------
@@ -335,6 +354,10 @@ Each of these Gen3 GWAS options are available through the GWAS App, and
 consists of several steps. To navigate between the steps, click the Next
 or Previous box in the lower corners of the screen.
 
+Each step displays the Attrition table at the top of the page. The
+Attrition table contains information about the total population size and
+sample size by ancestry for your selected cohorts and variables.
+
 For more information about the web functionality of each step, please
 refer to the Tutorial button. This tool will offer highlighted
 explanations on different parts of the page.
@@ -348,6 +371,9 @@ the choices in the box on the screen.
 Here, GWAS evaluates the statistical association between genetic
 variation and a continuous phenotype. A phenotype, also called a trait,
 can be any measured or observed property of an individual.
+
+   :Tip: On each step of the workflow there is a tutorial, please click
+   the icon to navigate through the tutorial
 
 **Step 1 Select a cohort for GWAS**
 
@@ -461,6 +487,9 @@ Here, the genotypes of a roughly equal number of diseased (“cases”) and
 healthy (“controls”) people are compared to determine which genetic
 variants are associated with the disease. Cases are encoded as ‘1’ while
 controls are encoded as ‘0’ and a binary model is used.
+
+   :Tip: On each step of the workflow there is a tutorial, please click
+   the icon to navigate through the tutorial
 
 **Step 1 Select a case cohort for GWAS**
 
@@ -584,5 +613,5 @@ will also display whether the analysis was a success or failed. Once
 completed, you may download the results of the GWAS analysis from this
 menu. By pressing the ‘Download’ link a tar.gz file will start
 downloading to your computer. The file contains the following: Manhattan
-plot, QQ plot, metadata file containing all of your selections, and
-per-chromosome GWAS summary statistics.
+plot, QQ plot, metadata file containing all of your selections,
+attrition tables, and per-chromosome GWAS summary statistics.
