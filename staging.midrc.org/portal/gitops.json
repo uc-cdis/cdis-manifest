@@ -724,8 +724,28 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "loinc_long_common_name",
+            "name": "Long Common Name (Study description)"
+          },
+          {
+            "field": "loinc_contrast",
+            "name": "Contrast"
+          },
+          {
+            "field": "loinc_code",
+            "name": "LOINC Code"
+          },
+          {
+            "field": "loinc_method",
+            "name": "Method (Modality)"
+          },
+          {
+            "field": "loinc_system",
+            "name": "System (Body region)"
           }
-        ],
+        ],	
         "manifestMapping": {
           "resourceIndexType": "imaging_data_file",
           "resourceIdField": "object_id",
