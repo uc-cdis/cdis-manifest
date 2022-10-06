@@ -8,12 +8,6 @@ mappings:
       - name: project_id
       - name: consent_codes
       - name: geographic_site
-    nested_props:
-      - name: blood_pressure_test
-        path: blood_pressure_test
-        props:
-          - name: bp_systolic
-          - name: bp_diastolic
     flatten_props:
       - path: demographics
         props:

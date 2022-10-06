@@ -1,0 +1,61 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.14.4",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.07",
+    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:1.0.5",
+    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2022.07",
+    "cohort-middleware": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cohort-middleware:0.2.6-pre",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.07",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.07",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.07",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.07",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.07",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.07",
+    "ohdsi-atlas": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohdsi-atlas:master-2.11",
+    "ohdsi-webapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohdsi-webapi:master-2.11",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.07",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.07",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.0.0",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.07",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.07",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.07",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.07",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.07"
+  },
+  "global": {
+    "environment": "va-testing",
+    "hostname": "va-testing.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:199578515826:certificate/e6a9ff63-c3b1-4536-89cd-fd1684047370",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/vadictionary/0.5.3/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-vhdcprod-gen3",
+    "logs_bucket": "logs-vhdcprod-gen3",
+    "sync_from_dbgap": "False",
+    "dispatcher_job_num": "10",
+    "useryaml_s3path": "s3://cdis-gen3-users/vhdcprod/user.yaml",
+    "netpolicy": "on",
+    "dd_enabled": true
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.07"
+    }
+  },
+  "canary": {
+    "default": 0
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  }
+}

@@ -104,6 +104,14 @@
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
     },
+    "footer": {
+      "links": [
+        {
+          "text": "HHS Responsible Disclosure Form",
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        }
+      ]
+    },
     "categorical9Colors": [
       "#035C94",
       "#7EBAC0",
@@ -216,7 +224,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CGC",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -224,7 +232,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CAVATICA",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -232,7 +240,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to BDC (Seven Bridges)",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -376,7 +384,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://cgc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CGC",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -384,7 +392,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://cav-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CAVATICA",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -392,7 +400,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://bdc-interop-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to BDC (Seven Bridges)",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -534,13 +542,5 @@
       "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
       "terraExportURL": "https://anvil.terra.bio/#import-data"
     }
-  ],
-  "dataExplorerConfig": {
-    "terraExportURL": "https://bvdp-saturn-dev.appspot.com/#import-data",
-    "sevenBridgesExportURL": null
-  },
-  "fileExplorerConfig": {
-    "terraExportURL": null,
-    "sevenBridgesExportURL": null
-  }
+  ]
 }

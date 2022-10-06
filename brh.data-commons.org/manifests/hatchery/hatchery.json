@@ -36,7 +36,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
+      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
@@ -69,73 +69,9 @@
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "2Gi",
-      "name": "(Generic, User-licensed) Stata Notebook ",
-      "image": "quay.io/cdis/stata-heal:master",
-      "env": {
-        "FRAME_ANCESTORS": "https://brh.data-commons.org"
-      },
-      "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
-      ],
-      "command": [
-        "start-notebook.sh"
-      ],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": [
-        "/bin/sh",
-        "-c",
-        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
-      ],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "2Gi",
-      "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
-      "image": "quay.io/cdis/stata-heal:gen3-licensed",
-      "env": {
-        "FRAME_ANCESTORS": "https://brh.data-commons.org"
-      },
-      "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
-      ],
-      "command": [
-        "/bin/bash",
-        "/tmp/wait_for_license.sh"
-      ],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": [
-        "/bin/sh",
-        "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
-      ],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd",
-      "gen3-volume-location": "/home/jovyan/.gen3"
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "1.0",
       "memory-limit": "4Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__6e34b231aa20c26787f4eef524c2f5d1a2aed597",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__024592222a5945319d9f321c1fcb7fc42b917a01",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },

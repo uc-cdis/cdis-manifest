@@ -234,6 +234,9 @@
       "header": {
         "field": "study_title"
       },
+      "downloadLinks": {
+        "field": "data_download_links"
+      },
       "fieldsToShow": [
         {
           "groupName": "OADC studies",
@@ -489,5 +492,8 @@
         "imageUrl": "/dashboard/Public/notebooks/notebook_gene.png"
       }
     ]
-  }
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false
 }

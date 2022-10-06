@@ -291,8 +291,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -394,8 +394,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -535,8 +535,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -648,8 +648,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -761,8 +761,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -950,8 +950,8 @@
         "manifestMapping": {
           "resourceIndexType": "file",
           "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
         "accessibleValidationField": "project_id"
@@ -997,7 +997,7 @@
         "nodeCountTitle": "Files",
         "manifestMapping": {
           "resourceIndexType": "case",
-          "resourceIdField": "case_id",
+          "resourceIdField": "_case_id",
           "referenceIdFieldInResourceIndex": "object_id",
           "referenceIdFieldInDataIndex": "object_id"
         },
@@ -1032,6 +1032,10 @@
         "text": "Publication Discovery"
       },
       "search": {
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
+        },
         "searchBar": {
           "enabled": true
         }
@@ -1160,10 +1164,56 @@
       "authzField": "auth_resource_path",
       "uid": "_publication_id"
     },
-    "tagCategories": [{
-      "name": "Condition",
-      "color": "rgba(129, 211, 248, 1)",
-      "display": true
-    }]
+    "tagCategories": [
+    {
+        "name": "Study setting",
+        "displayName": "Study setting",
+        "color": "#532565",
+        "display": true
+      },
+    {
+        "name": "Study type",
+        "displayName": "Study type",
+        "color": "#981f32",
+        "display": true
+      },
+    {
+        "name": "Study objectives",
+        "displayName": "Study objectives",
+        "color": "#532565",
+        "display": true
+      },
+      {
+          "name": "Cancer type",
+          "displayName": "Cancer type",
+          "color": "#e07c3e",
+          "display": true
+        },
+      {
+          "name": "Cancer stage",
+          "displayName": "Cancer stage",
+          "color": "#982568",
+          "display": true
+        },
+      {
+          "name": "Specimen type",
+          "displayName": "Specimen type",
+          "color": "#982568",
+        "display": true
+      },
+    {
+        "name": "Data type",
+        "displayName": "Data type",
+        "color": "#bf362e",
+        "display": true
+      },
+    {
+        "name": "Analytical method",
+        "displayName": "Analytical method",
+        "color": "#981f32",
+        "display": true
+      }] 
+    }
   }
-}
+  
+       

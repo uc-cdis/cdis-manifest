@@ -258,8 +258,6 @@
             "lipid_lowering_medication",
             "carotid_plaque",
             "carotid_stenosis",
-            "bp_diastolic",
-            "bp_systolic",
             "antihypertensive_meds",
             "vte_case_status",
             "vte_prior_history"
@@ -275,12 +273,40 @@
         "race",
         "annotated_sex",
         "ethnicity",
-        "bp_diastolic",
         "hdl",
         "ldl"
       ]
     },
+    "dropdowns": {
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
+      }
+    },
     "buttons": [
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-pfb-to-url",
+        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
       {
         "enabled": true,
         "type": "export",
@@ -354,14 +380,6 @@
         {
           "field": "vte_prior_history",
           "name": "VTE Prior History"
-        },
-        {
-          "field": "bp_diastolic",
-          "name": "BP Diastolic"
-        },
-        {
-          "field": "bp_systolic",
-          "name": "BP Systolic"
         },
         {
           "field": "basophil_ncnc_bld",
@@ -552,7 +570,36 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
+    "dropdowns": {
+      "sevenBridges": {
+        "title": "Export to Seven Bridges"
+      }
+    },
     "buttons": [
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CGC",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to CAVATICA",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
+      {
+        "enabled": true,
+        "type": "export-file-pfb-to-url",
+        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "title": "Export to BDC (Seven Bridges)",
+        "rightIcon": "external-link",
+        "dropdownId": "sevenBridges"
+      },
       {
         "enabled": true,
         "type": "file-manifest",

@@ -128,6 +128,9 @@ LOGIN_OPTIONS:  # !!! remove the empty list to enable login options!
 #      name: 'NIH Login'
 
 S3_BUCKETS:
+  kfqa2-data-bucket:
+    cred: 'kfqa2'
+    region: 'us-east-1'
   1000genomes:
     cred: 'gen3qa'
     region: 'us-east-1'
@@ -143,7 +146,7 @@ S3_BUCKETS:
 # `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
 # using the `/data/upload` endpoint. This must be one of the first keys under
 # `S3_BUCKETS` (since these are the buckets fence has credentials for).
-DATA_UPLOAD_BUCKET: 'bucket1'
+DATA_UPLOAD_BUCKET: 'kfqa2-data-bucket'
 
 # Prefix to namespace Google Groups on a single Cloud Identity (see cirrus
 # setup for more info on Cloud Identity)

@@ -166,7 +166,8 @@
           "date_collected",
           "investigator_affiliation",
           "name",
-          "data_description"
+          "data_description",
+          "disclaimer"
         ],
         "linkFields": [
           "url"
@@ -1222,7 +1223,7 @@
           },
           {
             "title": "COVID-19 Google Mobility Data Visualization in Illinois In The Past 3 Months",
-            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.",
+            "description": "The source of the data used to compile this chart is retrieved on a daily basis from the COVID-19 Community Mobility Reports by Google. This chart shows how visits to places, such as grocery stores and parks, are changing in Illinois in the past 3 months.\nGoogle LLC \"Google COVID-19 Community Mobility Reports\". https://www.google.com/covid19/mobility/ Accessed: Today",
             "type": "image",
             "path": "charts_data/IL_tab_charts_IL_mobility.svg"
           }

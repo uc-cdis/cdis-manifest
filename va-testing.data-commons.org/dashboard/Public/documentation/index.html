@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA Data Commons &#8212; va-doc 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="va-data-commons">
+<h1><strong>VA Data Commons</strong><a class="headerlink" href="#va-data-commons" title="Permalink to this heading">¶</a></h1>
+<p>The Veterans Affairs (VA) Data Commons supports the research and
+analysis of US military Veteran medical and genomic data and aims to
+accelerate scientific discovery and development of therapies, diagnostic
+tests, and other technologies for improving the lives of Veterans and
+beyond. The data commons supports cross-project analyses by harmonizing
+data from different projects through the collaborative development of a
+data dictionary, providing an API for data queries, and providing a
+cloud-based analysis workspace with rich tools and resources.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#va-data-commons">VA Data Commons</a></p></li>
+<li><p><a class="reference external" href="#table-of-contents">Table of Contents</a></p></li>
+<li><p><a class="reference external" href="#getting-started">Getting Started</a></p>
+<ul>
+<li><p><a class="reference external" href="#login-page">Login Page</a></p>
+<ul>
+<li><p><a class="reference external" href="#va-data-commons-documentation">VA Data Commons
+Documentation</a></p></li>
+<li><p><a class="reference external" href="#email-support">Email Support</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#profile-page">Profile Page</a></p>
+<ul>
+<li><p><a class="reference external" href="#api-keys">API key(s)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#data-access-and-analysis">Data Access and Analysis</a></p>
+<ul>
+<li><p><a class="reference external" href="#workspace">Workspace</a></p></li>
+<li><p><a class="reference external" href="#apps">Apps</a></p></li>
+<li><p><a class="reference external" href="#ohdsi-atlas">OHDSI Atlas</a></p>
+<ul>
+<li><p><a class="reference external" href="#steps-to-generate-a-cohort">Steps to Generate a Cohort</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#gen3-gwas">Gen3 GWAS</a></p></li>
+<li><p><a class="reference external" href="#genome-wide-association-studies-gwas-for-quantitative-phenotype">Genome-Wide Association Studies (GWAS) for Quantitative
+Phenotype.</a></p></li>
+<li><p><a class="reference external" href="#genome-wide-association-studies-gwas-for-a-case-control-study">Genome-wide association studies (GWAS) for a case-control
+study.</a></p></li>
+<li><p><a class="reference external" href="#gwas-results">GWAS Results</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="login-page">
+<h2><strong>Login Page</strong><a class="headerlink" href="#login-page" title="Permalink to this heading">¶</a></h2>
+<p>Users will log in with their VA PIV credentials. Start by visiting the
+<a class="reference external" href="https://va.data-commons.org/login">login page</a> and sign in with your
+organizational account. After successfully logging in, your username
+will appear in the upper right-hand corner of the page. Click this link
+for more information about using the <a class="reference external" href="https://www.oit.va.gov/resources/remote-access/cag/windows/index.cfm?#piv">PIV
+login</a>.</p>
+<p>Once logged in, the user will see there are several options in the upper
+right hand corner of the <a class="reference external" href="https://va.data-commons.org/">home screen</a>.
+In the blue bar at the top of the page, there is a link to VA Data
+Commons Documentation (the page you are currently reading), Email
+Support, your username and a log out button. Below these options, there
+are tabs for the Workspace, the Apps, and the Profile pages. Clicking on
+the VA Data Commons logo in the upper left hand corner of the screen
+will always return you to the home page of the data commons.</p>
+<div class="section" id="va-data-commons-documentation">
+<h3><strong>VA Data Commons Documentation</strong><a class="headerlink" href="#va-data-commons-documentation" title="Permalink to this heading">¶</a></h3>
+<p>The button for VA Data Commons Documentation takes you to this page.</p>
+</div>
+<div class="section" id="email-support">
+<h3><strong>Email Support</strong><a class="headerlink" href="#email-support" title="Permalink to this heading">¶</a></h3>
+<p>If you need help, the Email Support button allows you to send a message
+to our help desk at <a class="reference external" href="mailto:support&#37;&#52;&#48;datacommons&#46;io">support<span>&#64;</span>datacommons<span>&#46;</span>io</a>. You may expect a response
+within 2 business days.</p>
+</div>
+</div>
+<div class="section" id="profile-page">
+<h2><strong>Profile Page</strong><a class="headerlink" href="#profile-page" title="Permalink to this heading">¶</a></h2>
+<p>On the <a class="reference external" href="https://va.data-commons.org/identity">Profile page</a> you can
+create and save your API key.</p>
+<!---
+[Note - Insert image of profile page here]: #
+--><div class="section" id="api-key-s">
+<h3><strong>API key(s)</strong><a class="headerlink" href="#api-key-s" title="Permalink to this heading">¶</a></h3>
+<p>To download large amounts of data, an <a class="reference external" href="https://va.data-commons.org/identity">API
+key</a> will be required as a part
+of the <a class="reference external" href="https://gen3.org/resources/user/gen3-client/">gen3-client</a>.
+To create a key on your local machine, click Create API key, which will
+activate a pop-up window.</p>
+<!---
+[Note - Insert image of create API Key here]: #
+--><p>Click Download json to save the credential file to your local machine.
+After completion, a new entry will appear in the API key(s) section of
+the Profile page. It will display the API key key_id and the expiration
+date (one month after the key creation). The user should delete the key
+after it has expired and create a new key. If for any reason a user
+feels that their API key has been compromised, the key should be deleted
+before subsequently creating a new one.</p>
+</div>
+</div>
+</div>
+<div class="section" id="data-access-and-analysis">
+<h1>Data Access and Analysis<a class="headerlink" href="#data-access-and-analysis" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="workspace">
+<h2><strong>Workspace</strong><a class="headerlink" href="#workspace" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://va.data-commons.org/workspace">Workspaces</a> are secure data
+analysis environments in the cloud that can access data from one or more
+data resources. By default, Workspaces include Jupyter notebooks and
+JupyterLab, Python and RStudio, but can be configured to host virtually
+any application, including analysis workflows, data processing
+pipelines, or data visualization apps.</p>
+<p>New to Jupyter? Learn more about the popular tool for data scientists on
+<a class="reference external" href="https://jupyter.org/">Jupyter.org</a> (disclaimer: CTDS is not
+responsible for the content).</p>
+<!---
+[Note - Insert image of workspace page here]: #
+--><p>There are five workspace options available. The options include two
+versions of Jupyter Notebook Bio Python/R which employ the classic
+Jupyter Notebook in two different sizes (one large, 4.0 CPU, 8192 Mi
+memory, and one small, 0.5 CPU, 512 Mi memory), two versions of Jupyter
+Notebook Bio Python/R (Lab Edition) which opens JupyterLab, the latest
+interactive development environment for notebooks, code and data also
+with the option of two sizes (one large and one small), and one
+workspace option with R Studio. Click “Launch” to spin up a copy of that
+VM. Launching may take several minutes depending on the size and
+complexity of the workspace.</p>
+<p>Once the VM is ready, the initial screen for the workspace will appear.
+After launching, the home folders are displayed, one of which is the
+user’s persistent drive (“pd”). For scripts and output that need to be
+saved when the workspace is terminated, store those files in the pd/
+directory. Only files saved in the /pd directory will remain available
+after termination of a workspace session.</p>
+<p>Start a new notebook by clicking “New” in the top right corner and
+choose between Python 3 or R Studio as the base programmatic language.
+Code blocks are entered in cells, which can be executed individually or
+all at once. Code documentation and comments can also be entered in
+cells, and the cell type can be set to support Markdown.</p>
+<p>Results, including plots, tables, and graphics, can be generated in the
+workspace and downloaded as files. Only files saved in the /pd directory
+will remain available after termination of a workspace session.</p>
+<p>Do not forget to terminate your workspace once your work is finished to
+be mindful of the cost-intensive computational effort. Note, that
+Workspaces automatically shut down after 15 minutes of idle time.</p>
+<p>For more information about the Gen3 Workspace, refer to <a class="reference external" href="https://gen3.org/resources/user/analyze-data/">Data Analysis
+in a Gen3 Data
+Commons</a>.</p>
+</div>
+<div class="section" id="apps">
+<h2><strong>Apps</strong><a class="headerlink" href="#apps" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference external" href="https://va.data-commons.org/analysis">Apps page</a> displays the
+option of two apps, OHDSI Atlas and Gen3 GWAS. Using these Apps, a user
+may perform a genomic analysis on available data from projects that they
+have access to.</p>
+</div>
+<div class="section" id="ohdsi-atlas">
+<h2><strong>OHDSI Atlas</strong><a class="headerlink" href="#ohdsi-atlas" title="Permalink to this heading">¶</a></h2>
+<p>ATLAS is an open source software application developed as a part of
+<a class="reference external" href="https://www.ohdsi.org/">OHDSI</a> community intended to provide a
+unified interface to patient level data and analytics. Atlas software
+used to define cohorts, typically dichotomous variables, for analysis.</p>
+<p>ATLAS currently includes functionality for searching and navigating the
+vocabulary within the OMOP Common Data Model (CDM). In addition to the
+search and navigation capabilities, it also provides features to curate
+and export custom sets of concept identifiers for use in cohort
+definitions. These will automatically populate on the Gen3 GWAS App. In
+general, ATLAS is an analytics platform that can be used to perform
+analyses across one or more observational databases which have been
+standardized to the OMOP Common Data Model V5 and can facilitate
+exchange of analysis designs with any other organizations across the
+OHDSI community.</p>
+<p>Tutorials for the ATLAS tool can be found
+<a class="reference external" href="https://github.com/OHDSI/Atlas/wiki">here</a> and the book about the
+OHDSI can be found <a class="reference external" href="https://ohdsi.github.io/TheBookOfOhdsi/">here</a>.
+These resources contain a lot of useful information, particularly you
+might find it useful to read about <a class="reference external" href="https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html#Cohorts">Cohort
+Definition</a>.
+It is highly advisable that you familiarize yourself with these
+resources before proceeding. We have also provided a brief step-by-step
+guide to creating dichotomous variables here:</p>
+<div class="section" id="steps-to-generate-a-cohort">
+<h3><strong>Steps to Generate a Cohort</strong><a class="headerlink" href="#steps-to-generate-a-cohort" title="Permalink to this heading">¶</a></h3>
+<p><strong>Step 1 Create a Concept Set</strong></p>
+<p>Concept Sets are a list of codes created by searching the standardized
+vocabulary and selecting the set of terms for your analyses. Here you
+select all concepts (variables) that you would like to use for criteria
+that define your study population cohort.</p>
+<img alt="_images/slide_10.png" src="_images/slide_10.png" />
+<p>Select Concept Sets in the menu and click the blue box for “New Concept
+Set”.</p>
+<img alt="_images/slide_11.png" src="_images/slide_11.png" />
+<p>In the box above the tabs, enter a name for the Concept Set you are
+creating.</p>
+<p>Click the green box “Add concepts” to view the list of concept
+variables.</p>
+<img alt="_images/slide_13.png" src="_images/slide_13.png" />
+<p>Enter the concept name or code into the search bar to find relevant
+concept variables.</p>
+<img alt="_images/slide_14.png" src="_images/slide_14.png" />
+<p>Select desired concepts, click “Add To Concept Set”. Repeat Search and
+Add steps as needed, then click “Concept Sets”.</p>
+<img alt="_images/slide_15.png" src="_images/slide_15.png" />
+<p>Make sure all desired concepts are included, then click the save icon to
+the right of the name of the Concept Set.</p>
+<p>To add new concepts, please use the “Add Concepts” button again as
+described above.</p>
+<img alt="_images/atlas_remove_concepts.png" src="_images/atlas_remove_concepts.png" />
+<p>To delete the concepts from the concept set, select the concepts and
+click on the “Remove Selected” button, then click the save icon to save
+your changes.</p>
+<p><strong>Step 2 Create Cohort Definition</strong></p>
+<p>A cohort is a set of persons who satisfy one or more inclusion criteria
+for a duration of time.</p>
+<p>Use the concept sets to create initial events and other criteria for
+defining the study population cohort. A cohort is defined as a Person
+with an entry and exit date. Thus, a person can be in a cohort multiple
+times if they meet the criteria.</p>
+<img alt="_images/slide_17.png" src="_images/slide_17.png" />
+<p>Select “Cohort Definitions” in the menu, you can begin to create a
+cohort by clicking the “New Cohort” button.</p>
+<img alt="_images/slide_18.png" src="_images/slide_18.png" />
+<p>In the boxes above and below the tabs, enter a name and description for
+the Cohort.</p>
+<img alt="_images/slide_19.png" src="_images/slide_19.png" />
+<p>To establish the duration for your cohort, click “+ Add Initial Event”,
+then in the dropdown menu click “Add Observation”.</p>
+<img alt="_images/slide_20.png" src="_images/slide_20.png" />
+<p>Click the blue box “Any Observation”, select “Import Concept Set” from
+the dropdown menu.</p>
+<img alt="_images/slide_21.png" src="_images/slide_21.png" />
+<p>Select the Concept Set you just made. This establishes your Concept Set
+as inclusion criteria for your cohort.</p>
+<img alt="_images/slide_22.png" src="_images/slide_22.png" />
+<p>To access the table in the MVP harmonization database, click “+ Add
+attribute…”, then click “Add Value as Number Criteria”.</p>
+<img alt="_images/slide_23.png" src="_images/slide_23.png" />
+<p>Select “Greater or Equal To”. In this specific case we added Heart
+Failure concept Set and entered value “2”. This will allow for the
+collection of data from the Observation table of the MVP harmonization
+database.</p>
+<p>If you would like to add additional inclusion criteria, click “New
+inclusion criteria” select criteria or import another configuration. To
+complete the Cohort Definition, click the green Save icon.</p>
+<p><strong>Step 3 Generate Cohort</strong></p>
+<p>Once created, the cohort can then serve as the basis of inputs for your
+subsequent analyses. Use the cohort definition to identify how many
+people are in the cohort. This is the initial number that will be used
+in the GWAS app when this cohort is selected.</p>
+<img alt="_images/slide_26.png" src="_images/slide_26.png" />
+<p>To complete the creation of the Cohort Definition, click “Generation”,
+then “Generate”.</p>
+<p>Cohort size will be displayed under the column “People”. Use View
+Reports to see if you have inclusion criteria that causes cohort
+attrition.</p>
+<img alt="_images/atlas_export_cohort.png" src="_images/atlas_export_cohort.png" />
+<p>The “Export” tab provides a text version of how a cohort was created.
+Click on the “Export” tab and then on the “Copy to clipboard” to copy
+the cohort’s information.</p>
+<p>We expect that this documentation in addition to the OHDSI tutorials are
+sufficient for most analyses that users will attempt. If your phenotype
+and analysis variables are more complex than this documentation covers,
+please contact us for consultation at <a class="reference external" href="mailto:craig&#46;teerlink&#37;&#52;&#48;va&#46;gov">craig<span>&#46;</span>teerlink<span>&#64;</span>va<span>&#46;</span>gov</a></p>
+</div>
+</div>
+<div class="section" id="gen3-gwas">
+<h2><strong>Gen3 GWAS</strong><a class="headerlink" href="#gen3-gwas" title="Permalink to this heading">¶</a></h2>
+<p>Use this app to perform a high throughput GWAS on MVP data using the
+University of Washington Genesis pipeline.</p>
+<p>Genome-wide association studies (GWAS) help scientists identify genes
+associated with a particular disease (or another trait). This method
+studies the entire set of DNA (the genome) of a large group of people,
+searching for small variations, called single nucleotide polymorphisms
+or SNPs (pronounced “snips”).</p>
+<p>We offer two types of GWAS analysis-</p>
+<p><strong>Genome-wide association studies (GWAS) for quantitative phenotype.</strong></p>
+<p><strong>Genome-wide association studies (GWAS) for a case-control study.</strong></p>
+<p>Each of these Gen3 GWAS options are available through the GWAS App, and
+consists of several steps. To navigate between the steps, click the Next
+or Previous box in the lower corners of the screen.</p>
+<p>Each step displays the Attrition table at the top of the page. The
+Attrition table contains information about the total population size and
+sample size by ancestry for your selected cohorts and variables.</p>
+<p>For more information about the web functionality of each step, please
+refer to the Tutorial button. This tool will offer highlighted
+explanations on different parts of the page.</p>
+<p>When entering the App, a user must first select the type of GWAS from
+the choices in the box on the screen.</p>
+</div>
+<div class="section" id="genome-wide-association-studies-gwas-for-quantitative-phenotype">
+<h2><strong>Genome-Wide Association Studies (GWAS) for Quantitative Phenotype.</strong><a class="headerlink" href="#genome-wide-association-studies-gwas-for-quantitative-phenotype" title="Permalink to this heading">¶</a></h2>
+<p>Here, GWAS evaluates the statistical association between genetic
+variation and a continuous phenotype. A phenotype, also called a trait,
+can be any measured or observed property of an individual.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Tip</dt>
+<dd class="field-odd"><p>On each step of the workflow there is a tutorial, please click</p>
+</dd>
+</dl>
+<p>the icon to navigate through the tutorial</p>
+</div></blockquote>
+<p><strong>Step 1 Select a cohort for GWAS</strong></p>
+<p>In this step, you will determine the study population. To begin, select
+the cohort that you would like to define your study population with. You
+may only see cohorts that you have access to. Please select only one
+cohort. The size of the cohort population is indicated in the right hand
+side of the table. To browse the table please scroll down to the bottom.</p>
+<p>You may also see a button to create a new cohort. This button will open
+a new tab in your browser, outside of the Gen3 GWAS App and send you to
+the OHDSI Atlas App.</p>
+<p><strong>Step 2 Select harmonized variables for phenotypes and covariates</strong></p>
+<p>In this step, you will select the harmonized variables for your study.
+Please select all variables you wish to use in your model, including
+both covariates and phenotype. (Note:- population PCs are not included
+in this step)</p>
+<p>You may choose as many variables as you wish in this step, with a
+minimum of one, that will represent your outcome phenotype. You may
+remove them later in the pipeline. Currently, only continuous variables
+can be selected. To browse the table, please scroll down to the bottom.
+To search the table please enter free text in the search box to search
+by cohort name.</p>
+<p><strong>Step 3 Select which variable is your phenotype</strong></p>
+<p>In this step, you will determine your phenotype, using the selected
+variables from step 2. Please choose one of the selected variables to be
+the study’s phenotype.</p>
+<p>Here you may choose your phenotype. All data are harmonized from
+different projects through the collaborative development of a data
+dictionary. In the right hand side of the table a missing % is
+calculated. This is to reflect how many subjects of the chosen
+population do not have this information available. To browse the table
+please scroll down to the bottom.To search the table please enter free
+text in the search box to search by cohort name.</p>
+<p><strong>Step 4 Add custom dichotomous covariates</strong></p>
+<p>In this step, you may add custom dichotomous covariates by selecting two
+cohorts. This step is optional, and you may choose not to add any
+dichotomous covariate at all. You may combine a cohort for YES and a
+cohort for NO. Once cohorts are selected you may enter a name for the
+covariate. To commit the changes please press ‘Add’ at the bottom (You
+must ‘Add’ the variable before moving to the next screen if you want it
+to be a part of your analysis). You may repeat this action as many times
+as you need, or choose to not add any custom dichotomous covariates at
+all. Please note that all given names must be unique.</p>
+<p>As you add covariates you may see them populate on the right hand side
+of the screen as cards. The card contains your given name at the top of
+the card, and the ability to remove the created covariate at the bottom
+of the card.</p>
+<p><strong>Step 5 Set workflow parameters and remove unwanted covariates</strong></p>
+<p>In this step, you will determine workflow parameters. Please adjust the
+number of population principal components (PCs) to control for
+population structure, minor allele frequency cutoff and imputation score
+cutoff. You may also remove unwanted covariates. Please also choose one
+ancestry population on which you would like to perform your study.</p>
+<p>Number of PCs- Population Principal components (PCs) refer to linear
+combinations of genome-wide genotyping data to control for population
+structure/stratification (select up to 10 PCs)</p>
+<p>Covariates- Please review the chosen covariates. You may remove unwanted
+covariates, or go back (at the bottom of the page) to step 2 to choose
+different ones.</p>
+<p>Dichotomous Covariates- Please review the created covariates. You may
+remove unwanted covariates, or go back (at the bottom of the page) to
+step 4 to adjust/add different ones.</p>
+<p>Phenotype- Please see here the phenotype chosen in step 3. To adjust
+please go back (at the bottom of the page) to step 3 to choose a
+different one.</p>
+<p>MAF Cutoff- Minor allele frequency (MAF) is the frequency at which the
+second most common allele occurs in a given population and can be used
+to filter out rare markers (scale of 0-0.5)</p>
+<p>HARE dropdown menu- Please choose the ancestry population on which you
+would like to perform your study. The numbers appearing in the dropdown
+represent the population size of your study, considering all of your
+previous selections. The codes are the HARE (Hharmonized Aancestry and
+Rrace/Eethnicity) codes.</p>
+<p>Imputation Score Cutoff- This value reflects the quality of imputed SNPs
+and can be used to remove low-quality imputed markers (scale of 0-1)</p>
+<p><strong>Step 6 Submit GWAS Study</strong></p>
+<p>In this step, you may review the metadata selected for the study, give a
+name to the study, and submit the GWAS for analysis. To commit any
+changes please go back to the relevant step.</p>
+<p><strong>Check Submission Status and Review Results</strong></p>
+<p>Once your GWAS analysis is submitted, you can check the submission
+status and review the results in the “GWAS Results” App.</p>
+</div>
+<div class="section" id="genome-wide-association-studies-gwas-for-a-case-control-study">
+<h2><strong>Genome-wide association studies (GWAS) for a case-control study.</strong><a class="headerlink" href="#genome-wide-association-studies-gwas-for-a-case-control-study" title="Permalink to this heading">¶</a></h2>
+<p>Here, the genotypes of a roughly equal number of diseased (“cases”) and
+healthy (“controls”) people are compared to determine which genetic
+variants are associated with the disease. Cases are encoded as ‘1’ while
+controls are encoded as ‘0’ and a binary model is used.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Tip</dt>
+<dd class="field-odd"><p>On each step of the workflow there is a tutorial, please click</p>
+</dd>
+</dl>
+<p>the icon to navigate through the tutorial</p>
+</div></blockquote>
+<p><strong>Step 1 Select a case cohort for GWAS</strong></p>
+<p>In this step, you will begin to define the study population. To begin,
+select the cohort that you would like to define as your study “cases”
+population. You may only see cohorts that you have access to. Please
+select only one cohort. The size of the cohort population is indicated
+in the right hand side of the table. To browse the table please scroll
+down to the bottom.</p>
+<p>You may also see a button to create a new cohort. This button will open
+a new tab in your browser, outside of the Gen3 GWAS App and send you to
+the OHDSI Atlas App.</p>
+<p><strong>Step 2 Select a control cohort for GWAS</strong></p>
+<p>In this step, you will continue to define the study population. Please
+select the cohort that you would like to define as your study “control”
+population. You may only see cohorts that you have access to. Please
+select only one cohort. The size of the cohort population is indicated
+in the right hand side of the table. To browse the table please scroll
+down to the bottom. To search the table please enter free text in the
+search box to search by cohort name. To search the table please enter
+free text in the search box to search by cohort name.</p>
+<p>You may also see a button to create a new cohort. This button will open
+a new tab in your browser, outside of the Gen3 GWAS App and send you to
+OHDSI Atlas App.</p>
+<p><strong>Step 3 Select harmonized variables for covariates</strong></p>
+<p>In this step, you may select covariates for your study. This step is
+optional, and you may choose not to add any covariate at all. Please
+choose as many covariates as you wish, you may remove them later in the
+pipeline. Currently, only continuous covariates are presented. All
+variables are harmonized. To browse the table please scroll down to the
+bottom. To search the table please enter free text in the search box to
+search by cohort name.</p>
+<p><strong>Step 4 Assess % missing in selected covariates</strong></p>
+<p>In this step, you can review the covariates selection based on % missing
+metrics. To adjust covariates please return to Step 3. If no covariates
+were chosen in step 3, this step will be empty.</p>
+<p><strong>Step 5 Add custom dichotomous covariates</strong></p>
+<p>In this step, you may add custom dichotomous covariates by selecting two
+cohorts. This step is optional, and you may choose not to add any
+dichotomous covariate at all. You may combine a cohort for YES and a
+cohort for NO. Once cohorts are selected you may enter a name for the
+covariate. To commit the changes please press ‘Add’ at the bottom (You
+must ‘Add’ the variable before moving to the next screen if you want it
+to be a part of your analysis). You may repeat this action as many times
+as you need, or choose to not add any custom dichotomous covariates at
+all. Please note that all given names must be unique.</p>
+<p>As you add covariates you may see them populate on the right hand side
+of the screen as cards. The card contains your given name at the top of
+the card and the ability to remove the created covariate at the bottom
+of the card.</p>
+<p><strong>Step 6 Set workflow parameters and remove unwanted covariates</strong></p>
+<p>In this step, you will determine workflow parameters. Please adjust the
+number of population principal components to control for population
+structure, minor allele frequency cutoff and imputation score cutoff.
+You may also remove unwanted covariates. Please also choose the ancestry
+population on which you would like to perform your study.</p>
+<p>Number of PCs- Population Principal components (PCs) refer to linear
+combinations of genome-wide genotyping data to control for population
+structure/stratification (select up to 10 PCs)</p>
+<p>Covariates- Please review the chosen covariates. You may remove unwanted
+covariates, or go back (at the bottom of the page) to step 2 to choose
+different ones.</p>
+<p>Dichotomous Covariates- Please review the created covariates. You may
+remove unwanted covariates, or go back (at the bottom of the page) to
+step 4 to adjust/add different ones.</p>
+<p>HARE dropdowns- Please choose the ancestry population on which you would
+like to perform your study. The numbers appearing in the dropdown
+represent the population size of your study, considering all of your
+previous selections. The codes are the HARE (harmonized ancestry and
+race/ethnicity) codes.</p>
+<p>MAF Cutoff- Minor allele frequency (MAF) is the frequency at which the
+second most common allele occurs in a given population and can be used
+to filter out rare markers (scale of 0-0.5)</p>
+<p>HARE dropdowns- Please choose the ancestry population on which you would
+like to perform your study. The numbers appearing in the dropdown
+represent the population size of your study, considering all of your
+previous selections. The codes are the HARE (harmonized ancestry and
+race/ethnicity) codes.</p>
+<p>Imputation Score Cutoff- This value reflects the quality of imputed SNPs
+and can be used to remove low-quality imputed markers (scale of 0-1)</p>
+<p><strong>Step 7 Submit GWAS Study</strong></p>
+<p>In this step, you may review the metadata selected for the study, give a
+name to the study, and submit the GWAS for analysis.</p>
+<p><strong>Check Submission Status and Review Results</strong></p>
+<p>Once your GWAS analysis is submitted, you can check the Submission
+Status and Review the Results in the “GWAS Results” app.</p>
+</div>
+<div class="section" id="gwas-results">
+<h2><strong>GWAS Results</strong><a class="headerlink" href="#gwas-results" title="Permalink to this heading">¶</a></h2>
+<p>Use this App to view the status &amp; results of submitted workflows. Click
+the arrow in the Submitted Job Statuses box to activate the drop down
+menu and see the status of your analysis. This menu will display a
+history of your submitted jobs including the Run ID of your analysis,
+the start time, and the finish time when the run is completed. This menu
+will also display whether the analysis was a success or failed. Once
+completed, you may download the results of the GWAS analysis from this
+menu. By pressing the ‘Download’ link a tar.gz file will start
+downloading to your computer. The file contains the following: Manhattan
+plot, QQ plot, metadata file containing all of your selections,
+attrition tables, and per-chromosome GWAS summary statistics.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">va-doc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, phyllis pischl, zuyi chen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

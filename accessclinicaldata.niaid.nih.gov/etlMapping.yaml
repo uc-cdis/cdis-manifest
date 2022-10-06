@@ -28,6 +28,10 @@ mappings:
       - name: project_id
       - name: cmc_unique_id
         src: submitter_id
+      - name: study_registration
+      - name: study_registration_id
+      - name: required_idp
+      - name: external_url
   - name: accessclinicaldata.niaid.nih.gov_ctfile
     doc_type: ctfile
     type: aggregator
