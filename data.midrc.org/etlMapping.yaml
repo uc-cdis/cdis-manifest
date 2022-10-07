@@ -1,62 +1,4 @@
 mappings:
-  - name: midrc_dataset
-    doc_type: dataset
-    type: aggregator
-    root: dataset
-    props:
-      - name: project_id
-      - name: submitter_id
-      - name: data_contributor
-      - name: data_description
-      - name: data_url_doi
-      - name: research_description
-      - name: license
-      - name: publication_citation
-      - name: data_citation
-    aggregated_props:
-      - name: _imaging_study_id
-        path: cases.imaging_studies
-        src: id
-        fn: min
-      - name: _cases_count
-        path: cases
-        fn: count
-      - name: _imaging_studies_count
-        path: cases.imaging_studies
-        fn: count
-      - name: _ct_series_file_count
-        path: cases.imaging_studies.ct_series_files
-        fn: count
-      - name: _cr_series_file_count
-        path: cases.imaging_studies.cr_series_files
-        fn: count
-      - name: _dx_series_file_count
-        path: cases.imaging_studies.dx_series_files
-        fn: count
-      - name: _mr_series_file_count
-        path: cases.imaging_studies.mr_series_files
-        fn: count
-    joining_props:
-      - index: imaging_data_file
-        join_on: _dataset_id
-        props:
-          - name: object_id
-            src: object_id
-            fn: set
-          - name: file_name
-            src: file_name
-            fn: set
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
-          - name: data_category
-            src: data_category
-            fn: set
-    parent_props:
-      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
   - name: midrc_case
     doc_type: case
     type: aggregator
@@ -95,9 +37,6 @@ mappings:
         props:
           - name: object_id
             src: object_id
-            fn: set
-          - name: file_name
-            src: file_name
             fn: set
           - name: data_format
             src: data_format
@@ -165,9 +104,6 @@ mappings:
         props:
           - name: object_id
             src: object_id
-            fn: set
-          - name: file_name
-            src: file_name
             fn: set
           - name: data_format
             src: data_format
