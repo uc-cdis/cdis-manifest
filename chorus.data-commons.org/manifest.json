@@ -1,0 +1,66 @@
+{
+  "notes": [
+    "This is the chorus environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.08",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.08",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.08",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.08",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.08",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.08",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.08",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.08",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.08",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.08",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.08",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.08"
+  },
+  "google": {
+    "enabled": "no"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "global": {
+    "environment": "chorusprod",
+    "hostname": "chorus.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:922467707295:certificate/4e69ee21-1689-42b0-826a-6079e85f3c58",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/tcga_dictionary/1.0.3/schema.json",
+    "portal_app": "gitops",
+    "kube_bucket": "kube-chorusprod-gen3",
+    "logs_bucket": "logs-chorusprod-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/chorusprod/user.yaml",
+    "public_datasets": true,
+    "tier_access_level": "libre",
+    "tier_access_limit": 50,
+    "sync_from_dbgap": "True",
+    "maintenance_mode": "off"
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "chorus_etl",
+        "type": "subject"
+      },
+      {
+        "index": "chorus_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "chorus_array-config",
+    "auth_filter_field": "auth_resource_path"
+  }
+}
