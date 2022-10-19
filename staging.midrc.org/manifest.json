@@ -6,7 +6,7 @@
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.10",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.10",
     "dicom-viewer": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohif-viewer:master",
     "dicom-server": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-orthanc:gen3-0.1.1",
@@ -130,10 +130,6 @@
   ],
   "guppy": {
     "indices": [
-      {
-        "index": "midrcstaging_dataset",
-        "type": "dataset"
-      },
       {
         "index": "midrcstaging_case",
         "type": "case"
