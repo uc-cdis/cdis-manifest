@@ -122,8 +122,7 @@ mappings:
             src: data_type
             fn: set
           - name: file_count
-            src: file_id
-            alternate_src: _file_id
+            src: _file_id
             fn: count
   - name: internalstaging_file
     doc_type: file
@@ -142,7 +141,6 @@ mappings:
       - name: callset
       - name: bucket_path
       - name: source_node
-      - name: data_category
     injecting_props:
       subject:
         props:
