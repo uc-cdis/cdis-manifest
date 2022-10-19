@@ -636,9 +636,9 @@
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
-                "linkFields": [
-                "submitter_id"
-              ]
+        "linkFields": [
+          "submitter_id"
+        ]
       },
       "dropdowns": {
         "download-table": {
@@ -701,7 +701,7 @@
           {
             "field": "submitter_id",
             "name": "Browse in DICOM viewer"
-         },
+          },
           {
             "field": "case_ids",
             "name": "Patient ID"
@@ -723,25 +723,25 @@
             "name": "MR Series Count"
           },
           {
-          "field": "loinc_long_common_name",
-          "name": "Long Common Name (Study description)"
+            "field": "loinc_long_common_name",
+            "name": "Long Common Name (Study description)"
           },
           {
-          "field": "loinc_contrast",
-          "name": "Contrast"
+            "field": "loinc_contrast",
+            "name": "Contrast"
           },
           {
-          "field": "loinc_code",
-          "name": "LOINC Code"
+            "field": "loinc_code",
+            "name": "LOINC Code"
           },
-        {
-          "field": "loinc_method",
-          "name": "Method (Modality)"
-        },
-        {
-          "field": "loinc_system",
-          "name": "System (Body region)"
-        }
+          {
+            "field": "loinc_method",
+            "name": "Method (Modality)"
+          },
+          {
+            "field": "loinc_system",
+            "name": "System (Body region)"
+          }
         ],
         "manifestMapping": {
           "resourceIndexType": "imaging_data_file",
