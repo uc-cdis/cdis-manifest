@@ -42,16 +42,28 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
     "resources": [
       {
-        "title": "MIDRC Open-R1 Clinical Data Analysis",
-        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
-        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
-        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+        "title": "Cohort Selection Using Temporal COVID-19 Test Data",
+        "description": "This tutorial demonstrates how to use the MIDRC data commons' APIs to access imaging study and COVID-19 test data, how to use temporal properties in those data to select a cohort of COVID-19 positive imaging studies, and how to access those image files using the Gen3 SDK.",
+        "imageUrl": "/dashboard/Public/notebooks/Cohort_selection_Using_MIDRC_Temporal_COVID_Test_Data.png",
+        "link": "/dashboard/Public/notebooks/Cohort_selection_Using_MIDRC_Temporal_COVID_Test_Data.html"
       },
       {
-        "title": "Query and Access MIDRC Data",
-        "description": "This notebook is intended to demonstrate a variety of ways to access file objects and structured data, also known as metadata, in the MIDRC Data Commons.",
-        "imageUrl": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.png",
-        "link": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.html"
+        "title": "Querying and Accessing MIDRC Data",
+        "description": "This notebook is intended to demonstrate a variety of ways to access file objects and structured data, also known as metadata, in the MIDRC Data Commons using MIDRC APIs.",
+        "imageUrl": "/dashboard/Public/notebooks/Querying_and_Accessing_MIDRC_Data.png",
+        "link": "/dashboard/Public/notebooks/Querying_and_Accessing_MIDRC_Data.html"
+      },
+      {
+        "title": "Exploring MIDRC CT Scans",
+        "description": "In this demo we will review how to import MIDRC imaging data, how to convert CT scan images from dicom (dcm) formats to png and jpeg formats, and how to view these CT scan images. This demo will also show how to extract file and patient metadata from the header of dicom (dcm) files.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_CT_Scan.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_CT_Scan.html"
+      },
+      {
+        "title": "MIDRC Open-R1 Clinical Data Analysis",
+        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
       }
     ]
   },
@@ -744,7 +756,7 @@
             "field": "loinc_system",
             "name": "System (Body region)"
           }
-        ],	
+        ],
         "manifestMapping": {
           "resourceIndexType": "imaging_data_file",
           "resourceIdField": "object_id",

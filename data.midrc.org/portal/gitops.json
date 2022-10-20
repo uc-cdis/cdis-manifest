@@ -562,8 +562,6 @@
               "study_year_shifted",
               "body_part_examined",
               "study_location",
-              "days_from_study_to_pos_covid_test",
-              "days_from_study_to_neg_covid_test",
               "project_id"
             ]
           },
@@ -634,9 +632,12 @@
           "data_type",
           "study_uid",
           "case_ids",
-          "file_name",
           "object_id",
           "project_id"
+        ],
+        "dicomViewerId": "submitter_id",
+        "linkFields": [
+          "submitter_id"
         ]
       },
       "dropdowns": {
@@ -698,6 +699,10 @@
             "name": "Project ID"
           },
           {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
             "field": "case_ids",
             "name": "Patient ID"
           },
@@ -718,25 +723,25 @@
             "name": "MR Series Count"
           },
           {
-          "field": "loinc_long_common_name",
-          "name": "Long Common Name (Study description)"
+            "field": "loinc_long_common_name",
+            "name": "Long Common Name (Study description)"
           },
           {
-          "field": "loinc_contrast",
-          "name": "Contrast"
+            "field": "loinc_contrast",
+            "name": "Contrast"
           },
           {
-          "field": "loinc_code",
-          "name": "LOINC Code"
+            "field": "loinc_code",
+            "name": "LOINC Code"
           },
-        {
-          "field": "loinc_method",
-          "name": "Method (Modality)"
-        },
-        {
-          "field": "loinc_system",
-          "name": "System (Body region)"
-        }
+          {
+            "field": "loinc_method",
+            "name": "Method (Modality)"
+          },
+          {
+            "field": "loinc_system",
+            "name": "System (Body region)"
+          }
         ],
         "manifestMapping": {
           "resourceIndexType": "imaging_data_file",
@@ -772,8 +777,6 @@
               "study_year",
               "study_year_shifted",
               "study_location",
-              "days_from_study_to_pos_covid_test",
-              "days_from_study_to_neg_covid_test",
               "project_id"
             ]
           },
@@ -863,7 +866,6 @@
           "series_uid",
           "study_uid",
           "case_ids",
-          "file_name",
           "object_id",
           "project_id"
         ]
