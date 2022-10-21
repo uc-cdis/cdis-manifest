@@ -17,11 +17,11 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": " Chorus Gen3",
+    "appName": " CHoRUS Gen3 Data Mesh",
     "index": {
       "introduction": {
         "heading": "",
-        "text": "CHoRUS Gen3 Data Commons",
+        "text": "The CHoRUS Gen3 Data Mesh supports the management, analysis, and sharing of electronic health record data for neurocritical care from the Collaborative Hospital Repository Uniting Standards (CHoRUS) for Equitable AI consortium.",
         "link": "/submission"
       },
       "buttons": [
@@ -35,9 +35,23 @@
         {
           "name": "Access Data",
           "icon": "stage-access",
-          "body": "Query files: {datanode(submitter_id: 'filename.txt') {project_id object_id id}}",
+          "body": "Search and download subsets of data from CHoRUS using GraphQL queries.",
           "link": "/query",
           "label": "Query data"
+        },
+        {
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover study descriptions and other metadata stored on the Data Commons",
+          "link": "/discovery",
+          "label": "Discover Study Metadata"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "Perform analysis on the CHoRUS data using Jupyter Notebooks through the Biomedical Research Hub.",
+          "link": "https://brh.data-commons.org/",
+          "label": "Analyze in BRH"
         }
       ],
       "homepageChartNodes": [
@@ -50,28 +64,44 @@
     "navigation": {
       "items": [
         {
+          "icon": "query",
+          "link": "/discovery",
+          "name": "Discovery",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies."
+        },
+        {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
-          "name": "Dictionary"
+          "name": "Dictionary",
+          "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
         },
         {
           "icon": "exploration",
-          "link": "/files",
+          "link": "/explorer",
           "color": "#a2a2a2",
-          "name": "Exploration"
+          "name": "Exploration",
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
         },
         {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
-          "name": "Query"
+          "name": "Query",
+          "tooltip": "Query the databases using GraphiQL."
+        },
+        {
+          "name": "Analyze in BRH",
+          "link": "/resource-browser",
+          "icon": "analysis",
+          "tooltip": "Explore CHoRUS and other data in the Biomedical Research Hub to explore and visualize available data."
         },
         {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
-          "name": "Profile"
+          "name": "Profile",
+          "tooltip": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
         }
       ]
     },
@@ -91,10 +121,10 @@
     "login": {
       "title": "CHoRUS Data Commons",
       "subTitle": "Explore, Analyze, and Download Data",
-      "text": "This website supports the management, analysis and sharing of human disease Files for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer.",
-      "contact": "If you have any questions about access or the registration process, please see https://docs.chorus.data-commons.org/pcawg/data/#apply-for-data-access or contact ",
+      "text": "This website supports the management, analysis and sharing of electronic health record data for neurocritical care from the Collaborative Hospital Repository Uniting Standards (CHoRUS) for Equitable AI consortium.",
+      "contact": "If you have any questions about access, please contact ",
       "email": "support@datacommons.io",
-      "image": "stage-icons/stage-gene"
+      "image": "/../../../../custom/sponsors/gitops-sponsors/gene_bgy"
     },
     "footerLogos": [
       {
