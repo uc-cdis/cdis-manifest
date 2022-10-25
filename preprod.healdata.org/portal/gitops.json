@@ -766,7 +766,8 @@
         "studyRegistrationTrackingField": "registrant_username",
         "studyRegistrationValidationField": "is_registered",
         "studyRegistrationAccessCheckField": "registration_authz",
-        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards"
+        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
+        "clinicalTrialFields": ["NCTId", "OfficialTitle", "BriefTitle", "Acronym", "StudyType", "OverallStatus", "StartDate", "StartDateType", "CompletionDate", "CompletionDateType", "IsFDARegulatedDrug", "IsFDARegulatedDevice", "IsPPSD", "BriefSummary", "DetailedDescription", "Condition", "DesignAllocation", "DesignPrimaryPurpose", "Phase", "DesignInterventionModel", "EnrollmentCount", "EnrollmentType", "DesignObservationalModel", "InterventionType", "PrimaryOutcomeMeasure", "SecondaryOutcomeMeasure", "OtherOutcomeMeasure", "Gender", "GenderBased", "MaximumAge", "MinimumAge", "IPDSharing", "IPDSharingTimeFrame", "IPDSharingAccessCriteria", "IPDSharingURL", "SeeAlsoLinkURL", "AvailIPDURL", "AvailIPDId", "AvailIPDComment"]
       }
     },
     "kayakoConfig":{
