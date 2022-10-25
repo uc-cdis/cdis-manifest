@@ -1,38 +1,38 @@
 # Core Gen3 Release 2022.10 (Fluorite)
 
+## uc-cdis/arborist
+
+#### New Features
+  - Support "client credentials" tokens that are not linked to a user in the 
+    `/auth/request` and `/auth/proxy` endpoints (#152)
+
 ## uc-cdis/fence
 
-#### Bug Fixes
-  - Fix intermittent issue with db cache containing info that can't be loaded 
-    into JSON (#1037)
-
 #### Improvements
-  - temporarily do not block on security flags until we update to Python 3.9 
-    (#1044)
   - Switches to using Github Actions for CI (#1043)
   - Adds Superlint vs. Wool (#1043)
   - Adds Secrets Detection in line for additional coverage (#1043)
   - Adds Poetry Vuln Coverage (#1043)
+  - `fence-create client-create` now outputs the whole stacktrace in case of 
+    error (#1033)
+
+#### New Features
+  - Support the OAuth2 "client credentials" grant (#1033)
+
+#### Bug Fixes
+  - Fix intermittent issue with db cache containing info that can't be loaded 
+    into JSON (#1037)
 
 #### Dependency Updates
   - Update poetry install in travis.yml due to 
     https://python-poetry.org/blog/announcing-poetry-1.2.0a1/#deprecation-of-the-get-poetrypy-script
     (#1037)
 
-## uc-cdis/data-portal
+#### Deployment Changes
+  - Requires a Fence DB migration (`Client.redirect_uri` is now optional) 
+    (#1033)
 
-#### Bug Fixes
-  - Discovery page: fix "undefined tags" error when an entry does not have tags 
-    (#1086)
-  - disable interaction with page when reactour is present (#1078)
-  - remove displayed cohort ids for custom dichotomous pairs (#1075)
-  - download inputs button was missing for submitted jobs that completed (#1074)
-  - deleting custom dichotomous covariate doesnt delete all of them anymore 
-    (#1070)
-  - filter was returning empty array each time (#1070)
-  - [PXP-113](https://ctds-planx.atlassian.net/browse/VADC-113) (#1068)
-  - [PXP-114](https://ctds-planx.atlassian.net/browse/VADC-114) (#1068)
-  - Fixes pagination settings to allow the "size changer" to work again (#1063)
+## uc-cdis/data-portal
 
 #### New Features
   - Fetch clinicaltrials.gov study metadata during study registration (#1081)
@@ -55,6 +55,17 @@
 #### Improvements
   - debounce expensive endpoint call that updates the HARE dropdown (#1080)
 
+#### Bug Fixes
+  - disable interaction with page when reactour is present (#1078)
+  - remove displayed cohort ids for custom dichotomous pairs (#1075)
+  - download inputs button was missing for submitted jobs that completed (#1074)
+  - deleting custom dichotomous covariate doesnt delete all of them anymore 
+    (#1070)
+  - filter was returning empty array each time (#1070)
+  - [PXP-113](https://ctds-planx.atlassian.net/browse/VADC-113) (#1068)
+  - [PXP-114](https://ctds-planx.atlassian.net/browse/VADC-114) (#1068)
+  - Fixes pagination settings to allow the "size changer" to work again (#1063)
+
 #### Dependency Updates
   - sync w/ master on removing babel-eslint (#1054)
 
@@ -62,11 +73,6 @@
 
 #### Bug Fixes
   - Fix issue where arrays of ints gets converted to array of floats (#371)
-
-## uc-cdis/tube
-
-#### New Features
-  - Add document for nested feature (#191)
 
 ## uc-cdis/metadata-service
 
@@ -120,4 +126,3 @@
   - Update pyjwt to ^2.4.0 (through authutils ^6.2.1), websockets to ^10 
     (through uvicorn ^0.18.3), jinja2 to ^3.0.3 (through gen3config ^1.0.0), 
     gen3authz to ^2.0.0, httpx to ^0.23.0 (#18)
-
