@@ -3,6 +3,7 @@
         "schema": {
             "__manifest": {
                 "type": "array",
+                 "default": [],
                 "properties": {
                     "file_name": {
                         "type": "string"
@@ -91,7 +92,7 @@
     },  
     "adapter_commons": {
         "SAMHDA": {
-            "mds_url": "https://preprod.healdata.org",
+            "mds_url": "https://preprod.healdata.org/",
             "commons_url": "preprod.healdata.org",
             "adapter": "gen3",
             "keep_original_fields": true,
@@ -189,9 +190,11 @@
             "commons_url": "jcoin.datacommons.io",
             "adapter": "gen3",
             "commons_name": "JCOIN",
-            "columns_to_fields": {
-                "short_name": "name",
-                "_unique_id": "study_id"
+            "keep_original_fields": true,
+            "field_mappings": {
+                "short_name": "path:name",
+                "_unique_id": "path:study_id",
+                "__manifest": "path:__manifest"
             }
         },
         "ICPSR": {
