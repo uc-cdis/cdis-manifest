@@ -177,7 +177,26 @@
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
@@ -190,6 +209,7 @@
     "tagSelector": {
       "showTagCategoryNames": true
     },
+    "studies": [],
     "studyColumns": [
       {
         "name": "Project Title",
