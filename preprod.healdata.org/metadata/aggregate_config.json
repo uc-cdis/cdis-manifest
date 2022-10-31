@@ -1,31 +1,202 @@
 {
-    "gen3_commons": {
+    "configuration": {
+        "schema": {
+            "__manifest": {
+                "type": "array",
+                "default": [],
+                "properties": {
+                    "file_name": {
+                        "type": "string"
+                    },
+                    "file_size": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "commons_url": {},
+            "appl_id": {
+                "type": "string"
+            },
+            "tags": {
+                "type": "array"
+            },
+            "advSearchFilters": {
+                "type": "array",
+                "default": []
+            },
+            "Data": {
+                "type": "object"
+            },
+            "Data Availability": {
+                "type": "object",
+                "properties": {
+                    "data_collection_finish_date": {
+                        "type": "date"
+                    },
+                    "data_collection_start_date": {
+                        "type": "date"
+                    },
+                    "data_release_finish_date": {
+                        "type": "date"
+                    },
+                    "data_release_start_date": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Human Condition Applicability": {
+                "type": "object"
+            },
+            "Human Subject Applicability": {
+                "type": "object"
+            },
+            "Human Treatment Applicability": {
+                "type": "object"
+            },
+            "Metadata Location": {
+                "type": "object"
+            },
+            "Minimal Info": {
+                "type": "object"
+            },
+            "Study Translational Focus": {
+                "type": "object"
+            },
+            "Study Type": {
+                "type": "object"
+            },
+            "budget_start": {
+                "type": "date"
+            },
+            "budget_end": {
+                "type": "date"
+            },
+            "project_end_date": {
+                "type": "date"
+            },
+            "date_added": {
+                "type": "date"
+            },
+            "award_notice_date": {
+                "type": "date"
+            },
+            "project_start_date": {
+                "type": "date"
+            },
+            "study_description_summary": {},
+            "project_title": {}
+        },
+        "settings": {
+            "cache_drs": true
+        }
+    },  
+    "adapter_commons": {
+        "SAMHDA": {
+            "mds_url": "https://preprod.healdata.org/",
+            "commons_url": "preprod.healdata.org",
+            "adapter": "gen3",
+            "keep_original_fields": true,
+            "config": {
+                "filters": "gen3_discovery.data_resource=SAMHDA"
+            },
+            "field_mappings": {
+                "authz": "path:authz",
+                "tags": "path:tags",
+                "study_description_summary": "path:study_description_summary",
+                "manifest": "path:__manifest",
+                "project_title": "path:project_title",
+                "commons_url": "https://preprod.healdata.org"
+            }
+        },
         "HEAL": {
             "mds_url": "https://preprod.healdata.org",
-            "commons_url": "preprod.healdata.org"
+            "commons_url": "preprod.healdata.org",
+            "adapter": "gen3",
+            "commons_name": "HEAL",
+            "config": {
+                "guid_type": "discovery_metadata",
+                "study_field": "gen3_discovery"
+            },
+            "keep_original_fields": true,
+            "field_mappings": {
+                "authz": "path:authz",
+                "tags": {
+                    "path": "tags",
+                    "default": []
+                },
+                "__manifest": {
+                    "path": "__manifest",
+                    "default": []
+                },
+                "advSearchFilters": {
+                    "path": "advSearchFilters"
+                },
+                "study_description_summary": "path:study_description_summary",
+                "manifest": "path:__manifest",
+                "project_title": "path:project_title",
+                "commons_url": "https://preprod.healdata.org"
+            },
+            "per_item_values": {
+                "9898044": {
+                    "__manifest": [
+                        {
+                            "md5sum": "459b157ad875428cda0c85e53b38eae9",
+                            "file_name": "physical_function_SMART.tsv",
+                            "file_size": 105534,
+                            "object_id": "dg.H34L/654d7f1f-b61c-49a9-8a74-c82400fa4c27"
+                        },
+                        {
+                            "md5sum": "487c433493e3f89c0c65fc5c6ff62467",
+                            "file_name": "substance_use_SMART.tsv",
+                            "file_size": 37823,
+                            "object_id": "dg.H34L/530fd95c-48b6-488e-a699-9377180bd82d"
+                        },
+                        {
+                            "md5sum": "1fce3aabc9a6cc94687d8de295a15f11",
+                            "file_name": "participant_SMART.tsv",
+                            "file_size": 17471,
+                            "object_id": "dg.H34L/80f0a338-18e0-48de-b70f-cdabd63f67d9"
+                        },
+                        {
+                            "md5sum": "34a00cb6013c20cc037db2ea5754c80d",
+                            "file_name": "visit_SMART.tsv",
+                            "file_size": 18380,
+                            "object_id": "dg.H34L/809ce13a-4004-407f-9ea8-97ceff0ea398"
+                        },
+                        {
+                            "md5sum": "d56323fb6d56b833462a0e47a5c45b9b",
+                            "file_name": "data_dictionary.tsv",
+                            "file_size": 5801,
+                            "object_id": "dg.H34L/0cefb9a4-73d3-4186-9205-da7458959719"
+                        },
+                        {
+                            "md5sum": "5a70a05e0f3911f2b1452bab3af03302",
+                            "file_name": "subject_characteristics_SMART.tsv",
+                            "file_size": 83518,
+                            "object_id": "dg.H34L/ac14daf4-4820-401d-a121-cffc10d23042"
+                        },
+                        {
+                            "md5sum": "735b3010623f6328be8fa0f054f67ad1",
+                            "file_name": "pain_SMART.tsv",
+                            "file_size": 22328,
+                            "object_id": "dg.H34L/802a8ca4-dd69-492b-b0e4-c1e8710a4bde"
+                        }
+                    ]
+                }
+            }
         },
         "JCOIN": {
             "mds_url": "https://jcoin.datacommons.io/",
             "commons_url": "jcoin.datacommons.io",
-            "columns_to_fields": {
-                "short_name": "name",
-                "full_name": "full_name",
-                "_subjects_count": "_subjects_count",
-                "study_id": "study_id",
-                "_unique_id": "study_id",
-                "study_description": "study_description"
+            "adapter": "gen3",
+            "commons_name": "JCOIN",
+            "keep_original_fields": true,
+            "field_mappings": {
+                "short_name": "path:name",
+                "_unique_id": "path:study_id",
+                "__manifest": "path:__manifest"
             }
         },
-        "SAMHDA": {
-            "mds_url": "https://preprod.healdata.org",
-            "commons_url": "preprod.healdata.org",
-			"select_field": {
-				"field_name": "data_resource",
-				"field_value": "SAMHDA"
-			}
-		}
-    },
-    "adapter_commons": {
         "ICPSR": {
             "mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
             "commons_url": "https://www.icpsr.umich.edu",
@@ -63,7 +234,6 @@
                 "project_title": "path:title",
                 "protocol_name": "",
                 "study_summary": "",
-                "_file_manifest": "",
                 "dataset_1_type": "",
                 "dataset_2_type": "",
                 "dataset_3_type": "",
@@ -259,7 +429,6 @@
                 "project_title": "path:BriefTitle",
                 "protocol_name": "",
                 "study_summary": "",
-                "_file_manifest": "",
                 "dataset_1_type": "",
                 "dataset_2_type": "",
                 "dataset_3_type": "",
@@ -466,7 +635,6 @@
                 "project_title": "path:title",
                 "protocol_name": "",
                 "study_summary": { "path": "description", "filters": ["strip_html"] },
-                "_file_manifest": "",
                 "dataset_1_type": "",
                 "dataset_2_type": "",
                 "dataset_3_type": "",
