@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.11
+# Core Gen3 Release 2022.11 (Garnet)
 
 ## uc-cdis/gen3-statics
 
