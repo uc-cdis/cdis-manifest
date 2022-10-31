@@ -224,7 +224,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CGC",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -232,7 +232,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CAVATICA",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -240,7 +240,7 @@
         {
           "enabled": true,
           "type": "export-pfb-to-url",
-          "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to BDC (Seven Bridges)",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -384,7 +384,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CGC",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -392,7 +392,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to CAVATICA",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
@@ -400,7 +400,7 @@
         {
           "enabled": true,
           "type": "export-file-pfb-to-url",
-          "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
+          "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=anvil",
           "title": "Export to BDC (Seven Bridges)",
           "rightIcon": "external-link",
           "dropdownId": "sevenBridges"
