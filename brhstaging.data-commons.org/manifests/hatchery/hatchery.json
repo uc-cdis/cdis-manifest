@@ -1,5 +1,9 @@
 {
   "user-namespace": "jupyter-pods-brhstaging",
+  "prisma": {
+    "enable": true,
+    "console-address": "https://us-west1.cloud.twistlock.com/gov-3229443"
+  },
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "default-pay-model": {
