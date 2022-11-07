@@ -133,6 +133,8 @@ mappings:
           - name: subject_submitter_id
             src: submitter_id
             fn: set
+          - name: project_id
+            fn: set
           - name: anvil_project_id
             src: anvil_project_id
             fn: set
