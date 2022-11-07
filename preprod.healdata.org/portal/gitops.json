@@ -155,6 +155,7 @@
             "project_title",
             "project_number",
             "appl_id",
+            "_hdp_uid",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -201,7 +202,7 @@
     "aggregations": [
       {
         "name": "Studies",
-        "field": "project_number",
+        "field": "_hdp_uid",
         "type": "count"
       }
     ],
@@ -642,7 +643,7 @@
       "authzField": "authz",
       "tagsListFieldName": "tags",
       "dataAvailabilityField": "data_availability",
-      "uid": "project_number"
+      "uid": "_hdp_uid"
     },
     "tagCategories": [
       {
@@ -761,17 +762,57 @@
   "componentToResourceMapping": {},
   "stridesPortalURL": "https://healportal.org",
   "registrationConfigs": {
-    "features":{
+    "features": {
       "studyRegistrationConfig": {
         "studyRegistrationTrackingField": "registrant_username",
         "studyRegistrationValidationField": "is_registered",
         "studyRegistrationAccessCheckField": "registration_authz",
         "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
-        "clinicalTrialFields": ["NCTId", "OfficialTitle", "BriefTitle", "Acronym", "StudyType", "OverallStatus", "StartDate", "StartDateType", "CompletionDate", "CompletionDateType", "IsFDARegulatedDrug", "IsFDARegulatedDevice", "IsPPSD", "BriefSummary", "DetailedDescription", "Condition", "DesignAllocation", "DesignPrimaryPurpose", "Phase", "DesignInterventionModel", "EnrollmentCount", "EnrollmentType", "DesignObservationalModel", "InterventionType", "PrimaryOutcomeMeasure", "SecondaryOutcomeMeasure", "OtherOutcomeMeasure", "Gender", "GenderBased", "MaximumAge", "MinimumAge", "IPDSharing", "IPDSharingTimeFrame", "IPDSharingAccessCriteria", "IPDSharingURL", "SeeAlsoLinkURL", "AvailIPDURL", "AvailIPDId", "AvailIPDComment"]
+        "clinicalTrialFields": [
+          "NCTId",
+          "OfficialTitle",
+          "BriefTitle",
+          "Acronym",
+          "StudyType",
+          "OverallStatus",
+          "StartDate",
+          "StartDateType",
+          "CompletionDate",
+          "CompletionDateType",
+          "IsFDARegulatedDrug",
+          "IsFDARegulatedDevice",
+          "IsPPSD",
+          "BriefSummary",
+          "DetailedDescription",
+          "Condition",
+          "DesignAllocation",
+          "DesignPrimaryPurpose",
+          "Phase",
+          "DesignInterventionModel",
+          "EnrollmentCount",
+          "EnrollmentType",
+          "DesignObservationalModel",
+          "InterventionType",
+          "PrimaryOutcomeMeasure",
+          "SecondaryOutcomeMeasure",
+          "OtherOutcomeMeasure",
+          "Gender",
+          "GenderBased",
+          "MaximumAge",
+          "MinimumAge",
+          "IPDSharing",
+          "IPDSharingTimeFrame",
+          "IPDSharingAccessCriteria",
+          "IPDSharingURL",
+          "SeeAlsoLinkURL",
+          "AvailIPDURL",
+          "AvailIPDId",
+          "AvailIPDComment"
+        ]
       }
     },
-    "kayakoConfig":{
-      "kayakoDepartmentId": 21        
+    "kayakoConfig": {
+      "kayakoDepartmentId": 21
     }
   }
 }
