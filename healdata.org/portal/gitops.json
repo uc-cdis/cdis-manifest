@@ -156,6 +156,7 @@
             "project_title",
             "project_number",
             "appl_id",
+            "_hdp_uid",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -202,7 +203,7 @@
     "aggregations": [
       {
         "name": "Studies",
-        "field": "project_number",
+        "field": "_hdp_uid",
         "type": "count"
       }
     ],
@@ -643,7 +644,7 @@
       "authzField": "authz",
       "tagsListFieldName": "tags",
       "dataAvailabilityField": "data_availability",
-      "uid": "project_number"
+      "uid": "_hdp_uid"
     },
     "tagCategories": [
       {
