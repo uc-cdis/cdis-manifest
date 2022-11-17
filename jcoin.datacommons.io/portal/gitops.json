@@ -432,11 +432,11 @@
       "charts": {
         "data_type": {
           "chartType": "stackedBar",
-          "title": "File Type"
+          "title": "Data Type"
         },
-        "data_format": {
+        "data_category": {
           "chartType": "stackedBar",
-          "title": "File Format"
+          "title": "Data Category"
         }
       },
       "filters": {
@@ -446,6 +446,7 @@
             "fields": [
               "project_name",
               "data_type",
+              "data_category",
               "data_format"
             ]
           }
