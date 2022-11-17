@@ -1,19 +1,9 @@
 {
   "gaTrackingId": "UA-119127212-10",
+  "argoTemplate": "gwas-template",
   "graphql": {
-    "boardCounts": [
-      {
-        "graphql": "_clinical_supplement_count",
-        "name": "Clinical Supplement",
-        "plural": "Clinical Supplements"
-      }
-    ],
-    "chartCounts": [
-      {
-        "graphql": "_clinical_supplement_count",
-        "name": "Clinical Supplement"
-      }
-    ],
+    "boardCounts": [],
+    "chartCounts": [],
     "projectDetails": "boardCounts"
   },
   "components": {
@@ -21,9 +11,11 @@
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
-        "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries, and providing a cloud-based analysis workspace with rich tools and resources."
+        "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons features GWAS analyses on harmonized data."
       },
-      "buttons": []
+      "buttons": [],
+      "customHomepageChartConfig": [],
+      "homepageChartNodes": []
     },
     "navigation": {
       "items": [
@@ -47,19 +39,19 @@
         }
       ]
     },
-      "topBar": {
-        "items": [
-          {
-            "link": "https://gen3.org/resources/user/gen3-client/",
-            "name": "Gen3 Client tutorial"
-          },
-          {
-            "link": "support@datacommons.io",
-            "name": "Email Support"
-          }
-        ],
-        "useProfileDropdown": false
-      },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://va.data-commons.org/dashboard/Public/documentation/index.html",
+          "name": "Help and Guidance"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
+        }
+      ],
+      "useProfileDropdown": false
+    },
     "login": {
       "title": "VA Data Commons",
       "subTitle": "search, compare, and analyze data",
@@ -97,11 +89,12 @@
   "analysisTools": [
     {
       "title": "OHDSI Atlas",
-      "description": "An Atlas App",
+      "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
       "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
-    "GWASUIApp"
+    "GWASUIApp",
+    "GWASResults"
   ],
   "arrangerConfig": {
     "charts": {
@@ -157,5 +150,7 @@
     "projectId": "search",
     "graphqlField": "demographic",
     "index": ""
-  }
+  },
+  "showArboristAuthzOnProfile": false,
+  "showFenceAuthzOnProfile": false
 }

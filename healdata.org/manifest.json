@@ -8,26 +8,30 @@
   },
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.04",
-    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.04",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.10",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.10",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.04",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.04",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.10",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.10",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.04",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.04",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.04",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.04",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.04",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.04",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.22.1",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.04",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.04",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.04",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.04",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.04",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.04",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.04"
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:1.0.1",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.10",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.10",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2.0.1",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.7.1",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.10",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.10",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.0.0",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.10",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.10",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.10",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.10",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.10",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.10",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:0.4.1",
+    "frontend-framework": "quay.io/cdis/frontend-framework:0.4.4",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
+    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.2.0"
   },
   "arborist": {
     "deployment_version": "2"
@@ -47,7 +51,7 @@
       "serviceAccountName": "jobs-healdata-org",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2022.10",
         "pull_policy": "Always",
         "env": [
           {
@@ -87,7 +91,7 @@
       "serviceAccountName": "jobs-healdata-org",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2022.10",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -118,7 +122,7 @@
       "serviceAccountName": "jobs-healdata-org",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2022.10",
         "pull_policy": "Always",
         "env": [
           {
@@ -159,7 +163,7 @@
       "serviceAccountName": "jobs-healdata-org",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2022.10",
         "pull_policy": "Always",
         "env": [
           {
@@ -200,7 +204,7 @@
       "serviceAccountName": "jobs-healdata-org",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2022.10",
         "pull_policy": "Always",
         "env": [
           {
@@ -240,7 +244,7 @@
       "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/batch-export:2022.04",
+        "image": "quay.io/cdis/batch-export:2022.10",
         "pull_policy": "Always",
         "env": [
           {
@@ -277,7 +281,7 @@
   ],
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.04"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.10"
     }
   },
   "indexd": {
@@ -296,7 +300,9 @@
     "netpolicy": "on",
     "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "document_url": "https://heal.github.io/platform-documentation",
+    "frontend_root": "gen3ff"
   },
   "canary": {
     "default": 0

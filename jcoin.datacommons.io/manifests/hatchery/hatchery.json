@@ -1,0 +1,106 @@
+{
+  "user-namespace": "jupyter-pods",
+  "sub-dir": "/lw-workspace",
+  "user-volume-size": "10Gi",
+  "sidecar": {
+    "cpu-limit": "1.0",
+    "memory-limit": "256Mi",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2022.10",
+    "env": {
+      "NAMESPACE": "default",
+      "HOSTNAME": "jcoin.datacommons.io"
+    },
+    "args": [],
+    "command": [
+      "/bin/bash",
+      "/sidecarDockerrun.sh"
+    ],
+    "lifecycle-pre-stop": [
+      "su",
+      "-c",
+      "echo test",
+      "-s",
+      "/bin/sh",
+      "root"
+    ]
+  },
+  "containers": [
+    {
+      "target-port": 8787,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio",
+      "image": "quay.io/cdis/rstudio3.6:master",
+      "env": {
+        "DISABLE_AUTH": "true"
+      },
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "user-volume-location": "/home/rstudio/pd",
+      "fs-gid": 100
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "Jupyter - Python/R",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "env": {
+        "NAMESPACE": "default"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "2Gi",
+      "name": "User-licensed Stata Notebook",
+      "image": "quay.io/cdis/stata-heal:master",
+      "env": {
+        "FRAME_ANCESTORS": "https://jcoin.datacommons.io"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    }
+  ]
+}

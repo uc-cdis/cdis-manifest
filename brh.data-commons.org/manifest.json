@@ -8,21 +8,23 @@
   },
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "arborist": "quay.io/cdis/arborist:2022.06",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
-    "arborist": "quay.io/cdis/arborist:2022.03",
-    "dashboard": "quay.io/cdis/gen3-statics:2022.03",
-    "fence": "quay.io/cdis/fence:2022.03",
+    "dashboard": "quay.io/cdis/gen3-statics:2022.06",
+    "fence": "quay.io/cdis/fence:2022.06",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:feat_multiple_paymodels",
-    "indexd": "quay.io/cdis/indexd:2022.03",
-    "metadata": "quay.io/cdis/metadata-service:1.6.4",
-    "portal": "quay.io/cdis/data-portal:feat_multiple_paymodels",
-    "peregrine": "quay.io/cdis/peregrine:2022.03",
-    "pidgin": "quay.io/cdis/pidgin:2022.03",
-    "revproxy": "quay.io/cdis/nginx:2022.03",
-    "manifestservice": "quay.io/cdis/manifestservice:2022.03",
-    "wts": "quay.io/cdis/workspace-token-service:2022.03",
-    "sheepdog": "quay.io/cdis/sheepdog:2022.03"
+    "hatchery": "quay.io/cdis/hatchery:1.1.0",
+    "indexd": "quay.io/cdis/indexd:2022.06",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
+    "manifestservice": "quay.io/cdis/manifestservice:2022.06",
+    "metadata": "quay.io/cdis/metadata-service:BRH-1.0.0",
+    "peregrine": "quay.io/cdis/peregrine:2022.06",
+    "pidgin": "quay.io/cdis/pidgin:2022.06",
+    "portal": "quay.io/cdis/data-portal:5.0.0",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.7.1",
+    "revproxy": "quay.io/cdis/nginx:2022.06",
+    "sheepdog": "quay.io/cdis/sheepdog:2022.06",
+    "wts": "quay.io/cdis/workspace-token-service:0.4.1"
   },
   "arborist": {
     "deployment_version": "2"
@@ -31,7 +33,7 @@
     "arborist": "true"
   },
   "global": {
-    "environment": "brhdemo",
+    "environment": "brhprod",
     "hostname": "brh.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
@@ -44,11 +46,12 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "dd_enabled": true
   },
   "metadata": {
     "USE_AGG_MDS": true,
-    "AGG_MDS_NAMESPACE": "brh"
+    "AGG_MDS_NAMESPACE": "brhprod"
   },
   "portal": {
     "GEN3_BUNDLE": "ecosystem"

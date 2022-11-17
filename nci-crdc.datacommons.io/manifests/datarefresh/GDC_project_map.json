@@ -389,6 +389,14 @@
     },
     "WCDT-MCRPC": {
         "aws_bucket_prefix": "gdc-wcdt-mcrpc-phs001648",
-   	"gs_bucket_prefix": "gdc-wcdt-mcrpc-phs001648"
-    }
+   	    "gs_bucket_prefix": "gdc-wcdt-mcrpc-phs001648"
+    },
+    "EXCEPTIONAL_RESPONDERS-ER": {
+        "aws_bucket_prefix": "gdc-exceptional-responders-er-phs001145",
+        "gs_bucket_prefix": "gdc-exceptional-responders-er-phs001145"
+    },
+    "MP2PRT-WT": {
+        "aws_bucket_prefix": "gdc-mp2prt-wt-phs001965",
+        "gs_bucket_prefix": "gdc-mp2prt-wt-phs001965"
+    },
 }

@@ -4,39 +4,39 @@
     "That's all I have to say"
   ],
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.04",
-    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2022.04",
-    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.04",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.10",
+    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2022.10",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.10",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-    "covid19-etl": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/covid19-etl:5.1.2",
-    "covid19-notebook-etl": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/covid19-notebook-etl:5.1.1",
+    "covid19-etl": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/covid19-etl:5.2.1",
+    "covid19-notebook-etl": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/covid19-notebook-etl:5.1.6",
     "covid19-bayes": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/covid19-bayes:5.1.4",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.04",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.04",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.04",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.04",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.04",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.04",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.22.1",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.6.6",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.10",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.10",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.10",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.10",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.10",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.10",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.10",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.10",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.04",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.04",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.04",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.04",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.10",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.10",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.10",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.10",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.04",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.04",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.04",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.10",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.10",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.10",
     "auspice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-auspice:v2.25.gen3.2.15",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.04",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.04"
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2022.10",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.10"
   },
   "global": {
     "environment": "covid19-prod",
     "hostname": "chicagoland.pandemicresponsecommons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:236714345101:certificate/e5edf56f-4003-4ee3-9ecd-162aaf19c058",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/3.8.15/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/covid19-datadictionary/3.8.16/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-covid19-prod-gen3",
     "logs_bucket": "s3logs-logs-covid19-prod-gen3",
@@ -48,7 +48,8 @@
     "tier_access_limit": "5",
     "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml",
     "covid19_data_bucket": "s3://opencdn-databucket-gen3",
-    "maintenance_mode": "off"
+    "maintenance_mode": "off",
+    "dd_enabled": true
   },
   "portal": {
     "GEN3_BUNDLE": "covid19"
@@ -126,7 +127,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.04"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2022.10"
     }
   },
   "sower": [
@@ -135,7 +136,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2022.04",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2022.10",
         "pull_policy": "Always",
         "env": [
           {

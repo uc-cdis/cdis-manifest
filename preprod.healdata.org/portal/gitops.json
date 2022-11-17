@@ -1,6 +1,7 @@
 {
   "gaTrackingId": "UA-119127212-19",
   "ddEnv": "healpreprod",
+  "homepageHref": "https://preprod.healdata.org",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -31,13 +32,13 @@
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery",
-          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
+          "tooltip": "Use free-text search and tags to find studies, discover datasets, and export selected data files to an analysis workspace."
         },
         {
           "icon": "workspace",
           "link": "/workspace",
           "name": "Workspace",
-          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
+          "tooltip": "Gen3 workspaces are secure cloud environments where users can analyze data from one or more data resources."
         },
         {
           "name": "Example Analysis",
@@ -56,15 +57,15 @@
     "topBar": {
       "items": [
         {
-          "link": "https://preprod.healdata.org/dashboard/Public/documentation/index.html",
-          "name": "HEAL Documentation"
+          "link": "https://preprod.healdata.org/documentation",
+          "name": "Help and Guidance"
         }
       ]
     },
     "login": {
       "title": "HEAL Pre-Prod Data Platform",
       "subTitle": "Explore, Analyze, and Share Data",
-      "text": "This website supports the management, analysis and sharing of data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies.",
+      "text": "This website supports the discovery, analysis and sharing of data and aims to support the accelerated discovery and development of therapies, diagnostic tests, and other technologies.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "heal-support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/heal_login_color_sides"
@@ -84,29 +85,8 @@
       "#99286B",
       "#402264"
     ],
-    "footerLogos": [
-      {
-        "src": "/src/img/gen3.png",
-        "href": "https://ctds.uchicago.edu/gen3",
-        "alt": "Gen3 Data Commons"
-      },
-      {
-        "src": "/src/img/createdby.png",
-        "href": "https://ctds.uchicago.edu/",
-        "alt": "Center for Translational Data Science at the University of Chicago"
-      }
-    ],
     "footer": {
-      "links": [
-        {
-          "text": "HEAL Initiative",
-          "href": "https://heal.nih.gov/"
-        },
-        {
-          "text": "HHS Responsible Disclosure Form",
-          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
-        }
-      ]
+      "externalURL": "/external/footer"
     }
   },
   "requiredCerts": [],
@@ -114,7 +94,8 @@
     "explorer": false,
     "analysis": false,
     "discovery": true,
-    "discoveryUseAggMDS": true
+    "discoveryUseAggMDS": true,
+    "studyRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -139,6 +120,12 @@
           }
         ]
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
@@ -162,11 +149,13 @@
           "searchableTextFields": [
             "study_description_summary",
             "location",
-            "study_description_name",
+            "study_name_title",
             "institutions",
             "investigators_name",
             "project_title",
             "project_number",
+            "appl_id",
+            "_hdp_uid",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -188,19 +177,39 @@
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
       {
         "name": "Studies",
-        "field": "project_number",
+        "field": "_hdp_uid",
         "type": "count"
       }
     ],
     "tagSelector": {
       "showTagCategoryNames": true
     },
+    "studies": [],
     "studyColumns": [
       {
         "name": "Project Title",
@@ -209,11 +218,11 @@
         "valueIfNotAvailable": "n/a"
       },
       {
-        "name": "Research Focus Area",
+        "name": "HEAL Research Focus Area",
         "field": "research_focus_area",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
-      },      
+      },
       {
         "name": "Investigator(s)",
         "field": "investigators_name",
@@ -229,210 +238,412 @@
       "includeIfNotAvailable": true,
       "valueIfNotAvailable": "No summary has been provided for this study."
     },
-    "studyPageFields": {
-      "header": {
-        "field": "project_title"
-      },
-      "fieldsToShow": [
+    "detailView": {
+      "headerField": "project_title",
+      "tabs": [
         {
-          "groupName": "HEAL Research Initiatives",
-          "groupWidth": "full",
-          "includeName": false,
-          "fields": [
+          "tabName": "Study",
+          "groups": [
             {
-              "name": "Project Number",
-              "field": "project_number"
+              "header": "Study Description Summary",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "study_description_summary"
+                }
+              ]
             },
             {
-              "name": "Research Focus Area",
-              "field": "research_focus_area"
+              "header": "(Meta)Data Location",
+              "fields": [
+                {
+                  "type": "link",
+                  "label": "Repository URL",
+                  "sourceField": "distributor_repository_url"
+                }
+              ]
             },
             {
-              "name": "Research Program",
-              "field": "research_program"
+              "header": "HEAL Research Initiatives",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Project Number",
+                  "sourceField": "project_number",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Research Focus Area",
+                  "sourceField": "research_focus_area",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Research Program",
+                  "sourceField": "research_program",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Research Question",
+                  "sourceField": "research_question",
+                  "default": "Not specified"
+                }
+              ]
             },
             {
-              "name": "Research Question",
-              "field": "research_question"
+              "header": "Host Institution",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Institution(s)",
+                  "sourceField": "institutions",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Location",
+                  "sourceField": "location",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Investigator(s)",
+                  "sourceField": "investigators_name",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Administering IC(s)",
+                  "sourceField": "administering_ic",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Year Grant Awarded",
+                  "sourceField": "year_awarded",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Clinical Trial",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Study Type",
+                  "sourceField": "study_type",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Study Name",
+                  "sourceField": "study_name_title",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "Study URL",
+                  "sourceField": "study_url",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Study Description",
+                  "sourceField": "study_description",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Subjects",
+                  "sourceField": "subjects",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Sites",
+                  "sourceField": "sites",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Clinical Trial Link",
+                  "sourceField": "clinical_trial_link",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Protocol Name",
+                  "sourceField": "protocol_name",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset Description",
+                  "sourceField": "dataset_description",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset Category",
+                  "sourceField": "dataset_category",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Study Characteristics",
+              "fields": [
+                {
+                  "type": "tags"
+                }
+              ]
             }
           ]
         },
         {
-          "groupName": "Host Institution",
-          "groupWidth": "full",
-          "includeName": false,
-          "fields": [
+          "tabName": "Datasets",
+          "groups": [
             {
-              "name": "Institution(s)",
-              "field": "institutions"
+              "header": "Data Files",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Dataset 1 - Title",
+                  "sourceField": "dataset_1_title"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 1 - Type",
+                  "sourceField": "dataset_1_type"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 1 - Description",
+                  "sourceField": "dataset_1_description"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 2 - Title",
+                  "sourceField": "dataset_2_title"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 2 - Type",
+                  "sourceField": "dataset_2_type"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 2 - Description",
+                  "sourceField": "dataset_2_description"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 3 - Title",
+                  "sourceField": "dataset_3_title"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 3 - Type",
+                  "sourceField": "dataset_3_type"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 3 - Description",
+                  "sourceField": "dataset_3_description"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 4 - Title",
+                  "sourceField": "dataset_4_title"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 4 - Type",
+                  "sourceField": "dataset_4_type"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 4 - Description",
+                  "sourceField": "dataset_4_description"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 5 - Title",
+                  "sourceField": "dataset_5_title"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 5 - Type",
+                  "sourceField": "dataset_5_type"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset 5 - Description",
+                  "sourceField": "dataset_5_description"
+                }
+              ]
             },
             {
-              "name": "Location",
-              "field": "location"
+              "header": "Datasets",
+              "fields": [
+                {
+                  "type": "textList",
+                  "sourceField": "study_list_of_data_files",
+                  "label": "Study List of Data Files"
+                },
+                {
+                  "type": "textList",
+                  "sourceField": "study_list_of_code_files",
+                  "label": "Study List of Code Files"
+                },
+                {
+                  "type": "textList",
+                  "sourceField": "study_list_of_documentation_files",
+                  "label": "Study List of Documentation Files"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "dataset_category",
+                  "label": "Dataset Category"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "study_data_last_update_date_time",
+                  "label": "Study Data Last Update Date Time"
+                }
+              ]
             },
             {
-              "name": "Investigator(s)",
-              "field": "investigators_name"
+              "header": "Data Availability",
+              "fields": [
+                {
+                  "type": "text",
+                  "sourceField": "data_availability",
+                  "label": "Data Availability"
+                }
+              ]
             },
             {
-              "name": "Administering IC(s)",
-              "field": "administering_ic"
-            },
-            {
-              "name": "Year Grant Awarded",
-              "field": "year_awarded"
+              "header": "Data Details",
+              "fields": [
+                {
+                  "type": "text",
+                  "sourceField": "data_orientation",
+                  "label": "Data Orientation"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "data_genre",
+                  "label": "Data Genre"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "data_source",
+                  "label": "Data Source"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "subject_data_unit_of_collection",
+                  "label": "Subject Data Unit of Collection"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "subject_data_unit_of_analysis",
+                  "label": "Subject Data Unit of Analysis"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "subject_data_unit_of_collection_expected_number",
+                  "label": "Subject Data Unit of Collection Expected Number"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "subject_data_unit_of_analysis_expected_number",
+                  "label": "Subject Data Unit of Analysis Expected Number"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "geographic_data_level_collected",
+                  "label": "Georgraphic Data Level Collected"
+                },
+                {
+                  "type": "text",
+                  "sourceField": "geographic_data_level_available",
+                  "label": "Georgraphic Data Level Available"
+                }
+              ]
             }
           ]
         },
         {
-          "groupName": "Clinical Trial",
-          "groupWidth": "full",
-          "includeName": false,
-          "fields": [
+          "tabName": "Repositories",
+          "groups": [
             {
-              "name": "Study Type",
-              "field": "study_type"
-            },
-            {
-              "name": "Study Name",
-              "field": "study_description_name"
-            },
-            {
-              "name": "Study URL",
-              "field": "study_url",
-              "contentType": "link"
-            },
-            {
-              "name": "Study Description",
-              "field": "study_description"
-            },
-            {
-              "name": "Number of Subjects",
-              "field": "subjects"
-            },
-            {
-              "name": "Number of Sites",
-              "field": "sites"
-            },
-            {
-              "name": "Clinical Trial Link",
-              "field": "clinical_trial_link"
-            },
-            {
-              "name": "Protocol Name",
-              "field": "protocol_name"
-            },
-            {
-              "name": "Dataset Description",
-              "field": "dataset_description"
-            },
-            {
-              "name": "Dataset Category",
-              "field": "dataset_category"
+              "header": "Resources/Repositories",
+              "fields": [
+                {
+                  "label": "Distributor Repository URL",
+                  "sourceField": "distributor_repository_url",
+                  "type": "link"
+                },
+                {
+                  "label": "Repository Study ID",
+                  "sourceField": "repository_study_id",
+                  "type": "text"
+                },
+                {
+                  "label": "Distributory Repository Name",
+                  "sourceField": "distributor_repository_name",
+                  "type": "text"
+                },
+                {
+                  "label": "Repository ID",
+                  "sourceField": "distributor_repository_id",
+                  "type": "text"
+                },
+                {
+                  "type": "tags",
+                  "categories": [
+                    "Commons"
+                  ]
+                }
+              ]
             }
           ]
         },
         {
-          "groupName": "Tags",
-          "includeName": false,
-          "groupWidth": "full",
-          "fields": [
+          "tabName": "Access",
+          "groups": [
             {
-              "name": "Study Characteristics",
-              "field": "tags",
-              "contentType": "tags",
-              "includeIfNotAvailable": false
-            }
-          ]
-        },
-        {
-          "groupWidth": "full",
-          "fields": [
-            {
-              "name": "Summary",
-              "field": "study_description_summary",
-              "contentType": "paragraphs",
-              "includeName": true,
-              "includeIfNotAvailable": true,
-              "valueIfNotAvailable": "No summary has been provided for this study."
-            }
-          ]
-        },
-        {
-          "groupName": "Datasets",
-          "groupWidth": "full",
-          "includeName": false,
-          "fields": [
-            {
-              "name": "Dataset 1 - Title",
-              "field": "dataset_1_title"
+              "fields": [
+                {
+                  "type": "accessDescriptor"
+                }
+              ]
             },
             {
-              "name": "Dataset 1 - Description",
-              "field": "dataset_1_description"
-            },
-            {
-              "name": "Dataset 1 - Type",
-              "field": "dataset_1_type"
-            },
-            {
-              "name": "Dataset 2 - Title",
-              "field": "dataset_2_title"
-            },
-            {
-              "name": "Dataset 2 - Description",
-              "field": "dataset_2_description"
-            },
-            {
-              "name": "Dataset 2 - Type",
-              "field": "dataset_2_type"
-            },
-            {
-              "name": "Dataset 3 - Title",
-              "field": "dataset_3_title"
-            },
-            {
-              "name": "Dataset 3 - Description",
-              "field": "dataset_3_description"
-            },
-            {
-              "name": "Dataset 3 - Type",
-              "field": "dataset_3_type"
-            },
-            {
-              "name": "Dataset 4 - Title",
-              "field": "dataset_4_title"
-            },
-            {
-              "name": "Dataset 4 - Description",
-              "field": "dataset_4_description"
-            },
-            {
-              "name": "Dataset 4 - Type",
-              "field": "dataset_4_type"
-            },
-            {
-              "name": "Dataset 5 - Title",
-              "field": "dataset_5_title"
-            },
-            {
-              "name": "Dataset 5 - Description",
-              "field": "dataset_5_description"
-            },
-            {
-              "name": "Dataset 5 - Type",
-              "field": "dataset_5_type"
+              "header": "Study Access",
+              "fields": [
+                {
+                  "type": "text",
+                  "sourceField": "study_data_requires_access_request",
+                  "label": "Study Data Requires Access Request"
+                }
+              ]
             }
           ]
         }
       ]
     },
-    "tagsDisplayName": "Study Characteristics",
+    "tagsDisplayName": "Study Filters",
+    "tagColumnWidth": "500px",
     "minimalFieldMapping": {
       "authzField": "authz",
       "tagsListFieldName": "tags",
       "dataAvailabilityField": "data_availability",
-      "uid": "project_number"
+      "uid": "_hdp_uid"
     },
     "tagCategories": [
       {
@@ -548,5 +759,60 @@
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
-  "componentToResourceMapping": {}
+  "componentToResourceMapping": {},
+  "stridesPortalURL": "https://healportal.org",
+  "registrationConfigs": {
+    "features": {
+      "studyRegistrationConfig": {
+        "studyRegistrationTrackingField": "registrant_username",
+        "studyRegistrationValidationField": "is_registered",
+        "studyRegistrationAccessCheckField": "registration_authz",
+        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
+        "clinicalTrialFields": [
+          "NCTId",
+          "OfficialTitle",
+          "BriefTitle",
+          "Acronym",
+          "StudyType",
+          "OverallStatus",
+          "StartDate",
+          "StartDateType",
+          "CompletionDate",
+          "CompletionDateType",
+          "IsFDARegulatedDrug",
+          "IsFDARegulatedDevice",
+          "IsPPSD",
+          "BriefSummary",
+          "DetailedDescription",
+          "Condition",
+          "DesignAllocation",
+          "DesignPrimaryPurpose",
+          "Phase",
+          "DesignInterventionModel",
+          "EnrollmentCount",
+          "EnrollmentType",
+          "DesignObservationalModel",
+          "InterventionType",
+          "PrimaryOutcomeMeasure",
+          "SecondaryOutcomeMeasure",
+          "OtherOutcomeMeasure",
+          "Gender",
+          "GenderBased",
+          "MaximumAge",
+          "MinimumAge",
+          "IPDSharing",
+          "IPDSharingTimeFrame",
+          "IPDSharingAccessCriteria",
+          "IPDSharingURL",
+          "SeeAlsoLinkURL",
+          "AvailIPDURL",
+          "AvailIPDId",
+          "AvailIPDComment"
+        ]
+      }
+    },
+    "kayakoConfig": {
+      "kayakoDepartmentId": 21
+    }
+  }
 }

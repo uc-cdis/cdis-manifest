@@ -1,0 +1,156 @@
+{
+  "gaTrackingId": "UA-119127212-21",
+  "argoTemplate": "gwas-test-curation",
+  "graphql": {
+    "boardCounts": [],
+    "chartCounts": [],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "VA Data Commons",
+    "index": {
+      "introduction": {
+        "heading": "VA Data Commons",
+        "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons features GWAS analyses on harmonized data."
+      },
+      "buttons": [],
+      "customHomepageChartConfig": [],
+      "homepageChartNodes": []
+    },
+    "navigation": {
+      "items": [
+        {
+          "icon": "workspace",
+          "link": "/workspace",
+          "color": "#a2a2a2",
+          "name": "Workspace"
+        },
+        {
+          "icon": "analysis",
+          "link": "/analysis",
+          "color": "#a2a2a2",
+          "name": "Apps"
+        },
+        {
+          "icon": "profile",
+          "link": "/identity",
+          "color": "#a2a2a2",
+          "name": "Profile"
+        }
+      ]
+    },
+      "topBar": {
+        "items": [
+          {
+            "link": "https://va-testing.data-commons.org/dashboard/Public/documentation/index.html",
+            "name": "Help and Guidance"
+          },
+          {
+            "link": "support@datacommons.io",
+            "name": "Email Support"
+          }
+        ],
+        "useProfileDropdown": false
+      },
+    "login": {
+      "title": "VA Data Commons",
+      "subTitle": "search, compare, and analyze data",
+      "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "email": "support@datacommons.io"
+    },
+    "systemUse" : {
+      "systemUseTitle" : "VA systems are intended for Academic and Institutional Users",
+      "systemUseText" : ["VA systems are intended to be used by authorized VA network users for viewing and retrieving information; except as otherwise authorized for official business and limited personal use under VA policy. Information from this system resides on and transmits through computer systems and networks funded by VA. Access or use constitutes understanding and acceptance that there is no reasonable expectation of privacy in the use of Government networks or systems. Access or use of this system constitutes user understanding and acceptance of these terms and constitutes unconditional consent to review and action includes but is not limited to: monitoring; recording; copying; auditing; inspecting; investigating; restricting access; blocking; tracking; disclosing to authorized personnel; or other authorized actions by authorized VA and law enforcement personnel. Unauthorized user attempts or acts to (1) access; upload; download; change; or delete information on this system; (2) modify this system; (3) deny access to this system; (4) accrue resources for unauthorized use; or (5) otherwise misuse this system are strictly prohibited. Such attempts or acts are subject to action that result in criminal; civil; or administrative penalties."],
+      "displayUseMsg": "cookie"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      },
+      {
+        "src": "/custom/sponsors/gitops-sponsors/OCC.png",
+        "href": "https://occ-data.org/",
+        "alt": "Open Commons Consortium"
+      }
+    ]
+  },
+  "featureFlags": {
+    "explorer": true,
+    "analysis": true
+  },
+  "analysisTools": [
+    {
+      "title": "OHDSI Atlas",
+      "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
+      "applicationUrl": "https://atlas.va-testing.data-commons.org/atlas/",
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
+    },
+    "GWASUIApp",
+    "GWASResults"
+  ],
+  "arrangerConfig": {
+    "charts": {
+      "node_id": {
+        "chartType": "count",
+        "title": "Demographics"
+      },
+      "Gender":{
+        "chartType": "bar",
+        "title": "Gender"
+      },
+      "Race":{
+        "chartType": "pie",
+        "title": "Race"
+      },
+      "Ethnicity":{
+        "chartType": "bar",
+        "title": "Ethnicity"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Demographic",
+          "fields":[
+            "Gender",
+            "Race",
+            "Ethnicity"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "buttons": [
+        {
+          "enabled": false,
+          "type": "data",
+          "title": "Download Clinical",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "clinical.json"
+        },
+        {
+          "enabled": false,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json"
+        }
+      ]
+    },
+    "projectId": "search",
+    "graphqlField": "demographic",
+    "index": ""
+  },
+  "showArboristAuthzOnProfile": false,
+  "showFenceAuthzOnProfile": false
+}

@@ -1,7 +1,41 @@
 /* Discovery page specs */
 .discovery-header__stat-number {
     font-size: 40px;
+    color: #99286B;
     line-height: 50px;
+}
+
+.discovery-search {
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-modal__close-button {
+  color: rgb(139, 51, 105);
+}
+
+.discovery-adv-filter-button {
+  color: rgb(139, 51, 105);
+}
+
+.discovery-action-bar-button {
+  color: rgb(139, 51, 105);
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-action-bar-button:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: var(--primary-color);
+}
+
+.discovery-header__dropdown-tags-control-button  {
+  color: rgb(139, 51, 105);
+  border-color: rgb(139, 51, 105);
+}
+
+.discovery-modal__attribute {
+  background-color: #dfe3e2;
+  border-radius: 4px;
 }
 
 .ant-table-thead {

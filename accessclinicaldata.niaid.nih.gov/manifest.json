@@ -6,27 +6,27 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.04",
-    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.04",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2022.10",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2022.10",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.04",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.04",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.04",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.04",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.04",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.04",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.04",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:3.22.1",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.6.9",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2022.10",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2022.10",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2022.10",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2022.10",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2022.10",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2022.10",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.10",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.10",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.10",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.04",
-    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2022.04",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.04",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.04",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.10",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2022.10",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.10",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.10",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.04",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.04",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.04"
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.10",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2022.10",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2022.10"
   },
   "arborist": {
     "deployment_version": "2"
@@ -37,8 +37,8 @@
   "global": {
     "environment": "niaiddata",
     "hostname": "accessclinicaldata.niaid.nih.gov",
-    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/61c84d3f-f5bb-4bb4-a90b-8b50216580ee",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.5.2/schema.json",
+    "revproxy_arn": "arn:aws:iam::636151780898:server-certificate/accessclinical-2023",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.5.3/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
     "logs_bucket": "kube-niaiddata-gen3",
@@ -48,11 +48,12 @@
     "tier_access_level": "private",
     "public_datasets": true,
     "dispatcher_job_num": "10",
-    "maintenance_mode": "off"
+    "maintenance_mode": "off",
+    "dd_enabled": true
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:2022.04"
+      "indexing": "quay.io/cdis/indexs3client:2022.10"
     }
   },
   "canary": {

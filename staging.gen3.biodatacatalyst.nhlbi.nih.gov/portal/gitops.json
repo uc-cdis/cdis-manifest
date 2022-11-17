@@ -247,9 +247,6 @@
             "ethnicity",
             "hispanic_subgroup",
             "subcohort",
-            "weight_baseline",
-            "bmi_baseline",
-            "height_baseline",
             "current_smoker_baseline",
             "ever_smoker_baseline"
           ]
@@ -257,37 +254,13 @@
         {
           "title": "Harmonized Variables",
           "fields": [
-            "total_cholesterol",
-            "hdl",
-            "ldl",
-            "triglycerides",
             "fasting_lipids",
             "lipid_lowering_medication",
-            "cac_score",
-            "cac_volume",
             "carotid_plaque",
             "carotid_stenosis",
-            "cimt_1",
-            "cimt_2",
             "antihypertensive_meds",
             "vte_case_status",
-            "vte_followup_start_age",
-            "vte_prior_history",
-            "basophil_ncnc_bld",
-            "eosinophil_ncnc_bld",
-            "hematocrit_vfr_bld",
-            "hemoglobin_mcnc_bld",
-            "lymphocyte_ncnc_bld",
-            "mch_entmass_rbc",
-            "mchc_mcnc_rbc",
-            "mcv_entvol_rbc",
-            "monocyte_ncnc_bld",
-            "neutrophil_ncnc_bld",
-            "platelet_ncnc_bld",
-            "pmv_entvol_bld",
-            "rbc_ncnc_bld",
-            "rdw_ratio_rbc",
-            "wbc_ncnc_bld"
+            "vte_prior_history"
           ]
         }
       ]
@@ -529,7 +502,8 @@
     "terraTemplate": [
       "bdc",
       "gen3"
-    ]
+    ],
+    "sevenBridgesExportURL": null
   },
   "fileExplorerConfig": {
     "charts": {

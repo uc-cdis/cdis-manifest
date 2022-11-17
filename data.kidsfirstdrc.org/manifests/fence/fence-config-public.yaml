@@ -54,9 +54,6 @@ ACCESS_TOKEN_EXPIRES_IN: 1200
 # The number of seconds after a refresh token is issued until it expires.
 REFRESH_TOKEN_EXPIRES_IN: 2592000
 
-# The number of seconds after which a browser session is considered stale.
-SESSION_TIMEOUT: 1800
-
 # The maximum session lifetime in seconds.
 SESSION_LIFETIME: 28800
 
@@ -137,6 +134,90 @@ S3_BUCKETS:
     cred: 'gen3strides'
     region: 'us-east-1'
   'kf-strides-seq-data-.*':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-15a2mqq9':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-46sk55a3':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-54g4wg4r':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-7nq9151j':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-7spqtt8m':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-aq9kvn5p':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-bhjxbdqk':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-dypmehhf':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-gpzg67fz':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-j1e7e7ye':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-jk4z4t6v':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-p06se5c4':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-p3a9dchj':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-p445achv':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-pet7q6f2':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-preasa7s':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-q2f7xa29':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-qbg7p5p7':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-r0eprsgs':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-rm8afw0r':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-vttshwv4':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-w0v965xz':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-w6fwtd8a':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-x8vk5yht':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-ygva0e1c':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-z6mwd3h0':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-zam36hkm':
+    cred: 'gen3strides'
+    region: 'us-east-1'
+  'kf-strides-study-us-east-1-prd-sd-zfgdg5ys':
     cred: 'gen3strides'
     region: 'us-east-1'
 

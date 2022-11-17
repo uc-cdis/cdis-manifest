@@ -1,0 +1,95 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "arborist": "quay.io/cdis/arborist:2022.06",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
+    "dashboard": "quay.io/cdis/gen3-statics:2022.06",
+    "fence": "quay.io/cdis/fence:2022.06",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "hatchery": "quay.io/cdis/hatchery:1.1.0",
+    "indexd": "quay.io/cdis/indexd:2022.06",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
+    "manifestservice": "quay.io/cdis/manifestservice:2022.06",
+    "metadata": "quay.io/cdis/metadata-service:BRH-1.0.0",
+    "peregrine": "quay.io/cdis/peregrine:2022.06",
+    "pidgin": "quay.io/cdis/pidgin:2022.06",
+    "portal": "quay.io/cdis/data-portal:5.0.0",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:1.7.1",
+    "revproxy": "quay.io/cdis/nginx:2022.06",
+    "sheepdog": "quay.io/cdis/sheepdog:2022.06",
+    "wts": "quay.io/cdis/workspace-token-service:0.4.1"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "global": {
+    "environment": "brhstaging",
+    "hostname": "brhstaging.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:885078588865:certificate/930ddba3-1e49-4194-8bb8-4ff970dd45a0",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
+    "dispatcher_job_num": "10",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube_bucket.devplanetv1.gen3",
+    "logs_bucket": "logs-devplanetv1-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/brh/user.yaml",
+    "tier_access_level": "regular",
+    "tier_access_limit": 50,
+    "public_datasets": true,
+    "netpolicy": "on"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "brhstaging"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "ecosystem"
+  },
+  "canary": {
+    "default": 0
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1,
+      "targetCpu": 40
+    }
+  }
+}
