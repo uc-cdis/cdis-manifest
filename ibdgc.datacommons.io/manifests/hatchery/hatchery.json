@@ -32,7 +32,7 @@
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
       "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
       "env": {
-        "FRAME_ANCESTORS": "https://healdata.org"
+        "FRAME_ANCESTORS": "https://ibdgc.datacommons.io"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
