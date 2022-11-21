@@ -6,21 +6,12 @@
         "graphql": "_participant_count",
         "name": "Participant",
         "plural": "Participants"
-      },
-      {
-        "graphql": "_sample_count",
-        "name": "Sample",
-        "plural": "Samples"
       }
     ],
     "chartCounts": [
       {
         "graphql": "_participant_count",
         "name": "Participant"
-      },
-      {
-        "graphql": "_sample_count",
-        "name": "Sample"
       }
     ],
     "projectDetails": "boardCounts"
@@ -67,15 +58,29 @@
         {
           "node": "participant",
           "name": "Participants"
-        },
-        {
-          "node": "sample",
-          "name": "Samples"
         }
       ]
     },
+    "systemUse": {
+      "systemUseTitle" : "IBDGC Data Commons Terms of Use",
+      "systemUseText" : [
+        "The following terms and conditions apply to all data accessed through the IBDGC Data Commons:",
+        "1. Any attempt to re-identify or contact individual study participants for any reason, including for obtaining or linking additional information for analytic purposes, is strictly forbidden.",
+        "2. Data users alone are responsible for obtaining IRB approval from their local institution for their activities, if necessary, prior to accessing the data; in most cases, this should be available via an expedited request. Data users are also responsible for complying with any other governmental or institutional requirements that may pertain to their possession or use of the data.",
+        "3. Use of these data in publications or presentations must acknowledge the source of the data. A suggested acknowledgement is provided along with the data product and is also available on the IBDGC website (https://ibdgc.org, for IBDGC data) or IIBDGC website (https://www.ibdgenetics.org/, for IIBDGC data).",
+        "4. Redistribution of the data by posting them on a website or submitting them to a data or code repository is not permitted. Users wishing to share their work so that others may reproduce it should post their code only to a code repository (e.g., GitHub) and include instructions for accessing or requesting access to the data directly from the IBDGC Data Commons or DCC, making sure to include information on the version of the data product used in the analysis. Redistribution may be permitted in certain cases (e.g., including summary statistics as part of a larger collection or reference dataset); please contact the DCC for permission.",
+        "5. Your authorization credentials (e.g., your username and password or API key) are for your use only and must not be shared with others for the purpose of accessing data.",
+        "6. All data are provided as-is and without any assurances either explicit or implied. Neither the IBDGC nor the IIBDGC assumes any responsibility for results obtained from the data.",
+        "7. You are strongly encouraged to notify the DCC after a paper using the data has been accepted for publication, so that it may be added to the list of publications that have used the data.",
+        "By clicking Accept below, I hereby certify that:",
+        "a. I have read and understand all of the terms and conditions above and agree to abide by them, as well as any other terms and conditions that may apply to specific datasets as described in a separate, written Data Use Agreement (DUA).",
+        "b. I understand that unless explicitly prohibited, I may make these data available to individuals working directly under my supervision, and if I do it is my responsibility to make sure that they adhere to these terms and conditions at all times.",
+        "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges."],
+      "displayUseMsg": "cookie",
+      "expireUseMsgDays" : 7
+    },
     "navigation": {
-      "title": "NIDDK IBD Genetics Consortium Data Commons",
+      "title": "IBDGC Data Commons",
       "items": [
         {
           "icon": "dictionary",
