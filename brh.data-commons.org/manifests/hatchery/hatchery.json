@@ -2,6 +2,10 @@
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "prisma": {
+    "enable": true,
+    "console-address": "https://us-west1.cloud.twistlock.com/gov-3229443"
+  },
   "default-pay-model": {
     "account_id": "354484406138",
     "workspace_type": "brhworkspaces",
