@@ -37,8 +37,8 @@
   "containers": [
     {
       "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "2Gi",
+      "cpu-limit": "8.0",
+      "memory-limit": "32Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
       "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
       "env": {
@@ -72,10 +72,10 @@
     },
     {
       "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "4Gi",
+      "cpu-limit": "8.0",
+      "memory-limit": "32Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__d7e3cdca922bc972267513eedfe6ee041de9bd7f",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__ed3f026bf5611f2e1d5fe43453df790d7a3a7545",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
