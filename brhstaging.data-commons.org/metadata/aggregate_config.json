@@ -304,7 +304,27 @@
        				"__manifest": "path:__manifest",
         			"study_description": "path:study_description"
       			}
-    		}
+    	},
+		"CRDC Integrated Canine Data Commons": {
+			"mds_url": "https://caninecommons.cancer.gov/v1/graphql/",
+			"commons_url": "https://caninecommons.cancer.gov/",
+			"adapter": "icdc",
+			"filters": {},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "/open",
+				"tags": [],
+				"_unique_id": "path:accession_id",
+				"study_id": "path:clinical_study_designation",
+				"study_description": "",
+				"full_name": "path:clinical_study_name",
+				"short_name": "N/A",
+				"commons": "CRDC Integrated Canine Data Commons",
+				"study_url": "N/A",
+				"_subjects_count" : {"path":"numberOfCases", "default" : 0 },			
+				"commons_url" : "https://caninecommons.cancer.gov/"		
+			}
+		}
 
 	}
 }
