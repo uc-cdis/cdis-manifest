@@ -1,4 +1,4 @@
-# Core Gen3 Release 2022.12
+# Core Gen3 Release 2022.12 (Kyanite)
 
 ## uc-cdis/arborist
 
