@@ -1,5 +1,9 @@
 {
   "user-namespace": "jupyter-pods-brhstaging",
+  "prisma": {
+    "enable": true,
+    "console-address": "https://us-west1.cloud.twistlock.com/gov-3229443"
+  },
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "default-pay-model": {
@@ -36,7 +40,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:1.0.2",
+      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
@@ -71,7 +75,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "4Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__2cfc3bca469a1ec190094572e7c04ac78976db13", 
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__ed3f026bf5611f2e1d5fe43453df790d7a3a7545",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },

@@ -1,62 +1,4 @@
 mappings:
-  - name: midrc_dataset
-    doc_type: dataset
-    type: aggregator
-    root: dataset
-    props:
-      - name: project_id
-      - name: submitter_id
-      - name: data_contributor
-      - name: data_description
-      - name: data_url_doi
-      - name: research_description
-      - name: license
-      - name: publication_citation
-      - name: data_citation
-    aggregated_props:
-      - name: _imaging_study_id
-        path: cases.imaging_studies
-        src: id
-        fn: min
-      - name: _cases_count
-        path: cases
-        fn: count
-      - name: _imaging_studies_count
-        path: cases.imaging_studies
-        fn: count
-      - name: _ct_series_file_count
-        path: cases.imaging_studies.ct_series_files
-        fn: count
-      - name: _cr_series_file_count
-        path: cases.imaging_studies.cr_series_files
-        fn: count
-      - name: _dx_series_file_count
-        path: cases.imaging_studies.dx_series_files
-        fn: count
-      - name: _mr_series_file_count
-        path: cases.imaging_studies.mr_series_files
-        fn: count
-    joining_props:
-      - index: imaging_data_file
-        join_on: _dataset_id
-        props:
-          - name: object_id
-            src: object_id
-            fn: set
-          - name: file_name
-            src: file_name
-            fn: set
-          - name: data_format
-            src: data_format
-            fn: set
-          - name: data_type
-            src: data_type
-            fn: set
-          - name: data_category
-            src: data_category
-            fn: set
-    parent_props:
-      - path: projects[project_code:code,project_name:name,project_investigator_affiliation:investigator_affiliation]
   - name: midrc_case
     doc_type: case
     type: aggregator
@@ -96,9 +38,6 @@ mappings:
           - name: object_id
             src: object_id
             fn: set
-          - name: file_name
-            src: file_name
-            fn: set
           - name: data_format
             src: data_format
             fn: set
@@ -108,6 +47,18 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
+  - name: midrc_measurement
+    doc_type: measurement
+    type: aggregator
+    root: measurement
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: case_ids
+      - name: test_days_from_index
+      - name: test_method
+      - name: test_name
+      - name: test_result_text
   - name: midrc_imaging_study
     doc_type: imaging_study
     type: aggregator
@@ -121,6 +72,11 @@ mappings:
       - name: days_from_study_to_neg_covid_test
       - name: days_from_study_to_pos_covid_test
       - name: days_to_study
+      - name: loinc_code
+      - name: loinc_contrast
+      - name: loinc_long_common_name
+      - name: loinc_method
+      - name: loinc_system
       - name: study_description
       - name: study_location
       - name: study_modality
@@ -148,9 +104,6 @@ mappings:
         props:
           - name: object_id
             src: object_id
-            fn: set
-          - name: file_name
-            src: file_name
             fn: set
           - name: data_format
             src: data_format
@@ -222,9 +175,6 @@ mappings:
           - name: race
             src: race
             fn: set
-          - name: ethnicity
-            src: ethnicity
-            fn: set
           - name: sex
             src: sex
             fn: set
@@ -250,9 +200,6 @@ mappings:
             fn: set
           - name: days_to_study
             src: days_to_study
-            fn: set
-          - name: midrc_harmonized_study_description
-            src: midrc_harmonized_study_description
             fn: set
           - name: study_description
             src: study_description

@@ -42,16 +42,28 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
     "resources": [
       {
-        "title": "MIDRC Open-R1 Clinical Data Analysis",
-        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
-        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
-        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+        "title": "Cohort Selection Using Temporal COVID-19 Test Data",
+        "description": "This tutorial demonstrates how to use the MIDRC data commons' APIs to access imaging study and COVID-19 test data, how to use temporal properties in those data to select a cohort of COVID-19 positive imaging studies, and how to access those image files using the Gen3 SDK.",
+        "imageUrl": "/dashboard/Public/notebooks/Cohort_selection_Using_MIDRC_Temporal_COVID_Test_Data.png",
+        "link": "/dashboard/Public/notebooks/Cohort_selection_Using_MIDRC_Temporal_COVID_Test_Data.html"
       },
       {
-        "title": "Query and Access MIDRC Data",
-        "description": "This notebook is intended to demonstrate a variety of ways to access file objects and structured data, also known as metadata, in the MIDRC Data Commons.",
-        "imageUrl": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.png",
-        "link": "/dashboard/Public/notebooks/Query_and_Access_MIDRC_Data.html"
+        "title": "Querying and Accessing MIDRC Data",
+        "description": "This notebook is intended to demonstrate a variety of ways to access file objects and structured data, also known as metadata, in the MIDRC Data Commons using MIDRC APIs.",
+        "imageUrl": "/dashboard/Public/notebooks/Querying_and_Accessing_MIDRC_Data.png",
+        "link": "/dashboard/Public/notebooks/Querying_and_Accessing_MIDRC_Data.html"
+      },
+      {
+        "title": "Exploring MIDRC CT Scans",
+        "description": "In this demo we will review how to import MIDRC imaging data, how to convert CT scan images from dicom (dcm) formats to png and jpeg formats, and how to view these CT scan images. This demo will also show how to extract file and patient metadata from the header of dicom (dcm) files.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_CT_Scan.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_CT_Scan.html"
+      },
+      {
+        "title": "MIDRC Open-R1 Clinical Data Analysis",
+        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
       }
     ]
   },
@@ -86,7 +98,7 @@
     "index": {
       "introduction": {
         "heading": "MIDRC Data Commons",
-        "text": "The Medical Imaging & Data Resource Center (MIDRC) Data Commons supports the management, analysis and sharing of medical imaging data for the improvement of patient outcomes.",
+        "text": "The Medical Imaging & Data Resource Center (MIDRC) Data Commons supports the management, analysis and sharing of medical imaging data for the improvement of patient outcomes.\nThe data in MIDRC are open access in order to foster machine learning innovation through data sharing and include in addition to imaging files, patient demographic data, COVID-19 test results and other clinical data, harmonized study descriptions utilizing the LOINC playbook, and image DICOM tags for purposes of data filtering and selecting cohorts for analysis.",
         "link": "/submission"
       },
       "buttons": [
@@ -234,12 +246,16 @@
           "name": "About"
         },
         {
-          "link": "https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf",
-          "name": "Quick Start Guide"
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "name": "Get Started"
+        },
+        {
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
+          "name": "Data Use Agreement"
         },
         {
           "link": "https://gen3.org/resources/user/",
-          "name": "Documentation"
+          "name": "Gen3"
         },
         {
           "link": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html",
@@ -439,6 +455,106 @@
       }
     },
     {
+      "tabTitle": "Measurements",
+      "charts": {
+        "test_method": {
+          "chartType": "fullPie",
+          "title": "Test Method"
+        },
+        "test_result_text": {
+          "chartType": "fullPie",
+          "title": "COVID-19 Test Result"
+        },
+        "test_name": {
+          "chartType": "fullPie",
+          "title": "Test Name"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "COVID-19 Tests",
+            "fields": [
+              "test_method",
+              "test_result_text",
+              "test_name",
+              "test_days_from_index",
+              "project_id"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "case_ids",
+          "test_method",
+          "test_result_text",
+          "test_name",
+          "test_days_from_index",
+          "submitter_id",
+          "project_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Measurements Metadata Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Measurements_table.csv"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "measurement",
+        "nodeCountTitle": "Measurements",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Measurement ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Case ID"
+          }
+        ],
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
       "tabTitle": "Imaging Studies",
       "charts": {
         "study_modality": {
@@ -462,7 +578,19 @@
               "study_year_shifted",
               "body_part_examined",
               "study_location",
+              "days_from_study_to_pos_covid_test",
+              "days_from_study_to_neg_covid_test",
               "project_id"
+            ]
+          },
+          {
+            "title": "LOINC Properties",
+            "fields": [
+              "loinc_long_common_name",
+              "loinc_method",
+              "loinc_system",
+              "loinc_contrast",
+              "loinc_code"
             ]
           },
           {
@@ -498,6 +626,13 @@
           "days_to_study",
           "study_year",
           "study_year_shifted",
+          "loinc_long_common_name",
+          "loinc_method",
+          "loinc_system",
+          "loinc_contrast",
+          "loinc_code",
+          "days_from_study_to_pos_covid_test",
+          "days_from_study_to_neg_covid_test",
           "data_format",
           "covid19_positive",
           "age_at_index",
@@ -515,7 +650,6 @@
           "data_type",
           "study_uid",
           "case_ids",
-          "file_name",
           "object_id",
           "project_id"
         ],
@@ -605,6 +739,26 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "loinc_long_common_name",
+            "name": "Long Common Name (Study description)"
+          },
+          {
+            "field": "loinc_contrast",
+            "name": "Contrast"
+          },
+          {
+            "field": "loinc_code",
+            "name": "LOINC Code"
+          },
+          {
+            "field": "loinc_method",
+            "name": "Method (Modality)"
+          },
+          {
+            "field": "loinc_system",
+            "name": "System (Body region)"
           }
         ],
         "manifestMapping": {
@@ -732,7 +886,6 @@
           "series_uid",
           "study_uid",
           "case_ids",
-          "file_name",
           "object_id",
           "project_id"
         ],

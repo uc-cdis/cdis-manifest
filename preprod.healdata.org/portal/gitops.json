@@ -95,7 +95,8 @@
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
-    "studyRegistration": true
+    "studyRegistration": true,
+    "workspaceRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -155,6 +156,7 @@
             "project_title",
             "project_number",
             "appl_id",
+            "_hdp_uid",
             "dataset_1_title",
             "dataset_2_title",
             "dataset_3_title",
@@ -176,19 +178,39 @@
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
       {
         "name": "Studies",
-        "field": "project_number",
+        "field": "_hdp_uid",
         "type": "count"
       }
     ],
     "tagSelector": {
       "showTagCategoryNames": true
     },
+    "studies": [],
     "studyColumns": [
       {
         "name": "Project Title",
@@ -622,7 +644,7 @@
       "authzField": "authz",
       "tagsListFieldName": "tags",
       "dataAvailabilityField": "data_availability",
-      "uid": "project_number"
+      "uid": "_hdp_uid"
     },
     "tagCategories": [
       {
@@ -678,12 +700,6 @@
         "display": false
       }
     ]
-  },
-  "studyRegistrationConfig": {
-    "studyRegistrationTrackingField": "registrant_username",
-    "studyRegistrationValidationField": "is_registered",
-    "studyRegistrationAccessCheckField": "registration_authz",
-    "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards"
   },
   "resourceBrowser": {
     "title": "Static HEAL Jupyter Notebooks",
@@ -745,5 +761,67 @@
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {},
-  "stridesPortalURL": "https://healportal.org"
+  "stridesPortalURL": "https://healportal.org",
+  "registrationConfigs": {
+    "features": {
+      "studyRegistrationConfig": {
+        "studyRegistrationTrackingField": "registrant_username",
+        "studyRegistrationValidationField": "is_registered",
+        "studyRegistrationAccessCheckField": "registration_authz",
+        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
+        "clinicalTrialFields": [
+          "NCTId",
+          "OfficialTitle",
+          "BriefTitle",
+          "Acronym",
+          "StudyType",
+          "OverallStatus",
+          "StartDate",
+          "StartDateType",
+          "CompletionDate",
+          "CompletionDateType",
+          "IsFDARegulatedDrug",
+          "IsFDARegulatedDevice",
+          "IsPPSD",
+          "BriefSummary",
+          "DetailedDescription",
+          "Condition",
+          "DesignAllocation",
+          "DesignPrimaryPurpose",
+          "Phase",
+          "DesignInterventionModel",
+          "EnrollmentCount",
+          "EnrollmentType",
+          "DesignObservationalModel",
+          "InterventionType",
+          "PrimaryOutcomeMeasure",
+          "SecondaryOutcomeMeasure",
+          "OtherOutcomeMeasure",
+          "Gender",
+          "GenderBased",
+          "MaximumAge",
+          "MinimumAge",
+          "IPDSharing",
+          "IPDSharingTimeFrame",
+          "IPDSharingAccessCriteria",
+          "IPDSharingURL",
+          "SeeAlsoLinkURL",
+          "AvailIPDURL",
+          "AvailIPDId",
+          "AvailIPDComment"
+        ]
+      },
+      "workspaceRegistrationConfig" : {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The HEAL workspace provides a standardized computational environment for accessing and analyzing data from HEAL studies. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect" : {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
+      }
+    },
+    "kayakoConfig": {
+      "kayakoDepartmentId": 21
+    }
+  }
 }

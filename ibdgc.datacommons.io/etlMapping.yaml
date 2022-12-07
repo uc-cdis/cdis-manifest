@@ -73,6 +73,7 @@ mappings:
     type: aggregator
     root: project
     props:
+      - name: code
       - name: name
       - name: title
       - name: brief_summary

@@ -17,10 +17,11 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "JCOIN Portal",
+    "appName": "JCOIN Data Commons",
     "index": {
       "introduction": {
         "heading": "JCOIN Data Commons",
+        "text": "The JCOIN Data Commons provides the management, analysis, and sharing of JCOIN data to support the JCOIN research community, goals, and vision.",
         "link": "/submission"
       },
       "buttons": [
@@ -61,6 +62,10 @@
         {
           "node": "time_point",
           "name": "Total Time Points"
+        },
+        {
+          "node": "enrollment",
+          "name": "Total Enrolled"
         }
       ]
     },
@@ -82,18 +87,13 @@
           "icon": "files",
           "link": "/files",
           "color": "#a2a2a2",
-          "name": "Files"
+          "name": "Datasets"
         },
         {
           "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
           "name": "Query"
-        },
-        {
-          "name": "Notebook Browser",
-          "link": "/resource-browser",
-          "icon": "analysis"
         },
         {
           "icon": "workspace",
@@ -123,8 +123,8 @@
       ]
     },
     "login": {
-      "title": "JCOIN Portal",
-      "subTitle": "Explore, Analyze, and Share Data",
+      "title": "JCOIN Data Commons",
+      "subTitle": "The JCOIN Data Commons provides the management, analysis, and sharing of JCOIN data to support the JCOIN research community, goals, and vision.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/bg"
@@ -163,17 +163,17 @@
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various external sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
     "resources": [
-        {
+      {
         "title": "JCOIN MOUD Accessibility Analysis",
         "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
         "imageUrl": "/dashboard/Public/notebooks/jcoin_moud_analysis.png",
         "link": "/dashboard/Public/notebooks/JCOIN-MOUD_accessibility_analysis_02092022.html"
-        }
-      ]
-    },
+      }
+    ]
+  },
   "explorerConfig": [
     {
-      "tabTitle": "Quarterly Report",
+      "tabTitle": "Participants (Staff and Clients)",
       "charts": {
         "gender": {
           "chartType": "fullPie",
@@ -198,8 +198,14 @@
             "title": "Hubs",
             "fields": [
               "project_name",
-              "protocol",
-              "role_in_project"
+              "protocol"
+            ]
+          },
+          {
+            "title": "Participant",
+            "fields": [
+              "role_in_project",
+              "current_client_status"
             ]
           },
           {
@@ -207,7 +213,7 @@
             "fields": [
               "quarter_recruited"
             ]
-          }, 
+          },
           {
             "title": "Demographics",
             "fields": [
@@ -227,7 +233,8 @@
           "race",
           "hispanic",
           "role_in_project",
-          "quarter_recruited"
+          "quarter_recruited",
+          "current_client_status"
         ]
       },
       "buttons": [
@@ -249,7 +256,7 @@
       ],
       "guppyConfig": {
         "dataType": "participant",
-        "nodeCountTitle": "Total Enrolled",
+        "nodeCountTitle": "Total Participants",
         "fieldMapping": [
           {
             "field": "project_id",
@@ -297,15 +304,139 @@
       }
     },
     {
-      "tabTitle": "Files",
+      "tabTitle": "Time points (Clients)",
+      "charts": {
+        "visit_type": {
+          "chartType": "fullPie",
+          "title": "Visit Type"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Hub",
+            "fields": [
+              "project_name",
+              "protocol"
+            ]
+          },
+          {
+            "title": "Participant",
+            "fields": [
+              "role_in_project",
+              "quarter_recruited",
+              "current_client_status"
+            ]
+          },
+          {
+            "title": "Time Points",
+            "fields": [
+              "visit_number",
+              "visit_type",
+              "visit_name"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "fields": [
+          "project_name",
+          "protocol"
+        ]
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export Files to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "external-link"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json"
+        },
+        {
+          "enabled": true,
+          "type": "data",
+          "title": "Download Clinical Data",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "clinical-data.json"
+        }
+      ],
+      "guppyConfig": {
+        "dataType": "time_point",
+        "nodeCountTitle": "Number of Time Points",
+        "fieldMapping": [
+          {
+            "field": "protocol",
+            "name": "Hub Study Protocol"
+          },
+          {
+            "field": "protocol_submitter_id",
+            "name": "Hub Study Protocol ID"
+          },
+          {
+            "field": "project_name",
+            "name": "Hub Name"
+          },
+          {
+            "field": "role_in_project",
+            "name": "Client or staff?"
+          },
+          {
+            "field": "quarter_recruited",
+            "name": "Quarter enrolled"
+          },
+          {
+            "field": "visit_name",
+            "name": "Visit Name"
+          },
+          {
+            "field": "visit_number",
+            "name": "Visit Number"
+          },
+          {
+            "field": "visit_type",
+            "name": "Visit Type"
+          },
+          {
+            "field": "hispanic",
+            "name": "Hispanic ethnicity"
+          },
+          {
+            "field": "race",
+            "name": "Race"
+          },
+          {
+            "field": "gender",
+            "name": "Gender identity"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "project_id",
+          "referenceIdFieldInDataIndex": "project_id"
+        }
+      }
+    },
+    {
+      "tabTitle": "Datasets",
       "charts": {
         "data_type": {
           "chartType": "stackedBar",
-          "title": "File Type"
+          "title": "Data Type"
         },
-        "data_format": {
+        "data_category": {
           "chartType": "stackedBar",
-          "title": "File Format"
+          "title": "Data Category"
         }
       },
       "filters": {
@@ -313,8 +444,9 @@
           {
             "title": "File",
             "fields": [
-              "project_id",
+              "project_name",
               "data_type",
+              "data_category",
               "data_format"
             ]
           }
@@ -323,7 +455,7 @@
       "table": {
         "enabled": true,
         "fields": [
-          "project_id",
+          "project_name",
           "file_name",
           "file_size",
           "object_id"
@@ -366,120 +498,6 @@
       "dropdowns": {}
     },
     {
-      "tabTitle": "OEPS",
-      "adminAppliedPreFilters": {
-        "project_id": {
-          "selectedValues": [
-            "JCOIN-OEPS"
-          ]
-        }
-      },
-      "charts": {
-        "data_type": {
-          "chartType": "stackedBar",
-          "title": "File Type"
-        },
-        "data_format": {
-          "chartType": "stackedBar",
-          "title": "File Format"
-        }
-      },
-      "filters": {
-        "tabs": [
-          {
-            "title": "Constructs",
-            "fields": [
-              "cmc_subject",
-              "cmc_title"
-            ]
-          },
-          {
-            "title": "Spatial Scale",
-            "fields": [
-              "data_category"
-            ]
-          },
-          {
-            "title": "Files",
-            "fields": [
-              "data_type"
-            ],
-            "searchFields": [
-              "file_name"
-            ]
-          }
-        ]
-      },
-      "table": {
-        "enabled": true,
-        "fields": [
-          "project_id",
-          "file_name",
-          "file_size",
-          "object_id"
-        ]
-      },
-      "buttons": [
-        {
-          "enabled": true,
-          "type": "export-files-to-workspace",
-          "title": "Export Files to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
-        },
-        {
-          "enabled": true,
-          "type": "file-manifest",
-          "title": "Download File Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "file-manifest.json"
-        }
-      ],
-      "guppyConfig": {
-        "dataType": "file",
-        "fieldMapping": [
-          {
-            "field": "object_id",
-            "name": "GUID"
-          },
-          {
-            "field": "cmc_title",
-            "name": "Variable Construct"
-          },
-          {
-            "field": "cmc_subject",
-            "name": "Theme"
-          },
-          {
-            "field": "data_category",
-            "name": "Spatial Scale"
-          },
-          {
-            "field": "data_type",
-            "name": "Data Type"
-          },
-          {
-            "field": "data_format",
-            "name": "Data Format"
-          }
-        ],
-        "nodeCountTitle": "Files",
-        "manifestMapping": {
-          "resourceIndexType": "participant",
-          "resourceIdField": "participant_id",
-          "referenceIdFieldInResourceIndex": "object_id",
-          "referenceIdFieldInDataIndex": "object_id"
-        },
-        "accessibleFieldCheckList": [
-          "project_id"
-        ],
-        "accessibleValidationField": "project_id",
-        "downloadAccessor": "object_id"
-      },
-      "dropdowns": {}
-    },
-    {
       "tabTitle": "SAEs",
       "charts": {
         "project_id": {
@@ -487,55 +505,55 @@
           "title": "Total Serious Adverse Events"
         },
         "gender": {
-            "chartType": "fullPie",
-            "title": "Gender identity"
+          "chartType": "fullPie",
+          "title": "Gender identity"
+        },
+        "race": {
+          "chartType": "fullPie",
+          "title": "Race"
+        },
+        "hispanic": {
+          "chartType": "fullPie",
+          "title": "Hispanic ethnicity"
+        },
+        "quarter_of_sae": {
+          "chartType": "bar",
+          "title": "Quarter of SAE"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Hubs",
+            "fields": [
+              "project_name",
+              "protocol"
+            ]
           },
-          "race": {
-            "chartType": "fullPie",
-            "title": "Race"
+          {
+            "title": "Quarter of SAE",
+            "fields": [
+              "quarter_of_sae"
+            ]
           },
-          "hispanic": {
-            "chartType": "fullPie",
-            "title": "Hispanic ethnicity"
+          {
+            "title": "Demographics",
+            "fields": [
+              "gender",
+              "race",
+              "hispanic"
+            ]
           },
-          "quarter_recruited": {
-            "chartType": "bar",
-            "title": "Quarter of SAE"
+          {
+            "title": "SAE type",
+            "fields": [
+              "is_related_to_study",
+              "was_expected",
+              "on_opioid_medication"
+            ]
           }
-        },
-        "filters": {
-          "tabs": [
-            {
-              "title": "Hubs",
-              "fields": [
-                "project_name",
-                "protocol"
-              ]
-            },
-            {
-              "title": "Quarter of SAE",
-              "fields": [
-                "quarter_of_sae"
-              ]
-            }, 
-            {
-              "title": "Demographics",
-              "fields": [
-                "gender",
-                "race",
-                "hispanic"
-              ]
-            },
-            {
-              "title": "SAE type",
-              "fields": [
-                "is_related_to_study",
-                "was_expected",
-                "on_opioid_medication"
-              ]
-            }
-          ]
-        },
+        ]
+      },
       "table": {
         "enabled": false,
         "fields": [
@@ -606,7 +624,7 @@
             "name": "Was it expected?"
           },
           {
-            "field":"on_opioid_medication",
+            "field": "on_opioid_medication",
             "name": "On MOUD?"
           }
         ],
