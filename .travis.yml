@@ -53,7 +53,3 @@ script:
 
   # comment on PRs with relevant deployment changes:
   - if [[ $TRAVIS_PULL_REQUEST != false ]]; then gen3utils post-deployment-changes uc-cdis/cdis-manifest $TRAVIS_PULL_REQUEST; fi
-
-env:
-  global:
-    secure: HhImWeXynQB8hPU7CwIV3+737ritkiAfyZunkdbOjubQ69t0kmeoPNfoc56qRmaogFsoEiKeJFbsvHCFTQa8MkV0ZHjVxqzCrf+e+bRaNnlXVUuPScX7I2BBUUDBsBqjd3PA73RWv5Ge6OeNk1IKfFZpH3uPYP2w/xqrQSzVbx5LH7H7yfivyPNdOxis41SakckDDAduHruyvWsjmB2zbEZ8PPM6xGZ2Jrv5zOq5FUoYg1XZt6VnRPwyDzLRWZcjtJi9b2RomtbcQkcIDHrgRB4Q9a0qh1RcAB5ANAPvYpsLHwh76otoKhT2p3OatQ98H7BlFwE4dMJwTxoJnsxsa5mMiT8WVwFuoDl8PYcX6G+BrnId+XnrZ9wczySeOPAB1B0ZD5EHmTDLK5IJ5uf0FLd635zvpGom4h2w1DSrjVUGSSOmx1I6ecnQPYdia1/3kTew6tTMGBzPEHlU4T9wMKnWIZdiYZLMYlm14YVDQcmuf4/c76Je4KZwD+ogF1ZVYlcOLvT9SyYjt48jlQBd6u/4O4v5+3F1HcIuAOD36qXZIE+Ax3sj05LdnqfF024x+FHpCJPgz+D+vLk93Cqnmr9TCSL/uu+n5vLchMGrTrvdRHTqu+mMM8MFxnrbuP8jp4AOVzslDq0VbAx0I+E0wiZlhVwhbxrznRDQJ3EaP3A=
