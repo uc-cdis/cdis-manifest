@@ -307,7 +307,7 @@
     	},
 		"CRDC Integrated Canine Data Commons": {
 			"mds_url": "https://caninecommons.cancer.gov/v1/graphql/",
-			"commons_url": "https://caninecommons.cancer.gov/",
+			"commons_url": "nci-crdc.datacommons.io",
 			"adapter": "icdc",
 			"filters": {},
 			"keep_original_fields": false,
@@ -322,7 +322,7 @@
 				"commons": "CRDC Integrated Canine Data Commons",
 				"study_url": "N/A",
 				"_subjects_count" : {"path":"numberOfCases", "default" : 0 },			
-				"commons_url" : "https://caninecommons.cancer.gov/"		
+				"commons_url" : "nci-crdc.datacommons.io"		
 			}
 		}
 
