@@ -693,6 +693,8 @@
       {
         "name": "Full Name",
         "field": "full_name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "",
         "contentType": "string"
       },
       {
