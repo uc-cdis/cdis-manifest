@@ -17,6 +17,10 @@
             "appl_id": {
                 "type": "string"
             },
+            "investigators_name": {
+                "type": "string",
+                "default": ""
+            },
             "_hdp_uid": {
                 "type": "string"
             },

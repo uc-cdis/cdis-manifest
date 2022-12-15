@@ -95,7 +95,8 @@
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
-    "studyRegistration": true
+    "studyRegistration": true,
+    "workspaceRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -809,6 +810,14 @@
           "AvailIPDId",
           "AvailIPDComment"
         ]
+      },
+      "workspaceRegistrationConfig" : {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The HEAL workspace provides a standardized computational environment for accessing and analyzing data from HEAL studies. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect" : {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
       }
     },
     "kayakoConfig": {
