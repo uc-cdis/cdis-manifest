@@ -650,7 +650,25 @@
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
@@ -676,6 +694,8 @@
       {
         "name": "Full Name",
         "field": "full_name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "",
         "contentType": "string"
       },
       {
