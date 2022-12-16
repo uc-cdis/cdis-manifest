@@ -15,7 +15,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:feat_datamounting",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2022.11",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "brh.data-commons.org"
