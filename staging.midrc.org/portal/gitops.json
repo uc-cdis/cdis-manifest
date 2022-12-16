@@ -301,6 +301,7 @@
     ]
   },
   "featureFlags": {
+    "discovery": true,
     "explorer": true,
     "analysis": true,
     "explorerPublic": true
@@ -968,5 +969,161 @@
         "accessibleValidationField": "project_id"
       }
     }
-  ]
+  ],
+  "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": false,
+        "text": "Dataset Discovery"
+      },
+      "search": {
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Dataset Filters"
+        },
+        "searchBar": {
+          "enabled": true
+        }
+      },
+      "authorization": {
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
+      }
+    },
+    "aggregations": [{
+      "name": "Datasets",
+      "field": "_unique_id",
+      "type": "count"
+    }],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [{
+      "name": "Title",
+      "field": "short_name",
+      "contentType": "string",
+      "width": 200
+    },
+    {
+      "name": "Description",
+      "field": "data_description",
+      "contentType": "string"
+    },
+    {
+      "name": "Publication URL",
+      "field": "data_url",
+      "contentType": "link"
+    },
+    {
+      "name": "Disease Type",
+      "field": "disease_type",
+      "contentType": "string"
+    }
+  ],
+    "studyPreviewField": {
+      "name": "Research Description",
+      "field": "research_description",
+      "contentType": "string",
+      "includeName": true,
+      "includeIfNotAvailable": false
+    },
+    "studyPageFields": {
+      "header": {
+        "field": "short_name"
+      },
+      "downloadLinks": {
+        "field": "data_download_links"
+      },
+      "fieldsToShow": [{
+          "groupName": "Dataset Identifiers",
+          "includeName": true,
+          "fields": [{
+              "name": "Citation",
+              "field": "data_citation",
+              "contentType": "string"
+            },
+            {
+              "name": "Dataset URL",
+              "field": "data_url",
+              "contentType": "link"
+            },
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Data Description",
+              "field": "data_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Disease Type",
+              "field": "disease_type",
+              "contentType": "string"
+            },
+            {
+              "name": "Primary Site",
+              "field": "primary_site",
+              "contentType": "string"
+            },
+            {
+              "name": "Case Count",
+              "field": "cases_count",
+              "contentType": "number"
+            },
+            {
+              "name": "Files Count",
+              "field": "files_count",
+              "contentType": "number"
+            }
+          ]
+        },
+        {
+          "fields": [{
+            "name": "Research Description",
+            "field": "research_description",
+            "contentType": "paragraphs",
+            "includeName": false,
+            "includeIfNotAvailable": false
+          }]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "authzField": "authz",
+      "uid": "_unique_id"
+    },
+    "tagCategories": [
+    {
+        "name": "Disease Type",
+        "displayName": "Disease Type",
+        "color": "#532565",
+        "display": true
+      },
+    {
+        "name": "Primary Site",
+        "displayName": "Primary Site",
+        "color": "#981f32",
+        "display": true
+      }]
+    }
 }
