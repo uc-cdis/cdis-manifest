@@ -716,12 +716,10 @@
       },
       {
         "name": "dbGaP Accession Number",
-        "field": "study_id",
-        "contentType": "link",
-        "sourceField": "dbgap_url"
+        "field": "study_id"
       },
       {
-        "name": "Release State",
+        "name": "Released",
         "field": "release_state",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
@@ -833,7 +831,7 @@
                 },
                 {
                   "type": "text",
-                  "label": "Release State:",
+                  "label": "Released:",
                   "sourceField": "release_state",
                   "default": "Not specified"
                 },
