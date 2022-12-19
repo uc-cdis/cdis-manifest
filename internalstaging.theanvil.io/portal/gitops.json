@@ -47,14 +47,6 @@
           "link": "/explorer",
           "label": "Explore data",
           "color": "#035C94"
-        },
-        {
-          "name": "Analyze Data",
-          "icon": "anvil-analyze",
-          "body": "Analyze your selected subjects using Jupyter Notebooks in our secure cloud environment",
-          "link": "/workspace",
-          "label": "Run analysis",
-          "color": "#035C94"
         }
       ],
       "homepageChartNodes": [
@@ -82,12 +74,6 @@
           "link": "/explorer",
           "color": "#035C94",
           "name": "Exploration"
-        },
-        {
-          "icon": "workspace",
-          "link": "#hostname#workspace/",
-          "color": "#035C94",
-          "name": "Workspace"
         },
         {
           "icon": "profile",
@@ -257,13 +243,6 @@
           "title": "Export to PFB",
           "leftIcon": "datafile",
           "rightIcon": "download"
-        },
-        {
-          "enabled": true,
-          "type": "export-to-workspace",
-          "title": "Export to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
         }
       ],
       "guppyConfig": {
@@ -407,13 +386,6 @@
         },
         {
           "enabled": true,
-          "type": "export-files-to-workspace",
-          "title": "Export to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
-        },
-        {
-          "enabled": true,
           "type": "export-files-to-pfb",
           "title": "Export All to PFB",
           "rightIcon": "external-link",
@@ -492,13 +464,6 @@
           "leftIcon": "datafile",
           "rightIcon": "download",
           "fileName": "file-manifest.json"
-        },
-        {
-          "enabled": true,
-          "type": "export-files-to-workspace",
-          "title": "Export to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
         },
         {
           "enabled": true,
