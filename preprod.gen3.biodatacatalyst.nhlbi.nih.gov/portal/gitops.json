@@ -667,7 +667,7 @@
             "menuText": "Available"
           },
           "unaccessible": {
-            "enabled": false,
+            "enabled": true,
             "menuText": "Not Accessible"
           },
           "pending": {
@@ -705,6 +705,8 @@
       {
         "name": "Full Name",
         "field": "full_name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "",
         "contentType": "string"
       },
       {
