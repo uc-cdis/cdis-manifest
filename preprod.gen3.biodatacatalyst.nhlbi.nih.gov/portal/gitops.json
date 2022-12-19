@@ -651,8 +651,7 @@
       },
       "search": {
         "searchBar": {
-          "enabled": true,
-          "inputSubtitle": "Examples: this, is, a test"
+          "enabled": true
         },
         "tagSearchDropdown": {
           "enabled": true,
@@ -722,7 +721,7 @@
       },
       {
         "name": "Released",
-        "field": "release_state",
+        "field": "released",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       }
@@ -834,7 +833,7 @@
                 {
                   "type": "text",
                   "label": "Released:",
-                  "sourceField": "release_state",
+                  "sourceField": "released",
                   "default": "Not specified"
                 },
                 {
