@@ -283,28 +283,47 @@
 			}
 		},
 		"Tutorial Canine Data Commons": {
-      			"mds_url": "https://caninedc.org/",
-      			"commons_url": "caninedc.org",
-      			"config": {
-        			"guid_type": "discovery_metadata",
-        			"study_field": "gen3_discovery"
-      			},
-      			"adapter": "gen3",
-      			"keep_original_fields": false,
-      			"field_mappings": {
-        			"authz": "path:authz",
-        			"tags": "path:tags",
-        			"short_name": "path:short_name",
-        			"full_name": "path:full_name",
-        			"_subjects_count" : {"path":"subjects", "default" : 0 },
-        			"study_id": "path:project_id",
-        			"_unique_id": "path:project_id",
-        			"commons": "path:commons",
-        			"study_url": {"path":"publications", "default": ""},
-       				"__manifest": "path:__manifest",
-        			"study_description": "path:study_description"
-      			}
-    		}
-
+			"mds_url": "https://caninedc.org/",
+			"commons_url": "caninedc.org",
+			"config": {
+				"guid_type": "discovery_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"adapter": "gen3",
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "path:authz",
+				"tags": "path:tags",
+				"short_name": "path:short_name",
+				"full_name": "path:full_name",
+				"_subjects_count" : {"path":"subjects", "default" : 0 },
+				"study_id": "path:project_id",
+				"_unique_id": "path:project_id",
+				"commons": "path:commons",
+				"study_url": {"path":"publications", "default": ""},
+				"__manifest": "path:__manifest",
+				"study_description": "path:study_description"
+			}
+		},
+		"CRDC Integrated Canine Data Commons": {
+			"mds_url": "https://caninecommons.cancer.gov/v1/graphql/",
+			"commons_url": "nci-crdc.datacommons.io",
+			"adapter": "icdc",
+			"filters": {},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "/open",
+				"tags": [],
+				"_unique_id": "path:accession_id",
+				"study_id": "path:clinical_study_designation",
+				"study_description": "",
+				"full_name": "path:clinical_study_name",
+				"short_name": "N/A",
+				"commons": "CRDC Integrated Canine Data Commons",
+				"study_url": "N/A",
+				"_subjects_count" : {"path":"numberOfCases", "default" : 0 },			
+				"commons_url" : "nci-crdc.datacommons.io"		
+			}
+		}
 	}
 }
