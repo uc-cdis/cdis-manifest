@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.01
+# Core Gen3 Release 2023.01 (Lapis Lazuli)
 
 ## uc-cdis/fence
 
@@ -16,20 +16,7 @@
 
 #### Improvements
   - ensure deletion of expired tokens from the database ([#1050](https://github.com/uc-cdis/fence/pull/1050)) 
-
-## uc-cdis/indexd
-
-#### Breaking Changes
-  - Ensure you are using Fence>=2021.10. Remove deprecated GA4GH access 
-    endpoints. these have existed (and been used) from the Fence microservice 
-    since last year. See cloud automation change 
-    [here](https://github.com/uc-cdis/cloud-automation/blob/f10f04f7957eb2ba179504f7df9d6429f7298835/gen3/bin/kube-setup-revproxy.sh#L78-L79)
-    ([#338](https://github.com/uc-cdis/indexd/pull/338))
-
-#### Improvements
-  - allow passing of fence config for authz mapping to the acl migration script 
-    ([#338](https://github.com/uc-cdis/indexd/pull/338))
-
+  
 ## uc-cdis/pelican
 
 #### Dependency Updates
