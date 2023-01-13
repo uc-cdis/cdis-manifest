@@ -129,32 +129,20 @@
   "guppy": {
     "indices": [
       {
-        "index": "validatestaging_dataset",
+        "index": "validate_dataset",
         "type": "dataset"
       },
       {
-        "index": "validatestaging_case",
+        "index": "validate_case",
         "type": "case"
       },
       {
-        "index": "validatestaging_imaging_data_file",
+        "index": "validate_imaging_data_file",
         "type": "imaging_data_file"
       },
       {
-        "index": "validatestaging_imaging_study",
+        "index": "validate_imaging_study",
         "type": "imaging_study"
-      },
-      {
-        "index": "validatestaging_ct_scan",
-        "type": "ct_scan"
-      },
-      {
-        "index": "validatestaging_radiography_exam",
-        "type": "radiography_exam"
-      },
-      {
-        "index": "validatestaging_mr_exam",
-        "type": "mr_exam"
       }
     ],
     "config_index": "validatestaging_array-config",
