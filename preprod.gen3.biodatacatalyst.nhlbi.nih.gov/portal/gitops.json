@@ -643,13 +643,41 @@
         "enabled": false,
         "text": "Study Discovery"
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "search": {
         "searchBar": {
           "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
@@ -665,7 +693,8 @@
       }
     ],
     "tagSelector": {
-      "title": "Tags by category"
+      "title": "Tags by category",
+      "showTagCategoryNames": true
     },
     "studyColumns": [
       {
@@ -675,6 +704,8 @@
       {
         "name": "Full Name",
         "field": "full_name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "",
         "contentType": "string"
       },
       {
@@ -687,6 +718,12 @@
       {
         "name": "dbGaP Accession Number",
         "field": "study_id"
+      },
+      {
+        "name": "Released",
+        "field": "released",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -749,6 +786,91 @@
               "includeName": false,
               "includeIfNotAvailable": true,
               "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "detailView": {
+      "headerField": "project_id",
+      "tabs": [
+        {
+          "tabName": "Study",
+          "groups": [
+            {
+              "header": "Study Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Full Name:",
+                  "sourceField": "full_name",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Short Name:",
+                  "sourceField": "short_name",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number Of Subjects:",
+                  "sourceField": "_subjects_count",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "dbGaP Accession Number:",
+                  "sourceField": "dbgap_accession",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "dbGaP URL:",
+                  "sourceField": "dbgap_url",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Released:",
+                  "sourceField": "released",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "tags"
+                }
+              ]
+            },
+            {
+              "header": "Study Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "study_description"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tabName": "Access",
+          "groups": [
+            {
+              "fields": [
+                {
+                  "type": "accessDescriptor"
+                }
+              ]
+            },
+            {
+              "header": "Study Access",
+              "fields": [
+                {
+                  "type": "text",
+                  "sourceField": "study_data_requires_access_request",
+                  "label": "Study Data Requires Access Request"
+                }
+              ]
             }
           ]
         }

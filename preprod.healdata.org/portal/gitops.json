@@ -95,28 +95,30 @@
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
-    "studyRegistration": true
+    "studyRegistration": true,
+    "workspaceRegistration": true
   },
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": false,
+        "enabled": true,
         "field": "advSearchFilters",
+        "displayName": "Filters",
         "filters": [
           {
-            "key": "Research Focus Area"
+            "key": "Study Type"
           },
           {
-            "key": "Administering IC(s)"
+            "key": "Data Type"
           },
           {
-            "key": "Simulated vs. Real Data"
+            "key": "Subject Type"
           },
           {
-            "key": "Year Grant Awarded"
+            "key": "Gender"
           },
           {
-            "key": "Study Description"
+            "key": "Age"
           }
         ]
       },
@@ -173,7 +175,7 @@
         },
         "tagSearchDropdown": {
           "enabled": true,
-          "collapsibleButtonText": "Study Filters"
+          "collapsibleButtonText": "Data Repository"
         }
       },
       "authorization": {
@@ -650,53 +652,59 @@
         "name": "Study Setting",
         "displayName": "Study Setting",
         "color": "#532565",
-        "display": true
+        "display": false
       },
       {
         "name": "Subject Characteristics",
         "displayName": "Subject Characteristics",
         "color": "#982568",
-        "display": true
+        "display": false
       },
       {
         "name": "Study Design",
         "displayName": "Study Design",
         "color": "#981f32",
-        "display": true
+        "display": false
       },
       {
         "name": "Intervention/Treatment",
         "displayName": "Intervention/Treatment",
         "color": "#bf362e",
-        "display": true
+        "display": false
       },
       {
         "name": "Pain",
         "color": "#e07c3e",
-        "display": true
+        "display": false
       },
       {
         "name": "Substance Use",
         "displayName": "Substance Use",
         "color": "#532565",
-        "display": true
+        "display": false
       },
       {
         "name": "Data Type",
         "displayName": "Data Type",
         "color": "#982568",
-        "display": true
+        "display": false
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
         "color": "#981f32",
-        "display": true
+        "display": false
       },
       {
         "name": "Other",
         "color": "#bf362e",
         "display": false
+      },
+      {
+        "name": "Data Repository",
+        "displayName": "Data Repository",
+        "color": "#bf362e",
+        "display": true
       }
     ]
   },
@@ -808,7 +816,17 @@
           "AvailIPDURL",
           "AvailIPDId",
           "AvailIPDComment"
-        ]
+        ],
+        "dataDictionarySubmissionBucket": "",
+        "dataDictionarySubmissionDisclaimerField": "Data dictionaries must conform to the HEAL VLMD schema. View more information and VLMD templates <a href=\"https://github.com/HEAL/heal-metadata-schemas\" target=\"_blank\" rel=\"noreferrer\">here</a>. All submitted data dictionaries will be available to public."
+      },
+      "workspaceRegistrationConfig" : {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The HEAL workspace provides a standardized computational environment for accessing and analyzing data from HEAL studies. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect" : {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
       }
     },
     "kayakoConfig": {
