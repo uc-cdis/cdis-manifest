@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-21",
-  "argoTemplate": "gwas-test-curation",
+  "argoTemplate": "gwas-template-uniflow",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -84,7 +84,8 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true
   },
   "analysisTools": [
     {
@@ -94,7 +95,8 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults"
+    "GWASResults",
+    "GWAS++"
   ],
   "arrangerConfig": {
     "charts": {
