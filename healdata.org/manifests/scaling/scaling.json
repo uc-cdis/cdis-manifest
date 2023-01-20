@@ -15,9 +15,8 @@
     "max": 1
   },
   "revproxy": {
-    "strategy": "auto",
-    "min": 1,
-    "max": 1
+    "strategy": "pin",
+    "num": 3
   },
   "sheepdog": {
     "strategy": "pin",
