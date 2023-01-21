@@ -1,0 +1,9 @@
+{
+    "scaling_groups" : {
+        "Devops testing": "workflow"},
+    "internal-s3-bucket": "gen3-argo-205252583234-healprod",
+    "s3-bucket": "argo-artifact-storage-downloadable-healprod",
+    "indexd_admin_user": "fence",
+    "environment": "healpreprod",
+    "pvc": "parallel-test-pvc"
+}
