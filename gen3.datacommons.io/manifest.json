@@ -315,7 +315,9 @@
     "public_datasets": true,
     "tier_access_level": "libre",
     "netpolicy": "on",
-    "dispatcher_job_num": "10"
+    "dispatcher_job_num": "10",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

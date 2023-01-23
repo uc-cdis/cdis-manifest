@@ -141,7 +141,9 @@
     "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/dcfstaging-users/user.yaml",
     "dispatcher_job_num": "10",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
