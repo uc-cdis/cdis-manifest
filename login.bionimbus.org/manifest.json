@@ -20,7 +20,9 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "dev",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/loginbionimbus/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/loginbionimbus/user.yaml",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

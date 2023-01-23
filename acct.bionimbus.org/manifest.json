@@ -48,7 +48,9 @@
     "sync_from_dbgap": "False",
     "dispatcher_job_num": "10",
     "useryaml_s3path": "s3://cdis-gen3-users/accountprod/user.yaml",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "ssjdispatcher": {
     "job_images": {
