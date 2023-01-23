@@ -43,7 +43,9 @@
     "tier_access_level": "libre",
     "tier_access_limit": 50,
     "sync_from_dbgap": "True",
-    "maintenance_mode": "off"
+    "maintenance_mode": "off",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

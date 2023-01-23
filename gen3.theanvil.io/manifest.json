@@ -46,7 +46,9 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "peregrine": {
     "peregrine_timeout": "45"

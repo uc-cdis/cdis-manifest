@@ -163,7 +163,9 @@
     "public_datasets": false,
     "tier_access_level": "private",
     "maintenance_mode": "off",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
