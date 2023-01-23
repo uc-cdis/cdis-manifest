@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MOUD_accessibility_jupyter_notebook_additional_description_wo_toggle</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>MOUD_accessibility_jupyter_notebook_additional_description_wo_toggle</title><script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 
 <style type="text/css">
   pre { line-height: 125%; }
@@ -13092,10 +13092,10 @@ div#notebook {
   function code_toggle() {
     if (code_shown){
       $('div.input').hide('500');
-      $('#toggleButton').val('Show Code')
+      $('#toggleButton').text('Show Code')
     } else {
       $('div.input').show('500');
-      $('#toggleButton').val('Hide Code')
+      $('#toggleButton').text('Hide Code')
     }
     code_shown = !code_shown
   }
@@ -13105,9 +13105,7 @@ div#notebook {
     $('div.input').hide()
   });
 </script>
-<form action="javascript:code_toggle()">
-  <input type="submit" id="toggleButton" value="Show Code">
-</form>
+<button id="toggleButton" onclick="code_toggle()">Show Code</button>
 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
