@@ -328,7 +328,9 @@
     "dispatcher_job_num": "10",
     "sync_from_dbgap": "False",
     "public_datasets": true,
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

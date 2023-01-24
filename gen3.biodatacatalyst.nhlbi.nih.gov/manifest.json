@@ -218,7 +218,9 @@
     "tier_access_limit": 50,
     "dispatcher_job_num": "10",
     "netpolicy": "on",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
