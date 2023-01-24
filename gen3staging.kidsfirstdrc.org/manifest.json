@@ -40,7 +40,9 @@
     "netpolicy": "on",
     "kube_bucket": "kube-skfqa-gen3",
     "logs_bucket": "logs-skfqa-gen3",
-    "maintenance_mode": "off"
+    "maintenance_mode": "off",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

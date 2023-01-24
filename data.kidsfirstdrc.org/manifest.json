@@ -39,7 +39,9 @@
     "netpolicy": "on",
     "slack_send_dbgap": "True",
     "maintenance_mode": "off",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
