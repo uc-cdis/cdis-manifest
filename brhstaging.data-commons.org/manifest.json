@@ -46,7 +46,9 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "public_datasets": true,
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "metadata": {
     "USE_AGG_MDS": true,
