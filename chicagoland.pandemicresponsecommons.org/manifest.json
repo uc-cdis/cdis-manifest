@@ -49,7 +49,9 @@
     "useryaml_s3path": "s3://cdis-gen3-users/covid19/user.yaml",
     "covid19_data_bucket": "s3://opencdn-databucket-gen3",
     "maintenance_mode": "off",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "portal": {
     "GEN3_BUNDLE": "covid19"

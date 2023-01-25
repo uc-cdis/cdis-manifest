@@ -115,7 +115,9 @@
     "GEN3_DEBUG": "False",
     "netpolicy": "on",
     "dispatcher_job_num": "10",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0

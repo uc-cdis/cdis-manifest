@@ -166,7 +166,9 @@
     "tier_access_level": "libre",
     "tier_access_limit": "50",
     "maintenance_mode": "off",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
