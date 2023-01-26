@@ -22,6 +22,40 @@
     https://ctds-planx.atlassian.net/browse/PPS-169?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
     ([#109](https://github.com/uc-cdis/cdis-data-client/pull/109))
 
+## uc-cdis/gen-statics
+
+#### Improvements
+  - Add CSP directives in response (#27)
+  - Removing Veracode scanning pipeline (#14)
+  - Removing Veracode scanning pipeline (#13)
+  - Use Quay image for node 12 to fix "too many requests" from DockerHub (#10)
+  - Update dependencies to support IAM-linked service accounts. (#5)
+  - update dependencies to fix vulnerabilities (#4)
+  - cache-control max-age 300, so client does not cache Secure/ data for more 
+    than 5 minutes (#4)
+
+#### Dependency Updates
+  - Adpoted `helmet` (#27)
+  - Adpoted `cors` (#27)
+
+#### Deployment Changes
+  - This change will add some CSP and CORS related header to the response that 
+    returned from the dashboard services. They should not be interruptive, but 
+    each team is encouraged to double check their webpages hosted by dashboard 
+    to ensure they still works (#27)
+  - Because of these CSP directives being added, starting from this version, if 
+    anyone what to load remote scripts in their dashboard-hosted webpages, they 
+    will need to update the CSP directives in this dashboard service if the 
+    current directives doesn't fit, or to ship the script files with the page 
+    (#27)
+
+#### New Features
+  - Added .secinclude to include all relevant files needed for veracode scan. 
+    (#3)
+  - Added .secexclude to explicitly remove any unneeded files. (#3)
+  - Added Jenkinsfile.security for the veracode security organization in 
+    Jenkins to scan this repo regularly. (#3)
+
 ## uc-cdis/guppy
 
 #### Dependency Updates
