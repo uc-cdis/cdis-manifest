@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.02
+# Core Gen3 Release 2023.02 (Malachite)
 
 ## uc-cdis/fence
 
