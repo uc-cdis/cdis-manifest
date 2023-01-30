@@ -22,8 +22,6 @@
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2023.01",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2023.01",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2023.01",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.01",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.01",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.01",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.01",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.01"
@@ -91,7 +89,7 @@
       "strategy": "auto",
       "min": 2,
       "max": 10,
-      "targetCpu": 40
+      "targetCpu": 14
     },
     "guppy": {
       "strategy": "auto",
