@@ -17,9 +17,7 @@
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2022.12",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2022.12",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2022.12",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2022.12",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2022.12",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2022.12",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2022.12",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2022.12",
@@ -115,7 +113,9 @@
     "GEN3_DEBUG": "False",
     "netpolicy": "on",
     "dispatcher_job_num": "10",
-    "dd_enabled": true
+    "dd_enabled": true,
+    "argocd": "true",
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
