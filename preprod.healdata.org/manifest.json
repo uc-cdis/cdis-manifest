@@ -50,7 +50,7 @@
       "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/batch-export:2023.02",
+        "image": "quay.io/cdis/batch-export:fix_mds-v3",
         "pull_policy": "Always",
         "env": [
           {
