@@ -765,7 +765,8 @@
           "resourceIndexType": "imaging_data_file",
           "resourceIdField": "object_id",
           "referenceIdFieldInResourceIndex": "_imaging_study_id",
-          "referenceIdFieldInDataIndex": "_imaging_study_id"
+          "referenceIdFieldInDataIndex": "_imaging_study_id",
+          "useFilterForCounts": true
         },
         "accessibleFieldCheckList": [
           "project_id"
@@ -887,6 +888,7 @@
           "study_uid",
           "case_ids",
           "object_id",
+          "submitter_id",
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
