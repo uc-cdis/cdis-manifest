@@ -12,7 +12,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2022.11",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.02",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -37,7 +37,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
+      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },

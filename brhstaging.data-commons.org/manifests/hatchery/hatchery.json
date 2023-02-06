@@ -15,7 +15,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.01",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.02",
     "env": {
       "NAMESPACE": "brhstaging",
       "HOSTNAME": "brhstaging.data-commons.org"
@@ -75,7 +75,7 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__ed3f026bf5611f2e1d5fe43453df790d7a3a7545",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__42d429779ccadcb1d88fc0556065db57803b63de",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },

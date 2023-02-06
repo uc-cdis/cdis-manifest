@@ -71,13 +71,6 @@
           "body": "Discover study descriptions and other metadata stored on the Data Commons",
           "link": "/discovery",
           "label": "Discover Study Metadata"
-        },
-        {
-          "name": "Analyze Data",
-          "icon": "data-analyze",
-          "body": "Perform analysis on the Open Access Data Commons data using Jupyter Notebooks.",
-          "link": "/workspace",
-          "label": "Run analysis"
         }
       ]
     },
@@ -117,13 +110,6 @@
           "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
-          "icon": "workspace",
-          "link": "#hostname#workspace/",
-          "color": "#a2a2a2",
-          "name": "Workspace",
-          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
-        },
-        {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
@@ -147,7 +133,7 @@
     },
     "login": {
       "title": "Open Access Data Commons",
-      "subTitle": "Explore, Analyze, and Share Data",
+      "subTitle": "Explore and Share Data",
       "text": "The Open Access Data Commons is a scalable cloud-based platform for computational discovery designed for the health community.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io",
