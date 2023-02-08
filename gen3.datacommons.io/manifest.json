@@ -315,7 +315,8 @@
     "netpolicy": "on",
     "dispatcher_job_num": "10",
     "argocd": "true",
-    "waf_enabled": "true"
+    "waf_enabled": "true",
+    "karpenter": true
   },
   "canary": {
     "default": 0
