@@ -10,7 +10,7 @@
     "indexd": "quay.io/cdis/indexd:2.1.0",
     "portal": "quay.io/cdis/data-ecosystem-portal:1.2.4",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "spark": "quay.io/cdis/gen3-spark:1.0.0",
     "wts": "quay.io/cdis/workspace-token-service:0.2.0",
