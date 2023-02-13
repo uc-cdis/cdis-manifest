@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-10",
-  "argoTemplate": "gwas-template",
+  "argoTemplate": "gwas-template-uniflow",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -84,7 +84,8 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true
   },
   "analysisTools": [
     {
