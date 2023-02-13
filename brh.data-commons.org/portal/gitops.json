@@ -95,7 +95,7 @@
         "alt": "Gen3 Data Commons"
       },
       {
-        "src": "/src/img/sponsors/gitops-sponsors/createdby_50.png",
+        "src": "/src/img/createdby.png",
         "href": "https://ctds.uchicago.edu/",
         "alt": "Center for Translational Data Science at the University of Chicago"
       }
@@ -344,7 +344,7 @@
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
       "authzField": "authz",
-      "uid": "frontend_uid"
+      "uid": "_unique_id"
     },
     "tagCategories": [
       {
