@@ -1,10 +1,11 @@
 {
   "gaTrackingId": "UA-119127212-10",
-  "argoTemplate": "gwas-template",
+  "argoTemplate": "gwas-template-uniflow",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
-    "projectDetails": "boardCounts"
+    "projectDetails": "boardCounts",
+    "chartNodesExcludeFiles": true
   },
   "components": {
     "appName": "VA Data Commons",
@@ -84,7 +85,8 @@
   },
   "featureFlags": {
     "explorer": true,
-    "analysis": true
+    "analysis": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true
   },
   "analysisTools": [
     {
