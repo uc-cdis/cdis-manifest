@@ -68,6 +68,9 @@ S3_BUCKETS:
   gdc-genie-phs001337-controlled:
     cred: 'fence_bot'
     region: 'us-east-1'
+  cds-290-htan-x6gj-xr09:
+    cred: 'fence_bot'
+    region: 'us-east-1'
   cds-54-phs000178:
     cred: 'fence_bot'
     region: 'us-east-1'
@@ -83,10 +86,52 @@ S3_BUCKETS:
   cds-227-phs002011:
     cred: 'fence_bot'
     region: 'us-east-1'
+  cds-233-phs002050:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-234-phs002366:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-235-phs002250:
+    cred: 'fence_bot'
+    region: 'us-east-1'
   cds-237-phs001819:
     cred: 'fence_bot'
     region: 'us-east-1'
   cds-243-phs002371:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-246-phs002517-sequencefiles-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-247-phs002518-sequencefiles-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-252-phs002529.v1.p1-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-252-phs002529.v1.p1-sequencefiles-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-253-phs002620.v1.p1-sequencefiles-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-254-phs002599.v1.p1:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-256-phs002504.v1.p1-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-256-phs002504.v1.p1-sequencefiles-p30-fy20:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-257-phs002432.v1.p1:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-305-phs002790-production-ccdi-ctsmc:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  cds-327-phs003111-mskcc:
     cred: 'fence_bot'
     region: 'us-east-1'
   gdc-target-phs000218-2-open:
@@ -133,7 +178,7 @@ S3_BUCKETS:
     region: 'us-east-1'
   gdc-tcga-phs000178-open:
     cred: 'fence_bot'
-    region: 'us-east-1' 
+    region: 'us-east-1'
   gdc-varepop-apollo-phs001374-2-open:
     cred: 'fence_bot'
     region: 'us-east-1'
