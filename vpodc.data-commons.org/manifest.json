@@ -9,11 +9,8 @@
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.02",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.02",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.02",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2023.02",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.02",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.02",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.02",
@@ -50,20 +47,6 @@
     "argocd": "true",
     "waf_enabled": "true",
     "karpenter": "true"
-  },
-  "guppy": {
-    "indices": [
-      {
-        "index": "etl_mickey",
-        "type": "patients"
-      },
-      {
-        "index": "file_etl_mickey",
-        "type": "file"
-      }
-    ],
-    "config_index": "etl_mickey_array-config",
-    "auth_filter_field": "auth_resource_path"
   },
   "ssjdispatcher": {
     "job_images": {
