@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@fix/set_resource_ci_worker_shell') _
+@Library('cdis-jenkins-lib@test_unset_proxy') _
 testPipeline {
   MANIFEST = "True"
 }
