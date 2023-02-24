@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/force-updated-jenkins-ci-worker-image') _
+@Library('cdis-jenkins-lib@fix/set_resource_ci_worker_shell') _
 testPipeline {
   MANIFEST = "True"
 }
