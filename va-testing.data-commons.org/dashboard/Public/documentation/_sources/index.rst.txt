@@ -142,12 +142,12 @@ vocabulary and selecting the set of terms for your analyses. Here you
 select all concepts (variables) that you would like to use for criteria
 that define your study population cohort.
 
-.. image:: _static/slide_10.png
+|image0|
 
 Select Concept Sets in the menu and click the blue box for “New Concept
 Set”.
 
-.. image:: _static/slide_11.png
+|image1|
 
 In the box above the tabs, enter a name for the Concept Set you are
 creating.
@@ -155,17 +155,17 @@ creating.
 Click the green box “Add concepts” to view the list of concept
 variables.
 
-.. image:: _static/slide_13.png
+|image2|
 
 Enter the concept name or code into the search bar to find relevant
 concept variables.
 
-.. image:: _static/slide_14.png
+|image3|
 
 Select desired concepts, click “Add To Concept Set”. Repeat Search and
 Add steps as needed, then click “Concept Sets”.
 
-.. image:: _static/slide_15.png
+|image4|
 
 Make sure all desired concepts are included, then click the save icon to
 the right of the name of the Concept Set.
@@ -173,7 +173,7 @@ the right of the name of the Concept Set.
 To add new concepts, please use the “Add Concepts” button again as
 described above.
 
-.. image:: _static/atlas_remove_concepts.png
+|image5|
 
 To delete the concepts from the concept set, select the concepts and
 click on the “Remove Selected” button, then click the save icon to save
@@ -189,37 +189,37 @@ defining the study population cohort. A cohort is defined as a Person
 with an entry and exit date. Thus, a person can be in a cohort multiple
 times if they meet the criteria.
 
-.. image:: _static/slide_17.png
+|image6|
 
 Select “Cohort Definitions” in the menu, you can begin to create a
 cohort by clicking the “New Cohort” button.
 
-.. image:: _static/slide_18.png
+|image7|
 
 In the boxes above and below the tabs, enter a name and description for
 the Cohort.
 
-.. image:: _static/slide_19.png
+|image8|
 
 To establish the duration for your cohort, click “+ Add Initial Event”,
 then in the dropdown menu click “Add Observation”.
 
-.. image:: _static/slide_20.png
+|image9|
 
 Click the blue box “Any Observation”, select “Import Concept Set” from
 the dropdown menu.
 
-.. image:: _static/slide_21.png
+|image10|
 
 Select the Concept Set you just made. This establishes your Concept Set
 as inclusion criteria for your cohort.
 
-.. image:: _static/slide_22.png
+|image11|
 
 To access the table in the MVP harmonization database, click “+ Add
 attribute…”, then click “Add Value as Number Criteria”.
 
-.. image:: _static/slide_23.png
+|image12|
 
 Select “Greater or Equal To”. In this specific case we added Heart
 Failure concept Set and entered value “2”. This will allow for the
@@ -237,7 +237,7 @@ subsequent analyses. Use the cohort definition to identify how many
 people are in the cohort. This is the initial number that will be used
 in the GWAS App when this cohort is selected.
 
-.. image:: _static/slide_26.png
+|image13|
 
 To complete the creation of the Cohort Definition, click “Generation”,
 then “Generate”.
@@ -246,7 +246,7 @@ Cohort size will be displayed under the column “People”. Use View
 Reports to see if you have inclusion criteria that causes cohort
 attrition.
 
-.. image:: _static/atlas_export_cohort.png
+|image14|
 
 The “Export” tab provides a text version of how a cohort was created.
 Click on the “Export” tab and then on the “Copy to clipboard” to copy
@@ -469,7 +469,7 @@ will also show the status of your analysis:
    download the results of the GWAS analysis from this menu
 
 Once completed, you may download the results of the GWAS analysis from
-this menu. By pressing the ‘Download’ link a tar.gz file will start
+this menu. By pressing the ‘Download’ link a zip file will start
 downloading to your computer. Depending on your cohort and variables
 selection, the file size can vary in the range of 700MB up to 1.3GB. The
 file contains the following: Manhattan plot, QQ plot, metadata file
@@ -535,3 +535,19 @@ Workspace, you may refer to `Gen3
 Workspaces <https://gen3.org/products/workspaces/>`__ and `Data Analysis
 in a Gen3 Data
 Commons <https://gen3.org/resources/user/analyze-data/>`__.
+
+.. |image0| image:: _static/slide_10.png
+.. |image1| image:: _static/slide_11.png
+.. |image2| image:: _static/slide_13.png
+.. |image3| image:: _static/slide_14.png
+.. |image4| image:: _static/slide_15.png
+.. |image5| image:: _static/atlas_remove_concepts.png
+.. |image6| image:: _static/slide_17.png
+.. |image7| image:: _static/slide_18.png
+.. |image8| image:: _static/slide_19.png
+.. |image9| image:: _static/slide_20.png
+.. |image10| image:: _static/slide_21.png
+.. |image11| image:: _static/slide_22.png
+.. |image12| image:: _static/slide_23.png
+.. |image13| image:: _static/slide_26.png
+.. |image14| image:: _static/atlas_export_cohort.png
