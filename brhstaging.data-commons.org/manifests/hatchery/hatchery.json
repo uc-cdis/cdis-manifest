@@ -75,13 +75,12 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__42d429779ccadcb1d88fc0556065db57803b63de",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__887221800628b5fa3fbc501e39499ae7a66c219f",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.default_url=/lab",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.shutdown_no_activity_timeout=5400",

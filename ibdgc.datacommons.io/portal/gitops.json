@@ -62,6 +62,7 @@
       ]
     },
     "systemUse": {
+      "showOnlyOnLogin": true,
       "systemUseTitle" : "IBDGC Data Commons Terms of Use",
       "systemUseText" : [
         "The following terms and conditions apply to all data accessed through the IBDGC Data Commons:",
@@ -77,7 +78,7 @@
         "b. I understand that unless explicitly prohibited, I may make these data available to individuals working directly under my supervision, and if I do it is my responsibility to make sure that they adhere to these terms and conditions at all times.",
         "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges."],
       "displayUseMsg": "cookie",
-      "expireUseMsgDays" : 7
+      "expireUseMsgDays" : 1
     },
     "navigation": {
       "title": "IBDGC Data Commons",
@@ -276,6 +277,7 @@
             "title": "Files",
             "fields": [
               "project_id",
+              "site",
               "data_type",
               "data_format"
             ]
