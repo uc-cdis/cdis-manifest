@@ -474,18 +474,6 @@
         "link": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.html"
       },
       {
-        "title": "Unsupervised Data Exploration on Cancer Cell Line Encyclopedia (CCLE)",
-        "description": "Principal component analysis (PCA) and t-distributed stochastic neighbor embedding (t-SNE) has become valuable tools for unsupervised data exploration. This notebook explores the application of unsupervised learning on Cancer Cell Line Encyclopedia (CCLE) gene expression profiles.",
-        "imageUrl": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png",
-        "link": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html"
-      },
-      {
-        "title": "PCA of 1000 Genome Phase3 Genotype data",
-        "description": "Principal components analysis (PCA) is a widely used method in the field of population genetics, providing a model-free method for exploring patterns of relatedness within a collection of individuals. In this notebook, we use the 1000 Genomes Project phase3 release of variant calls data to apply both conventional PCA analysis of the LD-pruned genotype data.",
-        "imageUrl": "/dashboard/Public/notebooks/AnVIL_1k_Genome_data_analysis.png",
-        "link": "/dashboard/Public/notebooks/AnVIL_1k_Genome_data_analysis.html"
-      },
-      {
         "title": "MIDRC Open-R1 Clinical Data Analysis",
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
@@ -496,12 +484,6 @@
         "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
         "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
         "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
-      },
-      {
-        "title": "OADC CCLE RNA-Seq Visualization",
-        "description": "This notebook demonstrates how to visualize the gene expression for cell lines of interest. The CCLE gene expression data was pulled from BRH and formatted using Pandas and then visualized using Seaborn.",
-        "link": "/dashboard/Public/notebooks/OADC_CCLE_RNAseq_visualization.html",
-        "imageUrl": "/dashboard/Public/notebooks/OADC_CCLE_RNAseq_visualization.png"
       },
       {
         "title": "Cox Model Implementation using ACTT Data from NIAID Clinical Trials Data Commons",
