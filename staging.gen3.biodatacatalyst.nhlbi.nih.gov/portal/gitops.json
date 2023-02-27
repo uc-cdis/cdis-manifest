@@ -846,6 +846,198 @@
           ]
         },
         {
+          "tabName": "dbGaP FHIR",
+          "groups": [
+            {
+              "header": "Disclaimer",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "disclaimer",
+                  "default": "This information was retrieved from dbGaP's FHIR API for discoverability purposes and may not contain fully up-to-date information. Please refer to the official FHIR server for up-to-date FHIR data."
+                },
+                {
+                  "type": "link",
+                  "label": "dbGaP FHIR ResearchStudy URL:",
+                  "sourceField": "dbgap_fhir_url",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "General Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Title:",
+                  "sourceField": "Title",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "ID:",
+                  "sourceField": "Id",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Focus:",
+                  "sourceField": "Focus",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Identifier:",
+                  "sourceField": "Identifier",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Category:",
+                  "sourceField": "Category",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Study Consents:",
+                  "sourceField": "StudyConsents",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "Description"
+                }
+              ]
+            },
+            {
+              "header": "Counts",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Number of Samples:",
+                  "sourceField": "NumSamples",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Molecular Datasets:",
+                  "sourceField": "NumMolecularDatasets",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number Of Variables:",
+                  "sourceField": "NumVariables",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Subjects:",
+                  "sourceField": "NumSubjects",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Documents:",
+                  "sourceField": "NumDocuments",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Analyses:",
+                  "sourceField": "NumAnalyses",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Phenotype Datasets:",
+                  "sourceField": "NumPhenotypeDatasets",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Sub Studies:",
+                  "sourceField": "NumSubStudies",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Additional Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Conditions:",
+                  "sourceField": "Condition",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Keywords:",
+                  "sourceField": "Keyword",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Resource Type:",
+                  "sourceField": "ResourceType",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Release Date:",
+                  "sourceField": "ReleaseDate",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "Study Overview URL:",
+                  "sourceField": "StudyOverviewUrl",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Part Of:",
+                  "sourceField": "PartOf",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Status:",
+                  "sourceField": "Status",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Enrollment:",
+                  "sourceField": "Enrollment",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Sponsor:",
+                  "sourceField": "Sponsor",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Citers",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "Citers"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "tabName": "Access",
           "groups": [
             {
