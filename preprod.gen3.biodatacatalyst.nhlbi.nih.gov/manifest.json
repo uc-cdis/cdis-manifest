@@ -109,8 +109,7 @@
           }
         }
       ],
-      "restart_policy": "Never",
-      "serviceAccountName": "jobs-staging-gen3-biodatacatalyst-nhlbi-nih-gov"
+      "restart_policy": "Never"
     },
     {
       "name": "pelican-export-files",
@@ -181,6 +180,77 @@
       "restart_policy": "Never"
     },
     {
+      "name": "ingest-metadata-manifest",
+      "action": "ingest-metadata-manifest",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2023.02",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "get-dbgap-metadata",
+      "action": "get-dbgap-metadata",
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2023.02",
+        "pull_policy": "Always",
+        "env": [],
+        "volumeMounts": [
+          {
+            "name": "creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
       "name": "manifest-indexing",
       "action": "index-object-manifest",
       "activeDeadlineSeconds": 86400,
@@ -188,6 +258,47 @@
       "container": {
         "name": "job-task",
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2023.02",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sower-jobs-creds-volume",
+            "readOnly": true,
+            "mountPath": "/creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "sower-jobs-creds-volume",
+          "secret": {
+            "secretName": "sower-jobs-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-merging",
+      "action": "merge-manifests",
+      "activeDeadlineSeconds": 86400,
+      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
+      "container": {
+        "name": "job-task",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:2023.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -302,8 +413,7 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "argocd": "true",
-    "waf_enabled": "true",
-    "dd_enabled": null
+    "waf_enabled": "true"
   },
   "canary": {
     "default": 0
@@ -311,15 +421,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov_subject",
+        "index": "internalstaging_etl",
         "type": "subject"
       },
       {
-        "index": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov_file",
+        "index": "internalstaging_file",
         "type": "file"
       }
     ],
-    "config_index": "preprod.gen3.biodatacatalyst.nhlbi.nih.gov_array-config",
+    "config_index": "internalstaging_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {
