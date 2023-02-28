@@ -1,10 +1,11 @@
 {
   "gaTrackingId": "UA-119127212-21",
-  "argoTemplate": "gwas-template-uniflow",
+  "argoTemplate": "gwas-template-uniflow-zip",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
-    "projectDetails": "boardCounts"
+    "projectDetails": "boardCounts",
+    "chartNodesExcludeFiles": true
   },
   "components": {
     "appName": "VA Data Commons",
@@ -95,8 +96,7 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults",
-    "GWAS++"
+    "GWASResults"
   ],
   "arrangerConfig": {
     "charts": {

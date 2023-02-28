@@ -119,7 +119,8 @@
             "commons_name": "HEAL",
             "config": {
                 "guid_type": "discovery_metadata",
-                "study_field": "gen3_discovery"
+                "study_field": "gen3_discovery",
+                "data_dict_field": "data_dictionaries"
             },
             "keep_original_fields": true,
             "field_mappings": {
