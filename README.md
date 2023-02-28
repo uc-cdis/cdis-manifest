@@ -21,7 +21,7 @@ $ cat dev.planx-pla.net/manifest.json
     "peregrine": "quay.io/cdis/peregrine:1.0.2",
     "sheepdog": "quay.io/cdis/sheepdog:1.1.2",
     "portal": "quay.io/cdis/data-portal:2.0.1",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master"
   }
   "jupyterhub": {

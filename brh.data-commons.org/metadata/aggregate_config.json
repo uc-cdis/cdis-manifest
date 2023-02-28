@@ -24,9 +24,6 @@
 			"study_url": {},
 			"project_id": {},
 			"short_name": {},
-			"_subjects_count": {
-				"type": "integer"
-			},
 			"full_name": {},
 			"commons_url": {},
 			"commons" : {},
@@ -64,7 +61,7 @@
 			}
 		},
 		"BioData Catalyst": {
-			"mds_url": "https://gen3.biodatacatalyst.nhlbi.nih.gov/",
+			"mds_url": "https://preprod.gen3.biodatacatalyst.nhlbi.nih.gov/",
 			"commons_url" : "gen3.biodatacatalyst.nhlbi.nih.gov",
 			"adapter": "gen3",
 			"config" : {
@@ -184,127 +181,83 @@
 			}
 		},
 		"CRDC Genomic Data Commons": {
-			"mds_url": "https://brh.data-commons.org/",
-			"commons_url" : "portal.gdc.cancer.gov",
-			"config" : {
-				"guid_type": "discovery_metadata",
-				"study_field": "gen3_discovery",
-				"filters": "gen3_discovery.commons=Genomic Data Commons"
+			"mds_url": "https://api.gdc.cancer.gov/projects",
+			"commons_url": "https://gdc.cancer.gov/",
+			"adapter": "gdc",
+			"filters": {
+				"size" : 1000
 			},
-			"adapter": "gen3",
 			"keep_original_fields": false,
-			"field_mappings" : {
-				"authz": "path:authz",
-				"tags": "path:tags",
-				"_unique_id": "path:_unique_id",
-				"study_id": "path:_unique_id",
-				"study_description": "path:study_description",
-				"full_name": "path:full_name",
-				"short_name": "N/A",
-				"commons": "GDC",
-				"study_url": "path:publications",
-				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
-				"__manifest": "path:__manifest",
-				"commons_url" : "brh.data-commons.org"
+			"field_mappings": {
+				"commons": "CRDC Genomic Data Commons",
+				"short_name": "path:id",
+				"full_name": "path:name",
+				"disease_type": "path:disease_type",
+				"primary_site": "path:primary_site",
+				"_unique_id": "path:id",
+				"tags": [],
+				"project_id": "path:id",
+				"study_title": "path:id",
+				"accession_number": "path:id",
+				"description": "",
+				"funding": "",
+				"source": "",
+				"dbgap_accession_number": "path:dbgap_accession_number",
+				"_subjects_count" : "path:summary.case_count",
+				"subjects_count" : "path:summary.case_count",
+				"files_count" : "path:summary.file_count"
 			}
 		},
 		"CRDC Proteomic Data Commons": {
-			"mds_url": "https://brh.data-commons.org/",
-			"commons_url" : "proteomic.datacommons.cancer.gov/pdc",
-			"config" : {
-				"guid_type": "discovery_metadata",
-				"study_field": "gen3_discovery",
-				"filters": "gen3_discovery.commons=Proteomic Data Commons"
-			},
-			"adapter": "gen3",
+			"mds_url": "https://proteomic.datacommons.cancer.gov/graphql",
+			"commons_url": "https://pdc.cancer.gov/pdc/",
+			"adapter": "pdc",
+			"filters": {"batchSize": 5},
 			"keep_original_fields": false,
-			"field_mappings" : {
-				"authz": "path:authz",
-				"tags": "path:tags",
-				"_unique_id": "path:_unique_id",
-				"study_id": "path:_unique_id",
-				"study_description": "path:study_description",
-				"full_name": "path:full_name",
-				"short_name": "N/A",
-				"commons": "Proteomic Data Commons",
-				"study_url": "path:publications",
-				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
-				"__manifest": "path:__manifest",
-				"commons_url" : "proteomic.datacommons.cancer.gov/pdc"
+			"field_mappings": {
+				"commons": "CRDC Proteomic Data Commons",
+				"_unique_id": "path:pdc_study_id",
+				"study_title": "path:pdc_study_id",
+				"accession_number": "path:pdc_study_id",
+				"short_name": "path:study_shortname",
+				"full_name": "path:study_name",
+				"disease_type" : "path:disease_type",
+				"primary_site" : "path:primary_site",
+				"analytical_fraction" : "path:analytical_fraction",
+				"experiment_type" : "path:experiment_type",
+				"cases_count" : "path:cases_count",
+				"program_name" : "path:program_name",
+				"project_name" : "path:project_name",
+				"description": "",
+				"files_count": {"path" : "filesCount", "filters" : ["aggregate_pdc_file_count"]},
+				"tags": []
 			}
 		},
 		"CRDC Cancer Imaging Data Commons": {
-			"mds_url": "https://brh.data-commons.org/",
-			"commons_url" : "imaging.datacommons.cancer.gov",
-			"config" : {
-				"guid_type": "discovery_metadata",
-				"study_field": "gen3_discovery",
-				"filters": "gen3_discovery.commons=Cancer Imaging Data Commons"
-			},
-			"adapter": "gen3",
-			"keep_original_fields": false,
-			"field_mappings" : {
-				"authz": "path:authz",
-				"tags": "path:tags",
-				"_unique_id": "path:_unique_id",
-				"study_id": "path:_unique_id",
-				"study_description": "path:study_description",
-				"full_name": "path:full_name",
-				"short_name": "N/A",
-				"commons": "Cancer Imaging Data Commons",
-				"study_url": "path:publications",
-				"_subjects_count" : {"path":"subjects_count", "default" : 0 },
-				"__manifest": "path:__manifest",
-				"commons_url" : "imaging.datacommons.cancer.gov"
-			}
-		},
-		"Open Access Data Commons": {
-			"mds_url": "https://gen3.datacommons.io/",
-			"commons_url" : "gen3.datacommons.io",
-			"adapter": "gen3",
-			"config" : {
-				"guid_type": "discovery_metadata",
-				"study_field": "gen3_discovery"
-			},
-			"keep_original_fields": false,
-			"field_mappings" : {
-				"authz": "path:authz",
-				"tags": "path:tags",
-				"_unique_id": "path:study_id",
-				"study_id": "path:study_id",
-				"study_description": "path:study_description",
-				"full_name": "path:full_name",
-				"short_name": "path:short_name",
-				"commons": "Open Access Data Commons",
-				"study_url": "path:study_url",
-				"_subjects_count" : {"path":"_subjects_count", "default" : 0 },
-				"__manifest": "path:__manifest",
-				"commons_url" : "gen3.datacommons.io"
-			}
-		},
-		"Tutorial Canine Data Commons": {
-			"mds_url": "https://caninedc.org/",
-			"commons_url": "caninedc.org",
-			"config": {
-				"guid_type": "discovery_metadata",
-				"study_field": "gen3_discovery"
-			},
-			"adapter": "gen3",
+			"mds_url": "https://api.imaging.datacommons.cancer.gov/v1/collections",
+			"commons_url": "https://portal.imaging.datacommons.cancer.gov/collections/",
+			"adapter": "cidc",
+			"filters": {},
 			"keep_original_fields": false,
 			"field_mappings": {
-				"authz": "path:authz",
-				"tags": "path:tags",
-				"short_name": "path:short_name",
-				"full_name": "path:full_name",
-				"_subjects_count" : {"path":"subjects", "default" : 0 },
-				"study_id": "path:project_id",
-				"_unique_id": "path:project_id",
-				"commons": "path:commons",
-				"study_url": {"path":"publications", "default": ""},
-				"__manifest": "path:__manifest",
-				"study_description": "path:study_description"
+				"commons": "CRDC Cancer Imaging Data Commons",
+				"_unique_id": "path:collection_id",
+				"study_title": "path:collection_id",
+				"accession_number": "path:collection_id",
+				"short_name": {"path" : "collection_id", "filters": [ "uppercase" ]},
+				"full_name": {"path" :"collection_id", "filters": [ "uppercase" ]},
+				"dbgap_accession_number": {"path" :"collection_id", "filters": [ "uppercase" ]},
+				"description": {"path" :"description", "filters": [ "strip_html", "prepare_cidc_description" ]},
+				"image_types": "path:image_types",
+				"subjects_count" : "path:subject_count",
+				"doi" : {"path" :"doi", "filters": [ "uppercase" ]},
+				"species" : "path:species",
+				"disease_type" : "path:cancer_type",
+				"data_type" : "path:supporting_data",
+				"primary_site": "path:location",
+				"tags": []
 			}
-		},
+		},				
 		"CRDC Integrated Canine Data Commons": {
 			"mds_url": "https://caninecommons.cancer.gov/v1/graphql/",
 			"commons_url": "nci-crdc.datacommons.io",
