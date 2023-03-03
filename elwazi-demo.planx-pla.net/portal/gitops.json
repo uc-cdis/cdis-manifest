@@ -33,6 +33,25 @@
     ],
     "projectDetails": "boardCounts"
   },
+  "resourceBrowser": {
+  "title": "Jupyter Notebook Tutorials",
+  "public": true,
+  "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
+  "resources": [
+    {
+      "title": "Data analysis for the Multi-country PROMOTE HIV Antiretroviral Treatment Observational Cohort in Sub-Saharan Africa",
+      "description": "This notebook showcases the ability to do exploratory analysis with data available from the PROMOTE HIV Antiretroviral Treatment Observational Cohort of the PROMOTE study which is available in the eLwazi Data Commons. The analysis is not intended to constitute advice nor is it to be used as a substitute for decision making from a professional.",
+      "imageURL": "/dashboard/Public/notebooks/Antiretroviral.png",
+      "link": "/dashboard/Public/notebooks/HIV_Antiretroviral_Treatment_Observational_Cohort_data_analysis.html"
+    },
+    {
+      "title": "Data analysis for pneumonia among children in a birth cohort in South Africa",
+      "description": "In this notebook, we explore the child hospitalization data for pneumonia from South Africa to identify the clinical features associated with serious outcomes and prolonged hospitalization.",
+      "imageUrl": "/dashboard/Public/notebooks/pneumonia_severe_outcomes.png",
+      "link": "/dashboard/Public/notebooks/Pneumonia_severe_outcomes_data_analysis.html"
+    }
+  ]
+},
   "components": {
     "appName": "eLwazi Data Commons Portal",
     "index": {
