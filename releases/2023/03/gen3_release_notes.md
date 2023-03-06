@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.03
+# Core Gen3 Release 2023.03 (Olivine)
 
 ## uc-cdis/arborist
 
