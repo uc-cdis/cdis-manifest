@@ -76,8 +76,8 @@ The button for VA Data Commons Documentation takes you to this page.
 ~~~~~~~~~~~~~~~~~
 
 If you need help, the Email Support button allows you to send a message
-to our help desk at support@datacommons.io. You may expect a response
-within 2 business days.
+to our help desk at MVPLOI@va.gov. You may expect a response within 2
+business days.
 
 Data Access and Analysis
 ========================
@@ -254,7 +254,7 @@ the cohort’s information.
 
 We expect that this documentation in addition to the OHDSI tutorials are
 sufficient for most analyses that users will attempt. If you have any
-questions, please contact us at support@datacommons.io.
+questions, please contact us at MVPLOI@va.gov.
 
 **Gen3 GWAS**
 -------------
@@ -464,7 +464,7 @@ will also show the status of your analysis:
    half an hour to three hours
 -  Failed - your analysis returned the error, it is advised to
    review/change your GWAS parameters or contact our help desk at
-   support@datacommons.io
+   MVPLOI@va.gov
 -  Completed - your analysis was successfully completed and you may
    download the results of the GWAS analysis from this menu
 
@@ -489,8 +489,7 @@ OHDSI can be found `here <https://ohdsi.github.io/TheBookOfOhdsi/>`__.
 These resources contain a lot of useful information, particularly you
 might find it useful to read about `Cohort
 Definition <https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html#Cohorts>`__.
-If you need help, please reach out to our help desk at
-support@datacommons.io
+If you need help, please reach out to our help desk at MVPLOI@va.gov
 
 **What are harmonized variables?**
 ----------------------------------
