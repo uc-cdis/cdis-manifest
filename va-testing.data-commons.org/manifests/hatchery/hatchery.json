@@ -3,8 +3,8 @@
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "sidecar": {
-    "cpu-limit": "0.5",
-    "memory-limit": "512Mi",
+    "cpu-limit": "0.1",
+    "memory-limit": "128Mi",
     "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2023.02",
     "env": {
       "NAMESPACE": "default",
@@ -12,8 +12,8 @@
     },
     "args": [],
     "command": [
-      "/bin/bash",
-      "/sidecarDockerrun.sh"
+      "sleep",
+      "infinity"
     ],
     "lifecycle-pre-stop": [
       "su",
