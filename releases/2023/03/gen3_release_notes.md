@@ -40,6 +40,9 @@
   - Python to 3.9 ([#1069](https://github.com/uc-cdis/fence/pull/1069))
   - `authutils` to ^6.2.2, `PyJWT` to ^2.4.0 ([#1069](https://github.com/uc-cdis/fence/pull/1069)) 
 
+#### Bug Fixes
+  - Fix "non-unique client name" migration to delete all the "unique client name" constraints it finds, instead of assuming there is exactly one [#1075](https://github.com/uc-cdis/fence/pull/1075)
+
 ## uc-cdis/pidgin
 
 #### Improvements
