@@ -91,7 +91,7 @@
       "serviceAccountName": "jobs-nci-crdc-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.02",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.03",
         "pull_policy": "Always",
         "env": [
           {
