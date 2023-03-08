@@ -2,33 +2,24 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case",
-        "plural": "Cases"
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment",
-        "plural": "Experiments"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot",
-        "plural": "Aliquots"
+        "graphql": "_study_count",
+        "name": "Study",
+        "plural": "Studies"
       }
     ],
     "chartCounts": [
       {
-        "graphql": "_case_count",
-        "name": "Case"
+        "graphql": "_subject_count",
+        "name": "Subject"
       },
       {
-        "graphql": "_experiment_count",
-        "name": "Experiment"
-      },
-      {
-        "graphql": "_aliquot_count",
-        "name": "Aliquot"
+        "graphql": "_study_count",
+        "name": "Study"
       }
     ],
     "projectDetails": "boardCounts"
@@ -51,7 +42,7 @@
       "link": "/dashboard/Public/notebooks/Pneumonia_severe_outcomes_data_analysis.html"
     }
   ]
-},
+  },
   "components": {
     "appName": "eLwazi Data Commons Portal",
     "index": {
@@ -175,28 +166,23 @@
         "chartType": "count",
         "title": "Projects"
       },
-      "_case_id": {
+      "_subject_id": {
         "chartType": "count",
-        "title": "Cases"
+        "title": "Subjects"
       },
       "gender": {
         "chartType": "pie",
         "title": "Gender"
-      },
-      "race": {
-        "chartType": "bar",
-        "title": "Race"
       }
     },
     "filters": {
       "tabs": [
         {
-          "title": "Case",
+          "title": "Subject",
           "fields":[
             "project_id",
             "gender",
-            "race",
-            "ethnicity"
+	    "age"
           ]
         }
       ]
@@ -207,23 +193,13 @@
     "dropdowns": {},
     "buttons": [],
     "guppyConfig": {
-      "dataType": "case",
-      "nodeCountTitle": "Cases",
-      "fieldMapping": [
-        { "field": "disease_type", "name": "Disease type" },
-        { "field": "primary_site", "name": "Site where samples were collected"}
-      ],
-      "manifestMapping": {
-        "resourceIndexType": "file",
-        "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "_case_id",
-        "referenceIdFieldInDataIndex": "_case_id"
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id"
-    }
-  },
-  "fileExplorerConfig": {
+    },
+    "fileExplorerConfig": {
     "charts": {
       "data_type": {
         "chartType": "stackedBar",
