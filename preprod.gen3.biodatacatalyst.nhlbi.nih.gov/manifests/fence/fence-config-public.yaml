@@ -37,6 +37,7 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000007-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000007-c2:
     cred: fence-bot
@@ -44,9 +45,11 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000179-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000179-c2:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000200-c1:
     cred: fence-bot
@@ -57,9 +60,11 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000209-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000209-c2:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000280-c1:
     cred: fence-bot
@@ -71,12 +76,14 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000284-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000286-c1:
     cred: fence-bot
     region: us-east-1
   nih-nhlbi-topmed-released-phs000286-c2:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000286-c3:
     cred: fence-bot
@@ -107,9 +114,11 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000784-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000820-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000914-c1:
     cred: fence-bot
@@ -348,18 +357,23 @@ S3_BUCKETS:
     region: us-east-1
   nih-nhlbi-topmed-released-phs000166-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000422-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000703-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000810-c1:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs000810-c2:
     cred: fence-bot
+    role-arn: arn:aws:iam::600168050588:role/developer_bucket_access_imaging_copdgene
     region: us-east-1
   nih-nhlbi-topmed-released-phs001012-c1:
     cred: fence-bot
