@@ -847,6 +847,177 @@
           ]
         },
         {
+          "tabName": "dbGaP FHIR",
+          "groups": [
+            {
+              "header": "Disclaimer",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "DBGAP_FHIR_Disclaimer",
+                  "default": "This information was retrieved from dbGaP's FHIR API for discoverability purposes and may not contain fully up-to-date information. Please refer to the official FHIR server for up-to-date FHIR data."
+                },
+                {
+                  "type": "link",
+                  "label": "dbGaP FHIR ResearchStudy URL:",
+                  "sourceField": "DBGAP_FHIR_dbgap_fhir_url",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "General Information",
+              "fields": [
+              {
+                "type": "text",
+                "label": "Title:",
+                "sourceField": "DBGAP_FHIR_Title",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "ID:",
+                "sourceField": "DBGAP_FHIR_Id",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Focus:",
+                "sourceField": "DBGAP_FHIR_Focus",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Identifier:",
+                "sourceField": "DBGAP_FHIR_Identifier",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Category:",
+                "sourceField": "DBGAP_FHIR_Category",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Study Consents:",
+                "sourceField": "DBGAP_FHIR_StudyConsents",
+                "default": "Not specified"
+              }
+              ]
+            },
+            {
+              "header": "Description",
+              "fields": [
+              {
+                "type": "block",
+                "sourceField": "DBGAP_FHIR_Description"
+              }
+              ]
+            },
+            {
+              "header": "Counts",
+              "fields": [
+              {
+                "type": "text",
+                "label": "Number of Samples:",
+                "sourceField": "DBGAP_FHIR_NumSamples",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Molecular Datasets:",
+                "sourceField": "DBGAP_FHIR_NumMolecularDatasets",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number Of Variables:",
+                "sourceField": "DBGAP_FHIR_NumVariables",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Subjects:",
+                "sourceField": "DBGAP_FHIR_NumSubjects",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Documents:",
+                "sourceField": "DBGAP_FHIR_NumDocuments",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Analyses:",
+                "sourceField": "DBGAP_FHIR_NumAnalysis",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Phenotype Datasets:",
+                "sourceField": "DBGAP_FHIR_NumPhenotypeDatasets",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Number of Sub Studies:",
+                "sourceField": "DBGAP_FHIR_NumSubStudies",
+                "default": "Not specified"
+              }
+              ]
+            },
+            {
+              "header": "Additional Information",
+              "fields": [
+              {
+                "type": "text",
+                "label": "Conditions:",
+                "sourceField": "DBGAP_FHIR_Condition",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Keywords:",
+                "sourceField": "DBGAP_FHIR_Keyword",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Release Date:",
+                "sourceField": "DBGAP_FHIR_ReleaseDate",
+                "default": "Not specified"
+              },
+              {
+                "type": "link",
+                "label": "Study Overview URL:",
+                "sourceField": "DBGAP_FHIR_StudyOverviewUrl",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Part Of:",
+                "sourceField": "DBGAP_FHIR_PartOf",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Enrollment:",
+                "sourceField": "DBGAP_FHIR_Enrollment",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Sponsor:",
+                "sourceField": "DBGAP_FHIR_Sponsor",
+                "default": "Not specified"
+              }
+              ]
+            }
+          ]
+        },
+        {
           "tabName": "Access",
           "groups": [
             {
