@@ -1,0 +1,16 @@
+mappings:
+  - name: elwazi-demo_subject
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: submitter_id
+      - name: project_id
+      - name: location
+    flatten_props:
+      - path: demographics
+        props:
+          - name: age
+          - name: race
+          - name: gender
+          - name: year_of_birth
