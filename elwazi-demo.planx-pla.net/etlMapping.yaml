@@ -6,11 +6,52 @@ mappings:
     props:
       - name: submitter_id
       - name: project_id
-      - name: location
+      - name: treatment_site
     flatten_props:
       - path: demographics
         props:
           - name: age
-          - name: race
           - name: gender
-          - name: year_of_birth
+      - path: medical_history
+        props:
+          - name: arv_treatment
+          - name: additional_children
+          - name: bmi
+          - name: breastfeeding
+          - name: cd4_count
+          - name: cough
+          - name: fever
+          - name: HIV_treatment_regimen
+          - name: lost_weight
+          - name: new_pregnancy
+          - name: new_pregnancy_outcome
+          - name: night_sweats
+          - name: number_children_choice
+          - name: pregnancy_desired
+          - name: tb_treatment
+          - name: tell_partner_HIV_status
+          - name: total_pregnancies
+          - name: viral_load
+          - name: who_clinical_classification
+      - path: exposures
+        props:
+          - name: contraceptive
+          - name: electricity
+          - name: sexual_intercourse
+          - name: tap_water
+          - name: travel_time
+          - name: use_condom
+          - name: use_family_planning
+  - name: elwazi-demo_file
+    doc_type: file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: state

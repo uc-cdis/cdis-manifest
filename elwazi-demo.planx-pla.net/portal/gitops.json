@@ -32,7 +32,7 @@
     {
       "title": "Data analysis for the Multi-country PROMOTE HIV Antiretroviral Treatment Observational Cohort in Sub-Saharan Africa",
       "description": "This notebook showcases the ability to do exploratory analysis with data available from the PROMOTE HIV Antiretroviral Treatment Observational Cohort of the PROMOTE study which is available in the eLwazi Data Commons. The analysis is not intended to constitute advice nor is it to be used as a substitute for decision making from a professional.",
-      "imageURL": "/dashboard/Public/notebooks/Antiretroviral.png",
+      "imageUrl": "/dashboard/Public/notebooks/Antiretroviral.png",
       "link": "/dashboard/Public/notebooks/HIV_Antiretroviral_Treatment_Observational_Cohort_data_analysis.html"
     },
     {
@@ -162,18 +162,10 @@
   },
   "dataExplorerConfig": {
     "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
-      },
       "_subject_id": {
         "chartType": "count",
         "title": "Subjects"
       },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      }
     },
     "filters": {
       "tabs": [
@@ -182,13 +174,35 @@
           "fields":[
             "project_id",
             "gender",
-	    "age"
+	          "age",
+            "night_sweats",
+            "lost_weight",
+            "who_clinical_classification",
+            "electricity",
+            ""
           ]
         }
       ]
     },
     "table": {
-      "enabled": false
+      "enabled": true,
+      "fields:" [
+        "project_id",
+        "treatment_site",
+        "gender",
+        "age",
+        "night_sweats",
+        "lost_weight",
+        "who_clinical_classification",
+        "HIV_treatment_regimen",
+        "arv_treatment",
+        "viral_load"
+        "bmi",
+        "cd4_count"
+        "cough"
+        "fever"
+        "travel_time"
+      ]
     },
     "dropdowns": {},
     "buttons": [],
