@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/hara_debug') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
