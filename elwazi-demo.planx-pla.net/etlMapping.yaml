@@ -7,7 +7,6 @@ mappings:
       - name: submitter_id
       - name: project_id
       - name: treatment_site
-      - name: _subject_id
     flatten_props:
       - path: demographics
         props:
