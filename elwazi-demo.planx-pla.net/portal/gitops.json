@@ -180,8 +180,8 @@
             "who_clinical_classification",
             "electricity",
             "travel_time"
-          ],
-        },
+          ]
+        }
       ]
     },
     "table": {
@@ -204,7 +204,41 @@
         "travel_time"
       ]
     },
-    "dropdowns": {},
+    "dropdowns": {
+      "download-table": {
+         "title": "Download Case Metadata Table"
+      }
+  },
+  "buttons": [
+    {
+      "enabled": true,
+      "type": "data-json",
+      "title": "JSON",
+      "dropdownId": "download-table",
+      "leftIcon": "datafile",
+      "rightIcon": "download",
+      "fileName": "PROMOTE_Cases_table.json"
+    },
+    {
+      "enabled": true,
+      "type": "data-tsv",
+      "title": "TSV",
+      "dropdownId": "download-table",
+      "leftIcon": "datafile",
+      "rightIcon": "download",
+      "fileName": "PROMOTE_Cases_table.tsv"
+    },
+    {
+      "enabled": true,
+      "type": "data-csv",
+      "title": "CSV",
+      "dropdownId": "download-table",
+     "leftIcon": "datafile",
+     "rightIcon": "download",
+     "fileName": "PROMOTE_Cases_table.csv"
+    }
+  ],  
+  "loginForDownload": true
     "buttons": [],
     "guppyConfig": {
       "dataType": "subject",
