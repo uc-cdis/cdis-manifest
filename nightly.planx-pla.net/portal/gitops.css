@@ -1,1 +1,170 @@
-/* gitops default css */
+:root {
+  --primary-color: #c02f42;
+  --secondary-color: #6d6e70;
+  --g3-primary-btn__bg-color: #c02f42;
+}
+
+/* Buttons */
+
+.g3-button--primary,
+.g3-dropdown-button__button--primary,
+.data-dictionary__switch-button--active,
+.popup__title {
+  background-color: var(--primary-color);
+}
+
+.g3-button--primary:hover,
+.g3-dropdown-button__button--primary:hover,
+.data-dictionary__switch-button:hover {
+  background-color: var(--secondary-color)
+}
+
+.g3-button--default:active, .g3-button--default:active svg path {
+  border: 1px solid var(--primary-color);
+  color: 1px solid var(--primary-color);
+  fill: 1px solid var(--primary-color);
+}
+
+.g3-dropdown-button__button--primary:hover,
+.g3-dropdown-button__button--primary:hover svg path,
+.g3-dropdown-button__menu-trigger--primary:hover,
+.g3-dropdown-button__menu-trigger--primary:hover svg path {
+  border: 1px solid black;
+}
+
+/* fix for hard-coded orange button on File download page */
+.button-primary-orange {
+  background-color: var(--primary-color);
+}
+.button-primary-orange:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Nav Bars and Footer */
+
+.top-bar,
+.top-bar__header,
+.top-icon-button.body-typo {
+  background-color: #616265;
+}
+
+.top-bar__link {
+  border-right: 2px solid #fff;
+}
+
+.nav-button:hover,
+.button-active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-bar__logo-img {
+  height: 110px;
+  margin-bottom: -30px;
+  margin-top: -25px;
+}
+
+.footer__version-area {
+  width: 600px;
+}
+
+/**
+ * hide footer versions from view, according to NIH guidelines that require
+ * footer to contain only links.
+ */
+.footer__version-area, .footer__logo-area {
+  display: none;
+}
+
+.footer {
+  background-color: #000;
+}
+
+.footer-container {
+  background-color: #000;
+}
+
+.footer__nav {
+  background-color: #000;
+}
+
+/* Data Explorer */
+
+.filter-group__tab,
+.g3-filter-group__tab {
+  border-top: 1px solid var(--primary-color);
+  border-right: 1px solid var(--primary-color);
+  border-left: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.tier-access-selector__radio-input:checked + .tier-access-selector__customized-radio-input::after {
+  background-color: var(--primary-color);
+}
+
+.filter-group__tab--selected,
+.g3-filter-group__tab--selected {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.aggregation-card .bucket-item .bucket-count {
+  color: var(--secondary-color);
+}
+
+.aggregation-card input[type='checkbox']:checked {
+  background: var(--secondary-color);
+}
+
+.g3-single-select-filter__checkbox:checked {
+  background: var(--primary-color);
+}
+
+.sqon-clear {
+  background-color: var(--primary-color);
+}
+
+.sqon-value {
+  background-color: var(--secondary-color);
+}
+
+.sqon-value-group, .sqon-more, .sqon-less {
+  color: var(--primary-color);
+}
+
+.input-range__track--active,
+.rc-slider-track,
+.g3-single-select-filter__count .g3-icon--under {
+  background-color: var(--primary-color);
+}
+
+/* Charts */
+
+tspan.special-number,
+.special-number,
+.form-special-number,
+.g3-single-select-filter__count {
+  color: var(--primary-color);
+}
+
+.special-number {
+  fill: var(--primary-color);
+}
+
+.data-explorer__charts tspan.special-number,
+.data-explorer__charts .special-number,
+.data-explorer__charts .form-special-number {
+  color: var(--secondary-color);
+}
+
+.data-explorer__charts .special-number {
+  fill: var(--secondary-color);
+}
+
+.explorer-button-group__dropdown {
+  margin-right: 10px;
+}
+
+/* Other */
+.protected-content {
+  background-color: #f4f4f6;
+}
