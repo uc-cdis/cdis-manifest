@@ -6,6 +6,9 @@
 # PRIVACY_POLICY_URL, or default to the `static/privacy_policy.md` file in fence.
 PRIVACY_POLICY_URL: 'https://biodatacatalyst.nhlbi.nih.gov/privacy/'
 S3_BUCKETS:
+  bdcatpreprod-data-bucket:
+    cred: bdcatprod_fence-bot
+    region: us-east-1
   bdcatprod-data-bucket:
     cred: bdcatprod_fence-bot
     region: us-east-1
