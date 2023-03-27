@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.04
+# Core Gen3 Release 2023.04 (Rhodonite)
 
 ## uc-cdis/fence
 
