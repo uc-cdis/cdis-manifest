@@ -25,27 +25,6 @@
 #### Improvements
   - vulnerability fixes ([#56](https://github.com/uc-cdis/hatchery/pull/56))
 
-## uc-cdis/indexd
-
-#### New Features
-  - Adds description field when creating/updating records. ([#348](https://github.com/uc-cdis/indexd/pull/348)) 
-  - Maps indexd description to drs description for drs endpoints. ([#348](https://github.com/uc-cdis/indexd/pull/348)) 
-
-#### Bug Fixes
-  - Fixes issue where updates to a record's description were not reflected. 
-    ([#351](https://github.com/uc-cdis/indexd/pull/351))
-  - DRS response prefers version before rev, if version is not available it 
-    uses rev ([#347](https://github.com/uc-cdis/indexd/pull/347))
-  - Change using `eval` to `json.loads` to prevent code injections. ([#346](https://github.com/uc-cdis/indexd/pull/346)) 
-
-#### Improvements
-  - Sanitize user input for additional configs. ([#346](https://github.com/uc-cdis/indexd/pull/346)) 
-
-#### Dependency Updates
-  - Updates indexclient to 2.2.0 ([#350](https://github.com/uc-cdis/indexd/pull/350)) 
-  - indexclient changed to pre-release branch temporarily to satisfy tests the 
-    require the addition of description to indexclient. ([#348](https://github.com/uc-cdis/indexd/pull/348)) 
-
 ## uc-cdis/pelican
 
 #### New Features
