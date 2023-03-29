@@ -7,6 +7,7 @@
     "autodeploy": "yes"
   },
   "versions": {
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.04",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.04",
@@ -27,6 +28,7 @@
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.04",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.04",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.04"
+ master
   },
   "arborist": {
     "deployment_version": "2"
@@ -36,7 +38,9 @@
   },
   "ssjdispatcher": {
     "job_images": {
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
       "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2023.04"
+ master
     }
   },
   "sower": [
@@ -45,7 +49,9 @@
       "action": "export",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2023.04",
+ master
         "pull_policy": "Always",
         "env": [
           {
@@ -111,7 +117,9 @@
       "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2023.04",
+ master
         "pull_policy": "Always",
         "env": [
           {
@@ -151,7 +159,9 @@
       "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:2023.04",
+ master
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -182,7 +192,9 @@
       "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2023.04",
+ master
         "pull_policy": "Always",
         "env": [
           {
@@ -223,7 +235,9 @@
       "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-merging:2023.04",
+ master
         "pull_policy": "Always",
         "env": [
           {
@@ -264,7 +278,9 @@
       "serviceAccountName": "jobs-gen3-datacommons-io",
       "container": {
         "name": "job-task",
+ chore/apply_202304_to_gen3_datacommons_io_1680087946
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.04",
+ master
         "pull_policy": "Always",
         "env": [
           {
