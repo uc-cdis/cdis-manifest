@@ -25,60 +25,103 @@
     "projectDetails": "boardCounts"
   },
   "resourceBrowser": {
-  "title": "Jupyter Notebook Tutorials",
-  "public": true,
-  "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
-  "resources": [
-    {
-      "title": "Data analysis for the Multi-country PROMOTE HIV Antiretroviral Treatment Observational Cohort in Sub-Saharan Africa",
-      "description": "This notebook showcases the ability to do exploratory analysis with data available from the PROMOTE HIV Antiretroviral Treatment Observational Cohort of the PROMOTE study which is available in the eLwazi Data Commons. The analysis is not intended to constitute advice nor is it to be used as a substitute for decision making from a professional.",
-      "imageURL": "/dashboard/Public/notebooks/Antiretroviral.png",
-      "link": "/dashboard/Public/notebooks/HIV_Antiretroviral_Treatment_Observational_Cohort_data_analysis.html"
+    "title": "Jupyter Notebook Tutorials",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time.",
+    "resources": [
+      {
+        "title": "Data analysis for the Multi-country PROMOTE HIV Antiretroviral Treatment Observational Cohort in Sub-Saharan Africa",
+        "description": "This notebook showcases the ability to do exploratory analysis with data available from the PROMOTE HIV Antiretroviral Treatment Observational Cohort of the PROMOTE study which is available in the eLwazi Data Commons. The analysis is not intended to constitute advice nor is it to be used as a substitute for decision making from a professional.",
+        "imageURL": "/dashboard/Public/notebooks/Antiretroviral.png",
+        "link": "/dashboard/Public/notebooks/HIV_Antiretroviral_Treatment_Observational_Cohort_data_analysis.html"
+      },
+      {
+        "title": "Data analysis for pneumonia among children in a birth cohort in South Africa",
+        "description": "In this notebook, we explore the child hospitalization data for pneumonia from South Africa to identify the clinical features associated with serious outcomes and prolonged hospitalization.",
+        "imageUrl": "/dashboard/Public/notebooks/pneumonia_severe_outcomes.png",
+        "link": "/dashboard/Public/notebooks/Pneumonia_severe_outcomes_data_analysis.html"
+      }
+    ]
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": true,
+  "hideSubmissionIfIneligible": true,
+  "componentToResourceMapping": {
+    "Workspace": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
     },
-    {
-      "title": "Data analysis for pneumonia among children in a birth cohort in South Africa",
-      "description": "In this notebook, we explore the child hospitalization data for pneumonia from South Africa to identify the clinical features associated with serious outcomes and prolonged hospitalization.",
-      "imageUrl": "/dashboard/Public/notebooks/pneumonia_severe_outcomes.png",
-      "link": "/dashboard/Public/notebooks/Pneumonia_severe_outcomes_data_analysis.html"
+    "Analyze Data": {
+      "resource": "/workspace",
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Query": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
+    },
+    "Query Data": {
+      "resource": "/query_page",
+      "method": "access",
+      "service": "query_page"
     }
-  ]
   },
   "components": {
     "appName": "eLwazi Data Commons Portal",
     "index": {
       "introduction": {
-        "heading": "Data Commons",
-        "text": "The platform, which is accessed via user workspaces, will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
+        "heading": "eLwazi Data Commons",
+        "text": "The eLwazi Data Commons platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
         "link": "/submission"
       },
       "buttons": [
         {
-          "name": "Define Data Field",
-          "icon": "data-field-define",
-          "body": "The eLwazi Data Commons define the data in a general way. Please study the dictionary before you start browsing.",
-          "link": "/DD",
-          "label": "Learn more"
-        },
-        {
           "name": "Explore Data",
           "icon": "data-explore",
-          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
+          "body": "The Data Exploration Page facilitates faceted search for exploring eLwazi datasets, selecting cohorts across projects, exporting structured data, and creating data file download manifests.",
           "link": "/explorer",
           "label": "Explore data"
         },
         {
-          "name": "Access Data",
+          "name": "Data Dictionary",
+          "icon": "data-field-define",
+          "body": "The eLwazi Data Commons utilizes a data dictionary to define data elements. Please study the dictionary to learn what data are available and how to query them.",
+          "link": "/DD",
+          "label": "View Dictionary"
+        },
+        {
+          "name": "Query Data",
           "icon": "data-access",
-          "body": "Use our selected tool to filter out the data you need.",
+          "body": "Use the graphiQL interface to create and send powerful queries to the eLwazi database. This query builder tool features syntax checking, autocomplete, and documentation tools.",
           "link": "/query",
           "label": "Query data"
         },
         {
+          "name": "Analyze Data",
+          "icon": "data-analyze",
+          "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
+          "link": "/workspace",
+          "label": "Run Analysis"
+        },
+        {
           "name": "Submit Data",
           "icon": "data-submit",
-          "body": "Submit Data based on the dictionary.",
+          "body": "Submit new data to or update an eLwazi project.",
           "link": "/submission",
           "label": "Submit data"
+        }
+      ],
+      "homepageChartNodes": [
+        {
+          "node": "study",
+          "name": "Studies"
+        },
+        {
+          "node": "subject",
+          "name": "subjects"
         }
       ]
     },
@@ -86,34 +129,46 @@
       "title": "eLwazi Data Commons",
       "items": [
         {
-          "icon": "dictionary",
-          "link": "/DD",
-          "color": "#a2a2a2",
-          "name": "Dictionary"
-        },
-        {
-          "icon": "exploration",
+          "name": "Exploration",
           "link": "/explorer",
+          "icon": "exploration",
           "color": "#a2a2a2",
-          "name": "Exploration"
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
         },
         {
-          "icon": "query",
+          "name": "Dictionary",
+          "link": "/DD",
+          "icon": "dictionary",
+          "color": "#a2a2a2",
+          "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
+        },
+        {
+          "name": "Query",
           "link": "/query",
+          "icon": "query",
           "color": "#a2a2a2",
-          "name": "Query"
+          "tooltip": "Query the databases using GraphQL."
         },
         {
-          "icon": "bar-chart",
+          "name": "Example Analysis",
           "link": "/resource-browser",
+          "icon": "bar-chart",
           "color": "#a2a2a2",
-          "name": "Example Analysis"
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the eLwazi Data Commons by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
         },
         {
-          "icon": "profile",
-          "link": "/identity",
+          "name": "Workspace",
+          "link": "/workspace",
+          "icon": "workspace",
           "color": "#a2a2a2",
-          "name": "Profile"
+          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
+        },
+        {
+          "name": "Profile",
+          "link": "/identity",
+          "icon": "profile",
+          "color": "#a2a2a2",
+          "tooltip": "Create and manage API keys for programmatic access to the eLwazi Data Commons and check your access to projects and resources."
         }
       ]
     },
@@ -126,14 +181,19 @@
         },
         {
           "link": "https://gen3.org/resources/user",
-          "name": "Documentation"
+          "name": "Gen3 Documentation"
+        },
+        {
+          "link": "support@datacommons.io",
+          "name": "Email Support"
         }
-      ]
+      ],
+      "useProfileDropdown": false
     },
     "login": {
       "title": "eLwazi Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",
-      "text": "The platform, will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
+      "text": "The platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io"
     },
@@ -160,93 +220,311 @@
     "discoveryUseAggMDS": false,
     "studyRegistration": false
   },
-  "dataExplorerConfig": {
-    "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
-      },
-      "_subject_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      },
-      "gender": {
-        "chartType": "pie",
-        "title": "Gender"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Subject",
-          "fields":[
-            "project_id",
-            "gender",
-	    "age"
-          ]
+  "analysisTools": [],
+  "explorerConfig": [
+    {
+      "tabTitle": "Subjects",
+      "charts": {
+        "treatment_site": {
+          "chartType": "fullPie",
+          "title": "Subject Treatment Site"
         }
-      ]
-    },
-    "table": {
-      "enabled": false
-    },
-    "dropdowns": {},
-    "buttons": [],
-    "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subjects"
       },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id"
-    },
-    "fileExplorerConfig": {
-    "charts": {
-      "data_type": {
-        "chartType": "stackedBar",
-        "title": "File Type"
+      "filters": {
+        "tabs": [
+          {
+            "title": "Study Properties",
+            "fields": [
+              "treatment_site",
+              "data_description",
+              "study_description",
+              "study_doi",
+              "study_objective",
+              "study_organization",
+              "study_release_date",
+              "study_release_version",
+              "study_setup"
+            ]
+          },
+          {
+            "title": "Demographics",
+            "fields": [
+              "age",
+              "race",
+              "gender",
+              "year_of_birth"
+            ]
+          },
+          {
+            "title": "Medical History",
+            "fields": [
+              "additional_children",
+              "arv_treatment",
+              "bmi",
+              "breastfeeding",
+              "cd4_count",
+              "cough",
+              "fever",
+              "HIV_treatment_regimen",
+              "lost_weight",
+              "new_pregnancy",
+              "new_pregnancy_outcome",
+              "night_sweats",
+              "number_children_choice",
+              "pregnancy_desire",
+              "tb_treatment",
+              "tell_partner_HIV_status",
+              "total_pregnancies",
+              "treatment_site",
+              "viral_load",
+              "who_clinical_classification"
+            ]
+          },
+          {
+            "title": "Exposure",
+            "fields": [
+              "contraceptive",
+              "electricity",
+              "sexual_intercourse",
+              "tap_water",
+              "travel_time",
+              "use_condom",
+              "use_family_planning"
+            ]
+          }
+        ]
       },
-      "data_format": {
-        "chartType": "stackedBar",
-        "title": "File Format"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "File",
-          "fields": [
-            "project_id",
-            "data_type",
-            "data_format"
-          ]
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "submitter_id",
+          "pid",
+          "treatment_site",
+          "study_submitter_id",
+          "data_description",
+          "study_description",
+          "study_doi",
+          "study_objective",
+          "study_organization",
+          "study_release_date",
+          "study_release_version",
+          "study_setup",
+          "additional_children",
+          "arv_treatment",
+          "bmi",
+          "breastfeeding",
+          "cd4_count",
+          "cough",
+          "fever",
+          "HIV_treatment_regimen",
+          "lost_weight",
+          "new_pregnancy",
+          "new_pregnancy_outcome",
+          "night_sweats",
+          "number_children_choice",
+          "pregnancy_desire",
+          "tb_treatment",
+          "tell_partner_HIV_status",
+          "total_pregnancies",
+          "treatment_site",
+          "viral_load",
+          "who_clinical_classification",
+          "contraceptive",
+          "electricity",
+          "sexual_intercourse",
+          "tap_water",
+          "travel_time",
+          "use_condom",
+          "use_family_planning",
+          "object_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Subject Table"
         }
-      ]
-    },
-    "table": {
-      "enabled": true,
-      "fields": [
-        "project_id",
-        "file_name",
-        "file_size",
-        "object_id"
-      ]
-    },
-    "dropdowns": {},
-    "guppyConfig": {
-      "dataType": "file",
-      "fieldMapping": [
-        { "field": "object_id", "name": "GUID" }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_subjects_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_subjects_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_subjects_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "manifest",
+          "title": "File Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_subjects_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
       ],
-      "nodeCountTitle": "Files",
-      "manifestMapping": {
-        "resourceIndexType": "case",
-        "resourceIdField": "_case_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "subject",
+        "nodeCountTitle": "Subjects",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Subject ID"
+          },
+          {
+            "field": "study_submitter_id",
+            "name": "Study ID"
+          }
+        ],
+        "manifestMapping": {
+          "resourceIndexType": "data_file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "_subject_id",
+          "referenceIdFieldInDataIndex": "_subject_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Files",
+      "charts": {
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
       },
-      "accessibleFieldCheckList": ["project_id"],
-      "accessibleValidationField": "project_id",
-      "downloadAccessor": "object_id"
+      "filters": {
+        "tabs": [
+          {
+            "title": "File Properties",
+            "fields": [
+              "project_id",
+              "file_size",
+              "data_category",
+              "data_format",
+              "data_type"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "submitter_id",
+          "data_format",
+          "data_category",
+          "data_type",
+          "object_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download File Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_files_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_files_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_files_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Get File Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "eLwazi_files_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "data_file",
+        "nodeCountTitle": "Data Files",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
     }
-  }
+  ]
 }
