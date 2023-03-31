@@ -304,7 +304,10 @@
   "featureFlags": {
     "explorer": true,
     "analysis": true,
-    "explorerPublic": true
+    "explorerPublic": true,
+    "discovery": false,
+    "discoveryUseAggMDS": false,
+    "studyRegistration": false
   },
   "analysisTools": [],
   "explorerConfig": [
