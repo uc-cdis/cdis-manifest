@@ -233,6 +233,20 @@
           "color": "#a2a2a2"
         },
         {
+          "name": "Resources",
+          "link": "https://example.com/",
+          "icon": "bar-chart",
+          "tooltip": "Resources used in MIDRC.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Acknowledgments",
+          "link": "https://example.com/acknowledgments",
+          "icon": "bar-chart",
+          "tooltip": "MIDRC Acknowledgments",
+          "color": "#a2a2a2"
+        },
+        {
           "name": "Workspace",
           "link": "/workspace",
           "icon": "workspace",
@@ -257,10 +271,6 @@
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Gen3"
-        },
-        {
-          "link": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html",
-          "name": "HHS Responsible Disclosure"
         },
         {
           "icon": "upload",
@@ -293,6 +303,14 @@
       "#035C94",
       "#462255"
     ],
+    "footer": {
+      "links": [
+        {
+          "text": "HHS Responsible Disclosure",
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        }
+      ]
+    },
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
