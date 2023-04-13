@@ -4,9 +4,12 @@ mappings:
     type: aggregator
     root: subject
     props:
-      - name: submitter_id
       - name: project_id
-      - name: location
+      - name: submitter_id
+      - name: pid
+      - name: treatment_site
+    parent_props:
+      - path: studies[data_description,study_description,study_doi,study_objective,study_organization,study_release_date,study_release_version,study_setup,study_submitter_id:submitter_id]
     flatten_props:
       - path: demographics
         props:
@@ -14,3 +17,61 @@ mappings:
           - name: race
           - name: gender
           - name: year_of_birth
+      - path: medical_histories
+        props:
+          - name: additional_children
+          - name: arv_treatment
+          - name: bmi
+          - name: breastfeeding
+          - name: cd4_count
+          - name: cough
+          - name: fever
+          - name: HIV_treatment_regimen
+          - name: lost_weight
+          - name: new_pregnancy
+          - name: new_pregnancy_outcome
+          - name: night_sweats
+          - name: number_children_choice
+          - name: pregnancy_desire
+          - name: tb_treatment
+          - name: tell_partner_HIV_status
+          - name: total_pregnancies
+          - name: viral_load
+          - name: who_clinical_classification
+      - path: exposures
+        props:
+          - name: contraceptive
+          - name: electricity
+          - name: sexual_intercourse
+          - name: tap_water
+          - name: travel_time
+          - name: use_condom
+          - name: use_family_planning
+    joining_props:
+      - index: data_file
+        join_on: _subject_id
+        props:
+          - name: object_id
+            src: object_id
+            fn: set
+  - name: elwazi-demo_data_file
+    doc_type: data_file
+    type: collector
+    root: None
+    category: data_file
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: object_id
+      - name: md5sum
+      - name: file_name
+      - name: file_size
+      - name: data_format
+      - name: data_type
+      - name: data_category
+    injecting_props:
+      subject:
+        props:
+          - name: _subject_id
+            src: id
+            fn: set
