@@ -47,6 +47,21 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
+      - index: measurement
+        join_on: _case_id
+        props:
+          - name: test_days_from_index
+            src: test_days_from_index
+            fn: set
+          - name: test_method
+            src: test_method
+            fn: set
+          - name: test_name
+            src: test_name
+            fn: set
+          - name: test_result_text
+            src: test_result_text
+            fn: set
   - name: midrcstaging_measurement
     doc_type: measurement
     type: aggregator
@@ -59,6 +74,12 @@ mappings:
       - name: test_method
       - name: test_name
       - name: test_result_text
+    injecting_props:
+      case:
+        props:
+          - name: _case_id
+            src: id
+            fn: set
   - name: midrcstaging_imaging_study
     doc_type: imaging_study
     type: aggregator
