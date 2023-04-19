@@ -7,9 +7,8 @@
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "default-pay-model": {
-    "account_id": "354484406138",
-    "workspace_type": "brhworkspaces",
-    "region": "us-east-1"
+    "workspace_type": "Trial Workspace",
+    "local":true
   },
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-34AAJOR7A5AG",
   "sidecar": {
@@ -40,7 +39,7 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.4",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },

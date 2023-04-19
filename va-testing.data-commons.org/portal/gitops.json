@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-21",
-  "argoTemplate": "gwas-template-uniflow-zip",
+  "argoTemplate": "gwas-template-manhattan-test",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -96,7 +96,8 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults"
+    "GWASResults",
+    "GWASResultsV2"
   ],
   "arrangerConfig": {
     "charts": {
