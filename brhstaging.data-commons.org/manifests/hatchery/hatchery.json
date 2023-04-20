@@ -108,7 +108,7 @@
       "name": "(Nextflow) Test Nextflow in BRH",
       "image": "quay.io/cdis/jupyter-notebook:feat_nextflow",
       "env": {
-        "FRAME_ANCESTORS": "https://qa-brh.planx-pla.net"
+        "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
