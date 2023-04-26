@@ -12,7 +12,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.02",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.04",
     "env": {
       "NAMESPACE": "default",
       "GEN3_ENDPOINT": "healdata.org",
@@ -38,7 +38,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.4",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -138,7 +138,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__6eb9db58c3e3ec67b9f92dd6fdd3f1037ae94ff0",
+      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__c3f43a1b8e058be76a9d998a7009e270dce04e6f",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
