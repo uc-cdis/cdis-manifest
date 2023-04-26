@@ -39,7 +39,7 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.4",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
@@ -80,6 +80,39 @@
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "4.0",
+      "memory-limit": "10Gi",
+      "name": "(Nextflow) Test Nextflow in BRH",
+      "image": "quay.io/cdis/jupyter-notebook:feat_nextflow",
+      "env": {
+        "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.shutdown_no_activity_timeout=5400",

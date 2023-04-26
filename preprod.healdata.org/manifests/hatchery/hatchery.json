@@ -37,7 +37,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:markdown_preview",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.4",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -136,7 +136,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__2c4225e38773c80396edd4871454cf7f1c4aaffb",
+      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__c3f43a1b8e058be76a9d998a7009e270dce04e6f",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
