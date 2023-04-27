@@ -251,16 +251,20 @@
           "name": "Get Started"
         },
         {
-          "link": "https://data.midrc.org/dashboard/Public/documentation/DUA.html",
-          "name": "Data Use Agreement"
+          "link": "https://www.midrc.org/midrc-acknowledgements",
+          "name": "Cite MIDRC"
+        },
+        {
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
+          "name": "DUA"
+        },
+        {
+          "link": "https://www.midrc.org/resources",
+          "name": "Resources"
         },
         {
           "link": "https://gen3.org/resources/user/",
           "name": "Gen3"
-        },
-        {
-          "link": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html",
-          "name": "HHS Responsible Disclosure"
         },
         {
           "icon": "upload",
@@ -293,6 +297,14 @@
       "#035C94",
       "#462255"
     ],
+    "footer": {
+      "links": [
+        {
+          "text": "HHS Responsible Disclosure",
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        }
+      ]
+    },
     "footerLogos": [
       {
         "src": "/src/img/gen3.png",
