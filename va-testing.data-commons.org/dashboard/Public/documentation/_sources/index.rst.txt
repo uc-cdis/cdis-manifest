@@ -142,12 +142,12 @@ vocabulary and selecting the set of terms for your analyses. Here you
 select all concepts (variables) that you would like to use for criteria
 that define your study population cohort.
 
-|image0|
+.. image:: _static/slide_10.png
 
 Select Concept Sets in the menu and click the blue box for “New Concept
 Set”.
 
-|image1|
+.. image:: _static/slide_11.png
 
 In the box above the tabs, enter a name for the Concept Set you are
 creating.
@@ -155,17 +155,17 @@ creating.
 Click the green box “Add concepts” to view the list of concept
 variables.
 
-|image2|
+.. image:: _static/slide_13.png
 
 Enter the concept name or code into the search bar to find relevant
 concept variables.
 
-|image3|
+.. image:: _static/slide_14.png
 
 Select desired concepts, click “Add To Concept Set”. Repeat Search and
 Add steps as needed, then click “Concept Sets”.
 
-|image4|
+.. image:: _static/slide_15.png
 
 Make sure all desired concepts are included, then click the save icon to
 the right of the name of the Concept Set.
@@ -173,7 +173,7 @@ the right of the name of the Concept Set.
 To add new concepts, please use the “Add Concepts” button again as
 described above.
 
-|image5|
+.. image:: _static/atlas_remove_concepts.png
 
 To delete the concepts from the concept set, select the concepts and
 click on the “Remove Selected” button, then click the save icon to save
@@ -189,37 +189,37 @@ defining the study population cohort. A cohort is defined as a Person
 with an entry and exit date. Thus, a person can be in a cohort multiple
 times if they meet the criteria.
 
-|image6|
+.. image:: _static/slide_17.png
 
 Select “Cohort Definitions” in the menu, you can begin to create a
 cohort by clicking the “New Cohort” button.
 
-|image7|
+.. image:: _static/slide_18.png
 
 In the boxes above and below the tabs, enter a name and description for
 the Cohort.
 
-|image8|
+.. image:: _static/slide_19.png
 
 To establish the duration for your cohort, click “+ Add Initial Event”,
 then in the dropdown menu click “Add Observation”.
 
-|image9|
+.. image:: _static/slide_20.png
 
 Click the blue box “Any Observation”, select “Import Concept Set” from
 the dropdown menu.
 
-|image10|
+.. image:: _static/slide_21.png
 
 Select the Concept Set you just made. This establishes your Concept Set
 as inclusion criteria for your cohort.
 
-|image11|
+.. image:: _static/slide_22.png
 
 To access the table in the MVP harmonization database, click “+ Add
 attribute…”, then click “Add Value as Number Criteria”.
 
-|image12|
+.. image:: _static/slide_23.png
 
 Select “Greater or Equal To”. In this specific case we added Heart
 Failure concept Set and entered value “2”. This will allow for the
@@ -237,7 +237,7 @@ subsequent analyses. Use the cohort definition to identify how many
 people are in the cohort. This is the initial number that will be used
 in the GWAS App when this cohort is selected.
 
-|image13|
+.. image:: _static/slide_26.png
 
 To complete the creation of the Cohort Definition, click “Generation”,
 then “Generate”.
@@ -246,7 +246,7 @@ Cohort size will be displayed under the column “People”. Use View
 Reports to see if you have inclusion criteria that causes cohort
 attrition.
 
-|image14|
+.. image:: _static/atlas_export_cohort.png
 
 The “Export” tab provides a text version of how a cohort was created.
 Click on the “Export” tab and then on the “Copy to clipboard” to copy
@@ -278,6 +278,8 @@ Each step displays the Attrition table at the top of the page. The
 Attrition table contains information about the total population size and
 sample size by ancestry for your selected cohorts and variables.
 
+.. image:: _static/075-attrition-table.png
+
 For more information about the web functionality of each step, please
 refer to the button “New to GWAS? Get started here”. This tool will
 offer highlighted explanations on different parts of the page.
@@ -299,6 +301,8 @@ cohort. The size of the cohort population is indicated on the right-hand
 side of the table. To browse the table, please scroll down to the
 bottom. To search for a cohort by name you may use the search box.
 
+.. image:: _static/068-select-cohort.png
+
 Once a cohort has been chosen, it will populate the attrition table
 above.
 
@@ -314,6 +318,8 @@ In this step, you will determine your outcome phenotype.
 There are two options available: Continuous Outcome Phenotype and
 Dichotomous Outcome Phenotype.
 
+.. image:: _static/069-continuous-dichotomous.png
+
 -  **Continuous Outcome**
 
 Here, you may choose your continuous phenotype. GWAS App provides over
@@ -328,6 +334,8 @@ about the selected outcome distribution in the study population. After
 you select your outcome, click “Submit” to apply it for your model.
 After clicking ‘Submit’ you may see the selection in your attrition
 table.
+
+.. image:: _static/070-continuous.png
 
 -  **Dichotomous Outcome**
 
@@ -351,6 +359,8 @@ corresponding button.
 
 -  **Add Continuous Covariate**
 
+.. image:: _static/071-continuous-covariate.png
+
 GWAS App provides over 5,000 variables for your selection, for example,
 height, weight, blood pressure, white blood cell, and other clinical
 observations. Please select all covariates you wish to use in your
@@ -364,7 +374,11 @@ then appear on the right-hand side of the screen and populate the
 attrition table. You can delete previously chosen covariates by clicking
 on the Delete icon.
 
+.. image:: _static/072-continuous-covariate.png
+
 -  **Add Dichotomous Covariate**
+
+.. image:: _static/073-dichotomous-covariate.png
 
 You may add custom dichotomous covariates by selecting two cohorts.
 Please enter the name for your covariate variable in the field
@@ -376,6 +390,8 @@ indicating the size of the overlap. After you define your covariate,
 click “Add” to apply it to your model. The covariate will then appear on
 the right-hand side of the screen and populate the attrition table. You
 can delete previously created covariates by clicking on the Delete icon.
+
+.. image:: _static/074-dichotomous-covariate.png
 
 **Step 4 Configure GWAS**
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -405,6 +421,8 @@ would like to perform your study.
    imputed SNPs and can be used to remove low-quality imputed markers
    (scale of 0-1). Once you have selected your values please press Next.
 
+.. image:: _static/076-configure-GWAS.png
+
 **Submission Modal and Additional Options**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -428,6 +446,8 @@ the GWAS flow.
 Once you have reviewed your selections you must give a name to your
 analysis, followed by pressing ‘Submit’.
 
+.. image:: _static/077-submit.png
+
 Once the job is submitted, a success message will then appear on the
 screen with the given job name and GWAS job id. You may progress in
 three different paths-
@@ -449,32 +469,44 @@ Status and Review the Results in the “GWAS Results” App.
 **GWAS Results**
 ----------------
 
-Use this App to view the status & results of submitted workflows. Click
-the arrow in the Submitted Job Statuses box to activate the drop down
-menu and see the status of your analysis. This menu will display a
-history of your submitted jobs including the Run ID of your analysis,
-the start time, and the finish time when the run is completed. The menu
-will also show the status of your analysis:
+Use the GWAS Results App to view the status & results of submitted
+workflows. When you open the app, you will see a list of your analyses,
+as well as their status. This list displays a history of your submitted
+jobs, including the Run ID of your analysis, your workflow name, the
+submission date/time, the job status, and the finish time when the run
+is completed. *(Note that “submitted” date/time is when you submitted
+the workflow to the queue to be run. However, the workflow start time
+could be delayed, depending on the length of the queue.)* To understand
+the status of your analysis:
 
--  Pending - your analysis was placed in the queue to run, depending on
-   the length of the queue your analysis could start in the range of
-   several minutes to several hours
--  In Progress - your analysis is started and running, depending on your
-   selection of cohort and variables it could finish in the range of
-   half an hour to three hours
--  Failed - your analysis returned the error, it is advised to
-   review/change your GWAS parameters or contact our help desk at
+-  **Pending:** Your analysis was placed in the queue to run; depending
+   on the length of the queue, your analysis may take from several
+   minutes to several hours to start.
+-  **Running:** Your analysis is started and running; depending on your
+   selection of cohort and variables, it could take 30 minutes to three
+   hours to complete.
+-  **Failed:** Your analysis returned an error. We advise you to
+   review/change your GWAS parameters, or contact our help desk at
    MVPLOI@va.gov
--  Completed - your analysis was successfully completed and you may
-   download the results of the GWAS analysis from this menu
+-  **Succeeded:** Your analysis was successfully completed and you may
+   view and download the results of the GWAS analysis.
 
-Once completed, you may download the results of the GWAS analysis from
-this menu. By pressing the ‘Download’ link a zip file will start
-downloading to your computer. Depending on your cohort and variables
-selection, the file size can vary in the range of 700MB up to 1.3GB. The
-file contains the following: Manhattan plot, QQ plot, metadata file
-containing all of your selections, your study’s attrition table, and
-per-chromosome GWAS summary statistics.
+Once your workflow has completed, you may view results. At the end of
+each workflow row, there are several options for viewing details of the
+workflow. \* **Execution button:** This button allows you to see the
+logs from your workflow as it ran. \* **Results button:** This button
+allows you to see the Manhattan plot for your results, illustrating
+significant SNPs organized by chromosome. On this page, you can download
+the Manhattan plot along with all the other results files from your
+workflow (see Download All Results button in upper right corner). \*
+**Actions menu (3 horizontal dots):** Other actions you can take include
+downloading all the results files from your GWAS analysis. By pressing
+the ``Download`` link, a zip file will start downloading to your
+computer. Depending on your cohort and variables selection, the file
+size can vary in the range of 700MB up to 1.3GB. The file contains the
+following: Manhattan plot, QQ plot, 100 top hits, all hits below p-value
+5e-8, a metadata file containing all of your selections, your study’s
+attrition table, and per-chromosome GWAS summary statistics.
 
 Frequently Asked Questions
 ==========================
@@ -534,19 +566,3 @@ Workspace, you may refer to `Gen3
 Workspaces <https://gen3.org/products/workspaces/>`__ and `Data Analysis
 in a Gen3 Data
 Commons <https://gen3.org/resources/user/analyze-data/>`__.
-
-.. |image0| image:: _static/slide_10.png
-.. |image1| image:: _static/slide_11.png
-.. |image2| image:: _static/slide_13.png
-.. |image3| image:: _static/slide_14.png
-.. |image4| image:: _static/slide_15.png
-.. |image5| image:: _static/atlas_remove_concepts.png
-.. |image6| image:: _static/slide_17.png
-.. |image7| image:: _static/slide_18.png
-.. |image8| image:: _static/slide_19.png
-.. |image9| image:: _static/slide_20.png
-.. |image10| image:: _static/slide_21.png
-.. |image11| image:: _static/slide_22.png
-.. |image12| image:: _static/slide_23.png
-.. |image13| image:: _static/slide_26.png
-.. |image14| image:: _static/atlas_export_cohort.png
