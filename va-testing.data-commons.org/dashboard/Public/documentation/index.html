@@ -65,7 +65,21 @@ Documentation</a></p></li>
 </li>
 <li><p><a class="reference external" href="#gen3-gwas">Gen3 GWAS</a></p></li>
 <li><p><a class="reference external" href="#genome-wide-association-studies-gwas-steps">Genome-Wide Association Studies (GWAS)
-Steps</a></p></li>
+Steps</a></p>
+<ul>
+<li><p><a class="reference external" href="#step-1-select-study-population">Step 1 Select Study
+Population</a></p></li>
+<li><p><a class="reference external" href="#step-2-select-outcome-phenotype">Step 2 Select Outcome
+Phenotype</a></p></li>
+<li><p><a class="reference external" href="#step-3-select-covariate-phenotype">Step 3 Select Covariate
+Phenotype</a></p></li>
+<li><p><a class="reference external" href="#step-4-configure-gwas">Step 4 Configure GWAS</a></p></li>
+<li><p><a class="reference external" href="#submission-modal-and-additional-options">Submission Modal and Additional
+Options</a></p></li>
+<li><p><a class="reference external" href="#check-submission-status-and-review-results">Check Submission Status and Review
+Results</a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="#gwas-results">GWAS Results</a></p></li>
 </ul>
 </li>
@@ -443,28 +457,47 @@ minutes to several hours to start.</p></li>
 <li><p><strong>Running:</strong> Your analysis is started and running; depending on your
 selection of cohort and variables, it could take 30 minutes to three
 hours to complete.</p></li>
-<li><p><strong>Failed:</strong> Your analysis returned an error. We advise you to
-review/change your GWAS parameters, or contact our help desk at
-<a class="reference external" href="mailto:MVPLOI&#37;&#52;&#48;va&#46;gov">MVPLOI<span>&#64;</span>va<span>&#46;</span>gov</a></p></li>
+<li><p><strong>Failed:</strong> Your GWAS has not been able to produce results. Please
+examine your GWAS parameters to check for any issues such as low
+cohort size. Otherwise, you may retry to submit the same workflow or
+contact us for any questions.</p></li>
 <li><p><strong>Succeeded:</strong> Your analysis was successfully completed and you may
 view and download the results of the GWAS analysis.</p></li>
 </ul>
 <p>Once your workflow has completed, you may view results. At the end of
 each workflow row, there are several options for viewing details of the
-workflow. * <strong>Execution button:</strong> This button allows you to see the
-logs from your workflow as it ran. * <strong>Results button:</strong> This button
-allows you to see the Manhattan plot for your results, illustrating
-significant SNPs organized by chromosome. On this page, you can download
-the Manhattan plot along with all the other results files from your
-workflow (see Download All Results button in upper right corner). *
-<strong>Actions menu (3 horizontal dots):</strong> Other actions you can take include
-downloading all the results files from your GWAS analysis. By pressing
-the <code class="docutils literal notranslate"><span class="pre">Download</span></code> link, a zip file will start downloading to your
-computer. Depending on your cohort and variables selection, the file
-size can vary in the range of 700MB up to 1.3GB. The file contains the
-following: Manhattan plot, QQ plot, 100 top hits, all hits below p-value
-5e-8, a metadata file containing all of your selections, your study’s
-attrition table, and per-chromosome GWAS summary statistics.</p>
+workflow.</p>
+<ul class="simple">
+<li><p><strong>Execution button:</strong> This button allows you to see the logs from
+your workflow as it ran.</p></li>
+<li><p><strong>Results button:</strong> This button allows you to see the Manhattan plot
+for your results, illustrating significant SNPs organized by
+chromosome. <em>(Please note that workflows that were completed prior to
+May 2023 will not display the Manhattan plot for viewing.)</em> On this
+page, you can download the Manhattan plot along with all the other
+results files from your workflow (see <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">All</span> <span class="pre">Results</span></code> button
+in upper right corner). If you wish to only download the Manhattan
+plot, you can click on the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Image</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">New</span> <span class="pre">Tab</span></code> button in the
+upper right corner, then right-click and <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as...</span></code> to save the
+file.</p></li>
+<li><p><strong>Actions menu (3 horizontal dots):</strong> Other actions you can take
+include downloading all the results files from your GWAS analysis. By
+pressing the <code class="docutils literal notranslate"><span class="pre">Download</span></code> link, a zip file will start downloading to
+your computer. Depending on your cohort and variables selection, the
+file size can vary in the range of 700MB up to 1.3GB. The download
+file contains the following:</p>
+<ul>
+<li><p>Manhattan plot (.png)</p></li>
+<li><p>QQ plot (.png)</p></li>
+<li><p>100 top hits (.csv.gz)</p></li>
+<li><p>per-chromosome GWAS summary statistics (folder of .csv.gz’s)</p></li>
+<li><p>all hits below p-value 5e-8 (.csv.gz)</p></li>
+<li><p>your study’s attrition tables (folder of .csv’s)</p></li>
+<li><p>a metadata file containing all of your selections
+(gwas_metadata.yaml)</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 <section id="frequently-asked-questions">
@@ -492,9 +525,17 @@ variable “enrollment date”.</p>
 </section>
 <section id="what-will-be-included-in-the-downloadable-package-at-the-end-of-a-gwas">
 <h2><strong>What will be included in the downloadable package at the end of a GWAS?</strong><a class="headerlink" href="#what-will-be-included-in-the-downloadable-package-at-the-end-of-a-gwas" title="Permalink to this heading">¶</a></h2>
-<p>The package contains the following: Manhattan plot, QQ plot, metadata
-file containing all of your selections, your study’s attrition table,
-and per-chromosome GWAS summary statistics.</p>
+<p>The download file contains the following:</p>
+<ul class="simple">
+<li><p>Manhattan plot (.png)</p></li>
+<li><p>QQ plot (.png)</p></li>
+<li><p>100 top hits (.csv.gz)</p></li>
+<li><p>per-chromosome GWAS summary statistics (folder of .csv.gz’s)</p></li>
+<li><p>all hits below p-value 5e-8 (.csv.gz)</p></li>
+<li><p>your study’s attrition tables (folder of .csv’s)</p></li>
+<li><p>a metadata file containing all of your selections
+(gwas_metadata.yaml)</p></li>
+</ul>
 </section>
 <section id="how-long-will-my-gwas-take">
 <h2><strong>How long will my GWAS take?</strong><a class="headerlink" href="#how-long-will-my-gwas-take" title="Permalink to this heading">¶</a></h2>

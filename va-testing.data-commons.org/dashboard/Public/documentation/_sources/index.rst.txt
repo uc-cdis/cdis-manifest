@@ -31,6 +31,19 @@ Table of Contents
    -  `Gen3 GWAS <#gen3-gwas>`__
    -  `Genome-Wide Association Studies (GWAS)
       Steps <#genome-wide-association-studies-gwas-steps>`__
+
+      -  `Step 1 Select Study
+         Population <#step-1-select-study-population>`__
+      -  `Step 2 Select Outcome
+         Phenotype <#step-2-select-outcome-phenotype>`__
+      -  `Step 3 Select Covariate
+         Phenotype <#step-3-select-covariate-phenotype>`__
+      -  `Step 4 Configure GWAS <#step-4-configure-gwas>`__
+      -  `Submission Modal and Additional
+         Options <#submission-modal-and-additional-options>`__
+      -  `Check Submission Status and Review
+         Results <#check-submission-status-and-review-results>`__
+
    -  `GWAS Results <#gwas-results>`__
 
 -  `Frequently Asked Questions <#frequently-asked-questions>`__
@@ -485,28 +498,44 @@ the status of your analysis:
 -  **Running:** Your analysis is started and running; depending on your
    selection of cohort and variables, it could take 30 minutes to three
    hours to complete.
--  **Failed:** Your analysis returned an error. We advise you to
-   review/change your GWAS parameters, or contact our help desk at
-   MVPLOI@va.gov
+-  **Failed:** Your GWAS has not been able to produce results. Please
+   examine your GWAS parameters to check for any issues such as low
+   cohort size. Otherwise, you may retry to submit the same workflow or
+   contact us for any questions.
 -  **Succeeded:** Your analysis was successfully completed and you may
    view and download the results of the GWAS analysis.
 
 Once your workflow has completed, you may view results. At the end of
 each workflow row, there are several options for viewing details of the
-workflow. \* **Execution button:** This button allows you to see the
-logs from your workflow as it ran. \* **Results button:** This button
-allows you to see the Manhattan plot for your results, illustrating
-significant SNPs organized by chromosome. On this page, you can download
-the Manhattan plot along with all the other results files from your
-workflow (see Download All Results button in upper right corner). \*
-**Actions menu (3 horizontal dots):** Other actions you can take include
-downloading all the results files from your GWAS analysis. By pressing
-the ``Download`` link, a zip file will start downloading to your
-computer. Depending on your cohort and variables selection, the file
-size can vary in the range of 700MB up to 1.3GB. The file contains the
-following: Manhattan plot, QQ plot, 100 top hits, all hits below p-value
-5e-8, a metadata file containing all of your selections, your study’s
-attrition table, and per-chromosome GWAS summary statistics.
+workflow.
+
+-  **Execution button:** This button allows you to see the logs from
+   your workflow as it ran.
+-  **Results button:** This button allows you to see the Manhattan plot
+   for your results, illustrating significant SNPs organized by
+   chromosome. *(Please note that workflows that were completed prior to
+   May 2023 will not display the Manhattan plot for viewing.)* On this
+   page, you can download the Manhattan plot along with all the other
+   results files from your workflow (see ``Download All Results`` button
+   in upper right corner). If you wish to only download the Manhattan
+   plot, you can click on the ``View Image in a New Tab`` button in the
+   upper right corner, then right-click and ``Save as...`` to save the
+   file.
+-  **Actions menu (3 horizontal dots):** Other actions you can take
+   include downloading all the results files from your GWAS analysis. By
+   pressing the ``Download`` link, a zip file will start downloading to
+   your computer. Depending on your cohort and variables selection, the
+   file size can vary in the range of 700MB up to 1.3GB. The download
+   file contains the following:
+
+   -  Manhattan plot (.png)
+   -  QQ plot (.png)
+   -  100 top hits (.csv.gz)
+   -  per-chromosome GWAS summary statistics (folder of .csv.gz’s)
+   -  all hits below p-value 5e-8 (.csv.gz)
+   -  your study’s attrition tables (folder of .csv’s)
+   -  a metadata file containing all of your selections
+      (gwas_metadata.yaml)
 
 Frequently Asked Questions
 ==========================
@@ -537,9 +566,16 @@ variable “enrollment date”.
 **What will be included in the downloadable package at the end of a GWAS?**
 ---------------------------------------------------------------------------
 
-The package contains the following: Manhattan plot, QQ plot, metadata
-file containing all of your selections, your study’s attrition table,
-and per-chromosome GWAS summary statistics.
+The download file contains the following:
+
+-  Manhattan plot (.png)
+-  QQ plot (.png)
+-  100 top hits (.csv.gz)
+-  per-chromosome GWAS summary statistics (folder of .csv.gz’s)
+-  all hits below p-value 5e-8 (.csv.gz)
+-  your study’s attrition tables (folder of .csv’s)
+-  a metadata file containing all of your selections
+   (gwas_metadata.yaml)
 
 **How long will my GWAS take?**
 -------------------------------
