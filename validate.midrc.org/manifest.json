@@ -156,7 +156,7 @@
     "kube_bucket": "kube-midrcvalidate-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.1.5/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.1.6/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
@@ -173,7 +173,7 @@
   "scaling": {
     "arborist": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
@@ -185,55 +185,55 @@
     },
     "fence": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "guppy": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "indexd": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 10,
       "targetCpu": 40
     },
     "metadata": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 10,
       "targetCpu": 40
     },
     "peregrine": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 10,
       "targetCpu": 40
     },
     "portal": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 10,
       "targetCpu": 40
     },
     "revproxy": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 4,
       "targetCpu": 40
     },
     "sheepdog": {
       "strategy": "auto",
-      "min": 2,
+      "min": 1,
       "max": 10,
       "targetCpu": 40
     }
