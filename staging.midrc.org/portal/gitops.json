@@ -1063,17 +1063,20 @@
     {
       "name": "Description",
       "field": "data_description",
-      "contentType": "string"
+      "contentType": "string",
+      "width": 400
     },
     {
       "name": "Publication URL",
       "field": "data_url",
-      "contentType": "link"
+      "contentType": "link",
+      "width": 300
     },
     {
       "name": "Disease Type",
       "field": "disease_type",
-      "contentType": "string"
+      "contentType": "string",
+      "width": 150
     }
   ],
     "studyPreviewField": {
@@ -1092,7 +1095,7 @@
       },
       "fieldsToShow": [{
           "groupName": "Dataset Identifiers",
-          "includeName": true,
+          "includeName": false,
           "fields": [{
               "name": "Citation",
               "field": "data_citation",
@@ -1140,7 +1143,7 @@
             "name": "Research Description",
             "field": "research_description",
             "contentType": "paragraphs",
-            "includeName": false,
+            "includeName": true,
             "includeIfNotAvailable": false
           }]
         }
@@ -1153,13 +1156,13 @@
     },
     "tagCategories": [
     {
-        "name": "Disease Type",
+        "name": "disease_type",
         "displayName": "Disease Type",
         "color": "#532565",
         "display": true
       },
     {
-        "name": "Primary Site",
+        "name": "primary_site",
         "displayName": "Primary Site",
         "color": "#981f32",
         "display": true
