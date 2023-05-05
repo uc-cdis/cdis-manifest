@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.05
+# Core Gen3 Release 2023.05 (Ruby)
 
 ## uc-cdis/fence
 
