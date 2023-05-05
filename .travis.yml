@@ -1,5 +1,6 @@
 language: python
 python: 3.9
+dist: jammy
 
 before_script:
   - pip install gen3utils --upgrade
