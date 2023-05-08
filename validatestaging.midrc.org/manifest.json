@@ -129,12 +129,12 @@
   "guppy": {
     "indices": [
       {
-        "index": "validatestaging_dataset",
-        "type": "dataset"
-      },
-      {
         "index": "validatestaging_case",
         "type": "case"
+      },
+      {
+        "index": "validatestaging_measurement",
+        "type": "measurement"
       },
       {
         "index": "validatestaging_imaging_data_file",
