@@ -8,7 +8,7 @@
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.04",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.04",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.04",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:9.0.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2023.04",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.04",
@@ -129,12 +129,12 @@
   "guppy": {
     "indices": [
       {
-        "index": "validate_dataset",
-        "type": "dataset"
-      },
-      {
         "index": "validate_case",
         "type": "case"
+      },
+      {
+        "index": "validate_measurement",
+        "type": "measurement"
       },
       {
         "index": "validate_imaging_data_file",
