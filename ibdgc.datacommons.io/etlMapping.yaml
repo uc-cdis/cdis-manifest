@@ -43,7 +43,7 @@ mappings:
     injecting_props:
       core_metadata_collection:
         props:
-          - name: site
+          - name: source
             src: creator
             fn: set
   - name: ibdgc_supplementary_file
