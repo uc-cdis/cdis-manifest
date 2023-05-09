@@ -8,13 +8,13 @@
   "user-volume-size": "10Gi",
   "default-pay-model": {
     "workspace_type": "Trial Workspace",
-    "local":true
+    "local": true
   },
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-34AAJOR7A5AG",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.03",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.05",
     "env": {
       "NAMESPACE": "brhstaging",
       "HOSTNAME": "brhstaging.data-commons.org"
