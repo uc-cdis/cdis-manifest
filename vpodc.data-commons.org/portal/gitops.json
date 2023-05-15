@@ -114,6 +114,24 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://uc-cdis.github.io/platform-citation/vpodc-cite/",
+          "name": "Cite VPODC"
+        },
+        {
+          "icon": "upload",
+          "link": "/submission",
+          "name": "Submit Data"
+        },
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ],
+      "useProfileDropdown": true
+    },
     "login": {
       "title": "Veterans Precision Oncology Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",

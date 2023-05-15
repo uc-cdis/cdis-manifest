@@ -8,13 +8,13 @@
   "user-volume-size": "10Gi",
   "default-pay-model": {
     "workspace_type": "Trial Workspace",
-    "local":true
+    "local": true
   },
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-34AAJOR7A5AG",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.03",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.05",
     "env": {
       "NAMESPACE": "brhstaging",
       "HOSTNAME": "brhstaging.data-commons.org"
@@ -74,12 +74,13 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Tutorials) Example Analysis Jupyter Notebooks",
-      "image": "quay.io/cdis/brh-notebooks:combined_demos__887221800628b5fa3fbc501e39499ae7a66c219f",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__87ec7438bd7f42ac7ddf96ad4b5855ed8439fee3",
       "env": {
         "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
         "--NotebookApp.password=''",
         "--NotebookApp.token=''",
         "--NotebookApp.shutdown_no_activity_timeout=5400",
