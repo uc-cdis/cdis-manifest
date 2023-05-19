@@ -2,6 +2,7 @@ name: Gen3utils Validation
 
 on:
   push:
+  pull_request:
 
 jobs:
   build:
