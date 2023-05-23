@@ -179,6 +179,10 @@
         "diagnosis": {
           "chartType": "fullPie",
           "title": "Diagnosis"
+        },
+        "consortium_id": {
+          "chartType": "count",
+          "title": "Unique participants"
         }
       },
       "filters": {
@@ -245,7 +249,7 @@
       ],
       "guppyConfig": {
         "dataType": "participant",
-        "nodeCountTitle": "Participants",
+        "nodeCountTitle": "Data points",
         "fieldMapping": [
           { "field": "project_id", "name": "Project ID" },
           { "field": "ibd_affection_status", "name": "IBD Affection Status"},
