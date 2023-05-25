@@ -90,8 +90,6 @@ jobs:
       - name: Comment on PRs with relevant deployment changes
         if: github.event_name == 'pull_request'
         run: |
-          if [[ ${{ github.event_name }} == 'pull_request' ]]; then
-            gen3utils post-deployment-changes ${{ github.repository }} ${{ github.event.pull_request.number }}
-          fi
+          gen3utils post-deployment-changes ${{ github.repository }} ${{ github.event.pull_request.number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
