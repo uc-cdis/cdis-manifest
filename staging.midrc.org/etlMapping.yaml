@@ -31,6 +31,41 @@ mappings:
         fn: count
     parent_props:
       - path: datasets[dataset_submitter_id:submitter_id]
+    nested_props:
+      - name: measurements
+        path: measurements
+        props:
+          - name: test_days_from_index
+          - name: test_method
+          - name: test_name
+          - name: test_result_text
+      - name: medications
+        path: medications
+        props:
+          - name: days_to_medication_end
+          - name: days_to_medication_start
+          - name: dose_sequence_number
+          - name: medication_code
+          - name: medication_code_system
+          - name: medication_manufacturer
+          - name: medication_name
+          - name: medication_status
+          - name: medication_type
+      - name: conditions
+        path: conditions
+        props:
+          - name: condition_code
+          - name: condition_code_system
+          - name: condition_name
+          - name: days_to_condition_end
+          - name: days_to_condition_start
+      - name: procedures
+        path: procedures
+        props:
+          - name: breathing_support_type
+          - name: days_to_procedure_end
+          - name: days_to_procedure_start
+          - name: procedure_name
     joining_props:
       - index: imaging_data_file
         join_on: _case_id
@@ -47,21 +82,6 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-    # flatten_props:
-    #   - path: measurements
-    #     props:
-    #       - name: test_days_from_index
-    #         src: test_days_from_index
-    #         fn: set
-    #       - name: test_method
-    #         src: test_method
-    #         fn: set
-    #       - name: test_name
-    #         src: test_name
-    #         fn: set
-    #       - name: test_result_text
-    #         src: test_result_text
-    #         fn: set
   - name: midrcstaging_measurement
     doc_type: measurement
     type: aggregator

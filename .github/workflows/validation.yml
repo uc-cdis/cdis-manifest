@@ -1,0 +1,95 @@
+name: Gen3utils Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'PR commits + 1'
+        run: echo "PR_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
+      - name: 'Checkout PR branch and all PR commits'
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install gen3utils --upgrade
+      
+      - name: Remove comments from github-actions
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            async function removeComments() {
+              const { owner, repo, number } = context.issue;
+              const commentsResponse = await github.rest.issues.listComments({ owner, repo, issue_number: number });
+              const comments = commentsResponse.data;
+
+              for (const comment of comments) {
+                if (comment.user.login === 'github-actions[bot]') {
+                  await github.rest.issues.deleteComment({ owner, repo, comment_id: comment.id });
+                }
+              }
+            }
+
+            await removeComments();
+
+      - name: Validate manifest.json, etlMapping.yaml, and gitops.json
+        run: |
+          changed_files=$(git diff --name-only HEAD..${{ github.event.pull_request.base.sha }})
+          envs=()
+          for file in $changed_files; do
+            envs+=($(echo "$file" | cut -d "/" -f1))
+          done
+
+          # remove duplicates
+          envs=($(printf "%s\n" "${envs[@]}" | sort -u))
+          echo "${uniq[@]}"
+          echo "Updated: ${envs[@]}"
+
+          PR_LABELS=$(curl -s "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/labels")
+          if [[ $PR_LABELS == *"skip-gen3utils"* ]]; then
+            echo "skipping gen3utils checks..."
+            exit 0
+          fi
+
+          for dir in "${envs[@]}"; do
+            echo " Validating $dir"
+            man=$dir/manifest.json; etl=$dir/etlMapping.yaml; ptlcfg=$dir/portal/gitops.json;
+
+            # validate manifest.json
+            if [ -f $man ]; then
+              gen3utils validate-manifest $man || exit 1
+            fi
+
+            # validate ETL mapping
+            if [ -f $man ] && [ -f $etl ]; then
+              gen3utils validate-etl-mapping $etl $man || exit 1
+            fi
+
+            # validate portal configuration
+            if [ -f $man ] && [ -f $etl ] && [ -f $ptlcfg ]; then
+              gen3utils validate-portal-config $etl $man $ptlcfg ${{ github.repository }} ${{ github.event.pull_request.number }} || exit 1
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PRs with relevant deployment changes
+        if: github.event_name == 'pull_request'
+        run: |
+          gen3utils post-deployment-changes ${{ github.repository }} ${{ github.event.pull_request.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
