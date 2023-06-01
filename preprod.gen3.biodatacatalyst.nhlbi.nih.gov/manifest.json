@@ -12,7 +12,7 @@
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2023.05",
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2023.05",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:9.1.1",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:9.1.2",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.05",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.05",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2023.05",
@@ -414,6 +414,7 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "argocd": "true",
+    "pdb": "on",
     "waf_enabled": "true"
   },
   "canary": {

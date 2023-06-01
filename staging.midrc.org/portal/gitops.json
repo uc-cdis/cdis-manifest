@@ -247,7 +247,7 @@
           "name": "About"
         },
         {
-          "link": "https://staging.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -255,7 +255,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
+          "link": "/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -351,8 +351,49 @@
               "covid19_positive",
               "project_id"
             ]
-          }
-        ]
+          },
+          {
+            "title": "COVID Tests",
+            "fields": [
+              "measurements.test_name",
+              "measurements.test_result_text",
+              "measurements.test_method",
+              "measurements.test_days_from_index"
+            ]
+          },
+          {
+            "title": "Medications",
+            "fields": [
+              "medications.days_to_medication_start",
+              "medications.days_to_medication_end",
+              "medications.dose_sequence_number",
+              "medications.medication_code",
+              "medications.medication_code_system",
+              "medications.medication_manufacturer",
+              "medications.medication_name",
+              "medications.medication_status",
+              "medications.medication_type"
+            ]
+          },
+          {
+            "title": "Procedures",
+            "fields": [
+              "procedures.breathing_support_type",
+              "procedures.days_to_procedure_start",
+              "procedures.days_to_procedure_end",
+              "procedures.procedure_name"
+            ]
+          },
+          {
+            "title": "Conditions",
+            "fields": [
+              "conditions.condition_name",
+              "conditions.condition_code_system",
+              "conditions.condition_code",
+              "conditions.days_to_condition_start",
+              "conditions.days_to_condition_end"
+            ]
+          }        ]
       },
       "table": {
         "enabled": true,
@@ -365,6 +406,28 @@
           "ethnicity",
           "zip",
           "covid19_positive",
+          "measurements.test_name",
+          "measurements.test_result_text",
+          "measurements.test_method",
+          "measurements.test_days_from_index",
+          "medications.days_to_medication_start",
+          "medications.days_to_medication_end",
+          "medications.dose_sequence_number",
+          "medications.medication_code",
+          "medications.medication_code_system",
+          "medications.medication_manufacturer",
+          "medications.medication_name",
+          "medications.medication_status",
+          "medications.medication_type",
+          "procedures.breathing_support_type",
+          "procedures.days_to_procedure_start",
+          "procedures.days_to_procedure_end",
+          "procedures.procedure_name",
+          "conditions.condition_name",
+          "conditions.condition_code_system",
+          "conditions.condition_code",
+          "conditions.days_to_condition_start",
+          "conditions.days_to_condition_end",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
