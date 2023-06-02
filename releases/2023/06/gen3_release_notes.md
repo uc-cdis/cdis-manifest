@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.06
+# Core Gen3 Release 2023.06 (Sapphire)
 
 ## uc-cdis/arborist
 
