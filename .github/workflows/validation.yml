@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: Validate config
     runs-on: ubuntu-latest
     steps:
       - name: 'PR commits + 1'
