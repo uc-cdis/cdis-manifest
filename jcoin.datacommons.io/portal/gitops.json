@@ -187,7 +187,7 @@
           "chartType": "fullPie",
           "title": "Hispanic ethnicity"
         },
-        "quarter_recruited": {
+        "quarter_enrolled": {
           "chartType": "bar",
           "title": "Quarter enrolled"
         }
@@ -205,13 +205,13 @@
             "title": "Participant",
             "fields": [
               "role_in_project",
-              "current_client_status"
+              "current_study_status"
             ]
           },
           {
             "title": "Quarter enrolled",
             "fields": [
-              "quarter_recruited"
+              "quarter_enrolled"
             ]
           },
           {
@@ -233,8 +233,8 @@
           "race",
           "hispanic",
           "role_in_project",
-          "quarter_recruited",
-          "current_client_status"
+          "quarter_enrolled",
+          "current_study_status"
         ]
       },
       "buttons": [
@@ -291,7 +291,7 @@
             "name": "Client or staff?"
           },
           {
-            "field": "quarter_recruited",
+            "field": "quarter_enrolled",
             "name": "Quarter enrolled"
           }
         ],
@@ -324,8 +324,8 @@
             "title": "Participant",
             "fields": [
               "role_in_project",
-              "quarter_recruited",
-              "current_client_status"
+              "quarter_enrolled",
+              "current_study_status"
             ]
           },
           {
@@ -333,7 +333,7 @@
             "fields": [
               "visit_number",
               "visit_type",
-              "visit_name"
+              "visit_month"
             ]
           }
         ]
@@ -391,12 +391,12 @@
             "name": "Client or staff?"
           },
           {
-            "field": "quarter_recruited",
+            "field": "quarter_enrolled",
             "name": "Quarter enrolled"
           },
           {
-            "field": "visit_name",
-            "name": "Visit Name"
+            "field": "visit_month",
+            "name": "Visit Month"
           },
           {
             "field": "visit_number",
