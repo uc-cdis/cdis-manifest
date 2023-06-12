@@ -131,7 +131,7 @@
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": true,
+        "enabled": false,
         "field": "advSearchFilters",
         "filters": [
           {
@@ -219,7 +219,7 @@
     "studyColumns": [
       {
         "name": "Study Name",
-        "field": "name",
+        "field": "short_name",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a",
         "width": "157px"
