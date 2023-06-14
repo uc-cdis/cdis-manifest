@@ -29,8 +29,8 @@
       "target-port": 8787,
       "cpu-limit": "1.0",
       "memory-limit": "1024Mi",
-      "name": "R Studio",
-      "image": "quay.io/cdis/rstudio3.6:master",
+      "name": "RStudio 4.1.0",
+      "image": "quay.io/cdis/rstudio4.1:rstudio4.1-0.1.0",
       "env": {
         "DISABLE_AUTH": "true"
       },
@@ -44,16 +44,21 @@
     {
       "target-port": 8888,
       "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
-      "name": "Jupyter - Python/R",
-      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "memory-limit": "2Gi",
+      "name": "(Generic) Jupyter Lab Notebook with R Kernel",
+      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
       "env": {
-        "NAMESPACE": "default"
+        "FRAME_ANCESTORS": "https://jcoin.datacommons.io"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
         "--NotebookApp.password=''",
-        "--NotebookApp.token=''"
+        "--NotebookApp.token=''",
+        "--NotebookApp.ip='*'",
+        "--NotebookApp.notebook_dir='/home/jovyan'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
       ],
       "command": [
         "start-notebook.sh"
@@ -64,11 +69,12 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
     },
     {
       "target-port": 8888,
