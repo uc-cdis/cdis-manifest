@@ -285,7 +285,7 @@ mappings:
           - name: study_uid
             src: study_uid
             fn: set
-  - name: midrc_annotation_data_file
+  - name: midrcstaging_annotation_data_file
     doc_type: annotation_data_file
     type: collector
     root: None
@@ -378,7 +378,7 @@ mappings:
           - name: study_uid
             src: study_uid
             fn: set
-  - name: midrc_annotation
+  - name: midrcstaging_annotation
     doc_type: annotation
     type: aggregator
     root: annotation
