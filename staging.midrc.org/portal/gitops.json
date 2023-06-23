@@ -393,7 +393,18 @@
               "conditions.days_to_condition_start",
               "conditions.days_to_condition_end"
             ]
-          }        ]
+          },
+          {
+            "title": "Annotations",
+            "fields": [
+              "case_annotations.airspace_disease_grading",
+              "case_annotations.class_covid19_pneumonia",
+              "case_annotations.midrc_mRALE_score",
+              "case_annotations.annotation_method",
+              "case_annotations.annotator_id"
+            ]
+          }
+        ]
       },
       "table": {
         "enabled": true,
@@ -428,6 +439,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
+          "case_annotations.airspace_disease_grading",
+          "case_annotations.class_covid19_pneumonia",
+          "case_annotations.midrc_mRALE_score",
+          "case_annotations.annotation_method",
+          "case_annotations.annotator_id",
+          "case_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -525,6 +542,96 @@
           "referenceIdFieldInResourceIndex": "_case_id",
           "referenceIdFieldInDataIndex": "_case_id"
         },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Annotations",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Annotations",
+            "fields": [
+              "airspace_disease_grading",
+              "class_covid19_pneumonia",
+              "midrc_mRALE_score",
+              "annotation_method",
+              "annotator_id",
+              "project_id"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "case_ids",
+          "airspace_disease_grading",
+          "class_covid19_pneumonia",
+          "midrc_mRALE_score",
+          "annotation_method",
+          "annotator_id",
+          "instance_uids",
+          "submitter_id",
+          "project_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.csv"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "annotation",
+        "nodeCountTitle": "Annotations",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Annotation ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Case ID"
+          }
+        ],
         "accessibleFieldCheckList": [
           "project_id"
         ],
@@ -689,6 +796,16 @@
               "zip",
               "index_event"
             ]
+          },
+          {
+            "title": "Annotations",
+            "fields": [
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
+            ]
           }
         ]
       },
@@ -718,6 +835,12 @@
           "race",
           "ethnicity",
           "zip",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_ct_series_file_count",
           "_dx_series_file_count",
           "_cr_series_file_count",
@@ -1050,6 +1173,175 @@
       "guppyConfig": {
         "dataType": "imaging_data_file",
         "nodeCountTitle": "Imaging Series",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          }
+        ],
+        "manifestMapping": {
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "downloadAccessor": "object_id",
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Annotation Files",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Annotation Properties",
+            "fields": [
+                "annotation_method",
+                "annotation_name",
+                "annotator_id",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "series_description",
+                "software_versions",
+                "data_format",
+                "data_category",
+                "data_type"
+            ]
+          },
+          {
+            "title": "Study Properties",
+            "fields": [
+              "age_at_imaging",
+              "body_part_examined",
+              "days_from_study_to_neg_covid_test",
+              "days_from_study_to_pos_covid_test",
+              "days_to_study",
+              "study_description",
+              "study_modality",
+              "study_location",
+              "study_year",
+              "study_year_shifted",
+              "project_id"
+            ]
+          },
+          {
+            "title": "Case Demographics",
+            "fields": [
+              "age_at_index",
+              "covid19_positive",
+              "index_event",
+              "race",
+              "sex",
+              "zip"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+            "annotation_method",
+            "annotation_name",
+            "annotator_id",
+            "manufacturer",
+            "manufacturer_model_name",
+            "modality",
+            "series_description",
+            "software_versions",
+            "age_at_imaging",
+            "body_part_examined",
+            "days_to_study",
+            "days_from_study_to_neg_covid_test",
+            "days_from_study_to_pos_covid_test",
+            "study_description",
+            "study_modality",
+            "study_location",
+            "study_year",
+            "study_year_shifted",
+            "age_at_index",
+            "covid19_positive",
+            "index_event",
+            "race",
+            "sex",
+            "zip",
+            "data_format",
+            "data_category",
+            "data_type",
+            "series_uid",
+            "study_uid",
+            "case_ids",
+            "object_id",
+            "file_name",
+            "file_size",
+            "instance_uids",
+            "submitter_id",
+            "project_id"
+        ],
+        "dicomViewerId": "submitter_id",
+        "linkFields": [
+          "submitter_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.csv"
+        },
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download File Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_manifest.json"
+        },
+        {
+          "enabled": false,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "annotation_data_file",
+        "nodeCountTitle": "Annotation Files",
         "fieldMapping": [
           {
             "field": "project_id",
