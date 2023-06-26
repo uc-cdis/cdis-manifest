@@ -31,25 +31,25 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NHLBI BioData Catalyst",
+    "appName": "NHLBI BioData Catalyst\u00ae",
     "index": {
       "introduction": {
         "heading": "",
-        "text": "NHLBI BioData Catalyst supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
+        "text": "NHLBI BioData Catalyst&reg; (BDC) supports the management, analysis and sharing of human disease data for the research community and aims to advance basic understanding of the genetic basis of complex traits and accelerate discovery and development of therapies, diagnostic tests, and other technologies for diseases like cancer. The data commons supports cross-project analyses by harmonizing data from different projects through the collaborative development of a data dictionary, providing an API for data queries and download, and providing a cloud-based analysis workspace with rich tools and resources.",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Define Data Field",
           "icon": "stage-planning",
-          "body": "NHLBI BioData Catalyst define the data in a general way. Please study the dictionary before you start browsing.",
+          "body": "BDC define the data in a general way. Please study the dictionary before you start browsing.",
           "link": "/DD",
           "label": "Learn more"
         },
         {
           "name": "Explore Data",
           "icon": "stage-explore",
-          "body": "The Gen3 Exploration Page gives you insights and a clear overview under selected factors.",
+          "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
           "link": "/explorer",
           "label": "Explore data"
         },
@@ -61,6 +61,7 @@
           "label": "Run analysis"
         }
       ],
+      "homepageChartNodesExcludeFiles": true,
       "homepageChartNodes": [
         {
           "node": "subject",
@@ -157,7 +158,7 @@
           "text": "Data Sharing Policy"
         },
         {
-          "text": "HHS Responsible Disclosure Form",
+          "text": "HHS Vulnerability Disclosure",
           "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
         },
         {
@@ -165,7 +166,7 @@
           "href": "https://www.nhlbi.nih.gov/about/foia-fee-for-service-office"
         },
         {
-          "text": "Accessibility Information",
+          "text": "Accessibility",
           "href": "https://biodatacatalyst.nhlbi.nih.gov/accessibility"
         },
         {
@@ -840,6 +841,177 @@
                 {
                   "type": "block",
                   "sourceField": "study_description"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tabName": "dbGaP FHIR",
+          "groups": [
+            {
+              "header": "Disclaimer",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "DBGAP_FHIR_Disclaimer",
+                  "default": "This information was retrieved from dbGaP's FHIR API for discoverability purposes and may not contain fully up-to-date information. Please refer to the official FHIR server for up-to-date FHIR data."
+                },
+                {
+                  "type": "link",
+                  "label": "dbGaP FHIR Research Study URL:",
+                  "sourceField": "DBGAP_FHIR_ResearchStudyURL",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "General Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Title:",
+                  "sourceField": "DBGAP_FHIR_Title",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "ID:",
+                  "sourceField": "DBGAP_FHIR_Id",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Focus:",
+                  "sourceField": "DBGAP_FHIR_Focus",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Identifier:",
+                  "sourceField": "DBGAP_FHIR_Identifier",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Category:",
+                  "sourceField": "DBGAP_FHIR_Category",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Status:",
+                  "sourceField": "DBGAP_FHIR_Status",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "DBGAP_FHIR_Description"
+                }
+              ]
+            },
+            {
+              "header": "Counts",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Number of Samples:",
+                  "sourceField": "DBGAP_FHIR_NumSamples",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Molecular Datasets:",
+                  "sourceField": "DBGAP_FHIR_NumMolecularDatasets",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number Of Variables:",
+                  "sourceField": "DBGAP_FHIR_NumVariables",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Subjects:",
+                  "sourceField": "DBGAP_FHIR_NumSubjects",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Documents:",
+                  "sourceField": "DBGAP_FHIR_NumDocuments",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Analyses:",
+                  "sourceField": "DBGAP_FHIR_NumAnalysis",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Phenotype Datasets:",
+                  "sourceField": "DBGAP_FHIR_NumPhenotypeDatasets",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Number of Sub Studies:",
+                  "sourceField": "DBGAP_FHIR_NumSubStudies",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Additional Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Conditions:",
+                  "sourceField": "DBGAP_FHIR_Condition",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Keywords:",
+                  "sourceField": "DBGAP_FHIR_Keyword",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Release Date:",
+                  "sourceField": "DBGAP_FHIR_ReleaseDate",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "Study Overview URL:",
+                  "sourceField": "DBGAP_FHIR_StudyOverviewUrl",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Part Of:",
+                  "sourceField": "DBGAP_FHIR_PartOf",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Enrollment:",
+                  "sourceField": "DBGAP_FHIR_Enrollment",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Sponsor:",
+                  "sourceField": "DBGAP_FHIR_Sponsor",
+                  "default": "Not specified"
                 }
               ]
             }

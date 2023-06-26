@@ -5,6 +5,7 @@ mappings:
     root: participant
     props:
       - name: submitter_id
+      - name: consortium_id
       - name: project_id
     parent_props:
       - path: centers[country]
@@ -43,7 +44,7 @@ mappings:
     injecting_props:
       core_metadata_collection:
         props:
-          - name: site
+          - name: source
             src: creator
             fn: set
   - name: ibdgc_supplementary_file

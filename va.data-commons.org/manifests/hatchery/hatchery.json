@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "0.1",
     "memory-limit": "128Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2023.02",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2023.05",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "va.data-commons.org"
@@ -44,39 +44,8 @@
       "target-port": 8888,
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
-      "name": "Bioinfo - Python/R",
-      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
-      "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "va.data-commons.org",
-        "FRAME_ANCESTORS": "https://va.data-commons.org/"
-      },
-      "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''"
-      ],
-      "command": [
-        "start-notebook.sh"
-      ],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": [
-        "/bin/sh",
-        "-c",
-        "ln -s /data /home/${NB_USER}/pd/; true"
-      ],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "0.5",
-      "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "image": "quay.io/cdis/jupyter-vadc:resources__2a31450365322cdb0b88cfcb0e1efe5371c6540a",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
@@ -107,39 +76,8 @@
       "target-port": 8888,
       "cpu-limit": "4.0",
       "memory-limit": "8192Mi",
-      "name": "Bioinfo - Python/R",
-      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
-      "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "va.data-commons.org",
-        "FRAME_ANCESTORS": "https://va.data-commons.org/"
-      },
-      "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''"
-      ],
-      "command": [
-        "start-notebook.sh"
-      ],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": [
-        "/bin/sh",
-        "-c",
-        "ln -s /data /home/${NB_USER}/pd/; true"
-      ],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-      "target-port": 8888,
-      "cpu-limit": "4.0",
-      "memory-limit": "8192Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "image": "quay.io/cdis/jupyter-vadc:resources__2a31450365322cdb0b88cfcb0e1efe5371c6540a",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va.data-commons.org",
