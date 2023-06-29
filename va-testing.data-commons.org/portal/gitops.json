@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "UA-119127212-21",
-  "argoTemplate": "gwas-template-manhattan-test",
+  "argoTemplate": "gwas-pheweb-template",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -154,5 +154,8 @@
     "index": ""
   },
   "showArboristAuthzOnProfile": false,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "connectSrcCSPWhitelist": [
+    "https://argo-artifact-storage-downloadable.s3.amazonaws.com"
+  ]
 }
