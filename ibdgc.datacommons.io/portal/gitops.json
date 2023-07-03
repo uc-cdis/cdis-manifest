@@ -154,7 +154,8 @@
   },
   "categorical9Colors": ["#67B49D", "#616265", "#59CD90", "#F2DC5D", "#40476D", "#FFA630", "#AE8799", "#1A535C", "#462255"],
   "featureFlags": {
-    "explorer": true
+    "explorer": true,
+    "discovery": true
   },
   "explorerConfig": [
     {
@@ -451,6 +452,118 @@
         "description": "Notebook showing differences in distribution of cell types between inflamed and uninflamed ileum in Crohn’s disease.",
         "link": "/dashboard/Public/notebooks/CD.html",
         "imageUrl": "/dashboard/Public/notebooks/CD.png"
+      }
+    ]
+  },
+  "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": true,
+        "text": "Publications"
+      },
+      "search": {
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Filters"
+        },
+        "searchBar": {
+          "enabled": true
+        }
+      },
+      "authorization": {
+        "enabled": false
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Publications",
+        "field": "_publication_id",
+        "type": "count"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Title",
+        "field": "title",
+        "contentType": "string",
+        "width": 200
+      },
+      {
+        "name": "Journal",
+        "field": "journal",
+        "contentType": "string"
+      },
+      {
+        "name": "Publication URL",
+        "field": "publication_url",
+        "contentType": "link"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Abstract",
+      "field": "abstract",
+      "contentType": "string",
+      "includeName": true,
+      "includeIfNotAvailable": false
+    },
+    "studyPageFields": {
+      "header": {
+        "field": "title"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "Publication Identifiers",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Authors",
+              "field": "authors",
+              "contentType": "string"
+            },
+            {
+              "name": "Affiliations",
+              "field": "author_affiliations",
+              "contentType": "string"
+            },
+            {
+              "name": "Journal",
+              "field": "journal",
+              "contentType": "string"
+            },
+            {
+              "name": "Publication URL",
+              "field": "publication_url",
+              "contentType": "link"
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Abstract",
+              "field": "abstract",
+              "contentType": "paragraphs",
+              "includeName": false,
+              "includeIfNotAvailable": false
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "authzField": "auth_resource_path",
+      "uid": "_publication_id"
+    },
+    "tagCategories": [
+      {
+        "name": "Category",
+        "displayName": "Category",
+        "color": "#532565",
+        "display": true
       }
     ]
   },

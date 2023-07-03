@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>How_to_access_data</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Monitoring_The_Future_12th_Grader_Opiate_Use_In_2019</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 
 
 
@@ -15104,41 +15104,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div id="cell-id=01dd28b5-9cd5-41de-bb71-7f25db5c3356" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2d2fbdba-7e03-41ba-8fe1-efb6ce34f684" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">Data Access: Ways to bring data into the Biomedical Research Hub (BRH) workspace<a class="anchor-link" href="#Data-Access:-Ways-to-bring-data-into-the-Biomedical-Research-Hub-(BRH)-workspace">&#182;</a></h1><p>As a new user, you may be interested in exploring different ways to access data in BRH. In this notebook we will use some open access data to demonstate a few different ways to bring data into the BRH workspace and use the Gen3 SDK to download files:</p>
-<ol>
-<li>Using a downloaded manifest.json (Manifest)</li>
-<li>Download a single file using its identifier (Single file)</li>
-<li>Open project in workspace</li>
-<li>Download zip files using Gen3 SDK</li>
-<li>Using the gen3 SDK and GraphQL to explore data in a project (API)</li>
-</ol>
-<h1 id="1.-Using-a-downloaded-manifest.json-(Manifest-method)">1. Using a downloaded manifest.json (Manifest method)<a class="anchor-link" href="#1.-Using-a-downloaded-manifest.json-(Manifest-method)">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring in open access JCOIN study &quot;OEPS&quot; into this notebook using a manifest file</p>
-<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
-<li>JCOIN Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
-</ol>
-<h2 id="Steps-to-download-manifest-file">Steps to download manifest file<a class="anchor-link" href="#Steps-to-download-manifest-file">&#182;</a></h2><ol>
-<li>Go to the <a href="https://brh.data-commons.org/">BRH Discovery page</a></li>
-<li>In the &quot;Search studies by keyword&quot; box, type OEPS. The OEPS study details are listed below:
- 
- 	 STUDY NAME = Methodology and Advanced Analytics Resource Center, 
- 	 FULL NAME = Opioid Environment Policy Scan (OEPS), 
- 	 ID Number = 1U2CDA050098-01_b, 
- 	 Data Commons = JCOIN</li>
-<li>Select the study by clicking the check box on the left for OEPS.</li>
-<li>Click &quot;Download&quot; button to download the manifest file</li>
-<li>To bring the downloaded manifest.json into this workspace, upload the file using the &quot;Upload Files&quot; up arrow under jupyter &quot;Run&quot;. <em><a href="https://jupyterlab.readthedocs.io/en/stable/user/files.html#uploading-and-downloading">Reference help link</a></em></li>
-</ol>
-
+<h1 id="Monitoring-The-Future:-12th-Grader-Opiate-Use---Part-1">Monitoring The Future: 12th Grader Opiate Use - Part 1<a class="anchor-link" href="#Monitoring-The-Future:-12th-Grader-Opiate-Use---Part-1">&#182;</a></h1><h4 id="J-M-Maxwell---Data-Science,-Sr.-Analyst---CTDS">J M Maxwell - Data Science, Sr. Analyst - CTDS<a class="anchor-link" href="#J-M-Maxwell---Data-Science,-Sr.-Analyst---CTDS">&#182;</a></h4><h2 id="Analysis-Introduction">Analysis Introduction<a class="anchor-link" href="#Analysis-Introduction">&#182;</a></h2><h4 id="About-The-Data">About The Data<a class="anchor-link" href="#About-The-Data">&#182;</a></h4><p>The <em>Monitoring The Future</em> surveys are a series of surveys that have emerged as a vital tool in measuring the values, behaviors, and lifestyle orientations among American youth. Through a comprehensive series of surveys, these studies offer a unique window into the ever-changing landscape of 12th grade students. Students are randomly assigned one of six questionnaires; each questionnaire comprises both a core set of questions common to all surveys and a set of questions tailored to the specific survey, collectively providing a rich dataset for exploration. There are approximately 1,400 variables across all of the questionnaires; while recognizing the vastness of the available data, our exploration will be primarily focused on a subset of variables deemed particularly relevant to our research objectives.</p>
+<p>One of the critical aspects examined in the surveys pertains to the frequency of drug use among students, encompassing a wide array of illicit and recreational substances. In the context of this analysis, specific attention has been limited to surveys which observe instances where students engaged in the use of heroin or other opioid narcotics.</p>
+<p>While the investigation of drug use patterns holds significance in understanding the landscape of contemporary American youth, the <em>Monitoring The Future</em> surveys provide a broader canvas for exploration. Our analysis encompasses an assortment of other captivating topics including, but not limited to, students' perspectives on religion, educational goals, family life dynamics, and work habits. By examining these multidimensional facets, we may gain a holistic understanding of the myriad factors influencing the lives, aspirations, and substance use risks of American youth.</p>
+<h4 id="Import-Python-Packages-And-Data">Import Python Packages And Data<a class="anchor-link" href="#Import-Python-Packages-And-Data">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div><div id="cell-id=d8eb4eab-53ce-4876-8e60-c0287b3e5f05" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=a7a5969c-efe6-4ce4-8970-f30778826759" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_hide_code">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15146,15 +15125,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python libraries to test data access</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">glob</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">resample</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
+<span class="kn">from</span> <span class="nn">imblearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="n">random_seed</span><span class="o">=</span><span class="mi">2023</span>
+
+<span class="n">df_12_2019_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Grade12/ICPSR_37841/DS0001/37841-0001-Data.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df_12_2019_3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Grade12/ICPSR_37841/DS0003/37841-0003-Data.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15163,17 +15158,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
-<div id="cell-id=c46d98a4-aeb6-4f28-b4d0-8c7e4f2f8665" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f74c01fe-8807-444c-8894-4b349e8f5a0b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Load-manifest.json-of-the-OEPS-study">Load manifest.json of the OEPS study<a class="anchor-link" href="#Load-manifest.json-of-the-OEPS-study">&#182;</a></h4>
+<h4 id="Data-Cleaning-And-Feature-Selection">Data Cleaning And Feature Selection<a class="anchor-link" href="#Data-Cleaning-And-Feature-Selection">&#182;</a></h4><p>Below is a key for mapping the surveys' coded variable names to a more interpretable set of variable labels.</p>
+<p>We identified a number variables from the original dataset that needed to be removed because they were highly correlated. For instance, we observed among the survey recipients an unsurprising association between the number of alcoholic drinks consumed this year and the number of alcoholic drinks consumed in the last 30 days. We believe that the latter variable will serve as a more robust indicator for opiate use, so to streamline our analysis and enhance the veracity of our work, we made the decision to remove the former variable.</p>
+<p>The initial dataset comprises an impressive collection of 16,000+ survey results, each representing an observation from a survey participant. However, it is important to note that a substantial portion of these observations were removed during the data cleaning process, as those observations were missing portions of their data.</p>
+<p>Most of the data you see below is either recorded as a binary outcome (1/yes or 0/no), as an ordinal value(i.e., 0 = no drug use, 1 = some drug use, 2 = frequent drug use), or as a categorical feature. The categorical data is encoded and represented as binary data.</p>
+
 </div>
 </div>
 </div>
-</div><div id="cell-id=b5463845-f461-4c0b-956c-2deac32966fa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=07f72752-da3c-4200-aa4a-969b5d4bcb14" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15181,8 +15180,62 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;manifest.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">manifest</span><span class="p">:</span>
-    <span class="n">manifest_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">manifest</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">variable_dict</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s1">&#39;RESPONDENT_AGE&#39;</span><span class="p">:</span> <span class="s1">&#39;Over18&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V13&#39;</span><span class="p">:</span> <span class="s1">&#39;SchoolRegion&#39;</span><span class="p">,</span>  
+ <span class="s1">&#39;V49&#39;</span><span class="p">:</span> <span class="s1">&#39;NumberOfSiblings&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2102&#39;</span><span class="p">:</span> <span class="s1">&#39;CigsSmoked/30Days&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2106&#39;</span><span class="p">:</span> <span class="s1">&#39;AlcoholicDrinksHowManyTimes/30Days&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2117&#39;</span><span class="p">:</span> <span class="s1">&#39;MarijuanaHowManyTimes/30Days&#39;</span><span class="p">,</span>  
+ <span class="s1">&#39;V2118&#39;</span><span class="p">:</span> <span class="s1">&#39;LSDHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2121&#39;</span><span class="p">:</span> <span class="s1">&#39;PsychedelicsHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2124&#39;</span><span class="p">:</span> <span class="s1">&#39;CocaineHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2127&#39;</span><span class="p">:</span> <span class="s1">&#39;AmphetaminesHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2133&#39;</span><span class="p">:</span> <span class="s1">&#39;SedativesHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2136&#39;</span><span class="p">:</span> <span class="s1">&#39;TranquilizersHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2139&#39;</span><span class="p">:</span> <span class="s1">&#39;HerHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2142&#39;</span><span class="p">:</span> <span class="s1">&#39;NarcHowManyTimes/Life&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2150&#39;</span><span class="p">:</span> <span class="s1">&#39;Sex&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2151&#39;</span><span class="p">:</span> <span class="s1">&#39;Race&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2152&#39;</span><span class="p">:</span> <span class="s1">&#39;RaisedWhere&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2153&#39;</span><span class="p">:</span> <span class="s1">&#39;MaritalStatus&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2155&#39;</span><span class="p">:</span> <span class="s1">&#39;LivesWithFather&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2156&#39;</span><span class="p">:</span> <span class="s1">&#39;LivesWithMother&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2157&#39;</span><span class="p">:</span> <span class="s1">&#39;LivesWithSiblings&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2163&#39;</span><span class="p">:</span> <span class="s1">&#39;FatherEduLvl&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2164&#39;</span><span class="p">:</span> <span class="s1">&#39;MotherEduLvl&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2165&#39;</span><span class="p">:</span> <span class="s1">&#39;MotherHadPaidJobWhileGrowingUp&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2166&#39;</span><span class="p">:</span> <span class="s1">&#39;PoliticalPreference&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2167&#39;</span><span class="p">:</span> <span class="s1">&#39;PoliticalBeliefs&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2169&#39;</span><span class="p">:</span> <span class="s1">&#39;ReligiousServiceAttendenceWkly&#39;</span><span class="p">,</span>  
+ <span class="s1">&#39;V2170&#39;</span><span class="p">:</span> <span class="s1">&#39;ReligionImportance&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2172&#39;</span><span class="p">:</span> <span class="s1">&#39;HighSchoolProgram&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2174&#39;</span><span class="p">:</span> <span class="s1">&#39;SelfRateIntelligence&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2175&#39;</span><span class="p">:</span> <span class="s1">&#39;SchoolDaysMissedIllness/4Weeks&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2176&#39;</span><span class="p">:</span> <span class="s1">&#39;SchoolDaysMissedSkipped/4Weeks&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2177&#39;</span><span class="p">:</span> <span class="s1">&#39;SchoolDaysMissedOther/4Weeks&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2178&#39;</span><span class="p">:</span> <span class="s1">&#39;SkippedClass/4Weeks&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2179&#39;</span><span class="p">:</span> <span class="s1">&#39;AverageGradeHS&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2180&#39;</span><span class="p">:</span> <span class="s1">&#39;LikelyToAttendVocationalSchl&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;V2181&#39;</span><span class="p">:</span> <span class="s1">&#39;LikelyToServeInMilitary&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2182&#39;</span><span class="p">:</span> <span class="s1">&#39;LikelyToGraduate2YrCollege&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2183&#39;</span><span class="p">:</span> <span class="s1">&#39;LikelyToGraduate4YrCollege&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2184&#39;</span><span class="p">:</span> <span class="s1">&#39;LikelyToAttendGraduateSchl&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2185&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToDoVocationalSchl&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2186&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToServeInMilitary&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2187&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToDo2YrCollege&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2188&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToDo4YrCollege&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2189&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToDoGradSchl&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2190&#39;</span><span class="p">:</span> <span class="s1">&#39;WantToDoNo2ndEd&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2191&#39;</span><span class="p">:</span> <span class="s1">&#39;HrsWorkedPerWeek&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2193&#39;</span><span class="p">:</span> <span class="s1">&#39;MoneyFromOtherSource&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2194&#39;</span><span class="p">:</span> <span class="s1">&#39;EveningsOutPerWeek&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2195&#39;</span><span class="p">:</span> <span class="s1">&#39;DatesHowOften&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2196&#39;</span><span class="p">:</span> <span class="s1">&#39;MilesDrivenPerWeek&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2197&#39;</span><span class="p">:</span> <span class="s1">&#39;DrivingTickets&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;V2201&#39;</span><span class="p">:</span> <span class="s1">&#39;CarAccidentsLast12Mo&#39;</span><span class="p">,</span>  
+ <span class="s1">&#39;V2459&#39;</span><span class="p">:</span> <span class="s1">&#39;CrackHowManyTimes/Life&#39;</span><span class="p">,</span> 
+<span class="p">}</span>
 </pre></div>
 
      </div>
@@ -15191,28 +15244,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
-<div id="cell-id=40785cc6-70a2-400a-bfae-b4070e25d468" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ee9d4e03-4bb5-420a-b7eb-c0e3c561f3b8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="We-will-use-gen3-SDK-to-download-project-files.-Its-already-installed-in-the-tutorial-base-image">We will use gen3 SDK to download project files. Its already installed in the tutorial base image<a class="anchor-link" href="#We-will-use-gen3-SDK-to-download-project-files.-Its-already-installed-in-the-tutorial-base-image">&#182;</a></h4>
+<p>The folowing steps were taken to clean the data:</p>
+<ol>
+<li><p>We filtered the existing data by removing all variables missing more than 30% of their resepective values. We then remove all observations missing any survey responses.</p>
+</li>
+<li><p>We combined the survey questions asking students how many times they have used heroin and how many times they used opioid narcotics in their life into a single variable marking whether they have ever used heroin or an opiate.</p>
+</li>
+<li><p>We renamed all of our variables using the coded data dictionary above.</p>
+</li>
+<li><p>We factored the categorical data so it can be represented numerically.</p>
+</li>
+<li><p>We normalized the data so the ordinal and numerical outcomes do not have an oversized effect on our models.</p>
+</li>
+</ol>
+<p>After these steps are complete we are left with only 5377 survey observations, approximately a third of our initial data.</p>
+
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=c9dc3b0f-0f45-434a-8482-88fb1e8a1a0b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-gen3-SDK-command-below-lists-all-files-in-the-manifest">The gen3 SDK command below lists all files in the manifest<a class="anchor-link" href="#The-gen3-SDK-command-below-lists-all-files-in-the-manifest">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div><div id="cell-id=982ea666-59ea-4884-aad7-43bb3714201e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=b63d018c-867d-4b3d-8e8b-9674ecbb502c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15220,488 +15276,39 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3<span class="w"> </span>drs-pull<span class="w"> </span>ls<span class="w"> </span>manifest.json
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2022-09-02 18:57:47,005][WARNING] Unable to write access token to cache file. Exceeded number of retries.
-Resolving objects: 100%|██████████████████████| 124/124 [00:06&lt;00:00, 18.83it/s]
-                               Access01_T.csv;      7.46 MB; jcoin.datacommons.io; 04/06/2021, 11:20:05
-
-                               Access01_Z.csv;       1.8 MB; jcoin.datacommons.io; 04/06/2021, 11:20:18
-
-                               Access02_T.csv;      3.72 MB; jcoin.datacommons.io; 05/08/2021, 14:12:39
-
-                               Access02_Z.csv;    823.01 KB; jcoin.datacommons.io; 05/08/2021, 14:10:24
-
-                               Access03_T.csv;      3.71 MB; jcoin.datacommons.io; 05/08/2021, 14:11:32
-
-                               Access03_Z.csv;     822.3 KB; jcoin.datacommons.io; 05/08/2021, 14:10:55
-
-                               Access04_T.csv;      3.74 MB; jcoin.datacommons.io; 05/08/2021, 14:12:06
-
-                               Access04_Z.csv;    827.53 KB; jcoin.datacommons.io; 05/08/2021, 14:10:26
-
-                               Access05_T.csv;      3.72 MB; jcoin.datacommons.io; 04/06/2021, 11:22:08
-
-                               Access05_Z.csv;    822.97 KB; jcoin.datacommons.io; 04/06/2021, 11:22:19
-
-                  Access_FQHCs_MinDistance.md;      2.31 KB; jcoin.datacommons.io; 05/08/2021, 14:12:36
-
-                              Access_MOUDs.md;      1.87 KB; jcoin.datacommons.io; 04/06/2021, 11:20:54
-
-           Access_MentalHealth_MinDistance.md;       2.5 KB; jcoin.datacommons.io; 05/08/2021, 14:12:18
-
-             Access_Pharmacies_MinDistance.md;       2.5 KB; jcoin.datacommons.io; 04/06/2021, 11:22:54
-
-              Acesss_Hospitals_MinDistance.md;      2.74 KB; jcoin.datacommons.io; 05/08/2021, 14:12:25
-
-                                  Age_2018.md;      2.79 KB; jcoin.datacommons.io; 05/08/2021, 14:12:17
-
-                       AlcoholOutlets_2018.md;      3.02 KB; jcoin.datacommons.io; 05/08/2021, 14:12:23
-
-                              COUNTY_ZIP.xlsx;      3.04 MB; jcoin.datacommons.io; 05/08/2021, 14:10:42
-
-                                     COVID.md;      3.23 KB; jcoin.datacommons.io; 04/06/2021, 11:28:05
-
-                                COVID01_C.csv;      5.01 MB; jcoin.datacommons.io; 04/06/2021, 11:26:57
-
-                                COVID01_S.csv;    121.84 KB; jcoin.datacommons.io; 04/06/2021, 11:27:01
-
-                                COVID02_C.csv;     13.53 MB; jcoin.datacommons.io; 04/06/2021, 11:27:07
-
-                                COVID02_S.csv;    235.64 KB; jcoin.datacommons.io; 04/06/2021, 11:27:15
-
-                                COVID03_C.csv;      11.5 MB; jcoin.datacommons.io; 04/06/2021, 11:27:20
-
-                                COVID03_S.csv;    214.75 KB; jcoin.datacommons.io; 04/06/2021, 11:27:28
-
-                                COVID04_C.csv;     12.57 MB; jcoin.datacommons.io; 04/06/2021, 11:27:33
-
-                                COVID04_S.csv;    234.34 KB; jcoin.datacommons.io; 04/06/2021, 11:27:41
-
-                              DS01_2018_C.csv;     452.4 KB; jcoin.datacommons.io; 04/06/2021, 11:23:43
-
-                              DS01_2018_S.csv;      8.87 KB; jcoin.datacommons.io; 04/06/2021, 11:24:02
-
-                              DS01_2018_T.csv;      9.58 MB; jcoin.datacommons.io; 04/06/2021, 11:24:09
-
-                              DS01_2018_Z.csv;      3.99 MB; jcoin.datacommons.io; 04/06/2021, 11:24:21
-
-                              DS02_2014_T.csv;      1.15 MB; jcoin.datacommons.io; 05/08/2021, 14:12:37
-
-                              DS03_2018_C.csv;    126.84 KB; jcoin.datacommons.io; 05/08/2021, 14:11:59
-
-                              DS03_2018_T.csv;      3.36 MB; jcoin.datacommons.io; 05/08/2021, 14:11:56
-
-                              EC01_2018_C.csv;    128.64 KB; jcoin.datacommons.io; 05/08/2021, 14:11:26
-
-                              EC01_2018_S.csv;      2.08 KB; jcoin.datacommons.io; 05/08/2021, 14:11:55
-
-                              EC01_2018_T.csv;      3.35 MB; jcoin.datacommons.io; 05/08/2021, 14:11:23
-
-                              EC01_2018_Z.csv;      1.25 MB; jcoin.datacommons.io; 05/08/2021, 14:11:19
-
-                              EC02_2018_C.csv;     92.35 KB; jcoin.datacommons.io; 05/08/2021, 14:11:15
-
-                              EC02_2018_S.csv;      1.59 KB; jcoin.datacommons.io; 05/08/2021, 14:11:12
-
-                              EC02_2018_T.csv;      2.49 MB; jcoin.datacommons.io; 05/08/2021, 14:11:16
-
-                              EC02_2018_Z.csv;    876.16 KB; jcoin.datacommons.io; 05/08/2021, 14:11:27
-
-                              EC03_2018_C.csv;     84.91 KB; jcoin.datacommons.io; 05/08/2021, 14:12:02
-
-                              EC03_2018_S.csv;      1.24 KB; jcoin.datacommons.io; 05/08/2021, 14:12:44
-
-                              EC03_2018_T.csv;      2.34 MB; jcoin.datacommons.io; 05/08/2021, 14:12:03
-
-                              EC03_2018_Z.csv;    856.55 KB; jcoin.datacommons.io; 05/08/2021, 14:10:28
-
-                                   EC04_C.csv;     162.2 KB; jcoin.datacommons.io; 05/08/2021, 14:11:38
-
-                                   EC04_S.csv;      1.67 KB; jcoin.datacommons.io; 05/08/2021, 14:11:29
-
-                                   EC04_T.csv;     15.76 MB; jcoin.datacommons.io; 05/08/2021, 14:11:40
-
-                             Economic_2018.md;      3.63 KB; jcoin.datacommons.io; 05/08/2021, 14:12:21
-
-                           ForeclosureRate.md;      2.85 KB; jcoin.datacommons.io; 05/08/2021, 14:12:30
-
-                                  GSL_2018.md;      2.49 KB; jcoin.datacommons.io; 05/08/2021, 14:12:15
-
-                 GeographicBoundaries_2018.md;       2.1 KB; jcoin.datacommons.io; 04/25/2021, 13:38:13
-
-                              HS01_2018_C.csv;    166.98 KB; jcoin.datacommons.io; 05/08/2021, 14:11:05
-
-                              HS01_2018_S.csv;       2.7 KB; jcoin.datacommons.io; 05/08/2021, 14:11:21
-
-                              HS01_2018_T.csv;      4.05 MB; jcoin.datacommons.io; 05/08/2021, 14:11:07
-
-                              HS01_2018_Z.csv;      1.67 MB; jcoin.datacommons.io; 05/08/2021, 14:12:01
-
-                                   HS02_C.csv;    224.18 KB; jcoin.datacommons.io; 05/08/2021, 14:10:23
-
-                              HS02_RUCA_T.csv;      1.73 MB; jcoin.datacommons.io; 05/08/2021, 14:11:36
-
-                              HS02_RUCA_Z.csv;    740.79 KB; jcoin.datacommons.io; 05/08/2021, 14:10:54
-
-                                   HS03_C.csv;    189.79 KB; jcoin.datacommons.io; 05/08/2021, 14:10:58
-
-                                   HS03_S.csv;      2.78 KB; jcoin.datacommons.io; 05/08/2021, 14:11:14
-
-                                   HS03_T.csv;      3.99 MB; jcoin.datacommons.io; 05/08/2021, 14:10:59
-
-                                   HS03_Z.csv;      1.42 MB; jcoin.datacommons.io; 05/08/2021, 14:11:30
-
-                                   HS04_C.csv;     45.75 KB; jcoin.datacommons.io; 05/08/2021, 14:10:27
-
-                               Health01_C.csv;    137.48 KB; jcoin.datacommons.io; 05/08/2021, 14:11:06
-
-                               Health01_S.csv;      1.65 KB; jcoin.datacommons.io; 05/08/2021, 14:11:22
-
-                               Health02_S.csv;       3.1 KB; jcoin.datacommons.io; 05/08/2021, 14:10:25
-
-                               Health03_C.csv;     47.95 KB; jcoin.datacommons.io; 05/08/2021, 14:11:04
-
-                               Health03_S.csv;    739 bytes; jcoin.datacommons.io; 05/08/2021, 14:11:13
-
-                               Health03_T.csv;      2.32 MB; jcoin.datacommons.io; 05/08/2021, 14:11:02
-
-                         Health_DrugDeaths.md;      3.67 KB; jcoin.datacommons.io; 05/08/2021, 14:12:31
-
-                               Health_PCPs.md;       2.4 KB; jcoin.datacommons.io; 05/08/2021, 14:12:32
-
-                                 HepC_rate.md;      2.35 KB; jcoin.datacommons.io; 05/08/2021, 14:12:20
-
-                              Housing_2018.md;      3.21 KB; jcoin.datacommons.io; 05/08/2021, 14:12:16
-
-                       Jail variables_2017.md;      2.35 KB; jcoin.datacommons.io; 05/08/2021, 14:12:34
-
-            Job_Categories_byIndustry_2018.md;      2.79 KB; jcoin.datacommons.io; 05/08/2021, 14:12:13
-
-          Job_Categories_byOccupation_2018.md;       2.7 KB; jcoin.datacommons.io; 05/08/2021, 14:12:22
-
-                               MedExp_2019.md;      1.87 KB; jcoin.datacommons.io; 05/08/2021, 14:12:28
-
-                             MedExpan_2018.md;      2.88 KB; jcoin.datacommons.io; 05/08/2021, 14:12:14
-
-                               MedMarijLaw.md;      1.96 KB; jcoin.datacommons.io; 05/08/2021, 14:12:14
-
-                                  NAL_2017.md;      3.96 KB; jcoin.datacommons.io; 05/08/2021, 14:12:29
-
-                    Other_Demographic_2018.md;      1.68 KB; jcoin.datacommons.io; 05/08/2021, 14:12:24
-
-                                   Overlay.md;      2.58 KB; jcoin.datacommons.io; 05/08/2021, 14:12:27
-
-                                 PDMP_2017.md;      6.69 KB; jcoin.datacommons.io; 05/08/2021, 14:12:26
-
-                              PS01_2016_C.csv;    390.36 KB; jcoin.datacommons.io; 04/05/2021, 22:14:44
-
-                              PS02_2017_C.csv;    354.16 KB; jcoin.datacommons.io; 05/08/2021, 14:11:11
-
-                              PS03_2017_S.csv;      3.69 KB; jcoin.datacommons.io; 05/08/2021, 14:12:09
-
-                              PS04_2018_S.csv;      1.64 KB; jcoin.datacommons.io; 05/08/2021, 14:10:22
-
-                              PS05_2017_S.csv;      2.29 KB; jcoin.datacommons.io; 05/08/2021, 14:10:15
-
-                              PS06_2019_S.csv;      2.12 KB; jcoin.datacommons.io; 05/08/2021, 14:10:16
-
-                              PS07_2018_S.csv;      4.49 KB; jcoin.datacommons.io; 05/08/2021, 14:12:44
-
-                              PS08_2019_S.csv;      1.53 KB; jcoin.datacommons.io; 05/08/2021, 14:12:43
-
-                              PS09_2017_S.csv;    381 bytes; jcoin.datacommons.io; 05/08/2021, 14:11:54
-
-                                   PS11_S.csv;       5.3 KB; jcoin.datacommons.io; 05/08/2021, 14:12:00
-
-                     Prison variables_2016.md;      3.15 KB; jcoin.datacommons.io; 04/05/2021, 22:17:45
-
-                        PublicExpenditures.md;      3.36 KB; jcoin.datacommons.io; 05/08/2021, 14:12:33
-
-                       Race_Ethnicity_2018.md;       2.5 KB; jcoin.datacommons.io; 04/06/2021, 11:24:52
-
-         Rural_Urban_Classification_County.md;      2.71 KB; jcoin.datacommons.io; 05/08/2021, 14:12:10
-
-            Rural_Urban_Classification_T_Z.md;      2.69 KB; jcoin.datacommons.io; 05/08/2021, 14:12:11
-
-                                 SDOH_2014.md;      1.98 KB; jcoin.datacommons.io; 05/08/2021, 14:12:35
-
-                                  SVI_2018.md;      1.86 KB; jcoin.datacommons.io; 05/08/2021, 14:12:19
-
-                                   Syringe.md;      2.82 KB; jcoin.datacommons.io; 05/08/2021, 14:12:31
-
-                               TRACT_ZIP.xlsx;      9.26 MB; jcoin.datacommons.io; 05/08/2021, 14:10:35
-
-                              ZIP_COUNTY.xlsx;      2.46 MB; jcoin.datacommons.io; 05/08/2021, 14:10:51
-
-                               ZIP_TRACT.xlsx;     10.09 MB; jcoin.datacommons.io; 05/08/2021, 14:10:45
-
-                             counties2018.dbf;      1.91 MB; jcoin.datacommons.io; 04/06/2021, 11:29:13
-
-                             counties2018.prj;    143 bytes; jcoin.datacommons.io; 04/06/2021, 11:29:54
-
-                             counties2018.shp;     16.51 MB; jcoin.datacommons.io; 04/06/2021, 11:29:59
-
-                             counties2018.shx;     25.24 KB; jcoin.datacommons.io; 05/08/2021, 14:10:30
-
-                                 crosswalk.md;      2.44 KB; jcoin.datacommons.io; 05/08/2021, 14:12:22
-
-                               states2018.dbf;     31.38 KB; jcoin.datacommons.io; 04/06/2021, 11:29:15
-
-                               states2018.prj;    143 bytes; jcoin.datacommons.io; 04/06/2021, 11:29:55
-
-                               states2018.shp;      4.58 MB; jcoin.datacommons.io; 04/06/2021, 11:30:08
-
-                               states2018.shx;    508 bytes; jcoin.datacommons.io; 05/08/2021, 14:10:31
-
-                               tracts2018.dbf;     44.36 MB; jcoin.datacommons.io; 04/06/2021, 11:29:15
-
-                               tracts2018.prj;    143 bytes; jcoin.datacommons.io; 04/06/2021, 11:29:55
-
-                               tracts2018.shp;     75.08 MB; jcoin.datacommons.io; 04/06/2021, 11:30:10
-
-                               tracts2018.shx;     582.8 KB; jcoin.datacommons.io; 05/08/2021, 14:10:34
-
-                     us-wide-moudsCleaned.csv;      3.08 MB; jcoin.datacommons.io; 05/08/2021, 14:10:20
-
-                                zctas2018.dbf;      9.53 MB; jcoin.datacommons.io; 04/06/2021, 11:29:39
-
-                                zctas2018.prj;    143 bytes; jcoin.datacommons.io; 04/06/2021, 11:29:55
-
-                                zctas2018.shp;     90.66 MB; jcoin.datacommons.io; 04/06/2021, 11:30:57
-
-                                zctas2018.shx;    264.02 KB; jcoin.datacommons.io; 05/08/2021, 14:10:32
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=a99f8afe-d38a-43f3-af49-29bf9fad2717" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-gen3-SDK-command-below-downloads-all-the-files-from-the-manifest-onto-the-current-directory">The gen3 SDK command below downloads all the files from the manifest onto the current directory<a class="anchor-link" href="#The-gen3-SDK-command-below-downloads-all-the-files-from-the-manifest-onto-the-current-directory">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div><div id="cell-id=ed3a2f4b-1071-4384-a3d0-e2fb44b4e1a6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3<span class="w">  </span>drs-pull<span class="w"> </span>manifest<span class="w"> </span>manifest.json
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2022-09-02 18:57:55,546][WARNING] Unable to write access token to cache file. Exceeded number of retries.
-Resolving objects: 100%|██████████████████████| 124/124 [02:18&lt;00:00,  1.12s/it]
-Access01_T.csv                               : 100%|████████████████████████████
-Access01_Z.csv                               : 100%|████████████████████████████
-Access02_T.csv                               : 100%|████████████████████████████
-Access02_Z.csv                               : 100%|████████████████████████████
-Access03_T.csv                               : 100%|████████████████████████████
-Access03_Z.csv                               : 100%|████████████████████████████
-Access04_T.csv                               : 100%|████████████████████████████
-Access04_Z.csv                               : 100%|████████████████████████████
-Access05_T.csv                               : 100%|████████████████████████████
-Access05_Z.csv                               : 100%|████████████████████████████
-Access_FQHCs_MinDistance.md                  : 100%|████████████████████████████
-Access_MOUDs.md                              : 100%|████████████████████████████
-Access_MentalHealth_MinDistance.md           : 100%|████████████████████████████
-Access_Pharmacies_MinDistance.md             : 100%|████████████████████████████
-Acesss_Hospitals_MinDistance.md              : 100%|████████████████████████████
-Age_2018.md                                  : 100%|████████████████████████████
-AlcoholOutlets_2018.md                       : 100%|████████████████████████████
-COUNTY_ZIP.xlsx                              : 100%|████████████████████████████
-COVID.md                                     : 100%|████████████████████████████
-COVID01_C.csv                                : 100%|████████████████████████████
-COVID01_S.csv                                : 100%|████████████████████████████
-COVID02_C.csv                                : 100%|████████████████████████████
-COVID02_S.csv                                : 100%|████████████████████████████
-COVID03_C.csv                                : 100%|████████████████████████████
-COVID03_S.csv                                : 100%|████████████████████████████
-COVID04_C.csv                                : 100%|████████████████████████████
-COVID04_S.csv                                : 100%|████████████████████████████
-DS01_2018_C.csv                              : 100%|████████████████████████████
-DS01_2018_S.csv                              : 100%|████████████████████████████
-DS01_2018_T.csv                              : 100%|████████████████████████████
-DS01_2018_Z.csv                              : 100%|████████████████████████████
-DS02_2014_T.csv                              : 100%|████████████████████████████
-DS03_2018_C.csv                              : 100%|████████████████████████████
-DS03_2018_T.csv                              : 100%|████████████████████████████
-EC01_2018_C.csv                              : 100%|████████████████████████████
-EC01_2018_S.csv                              : 100%|████████████████████████████
-EC01_2018_T.csv                              : 100%|████████████████████████████
-EC01_2018_Z.csv                              : 100%|████████████████████████████
-EC02_2018_C.csv                              : 100%|████████████████████████████
-EC02_2018_S.csv                              : 100%|████████████████████████████
-EC02_2018_T.csv                              : 100%|████████████████████████████
-EC02_2018_Z.csv                              : 100%|████████████████████████████
-EC03_2018_C.csv                              : 100%|████████████████████████████
-EC03_2018_S.csv                              : 100%|████████████████████████████
-EC03_2018_T.csv                              : 100%|████████████████████████████
-EC03_2018_Z.csv                              : 100%|████████████████████████████
-EC04_C.csv                                   : 100%|████████████████████████████
-EC04_S.csv                                   : 100%|████████████████████████████
-EC04_T.csv                                   : 100%|████████████████████████████
-Economic_2018.md                             : 100%|████████████████████████████
-ForeclosureRate.md                           : 100%|████████████████████████████
-GSL_2018.md                                  : 100%|████████████████████████████
-GeographicBoundaries_2018.md                 : 100%|████████████████████████████
-HS01_2018_C.csv                              : 100%|████████████████████████████
-HS01_2018_S.csv                              : 100%|████████████████████████████
-HS01_2018_T.csv                              : 100%|████████████████████████████
-HS01_2018_Z.csv                              : 100%|████████████████████████████
-HS02_C.csv                                   : 100%|████████████████████████████
-HS02_RUCA_T.csv                              : 100%|████████████████████████████
-HS02_RUCA_Z.csv                              : 100%|████████████████████████████
-HS03_C.csv                                   : 100%|████████████████████████████
-HS03_S.csv                                   : 100%|████████████████████████████
-HS03_T.csv                                   : 100%|████████████████████████████
-HS03_Z.csv                                   : 100%|████████████████████████████
-HS04_C.csv                                   : 100%|████████████████████████████
-Health01_C.csv                               : 100%|████████████████████████████
-Health01_S.csv                               : 100%|████████████████████████████
-Health02_S.csv                               : 100%|████████████████████████████
-Health03_C.csv                               : 100%|████████████████████████████
-Health03_S.csv                               : 100%|████████████████████████████
-Health03_T.csv                               : 100%|████████████████████████████
-Health_DrugDeaths.md                         : 100%|████████████████████████████
-Health_PCPs.md                               : 100%|████████████████████████████
-HepC_rate.md                                 : 100%|████████████████████████████
-Housing_2018.md                              : 100%|████████████████████████████
-Jail variables_2017.md                       : 100%|████████████████████████████
-Job_Categories_byIndustry_2018.md            : 100%|████████████████████████████
-Job_Categories_byOccupation_2018.md          : 100%|████████████████████████████
-MedExp_2019.md                               : 100%|████████████████████████████
-MedExpan_2018.md                             : 100%|████████████████████████████
-MedMarijLaw.md                               : 100%|████████████████████████████
-NAL_2017.md                                  : 100%|████████████████████████████
-Other_Demographic_2018.md                    : 100%|████████████████████████████
-Overlay.md                                   : 100%|████████████████████████████
-PDMP_2017.md                                 : 100%|████████████████████████████
-PS01_2016_C.csv                              : 100%|████████████████████████████
-PS02_2017_C.csv                              : 100%|████████████████████████████
-PS03_2017_S.csv                              : 100%|████████████████████████████
-PS04_2018_S.csv                              : 100%|████████████████████████████
-PS05_2017_S.csv                              : 100%|████████████████████████████
-PS06_2019_S.csv                              : 100%|████████████████████████████
-PS07_2018_S.csv                              : 100%|████████████████████████████
-PS08_2019_S.csv                              : 100%|████████████████████████████
-PS09_2017_S.csv                              : 100%|████████████████████████████
-PS11_S.csv                                   : 100%|████████████████████████████
-Prison variables_2016.md                     : 100%|████████████████████████████
-PublicExpenditures.md                        : 100%|████████████████████████████
-Race_Ethnicity_2018.md                       : 100%|████████████████████████████
-Rural_Urban_Classification_County.md         : 100%|████████████████████████████
-Rural_Urban_Classification_T_Z.md            : 100%|████████████████████████████
-SDOH_2014.md                                 : 100%|████████████████████████████
-SVI_2018.md                                  : 100%|████████████████████████████
-Syringe.md                                   : 100%|████████████████████████████
-TRACT_ZIP.xlsx                               : 100%|████████████████████████████
-ZIP_COUNTY.xlsx                              : 100%|████████████████████████████
-ZIP_TRACT.xlsx                               : 100%|████████████████████████████
-counties2018.dbf                             : 100%|████████████████████████████
-counties2018.prj                             : 100%|████████████████████████████
-counties2018.shp                             : 100%|████████████████████████████
-counties2018.shx                             : 100%|████████████████████████████
-crosswalk.md                                 : 100%|████████████████████████████
-states2018.dbf                               : 100%|████████████████████████████
-states2018.prj                               : 100%|████████████████████████████
-states2018.shp                               : 100%|████████████████████████████
-states2018.shx                               : 100%|████████████████████████████
-tracts2018.dbf                               : 100%|████████████████████████████
-tracts2018.prj                               : 100%|████████████████████████████
-tracts2018.shp                               : 100%|████████████████████████████
-tracts2018.shx                               : 100%|████████████████████████████
-us-wide-moudsCleaned.csv                     : 100%|████████████████████████████
-zctas2018.dbf                                : 100%|████████████████████████████
-zctas2018.prj                                : 100%|████████████████████████████
-zctas2018.shp                                : 100%|████████████████████████████
-zctas2018.shx                                : 100%|████████████████████████████
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=b98c9118-34a7-4a92-a13b-851ac302df3f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.-Download-a-single-file-using-its-identifier-(Single-file)">2. Download a single file using its identifier (Single file)<a class="anchor-link" href="#2.-Download-a-single-file-using-its-identifier-(Single-file)">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=b682a50a-6f95-4aa1-b009-846140fed542" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="You-can-also-pull-individual-files-instead-of-all-files.-For-example,-let's-check-first-five-records-in-manifest_data">You can also pull individual files instead of all files. For example, let's check first five records in manifest_data<a class="anchor-link" href="#You-can-also-pull-individual-files-instead-of-all-files.-For-example,-let's-check-first-five-records-in-manifest_data">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div><div id="cell-id=14426b07-af47-4375-9c06-1ef43db2fb40" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">manifest_data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filter data down to just the variable dictionary, removing correlated features in the process</span>
+<span class="n">variables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">variable_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_12_2019_1</span><span class="p">[</span><span class="n">variables</span><span class="p">],</span><span class="n">df_12_2019_3</span><span class="p">[</span><span class="n">variables</span><span class="p">]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Remove missing data</span>
+<span class="n">missing_criteria</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="o">-</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">missing_criteria</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">missing_criteria</span><span class="p">]]</span>
+
+<span class="n">df_counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">value_counts</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">df_counts</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">missing_data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">minimal_missing</span> <span class="o">=</span> <span class="n">missing_data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">missing_data</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">minimal_missing</span><span class="p">)]</span>
+
+<span class="c1"># Combine Opiate Use data </span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;OpiateUse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V2142&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V2139&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;V2142&#39;</span><span class="p">,</span> <span class="s1">&#39;V2139&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Rename columns using data dictionary </span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">variable_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Factor categorical data</span>
+<span class="n">dummy_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SchoolRegion&#39;</span><span class="p">,</span> <span class="s1">&#39;Race&#39;</span><span class="p">,</span> <span class="s1">&#39;RaisedWhere&#39;</span><span class="p">,</span> <span class="s1">&#39;MaritalStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;PoliticalPreference&#39;</span><span class="p">,</span> <span class="s1">&#39;PoliticalBeliefs&#39;</span><span class="p">,</span> <span class="s1">&#39;HighSchoolProgram&#39;</span><span class="p">]</span>
+<span class="n">dummies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">dummy_cols</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">dummy_cols</span><span class="p">,</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">dummies</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">dummy_cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Normalize data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="kc">False</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 
      </div>
@@ -15717,37 +15324,321 @@ zctas2018.shx                                : 100%|█████████�
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[{&#39;md5sum&#39;: &#39;f5b38aa3b8c98dc5de6b92635821917a&#39;,
-  &#39;file_name&#39;: &#39;Access01_T.csv&#39;,
-  &#39;file_size&#39;: 7460514,
-  &#39;object_id&#39;: &#39;dg.6VTS/342e89bd-3d37-49be-8f97-ffb283649b9a&#39;,
-  &#39;commons_url&#39;: &#39;jcoin.datacommons.io&#39;},
- {&#39;md5sum&#39;: &#39;d573f519c55c5cdedaa4ec93cf17c8b0&#39;,
-  &#39;file_name&#39;: &#39;Access01_Z.csv&#39;,
-  &#39;file_size&#39;: 1797403,
-  &#39;object_id&#39;: &#39;dg.6VTS/5608424f-f982-4e22-a1a9-780a3c71539a&#39;,
-  &#39;commons_url&#39;: &#39;jcoin.datacommons.io&#39;},
- {&#39;md5sum&#39;: &#39;e7df8c2c199cbbd6bd4fbb3e16e5c64d&#39;,
-  &#39;file_name&#39;: &#39;Access02_T.csv&#39;,
-  &#39;file_size&#39;: 3720136,
-  &#39;object_id&#39;: &#39;dg.6VTS/ffd93655-b1b1-44bd-b520-73c231e63100&#39;,
-  &#39;commons_url&#39;: &#39;jcoin.datacommons.io&#39;},
- {&#39;md5sum&#39;: &#39;cf94ef20a8f753fe9ddcf7c1fb137374&#39;,
-  &#39;file_name&#39;: &#39;Access02_Z.csv&#39;,
-  &#39;file_size&#39;: 823013,
-  &#39;object_id&#39;: &#39;dg.6VTS/6a3a2101-cd9c-438d-8a36-d756a53ffbf6&#39;,
-  &#39;commons_url&#39;: &#39;jcoin.datacommons.io&#39;},
- {&#39;md5sum&#39;: &#39;4f95e21ca4373600c72783322ee31856&#39;,
-  &#39;file_name&#39;: &#39;Access03_T.csv&#39;,
-  &#39;file_size&#39;: 3714788,
-  &#39;object_id&#39;: &#39;dg.6VTS/3b0246a9-f8c4-4590-bc1a-220ad2d18363&#39;,
-  &#39;commons_url&#39;: &#39;jcoin.datacommons.io&#39;}]</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Over18</th>
+      <th>NumberOfSiblings</th>
+      <th>CigsSmoked/30Days</th>
+      <th>AlcoholicDrinksHowManyTimes/30Days</th>
+      <th>MarijuanaHowManyTimes/30Days</th>
+      <th>LSDHowManyTimes/Life</th>
+      <th>PsychedelicsHowManyTimes/Life</th>
+      <th>CocaineHowManyTimes/Life</th>
+      <th>AmphetaminesHowManyTimes/Life</th>
+      <th>SedativesHowManyTimes/Life</th>
+      <th>...</th>
+      <th>PoliticalPreference_8</th>
+      <th>PoliticalBeliefs_2</th>
+      <th>PoliticalBeliefs_3</th>
+      <th>PoliticalBeliefs_4</th>
+      <th>PoliticalBeliefs_5</th>
+      <th>PoliticalBeliefs_6</th>
+      <th>PoliticalBeliefs_8</th>
+      <th>HighSchoolProgram_2</th>
+      <th>HighSchoolProgram_3</th>
+      <th>HighSchoolProgram_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.666667</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.333333</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.666667</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5372</th>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.166667</td>
+      <td>0.833333</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5373</th>
+      <td>0.0</td>
+      <td>0.666667</td>
+      <td>0.0</td>
+      <td>0.833333</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5374</th>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5375</th>
+      <td>0.0</td>
+      <td>0.666667</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5376</th>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.666667</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.166667</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5377 rows × 78 columns</p>
+</div>
 </div>
 
 </div>
@@ -15757,17 +15648,139 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 
 </div>
-<div id="cell-id=8e60b840-dd73-4247-8cb7-249c3653a830" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=aaf8cf8e-528f-4ebf-8f99-5d7f408bbbd3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK.-This-is-the-Single-File-method,-where-given-a-GUID,-you-can-pull-the-file-into-the-workspace">The object_id field shows the Global Unique Identifier (GUID) for the file, a permanent identifier for the file that can be used to pull the file using the Gen3 SDK. This is the Single File method, where given a GUID, you can pull the file into the workspace<a class="anchor-link" href="#The-object_id-field-shows-the-Global-Unique-Identifier-(GUID)-for-the-file,-a-permanent-identifier-for-the-file-that-can-be-used-to-pull-the-file-using-the-Gen3-SDK.-This-is-the-Single-File-method,-where-given-a-GUID,-you-can-pull-the-file-into-the-workspace">&#182;</a></h4>
+<h2 id="Model-Selection">Model Selection<a class="anchor-link" href="#Model-Selection">&#182;</a></h2><p>We began our model selection stage by training five different machine learning models and comparing their performance. We then selected the two best performing models. The five initial models we trained were a simple logistic regression model, a lasso logistic regression model, a ridge logistic regression model, a support vector machine (SVM) classifier, and a random forest classifier.</p>
+<h4 id="Model-Overview">Model Overview<a class="anchor-link" href="#Model-Overview">&#182;</a></h4><ul>
+<li><p>Logistic Regression Model: A widely used technique for exploring relationships between predictor variables and the probability of a set of binary outcomes occuring.</p>
+</li>
+<li><p>Lasso Logistic Regression Model: A variation of the logistic regression model that incorporates a component encouraging the model to minimize the number of predictor variables, helping us identify which predictor variables are most (and least) influential.</p>
+</li>
+<li><p>Ridge Logistic Regression Model: Another variation of the logistic regression model that promotes a balanced selection of predictor variables, allowing us to more clearly compare the influence of different predictor variables on opiate use.</p>
+</li>
+<li><p>Support Vector Machine (SVM) Classifier: a classification model specificly suited to uncover complex boundaries to distinguish between classes of opiate users and non-users.</p>
+</li>
+<li><p>Random Forest Classifier: Utilizes the collective descision making power of an ensemble of smaller, simpler models (decison trees) to produce more robust insights on the factors associated with opiate use in students.</p>
+</li>
+</ul>
+<h4 id="Cross-Validation">Cross Validation<a class="anchor-link" href="#Cross-Validation">&#182;</a></h4><p>In order to make a precise comparison between these five models, we need to utilize cross-validation. Cross-validation involves executing multiple iterations of training and testing a model on various random, resampled selections of the data. This method is primarily used to estimate how a predictive model will perform in practice. In our use case, we compared the performance of our five models during cross-validation to determine which models perform best.</p>
+<h4 id="Resolving-Class-Imbalances">Resolving Class Imbalances<a class="anchor-link" href="#Resolving-Class-Imbalances">&#182;</a></h4><p>As expected, a limited number of the students surveyed had ever used opiates. Only 295 of the 5377 (approx. 5.5%) students had ever used opiates or heroin recreationally. This imbalance in classes made it very difficult to train a model to predict occurances of the minority class (opiate use) accurately. To resolve this problem, we used a technique called Synthetic Minority Oversampling Technique (SMOTE). SMOTE synthesizes new examples from the minority class by creating synthetic data points which only slightly differ from the original data points of the minority class.</p>
+<h4 id="SMOTE-Cross-Validation-Pipeline">SMOTE Cross Validation Pipeline<a class="anchor-link" href="#SMOTE-Cross-Validation-Pipeline">&#182;</a></h4><p>Below you will find the function for a pipeline for performing model training and testing using 10-fold cross validation and SMOTE and for recording each model's cross validated performace.</p>
+
 </div>
 </div>
 </div>
-</div><div id="cell-id=775d76cc-21d5-4125-8c17-2f036d50abfa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d8f28d6f-3360-481f-b29a-20e47617bb35" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pipeline_cross_validation</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">pipeline_steps</span><span class="p">):</span>
+    
+    <span class="n">folds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>      
+    <span class="n">accuracySum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">recallSum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">precisionSum</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="n">folds</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> 
+        <span class="n">test</span> <span class="o">=</span> <span class="n">folds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">OpiateUse</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;OpiateUse&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">OpiateUse</span>
+        <span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;OpiateUse&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">pipeline_steps</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+        <span class="n">accuracySum</span> <span class="o">+=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+        <span class="n">recallSum</span> <span class="o">+=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+        <span class="n">precisionSum</span> <span class="o">+=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">accuracySum</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="n">recallSum</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="n">precisionSum</span><span class="o">/</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=69c648be-5277-44d4-bb70-88666734d969" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Model-Cross-Validation">Model Cross Validation<a class="anchor-link" href="#Model-Cross-Validation">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div id="cell-id=dd800e47-420b-402b-b940-12ff4d52c544" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))]</span>
+<span class="n">classification_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Recall&#39;</span><span class="p">,</span> <span class="s1">&#39;Precision&#39;</span><span class="p">]})</span> 
+<span class="n">smt</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Logistic Regression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline_cross_validation</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l1&#39;</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Lasso Logistic Regression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline_cross_validation</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Ridge Logistic Regression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline_cross_validation</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Support Vector Machine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline_cross_validation</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Random Forest Classifier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline_cross_validation</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=cd25f9b1-7bc0-4d4d-bf07-c655a84c66e0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Model-Classification-Scores">Model Classification Scores<a class="anchor-link" href="#Model-Classification-Scores">&#182;</a></h4><p>Below we find the model accuracy, recall, and precision scores for all five models. All three metrics are scored between 0.0 and 1.0, with 1.0 being a perfect score. In our current application, model accuracy is a measurement of how well the model correctly labels whether a student is likely to either have used opiates/heroin or to not have used opiates/heroin. Recall measures how well the model performs at detecting all of the subjects who have used opiates/heroin. Precision measures how well the model performs at accurately specifying which subjects have used opiates/heroin from those subjects who have not used opiates/heroin.</p>
+<p>While we resolved the class imbalance when training our models, the class imbalance can still effect our scores, particularly model accuracy during testing. With that in mind, we primarily relied on the recall and precision scores when comparing the performance of the models and selecting our final two models.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=80d69e5e-484a-48d6-a796-8f094af9e09f" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide_cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15775,8 +15788,7 @@ zctas2018.shx                                : 100%|█████████�
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pull dg.6VTS/342e89bd-3d37-49be-8f97-ffb283649b9a</span>
-<span class="o">!</span>gen3<span class="w"> </span>drs-pull<span class="w"> </span>object<span class="w"> </span>dg.6VTS/342e89bd-3d37-49be-8f97-ffb283649b9a
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classification_scores</span>
 </pre></div>
 
      </div>
@@ -15790,14 +15802,69 @@ zctas2018.shx                                : 100%|█████████�
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2022-09-02 19:00:48,276][WARNING] Unable to write access token to cache file. Exceeded number of retries.
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metric</th>
+      <th>Logistic Regression</th>
+      <th>Lasso Logistic Regression</th>
+      <th>Ridge Logistic Regression</th>
+      <th>Support Vector Machine</th>
+      <th>Random Forest Classifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Accuracy</td>
+      <td>0.870934</td>
+      <td>0.873164</td>
+      <td>0.870934</td>
+      <td>0.960197</td>
+      <td>0.969124</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Recall</td>
+      <td>0.712503</td>
+      <td>0.705452</td>
+      <td>0.712503</td>
+      <td>0.518608</td>
+      <td>0.533926</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Precision</td>
+      <td>0.256677</td>
+      <td>0.259479</td>
+      <td>0.256677</td>
+      <td>0.675429</td>
+      <td>0.848516</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
@@ -15806,65 +15873,21 @@ zctas2018.shx                                : 100%|█████████�
 </div>
 
 </div>
-<div id="cell-id=0fd06099-e816-4892-9f2e-40c60dcb03ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+
+</div>
+<div id="cell-id=ac70e261-908b-40ca-af49-04ca1916778d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="3.-Using-'open-in-workspace'-feature">3. Using 'open in workspace' feature<a class="anchor-link" href="#3.-Using-'open-in-workspace'-feature">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Making use of &quot;open in workspace&quot; feature to open the project files in the workspace</p>
-<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
-<li>JCOIN Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
-</ol>
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
-<li>Go to the <a href="https://brh.data-commons.org/">BRH Discovery page</a></li>
-<li>In the &quot;Search studies by keyword&quot; box, type OEPS. The OEPS study details are listed below:
- 
- 	 STUDY NAME = Methodology and Advanced Analytics Resource Center, 
- 	 FULL NAME = Opioid Environment Policy Scan (OEPS), 
- 	 ID Number = 1U2CDA050098-01_b, 
- 	 Data Commons = JCOIN</li>
-<li>Select the study by clicking the check box on the left for OEPS</li>
-<li>Click &quot;open in workspace&quot;</li>
-</ol>
-<blockquote>
-<p>Data are imported in pd or persistent drive folder and live in
-pd/data/brh-data-commons.org/exported-manifest-DATE. The most recent
-exported manifest directory should have the files for the exported
-project. These include the manifest.json and a python notebook
-data.ipynb. The python notebook has commands to list files from the
-manifest, download all files, and download individual files from
-manifest.</p>
-</blockquote>
-
+<h4 id="Model-Selection">Model Selection<a class="anchor-link" href="#Model-Selection">&#182;</a></h4><p>We chose one model with the highest recall score and one with the highest precision score. The random forest classifier clearly had the best precison score. The three logistic regression models all had very similar recall scores, however, we chose the lasso logistic regression model from those three models. The lasso logistic regression model will typically be more interpretable and simpler by reducing the number of variables.</p>
+<p>We proceeded with retraining the random forest classifier and lasso logistic regression models so we could examine what each model believes to be the most influential variables on whether a 12th grader has ever used opiates/heroin.</p>
+<h2 id="Model-Analysis">Model Analysis<a class="anchor-link" href="#Model-Analysis">&#182;</a></h2>
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=486530fd-d3a3-4857-93f6-132bab4f3646" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="4.-Downloading-a-zip-file-using-Gen3-SDK">4. Downloading a zip file using Gen3 SDK<a class="anchor-link" href="#4.-Downloading-a-zip-file-using-Gen3-SDK">&#182;</a></h1><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Bring Canine Data Commons zip file <em>(caninepmed_sample_data.zip)</em> directly into BRH workspace using Gen3 APIs</p>
-<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
-<li>Canine Data Commons is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
-<li>Canine Data Object ID is known</li>
-</ol>
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
-<li>Use relevant gen3 API function to extract the zip file <a href="https://uc-cdis.github.io/gen3sdk-python/_build/html/_modules/gen3/tools/download/drs_download.html">Reference</a></li>
-</ol>
-<blockquote>
-<p>You can then use standard python utilities for unpacking the zip file.
-The snippet shown below extracts files into the caninepmed_sample_data
-directory</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=c69a3186-a8d7-4e7f-945a-7e9bb3ea5aba" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=33abf4e6-d690-4bfd-81c2-3b545c34c5a4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15872,7 +15895,11 @@ directory</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gen3<span class="w"> </span>drs-pull<span class="w"> </span>object<span class="w"> </span>dg.C78ne/b2d9ad49-979d-4de2-9f7f-b3d054593de0<span class="w"> </span>--no-unpack-packages
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;OpiateUse&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">OpiateUse</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+<span class="n">classification_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Recall&#39;</span><span class="p">,</span> <span class="s1">&#39;Precision&#39;</span><span class="p">]})</span> 
 </pre></div>
 
      </div>
@@ -15880,28 +15907,7 @@ directory</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2022-09-02 19:00:51,962][WARNING] Unable to write access token to cache file. Exceeded number of retries.
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=10573747-4966-4f68-a721-3cf2a3a6d3a2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=fa18549f-df3d-4fdc-83b1-8d63f8b757a2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15909,13 +15915,65 @@ directory</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;caninepmed_sample_data.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">canine_zip</span><span class="p">:</span>
-    <span class="c1"># print all the contents of the zip file</span>
-    <span class="c1"># canine_zip.printdir()</span>
-    <span class="c1"># extract all the files</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extracting all the files now...&#39;</span><span class="p">)</span>
-    <span class="n">canine_zip</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">feature_importance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;RF Feature Importance&#39;</span><span class="p">:</span> <span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;OpiateUse&#39;</span><span class="p">))</span>
+<span class="n">feature_importance</span><span class="p">[</span><span class="s1">&#39;Normalized RF Feature Importance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">))</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Random Forest Classifier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span>  <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=50ed2fdd-fa31-47a0-b48b-4c389de2b734" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l1&#39;</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;smt&#39;</span><span class="p">,</span> <span class="n">smt</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)]</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">feature_importance</span><span class="p">[</span><span class="s1">&#39;Lasso Model Coefficients&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">feature_importance</span><span class="p">[</span><span class="s1">&#39;Lasso Model Coefficients AbsVal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">pipeline</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">classification_scores</span><span class="p">[</span><span class="s1">&#39;Lasso Logistic Regression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span>  <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=e3f332f3-9123-4b08-987c-d88f797c663f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Again we see similar recall and precision scores as before.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=1f5ca1b3-9068-4f6c-b3e2-bf1ad8a917a1" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide_cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classification_scores</span>
 </pre></div>
 
      </div>
@@ -15929,15 +15987,57 @@ directory</p>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Extracting all the files now...
-Done!
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metric</th>
+      <th>Random Forest Classifier</th>
+      <th>Lasso Logistic Regression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Accuracy</td>
+      <td>0.964684</td>
+      <td>0.859665</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Recall</td>
+      <td>0.507692</td>
+      <td>0.753846</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Precision</td>
+      <td>0.846154</td>
+      <td>0.266304</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
@@ -15946,74 +16046,22 @@ Done!
 </div>
 
 </div>
-<div id="cell-id=8753dd30-effc-4fcf-bff6-36ce2eb5ebbd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+
+</div>
+<div id="cell-id=0b120c8d-a5af-4e70-aad3-32d04c068a3b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="5.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project-(API-method)">5. Using the Gen3 SDK and GraphQL to explore a project (API method)<a class="anchor-link" href="#5.-Using-the-Gen3-SDK-and-GraphQL-to-explore-a-project-(API-method)">&#182;</a></h1><h2 id="Example:-Framingham-heart-study-from-BioDataCatalyst">Example: Framingham heart study from BioDataCatalyst<a class="anchor-link" href="#Example:-Framingham-heart-study-from-BioDataCatalyst">&#182;</a></h2><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>The API method makes use of graphQL query with Gen3 SDK to bring in data from Biodatacatalyst into BRH Workspace.</p>
-<blockquote>
-<p>In this tutorial, we will be bringing in the longitudinal Framingham
-heart study from <a href="https://gen3.biodatacatalyst.nhlbi.nih.gov">Biodatacatalyst Data Commons</a></p>
-</blockquote>
-<h2 id="Pre-requiste">Pre-requiste<a class="anchor-link" href="#Pre-requiste">&#182;</a></h2><ol>
-<li>BioDataCatalyst  is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
-<li>Structure of the <a href="https://gen3.biodatacatalyst.nhlbi.nih.gov/DD">BDCatData Dictionary</a> is known</li>
-</ol>
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
-<li>Use relevant gen3 API query function to pass the graphql query and bring in data <a href="https://uc-cdis.github.io/gen3sdk-python/_build/html/_modules/gen3/query.html#Gen3Query.query">Reference</a></li>
-</ol>
-<blockquote>
-<p>You can also search for the tutorial in the BRH discovery page. Search
-for &quot;biolincc_framingham&quot; from the <a href="https://brh.data-commons.org/discovery">discovery page</a>. Click on the study. Note the project ID for the study. It is set to &quot;tutorial-biolincc_framingham&quot;.
-We will use this project ID to construct our query. You can learn
-about the fields parameter for file in the docs <a href="https://gen3.biodatacatalyst.nhlbi.nih.gov/query">here</a></p>
-</blockquote>
+<h4 id="Lasso-Logistic-Regression-Influential-Variables">Lasso Logistic Regression Influential Variables<a class="anchor-link" href="#Lasso-Logistic-Regression-Influential-Variables">&#182;</a></h4><p>We first looked at the most influential variables in the lasso logistic regression model. Below are a rank ordered list of the 15 most influential variables. Because the lasso logistic regression model's coefficients are related to a high recall score, they let us know which of the variables are the most influential on the model's ability to identify all of the students who have used opiates/heroin. This particular model was able to identify between 70% and 75% of all the surveyed students who had used opiates/heroin.</p>
+<p>In the data frame below, 'Lasso Model Coefficients' is the coefficient in the model and tells us the relative influence of each of the 10 variables with the greatest positive influence towards identifying students who used opiates. For instance, the frequency of with which students use tranquilizers or LSD (the two highest ranked variables) are highly influential in identifying students who have ever used opiates. Furthermore, 8 of top 10 variables that are highly related to student's opiate use involve the student's illicit use of other drugs or alcohol.</p>
+<p>When comparing the influence of each variable in our model, it is important to note the relative scale of the model coefficients. For instance, each use of amphetamines or cocaine in a students lifetime is approximately 3 times more influential to our model's prediction of opiate use than each use of marijuana or sedatives/barbituates.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=758f2c76-8eac-4301-92b1-eec648ab2248" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gen3.file</span> <span class="kn">import</span> <span class="n">Gen3File</span>
-<span class="kn">from</span> <span class="nn">gen3.submission</span> <span class="kn">import</span> <span class="n">Gen3Submission</span>
-<span class="kn">from</span> <span class="nn">gen3.auth</span> <span class="kn">import</span> <span class="n">Gen3Auth</span>
-<span class="kn">from</span> <span class="nn">gen3.index</span> <span class="kn">import</span> <span class="n">Gen3Index</span>
-<span class="kn">from</span> <span class="nn">gen3.query</span> <span class="kn">import</span> <span class="n">Gen3Query</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=3b1b543a-3a45-4525-83d8-a0dcc838794c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commons_url</span> <span class="o">=</span> <span class="s2">&quot;https://gen3.biodatacatalyst.nhlbi.nih.gov&quot;</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
-<span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="c1"># Initialize an instance this class, using your creds in &#39;auth&#39;</span>
-<span class="n">query</span> <span class="o">=</span> <span class="n">Gen3Query</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=926b39e9-815a-4de2-ad06-e85c014ebebc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=ef71baff-2fbd-460f-8b0d-71f002f38282" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16021,17 +16069,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">framingham_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-    <span class="n">first</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;data_type&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;project_id&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;object_id&quot;</span>
-    <span class="p">],</span>
-    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;tutorial-biolincc_framingham&quot;</span><span class="p">}</span>
-<span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_importance</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Lasso Model Coefficients&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[[</span><span class="s1">&#39;Lasso Model Coefficients&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16039,7 +16077,132 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 </div>
 </div>
 
-</div><div id="cell-id=4e4c3503-b39b-43f0-af06-9c3399ec638d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lasso Model Coefficients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>TranquilizersHowManyTimes/Life</th>
+      <td>7.349860</td>
+    </tr>
+    <tr>
+      <th>LSDHowManyTimes/Life</th>
+      <td>6.944851</td>
+    </tr>
+    <tr>
+      <th>CocaineHowManyTimes/Life</th>
+      <td>4.263134</td>
+    </tr>
+    <tr>
+      <th>AmphetaminesHowManyTimes/Life</th>
+      <td>4.144661</td>
+    </tr>
+    <tr>
+      <th>CigsSmoked/30Days</th>
+      <td>2.133697</td>
+    </tr>
+    <tr>
+      <th>AlcoholicDrinksHowManyTimes/30Days</th>
+      <td>1.698574</td>
+    </tr>
+    <tr>
+      <th>MarijuanaHowManyTimes/30Days</th>
+      <td>1.547477</td>
+    </tr>
+    <tr>
+      <th>SedativesHowManyTimes/Life</th>
+      <td>1.219974</td>
+    </tr>
+    <tr>
+      <th>LivesWithFather</th>
+      <td>0.978814</td>
+    </tr>
+    <tr>
+      <th>MotherHadPaidJobWhileGrowingUp</th>
+      <td>0.821461</td>
+    </tr>
+    <tr>
+      <th>WantToServeInMilitary</th>
+      <td>0.697673</td>
+    </tr>
+    <tr>
+      <th>AverageGradeHS</th>
+      <td>0.606819</td>
+    </tr>
+    <tr>
+      <th>LikelyToAttendVocationalSchl</th>
+      <td>0.595450</td>
+    </tr>
+    <tr>
+      <th>LikelyToAttendGraduateSchl</th>
+      <td>0.467004</td>
+    </tr>
+    <tr>
+      <th>MotherEduLvl</th>
+      <td>0.348251</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=e9f1d24c-3b65-4a67-ba62-2c36cb43256f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Lasso-Logistic-Regression-Least-Influential-Variables">Lasso Logistic Regression Least Influential Variables<a class="anchor-link" href="#Lasso-Logistic-Regression-Least-Influential-Variables">&#182;</a></h4><p>According to our lasso logistic regression model, these are the 10 least influential variables on whether a survey subject was likely or unlikely to use opiates/heroin. These attributes give little to no indication into whether a student will have illicitly used opiates or heroin.  These variables are listed in order of least influence.
+The relevant encodings on this list are:</p>
+<ul>
+<li>'PoliticalBeliefs_6' - Radical (ranked 1-6 from very conservative to radically liberal, with option for no belief)</li>
+<li>'PoliticalBeliefs_3' - Moderate (ranked 1-6 from very conservative to radically liberal, with option for no belief)</li>
+<li>'Race_3' - Hispanic (subjects self reported race as Black, White, or Hispanic)</li>
+</ul>
+<p>From our model, it appears that some student's political beliefs, the number of times the student has skipped class in the last four weeks, a lack of desire to pursure secondary education, and the number of psychedelics they have consumed in their lifetime all provide little to no information as to whether a student would or would not use opiates/heroin.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=89c3b245-792f-41d4-ac0f-c8e0d58bba22" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16047,7 +16210,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">framingham_files</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_importance</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Lasso Model Coefficients AbsVal&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)[[</span><span class="s1">&#39;Lasso Model Coefficients AbsVal&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16067,40 +16230,72 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;data&#39;: {&#39;file&#39;: [{&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.sav&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/c97507dd-bb79-45ce-9186-3d14ad823f81&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;FRAMINGHAM_teaching_2019a.zip&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/7be3c6bb-602c-402a-88d2-50394bf8b433&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;Framingham Longitudinal Data Documentation.pdf&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/f87f27ed-f70b-485b-8631-00c1216681fd&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.sas7bdat&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/f2c2d44c-a099-4bc6-bc8b-7012a28b73d7&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.csv&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/9c277b3d-3fab-401e-b1dd-d2e6c7991cbc&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;tutorial-biolincc_framingham_structured_data.zip&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/6cb03533-c079-47e2-a1af-29c92280a9cc&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.xls&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/f4654f72-3b9a-4536-8fb7-73f61b7c5fb7&#39;},
-   {&#39;data_type&#39;: &#39;Unharmonized Clinical Data&#39;,
-    &#39;file_name&#39;: &#39;frmgham2.dta&#39;,
-    &#39;project_id&#39;: &#39;tutorial-biolincc_framingham&#39;,
-    &#39;object_id&#39;: &#39;dg.4503/8ac6d3f5-29fa-42ff-870c-5ba143455083&#39;}]}}</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lasso Model Coefficients AbsVal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PoliticalBeliefs_6</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>PoliticalBeliefs_3</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>PsychedelicsHowManyTimes/Life</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>SkippedClass/4Weeks</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>WantToDoNo2ndEd</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Race_3</th>
+      <td>0.041042</td>
+    </tr>
+    <tr>
+      <th>DatesHowOften</th>
+      <td>0.045323</td>
+    </tr>
+    <tr>
+      <th>LikelyToServeInMilitary</th>
+      <td>0.045986</td>
+    </tr>
+    <tr>
+      <th>NumberOfSiblings</th>
+      <td>0.071284</td>
+    </tr>
+    <tr>
+      <th>ReligiousServiceAttendenceWkly</th>
+      <td>0.080985</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -16110,17 +16305,19 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 </div>
 
 </div>
-<div id="cell-id=46fa8f9c-44bd-4415-bff9-4887a6881d82" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8be34e8e-5d6c-4b25-9afb-9402e436477d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="There-are-8-files-in-this-dataset">There are 8 files in this dataset<a class="anchor-link" href="#There-are-8-files-in-this-dataset">&#182;</a></h5>
+<h4 id="Random-Forest-Influential-Variables">Random Forest Influential Variables<a class="anchor-link" href="#Random-Forest-Influential-Variables">&#182;</a></h4><p>Now, let's analyze the key attributes of the random forest classification model. Presented below is a ranked list of the top 15 most important variables to our random forest model. These variables play a crucial role in achieving a high precision score and provide insights into the most influential factors affecting the model's capability to accurately distinguish and identify students who have used opiates/heroin (it is highly unlikely that the model will indicate that student who has never used opiates/heroin as having used opiates/heroin at least once in their life).</p>
+<p>In the data frame below, 'RF Feature Importance' is the Gini Feature Importance of the random forest model and 'Normalized RF Feature Importance' is the the same set of values normalized to a range between 0 and 1. As with our lasso logistic regression model, a variety of other drug and alcohol use is highly influential on whether a subject is likely to have or have not used opiates/heroin. Other important features include how often the subject goes out on dates, the self reported importance of religion and attendence to religious services, the number school days they have missed in the last four weeks, how many hours they work each week, and whether the subject's mother had a paid job growing up. Unlike the coefficients of our ridge logistic regression model above, these scores do not tell us whether a particular variable has a strong postive or negative influence on predicting whether a student has or has not used opiates/heroin.</p>
+
 </div>
 </div>
 </div>
-</div><div id="cell-id=a85e7837-3ddc-4cd5-9e39-c3ea3659d8d8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=7aeb10f2-b0a8-42be-b905-3f313e72fbec" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16128,7 +16325,7 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">framingham_files</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_importance</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RF Feature Importance&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[[</span><span class="s1">&#39;RF Feature Importance&#39;</span><span class="p">,</span> <span class="s1">&#39;Normalized RF Feature Importance&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16148,9 +16345,108 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>8</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RF Feature Importance</th>
+      <th>Normalized RF Feature Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AmphetaminesHowManyTimes/Life</th>
+      <td>0.106835</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>TranquilizersHowManyTimes/Life</th>
+      <td>0.093850</td>
+      <td>0.878216</td>
+    </tr>
+    <tr>
+      <th>AlcoholicDrinksHowManyTimes/30Days</th>
+      <td>0.067968</td>
+      <td>0.635471</td>
+    </tr>
+    <tr>
+      <th>MarijuanaHowManyTimes/30Days</th>
+      <td>0.067588</td>
+      <td>0.631912</td>
+    </tr>
+    <tr>
+      <th>LSDHowManyTimes/Life</th>
+      <td>0.044975</td>
+      <td>0.419829</td>
+    </tr>
+    <tr>
+      <th>CocaineHowManyTimes/Life</th>
+      <td>0.033543</td>
+      <td>0.312611</td>
+    </tr>
+    <tr>
+      <th>CigsSmoked/30Days</th>
+      <td>0.032351</td>
+      <td>0.301428</td>
+    </tr>
+    <tr>
+      <th>SedativesHowManyTimes/Life</th>
+      <td>0.025556</td>
+      <td>0.237702</td>
+    </tr>
+    <tr>
+      <th>PsychedelicsHowManyTimes/Life</th>
+      <td>0.024643</td>
+      <td>0.229136</td>
+    </tr>
+    <tr>
+      <th>HrsWorkedPerWeek</th>
+      <td>0.021599</td>
+      <td>0.200584</td>
+    </tr>
+    <tr>
+      <th>FatherEduLvl</th>
+      <td>0.021066</td>
+      <td>0.195591</td>
+    </tr>
+    <tr>
+      <th>SchoolDaysMissedSkipped/4Weeks</th>
+      <td>0.018394</td>
+      <td>0.170526</td>
+    </tr>
+    <tr>
+      <th>MotherHadPaidJobWhileGrowingUp</th>
+      <td>0.017957</td>
+      <td>0.166426</td>
+    </tr>
+    <tr>
+      <th>DatesHowOften</th>
+      <td>0.017931</td>
+      <td>0.166190</td>
+    </tr>
+    <tr>
+      <th>ReligiousServiceAttendenceWkly</th>
+      <td>0.017478</td>
+      <td>0.161937</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -16160,545 +16456,20 @@ about the fields parameter for file in the docs <a href="https://gen3.biodatacat
 </div>
 
 </div>
-<div id="cell-id=7cf55aa0-0e58-4ada-92b2-53e97b8cc06e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d4e28797-0db3-4a29-8c21-eb1ca29a0156" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="You-can-also-construct-a-graphQL-query-string-and-return-the-aggregate-count,-or-total-number-of-files-for-the-project">You can also construct a graphQL query string and return the aggregate count, or total number of files for the project<a class="anchor-link" href="#You-can-also-construct-a-graphQL-query-string-and-return-the-aggregate-count,-or-total-number-of-files-for-the-project">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div id="cell-id=f9740e67-de76-4390-aff7-6eccfd6b1295" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aggregate_file_count_query_string</span> <span class="o">=</span> <span class="s2">&quot;{_aggregation{file(filter: {eq: {project_id:</span><span class="se">\&quot;</span><span class="s2">tutorial-biolincc_framingham</span><span class="se">\&quot;</span><span class="s2">}})</span><span class="si">{_totalCount}</span><span class="s2">}}&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=f487a145-289b-4f5c-bdf1-0fe40e6fe65c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">graphql_query</span><span class="p">(</span><span class="n">aggregate_file_count_query_string</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=999a2ca2-8542-4432-b13c-d7c6a485bfcb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_files</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;data&#39;: {&#39;_aggregation&#39;: {&#39;file&#39;: {&#39;_totalCount&#39;: 8}}}}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=e7b50249-9c84-46a4-ae21-0dbacbe7fb77" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="You-can-construct-a-similar-graphQL-query-string-and-return-the-aggregate-count-of-subjects,-or-total-number-of-subjects-for-the-project">You can construct a similar graphQL query string and return the aggregate count of subjects, or total number of subjects for the project<a class="anchor-link" href="#You-can-construct-a-similar-graphQL-query-string-and-return-the-aggregate-count-of-subjects,-or-total-number-of-subjects-for-the-project">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div id="cell-id=83b45cdc-6ce7-484e-8347-d86b422ffd32" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aggregate_subject_count_query_string</span> <span class="o">=</span> <span class="s2">&quot;{_aggregation{subject(filter: {eq: {project_id:</span><span class="se">\&quot;</span><span class="s2">tutorial-biolincc_framingham</span><span class="se">\&quot;</span><span class="s2">}})</span><span class="si">{_totalCount}</span><span class="s2">}}&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=33e80a3f-e2fc-4309-a486-22778b70f22a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">graphql_query</span><span class="p">(</span><span class="n">aggregate_subject_count_query_string</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=d8effcac-4313-4530-b740-3a6fa43b7024" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_number_of_subjects</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;data&#39;: {&#39;_aggregation&#39;: {&#39;subject&#39;: {&#39;_totalCount&#39;: 4434}}}}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=08b40f53-68dc-4be4-9c51-722912c5e785" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Look-at-some-details-for-the-first-10-subjects">Look at some details for the first 10 subjects<a class="anchor-link" href="#Look-at-some-details-for-the-first-10-subjects">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div id="cell-id=ede5b508-5241-4eb4-9e2c-756373203d60" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span>
-    <span class="n">first</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;_subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;_samples_count&quot;</span><span class="p">,</span> <span class="s2">&quot;age_at_index&quot;</span><span class="p">,</span> <span class="s2">&quot;annotated_sex&quot;</span><span class="p">],</span>
-    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;tutorial-biolincc_framingham&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=93918daa-4580-4a97-9faf-d2c47697b6d0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[{&#39;_subject_id&#39;: &#39;a093fceb-b9e7-496f-88a6-7620c6e6fec9&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;b6e6a49f-9f63-474a-8739-8b20d724eb42&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;male&#39;]},
- {&#39;_subject_id&#39;: &#39;7ddb542d-7355-46b9-91db-3892acdfa503&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;male&#39;]},
- {&#39;_subject_id&#39;: &#39;d9895b57-ecff-470b-bb29-f009c624ac09&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;female&#39;]},
- {&#39;_subject_id&#39;: &#39;6e2aea45-6cc4-46b5-bf62-8b6e829bd329&#39;,
-  &#39;_samples_count&#39;: 0,
-  &#39;age_at_index&#39;: None,
-  &#39;annotated_sex&#39;: [&#39;female&#39;]}]</pre>
-</div>
-
-</div>
-
-</div>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><p>By employing SMOTE and cross-validation techniques, we successfully identified the random forest classifier and lasso logistic regression model as two effective models for accurately predicting the likelihood of survey subjects having used opiates or heroin during their 12th grade year. Using these models, we evaluated the influential variables that impacted our predictions.</p>
+<p>Many of the identified important variables aligned with expectations. It was not surprising to find that students who engaged in various illicit drug use and underage drinking were at higher risk of using opiates and heroin. Additionally, we discovered that a number of factors such as the student's desire to pursue secondary education or the freuency of skipping class had a minimal impact on the lasso logistic regression model's outcomes. This suggests that these variables may not be significant predictors of opiate/heroin usage according to the model.</p>
+<h2 id="Future-Work">Future Work<a class="anchor-link" href="#Future-Work">&#182;</a></h2><p>Future work is planned in order to incorporate the ICPSR <em>Monitoring the Future</em> data for years outside of 2019. We would like to analyze the survey results from years prior to the COVID-19 pandemic in comparison to survey results during the pandemic in order to examine how 12th grader opiate use and the factors influencing their opiate use have changed over time.</p>
 
 </div>
-
-</div>
-<div id="cell-id=5c5b4126-13bf-4344-a63e-bae064c070b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Apply-filters-to-only-return-female-subjects-in-this-study">Apply filters to only return female subjects in this study<a class="anchor-link" href="#Apply-filters-to-only-return-female-subjects-in-this-study">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div id="cell-id=6af41139-00c2-4ca2-b68f-1da959db79a2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">female_subjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span>
-    <span class="n">first</span><span class="o">=</span><span class="mi">4434</span><span class="p">,</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;_subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;_samples_count&quot;</span><span class="p">,</span> <span class="s2">&quot;age_at_index&quot;</span><span class="p">,</span> <span class="s2">&quot;annotated_sex&quot;</span><span class="p">],</span>
-    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;tutorial-biolincc_framingham&quot;</span><span class="p">,</span> <span class="s2">&quot;annotated_sex&quot;</span><span class="p">:</span> <span class="s2">&quot;female&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=739c190b-0198-4146-b0b2-75ce32b933bb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">female_subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2490</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=3348ec70-44cc-4ef3-8015-2b3e890b93c0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gender</span> <span class="o">=</span> <span class="p">[</span><span class="n">sub</span><span class="p">[</span><span class="s1">&#39;annotated_sex&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">female_subjects</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;subject&#39;</span><span class="p">]]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=1445b91e-10f7-45c8-a3c6-0790ed07a4b1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">gender</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([&#39;female&#39;], dtype=&#39;&lt;U6&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=0d7c7498-311f-402c-a3a6-c117f6dca46a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example:-TCIA-COVID-19_CT_Images-study-from-MIDRC">Example: TCIA-COVID-19_CT_Images study from MIDRC<a class="anchor-link" href="#Example:-TCIA-COVID-19_CT_Images-study-from-MIDRC">&#182;</a></h2><h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>The API method makes use of graphQL query with Gen3 SDK to bring in data from MIDRC into BRH Workspace.</p>
-<blockquote>
-<p>In this tutorial, we will be bringing in the longitudinal Framingham
-heart study from <a href="https://data.midrc.org">MIDRC Data Commons</a></p>
-</blockquote>
-<h2 id="Pre-requisite">Pre-requisite<a class="anchor-link" href="#Pre-requisite">&#182;</a></h2><ol>
-<li>MIDRC  is Linked in the <a href="https://brh.data-commons.org/identity">BRH Profile Page</a></li>
-<li>Structure of the <a href="https://data.midrc.org/DD">MIDRC Dictionary</a> is known</li>
-</ol>
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">&#182;</a></h2><ol>
-<li>Use relevant gen3 API query function to pass the graphql query and bring in data <a href="https://uc-cdis.github.io/gen3sdk-python/_build/html/_modules/gen3/query.html#Gen3Query.query">Reference</a></li>
-</ol>
-<blockquote>
-<p>You can search for the TCIA-COVID-19_CT_Images in the BRH discovery page. Search
-for &quot;TCIA-COVID-19_CT_Images&quot; in the <a href="https://brh.data-commons.org/discovery">discovery page</a>. Click on the study. In this case there is no project_id defined in the study description. Let's check the MIDRC MDS for project_id field.</p>
-</blockquote>
-<p>Note, this data needs to be re-ingested in the MDS. 
-Testing using &quot;TCIA-COVID-19_CT_Images&quot; as the project ID to construct our query</p>
-<blockquote>
-<p>You can learn about the fields parameter for imaging_data_file in the docs (search for &quot;imaging_data_file&quot; in the Schema) [here] (<a href="https://data.midrc.org/query">https://data.midrc.org/query</a>)</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=12b8d6d8-6eca-4a87-9622-1e47913154ad" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">commons_url</span> <span class="o">=</span> <span class="s2">&quot;https://data.midrc.org&quot;</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="s2">&quot;/home/jovyan/.gen3/credentials.json&quot;</span><span class="p">)</span>
-<span class="n">sub</span> <span class="o">=</span> <span class="n">Gen3Submission</span><span class="p">(</span><span class="n">commons_url</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="c1"># Initialize an instance this class, using your creds in &#39;auth&#39;</span>
-<span class="n">query</span> <span class="o">=</span> <span class="n">Gen3Query</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=4d97ded1-22c3-41d5-926d-47e71eeca8d4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This project_id field is not in MIDRC MDS yet, so tcia_files returns empty results</span>
-<span class="c1"># This will be re-ingested in MIDRC and a project_id defined and then this query will</span>
-<span class="c1"># work</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=213d4e0e-2936-4f5c-a25d-f28d7b17e3f8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tcia_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;imaging_data_file&quot;</span><span class="p">,</span>
-    <span class="n">first</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;data_type&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;project_id&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;object_id&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;node_id&quot;</span>
-    <span class="p">],</span>
-    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;project_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TCIA-COVID-19_CT_Images&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=028a9cee-da27-4a8e-8ee2-7386a3c03d9e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tcia_files</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;data&#39;: {&#39;imaging_data_file&#39;: [{&#39;data_type&#39;: &#39;NIfTI&#39;,
-    &#39;file_name&#39;: &#39;volume-covid19-A-0231.nii.gz&#39;,
-    &#39;project_id&#39;: &#39;TCIA-COVID-19_CT_Images&#39;,
-    &#39;object_id&#39;: &#39;dg.MD1R/8f95d387-e20b-4b78-ae3b-77a87c0a6d27&#39;,
-    &#39;node_id&#39;: None},
-   {&#39;data_type&#39;: &#39;NIfTI&#39;,
-    &#39;file_name&#39;: &#39;volume-covid19-A-0703_day021.nii.gz&#39;,
-    &#39;project_id&#39;: &#39;TCIA-COVID-19_CT_Images&#39;,
-    &#39;object_id&#39;: &#39;dg.MD1R/1e89fd90-b05d-4776-90de-b31e141e25ee&#39;,
-    &#39;node_id&#39;: None},
-   {&#39;data_type&#39;: &#39;NIfTI&#39;,
-    &#39;file_name&#39;: &#39;volume-covid19-A-0722_day003.nii.gz&#39;,
-    &#39;project_id&#39;: &#39;TCIA-COVID-19_CT_Images&#39;,
-    &#39;object_id&#39;: &#39;dg.MD1R/a2ef97de-dfaf-42ad-8895-5ef867c99266&#39;,
-    &#39;node_id&#39;: None},
-   {&#39;data_type&#39;: &#39;NIfTI&#39;,
-    &#39;file_name&#39;: &#39;volume-covid19-A-0475.nii.gz&#39;,
-    &#39;project_id&#39;: &#39;TCIA-COVID-19_CT_Images&#39;,
-    &#39;object_id&#39;: &#39;dg.MD1R/57d16c7a-f15b-495e-981e-1b0ce068730a&#39;,
-    &#39;node_id&#39;: None},
-   {&#39;data_type&#39;: &#39;NIfTI&#39;,
-    &#39;file_name&#39;: &#39;volume-covid19-A-0706_day000.nii.gz&#39;,
-    &#39;project_id&#39;: &#39;TCIA-COVID-19_CT_Images&#39;,
-    &#39;object_id&#39;: &#39;dg.MD1R/c774c649-f4a9-4fbf-a984-3e7d58326d66&#39;,
-    &#39;node_id&#39;: None}]}}</pre>
 </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=f4037469-adcc-49cb-a17d-9039f14107ff" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=9ccca6eb-c924-4a6b-aea5-5d297cd14dbe" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

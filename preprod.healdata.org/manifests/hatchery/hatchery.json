@@ -10,7 +10,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.04",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.06",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -90,7 +90,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
