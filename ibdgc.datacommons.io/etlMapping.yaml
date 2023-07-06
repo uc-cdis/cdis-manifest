@@ -5,6 +5,7 @@ mappings:
     root: participant
     props:
       - name: submitter_id
+      - name: consortium_id
       - name: project_id
     parent_props:
       - path: centers[country]

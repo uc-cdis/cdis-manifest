@@ -131,7 +131,7 @@
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
-        "enabled": true,
+        "enabled": false,
         "field": "advSearchFilters",
         "filters": [
           {
@@ -596,18 +596,6 @@
         "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
         "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
         "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
-      },
-      {
-        "title": "Cox Model Implementation using ACTT Data from NIAID Clinical Trials Data Commons",
-        "description": "In this notebook, we explore the clinical data from Adaptive COVID-19 Treatment Trial (ACTT) to evaluate the clinical efficacy of remdesivir relative to the control arm in patients hospitalized with COVID-19 as assessed by the time to recovery.",
-        "link": "/dashboard/Public/notebooks/ACTT1_accessclinical_notebook.html",
-        "imageUrl": "/dashboard/Public/notebooks/ACTT1_accessclinical_notebook.png"
-      },
-      {
-        "title": "Identify Prostate Cancer Biomarker using Machine Learning",
-        "description": "This notebook demonstrates the analysis of The Cancer Genome Atlas Prostate Adenocarcinoma (TCGA-PRAD) gene expression dataset to understand the steps in a differential expression analysis workflow in the context of DESeq2.",
-        "link": "/dashboard/Public/notebooks/TCGA_PRAD_Analysis.html",
-        "imageUrl": "/dashboard/Public/notebooks/TCGA_PRAD_Analysis.png"
       },
       {
         "title": "Identification of Potential Drug Targets of Inflammatory Bowel Disease",
