@@ -70,7 +70,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, User-licensed) Stata Notebook ",
-      "image": "quay.io/cdis/stata-heal:master",
+      "image": "quay.io/cdis/stata-heal:feat_stata-license",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
