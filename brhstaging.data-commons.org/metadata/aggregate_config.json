@@ -41,8 +41,8 @@
 			"commons_url" : "ibdgc.datacommons.io",
 			"adapter": "gen3",
 			"config" : {
-				"guid_type": "my_metadata",
-				"study_field": "my_metadata"
+				"guid_type": "discovery_metadata",
+                "study_field": "discovery_metadata"
 			},
 			"keep_original_fields": false,
 			"field_mappings" : {
