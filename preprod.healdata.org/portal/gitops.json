@@ -149,14 +149,12 @@
           "enabled": true,
           "inputSubtitle": "Examples: pain, buprenorphine, intervention",
           "searchableTextFields": [
-            "study_description_summary",
-            "location",
-            "study_name_title",
+            "study_metadata.minimal_info.study_description",
             "institutions",
             "investigators_name",
-            "project_title",
+            "study_metadata.minimal_info.study_name",
             "project_number",
-            "appl_id",
+            "study_metadata.metadata_location.nih_application_id",
             "_hdp_uid",
             "dataset_1_title",
             "dataset_2_title",
@@ -164,12 +162,6 @@
             "dataset_4_title",
             "administering_ic",
             "research_program",
-            "research_question",
-            "dataset_description",
-            "dataset_1_description",
-            "dataset_2_description",
-            "dataset_3_description",
-            "dataset_4_description",
             "data_dictionary"
           ]
         },
@@ -215,7 +207,7 @@
     "studyColumns": [
       {
         "name": "Project Title",
-        "field": "project_title",
+        "field": "study_metadata.minimal_info.study_name",
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       },
@@ -234,14 +226,14 @@
     ],
     "studyPreviewField": {
       "name": "Summary",
-      "field": "study_description_summary",
+      "field": "study_metadata.minimal_info.study_description",
       "contentType": "string",
       "includeName": false,
       "includeIfNotAvailable": true,
       "valueIfNotAvailable": "No summary has been provided for this study."
     },
     "detailView": {
-      "headerField": "project_title",
+      "headerField": "study_metadata.minimal_info.study_name",
       "tabs": [
         {
           "tabName": "Study",
@@ -251,7 +243,7 @@
               "fields": [
                 {
                   "type": "block",
-                  "sourceField": "study_description_summary"
+                  "sourceField": "study_metadata.minimal_info.study_description"
                 }
               ]
             },
@@ -285,12 +277,6 @@
                   "label": "Research Program",
                   "sourceField": "research_program",
                   "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Research Question",
-                  "sourceField": "research_question",
-                  "default": "Not specified"
                 }
               ]
             },
@@ -301,12 +287,6 @@
                   "type": "text",
                   "label": "Institution(s)",
                   "sourceField": "institutions",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Location",
-                  "sourceField": "location",
                   "default": "Not specified"
                 },
                 {
@@ -370,8 +350,8 @@
                 },
                 {
                   "type": "text",
-                  "label": "Clinical Trial Link",
-                  "sourceField": "clinical_trial_link",
+                  "label": "Clinical Trial ID",
+                  "sourceField": "study_metadata.metadata_location.clinical_trials_study_ID",
                   "default": "Not specified"
                 },
                 {
@@ -488,92 +468,12 @@
               ]
             },
             {
-              "header": "Datasets",
-              "fields": [
-                {
-                  "type": "textList",
-                  "sourceField": "study_list_of_data_files",
-                  "label": "Study List of Data Files"
-                },
-                {
-                  "type": "textList",
-                  "sourceField": "study_list_of_code_files",
-                  "label": "Study List of Code Files"
-                },
-                {
-                  "type": "textList",
-                  "sourceField": "study_list_of_documentation_files",
-                  "label": "Study List of Documentation Files"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "dataset_category",
-                  "label": "Dataset Category"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "study_data_last_update_date_time",
-                  "label": "Study Data Last Update Date Time"
-                }
-              ]
-            },
-            {
               "header": "Data Availability",
               "fields": [
                 {
                   "type": "text",
                   "sourceField": "data_availability",
                   "label": "Data Availability"
-                }
-              ]
-            },
-            {
-              "header": "Data Details",
-              "fields": [
-                {
-                  "type": "text",
-                  "sourceField": "data_orientation",
-                  "label": "Data Orientation"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "data_genre",
-                  "label": "Data Genre"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "data_source",
-                  "label": "Data Source"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "subject_data_unit_of_collection",
-                  "label": "Subject Data Unit of Collection"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "subject_data_unit_of_analysis",
-                  "label": "Subject Data Unit of Analysis"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "subject_data_unit_of_collection_expected_number",
-                  "label": "Subject Data Unit of Collection Expected Number"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "subject_data_unit_of_analysis_expected_number",
-                  "label": "Subject Data Unit of Analysis Expected Number"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "geographic_data_level_collected",
-                  "label": "Georgraphic Data Level Collected"
-                },
-                {
-                  "type": "text",
-                  "sourceField": "geographic_data_level_available",
-                  "label": "Georgraphic Data Level Available"
                 }
               ]
             }
@@ -586,23 +486,23 @@
               "header": "Resources/Repositories",
               "fields": [
                 {
-                  "label": "Distributor Repository URL",
-                  "sourceField": "distributor_repository_url",
+                  "label": "Repository URL",
+                  "sourceField": "repository_url",
                   "type": "link"
                 },
                 {
-                  "label": "Repository Study ID",
-                  "sourceField": "repository_study_id",
+                  "label": "Repository Names",
+                  "sourceField": "study_metadata.metadata_location.data_repositories[*].repository_name",
                   "type": "text"
                 },
                 {
-                  "label": "Distributory Repository Name",
-                  "sourceField": "distributor_repository_name",
+                  "label": "Repository Study IDs",
+                  "sourceField": "study_metadata.metadata_location.data_repositories[*].repository_study_ID",
                   "type": "text"
                 },
                 {
-                  "label": "Repository ID",
-                  "sourceField": "distributor_repository_id",
+                  "label": "Repository Persistent IDs",
+                  "sourceField": "study_metadata.metadata_location.data_repositories[*].repository_persistent_ID",
                   "type": "text"
                 },
                 {
