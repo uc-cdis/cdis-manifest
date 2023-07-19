@@ -17,10 +17,10 @@
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.06",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:5.0.1",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.06",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.06",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:feat_nested-fields",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.06",
     "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2023.06",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.7.1",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feat_supportNestedFieldNames",
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2023.06",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.06",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.06",
@@ -29,7 +29,7 @@
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.06",
     "frontend-framework": "quay.io/cdis/frontend-framework:0.4.6",
     "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
-    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.2.1"
+    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:feat_mds-update"
   },
   "arborist": {
     "deployment_version": "2"

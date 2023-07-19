@@ -18,8 +18,11 @@
                 "type": "string"
             },
             "investigators_name": {
-                "type": "string",
-                "default": ""
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "default": []
             },
             "_hdp_uid": {
                 "type": "string"
@@ -31,64 +34,54 @@
                 "type": "array",
                 "default": []
             },
-            "Data": {
-                "type": "object"
-            },
-            "Data Availability": {
+            "study_metadata": {
                 "type": "object",
-                "properties": {
-                    "data_collection_finish_date": {
-                        "type": "date"
-                    },
-                    "data_collection_start_date": {
-                        "type": "date"
-                    },
-                    "data_release_finish_date": {
-                        "type": "date"
-                    },
-                    "data_release_start_date": {
-                        "type": "date"
+                "data": {
+                    "type": "object"
+                },
+                "data_availability": {
+                    "type": "object",
+                    "properties": {
+                        "data_collection_finish_date": {
+                            "type": "date"
+                        },
+                        "data_collection_start_date": {
+                            "type": "date"
+                        },
+                        "data_release_finish_date": {
+                            "type": "date"
+                        },
+                        "data_release_start_date": {
+                            "type": "date"
+                        }
                     }
+                },
+                "human_condition_applicability": {
+                    "type": "object"
+                },
+                "human_subject_applicability": {
+                    "type": "object"
+                },
+                "human_treatment_applicability": {
+                    "type": "object"
+                },
+                "metadata_location": {
+                    "type": "object",
+                    "properties": {
+                        "other_study_websites": {
+                            "type": "array"
+                        }
+                    }
+                },
+                "minimal_info": {
+                    "type": "object"
+                },
+                "study_translational_focus": {
+                    "type": "object"
+                },
+                "study_type": {
+                    "type": "object"
                 }
-            },
-            "Human Condition Applicability": {
-                "type": "object"
-            },
-            "Human Subject Applicability": {
-                "type": "object"
-            },
-            "Human Treatment Applicability": {
-                "type": "object"
-            },
-            "Metadata Location": {
-                "type": "object"
-            },
-            "Minimal Info": {
-                "type": "object"
-            },
-            "Study Translational Focus": {
-                "type": "object"
-            },
-            "Study Type": {
-                "type": "object"
-            },
-            "budget_start": {
-                "type": "date"
-            },
-            "budget_end": {
-                "type": "date"
-            },
-            "project_end_date": {
-                "type": "date"
-            },
-            "date_added": {
-                "type": "date"
-            },
-            "award_notice_date": {
-                "type": "date"
-            },
-            "project_start_date": {
-                "type": "date"
             },
             "study_description_summary": {},
             "project_title": {}
@@ -138,7 +131,7 @@
                 "commons_url": "https://preprod.healdata.org"
             },
             "per_item_values": {
-                "9898044": {
+                "HDP00258": {
                     "__manifest": [
                         {
                             "md5sum": "459b157ad875428cda0c85e53b38eae9",
@@ -193,7 +186,6 @@
             "commons_name": "JCOIN",
             "keep_original_fields": true,
             "field_mappings": {
-                "_unique_id": "path:project_number",
                 "_hdp_uid": "path:project_number",
                 "__manifest": "path:__manifest"
             }
@@ -219,14 +211,13 @@
             "field_mappings": {
                 "tags": [],
                 "authz": "",
-                "sites": "",
-                "summary": {
+                "study_description_summary": {
                     "path": "description",
                     "filters": [
                         "strip_html"
                     ]
                 },
-                "study_description_summary": {
+                "study_metadata.minimal_info.study_description": {
                     "path": "description",
                     "filters": [
                         "strip_html"
@@ -238,46 +229,34 @@
                         "add_icpsr_source_url"
                     ]
                 },
+                "study_metadata.metadata_location.other_study_websites": {
+                    "path": "ipcsr_study_id",
+                    "filters": [
+                        "add_icpsr_source_url"
+                    ]
+                },
                 "location": "path:coverage[0]",
-                "subjects": "",
                 "__manifest": "",
-                "study_name": "",
                 "study_type": "",
-                "study_name_title": "",
                 "institutions": "path:contributor",
                 "year_awarded": "",
-                "investigators": "path:creator",
                 "investigators_name": "path:creator",
                 "project_title": "path:title",
-                "protocol_name": "",
-                "study_summary": "",
-                "dataset_1_type": "",
-                "dataset_2_type": "",
-                "dataset_3_type": "",
-                "dataset_4_type": "",
-                "dataset_5_type": "",
+                "study_metadata.minimal_info.study_name": "path:title",
                 "project_number": "path:identifier",
                 "_hdp_uid": "path:identifier",
+                "administering_ic": "",
+                "advSearchFilters": [],
+                "dataset_category": "path:type",
+                "research_program": "",
+                "research_focus_area": "",
                 "dataset_1_title": "",
                 "dataset_2_title": "",
                 "dataset_3_title": "",
                 "dataset_4_title": "",
                 "dataset_5_title": "",
-                "administering_ic": "",
-                "advSearchFilters": [],
-                "dataset_category": "path:type",
-                "research_program": "",
-                "research_question": "",
-                "study_description": "",
-                "clinical_trial_link": "",
-                "dataset_description": "",
-                "research_focus_area": "",
-                "dataset_1_description": "",
-                "dataset_2_description": "",
-                "dataset_3_description": "",
-                "dataset_4_description": "",
-                "dataset_5_description": "",
-                "data_availability": "pending"
+                "data_availability": "pending",
+                "data_resource": "ICPSR"
             },
             "per_item_values": {
                 "10.3886/ICPSR30122.v5": {
@@ -432,55 +411,37 @@
             "field_mappings": {
                 "tags": [],
                 "authz": "/programs/open",
-                "sites": "",
-                "summary": "path:BriefSummary",
                 "study_description_summary": "path:BriefSummary",
+                "study_metadata.minimal_info.study_description": "path:BriefSummary",
                 "study_url": {
                     "path": "NCTId",
                     "filters": [
                         "add_clinical_trials_source_url"
                     ]
                 },
+                "study_metadata.metadata_location.other_study_websites": {
+                    "path": "NCTId",
+                    "filters": [
+                        "add_clinical_trials_source_url"
+                    ]
+                },
+                "study_metadata.metadata_location.clinical_trials_study_ID": "path:NCTId",
                 "location": "",
                 "subjects": "path:EnrollmentCount",
                 "__manifest": "",
-                "study_name": "",
-                "study_name_title": "",
-                "study_type": "",
                 "institutions": "path:LeadSponsorName",
                 "year_awarded": "",
-                "investigators": "path:OverallOfficial[0].OverallOfficialName",
                 "investigators_name": "path:OverallOfficial[0].OverallOfficialName",
                 "project_title": "path:BriefTitle",
-                "protocol_name": "",
-                "study_summary": "",
-                "dataset_1_type": "",
-                "dataset_2_type": "",
-                "dataset_3_type": "",
-                "dataset_4_type": "",
-                "dataset_5_type": "",
+                "study_metadata.minimal_info.study_name": "path:BriefTitle",
                 "project_number": "path:OrgStudyId",
                 "_hdp_uid": "path:OrgStudyId",
-                "dataset_1_title": "",
-                "dataset_2_title": "",
-                "dataset_3_title": "",
-                "dataset_4_title": "",
-                "dataset_5_title": "",
-                "administering_ic": "",
                 "advSearchFilters": [],
                 "dataset_category": "",
                 "research_program": "",
-                "research_question": "",
-                "study_description": "",
-                "clinical_trial_link": "",
-                "dataset_description": "",
                 "research_focus_area": "",
-                "dataset_1_description": "",
-                "dataset_2_description": "",
-                "dataset_3_description": "",
-                "dataset_4_description": "",
-                "dataset_5_description": "",
-                "data_availability": "pending"
+                "data_availability": "pending",
+                "data_resource": "CinicalTrials.gov"
             },
             "per_item_values": {
                 "STU-2019-0743": {
@@ -638,64 +599,41 @@
             "field_mappings": {
                 "tags": [],
                 "authz": "",
-                "sites": "",
-                "summary": {
-                    "path": "description",
-                    "filters": [
-                        "strip_html"
-                    ]
-                },
                 "study_description_summary": {
                     "path": "description",
                     "filters": [
                         "strip_html"
                     ]
                 },
-                "location": "United States",
-                "subjects": "",
-                "__manifest": "",
-                "study_name": "",
-                "study_name_title": "",
-                "study_type": "",
-                "institutions": "Center for Public Health Law Research at the Temple University Beasley School of Law",
-                "year_awarded": "",
-                "investigators": "",
-                "investigators_name": "",
-                "project_title": "path:title",
-                "protocol_name": "",
-                "study_summary": {
+                "study_metadata.minimal_info.study_description": {
                     "path": "description",
                     "filters": [
                         "strip_html"
                     ]
                 },
-                "dataset_1_type": "",
-                "dataset_2_type": "",
-                "dataset_3_type": "",
-                "dataset_4_type": "",
-                "dataset_5_type": "",
+                "location": "United States",
+                "__manifest": "",
+                "study_type": "",
+                "institutions": "Center for Public Health Law Research at the Temple University Beasley School of Law",
+                "year_awarded": "",
+                "investigators_name": "",
+                "project_title": "path:title",
+                "study_metadata.minimal_info.study_name": "path:title",
                 "project_number": "path:id",
                 "_hdp_uid": "path:id",
+                "administering_ic": "NIDA",
+                "advSearchFilters": [],
+                "dataset_category": "",
+                "research_program": "",
+                "study_description": "Observational",
+                "research_focus_area": "",
                 "dataset_1_title": "",
                 "dataset_2_title": "",
                 "dataset_3_title": "",
                 "dataset_4_title": "",
                 "dataset_5_title": "",
-                "administering_ic": "NIDA",
-                "advSearchFilters": [],
-                "dataset_category": "",
-                "research_program": "",
-                "research_question": "",
-                "study_description": "Observational",
-                "clinical_trial_link": "",
-                "dataset_description": "",
-                "research_focus_area": "",
-                "dataset_1_description": "",
-                "dataset_2_description": "",
-                "dataset_3_description": "",
-                "dataset_4_description": "",
-                "dataset_5_description": "",
-                "data_availability": "pending"
+                "data_availability": "pending",
+                "data_resource": "PDAPS"
             },
             "per_item_values": {
                 "57b45d83d6c9e7e8693ccdfb": {
