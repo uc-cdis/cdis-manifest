@@ -1365,6 +1365,119 @@
     }
   ],
   "discoveryConfig": {
+    "detailView": {
+      "tabs": [
+      {
+        "tabName": "DOI",
+        "groups": [
+          {
+            "header": "Dataset Information",
+            "fields": [
+              {
+                "type": "block",
+                "label": "",
+                "sourceField": "disclaimer",
+                "default": ""
+              },
+              {
+                "type": "text",
+                "label": "Title:",
+                "sourceField": "doi_titles",
+                "default": "Not specified"
+              },
+              {
+                "type": "link",
+                "label": "DOI:",
+                "sourceField": "doi_resolveable_link",
+                "default": "None"
+              },
+              {
+                "type": "text",
+                "label": "Data available:",
+                "sourceField": "doi_is_available",
+                "default": "None"
+              },
+              {
+                "type": "text",
+                "label": "Citation:",
+                "sourceField": "doi_citation",
+                "default": "Not specified"
+              },
+              {
+                "type": "link",
+                "label": "Contact:",
+                "sourceField": "doi_contact",
+                "default": "Not specified"
+              }
+            ]
+          },
+          {
+            "header": "How to Access the Data",
+            "fields": [
+              {
+                "type": "block",
+                "label": "How to access the data:",
+                "sourceField": "doi_access_information",
+                "default": "Not specified"
+              },
+              {
+                "type": "link",
+                "label": "Data and access information:",
+                "sourceField": "doi_access_information_link",
+                "default": "Not specified"
+              }
+            ]
+          },
+          {
+            "header": "Additional Information",
+            "fields": [
+              {
+                "type": "text",
+                "label": "Publisher:",
+                "sourceField": "doi_publisher",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Funded by:",
+                "sourceField": "doi_fundingReferences",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Publication Year:",
+                "sourceField": "doi_publication_year",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Resource Type:",
+                "sourceField": "doi_resource_type",
+                "default": "Not specified"
+              },
+              {
+                "type": "text",
+                "label": "Version:",
+                "sourceField": "doi_version_information",
+                "default": "Not specified"
+              }
+            ]
+          },
+          {
+            "header": "Description",
+            "fields": [
+              {
+                "type": "block",
+                "label": "Description:",
+                "sourceField": "doi_descriptions",
+                "default": "Not specified"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
     "features": {
       "pageTitle": {
         "enabled": false,
