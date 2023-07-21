@@ -7,6 +7,7 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "awshelper": "quay.io/cdis/awshelper:feat_pyyaml",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.05",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.05",
