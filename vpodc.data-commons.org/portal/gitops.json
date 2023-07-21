@@ -167,24 +167,7 @@
   "explorerConfig": [
     {
       "tabTitle": "Patients",
-      "charts": {
-        "Chicago_ID": {
-          "chartType": "count",
-          "title": "Patients"
-        },
-        "Oncology_Primary.ICDOSite": {
-          "chartType": "bar",
-          "title": "Site (ICD-O)"
-        },
-        "Oncology_Primary.Radiation": {
-          "chartType": "pie",
-          "title": "Radiation"
-        },
-        "Oncology_Primary.Chemotherapy": {
-          "chartType": "pie",
-          "title": "Chemotherapy"
-        }
-      },
+      "charts": {},
       "filters": {
         "tabs": [
           {
