@@ -1364,9 +1364,230 @@
       }
     }
   ],
+
   "discoveryConfig": {
+    "features": {
+      "pageTitle": {
+        "enabled": false,
+        "text": "Dataset Discovery"
+      },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Dataset Filters"
+        }
+      },
+      "authorization": {
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Datasets",
+        "field": "_unique_id",
+        "type": "count"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Title",
+        "field": "short_name",
+        "contentType": "string",
+        "width": 200
+      },
+      {
+        "name": "Description",
+        "field": "data_description",
+        "contentType": "string",
+        "width": 400
+      },
+      {
+        "name": "Publication URL",
+        "field": "data_url",
+        "contentType": "link",
+        "width": 300
+      },
+      {
+        "name": "Disease Type",
+        "field": "disease_type",
+        "contentType": "string",
+        "width": 150
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Research Description",
+      "field": "research_description",
+      "contentType": "string",
+      "includeName": true,
+      "includeIfNotAvailable": false
+    },
+    "studyPageFields": {
+      "showAllAvailableFields": false,
+      "header": {
+        "field": "short_name"
+      },
+      "downloadLinks": {
+        "field": "data_download_links"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "Dataset Identifiers",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Citation",
+              "field": "data_citation",
+              "contentType": "string"
+            },
+            {
+              "name": "Dataset URL",
+              "field": "data_url",
+              "contentType": "link"
+            },
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Data Description",
+              "field": "data_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Disease Type",
+              "field": "disease_type",
+              "contentType": "string"
+            },
+            {
+              "name": "Primary Site",
+              "field": "primary_site",
+              "contentType": "string"
+            },
+            {
+              "name": "Case Count",
+              "field": "cases_count",
+              "contentType": "number"
+            },
+            {
+              "name": "Files Count",
+              "field": "files_count",
+              "contentType": "number"
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": false,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
     "detailView": {
       "tabs": [
+        {
+          "tabName": "Study",
+          "groups": [
+            {
+              "header": "Study Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Citation",
+                  "sourceField": "data_citation",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Dataset URL",
+                  "sourceField": "data_url",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Disease Type",
+                  "sourceField": "disease_type",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Primary Site",
+                  "sourceField": "primary_site",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "name": "Case Count",
+                  "field": "cases_count",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "name": "Files Count",
+                  "field": "files_count",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "tags"
+                }
+              ]
+            },
+            {
+              "header": "Study Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "label": "Research Description",
+                  "sourceField": "study_description",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Data Description",
+                  "sourceField": "data_description",
+                  "default": "Not specified"
+                }
+              ]
+            }
+          ]
+        },
         {
           "tabName": "DOI",
           "groups": [
@@ -1473,152 +1694,6 @@
                   "default": "Not specified"
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    "features": {
-      "pageTitle": {
-        "enabled": false,
-        "text": "Dataset Discovery"
-      },
-      "search": {
-        "tagSearchDropdown": {
-          "enabled": true,
-          "collapsibleButtonText": "Dataset Filters"
-        },
-        "searchBar": {
-          "enabled": true
-        }
-      },
-      "authorization": {
-        "enabled": true,
-        "supportedValues": {
-          "accessible": {
-            "enabled": true,
-            "menuText": "Available"
-          },
-          "unaccessible": {
-            "enabled": true,
-            "menuText": "Not Accessible"
-          },
-          "pending": {
-            "enabled": true,
-            "menuText": "Pending"
-          },
-          "notAvailable": {
-            "enabled": true,
-            "menuText": "Not Available"
-          }
-        }
-      }
-    },
-    "aggregations": [
-      {
-        "name": "Datasets",
-        "field": "_unique_id",
-        "type": "count"
-      }
-    ],
-    "tagSelector": {
-      "title": "Tags by category"
-    },
-    "studyColumns": [
-      {
-        "name": "Title",
-        "field": "short_name",
-        "contentType": "string",
-        "width": 200
-      },
-      {
-        "name": "Description",
-        "field": "data_description",
-        "contentType": "string",
-        "width": 400
-      },
-      {
-        "name": "Publication URL",
-        "field": "data_url",
-        "contentType": "link",
-        "width": 300
-      },
-      {
-        "name": "Disease Type",
-        "field": "disease_type",
-        "contentType": "string",
-        "width": 150
-      }
-    ],
-    "studyPreviewField": {
-      "name": "Research Description",
-      "field": "research_description",
-      "contentType": "string",
-      "includeName": true,
-      "includeIfNotAvailable": false
-    },
-    "studyPageFields": {
-      "header": {
-        "field": "short_name"
-      },
-      "downloadLinks": {
-        "field": "data_download_links"
-      },
-      "fieldsToShow": [
-        {
-          "groupName": "Dataset Identifiers",
-          "includeName": false,
-          "fields": [
-            {
-              "name": "Citation",
-              "field": "data_citation",
-              "contentType": "string"
-            },
-            {
-              "name": "Dataset URL",
-              "field": "data_url",
-              "contentType": "link"
-            },
-            {
-              "name": "Research Description",
-              "field": "research_description",
-              "contentType": "string"
-            },
-            {
-              "name": "Data Description",
-              "field": "data_description",
-              "contentType": "string"
-            },
-            {
-              "name": "Disease Type",
-              "field": "disease_type",
-              "contentType": "string"
-            },
-            {
-              "name": "Primary Site",
-              "field": "primary_site",
-              "contentType": "string"
-            },
-            {
-              "name": "Case Count",
-              "field": "cases_count",
-              "contentType": "number"
-            },
-            {
-              "name": "Files Count",
-              "field": "files_count",
-              "contentType": "number"
-            }
-          ]
-        },
-        {
-          "fields": [
-            {
-              "name": "Research Description",
-              "field": "research_description",
-              "contentType": "paragraphs",
-              "includeName": true,
-              "includeIfNotAvailable": false
             }
           ]
         }
