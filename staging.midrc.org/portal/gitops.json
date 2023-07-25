@@ -1465,6 +1465,66 @@
           "includeName": false,
           "fields": [
             {
+              "name": "DOI Data Access Information",
+              "field": "doi_access_information_link",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Contact",
+              "field": "doi_contact",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Citation",
+              "field": "doi_citation",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Availability",
+              "field": "doi_availability",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Resolvable_link",
+              "field": "doi_resolvable_link",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Titles",
+              "field": "doi_titles",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Description",
+              "field": "doi_descriptions",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Version",
+              "field": "doi_version_information",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Resource Type",
+              "field": "doi_resource_type",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Publication Year",
+              "field": "doi_publication_year",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Funding References",
+              "field": "doi_funding_references",
+              "contentType": "string"
+            },
+            {
+              "name": "DOI Publisher",
+              "field": "doi_publisher",
+              "contentType": "string"
+            },
+            {
               "name": "Citation",
               "field": "data_citation",
               "contentType": "string"
@@ -1515,185 +1575,6 @@
               "includeName": true,
               "includeIfNotAvailable": false,
               "valueIfNotAvailable": "No description has been provided for this study."
-            }
-          ]
-        }
-      ]
-    },
-    "detailView": {
-      "tabs": [
-        {
-          "tabName": "Study",
-          "groups": [
-            {
-              "header": "Study Information",
-              "fields": [
-                {
-                  "type": "text",
-                  "label": "Citation",
-                  "sourceField": "data_citation",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Dataset URL",
-                  "sourceField": "data_url",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Disease Type",
-                  "sourceField": "disease_type",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Primary Site",
-                  "sourceField": "primary_site",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "name": "Case Count",
-                  "field": "cases_count",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "name": "Files Count",
-                  "field": "files_count",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "tags"
-                }
-              ]
-            },
-            {
-              "header": "Study Description",
-              "fields": [
-                {
-                  "type": "block",
-                  "label": "Research Description",
-                  "sourceField": "study_description",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Data Description",
-                  "sourceField": "data_description",
-                  "default": "Not specified"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "tabName": "DOI",
-          "groups": [
-            {
-              "header": "Dataset Information",
-              "fields": [
-                {
-                  "type": "block",
-                  "label": "",
-                  "sourceField": "disclaimer",
-                  "default": ""
-                },
-                {
-                  "type": "text",
-                  "label": "Title:",
-                  "sourceField": "doi_titles",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "link",
-                  "label": "DOI:",
-                  "sourceField": "doi_resolveable_link",
-                  "default": "None"
-                },
-                {
-                  "type": "text",
-                  "label": "Data available:",
-                  "sourceField": "doi_is_available",
-                  "default": "None"
-                },
-                {
-                  "type": "text",
-                  "label": "Citation:",
-                  "sourceField": "doi_citation",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "link",
-                  "label": "Contact:",
-                  "sourceField": "doi_contact",
-                  "default": "Not specified"
-                }
-              ]
-            },
-            {
-              "header": "How to Access the Data",
-              "fields": [
-                {
-                  "type": "block",
-                  "label": "How to access the data:",
-                  "sourceField": "doi_access_information",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "link",
-                  "label": "Data and access information:",
-                  "sourceField": "doi_access_information_link",
-                  "default": "Not specified"
-                }
-              ]
-            },
-            {
-              "header": "Additional Information",
-              "fields": [
-                {
-                  "type": "text",
-                  "label": "Publisher:",
-                  "sourceField": "doi_publisher",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Funded by:",
-                  "sourceField": "doi_fundingReferences",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Publication Year:",
-                  "sourceField": "doi_publication_year",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Resource Type:",
-                  "sourceField": "doi_resource_type",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Version:",
-                  "sourceField": "doi_version_information",
-                  "default": "Not specified"
-                }
-              ]
-            },
-            {
-              "header": "Description",
-              "fields": [
-                {
-                  "type": "block",
-                  "label": "Description:",
-                  "sourceField": "doi_descriptions",
-                  "default": "Not specified"
-                }
-              ]
             }
           ]
         }
