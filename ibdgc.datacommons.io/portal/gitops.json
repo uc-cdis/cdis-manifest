@@ -97,6 +97,12 @@
         },
         {
           "icon": "query",
+          "link": "/discovery",
+          "color": "#a2a2a2",
+          "name": "Recent Publications"
+        },
+        {
+          "icon": "query",
           "link": "/query",
           "color": "#a2a2a2",
           "name": "Query"
@@ -459,19 +465,50 @@
     "features": {
       "pageTitle": {
         "enabled": true,
-        "text": "Publications"
+        "text": "Recent Publications"
       },
       "guidType": "publication_discovery_metadata",
       "search": {
+        "searchBar": {
+          "enabled": true,
+          "placeholder": "Search studies by keyword"
+        },
         "tagSearchDropdown": {
           "enabled": true,
+          "collapseOnDefault": true,
           "collapsibleButtonText": "Filters"
-        },
-        "searchBar": {
-          "enabled": true
         }
       },
+      "advSearchFilters": {
+         "enabled": false,
+         "field": "advSearchFilters",
+         "displayName": "Filters"
+      },
       "authorization": {
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+              "enabled": false,
+              "menuText": "Pending"
+          },
+          "notAvailable": {
+              "enabled": false,
+              "menuText": "Not Available"
+          }
+        }
+      },
+      "tagsColumn" : {
+        "enabled": false
+      },
+      "tagsInDescription" : {
         "enabled": false
       }
     },
@@ -501,6 +538,11 @@
         "name": "Publication URL",
         "field": "publication_url",
         "contentType": "link"
+      },
+      {
+        "name": "Condition",
+        "field": "condition",
+        "contentType": "string"
       }
     ],
     "studyPreviewField": {
@@ -513,6 +555,9 @@
     "studyPageFields": {
       "header": {
         "field": "title"
+      },
+      "downloadLinks": {
+        "field": "data_download_links"
       },
       "fieldsToShow": [
         {
@@ -538,6 +583,31 @@
               "name": "Publication URL",
               "field": "publication_url",
               "contentType": "link"
+            },
+            {
+              "name": "Description of Data Available",
+              "field": "data_description",
+              "contentType": "string"
+            },
+            {
+              "name": "Sponsors/Acknowledgements",
+              "field": "sponsors",
+              "contentType": "string"
+            },
+            {
+              "name": "Study Number/Codes",
+              "field": "study_codes",
+              "contentType": "string"
+            },
+            {
+              "name": "Condition",
+              "field": "condition",
+              "contentType": "string"
+            },
+            {
+              "name": "Study Type",
+              "field": "study_type",
+              "contentType": "string"
             }
           ]
         },
@@ -555,18 +625,10 @@
       ]
     },
     "minimalFieldMapping": {
-      "tagsListFieldName": "tags",
       "authzField": "auth_resource_path",
       "uid": "_publication_id"
     },
-    "tagCategories": [
-      {
-        "name": "Category",
-        "displayName": "Category",
-        "color": "#532565",
-        "display": true
-      }
-    ]
+    "tagCategories": []
   },
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false
