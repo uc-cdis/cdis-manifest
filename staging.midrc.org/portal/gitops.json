@@ -1514,25 +1514,33 @@
         "name": "Title",
         "field": "short_name",
         "contentType": "string",
-        "width": 200
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Description",
         "field": "data_description",
         "contentType": "string",
-        "width": 400
+        "width": 400,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Publication URL",
         "field": "data_url",
         "contentType": "link",
-        "width": 300
+        "width": 300,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Disease Type",
         "field": "disease_type",
         "contentType": "string",
-        "width": 150
+        "width": 150,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -1564,7 +1572,7 @@
             {
               "name": "DOI Contact",
               "field": "doi_contact",
-              "contentType": "string",
+              "contentType": "link",
               "includeIfNotAvailable": false
             },
             {
