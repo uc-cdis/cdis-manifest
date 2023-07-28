@@ -1533,14 +1533,6 @@
         "width": 300,
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
-      },
-      {
-        "name": "Disease Type",
-        "field": "disease_type",
-        "contentType": "string",
-        "width": 150,
-        "errorIfNotAvailable": false,
-        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -1656,12 +1648,6 @@
             {
               "name": "Data Description",
               "field": "data_description",
-              "contentType": "string",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "Disease Type",
-              "field": "disease_type",
               "contentType": "string",
               "includeIfNotAvailable": false
             },
