@@ -52,8 +52,10 @@ jobs:
           changed_files=$(git diff --name-only HEAD..${{ github.event.pull_request.base.sha }})
           envs=()
           for file in $changed_files; do
+            echo $file
             envs+=($(echo "$file" | cut -d "/" -f1))
           done
+          echo $envs
 
           # remove duplicates
           envs=($(printf "%s\n" "${envs[@]}" | sort -u))
