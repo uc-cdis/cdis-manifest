@@ -146,7 +146,10 @@
             "key": "Measures"
           },
           {
-            "key": "Exposure Media"
+            "key": "Exposures"
+          },
+          {
+            "key": "Population"
           }
 
         ]
@@ -575,11 +578,14 @@
           {
             "title": "Population Data Resources",
             "fields":[
-              "population",
-              "vulnerable_population",
+              "domain",
+              "keywords",
               "exposures",
               "outcomes",
-              "model_methods"
+              "outcomes_other",
+              "exposure_media",
+              "population_studied",
+              "population_studied_other"
             ]
           },
           {
@@ -589,6 +595,7 @@
               "time_extent_end",
               "temporal_resolution",
               "spatial_resolution",
+              "spatial_resolution_other",
               "spatial_coverage",
               "geometry_type",
               "geometry_source"
@@ -598,7 +605,8 @@
             "title": "Project/Program Details",
             "fields":[
               "program_name",
-              "project_name"
+              "project_name",
+              "project_investigator_affiliation"
             ]
           }
         ]
@@ -608,11 +616,12 @@
         "fields": [
           "resource_name",
           "resource_description",
-          "population",
-          "vulnerable_population",
-          "model_methods",
-          "resource_name",
-          "resource_description",
+          "comments",
+          "intended_use",
+          "exposures",
+          "outcomes",
+          "population_studied",
+          "population_studied_other",
           "resource_url"
         ],
         "linkFields": [
@@ -784,6 +793,6 @@
     }
   ],
   "connectSrcCSPWhitelist": [
-    "https://gen3-dev.niehs.nih.gov", "https://gen3.niehs.nih.gov", "https://localhost", "https://ehsntpld06.niehs.nih.gov", "https://ehsodslp02.niehs.nih.gov"
+    "https://gen3-dev.niehs.nih.gov", "https://gen3.niehs.nih.gov", "https://localhost", "https://chords-health.org", "https://staging.chords-health.org"
   ]
 }

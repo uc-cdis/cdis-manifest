@@ -72,14 +72,18 @@ mappings:
       - name: time_available_comment
       - name: temporal_resolution
       - name: spatial_resolution
+      - name: spatial_resolution_other
       - name: spatial_coverage
-      - name: spatial_bounding_box
+      - name: spatial_coverage_specific_regions
       - name: geometry_type
       - name: geometry_source
-      - name: population
-      - name: vulnerable_population
       - name: exposures
       - name: outcomes
+      - name: outcomes_other
+      - name: exposure_media
       - name: model_methods
+      - name: population_studied
+      - name: population_studied_other
+
     parent_props:
       - path: resources[resource_id, resource_name:long_name, resource_short_name:name, resource_type, resource_description:description, resource_citation:citation, payment_required, domain, keywords, license_type, license_text, verification_datetime, resource_use_agreement, resource_contact, resource_url].projects[project_code:code, project_investigator_affiliation:investigator_affiliation, project_investigator_name:investigator_name, project_date:date_collected, project_name:name, project_short_name:name, support_source, support_id, project_url].programs[program_name:name, program_short_name:name]
