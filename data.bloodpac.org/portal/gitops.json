@@ -1056,22 +1056,30 @@
       "name": "Title",
       "field": "title",
       "contentType": "string",
-      "width": 200
+      "width": 200,
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
     },
     {
       "name": "Journal",
       "field": "journal",
-      "contentType": "string"
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
     },
     {
       "name": "Publication URL",
       "field": "publication_url",
-      "contentType": "link"
+      "contentType": "link",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
     },
     {
       "name": "Condition",
       "field": "condition",
-      "contentType": "string"
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
     }
   ],
     "studyPreviewField": {
@@ -1082,6 +1090,7 @@
       "includeIfNotAvailable": false
     },
     "studyPageFields": {
+      "showAllAvailableFields": false,
       "header": {
         "field": "title"
       },
@@ -1094,57 +1103,68 @@
           "fields": [{
               "name": "Authors",
               "field": "authors",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Affiliations",
               "field": "author_affiliations",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Journal",
               "field": "journal",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Publication URL",
               "field": "publication_url",
-              "contentType": "link"
+              "contentType": "link",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Data Availability Date",
               "field": "data_availability_date",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Description of Data Available",
               "field": "data_description",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Sponsors/Acknowledgements",
               "field": "sponsors",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Study Number/Codes",
               "field": "study_codes",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Condition",
               "field": "condition",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Study Type",
               "field": "study_type",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Websites",
               "field": "websites",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             }
           ]
         },
