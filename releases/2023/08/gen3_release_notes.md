@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.08
+# Core Gen3 Release 2023.08 (Spinel)
 
 ## uc-cdis/fence
 
