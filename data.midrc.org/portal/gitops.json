@@ -124,13 +124,6 @@
           "label": "Query Data"
         },
         {
-          "name": "Discover Datasets",
-          "icon": "data-explore",
-          "body": "Discover complete datasets related to publications, DOIs, and Grand Challenges.",
-          "link": "/discovery",
-          "label": "Discover Datasets"
-        },
-        {
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
@@ -213,13 +206,6 @@
     },
     "navigation": {
       "items": [
-        {
-          "name": "Discovery",
-          "link": "/discovery",
-          "icon": "query",
-          "tooltip": "The Discovery Page enables free-text search and discovery of discrete DOIs, datasets, and publications.",
-          "color": "#a2a2a2"
-        },
         {
           "name": "Exploration",
           "link": "/explorer",
