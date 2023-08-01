@@ -84,7 +84,7 @@
     ]
   },
   "featureFlags": {
-    "explorer": true,
+    "explorer": false,
     "analysis": true,
     "workspaceTokenServiceRefreshTokenAtLogin": true
   },
@@ -98,61 +98,6 @@
     "GWASUIApp",
     "GWASResults"
   ],
-  "arrangerConfig": {
-    "charts": {
-      "node_id": {
-        "chartType": "count",
-        "title": "Demographics"
-      },
-      "Gender":{
-        "chartType": "bar",
-        "title": "Gender"
-      },
-      "Race":{
-        "chartType": "pie",
-        "title": "Race"
-      },
-      "Ethnicity":{
-        "chartType": "bar",
-        "title": "Ethnicity"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Demographic",
-          "fields":[
-            "Gender",
-            "Race",
-            "Ethnicity"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "buttons": [
-        {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
-          "rightIcon": "download",
-          "fileName": "clinical.json"
-        },
-        {
-          "enabled": false,
-          "type": "manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "manifest.json"
-        }
-      ]
-    },
-    "projectId": "search",
-    "graphqlField": "demographic",
-    "index": ""
-  },
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [
