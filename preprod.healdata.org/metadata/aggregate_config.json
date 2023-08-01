@@ -187,7 +187,9 @@
             "keep_original_fields": true,
             "field_mappings": {
                 "_hdp_uid": "path:project_number",
-                "__manifest": "path:__manifest"
+                "__manifest": "path:__manifest",
+                "study_metadata.minimal_info.study_name": "path:project_title",
+                "study_metadata.minimal_info.study_description": "path:study_description_summary"
             }
         },
         "ICPSR": {
