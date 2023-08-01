@@ -124,6 +124,13 @@
           "label": "Query Data"
         },
         {
+          "name": "Discover Datasets",
+          "icon": "data-explore",
+          "body": "Discover complete datasets related to publications, DOIs, and Grand Challenges.",
+          "link": "/discovery",
+          "label": "Discover Datasets"
+        },
+        {
           "name": "Analyze Data",
           "icon": "data-analyze",
           "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
@@ -207,10 +214,18 @@
     "navigation": {
       "items": [
         {
+          "name": "Discovery",
+          "link": "/discovery",
+          "icon": "query",
+          "tooltip": "The Discovery Page enables free-text search and discovery of discrete DOIs, datasets, and publications.",
+          "color": "#a2a2a2"
+        },
+        {
           "name": "Exploration",
           "link": "/explorer",
           "icon": "exploration",
-          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder.",
+          "color": "#a2a2a2"
         },
         {
           "name": "Dictionary",
@@ -223,7 +238,8 @@
           "name": "Query",
           "link": "/query",
           "icon": "query",
-          "tooltip": "Query the databases using GraphQL."
+          "tooltip": "Query the databases using GraphQL.",
+          "color": "#a2a2a2"
         },
         {
           "name": "Example Analysis",
@@ -236,7 +252,8 @@
           "name": "Workspace",
           "link": "/workspace",
           "icon": "workspace",
-          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
+          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio.",
+          "color": "#a2a2a2"
         }
       ]
     },
@@ -393,7 +410,8 @@
               "conditions.days_to_condition_start",
               "conditions.days_to_condition_end"
             ]
-          }        ]
+          }
+        ]
       },
       "table": {
         "enabled": true,
@@ -438,7 +456,7 @@
       },
       "dropdowns": {
         "download-table": {
-          "title": "Download Case Metadata Table"
+          "title": "Download Table"
         }
       },
       "buttons": [
@@ -490,6 +508,94 @@
         "dataType": "case",
         "nodeCountTitle": "Cases",
         "fieldMapping": [
+          {
+            "field": "measurements.test_name",
+            "name": "Test Name"
+          },
+          {
+            "field": "measurements.test_result_text",
+            "name": "Test Result"
+          },
+          {
+            "field": "measurements.test_method",
+            "name": "Test Method"
+          },
+          {
+            "field": "measurements.test_days_from_index",
+            "name": "Test Days from Index"
+          },
+          {
+            "field": "medications.days_to_medication_start",
+            "name": "Days to Medication Start"
+          },
+          {
+            "field": "medications.days_to_medication_end",
+            "name": "Days to Medication End"
+          },
+          {
+            "field": "medications.dose_sequence_number",
+            "name": "Dose Sequence Number"
+          },
+          {
+            "field": "medications.medication_code",
+            "name": "Medication Code"
+          },
+          {
+            "field": "medications.medication_code_system",
+            "name": "Medication Code System"
+          },
+          {
+            "field": "medications.medication_manufacturer",
+            "name": "Medication Manufacturer"
+          },
+          {
+            "field": "medications.medication_name",
+            "name": "Medication Name"
+          },
+          {
+            "field": "medications.medication_status",
+            "name": "Medication Status"
+          },
+          {
+            "field": "medications.medication_type",
+            "name": "Medication Type"
+          },
+          {
+            "field": "procedures.breathing_support_type",
+            "name": "Breathing Support Type"
+          },
+          {
+            "field": "procedures.days_to_procedure_start",
+            "name": "Days to Procedure Start"
+          },
+          {
+            "field": "procedures.days_to_procedure_end",
+            "name": "Days to Procedure End"
+          },
+          {
+            "field": "procedures.procedure_name",
+            "name": "Procedure Name"
+          },
+          {
+            "field": "conditions.condition_name",
+            "name": "Condition Name"
+          },
+          {
+            "field": "conditions.condition_code_system",
+            "name": "Condition Code System"
+          },
+          {
+            "field": "conditions.condition_code",
+            "name": "Condition Code"
+          },
+          {
+            "field": "conditions.days_to_condition_start",
+            "name": "Days to Condition Start"
+          },
+          {
+            "field": "conditions.days_to_condition_end",
+            "name": "Days to Condition End"
+          },
           {
             "field": "project_id",
             "name": "Project ID"
@@ -575,7 +681,7 @@
       },
       "dropdowns": {
         "download-table": {
-          "title": "Download Measurements Metadata Table"
+          "title": "Download Table"
         }
       },
       "buttons": [
@@ -1078,13 +1184,19 @@
         "enabled": false,
         "text": "Dataset Discovery"
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "search": {
+        "searchBar": {
+          "enabled": true
+        },
         "tagSearchDropdown": {
           "enabled": true,
           "collapsibleButtonText": "Dataset Filters"
-        },
-        "searchBar": {
-          "enabled": true
         }
       },
       "authorization": {
@@ -1109,39 +1221,42 @@
         }
       }
     },
-    "aggregations": [{
-      "name": "Datasets",
-      "field": "_unique_id",
-      "type": "count"
-    }],
+    "aggregations": [
+      {
+        "name": "Datasets",
+        "field": "_unique_id",
+        "type": "count"
+      }
+    ],
     "tagSelector": {
       "title": "Tags by category"
     },
-    "studyColumns": [{
-      "name": "Title",
-      "field": "short_name",
-      "contentType": "string",
-      "width": 200
-    },
-    {
-      "name": "Description",
-      "field": "data_description",
-      "contentType": "string",
-      "width": 400
-    },
-    {
-      "name": "Publication URL",
-      "field": "data_url",
-      "contentType": "link",
-      "width": 300
-    },
-    {
-      "name": "Disease Type",
-      "field": "disease_type",
-      "contentType": "string",
-      "width": 150
-    }
-  ],
+    "studyColumns": [
+      {
+        "name": "Title",
+        "field": "short_name",
+        "contentType": "string",
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Description",
+        "field": "data_description",
+        "contentType": "string",
+        "width": 400,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Publication URL",
+        "field": "data_url",
+        "contentType": "link",
+        "width": 300,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      }
+    ],
     "studyPreviewField": {
       "name": "Research Description",
       "field": "research_description",
@@ -1150,65 +1265,169 @@
       "includeIfNotAvailable": false
     },
     "studyPageFields": {
+      "showAllAvailableFields": false,
       "header": {
         "field": "short_name"
       },
       "downloadLinks": {
         "field": "data_download_links"
       },
-      "fieldsToShow": [{
+      "fieldsToShow": [
+        {
           "groupName": "Dataset Identifiers",
           "includeName": false,
-          "fields": [{
-              "name": "Citation",
-              "field": "data_citation",
-              "contentType": "string"
+          "fields": [
+            {
+              "name": "DOI Title",
+              "field": "doi_title",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
-              "name": "Dataset URL",
-              "field": "data_url",
-              "contentType": "link"
+              "name": "DOI Citation",
+              "field": "doi_citation",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Citation",
+              "field": "data_citation",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Abstract",
+              "field": "abstract",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Research Description",
               "field": "research_description",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Data Description",
               "field": "data_description",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
-              "name": "Disease Type",
-              "field": "disease_type",
-              "contentType": "string"
+              "name": "DOI Creators",
+              "field": "doi_creators",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Data Access Information",
+              "field": "doi_access_information",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Data Access Information Link",
+              "field": "doi_access_information_link",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Resolvable Link",
+              "field": "doi_resolvable_link",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Dataset Information URL",
+              "field": "data_url",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Contact",
+              "field": "doi_contact",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Availability",
+              "field": "doi_availability",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Description",
+              "field": "doi_description",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Version",
+              "field": "doi_version_information",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Resource Type",
+              "field": "doi_resource_type",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Publication Year",
+              "field": "doi_publication_year",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Funding References",
+              "field": "doi_funding_references",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Publisher",
+              "field": "doi_publisher",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Primary Site",
               "field": "primary_site",
-              "contentType": "string"
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Disease Type",
+              "field": "disease_type",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Case Count",
               "field": "cases_count",
-              "contentType": "number"
+              "contentType": "number",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Files Count",
               "field": "files_count",
-              "contentType": "number"
+              "contentType": "number",
+              "includeIfNotAvailable": false
             }
           ]
         },
         {
-          "fields": [{
-            "name": "Research Description",
-            "field": "research_description",
-            "contentType": "paragraphs",
-            "includeName": true,
-            "includeIfNotAvailable": false
-          }]
+          "fields": [
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": false,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
         }
       ]
     },
@@ -1218,17 +1437,18 @@
       "uid": "_unique_id"
     },
     "tagCategories": [
-    {
+      {
         "name": "disease_type",
         "displayName": "Disease Type",
         "color": "#532565",
         "display": true
       },
-    {
+      {
         "name": "primary_site",
         "displayName": "Primary Site",
         "color": "#981f32",
         "display": true
-      }]
-    }
+      }
+    ]
+  }
 }
