@@ -17,7 +17,7 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.8.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2023.05",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2023.05",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.7.5",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.05",
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2023.05",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.05",
