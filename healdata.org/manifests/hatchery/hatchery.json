@@ -73,7 +73,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, User-licensed) Stata Notebook ",
-      "image": "quay.io/cdis/stata-heal:master",
+      "image": "quay.io/cdis/jupyter-pystata-user-licensed:master",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },
@@ -93,7 +93,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -105,7 +105,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
-      "image": "quay.io/cdis/stata-heal:gen3-licensed",
+      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:master",
       "env": {
         "FRAME_ANCESTORS": "https://healdata.org"
       },

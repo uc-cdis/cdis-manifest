@@ -70,7 +70,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, User-licensed) Stata Notebook ",
-      "image": "quay.io/cdis/jupyter-pystata-user-licensed:feat_stata-license",
+      "image": "quay.io/cdis/jupyter-pystata-user-licensed:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
@@ -101,7 +101,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
-      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:feat_stata-license",
+      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:master",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
