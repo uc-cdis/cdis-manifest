@@ -1514,25 +1514,25 @@
         "name": "Title",
         "field": "short_name",
         "contentType": "string",
-        "width": 200
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Description",
         "field": "data_description",
         "contentType": "string",
-        "width": 400
+        "width": 400,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Publication URL",
         "field": "data_url",
         "contentType": "link",
-        "width": 300
-      },
-      {
-        "name": "Disease Type",
-        "field": "disease_type",
-        "contentType": "string",
-        "width": 150
+        "width": 300,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
@@ -1556,14 +1556,8 @@
           "includeName": false,
           "fields": [
             {
-              "name": "DOI Data Access Information",
-              "field": "doi_access_information_link",
-              "contentType": "link",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "DOI Contact",
-              "field": "doi_contact",
+              "name": "DOI Title",
+              "field": "doi_title",
               "contentType": "string",
               "includeIfNotAvailable": false
             },
@@ -1574,20 +1568,68 @@
               "includeIfNotAvailable": false
             },
             {
-              "name": "DOI Availability",
-              "field": "doi_availability",
+              "name": "Citation",
+              "field": "data_citation",
               "contentType": "string",
               "includeIfNotAvailable": false
             },
             {
-              "name": "DOI Resolvable_link",
+              "name": "Abstract",
+              "field": "abstract",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Data Description",
+              "field": "data_description",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Creators",
+              "field": "doi_creators",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Data Access Information",
+              "field": "doi_access_information",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Data Access Information Link",
+              "field": "doi_access_information_link",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Resolvable Link",
               "field": "doi_resolvable_link",
               "contentType": "link",
               "includeIfNotAvailable": false
             },
             {
-              "name": "DOI Title",
-              "field": "doi_title",
+              "name": "Dataset Information URL",
+              "field": "data_url",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Contact",
+              "field": "doi_contact",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "DOI Availability",
+              "field": "doi_availability",
               "contentType": "string",
               "includeIfNotAvailable": false
             },
@@ -1628,38 +1670,14 @@
               "includeIfNotAvailable": false
             },
             {
-              "name": "Citation",
-              "field": "data_citation",
-              "contentType": "string",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "Dataset URL",
-              "field": "data_url",
-              "contentType": "link",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "Research Description",
-              "field": "research_description",
-              "contentType": "string",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "Data Description",
-              "field": "data_description",
+              "name": "Primary Site",
+              "field": "primary_site",
               "contentType": "string",
               "includeIfNotAvailable": false
             },
             {
               "name": "Disease Type",
               "field": "disease_type",
-              "contentType": "string",
-              "includeIfNotAvailable": false
-            },
-            {
-              "name": "Primary Site",
-              "field": "primary_site",
               "contentType": "string",
               "includeIfNotAvailable": false
             },

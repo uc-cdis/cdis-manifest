@@ -60,6 +60,12 @@
     "fence": {
       "strategy": "auto"
     },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
+      "targetCpu": 40
+    },
     "indexd": {
       "strategy": "auto",
       "min": 8,

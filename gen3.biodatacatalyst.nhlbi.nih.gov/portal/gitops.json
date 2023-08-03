@@ -76,6 +76,12 @@
     "navigation": {
       "items": [
         {
+          "icon": "query",
+          "link": "/discovery",
+          "color": "#a2a2a2",
+          "name": "Discovery"
+        },
+        {
           "icon": "dictionary",
           "link": "/DD",
           "color": "#a2a2a2",
@@ -86,12 +92,6 @@
           "link": "/explorer",
           "color": "#a2a2a2",
           "name": "Exploration"
-        },
-        {
-          "icon": "query",
-          "link": "/discovery",
-          "color": "#a2a2a2",
-          "name": "Discovery"
         },
         {
           "icon": "workspace",
@@ -903,15 +903,12 @@
                   "label": "Status:",
                   "sourceField": "DBGAP_FHIR_Status",
                   "default": "Not specified"
-                }
-              ]
-            },
-            {
-              "header": "Description",
-              "fields": [
+                },
                 {
-                  "type": "block",
-                  "sourceField": "DBGAP_FHIR_Description"
+                  "type": "text",
+                  "label": "Release Date:",
+                  "sourceField": "DBGAP_FHIR_ReleaseDate",
+                  "default": "Not specified"
                 }
               ]
             },
@@ -969,6 +966,15 @@
               ]
             },
             {
+              "header": "Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "sourceField": "DBGAP_FHIR_Description"
+                }
+              ]
+            },
+            {
               "header": "Additional Information",
               "fields": [
                 {
@@ -981,12 +987,6 @@
                   "type": "text",
                   "label": "Keywords:",
                   "sourceField": "DBGAP_FHIR_Keyword",
-                  "default": "Not specified"
-                },
-                {
-                  "type": "text",
-                  "label": "Release Date:",
-                  "sourceField": "DBGAP_FHIR_ReleaseDate",
                   "default": "Not specified"
                 },
                 {
