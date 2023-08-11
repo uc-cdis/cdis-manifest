@@ -75,6 +75,25 @@ mappings:
           - name: days_to_procedure_end
           - name: days_to_procedure_start
           - name: procedure_name
+      - name: imaging_studies
+        path: imaging_studies
+        props:
+          - name: age_at_imaging
+          - name: body_part_examined
+          - name: days_from_study_to_neg_covid_test
+          - name: days_from_study_to_pos_covid_test
+          - name: days_to_study
+          - name: loinc_code
+          - name: loinc_contrast
+          - name: loinc_long_common_name
+          - name: loinc_method
+          - name: loinc_system
+          - name: study_description
+          - name: study_location
+          - name: study_modality
+          - name: study_year
+          - name: study_year_shifted
+          - name: study_uid
     joining_props:
       - index: data_file
         join_on: _case_id
@@ -309,4 +328,19 @@ mappings:
             fn: set
           - name: study_uid
             src: study_uid
+            fn: set
+          - name: loinc_code
+            src: loinc_code
+            fn: set
+          - name: loinc_contrast
+            src: loinc_contrast
+            fn: set
+          - name: loinc_long_common_name
+            src: loinc_long_common_name
+            fn: set
+          - name: loinc_method
+            src: loinc_method
+            fn: set
+          - name: loinc_system
+            src: loinc_system
             fn: set
