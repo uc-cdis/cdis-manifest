@@ -140,16 +140,12 @@
         "type": "measurement"
       },
       {
-        "index": "midrcstaging_imaging_data_file",
-        "type": "imaging_data_file"
-      },
-      {
         "index": "midrcstaging_annotation",
         "type": "annotation"
       },
       {
-        "index": "midrcstaging_annotation_data_file",
-        "type": "annotation_data_file"
+        "index": "midrcstaging_data_file",
+        "type": "data_file"
       },
       {
         "index": "midrcstaging_imaging_study",
@@ -167,7 +163,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.2/schema.json",
+    "dictionary_url": "http://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.2_data_file/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
