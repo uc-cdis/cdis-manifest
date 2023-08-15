@@ -340,6 +340,24 @@
             ]
           },
           {
+            "title": "Imaging Studies",
+            "fields": [
+              "imaging_studies.study_modality",
+              "imaging_studies.study_description",
+              "imaging_studies.loinc_code",
+              "imaging_studies.loinc_contrast",
+              "imaging_studies.loinc_long_common_name",
+              "imaging_studies.loinc_method",
+              "imaging_studies.loinc_system",
+              "imaging_studies.study_location",
+              "imaging_studies.age_at_imaging",
+              "imaging_studies.body_part_examined",
+              "imaging_studies.days_from_study_to_neg_covid_test",
+              "imaging_studies.days_from_study_to_pos_covid_test",
+              "imaging_studies.days_to_study"
+            ]
+          },
+          {
             "title": "COVID Tests",
             "fields": [
               "measurements.test_name",
@@ -404,6 +422,20 @@
           "ethnicity",
           "zip",
           "covid19_positive",
+          "imaging_studies.age_at_imaging",
+          "imaging_studies.body_part_examined",
+          "imaging_studies.days_from_study_to_neg_covid_test",
+          "imaging_studies.days_from_study_to_pos_covid_test",
+          "imaging_studies.days_to_study",
+          "imaging_studies.loinc_code",
+          "imaging_studies.loinc_contrast",
+          "imaging_studies.loinc_long_common_name",
+          "imaging_studies.loinc_method",
+          "imaging_studies.loinc_system",
+          "imaging_studies.study_description",
+          "imaging_studies.study_location",
+          "imaging_studies.study_modality",
+          "imaging_studies.study_uid",
           "measurements.test_name",
           "measurements.test_result_text",
           "measurements.test_method",
@@ -494,6 +526,62 @@
         "dataType": "case",
         "nodeCountTitle": "Cases",
         "fieldMapping": [
+          {
+            "field": "imaging_studies.age_at_imaging",
+            "name": "Age at Imaging"
+          },
+          {
+            "field": "imaging_studies.body_part_examined",
+            "name": "Body Part Examined"
+          },
+          {
+            "field": "imaging_studies.days_from_study_to_neg_covid_test",
+            "name": "Days from Study to Negative COVID Test"
+          },
+          {
+            "field": "imaging_studies.days_from_study_to_pos_covid_test",
+            "name": "Days from Study to Positive COVID Test"
+          },
+          {
+            "field": "imaging_studies.days_to_study",
+            "name": "Days to Study"
+          },
+          {
+            "field": "imaging_studies.loinc_code",
+            "name": "LOINC Code"
+          },
+          {
+            "field": "imaging_studies.loinc_contrast",
+            "name": "LOINC Contrast"
+          },
+          {
+            "field": "imaging_studies.loinc_long_common_name",
+            "name": "LOINC Long Common Name"
+          },
+          {
+            "field": "imaging_studies.loinc_method",
+            "name": "LOINC Method"
+          },
+          {
+            "field": "imaging_studies.loinc_system",
+            "name": "LOINC System"
+          },
+          {
+            "field": "imaging_studies.study_description",
+            "name": "Study Description"
+          },
+          {
+            "field": "imaging_studies.study_location",
+            "name": "Study Location"
+          },
+          {
+            "field": "imaging_studies.study_modality",
+            "name": "Study Modality"
+          },
+          {
+            "field": "imaging_studies.study_uid",
+            "name": "Study UID"
+          },
           {
             "field": "measurements.test_name",
             "name": "Test Name"
@@ -1112,8 +1200,12 @@
               "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
-              "project_id",
-              "study_uid"
+              "loinc_code",
+              "loinc_contrast",
+              "loinc_long_common_name",
+              "loinc_method",
+              "loinc_system",
+              "project_id"
             ]
           },
           {
@@ -1166,8 +1258,7 @@
               "sex",
               "race",
               "zip",
-              "index_event",
-              "case_ids"
+              "index_event"
             ]
           },
           {
@@ -1233,6 +1324,11 @@
             "study_year_shifted",
             "days_from_study_to_pos_covid_test",
             "days_from_study_to_neg_covid_test",
+            "loinc_code",
+            "loinc_contrast",
+            "loinc_long_common_name",
+            "loinc_method",
+            "loinc_system",
             "covid19_positive",
             "age_at_index",
             "index_event",
