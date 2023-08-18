@@ -342,21 +342,19 @@
           {
             "title": "Imaging Studies",
             "fields": [
-              "imaging_studies.age_at_imaging",
-              "imaging_studies.body_part_examined",
-              "imaging_studies.days_from_study_to_neg_covid_test",
-              "imaging_studies.days_from_study_to_pos_covid_test",
-              "imaging_studies.days_to_study",
+              "imaging_studies.study_modality",
+              "imaging_studies.study_description",
               "imaging_studies.loinc_code",
               "imaging_studies.loinc_contrast",
               "imaging_studies.loinc_long_common_name",
               "imaging_studies.loinc_method",
               "imaging_studies.loinc_system",
-              "imaging_studies.study_description",
               "imaging_studies.study_location",
-              "imaging_studies.study_modality",
-              "imaging_studies.study_year",
-              "imaging_studies.study_year_shifted"
+              "imaging_studies.age_at_imaging",
+              "imaging_studies.body_part_examined",
+              "imaging_studies.days_from_study_to_neg_covid_test",
+              "imaging_studies.days_from_study_to_pos_covid_test",
+              "imaging_studies.days_to_study"
             ]
           },
           {
@@ -437,8 +435,6 @@
           "imaging_studies.study_description",
           "imaging_studies.study_location",
           "imaging_studies.study_modality",
-          "imaging_studies.study_year",
-          "imaging_studies.study_year_shifted",
           "imaging_studies.study_uid",
           "measurements.test_name",
           "measurements.test_result_text",
@@ -581,14 +577,6 @@
           {
             "field": "imaging_studies.study_modality",
             "name": "Study Modality"
-          },
-          {
-            "field": "imaging_studies.study_year",
-            "name": "Study Year"
-          },
-          {
-            "field": "imaging_studies.study_year_shifted",
-            "name": "Study Year Shifted"
           },
           {
             "field": "imaging_studies.study_uid",
@@ -1242,7 +1230,6 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
-              "multiframe_images",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1314,7 +1301,6 @@
             "manufacturer",
             "manufacturer_model_name",
             "modality",
-            "multiframe_images",
             "number_of_temporal_positions",
             "patient_position",
             "pixel_spacing",
