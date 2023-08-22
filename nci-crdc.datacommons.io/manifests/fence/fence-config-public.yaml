@@ -301,19 +301,19 @@ S3_BUCKETS:
   gdc-wcdt-mcrpc-phs001648-controlled:
     cred: 'fence_bot'
     region: 'us-east-1'
-  idc-open-cr:
+  idc-open-data:
     cred: 'fence_bot'
     region: 'us-east-1'
-  idc-open-idc1:
+  idc-open-data-cr:
+    cred: 'fence_bot'
+    region: 'us-east-1'
+  idc-open-data-two:
     cred: 'fence_bot'
     region: 'us-east-1'
   nci-cbiit-caninedatacommons-file:
     cred: 'fence_bot'
     region: 'us-east-1'
   pdcdatastore:
-    cred: 'fence_bot'
-    region: 'us-east-1'
-  public-datasets-idc:
     cred: 'fence_bot'
     region: 'us-east-1'
   sddp-phs001554:
