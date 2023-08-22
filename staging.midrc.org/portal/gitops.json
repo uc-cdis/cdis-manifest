@@ -352,8 +352,6 @@
               "imaging_studies.study_location",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
-              "imaging_studies.days_from_study_to_neg_covid_test",
-              "imaging_studies.days_from_study_to_pos_covid_test",
               "imaging_studies.days_to_study"
             ]
           },
@@ -424,8 +422,6 @@
           "covid19_positive",
           "imaging_studies.age_at_imaging",
           "imaging_studies.body_part_examined",
-          "imaging_studies.days_from_study_to_neg_covid_test",
-          "imaging_studies.days_from_study_to_pos_covid_test",
           "imaging_studies.days_to_study",
           "imaging_studies.loinc_code",
           "imaging_studies.loinc_contrast",
@@ -1230,7 +1226,6 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
-              "multiframe_images",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1302,7 +1297,6 @@
             "manufacturer",
             "manufacturer_model_name",
             "modality",
-            "multiframe_images",
             "number_of_temporal_positions",
             "patient_position",
             "pixel_spacing",
