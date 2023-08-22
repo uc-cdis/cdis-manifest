@@ -14,7 +14,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2023.06",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2023.08",
     "env": {
       "NAMESPACE": "brhstaging",
       "HOSTNAME": "brhstaging.data-commons.org"
