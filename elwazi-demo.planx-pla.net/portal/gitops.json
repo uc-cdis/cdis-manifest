@@ -79,6 +79,13 @@
       },
       "buttons": [
         {
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover Study Metadata",
+          "link": "/discovery",
+          "label": "Discover Metadata"
+        },
+        {
           "name": "Explore Data",
           "icon": "data-explore",
           "body": "The Data Exploration Page facilitates faceted search for exploring eLwazi datasets, selecting cohorts across projects, exporting structured data, and creating data file download manifests.",
@@ -129,6 +136,12 @@
       "title": "eLwazi Data Commons",
       "items": [
         {
+          "icon": "query",
+          "link": "/discovery",
+          "name": "Discovery",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
+        },
+        {
           "name": "Exploration",
           "link": "/explorer",
           "icon": "exploration",
@@ -140,7 +153,7 @@
           "link": "/DD",
           "icon": "dictionary",
           "color": "#a2a2a2",
-          "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
+          "tooltip": "The eLwazi Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
         },
         {
           "name": "Query",
@@ -506,6 +519,152 @@
         }
       ],
       "loginForDownload": true,
+      "discoveryConfig": {
+        "features": {
+          "advSearchFilters": {
+            "enabled": false,
+            "field": "advSearchFilters",
+            "displayName": "Filters",
+            "filters": [
+              {
+              }
+            ]
+          },
+          "tagsColumn": {
+            "enabled": true
+          },
+          "tagsInDescription": {
+            "enabled": true
+          },
+          "exportToWorkspace": {
+            "enabled": false,
+            "manifestFieldName": "__manifest",
+            "enableDownloadManifest": false,
+            "enableDownloadZip": false,
+            "downloadZipButtonText": "Download Zip",
+            "downloadManifestButtonText": "Download Manifest",
+            "documentationLinks": {
+              "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+              "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+            },
+            "verifyExternalLogins": true
+          },
+          "pageTitle": {
+            "enabled": false
+          },
+          "search": {
+            "searchBar": {
+              "enabled": true,
+              "inputSubtitle": "Examples: Trauma, Maternal Health",
+              "searchableTextFields": [
+                "Project description",
+                "Project Name",
+                "cohort_description",
+                "Shortname"
+              ]
+            },
+            "tagSearchDropdown": {
+              "enabled": true,
+              "collapsibleButtonText": "Country"
+            }
+          },
+          "authorization": {
+            "enabled": true,
+            "columnTooltip": "Filter by data access",
+            "supportedValues": {
+              "accessible": {
+                "enabled": true,
+                "menuText": "Available"
+              },
+              "unaccessible": {
+                "enabled": false,
+                "menuText": "Not Accessible"
+              },
+              "pending": {
+                "enabled": true,
+                "menuText": "Pending"
+              },
+              "notAvailable": {
+                "enabled": true,
+                "menuText": "Not Available"
+              }
+            }
+          }
+        },
+        "aggregations": [
+          {
+            "name": "Studies",
+            "field": "Shortname",
+            "type": "count"
+          }
+        ],
+        "tagSelector": {
+          "showTagCategoryNames": true
+        },
+        "studies": [],
+        "studyColumns": [
+          {
+            "name": "Project",
+            "field": "Shortname",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "Project Title",
+            "field": "Project_Name",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "PI",
+            "field": "Project_PI",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "Web Site",
+            "field": "Project_Website",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          }
+        ],
+        "studyPreviewField": {
+          "name": "Summary",
+          "field": "Project_Description",
+          "contentType": "string",
+          "includeName": false,
+          "includeIfNotAvailable": true,
+          "valueIfNotAvailable": "No summary has been provided for this study."
+        },
+        "tagsDisplayName": "Study Filters",
+        "tagColumnWidth": "500px",
+        "minimalFieldMapping": {
+          "authzField": "authz",
+          "tagsListFieldName": "tags",
+          "dataAvailabilityField": "data_availability",
+          "uid": "Shortname"
+        },
+        "tagCategories": [
+          {
+            "name": "Country",
+            "displayName": "Country or Region",
+            "color": "#532565",
+            "display": false
+          },
+          {
+            "name": "Data_Availability",
+            "displayName": "Data Categories",
+            "color": "#982568",
+            "display": false
+          },
+          {
+            "name": "DublinCore",
+            "displayName": "Dublin Core BioSchemas",
+            "color":  "#bf362e",
+            "display": false
+          }
+        ]
+      },
       "guppyConfig": {
         "dataType": "data_file",
         "nodeCountTitle": "Data Files",
