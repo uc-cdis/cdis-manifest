@@ -635,7 +635,36 @@
           "includeName": false,
           "includeIfNotAvailable": true,
           "valueIfNotAvailable": "No summary has been provided for this study."
-        }
+        },
+        "tagsDisplayName": "Study Filters",
+        "tagColumnWidth": "500px",
+        "minimalFieldMapping": {
+          "authzField": "authz",
+          "tagsListFieldName": "tags",
+          "dataAvailabilityField": "data_availability",
+          "uid": "Shortname"
+        },
+        "tagCategories": [
+          {
+            "name": "Country",
+            "displayName": "Country or Region",
+            "color": "#532565",
+            "display": false
+          },
+          {
+            "name": "Data_Availability",
+            "displayName": "Data Categories",
+            "color": "#982568",
+            "display": false
+          },
+          {
+            "name": "DublinCore",
+            "displayName": "Dublin Core BioSchemas"
+            "color":  "#bf362e",
+            "display": false
+          }
+        ]
+      },
       },
       "guppyConfig": {
         "dataType": "data_file",
