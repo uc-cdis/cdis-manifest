@@ -1,10 +1,10 @@
 {
     "scaling_groups" : {
-        "default": "workflow",
+        "default": "{{workflow.name}}",
         "custom": {
-            "Scott.DuVall@va.gov": "workflow2",
-            "Hamid.Saoudian@va.gov": "workflow3",
-            "Craig.Teerlink@va.gov": "workflow4"
+            "Scott.DuVall@va.gov": "{{workflow.name}}",
+            "Hamid.Saoudian@va.gov": "{{workflow.name}}",
+            "Craig.Teerlink@va.gov": "{{workflow.name}}"
         }
     },
     "s3-bucket": "argo-artifact-storage-downloadable",
