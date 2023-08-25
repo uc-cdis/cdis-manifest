@@ -138,7 +138,7 @@
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery",
-          "color: ""#a2a2a2"
+          "color": "#a2a2a2",
           "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
         },
         {
@@ -228,7 +228,7 @@
   "featureFlags": {
     "explorer": true,
     "discovery": true
-]  },
+  },
   "analysisTools": [],
   "explorerConfig": [
     {
@@ -523,9 +523,7 @@
             "displayName": "Filters",
             "filters": [
               {
-                {
                    "key": "Project_Description"
-                }
               }
             ]
           },
@@ -535,21 +533,8 @@
           "tagsInDescription": {
             "enabled": true
           },
-          "exportToWorkspace": {
-            "enabled": false,
-            "manifestFieldName": "__manifest",
-            "enableDownloadManifest": false,
-            "enableDownloadZip": false,
-            "downloadZipButtonText": "Download Zip",
-            "downloadManifestButtonText": "Download Manifest",
-            "documentationLinks": {
-              "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-              "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
-            },
-            "verifyExternalLogins": true
-          },
           "pageTitle": {
-            "enabled": false
+            "enabled": false,
             "text": "Study Discovery"
           },
           "search": {
@@ -588,7 +573,7 @@
           }
         ],
         "tagSelector": {
-          "title" "Tags by Category"
+          "title": "Tags by Category"
         },
         "studyColumns": [
           {
