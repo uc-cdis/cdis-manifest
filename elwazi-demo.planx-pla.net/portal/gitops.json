@@ -135,9 +135,9 @@
       "title": "eLwazi Data Commons",
       "items": [
         {
-          "icon": "query",
-          "link": "/discovery",
           "name": "Discovery",
+          "link": "/discovery",
+          "icon": "query",
           "color": "#a2a2a2",
           "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
         },
@@ -515,128 +515,6 @@
         }
       ],
       "loginForDownload": true,
-      "discoveryConfig": {
-        "features": {
-          "advSearchFilters": {
-            "enabled": false,
-            "field": "advSearchFilters",
-            "displayName": "Filters",
-            "filters": [
-              {
-                   "key": "Project_Description"
-              }
-            ]
-          },
-          "tagsColumn": {
-            "enabled": false
-          },
-          "tagsInDescription": {
-            "enabled": true
-          },
-          "pageTitle": {
-            "enabled": false,
-            "text": "Study Discovery"
-          },
-          "search": {
-            "searchBar": {
-              "enabled": true
-            },
-            "tagSearchDropdown": {
-              "enabled": true,
-              "collapsibleButtonText": "Country"
-            }
-          },
-          "authorization": {
-            "enabled": true,
-            "columnTooltip": "Filter by data access",
-            "supportedValues": {
-              "accessible": {
-                "enabled": true,
-                "menuText": "Available"
-              },
-              "unaccessible": {
-                "enabled": false,
-                "menuText": "Not Accessible"
-              },
-              "notAvailable": {
-                "enabled": true,
-                "menuText": "Not Available"
-              }
-            }
-          }
-        },
-        "aggregations": [
-          {
-            "name": "Studies",
-            "field": "Shortname",
-            "type": "count"
-          }
-        ],
-        "tagSelector": {
-          "title": "Tags by Category"
-        },
-        "studyColumns": [
-          {
-            "name": "Project",
-            "field": "Shortname",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "Project Title",
-            "field": "Project_Name",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "PI",
-            "field": "Project_PI",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "Web Site",
-            "field": "Project_Website",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          }
-        ],
-        "studyPreviewField": {
-          "name": "Description",
-          "field": "Project_Description",
-          "contentType": "string",
-          "includeName": false,
-          "includeIfNotAvailable": true,
-          "valueIfNotAvailable": "No summary has been provided for this study."
-        },
-        "tagsDisplayName": "Study Filters",
-        "tagColumnWidth": "500px",
-        "minimalFieldMapping": {
-          "authzField": "authz",
-          "tagsListFieldName": "tags",
-          "uid": "Shortname"
-        },
-        "tagCategories": [
-          {
-            "name": "Country",
-            "displayName": "Country or Region",
-            "color": "#532565",
-            "display": true
-          },
-          {
-            "name": "Data_Availability",
-            "displayName": "Data Categories",
-            "color": "#982568",
-            "display": false
-          },
-          {
-            "name": "DublinCore",
-            "displayName": "Dublin Core BioSchemas",
-            "color":  "#bf362e",
-            "display": false
-          }
-        ]
-      },
       "guppyConfig": {
         "dataType": "data_file",
         "nodeCountTitle": "Data Files",
@@ -657,5 +535,127 @@
         "accessibleValidationField": "project_id"
       }
     }
-  ]
+  ],
+  "discoveryConfig": {
+    "features": {
+      "advSearchFilters": {
+        "enabled": false,
+        "field": "advSearchFilters",
+        "displayName": "Filters",
+        "filters": [
+          {
+               "key": "Project_Description"
+          }
+        ]
+      },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
+      "pageTitle": {
+        "enabled": false,
+        "text": "Study Discovery"
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Country"
+        }
+      },
+      "authorization": {
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Studies",
+        "field": "Shortname",
+        "type": "count"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by Category"
+    },
+    "studyColumns": [
+      {
+        "name": "Project",
+        "field": "Shortname",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Project Title",
+        "field": "Project_Name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "PI",
+        "field": "Project_PI",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Web Site",
+        "field": "Project_Website",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Description",
+      "field": "Project_Description",
+      "contentType": "string",
+      "includeName": false,
+      "includeIfNotAvailable": true,
+      "valueIfNotAvailable": "No summary has been provided for this study."
+    },
+    "tagsDisplayName": "Study Filters",
+    "tagColumnWidth": "500px",
+    "minimalFieldMapping": {
+      "authzField": "authz",
+      "tagsListFieldName": "tags",
+      "uid": "Shortname"
+    },
+    "tagCategories": [
+      {
+        "name": "Country",
+        "displayName": "Country or Region",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "Data_Availability",
+        "displayName": "Data Categories",
+        "color": "#982568",
+        "display": false
+      },
+      {
+        "name": "DublinCore",
+        "displayName": "Dublin Core BioSchemas",
+        "color":  "#bf362e",
+        "display": false
+      }
+    ]
+  }
 }
