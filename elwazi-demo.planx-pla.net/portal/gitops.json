@@ -74,8 +74,7 @@
     "index": {
       "introduction": {
         "heading": "eLwazi Data Commons",
-        "text": "The eLwazi Data Commons platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
-        "link": "/submission"
+        "text": "The eLwazi Data Commons platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects."
       },
       "buttons": [
         {
@@ -139,6 +138,7 @@
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery",
+          "color: ""#a2a2a2"
           "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
         },
         {
@@ -227,12 +227,8 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
-    "noIndex": true,
-    "analysis": false,
-    "discovery": false,
-    "discoveryUseAggMDS": false,
-    "studyRegistration": false
-  },
+    "discovery": true
+]  },
   "analysisTools": [],
   "explorerConfig": [
     {
@@ -527,11 +523,14 @@
             "displayName": "Filters",
             "filters": [
               {
+                {
+                   "key": "Project_Description"
+                }
               }
             ]
           },
           "tagsColumn": {
-            "enabled": true
+            "enabled": false
           },
           "tagsInDescription": {
             "enabled": true
@@ -551,17 +550,11 @@
           },
           "pageTitle": {
             "enabled": false
+            "text": "Study Discovery"
           },
           "search": {
             "searchBar": {
-              "enabled": true,
-              "inputSubtitle": "Examples: Trauma, Maternal Health",
-              "searchableTextFields": [
-                "Project description",
-                "Project Name",
-                "cohort_description",
-                "Shortname"
-              ]
+              "enabled": true
             },
             "tagSearchDropdown": {
               "enabled": true,
@@ -580,10 +573,6 @@
                 "enabled": false,
                 "menuText": "Not Accessible"
               },
-              "pending": {
-                "enabled": true,
-                "menuText": "Pending"
-              },
               "notAvailable": {
                 "enabled": true,
                 "menuText": "Not Available"
@@ -599,9 +588,8 @@
           }
         ],
         "tagSelector": {
-          "showTagCategoryNames": true
+          "title" "Tags by Category"
         },
-        "studies": [],
         "studyColumns": [
           {
             "name": "Project",
@@ -629,7 +617,7 @@
           }
         ],
         "studyPreviewField": {
-          "name": "Summary",
+          "name": "Description",
           "field": "Project_Description",
           "contentType": "string",
           "includeName": false,
@@ -641,7 +629,6 @@
         "minimalFieldMapping": {
           "authzField": "authz",
           "tagsListFieldName": "tags",
-          "dataAvailabilityField": "data_availability",
           "uid": "Shortname"
         },
         "tagCategories": [
@@ -649,7 +636,7 @@
             "name": "Country",
             "displayName": "Country or Region",
             "color": "#532565",
-            "display": false
+            "display": true
           },
           {
             "name": "Data_Availability",
