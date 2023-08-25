@@ -78,11 +78,11 @@
       },
       "buttons": [
         {
-          "name": "Discover Study Metadata",
+          "name": "Project Catalogue",
           "icon": "data-explore",
-          "body": "Discover Study Metadata",
+          "body": "Use free-text and keyword search to browse and discover eLwazi studies in the project catalogue.",
           "link": "/discovery",
-          "label": "Discover Metadata"
+          "label": "Discover Projects"
         },
         {
           "name": "Explore Data",
@@ -137,7 +137,7 @@
         {
           "icon": "query",
           "link": "/discovery",
-          "name": "Discovery",
+          "name": "Catalogue",
           "color": "#a2a2a2",
           "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
         },
@@ -514,129 +514,6 @@
           "rightIcon": "download"
         }
       ],
-      "loginForDownload": true,
-      "discoveryConfig": {
-        "features": {
-          "advSearchFilters": {
-            "enabled": false,
-            "field": "advSearchFilters",
-            "displayName": "Filters",
-            "filters": [
-              {
-                   "key": "Project_Description"
-              }
-            ]
-          },
-          "tagsColumn": {
-            "enabled": false
-          },
-          "tagsInDescription": {
-            "enabled": true
-          },
-          "pageTitle": {
-            "enabled": false,
-            "text": "Study Discovery"
-          },
-          "search": {
-            "searchBar": {
-              "enabled": true
-            },
-            "tagSearchDropdown": {
-              "enabled": true,
-              "collapsibleButtonText": "Country"
-            }
-          },
-          "authorization": {
-            "enabled": true,
-            "columnTooltip": "Filter by data access",
-            "supportedValues": {
-              "accessible": {
-                "enabled": true,
-                "menuText": "Available"
-              },
-              "unaccessible": {
-                "enabled": false,
-                "menuText": "Not Accessible"
-              },
-              "notAvailable": {
-                "enabled": true,
-                "menuText": "Not Available"
-              }
-            }
-          }
-        },
-        "aggregations": [
-          {
-            "name": "Studies",
-            "field": "Shortname",
-            "type": "count"
-          }
-        ],
-        "tagSelector": {
-          "title": "Tags by Category"
-        },
-        "studyColumns": [
-          {
-            "name": "Project",
-            "field": "Shortname",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "Project Title",
-            "field": "Project_Name",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "PI",
-            "field": "Project_PI",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          },
-          {
-            "name": "Web Site",
-            "field": "Project_Website",
-            "errorIfNotAvailable": false,
-            "valueIfNotAvailable": "n/a"
-          }
-        ],
-        "studyPreviewField": {
-          "name": "Description",
-          "field": "Project_Description",
-          "contentType": "string",
-          "includeName": false,
-          "includeIfNotAvailable": true,
-          "valueIfNotAvailable": "No summary has been provided for this study."
-        },
-        "tagsDisplayName": "Study Filters",
-        "tagColumnWidth": "500px",
-        "minimalFieldMapping": {
-          "authzField": "authz",
-          "tagsListFieldName": "tags",
-          "uid": "Shortname"
-        },
-        "tagCategories": [
-          {
-            "name": "Country",
-            "displayName": "Country or Region",
-            "color": "#532565",
-            "display": true
-          },
-          {
-            "name": "Data_Availability",
-            "displayName": "Data Categories",
-            "color": "#982568",
-            "display": false
-          },
-          {
-            "name": "DublinCore",
-            "displayName": "Dublin Core BioSchemas",
-            "color":  "#bf362e",
-            "display": false
-          }
-        ]
-      },
       "guppyConfig": {
         "dataType": "data_file",
         "nodeCountTitle": "Data Files",
@@ -655,7 +532,255 @@
           "project_id"
         ],
         "accessibleValidationField": "project_id"
-      }
+      },      
+      "loginForDownload": true
     }
-  ]
+  ],
+  "discoveryConfig": {
+    "features": {
+      "advSearchFilters": {
+        "enabled": true,
+        "field": "filters",
+        "displayName": "Filters",
+        "filters": [
+          {
+            "key": "Region"
+          },
+          {
+            "key": "Data Type"
+          },
+          {
+            "key": "Keyword"
+          }
+        ]
+      },
+      "pageTitle": {
+        "enabled": true,
+        "text": "eLwazi Project Catalogue"
+      },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
+        }
+      },
+      "authorization": {
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Projects",
+        "field": "acronym",
+        "type": "count"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by Category"
+    },
+    "studyColumns": [
+      {
+        "name": "Project",
+        "field": "acronym",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Full Name",
+        "field": "full_name",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Region",
+        "field": "region",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Contact PI",
+        "field": "contact_pi",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Website",
+        "field": "project_website",
+        "contentType": "link",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Project Description",
+      "field": "project_description",
+      "contentType": "string",
+      "includeName": true,
+      "includeIfNotAvailable": false,
+      "valueIfNotAvailable": "No summary has been provided for this study."
+    },
+    "studyPageFields": {
+      "showAllAvailableFields": false,
+      "header": {
+        "field": "acronym"
+      },
+      "downloadLinks": {
+        "field": "data_download_links"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "Dataset Identifiers",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Project Name",
+              "field": "full_name",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Acronym",
+              "field": "acronym",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project Type",
+              "field": "project_type",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project Description",
+              "field": "project_description",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Keywords",
+              "field": "keywords",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Data Use Agreement",
+              "field": "dua",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project Website",
+              "field": "project_website",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Grant Number",
+              "field": "grant_number",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Contact PI",
+              "field": "contact_pi",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Publication DOI",
+              "field": "publication_doi",
+              "contentType": "link",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Subjects",
+              "field": "subjects",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Cohort Description",
+              "field": "cohort_description",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Region",
+              "field": "region",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            }
+          ]
+        },
+        {
+          "fields": [
+            {
+              "name": "Research Description",
+              "field": "research_description",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": false,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "authzField": "authz",
+      "uid": "acronym"
+    },
+    "tagCategories": [
+      {
+        "name": "data_type",
+        "displayName": "Available Data Types",
+        "color": "#532565",
+        "display": true
+      },
+      {
+        "name": "keyword",
+        "displayName": "Keywords",
+        "color": "#1520A6",
+        "display": true
+      },
+      {
+        "name": "region",
+        "displayName": "Regions",
+        "color": "#2AAA8A",
+        "display": true
+      }
+    ]
+  }
 }
