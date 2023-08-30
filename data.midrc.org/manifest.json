@@ -130,19 +130,23 @@
   "guppy": {
     "indices": [
       {
-        "index": "midrc_case",
+        "index": "midrcstaging_case",
         "type": "case"
       },
       {
-        "index": "midrc_measurement",
+        "index": "midrcstaging_measurement",
         "type": "measurement"
       },
       {
-        "index": "midrc_imaging_data_file",
-        "type": "imaging_data_file"
+        "index": "midrcstaging_annotation",
+        "type": "annotation"
       },
       {
-        "index": "midrc_imaging_study",
+        "index": "midrcstaging_data_file",
+        "type": "data_file"
+      },
+      {
+        "index": "midrcstaging_imaging_study",
         "type": "imaging_study"
       }
     ],
@@ -157,7 +161,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.4/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
