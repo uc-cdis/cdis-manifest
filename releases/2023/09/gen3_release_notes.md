@@ -1,4 +1,4 @@
-# Core Gen3 Release 2023.09
+# Core Gen3 Release 2023.09 (Tanzanite)
 
 ## uc-cdis/cloud-automation
 
