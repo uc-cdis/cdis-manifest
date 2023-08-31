@@ -210,8 +210,7 @@
           "name": "Exploration",
           "link": "/explorer",
           "icon": "exploration",
-          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder.",
-          "color": "#a2a2a2"
+          "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
         },
         {
           "name": "Dictionary",
@@ -224,8 +223,7 @@
           "name": "Query",
           "link": "/query",
           "icon": "query",
-          "tooltip": "Query the databases using GraphQL.",
-          "color": "#a2a2a2"
+          "tooltip": "Query the databases using GraphQL."
         },
         {
           "name": "Example Analysis",
@@ -238,8 +236,7 @@
           "name": "Workspace",
           "link": "/workspace",
           "icon": "workspace",
-          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio.",
-          "color": "#a2a2a2"
+          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         }
       ]
     },
@@ -250,7 +247,7 @@
           "name": "About"
         },
         {
-          "link": "https://data.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -258,7 +255,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "https://data.midrc.org/dashboard/Public/documentation/DUA.html",
+          "link": "/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -326,20 +323,7 @@
   "explorerConfig": [
     {
       "tabTitle": "Cases",
-      "charts": {
-        "covid19_positive": {
-          "chartType": "fullPie",
-          "title": "COVID-19 Positive"
-        },
-        "sex": {
-          "chartType": "fullPie",
-          "title": "Sex"
-        },
-        "race": {
-          "chartType": "fullPie",
-          "title": "Race"
-        }
-      },
+      "charts": {},
       "filters": {
         "tabs": [
           {
@@ -353,6 +337,22 @@
               "zip",
               "covid19_positive",
               "project_id"
+            ]
+          },
+          {
+            "title": "Imaging Studies",
+            "fields": [
+              "imaging_studies.study_modality",
+              "imaging_studies.study_description",
+              "imaging_studies.loinc_code",
+              "imaging_studies.loinc_contrast",
+              "imaging_studies.loinc_long_common_name",
+              "imaging_studies.loinc_method",
+              "imaging_studies.loinc_system",
+              "imaging_studies.study_location",
+              "imaging_studies.age_at_imaging",
+              "imaging_studies.body_part_examined",
+              "imaging_studies.days_to_study"
             ]
           },
           {
@@ -396,6 +396,16 @@
               "conditions.days_to_condition_start",
               "conditions.days_to_condition_end"
             ]
+          },
+          {
+            "title": "Annotations",
+            "fields": [
+              "case_annotations.airspace_disease_grading",
+              "case_annotations.class_covid19_pneumonia",
+              "case_annotations.midrc_mRALE_score",
+              "case_annotations.annotation_method",
+              "case_annotations.annotator_id"
+            ]
           }
         ]
       },
@@ -410,6 +420,18 @@
           "ethnicity",
           "zip",
           "covid19_positive",
+          "imaging_studies.age_at_imaging",
+          "imaging_studies.body_part_examined",
+          "imaging_studies.days_to_study",
+          "imaging_studies.loinc_code",
+          "imaging_studies.loinc_contrast",
+          "imaging_studies.loinc_long_common_name",
+          "imaging_studies.loinc_method",
+          "imaging_studies.loinc_system",
+          "imaging_studies.study_description",
+          "imaging_studies.study_location",
+          "imaging_studies.study_modality",
+          "imaging_studies.study_uid",
           "measurements.test_name",
           "measurements.test_result_text",
           "measurements.test_method",
@@ -432,6 +454,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
+          "case_annotations.airspace_disease_grading",
+          "case_annotations.class_covid19_pneumonia",
+          "case_annotations.midrc_mRALE_score",
+          "case_annotations.annotation_method",
+          "case_annotations.annotator_id",
+          "case_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -494,6 +522,62 @@
         "dataType": "case",
         "nodeCountTitle": "Cases",
         "fieldMapping": [
+          {
+            "field": "imaging_studies.age_at_imaging",
+            "name": "Age at Imaging"
+          },
+          {
+            "field": "imaging_studies.body_part_examined",
+            "name": "Body Part Examined"
+          },
+          {
+            "field": "imaging_studies.days_from_study_to_neg_covid_test",
+            "name": "Days from Study to Negative COVID Test"
+          },
+          {
+            "field": "imaging_studies.days_from_study_to_pos_covid_test",
+            "name": "Days from Study to Positive COVID Test"
+          },
+          {
+            "field": "imaging_studies.days_to_study",
+            "name": "Days to Study"
+          },
+          {
+            "field": "imaging_studies.loinc_code",
+            "name": "LOINC Code"
+          },
+          {
+            "field": "imaging_studies.loinc_contrast",
+            "name": "LOINC Contrast"
+          },
+          {
+            "field": "imaging_studies.loinc_long_common_name",
+            "name": "LOINC Long Common Name"
+          },
+          {
+            "field": "imaging_studies.loinc_method",
+            "name": "LOINC Method"
+          },
+          {
+            "field": "imaging_studies.loinc_system",
+            "name": "LOINC System"
+          },
+          {
+            "field": "imaging_studies.study_description",
+            "name": "Study Description"
+          },
+          {
+            "field": "imaging_studies.study_location",
+            "name": "Study Location"
+          },
+          {
+            "field": "imaging_studies.study_modality",
+            "name": "Study Modality"
+          },
+          {
+            "field": "imaging_studies.study_uid",
+            "name": "Study UID"
+          },
           {
             "field": "measurements.test_name",
             "name": "Test Name"
@@ -583,6 +667,30 @@
             "name": "Days to Condition End"
           },
           {
+            "field": "case_annotations.airspace_disease_grading",
+            "name": "Airspace Disease Grading"
+          },
+          {
+            "field": "case_annotations.class_covid19_pneumonia",
+            "name": "Class COVID-19 Pneumonia"
+          },
+          {
+            "field": "case_annotations.midrc_mRALE_score",
+            "name": "MIDRC mRALE Score"
+          },
+          {
+            "field": "case_annotations.annotation_method",
+            "name": "Annotation Method"
+          },
+          {
+            "field": "case_annotations.annotator_id",
+            "name": "Annotator ID"
+          },
+          {
+            "field": "case_annotations.instance_uids",
+            "name": "Instance UIDs"
+          },
+          {
             "field": "project_id",
             "name": "Project ID"
           },
@@ -612,11 +720,101 @@
           }
         ],
         "manifestMapping": {
-          "resourceIndexType": "imaging_data_file",
+          "resourceIndexType": "data_file",
           "resourceIdField": "object_id",
           "referenceIdFieldInResourceIndex": "_case_id",
           "referenceIdFieldInDataIndex": "_case_id"
         },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Annotations",
+      "charts": {},
+      "filters": {
+        "tabs": [
+          {
+            "title": "Annotations",
+            "fields": [
+              "airspace_disease_grading",
+              "class_covid19_pneumonia",
+              "midrc_mRALE_score",
+              "annotation_method",
+              "annotator_id",
+              "project_id"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "case_ids",
+          "airspace_disease_grading",
+          "class_covid19_pneumonia",
+          "midrc_mRALE_score",
+          "annotation_method",
+          "annotator_id",
+          "instance_uids",
+          "submitter_id",
+          "project_id"
+        ]
+      },
+      "dropdowns": {
+        "download-table": {
+          "title": "Download Table"
+        }
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "data-json",
+          "title": "JSON",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.json"
+        },
+        {
+          "enabled": true,
+          "type": "data-tsv",
+          "title": "TSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "data-csv",
+          "title": "CSV",
+          "dropdownId": "download-table",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "MIDRC_Annotations_table.csv"
+        }
+      ],
+      "loginForDownload": true,
+      "guppyConfig": {
+        "dataType": "annotation",
+        "nodeCountTitle": "Annotations",
+        "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Annotation ID"
+          },
+          {
+            "field": "case_ids",
+            "name": "Case ID"
+          }
+        ],
         "accessibleFieldCheckList": [
           "project_id"
         ],
@@ -725,16 +923,7 @@
     },
     {
       "tabTitle": "Imaging Studies",
-      "charts": {
-        "study_modality": {
-          "chartType": "fullPie",
-          "title": "Study Modality"
-        },
-        "sex": {
-          "chartType": "fullPie",
-          "title": "Case Sex"
-        }
-      },
+      "charts": {},
       "filters": {
         "tabs": [
           {
@@ -781,6 +970,16 @@
               "zip",
               "index_event"
             ]
+          },
+          {
+            "title": "Annotations",
+            "fields": [
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
+            ]
           }
         ]
       },
@@ -810,6 +1009,12 @@
           "race",
           "ethnicity",
           "zip",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_ct_series_file_count",
           "_dx_series_file_count",
           "_cr_series_file_count",
@@ -829,7 +1034,7 @@
       },
       "dropdowns": {
         "download-table": {
-          "title": "Download Imaging Studies Table"
+          "title": "Download Table"
         }
       },
       "buttons": [
@@ -882,6 +1087,30 @@
         "nodeCountTitle": "Imaging Studies",
         "fieldMapping": [
           {
+            "field": "imaging_study_annotations.airspace_disease_grading",
+            "name": "Airspace Disease Grading"
+          },
+          {
+            "field": "imaging_study_annotations.class_covid19_pneumonia",
+            "name": "Class COVID-19 Pneumonia"
+          },
+          {
+            "field": "imaging_study_annotations.midrc_mRALE_score",
+            "name": "MIDRC mRALE Score"
+          },
+          {
+            "field": "imaging_study_annotations.annotation_method",
+            "name": "Annotation Method"
+          },
+          {
+            "field": "imaging_study_annotations.annotator_id",
+            "name": "Annotator ID"
+          },
+          {
+            "field": "imaging_study_annotations.instance_uids",
+            "name": "Instance UIDs"
+          },
+          {
             "field": "project_id",
             "name": "Project ID"
           },
@@ -931,11 +1160,11 @@
           }
         ],
         "manifestMapping": {
-          "resourceIndexType": "imaging_data_file",
+          "resourceIndexType": "data_file",
           "resourceIdField": "object_id",
           "referenceIdFieldInResourceIndex": "_imaging_study_id",
           "referenceIdFieldInDataIndex": "_imaging_study_id",
-          "useFilterForCounts": true
+          "useFilterForCounts": false
         },
         "accessibleFieldCheckList": [
           "project_id"
@@ -944,19 +1173,19 @@
       }
     },
     {
-      "tabTitle": "Imaging Series",
-      "charts": {
-        "sex": {
-          "chartType": "fullPie",
-          "title": "Case Sex"
-        },
-        "covid19_positive": {
-          "chartType": "fullPie",
-          "title": "Cases that ever had COVID-19"
-        }
-      },
+      "tabTitle": "Data Files",
+      "charts": {},
       "filters": {
         "tabs": [
+          {
+            "title": "File Properties",
+            "fields": [
+              "source_node",
+              "data_format",
+              "data_category",
+              "data_type"
+            ]
+          },
           {
             "title": "Study Properties",
             "fields": [
@@ -967,12 +1196,18 @@
               "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
+              "loinc_code",
+              "loinc_contrast",
+              "loinc_long_common_name",
+              "loinc_method",
+              "loinc_system",
               "project_id"
             ]
           },
           {
             "title": "Series Properties",
             "fields": [
+              "source_node",
               "acquisition_type",
               "angio_flag",
               "contrast_bolus_agent",
@@ -991,7 +1226,6 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
-              "multiframe_images",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1012,7 +1246,7 @@
             ]
           },
           {
-            "title": "Case Demographics",
+            "title": "Case Properties",
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1021,12 +1255,30 @@
               "zip",
               "index_event"
             ]
+          },
+          {
+            "title": "Annotation Properties",
+            "fields": [
+                "source_node",
+                "annotation_method",
+                "annotation_name",
+                "annotator_id",
+                "manufacturer",
+                "manufacturer_model_name",
+                "modality",
+                "series_description",
+                "software_versions",
+                "data_format",
+                "data_category",
+                "data_type"
+            ]
           }
         ]
       },
       "table": {
         "enabled": true,
         "fields": [
+            "source_node",
             "acquisition_type",
             "angio_flag",
             "contrast_bolus_agent",
@@ -1045,7 +1297,6 @@
             "manufacturer",
             "manufacturer_model_name",
             "modality",
-            "multiframe_images",
             "number_of_temporal_positions",
             "patient_position",
             "pixel_spacing",
@@ -1067,7 +1318,11 @@
             "study_year_shifted",
             "days_from_study_to_pos_covid_test",
             "days_from_study_to_neg_covid_test",
-            "data_format",
+            "loinc_code",
+            "loinc_contrast",
+            "loinc_long_common_name",
+            "loinc_method",
+            "loinc_system",
             "covid19_positive",
             "age_at_index",
             "index_event",
@@ -1077,6 +1332,10 @@
             "data_format",
             "data_category",
             "data_type",
+            "annotation_method",
+            "annotation_name",
+            "annotator_id",
+            "software_versions",
             "series_uid",
             "study_uid",
             "case_ids",
@@ -1102,7 +1361,7 @@
           "dropdownId": "download-table",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "MIDRC_Imaging_Series_table.json"
+          "fileName": "MIDRC_data_files_table.json"
         },
         {
           "enabled": true,
@@ -1111,7 +1370,7 @@
           "dropdownId": "download-table",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "MIDRC_Imaging_Series_table.tsv"
+          "fileName": "MIDRC_data_files_table.tsv"
         },
         {
           "enabled": true,
@@ -1120,7 +1379,7 @@
           "dropdownId": "download-table",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "MIDRC_Imaging_Series_table.csv"
+          "fileName": "MIDRC_data_files_table.csv"
         },
         {
           "enabled": true,
@@ -1128,7 +1387,7 @@
           "title": "Download File Manifest",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "MIDRC_Imaging_Series_manifest.json"
+          "fileName": "MIDRC_data_files_manifest.json"
         },
         {
           "enabled": false,
@@ -1140,8 +1399,8 @@
       ],
       "loginForDownload": true,
       "guppyConfig": {
-        "dataType": "imaging_data_file",
-        "nodeCountTitle": "Imaging Series",
+        "dataType": "data_file",
+        "nodeCountTitle": "Data Files",
         "fieldMapping": [
           {
             "field": "project_id",

@@ -18,13 +18,13 @@
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.08",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.08",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.08",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.08",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.06",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.08",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.08",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.08",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2023.08",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.08",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2023.08",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.7.5",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.08"
   },
   "arborist": {
@@ -138,8 +138,12 @@
         "type": "measurement"
       },
       {
-        "index": "midrc_imaging_data_file",
-        "type": "imaging_data_file"
+        "index": "midrc_annotation",
+        "type": "annotation"
+      },
+      {
+        "index": "midrc_data_file",
+        "type": "data_file"
       },
       {
         "index": "midrc_imaging_study",
@@ -157,7 +161,7 @@
     "kube_bucket": "kube-midrcprod-gen3",
     "dispatcher_job_num": "10",
     "logs_bucket": "logs-midrcprod-gen3",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/midrc_dictionary/1.2.4/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "netpolicy": "on",
@@ -165,7 +169,7 @@
     "tier_access_level": "libre",
     "tier_access_limit": "50",
     "maintenance_mode": "off",
-    "dd_enabled": true,
+    "dd_enabled": false,
     "argocd": "true",
     "pdb": "on",
     "waf_enabled": "true"
