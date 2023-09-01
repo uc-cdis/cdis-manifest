@@ -414,10 +414,10 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks are also available in the 'Tutorials' Gen3 Workspace Image.",
     "resources": [
       {
-        "title": "Nextflow FASTQ Reader",
-        "description": "In this notebook, we detail how to utilize Nextflow to analyze FASTQ files from the Canine Data Commons, demonstrate how to download data using the Gen3 SDK, and how to perform sequence analysis on the retrieved FASTQ file. The tutorial covers the structure and components of a Nextflow workflow, including processes, channels, execution abstraction, and scripting",
+        "title": "Multi-Container Nextflow Tutorial",
+        "description": "In this notebook, we will set up and explain each file in a Nextflow workflow which uses Python scripts. Our workflow consists of two Python scripts that are each executed in a different Conda environment.",
         "imageUrl": "/dashboard/Public/notebooks/nextflow_logo.png",
-        "link": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.html"
+        "link": "/dashboard/Public/notebooks/multi_container_nextflow.html"
       },
       {
         "title": "Nextflow Proteome Data Commons (PDC) Clustergram",
