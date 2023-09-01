@@ -48,7 +48,7 @@
     "public_datasets": true,
     "argocd": "true",
     "waf_enabled": "true",
-    "dd_enabled": true
+    "dd_enabled": false
   },
   "peregrine": {
     "peregrine_timeout": "45"
@@ -59,7 +59,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2023.06",
+        "image": "quay.io/cdis/pelican-export:fix_docker-image",
         "pull_policy": "Always",
         "env": [
           {
@@ -127,7 +127,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2023.06",
+        "image": "quay.io/cdis/pelican-export:2023.06",
         "pull_policy": "Always",
         "env": [
           {

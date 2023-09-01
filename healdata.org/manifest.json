@@ -27,8 +27,8 @@
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.06",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.06",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.06",
-    "frontend-framework": "quay.io/cdis/frontend-framework:0.4.7",
-    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.1.1",
+    "frontend-framework": "quay.io/cdis/frontend-framework:0.4.8",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.2.0",
     "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.3.1"
   },
   "arborist": {
@@ -104,7 +104,7 @@
     "netpolicy": "on",
     "tier_access_level": "libre",
     "useryaml_s3path": "s3://cdis-gen3-users/heal/user.yaml",
-    "dd_enabled": true,
+    "dd_enabled": false,
     "document_url": "https://heal.github.io/platform-documentation",
     "frontend_root": "gen3ff",
     "argocd": "true",

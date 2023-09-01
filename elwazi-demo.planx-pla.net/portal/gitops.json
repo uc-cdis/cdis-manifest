@@ -74,10 +74,16 @@
     "index": {
       "introduction": {
         "heading": "eLwazi Data Commons",
-        "text": "The eLwazi Data Commons platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects.",
-        "link": "/submission"
+        "text": "The eLwazi Data Commons platform will enable discovery of local and federated cohorts and datasets and provide seamless access to a suite of tools and workflows that enable reproducible data analysis and cross-consortium projects."
       },
       "buttons": [
+        {
+          "name": "Discover Study Metadata",
+          "icon": "data-explore",
+          "body": "Discover Study Metadata",
+          "link": "/discovery",
+          "label": "Discover Metadata"
+        },
         {
           "name": "Explore Data",
           "icon": "data-explore",
@@ -129,6 +135,13 @@
       "title": "eLwazi Data Commons",
       "items": [
         {
+          "icon": "query",
+          "link": "/discovery",
+          "name": "Discovery",
+          "color": "#a2a2a2",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
+        },
+        {
           "name": "Exploration",
           "link": "/explorer",
           "icon": "exploration",
@@ -140,7 +153,7 @@
           "link": "/DD",
           "icon": "dictionary",
           "color": "#a2a2a2",
-          "tooltip": "The MIDRC Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
+          "tooltip": "The eLwazi Data Commons employs a data model to power queries and data submissions. Study the dictionary to send GraphQL queries or format your data submissions."
         },
         {
           "name": "Query",
@@ -214,11 +227,7 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
-    "noIndex": true,
-    "analysis": false,
-    "discovery": false,
-    "discoveryUseAggMDS": false,
-    "studyRegistration": false
+    "discovery": true
   },
   "analysisTools": [],
   "explorerConfig": [
@@ -506,6 +515,128 @@
         }
       ],
       "loginForDownload": true,
+      "discoveryConfig": {
+        "features": {
+          "advSearchFilters": {
+            "enabled": false,
+            "field": "advSearchFilters",
+            "displayName": "Filters",
+            "filters": [
+              {
+                   "key": "Project_Description"
+              }
+            ]
+          },
+          "tagsColumn": {
+            "enabled": false
+          },
+          "tagsInDescription": {
+            "enabled": true
+          },
+          "pageTitle": {
+            "enabled": false,
+            "text": "Study Discovery"
+          },
+          "search": {
+            "searchBar": {
+              "enabled": true
+            },
+            "tagSearchDropdown": {
+              "enabled": true,
+              "collapsibleButtonText": "Country"
+            }
+          },
+          "authorization": {
+            "enabled": true,
+            "columnTooltip": "Filter by data access",
+            "supportedValues": {
+              "accessible": {
+                "enabled": true,
+                "menuText": "Available"
+              },
+              "unaccessible": {
+                "enabled": false,
+                "menuText": "Not Accessible"
+              },
+              "notAvailable": {
+                "enabled": true,
+                "menuText": "Not Available"
+              }
+            }
+          }
+        },
+        "aggregations": [
+          {
+            "name": "Studies",
+            "field": "Shortname",
+            "type": "count"
+          }
+        ],
+        "tagSelector": {
+          "title": "Tags by Category"
+        },
+        "studyColumns": [
+          {
+            "name": "Project",
+            "field": "Shortname",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "Project Title",
+            "field": "Project_Name",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "PI",
+            "field": "Project_PI",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          },
+          {
+            "name": "Web Site",
+            "field": "Project_Website",
+            "errorIfNotAvailable": false,
+            "valueIfNotAvailable": "n/a"
+          }
+        ],
+        "studyPreviewField": {
+          "name": "Description",
+          "field": "Project_Description",
+          "contentType": "string",
+          "includeName": false,
+          "includeIfNotAvailable": true,
+          "valueIfNotAvailable": "No summary has been provided for this study."
+        },
+        "tagsDisplayName": "Study Filters",
+        "tagColumnWidth": "500px",
+        "minimalFieldMapping": {
+          "authzField": "authz",
+          "tagsListFieldName": "tags",
+          "uid": "Shortname"
+        },
+        "tagCategories": [
+          {
+            "name": "Country",
+            "displayName": "Country or Region",
+            "color": "#532565",
+            "display": true
+          },
+          {
+            "name": "Data_Availability",
+            "displayName": "Data Categories",
+            "color": "#982568",
+            "display": false
+          },
+          {
+            "name": "DublinCore",
+            "displayName": "Dublin Core BioSchemas",
+            "color":  "#bf362e",
+            "display": false
+          }
+        ]
+      },
       "guppyConfig": {
         "dataType": "data_file",
         "nodeCountTitle": "Data Files",
