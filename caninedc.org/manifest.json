@@ -25,6 +25,9 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.09",
     "ambassador": "quay.io/datawire/ambassador:1.4.2"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "arborist": {
     "deployment_version": "2"
   },
