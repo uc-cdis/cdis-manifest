@@ -8,27 +8,27 @@
   },
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.14.4",
-    "apache-guacamole": "guacamole/guacamole:1.5.3",
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.06",
-    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:1.7.2",
-    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2023.06",
-    "cohort-middleware": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cohort-middleware:0.3.5",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.06",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:9.1.4",
+    "apache-guacamole": "guacamole/guacamole:2023.09",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.09",
+    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:2023.09",
+    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2023.09",
+    "cohort-middleware": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cohort-middleware:2023.09",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.09",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.06",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.06",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.06",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.06",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.09",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.09",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.09",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.09",
     "ohdsi-atlas": "707767160287.dkr.ecr.us-east-1.amazonaws.com/ohdsi/atlas:2.13.0",
     "ohdsi-webapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/ohdsi/webapi:2.13.0",
-    "opencost-reporter": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/proto-opencost-reporter:chore_add-curl",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.06",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.12.0",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.06",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.06",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.06",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.06"
+    "opencost-reporter": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/proto-opencost-reporter:2023.09",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.09",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.09",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.09",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.09",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.09",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.09"
   },
   "global": {
     "environment": "vhdcprod",
@@ -48,7 +48,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2023.06"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2023.09"
     }
   },
   "canary": {
