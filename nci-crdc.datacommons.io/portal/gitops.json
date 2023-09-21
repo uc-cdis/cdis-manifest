@@ -153,14 +153,14 @@
       "file": ""
     },
     "footer": {
-        "links": [
-          {
-            "text": "HHS Responsible Disclosure Form",
-            "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
-          }
-       ]
-     }
-    },
+      "links": [
+        {
+          "text": "HHS Responsible Disclosure Form",
+          "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        }
+      ]
+    }
+  },
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
@@ -268,5 +268,6 @@
   "useArboristUI": false,
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": true,
-  "componentToResourceMapping": {}
+  "componentToResourceMapping": {},
+  "ddUrl": "ddog-gov.com"
 }
