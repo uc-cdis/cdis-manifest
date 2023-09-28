@@ -63,8 +63,8 @@
     },
     "systemUse": {
       "showOnlyOnLogin": true,
-      "systemUseTitle" : "IBDGC Data Commons Terms of Use",
-      "systemUseText" : [
+      "systemUseTitle": "IBDGC Data Commons Terms of Use",
+      "systemUseText": [
         "The following terms and conditions apply to all data accessed through the IBDGC Data Commons:",
         "1. Any attempt to re-identify or contact individual study participants for any reason, including for obtaining or linking additional information for analytic purposes, is strictly forbidden.",
         "2. Data users alone are responsible for obtaining IRB approval from their local institution for their activities, if necessary, prior to accessing the data; in most cases, this should be available via an expedited request. Data users are also responsible for complying with any other governmental or institutional requirements that may pertain to their possession or use of the data.",
@@ -76,9 +76,10 @@
         "By clicking Accept below, I hereby certify that:",
         "a. I have read and understand all of the terms and conditions above and agree to abide by them, as well as any other terms and conditions that may apply to specific datasets as described in a separate, written Data Use Agreement (DUA).",
         "b. I understand that unless explicitly prohibited, I may make these data available to individuals working directly under my supervision, and if I do it is my responsibility to make sure that they adhere to these terms and conditions at all times.",
-        "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges."],
+        "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges."
+      ],
       "displayUseMsg": "cookie",
-      "expireUseMsgDays" : 1
+      "expireUseMsgDays": 1
     },
     "navigation": {
       "title": "IBDGC Data Commons",
@@ -158,7 +159,17 @@
       ]
     }
   },
-  "categorical9Colors": ["#67B49D", "#616265", "#59CD90", "#F2DC5D", "#40476D", "#FFA630", "#AE8799", "#1A535C", "#462255"],
+  "categorical9Colors": [
+    "#67B49D",
+    "#616265",
+    "#59CD90",
+    "#F2DC5D",
+    "#40476D",
+    "#FFA630",
+    "#AE8799",
+    "#1A535C",
+    "#462255"
+  ],
   "featureFlags": {
     "explorer": true,
     "discovery": true
@@ -254,9 +265,18 @@
         "dataType": "participant",
         "nodeCountTitle": "Participants",
         "fieldMapping": [
-          { "field": "project_id", "name": "Project ID" },
-          { "field": "ibd_affection_status", "name": "IBD Affection Status"},
-          { "field": "name", "name": "Center Name"}
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "ibd_affection_status",
+            "name": "IBD Affection Status"
+          },
+          {
+            "field": "name",
+            "name": "Center Name"
+          }
         ],
         "manifestMapping": {
           "resourceIndexType": "file",
@@ -320,8 +340,14 @@
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
-          { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Project ID" }
+          {
+            "field": "object_id",
+            "name": "GUID"
+          },
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
@@ -355,7 +381,7 @@
               "year",
               "pmid",
               "doi"
-            ] 
+            ]
           },
           {
             "title": "Files",
@@ -399,10 +425,22 @@
       "guppyConfig": {
         "dataType": "supplementary_file",
         "fieldMapping": [
-          { "field": "object_id", "name": "GUID" },
-          { "field": "project_id", "name": "Project ID" },
-          { "field": "pmid", "name": "PMID"},
-          { "field": "doi", "name": "DOI"}
+          {
+            "field": "object_id",
+            "name": "GUID"
+          },
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "pmid",
+            "name": "PMID"
+          },
+          {
+            "field": "doi",
+            "name": "DOI"
+          }
         ],
         "nodeCountTitle": "Files",
         "manifestMapping": {
@@ -422,24 +460,64 @@
       "rowAccessor": "project_id",
       "openMode": "close-all",
       "listItemConfig": {
-        "blockFields": ["brief_summary"],
-        "tableFields": ["title", "principle_investigator", "data_type", "availability_type"]
+        "blockFields": [
+          "brief_summary"
+        ],
+        "tableFields": [
+          "title",
+          "principle_investigator",
+          "data_type",
+          "availability_type"
+        ]
       },
       "singleItemConfig": {
-        "blockFields": ["description"],
-        "tableFields": ["title", "principle_investigator", "data_type", "availability_type", "name", "estimated_study_completion", "publisher","study_design_allocation","study_phase"],
+        "blockFields": [
+          "description"
+        ],
+        "tableFields": [
+          "title",
+          "principle_investigator",
+          "data_type",
+          "availability_type",
+          "name",
+          "estimated_study_completion",
+          "publisher",
+          "study_design_allocation",
+          "study_phase"
+        ],
         "sideBoxes": []
       },
       "fieldMapping": [
-        { "field": "title", "name": "Study Title" },
-        { "field": "brief_summary", "name": "Brief Description" },
-        { "field": "principle_investigator", "name": "Principle Investigator(s)" },
-        { "field": "availability_type", "name": "Data Accessibility" },
-        { "field": "name", "name": "Project Name" },
-        { "field": "publisher", "name": "Publications" },
-        { "field": "study_design_allocation", "name": "Design Allocation"}
+        {
+          "field": "title",
+          "name": "Study Title"
+        },
+        {
+          "field": "brief_summary",
+          "name": "Brief Description"
+        },
+        {
+          "field": "principle_investigator",
+          "name": "Principle Investigator(s)"
+        },
+        {
+          "field": "availability_type",
+          "name": "Data Accessibility"
+        },
+        {
+          "field": "name",
+          "name": "Project Name"
+        },
+        {
+          "field": "publisher",
+          "name": "Publications"
+        },
+        {
+          "field": "study_design_allocation",
+          "name": "Design Allocation"
+        }
       ],
-    "buttons": [
+      "buttons": [
         {
           "type": "request_access",
           "resourceDisplayNameField": "title"
@@ -480,9 +558,9 @@
         }
       },
       "advSearchFilters": {
-         "enabled": false,
-         "field": "advSearchFilters",
-         "displayName": "Filters"
+        "enabled": false,
+        "field": "advSearchFilters",
+        "displayName": "Filters"
       },
       "authorization": {
         "enabled": true,
@@ -496,19 +574,19 @@
             "menuText": "Not Accessible"
           },
           "pending": {
-              "enabled": false,
-              "menuText": "Pending"
+            "enabled": false,
+            "menuText": "Pending"
           },
           "notAvailable": {
-              "enabled": false,
-              "menuText": "Not Available"
+            "enabled": false,
+            "menuText": "Not Available"
           }
         }
       },
-      "tagsColumn" : {
+      "tagsColumn": {
         "enabled": false
       },
-      "tagsInDescription" : {
+      "tagsInDescription": {
         "enabled": false
       }
     },
@@ -631,5 +709,6 @@
     "tagCategories": []
   },
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "ddUrl": "ddog-gov.com"
 }
