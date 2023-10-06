@@ -14,23 +14,28 @@
       },
       {
         "graphql": "_ct_series_file_count",
-        "name": "Computed Tomography (CT) Series",
-        "plural": "Computed Tomography (CT) Series"
+        "name": "CT Series",
+        "plural": "CT Series"
       },
       {
         "graphql": "_dx_series_file_count",
-        "name": "Digital X-ray (DX) Series",
-        "plural": "Digital X-ray (DX) Series"
+        "name": "DX Series",
+        "plural": "DX Series"
       },
       {
         "graphql": "_cr_series_file_count",
-        "name": "Computed Radiography (CR) Series",
-        "plural": "Computed Radiography (CR) Series"
+        "name": "CR Series",
+        "plural": "CR Series"
       },
       {
         "graphql": "_mr_series_file_count",
-        "name": "Magnetic Resonance (MR) Series",
-        "plural": "Magnetic Resonance (MR) Series"
+        "name": "MR Series",
+        "plural": "MR Series"
+      },
+      {
+        "graphql": "_dicom_annotation_file_count",
+        "name": "DICOM Annotation File",
+        "plural": "DICOM Annotation Files"
       }
     ],
     "chartCounts": [],
@@ -334,6 +339,9 @@
         "tabs": [
           {
             "title": "Demographics",
+            "searchFields": [
+              "submitter_id"
+            ],
             "fields": [
               "sex",
               "race",
@@ -347,6 +355,9 @@
           },
           {
             "title": "Imaging Studies",
+            "searchFields": [
+              "imaging_studies.study_uid"
+            ],
             "fields": [
               "imaging_studies.study_modality",
               "imaging_studies.study_description",
@@ -529,6 +540,14 @@
         "nodeCountTitle": "Cases",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Case ID"
+          },
+          {
             "field": "imaging_studies.age_at_imaging",
             "name": "Age at Imaging"
           },
@@ -695,14 +714,6 @@
           {
             "field": "case_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Case ID"
           },
           {
             "field": "_imaging_studies_count",
@@ -934,6 +945,9 @@
         "tabs": [
           {
             "title": "Study Properties",
+            "searchFields": [
+              "study_uid"
+            ],
             "fields": [
               "study_modality",
               "study_description",
@@ -967,6 +981,9 @@
           },
           {
             "title": "Case Demographics",
+            "searchFields": [
+              "case_ids"
+            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1093,6 +1110,22 @@
         "nodeCountTitle": "Imaging Studies",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          },
+          {
             "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
@@ -1115,18 +1148,6 @@
           {
             "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Browse in DICOM viewer"
-          },
-          {
-            "field": "case_ids",
-            "name": "Patient ID"
           },
           {
             "field": "_ct_series_file_count",
@@ -1185,6 +1206,10 @@
         "tabs": [
           {
             "title": "File Properties",
+            "searchFields": [
+              "file_name",
+              "object_id"
+            ],
             "fields": [
               "source_node",
               "data_format",
@@ -1194,6 +1219,9 @@
           },
           {
             "title": "Study Properties",
+            "searchFields": [
+              "study_uid"
+            ],
             "fields": [
               "study_description",
               "age_at_imaging",
@@ -1212,6 +1240,9 @@
           },
           {
             "title": "Series Properties",
+            "searchFields": [
+              "series_uid"
+            ],
             "fields": [
               "source_node",
               "acquisition_type",
@@ -1253,6 +1284,9 @@
           },
           {
             "title": "Case Properties",
+            "searchFields": [
+              "case_ids"
+            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1415,6 +1449,14 @@
           {
             "field": "case_ids",
             "name": "Patient ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "series_UID",
+            "name": "Series UID"
           }
         ],
         "manifestMapping": {
