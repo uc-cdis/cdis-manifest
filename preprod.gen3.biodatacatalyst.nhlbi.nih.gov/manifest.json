@@ -186,7 +186,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:2023.09",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:EliseCastle-aws-sigv4",
         "pull_policy": "Always",
         "env": [
           {
