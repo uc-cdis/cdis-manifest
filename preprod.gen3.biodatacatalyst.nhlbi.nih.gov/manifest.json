@@ -186,7 +186,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:EliseCastle-aws-sigv4",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -226,7 +226,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:EliseCastle-aws-sigv4",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:4.0.1",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -257,7 +257,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:EliseCastle-aws-sigv4",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -298,7 +298,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:EliseCastle-aws-sigv4",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -339,7 +339,7 @@
       "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:EliseCastle-aws-sigv4",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
