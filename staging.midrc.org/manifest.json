@@ -20,7 +20,7 @@
     "ohif-viewer": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohif-viewer:master-gen3",
     "orthanc": "docker.io/osimis/orthanc:master",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.10",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.10",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.13.0",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.10",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.10",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.10",
@@ -54,7 +54,7 @@
       "serviceAccountName": "jobs-staging-midrc-org",
       "container": {
         "name": "manifest-indexing-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -94,7 +94,7 @@
       "serviceAccountName": "jobs-staging-midrc-org",
       "container": {
         "name": "indexd-manifest-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
