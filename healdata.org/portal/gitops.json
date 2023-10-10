@@ -27,6 +27,30 @@
         }
       ]
     },
+    "systemUse": {
+      "systemUseTitle": "HEAL Data Platform Terms of Use",
+      "systemUseText": [
+        "The HEAL Data Platform provides access to data from HEAL-funded and related studies. The Platform is funded by and operated on behalf of the NIH HEAL Initiative®. Users of the Platform must agree to abide by the following terms of use:",
+        "1. Access to all data is granted and managed by the host repository and may involve an application and approval process and/or be subject to a Data Use Agreement (DUA) or additional terms and conditions. Users who obtain data through the HEAL Platform must abide by these at all times.",
+        "2. Any attempt to re-identify or contact individual study participants for any reason, including for obtaining or linking additional information for analytic purposes, is strictly forbidden.",
+        "3. Redistribution of data by posting them on a website or submitting them to a data or code repository is forbidden. Users wishing to share their work so that others may reproduce their results should post their code only to a code repository (e.g., GitHub) and include instructions for accessing or requesting access to the data directly from the HEAL Data Platform, making sure to include information on the version of the data product used in the analysis.",
+        "4. Use of data in publications or presentations must acknowledge the source of the data by providing the following two citations:",
+        "   a. The recommended citation for study records on the HEAL Data Platform is: Author Names (Year). Study Title [version number]. HEAL Data Platform. Study Record. [DOI].",
+        "   b. In addition, you must cite the corresponding data resource on the host repository using their suggested citation format.",
+        "5. You are strongly encouraged to notify the HEAL Initiative (HEALquestion@od.nih.gov) once a paper using the data has been accepted for publication, so that it may be added to the list of publications that have used the data.",
+        "6. All data are provided as-is and without any assurances either explicit or implied. Neither the HEAL Data Platform nor the host data repository assumes any responsibility for results obtained from the data.",
+        "7. Your authorization credentials (e.g., your username and password or API key) are for your use only and must not be shared with others for any purpose.",
+        "8. The system must be used lawfully and in accordance with all applicable Federal, State, Local and Institutional regulations or policies.",
+        "",
+        "By clicking Accept below, I hereby certify that:",
+        "a. I have read and understand all of the terms and conditions above and agree to abide by them, as well as any other terms and conditions that may apply to specific datasets as described by the host repository or in a separate, written Data Use Agreement (DUA).",
+        "b. I understand that unless explicitly prohibited by these terms and conditions, I may make these data available to individuals working directly under my supervision, and if I do it is my responsibility to make sure that they adhere to these terms and conditions at all times.",
+        "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges by the HEAL Data Platform and the host repository."
+      ],
+      "displayUseMsg": "cookie",
+      "expireUseMsgDays": 1,
+      "showOnlyOnLogin": true
+    },
     "navigation": {
       "title": "HEAL Data Platform",
       "items": [
