@@ -355,9 +355,6 @@
           },
           {
             "title": "Imaging Studies",
-            "searchFields": [
-              "imaging_studies.study_uid"
-            ],
             "fields": [
               "imaging_studies.study_modality",
               "imaging_studies.study_description",
@@ -981,9 +978,6 @@
           },
           {
             "title": "Case Demographics",
-            "searchFields": [
-              "case_ids"
-            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1220,9 +1214,6 @@
           },
           {
             "title": "Study Properties",
-            "searchFields": [
-              "study_uid"
-            ],
             "fields": [
               "study_description",
               "age_at_imaging",
@@ -1285,9 +1276,6 @@
           },
           {
             "title": "Case Properties",
-            "searchFields": [
-              "case_ids"
-            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
