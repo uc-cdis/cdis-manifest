@@ -258,7 +258,7 @@
           "name": "About"
         },
         {
-          "link": "/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -266,7 +266,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "/dashboard/Public/documentation/DUA.html",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -355,9 +355,6 @@
           },
           {
             "title": "Imaging Studies",
-            "searchFields": [
-              "imaging_studies.study_uid"
-            ],
             "fields": [
               "imaging_studies.study_modality",
               "imaging_studies.study_description",
@@ -981,9 +978,6 @@
           },
           {
             "title": "Case Demographics",
-            "searchFields": [
-              "case_ids"
-            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1051,6 +1045,7 @@
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]
@@ -1219,9 +1214,6 @@
           },
           {
             "title": "Study Properties",
-            "searchFields": [
-              "study_uid"
-            ],
             "fields": [
               "study_description",
               "age_at_imaging",
@@ -1284,9 +1276,6 @@
           },
           {
             "title": "Case Properties",
-            "searchFields": [
-              "case_ids"
-            ],
             "fields": [
               "covid19_positive",
               "age_at_index",
@@ -1384,6 +1373,7 @@
             "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]

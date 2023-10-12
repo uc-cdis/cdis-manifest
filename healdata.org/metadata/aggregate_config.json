@@ -192,6 +192,148 @@
                 "study_metadata.minimal_info.study_description": "path:study_description_summary"
             }
         },
+        "ICPSR": {
+    "mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
+    "commons_url": "https://www.icpsr.umich.edu",
+    "adapter": "icpsr",
+    "keep_original_fields": false,
+    "filters": {
+        "study_ids": [
+            4256,
+            30122,
+            34945,
+            38503,
+            38502
+        ]
+    },
+    "field_mappings": {
+        "tags": [],
+        "authz": "",
+        "study_description_summary": {
+            "path": "description",
+            "filters": [
+                "strip_html"
+            ]
+        },
+        "study_metadata.minimal_info.study_description": {
+            "path": "description",
+            "filters": [
+                "strip_html"
+            ]
+        },
+        "study_url": {
+            "path": "ipcsr_study_id",
+            "filters": [
+                "add_icpsr_source_url"
+            ]
+        },
+        "study_metadata.metadata_location.other_study_websites": {
+            "path": "ipcsr_study_id",
+            "filters": [
+                "add_icpsr_source_url"
+            ]
+        },
+        "location": "path:coverage[0]",
+        "__manifest": "",
+        "study_type": "",
+        "institutions": "path:contributor",
+        "year_awarded": "",
+        "investigators_name": "path:creator",
+        "project_title": "path:title",
+        "study_metadata.minimal_info.study_name": "path:title",
+        "project_number": "path:identifier",
+        "_hdp_uid": "path:identifier",
+        "administering_ic": "",
+        "advSearchFilters": [],
+        "dataset_category": "path:type",
+        "research_program": "",
+        "research_focus_area": "",
+        "dataset_1_title": "",
+        "dataset_2_title": "",
+        "dataset_3_title": "",
+        "dataset_4_title": "",
+        "dataset_5_title": "",
+        "data_availability": "pending",
+        "data_resource": "ICPSR"
+    },
+    "per_item_values": {
+        "10.3886/ICPSR30122.v5": {
+            "__manifest": [
+                {
+                    "md5sum": "ce2cc5391b9a3d7e794a3b125df250ab",
+                    "file_name": "ICPSR 30122/30122.zip",
+                    "file_size": 1218573774,
+                    "object_id": "dg.H35L/e8cd31d6-dbcb-4006-b7e7-53e34b9d1d73",
+                    "commons_url": "externaldata.healdata.org"
+                }
+            ],
+            "data_availability": "available",
+            "authz": "/programs/open",
+            "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/30122",
+            "dataset_1_title": "ICPSR 30122/30122.zip"
+        },
+        "10.3886/ICPSR34945.v3": {
+            "__manifest": [
+                {
+                    "md5sum": "5af8c9f40d7f5ee618d77bfb65aa1eb2",
+                    "file_name": "ICPSR 34945/34945.zip",
+                    "file_size": 9202506,
+                    "object_id": "dg.H35L/e0199e95-8985-40bf-be16-4283fc62c62e",
+                    "commons_url": "externaldata.healdata.org"
+                }
+            ],
+            "data_availability": "available",
+            "authz": "/programs/open",
+            "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/34945",
+            "dataset_1_title": "ICPSR 34945/34945.zip"
+        },
+        "10.3886/ICPSR04256.v5": {
+            "__manifest": [
+                {
+                    "md5sum": "6f69b7e38ec70b79d9071dad8925eb77",
+                    "file_name": "ICPSR 4256/4256.zip",
+                    "file_size": 6806608,
+                    "object_id": "dg.H35L/2275d149-0523-4428-bf37-fa4ccc0a0515",
+                    "commons_url": "externaldata.healdata.org"
+                }
+            ],
+            "data_availability": "available",
+            "authz": "/programs/open",
+            "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/04256",
+            "dataset_1_title": "ICPSR 4256/4256.zip"
+        },
+        "10.3886/ICPSR38503.v1": {
+            "__manifest": [
+                {
+                    "md5sum": "08496c6d5fd635814b410456b3ef8391",
+                    "file_name": "ICPSR 38503/38503.zip",
+                    "file_size": 30865152,
+                    "object_id": "dg.H35L/bc913c2e-f903-46ce-bf23-102cab0a5e89",
+                    "commons_url": "externaldata.healdata.org"
+                }
+            ],
+            "data_availability": "available",
+            "authz": "/programs/open",
+            "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/38503",
+            "dataset_1_title": "ICPSR 38503/38503.zip"
+        },
+        "10.3886/ICPSR38502.v1": {
+            "__manifest": [
+                {
+                    "md5sum": "74ca389b1e383cc37013306dbff2764b",
+                    "file_name": "ICPSR 38502/38502.zip",
+                    "file_size": 32620302,
+                    "object_id": "dg.H35L/ae1ee9d3-bfa9-4911-9c91-98cb02506986",
+                    "commons_url": "externaldata.healdata.org"
+                }
+            ],
+            "data_availability": "available",
+            "authz": "/programs/open",
+            "source_url": "https://www.icpsr.umich.edu/web/ICPSR/studies/38502",
+            "dataset_1_title": "ICPSR 38502/38502.zip"
+        }
+    }
+},
         "ClinicalTrials.gov": {
             "mds_url": "https://clinicaltrials.gov/api/query/full_studies",
             "commons_url": "http://clinicaltrials.gov",
