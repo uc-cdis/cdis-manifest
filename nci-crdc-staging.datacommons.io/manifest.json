@@ -25,7 +25,7 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.10",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.10",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.10",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:4.0.1",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.10",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.10"
   },
   "arborist": {
@@ -53,7 +53,7 @@
       "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -94,7 +94,7 @@
       "serviceAccountName": "jobs-nci-crdc-staging-datacommons-io",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
