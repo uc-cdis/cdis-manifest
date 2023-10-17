@@ -65,7 +65,12 @@ Documentation</a></p></li>
 <li><p><a class="reference external" href="#gen3-gwas">Gen3 GWAS</a></p></li>
 <li><p><a class="reference external" href="#genome-wide-association-studies-gwas-steps">Genome-Wide Association Studies (GWAS)
 Steps</a></p></li>
-<li><p><a class="reference external" href="#gwas-results">GWAS Results</a></p></li>
+<li><p><a class="reference external" href="#gwas-results">GWAS Results</a></p>
+<ul>
+<li><p><a class="reference external" href="#troubleshooting-gwas-errors">Troubleshooting GWAS Errors</a></p></li>
+<li><p><a class="reference external" href="#data-update-disclaimer">Data Update Disclaimer</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><a class="reference external" href="#frequently-asked-questions">Frequently Asked Questions</a></p>
@@ -293,7 +298,7 @@ Dichotomous Outcome Phenotype.</p>
 <li><p><strong>Continuous Outcome</strong></p></li>
 </ul>
 <p>Here, you may choose your continuous phenotype. GWAS App provides over
-5,000 variables for your selection, for example, height, weight, blood
+500 variables for your selection, for example, height, weight, blood
 pressure, white blood cell, and other clinical observations. Please
 select the outcome phenotype you wish to use in your model. All data are
 harmonized from different projects through the collaborative development
@@ -326,7 +331,7 @@ corresponding button.</p>
 <ul class="simple">
 <li><p><strong>Add Continuous Covariate</strong></p></li>
 </ul>
-<p>GWAS App provides over 5,000 variables for your selection, for example,
+<p>GWAS App provides over 500 variables for your selection, for example,
 height, weight, blood pressure, white blood cell, and other clinical
 observations. Please select all covariates you wish to use in your
 model. You may choose as many covariates as you wish in this step. To
@@ -426,12 +431,9 @@ upper right corner can be used to toggle the display of any column.</p>
 and actions. The details columns lists additional information about your
 submitted job. The Input button links to your GWAS job configuration
 options and the execution button presents information about the
-execution of your GWAS job including messages from log files. If your
-job has completed successfully, you can review your output using the
-Results Button or download it directly from the Actions menu. If you
-wish to re-run your job, you can do so by selecting “retry” from the
-Actions Menu. The job status column provides information about the
-execution status of your job. The displayed values are:</p>
+execution of your GWAS job including messages from log files. The job
+status column provides information about the execution status of your
+job. The displayed values are:</p>
 <ul class="simple">
 <li><p><strong>Pending</strong> - your analysis was placed in the queue to run, depending
 on the length of the queue your analysis could start in the range of
@@ -440,10 +442,8 @@ several minutes to several hours</p></li>
 on your selection of cohort and variables it could finish in the
 range of half an hour to three hours</p></li>
 <li><p><strong>Failed</strong> - your analysis returned an error and could not run to
-completion. Please review your GWAS parameters (can be reviewed by
-clicking on the ‘input’ button under details and review the
-‘execution’ of your job) and error logs. If you need further support,
-contact our help desk at <a class="reference external" href="mailto:vadc&#37;&#52;&#48;lists&#46;uchicago&#46;edu">vadc<span>&#64;</span>lists<span>&#46;</span>uchicago<span>&#46;</span>edu</a></p></li>
+completion. Please see <a class="reference external" href="#troubleshooting-gwas-errors">Troubleshooting GWAS
+Errors</a> below.</p></li>
 <li><p><strong>Completed</strong> - your analysis was successfully completed and you may
 download the results of the GWAS analysis from this menu</p></li>
 </ul>
@@ -467,6 +467,87 @@ file contains the following:</p>
 <li><p>a metadata file containing all of your selections
 (gwas_metadata.yaml)</p></li>
 </ul>
+<section id="troubleshooting-gwas-errors">
+<h3><strong>Troubleshooting GWAS Errors</strong><a class="headerlink" href="#troubleshooting-gwas-errors" title="Permalink to this heading">¶</a></h3>
+<p>In the Results Viewer App we are beginning to add meaningful error
+messages. The messages will appear in the execution logs and will be as
+follow:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#failed-run-null-model-small-cohort-size-or-unbalanced-cohort-sizes">Failed run-null-model: Small cohort size or unbalanced cohort
+sizes</a>.</p></li>
+<li><p><a class="reference external" href="#failed-run-plots-small-cohort-size-or-unbalanced-cohort-sizes">Failed run-plots: Small cohort size or unbalanced cohort
+sizes</a></p></li>
+<li><p><a class="reference external" href="#failed-run-single-assoc-unbalanced-cohort-sizes">Failed run-single-assoc: Unbalanced cohort
+sizes</a></p></li>
+<li><p><a class="reference external" href="#failed-generate-attrition-csv-timeout-occurred-while-fetching-attrition-table-information-please-retry">Failed generate-attrition-csv: Timeout occurred while fetching
+attrition table information. Please
+retry</a></p></li>
+<li><p><a class="reference external" href="#step-failed-with-an-uncategorized-error">Step failed with an uncategorized
+error</a></p></li>
+</ul>
+<section id="failed-run-null-model-small-cohort-size-or-unbalanced-cohort-sizes">
+<h4><strong>Failed run-null-model: Small cohort size or unbalanced cohort sizes</strong><a class="headerlink" href="#failed-run-null-model-small-cohort-size-or-unbalanced-cohort-sizes" title="Permalink to this heading">¶</a></h4>
+<p>The cohort size chosen did not produce enough statistical power. As a
+rule of thumb, for continuous workflows a cohort size of about 700 or
+below may fail for this reason. If the user ran a dichotomous workflow,
+they should check that both the case and control cohort sizes are large
+enough, and are not vastly different in size (for example by two orders
+of magnitude or more). This can be checked through the attrition table
+in the GWAS App, prior to submission. The cohort size will reflect in
+the column where the chosen HARE is presented. A user may also see the
+choice they made in the GWAS Results by clicking on “Input”.</p>
+</section>
+<section id="failed-run-plots-small-cohort-size-or-unbalanced-cohort-sizes">
+<h4><strong>Failed run-plots: Small cohort size or unbalanced cohort sizes</strong><a class="headerlink" href="#failed-run-plots-small-cohort-size-or-unbalanced-cohort-sizes" title="Permalink to this heading">¶</a></h4>
+<p>The cohort size chosen did not produce enough statistical power. As a
+rule of thumb, for continuous workflows a cohort size of about 700 or
+below may fail for these reasons. If the user ran a dichotomous
+workflow, they should check that both the case and control cohort sizes
+are large enough, and are not vastly different in size (for example by
+two orders of magnitude or more). This can be checked through the
+attrition table in the GWAS App, prior to submission. The cohort size
+will reflect in the column where the chosen HARE is presented. A user
+may also see the choice they made in the GWAS Results by clicking on
+“Input”.</p>
+</section>
+<section id="failed-run-single-assoc-unbalanced-cohort-sizes">
+<h4><strong>Failed run-single-assoc: Unbalanced cohort sizes</strong><a class="headerlink" href="#failed-run-single-assoc-unbalanced-cohort-sizes" title="Permalink to this heading">¶</a></h4>
+<p>The cohort size chosen did not produce enough statistical power. As a
+rule of thumb, a cohort size of about 700 or below may fail for these
+reasons. If the user ran a dichotomous workflow, they should check that
+both the case and control cohort sizes are large enough. This can be
+checked through the attrition table in the GWAS App, prior to
+submission. The cohort size will reflect in the column where the chosen
+HARE is presented. A user may also see the choice they made in the GWAS
+Results by clicking on “Input”.</p>
+</section>
+<section id="failed-generate-attrition-csv-timeout-occurred-while-fetching-attrition-table-information-please-retry">
+<h4><strong>Failed generate-attrition-csv: Timeout occurred while fetching attrition table information. Please retry</strong><a class="headerlink" href="#failed-generate-attrition-csv-timeout-occurred-while-fetching-attrition-table-information-please-retry" title="Permalink to this heading">¶</a></h4>
+<p>A timeout error implies that an internal service was temporarily not
+available while fetching the information presented to the user on the
+UI. If you wish to re-run your job, you can do so by selecting “retry”
+from the Actions Menu.</p>
+</section>
+<section id="step-failed-with-an-uncategorized-error">
+<h4><strong>Step failed with an uncategorized error</strong><a class="headerlink" href="#step-failed-with-an-uncategorized-error" title="Permalink to this heading">¶</a></h4>
+<p>Many reasons can cause workflows to fail, and some of them may be
+transient. Please reach out to <a class="reference external" href="mailto:vadc&#37;&#52;&#48;lists&#46;uchicago&#46;edu">vadc<span>&#64;</span>lists<span>&#46;</span>uchicago<span>&#46;</span>edu</a> with any further
+questions. In your message please provide us with the serial name of
+your workflow and the step in which your GWAS failed (mentioned in your
+error message). A response should be expected with 2 business days.</p>
+</section>
+</section>
+<section id="data-update-disclaimer">
+<h3><strong>Data Update Disclaimer</strong><a class="headerlink" href="#data-update-disclaimer" title="Permalink to this heading">¶</a></h3>
+<p>Please note that we are constantly improving the GWAS pipeline. The
+retry action will re-run your analysis based on the most recent data
+available in the database and the most recent GWAS pipeline implemented.
+These may differ from the analysis you ran initially, and these
+differences might affect the outcome. For these reasons, the retry
+action is only applicable to failed workflows. If you have any
+questions, please feel free to contact us via email
+<a class="reference external" href="mailto:vadc&#37;&#52;&#48;lists&#46;uchicago&#46;edu">vadc<span>&#64;</span>lists<span>&#46;</span>uchicago<span>&#46;</span>edu</a>.</p>
+</section>
 </section>
 </section>
 <section id="frequently-asked-questions">
