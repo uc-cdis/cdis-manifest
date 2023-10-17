@@ -14,23 +14,28 @@
       },
       {
         "graphql": "_ct_series_file_count",
-        "name": "Computed Tomography (CT) Series",
-        "plural": "Computed Tomography (CT) Series"
+        "name": "CT Series",
+        "plural": "CT Series"
       },
       {
         "graphql": "_dx_series_file_count",
-        "name": "Digital X-ray (DX) Series",
-        "plural": "Digital X-ray (DX) Series"
+        "name": "DX Series",
+        "plural": "DX Series"
       },
       {
         "graphql": "_cr_series_file_count",
-        "name": "Computed Radiography (CR) Series",
-        "plural": "Computed Radiography (CR) Series"
+        "name": "CR Series",
+        "plural": "CR Series"
       },
       {
         "graphql": "_mr_series_file_count",
-        "name": "Magnetic Resonance (MR) Series",
-        "plural": "Magnetic Resonance (MR) Series"
+        "name": "MR Series",
+        "plural": "MR Series"
+      },
+      {
+        "graphql": "_dicom_annotation_file_count",
+        "name": "DICOM Annotation File",
+        "plural": "DICOM Annotation Files"
       }
     ],
     "chartCounts": [],
@@ -41,6 +46,12 @@
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
     "resources": [
+      {
+        "title": "Access Files for Specific Case IDs",
+        "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then obtain a file download manifest for x-ray and annotation files related to that cohort.",
+        "imageUrl": "/dashboard/Public/notebooks/Access_Files_for_Specific_Case_IDs.png",
+        "link": "/dashboard/Public/notebooks/Access_Files_for_Specific_Case_IDs.html"
+      },
       {
         "title": "Cohort Selection Using Temporal COVID-19 Test Data",
         "description": "This tutorial demonstrates how to use the MIDRC data commons' APIs to access imaging study and COVID-19 test data, how to use temporal properties in those data to select a cohort of COVID-19 positive imaging studies, and how to access those image files using the Gen3 SDK.",
@@ -247,7 +258,7 @@
           "name": "About"
         },
         {
-          "link": "/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -255,7 +266,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "/dashboard/Public/documentation/DUA.html",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -328,6 +339,9 @@
         "tabs": [
           {
             "title": "Demographics",
+            "searchFields": [
+              "submitter_id"
+            ],
             "fields": [
               "sex",
               "race",
@@ -523,6 +537,14 @@
         "nodeCountTitle": "Cases",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Case ID"
+          },
+          {
             "field": "imaging_studies.age_at_imaging",
             "name": "Age at Imaging"
           },
@@ -689,14 +711,6 @@
           {
             "field": "case_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Case ID"
           },
           {
             "field": "_imaging_studies_count",
@@ -928,6 +942,9 @@
         "tabs": [
           {
             "title": "Study Properties",
+            "searchFields": [
+              "study_uid"
+            ],
             "fields": [
               "study_modality",
               "study_description",
@@ -1028,6 +1045,7 @@
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]
@@ -1087,6 +1105,22 @@
         "nodeCountTitle": "Imaging Studies",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          },
+          {
             "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
@@ -1109,18 +1143,6 @@
           {
             "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Browse in DICOM viewer"
-          },
-          {
-            "field": "case_ids",
-            "name": "Patient ID"
           },
           {
             "field": "_ct_series_file_count",
@@ -1179,6 +1201,10 @@
         "tabs": [
           {
             "title": "File Properties",
+            "searchFields": [
+              "file_name",
+              "object_id"
+            ],
             "fields": [
               "source_node",
               "data_format",
@@ -1206,6 +1232,9 @@
           },
           {
             "title": "Series Properties",
+            "searchFields": [
+              "series_uid"
+            ],
             "fields": [
               "source_node",
               "acquisition_type",
@@ -1344,6 +1373,7 @@
             "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]
@@ -1409,6 +1439,14 @@
           {
             "field": "case_ids",
             "name": "Patient ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "series_UID",
+            "name": "Series UID"
           }
         ],
         "manifestMapping": {
