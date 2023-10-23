@@ -35,6 +35,11 @@ mappings:
       - name: case_annotations
         path: annotations
         props:
+          - name: annotation_method
+          - name: annotator_id
+      - name: imaging_study_annotations
+        path: imaging_studies.annotations
+        props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
           - name: midrc_mRALE_score
