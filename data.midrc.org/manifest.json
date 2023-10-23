@@ -7,6 +7,7 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.10",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
+    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2023.10",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.10",
     "dicom-viewer": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohif-viewer:gen3-0.1.2",
     "dicom-server": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-orthanc:gen3-0.1.1",
@@ -52,7 +53,7 @@
       "serviceAccountName": "jobs-data-midrc-org",
       "container": {
         "name": "manifest-indexing-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -92,7 +93,7 @@
       "serviceAccountName": "jobs-data-midrc-org",
       "container": {
         "name": "indexd-manifest-job",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:2023.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
