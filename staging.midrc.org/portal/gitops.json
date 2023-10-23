@@ -414,11 +414,11 @@
           {
             "title": "Annotations",
             "fields": [
-              "case_annotations.airspace_disease_grading",
-              "case_annotations.class_covid19_pneumonia",
-              "case_annotations.midrc_mRALE_score",
-              "case_annotations.annotation_method",
-              "case_annotations.annotator_id"
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
             ]
           }
         ]
@@ -468,12 +468,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "case_annotations.airspace_disease_grading",
-          "case_annotations.class_covid19_pneumonia",
-          "case_annotations.midrc_mRALE_score",
-          "case_annotations.annotation_method",
-          "case_annotations.annotator_id",
-          "case_annotations.instance_uids",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -689,27 +689,27 @@
             "name": "Days to Condition End"
           },
           {
-            "field": "case_annotations.airspace_disease_grading",
+            "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
           {
-            "field": "case_annotations.class_covid19_pneumonia",
+            "field": "imaging_study_annotations.class_covid19_pneumonia",
             "name": "Class COVID-19 Pneumonia"
           },
           {
-            "field": "case_annotations.midrc_mRALE_score",
+            "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
           {
-            "field": "case_annotations.annotation_method",
+            "field": "imaging_study_annotations.annotation_method",
             "name": "Annotation Method"
           },
           {
-            "field": "case_annotations.annotator_id",
+            "field": "imaging_study_annotations.annotator_id",
             "name": "Annotator ID"
           },
           {
-            "field": "case_annotations.instance_uids",
+            "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
           },
           {
@@ -751,7 +751,7 @@
       "filters": {
         "tabs": [
           {
-            "title": "Annotations",
+            "title": "Imaging Study Annotations",
             "fields": [
               "airspace_disease_grading",
               "class_covid19_pneumonia",
