@@ -414,11 +414,11 @@
           {
             "title": "Annotations",
             "fields": [
-              "case_annotations.airspace_disease_grading",
-              "case_annotations.class_covid19_pneumonia",
-              "case_annotations.midrc_mRALE_score",
-              "case_annotations.annotation_method",
-              "case_annotations.annotator_id"
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
             ]
           }
         ]
@@ -468,12 +468,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "case_annotations.airspace_disease_grading",
-          "case_annotations.class_covid19_pneumonia",
-          "case_annotations.midrc_mRALE_score",
-          "case_annotations.annotation_method",
-          "case_annotations.annotator_id",
-          "case_annotations.instance_uids",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -751,7 +751,7 @@
       "filters": {
         "tabs": [
           {
-            "title": "Annotations",
+            "title": "Imaging Study Annotations",
             "fields": [
               "airspace_disease_grading",
               "class_covid19_pneumonia",
