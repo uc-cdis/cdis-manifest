@@ -192,7 +192,7 @@
       "serviceAccountName": "FIXME",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:2023.10",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:4.0.1",
         "pull_policy": "Always",
         "env": [
           {
@@ -232,7 +232,7 @@
       "serviceAccountName": "FIXME",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:2023.10",
+        "image": "quay.io/cdis/get-dbgap-metadata:4.0.1",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -261,7 +261,7 @@
     "environment": "chords",
     "hostname": "staging.chords-health.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:048463324059:certificate/b85556ab-b13b-45bf-afd3-1a70b9234b6e",
-    "dictionary_url": "https://raw.githubusercontent.com/NIEHS/pcor_gen3_artifacts/develop/custom_configs/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/chords-health-dictionary/0.1.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-gen3-base-vpc-gen3",
     "logs_bucket": "logs-gen3-base-vpc-gen3",
