@@ -132,9 +132,9 @@
       ]
     },
     "login": {
-      "title": "Open Access Data Commons",
+      "title": "The Gen3 Data Commons",
       "subTitle": "Explore and Share Data",
-      "text": "The Open Access Data Commons is a scalable cloud-based platform for computational discovery designed for the health community.",
+      "text": "The Gen3 Data Commons is a scalable cloud-based platform for computational discovery designed for the health community.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/gene_bgy"
@@ -160,22 +160,58 @@
   },
   "discoveryConfig": {
     "features": {
+      "advSearchFilters": {
+        "enabled": false,
+        "field": "advSearchFilters",
+        "displayName": "Filters",
+        "filters": [
+          {
+               "key": "Project_Description"
+          }
+        ]
+      },
       "pageTitle": {
+        "enabled": true,
+        "text": "Discover Datasets"
+      },
+      "tagsColumn": {
         "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
       },
       "search": {
         "searchBar": {
           "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
         }
       },
       "authorization": {
-        "enabled": false
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
       {
         "name": "Studies",
-        "field": "accession_number",
+        "field": "_unique_id",
         "type": "count"
       }
     ],
@@ -184,39 +220,58 @@
     },
     "studyColumns": [
       {
-        "name": "Accession Number",
-        "field": "accession_number"
+        "name": "Study ID",
+        "field": "_unique_id",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Study Name",
+        "field": "full_name",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Study Title",
-        "field": "study_title"
-      },
-      {
-        "name": "Funding",
-        "field": "funding"
+        "field": "study_title",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Source",
-        "field": "source"
+        "field": "source",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Data Files",
-        "field": "data_files_count"
+        "field": "data_files_count",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Subjects",
-        "field": "subjects_count"
+        "field": "subjects_count",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
-      "name": "Summary",
-      "field": "summary",
+      "name": "Study Description",
+      "field": "study_description",
       "contentType": "string",
-      "includeName": false,
-      "includeIfNotAvailable": true,
+      "includeName": true,
+      "includeIfNotAvailable": false,
       "valueIfNotAvailable": "No summary has been provided for this study."
     },
     "studyPageFields": {
+      "showAllAvailableFields": false,
       "header": {
         "field": "study_title"
       },
@@ -225,47 +280,67 @@
       },
       "fieldsToShow": [
         {
-          "groupName": "OADC studies",
+          "groupName": "Gen3 Studies",
           "includeName": false,
           "fields": [
             {
-              "name": "Accession Number",
-              "field": "accession_number"
+              "name": "Study Name",
+              "field": "full_name",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Study Title",
-              "field": "study_title"
+              "field": "study_title",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Funding",
-              "field": "funding"
+              "field": "funding",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Source",
-              "field": "source"
+              "field": "source",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Data Files",
-              "field": "data_files_count"
+              "field": "data_files_count",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Subjects",
-              "field": "subjects_count"
+              "field": "subjects_count",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project ID",
+              "field": "project_id",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Link",
-              "field": "link"
+              "field": "link",
+              "contentType": "link",
+              "includeIfNotAvailable": false
             }
           ]
         },
         {
           "fields": [
             {
-              "name": "Summary",
-              "field": "summary",
+              "name": "Study Description",
+              "field": "study_description",
               "contentType": "paragraphs",
               "includeName": true,
-              "includeIfNotAvailable": true,
+              "includeIfNotAvailable": false,
               "valueIfNotAvailable": "No summary has been provided for this study."
             }
           ]
@@ -274,7 +349,8 @@
     },
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
-      "uid": "accession_number"
+      "authzField": "authz",
+      "uid": "_unique_id"
     },
     "tagCategories": [
       {
