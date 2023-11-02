@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@master') _
+@Library('cdis-jenkins-lib@datasim-chore/log') _
 testPipeline {
   MANIFEST = "True"
 }
