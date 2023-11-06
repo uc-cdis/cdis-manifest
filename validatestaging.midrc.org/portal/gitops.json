@@ -14,23 +14,28 @@
       },
       {
         "graphql": "_ct_series_file_count",
-        "name": "Computed Tomography (CT) Series",
-        "plural": "Computed Tomography (CT) Series"
+        "name": "CT Series",
+        "plural": "CT Series"
       },
       {
         "graphql": "_dx_series_file_count",
-        "name": "Digital X-ray (DX) Series",
-        "plural": "Digital X-ray (DX) Series"
+        "name": "DX Series",
+        "plural": "DX Series"
       },
       {
         "graphql": "_cr_series_file_count",
-        "name": "Computed Radiography (CR) Series",
-        "plural": "Computed Radiography (CR) Series"
+        "name": "CR Series",
+        "plural": "CR Series"
       },
       {
         "graphql": "_mr_series_file_count",
-        "name": "Magnetic Resonance (MR) Series",
-        "plural": "Magnetic Resonance (MR) Series"
+        "name": "MR Series",
+        "plural": "MR Series"
+      },
+      {
+        "graphql": "_dicom_annotation_file_count",
+        "name": "DICOM Annotation File",
+        "plural": "DICOM Annotation Files"
       }
     ],
     "chartCounts": [],
@@ -328,6 +333,9 @@
         "tabs": [
           {
             "title": "Demographics",
+            "searchFields": [
+              "submitter_id"
+            ],
             "fields": [
               "sex",
               "race",
@@ -400,11 +408,11 @@
           {
             "title": "Annotations",
             "fields": [
-              "case_annotations.airspace_disease_grading",
-              "case_annotations.class_covid19_pneumonia",
-              "case_annotations.midrc_mRALE_score",
-              "case_annotations.annotation_method",
-              "case_annotations.annotator_id"
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
             ]
           }
         ]
@@ -454,12 +462,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "case_annotations.airspace_disease_grading",
-          "case_annotations.class_covid19_pneumonia",
-          "case_annotations.midrc_mRALE_score",
-          "case_annotations.annotation_method",
-          "case_annotations.annotator_id",
-          "case_annotations.instance_uids",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -522,6 +530,14 @@
         "dataType": "case",
         "nodeCountTitle": "Cases",
         "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Case ID"
+          },
           {
             "field": "imaging_studies.age_at_imaging",
             "name": "Age at Imaging"
@@ -667,36 +683,28 @@
             "name": "Days to Condition End"
           },
           {
-            "field": "case_annotations.airspace_disease_grading",
+            "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
           {
-            "field": "case_annotations.class_covid19_pneumonia",
+            "field": "imaging_study_annotations.class_covid19_pneumonia",
             "name": "Class COVID-19 Pneumonia"
           },
           {
-            "field": "case_annotations.midrc_mRALE_score",
+            "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
           {
-            "field": "case_annotations.annotation_method",
+            "field": "imaging_study_annotations.annotation_method",
             "name": "Annotation Method"
           },
           {
-            "field": "case_annotations.annotator_id",
+            "field": "imaging_study_annotations.annotator_id",
             "name": "Annotator ID"
           },
           {
-            "field": "case_annotations.instance_uids",
+            "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Case ID"
           },
           {
             "field": "_imaging_studies_count",
@@ -928,6 +936,9 @@
         "tabs": [
           {
             "title": "Study Properties",
+            "searchFields": [
+              "study_uid"
+            ],
             "fields": [
               "study_modality",
               "study_description",
@@ -1028,6 +1039,7 @@
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]
@@ -1087,6 +1099,22 @@
         "nodeCountTitle": "Imaging Studies",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          },
+          {
             "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
@@ -1109,18 +1137,6 @@
           {
             "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Browse in DICOM viewer"
-          },
-          {
-            "field": "case_ids",
-            "name": "Patient ID"
           },
           {
             "field": "_ct_series_file_count",
@@ -1179,6 +1195,10 @@
         "tabs": [
           {
             "title": "File Properties",
+            "searchFields": [
+              "file_name",
+              "object_id"
+            ],
             "fields": [
               "source_node",
               "data_format",
@@ -1206,6 +1226,9 @@
           },
           {
             "title": "Series Properties",
+            "searchFields": [
+              "series_uid"
+            ],
             "fields": [
               "source_node",
               "acquisition_type",
@@ -1344,6 +1367,7 @@
             "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
           "submitter_id"
         ]
@@ -1409,6 +1433,14 @@
           {
             "field": "case_ids",
             "name": "Patient ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "series_UID",
+            "name": "Series UID"
           }
         ],
         "manifestMapping": {
