@@ -213,7 +213,12 @@
                 ]
             },
             "field_mappings": {
-                "tags": [],
+                "tags": [
+                    {
+                        "name": "InCommon",
+                        "category": "RequiredIDP"
+                    }
+                ],
                 "authz": "",
                 "study_description_summary": {
                     "path": "description",
