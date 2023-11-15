@@ -52,13 +52,6 @@
           "body": "The Exploration Page gives you insights and a clear overview under selected factors.",
           "link": "/explorer",
           "label": "Explore data"
-        },
-        {
-          "name": "Analyze Data",
-          "icon": "stage-analyze",
-          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
-          "link": "/workspace",
-          "label": "Run analysis"
         }
       ],
       "homepageChartNodesExcludeFiles": true,
@@ -92,12 +85,6 @@
           "link": "/explorer",
           "color": "#a2a2a2",
           "name": "Exploration"
-        },
-        {
-          "icon": "workspace",
-          "link": "/workspace",
-          "color": "#a2a2a2",
-          "name": "Workspace"
         },
         {
           "icon": "profile",
@@ -318,13 +305,6 @@
         "enabled": true,
         "type": "export-to-pfb",
         "title": "Export to PFB",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
-      },
-      {
-        "enabled": true,
-        "type": "export-to-workspace",
-        "title": "Export to Workspace",
         "leftIcon": "datafile",
         "rightIcon": "download"
       }
@@ -607,13 +587,6 @@
         "leftIcon": "datafile",
         "rightIcon": "download",
         "fileName": "file-manifest.json"
-      },
-      {
-        "enabled": true,
-        "type": "export-files-to-workspace",
-        "title": "Export to Workspace",
-        "leftIcon": "datafile",
-        "rightIcon": "download"
       },
       {
         "enabled": true,
