@@ -3,14 +3,14 @@
   "graphql": {
     "boardCounts": [
       {
-        "graphql": "_subject_count",
-        "name": "Subject",
-        "plural": "Subjects"
-      },
-      {
         "graphql": "_study_count",
         "name": "Study",
         "plural": "Studies"
+      },
+      {
+        "graphql": "_subject_count",
+        "name": "Subject",
+        "plural": "Subjects"
       },
       {
         "graphql": "_sample_count",
@@ -36,39 +36,39 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "The Open Access Data Commons Portal",
+    "appName": "The Gen3 Data Hub",
     "index": {
       "introduction": {
-        "heading": "Open Access Data Commons",
-        "text": "The Open Access Data Commons supports the management, analysis and sharing of data for the research community with the aim of accelerating discovery and development of diagnostics, treatment and prevention of diseases.",
+        "heading": "Gen3 Data Hub",
+        "text": "The Gen3 Data Hub supports the management, analysis and sharing of data for the research community with the aim of accelerating discovery and development of diagnostics, treatment and prevention of diseases.",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Data Dictionary",
           "icon": "data-field-define",
-          "body": "Browse the nodes and properties of the graph data model used in the Open Access Data Commons.",
+          "body": "Browse the nodes and properties of the graph data model used in the Gen3 Data Hub.",
           "link": "/DD",
           "label": "Explore Data Model"
         },
         {
           "name": "Explore Data",
           "icon": "data-explore",
-          "body": "Search and download subsets of data from the Open Access Data Commons using intuitive navigation tools.",
+          "body": "Search and download study data using intuitive navigation tools.",
           "link": "/explorer",
           "label": "Explore data"
         },
         {
           "name": "Query Data",
           "icon": "data-access",
-          "body": "Search and download subsets of data from the Open Access Data Commons using GraphQL queries.",
+          "body": "Run powerful queries across datasets and search for specific data attributes using GraphQL queries.",
           "link": "/query",
           "label": "Query data"
         },
         {
           "name": "Discover Study Metadata",
           "icon": "data-explore",
-          "body": "Discover study descriptions and other metadata stored on the Data Commons",
+          "body": "Discover study descriptions and other metadata stored in the Gen3 Data Hub",
           "link": "/discovery",
           "label": "Discover Study Metadata"
         }
@@ -132,9 +132,9 @@
       ]
     },
     "login": {
-      "title": "Open Access Data Commons",
+      "title": "The Gen3 Data Hub",
       "subTitle": "Explore and Share Data",
-      "text": "The Open Access Data Commons is a scalable cloud-based platform for computational discovery designed for the health community.",
+      "text": "The Gen3 Data Hub is a scalable cloud-based platform for computational discovery designed for the health community.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/gene_bgy"
@@ -143,7 +143,7 @@
       {
         "src": "/src/img/gen3.png",
         "href": "https://ctds.uchicago.edu/gen3",
-        "alt": "Gen3 Data Commons"
+        "alt": "Gen3 Data Hub"
       },
       {
         "src": "/src/img/createdby.png",
@@ -160,22 +160,58 @@
   },
   "discoveryConfig": {
     "features": {
+      "advSearchFilters": {
+        "enabled": false,
+        "field": "advSearchFilters",
+        "displayName": "Filters",
+        "filters": [
+          {
+               "key": "Project_Description"
+          }
+        ]
+      },
       "pageTitle": {
+        "enabled": true,
+        "text": "Discover Datasets"
+      },
+      "tagsColumn": {
         "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
       },
       "search": {
         "searchBar": {
           "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Study Filters"
         }
       },
       "authorization": {
-        "enabled": false
+        "enabled": true,
+        "columnTooltip": "Filter by data access",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": false,
+            "menuText": "Not Accessible"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [
       {
         "name": "Studies",
-        "field": "accession_number",
+        "field": "_unique_id",
         "type": "count"
       }
     ],
@@ -184,39 +220,58 @@
     },
     "studyColumns": [
       {
-        "name": "Accession Number",
-        "field": "accession_number"
+        "name": "Study ID",
+        "field": "_unique_id",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Study Name",
+        "field": "full_name",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Study Title",
-        "field": "study_title"
-      },
-      {
-        "name": "Funding",
-        "field": "funding"
+        "field": "study_title",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Source",
-        "field": "source"
+        "field": "source",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Data Files",
-        "field": "data_files_count"
+        "field": "data_files_count",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       },
       {
         "name": "Subjects",
-        "field": "subjects_count"
+        "field": "subjects_count",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
       }
     ],
     "studyPreviewField": {
-      "name": "Summary",
-      "field": "summary",
+      "name": "Study Description",
+      "field": "study_description",
       "contentType": "string",
-      "includeName": false,
-      "includeIfNotAvailable": true,
+      "includeName": true,
+      "includeIfNotAvailable": false,
       "valueIfNotAvailable": "No summary has been provided for this study."
     },
     "studyPageFields": {
+      "showAllAvailableFields": false,
       "header": {
         "field": "study_title"
       },
@@ -225,47 +280,67 @@
       },
       "fieldsToShow": [
         {
-          "groupName": "OADC studies",
+          "groupName": "Gen3 Studies",
           "includeName": false,
           "fields": [
             {
-              "name": "Accession Number",
-              "field": "accession_number"
+              "name": "Study Name",
+              "field": "full_name",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Study Title",
-              "field": "study_title"
+              "field": "study_title",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Funding",
-              "field": "funding"
+              "field": "funding",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Source",
-              "field": "source"
+              "field": "source",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Data Files",
-              "field": "data_files_count"
+              "field": "data_files_count",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Subjects",
-              "field": "subjects_count"
+              "field": "subjects_count",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project ID",
+              "field": "project_id",
+              "contentType": "string",
+              "includeIfNotAvailable": false
             },
             {
               "name": "Link",
-              "field": "link"
+              "field": "link",
+              "contentType": "link",
+              "includeIfNotAvailable": false
             }
           ]
         },
         {
           "fields": [
             {
-              "name": "Summary",
-              "field": "summary",
+              "name": "Study Description",
+              "field": "study_description",
               "contentType": "paragraphs",
               "includeName": true,
-              "includeIfNotAvailable": true,
+              "includeIfNotAvailable": false,
               "valueIfNotAvailable": "No summary has been provided for this study."
             }
           ]
@@ -274,7 +349,8 @@
     },
     "minimalFieldMapping": {
       "tagsListFieldName": "tags",
-      "uid": "accession_number"
+      "authzField": "authz",
+      "uid": "_unique_id"
     },
     "tagCategories": [
       {
@@ -286,14 +362,6 @@
   },
   "dataExplorerConfig": {
     "charts": {
-      "project_id": {
-        "chartType": "count",
-        "title": "Projects"
-      },
-      "node_id": {
-        "chartType": "count",
-        "title": "Subjects"
-      },
       "gender": {
         "chartType": "pie",
         "title": "Gender"
@@ -481,5 +549,6 @@
   },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
-  "showFenceAuthzOnProfile": false
+  "showFenceAuthzOnProfile": false,
+  "ddUrl": "ddog-gov.com"
 }
