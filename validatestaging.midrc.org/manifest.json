@@ -169,7 +169,8 @@
     "maintenance_mode": "off",
     "argocd": "true",
     "pdb": "on",
-    "waf_enabled": "true"
+    "waf_enabled": "true",
+    "es7": true
   },
   "canary": {
     "default": 0
