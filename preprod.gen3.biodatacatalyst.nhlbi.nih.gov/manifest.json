@@ -21,8 +21,8 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.17.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2023.12",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:0.7.6",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:0.17.1",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2023.12",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2023.12",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.12",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.12",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
@@ -414,7 +414,8 @@
     "netpolicy": "on",
     "argocd": "true",
     "pdb": "on",
-    "waf_enabled": "true"
+    "waf_enabled": "true",
+    "es7": true
   },
   "canary": {
     "default": 0
