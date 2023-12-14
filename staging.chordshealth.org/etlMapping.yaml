@@ -1,5 +1,5 @@
 mappings:
-  - name: geospatial_data_resource
+  - name: chords_geospatial_data_resource
     doc_type: geospatial_data_resource
     type: aggregator
     root: geospatial_data_resource
@@ -28,7 +28,7 @@ mappings:
       - name: exposure_media
     parent_props:
       - path: resources[resource_id, resource_name:long_name, resource_short_name:name, resource_type, resource_description:description, resource_citation:citation, payment_required, domain, keywords, license_type, license_text, verification_datetime, resource_use_agreement, resource_contact, resource_url].projects[project_code:code, project_investigator_affiliation:investigator_affiliation, project_investigator_name:investigator_name, project_date:date_collected, project_name:name, project_short_name:name, support_source, support_id, project_url].programs[program_name:name, program_short_name:name]
-  - name: geospatial_tool_resource
+  - name: chords_geospatial_tool_resource
     doc_type: geospatial_tool_resource
     type: aggregator
     root: geospatial_tool_resource
@@ -53,7 +53,7 @@ mappings:
       - name: model_methods
     parent_props:
       - path: resources[resource_id, resource_name:long_name, resource_short_name:name, resource_type, resource_description:description, resource_citation:citation, payment_required, domain, keywords, license_type, license_text, verification_datetime, resource_use_agreement, resource_contact, resource_url].projects[project_code:code, project_investigator_affiliation:investigator_affiliation, project_investigator_name:investigator_name, project_date:date_collected, project_name:name, project_short_name:name, support_source, support_id, project_url].programs[program_name:name, program_short_name:name]
-  - name: population_data_resource
+  - name: chords_population_data_resource
     doc_type: population_data_resource
     type: aggregator
     root: population_data_resource
