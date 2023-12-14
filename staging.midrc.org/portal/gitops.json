@@ -82,15 +82,18 @@
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
       },
-
-      MIDRC_Cohort_Building-DLL_RSNA_2023.html 
-      MIDRC_Cohort_Building-DLL_RSNA_2023.png
-      
-      build_a_cohort_of_severe_covid_19_cases.html 
-      build_a_cohort_of_severe_covid_19_cases.png
-      
-
-
+      {
+        "title": "Build Balanced Cohorts of Severe and Mild COVID-19 Cases",
+        "description": "This notebook demonstrates how to build a cohort of severe COVID-19 cases using patient clinical data and AI research-based annotations in the MIDRC data commons. Our goal is to download structured data and files for 2 related cohorts: 1) severe COVID cases and 2) a control cohort of non-severe COVID cases. Additionally, we want the cohorts to be somewhat balanced and matched in terms of the demographics: age, sex, race, and ethnicity.",
+        "imageUrl": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.png",
+        "link": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.html"
+      },
+      {
+        "title": "Cohort Building Using Queries of the MIDRC Data Commons",
+        "description": "This notebook briefly demonstrates how to use the MIDRC open APIs to build a cohort of MIDRC imaging studies using patient clinical data and AI-research-based annotations in the MIDRC data commons and then access and view the X-ray image files associated with those imaging studies.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.html"
+      }
     ]
   },
   "useArboristUI": true,
