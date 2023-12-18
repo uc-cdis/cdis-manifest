@@ -125,8 +125,8 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-          - name: file_id
-            src: file_id
+          - name: _file_id
+            src: _file_id
             fn: set
   - name: daids_visit
     doc_type: visit
