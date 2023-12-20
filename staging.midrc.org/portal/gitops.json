@@ -381,7 +381,6 @@
               "imaging_studies.loinc_long_common_name",
               "imaging_studies.loinc_method",
               "imaging_studies.loinc_system",
-              "imaging_studies.study_location",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
               "imaging_studies.days_to_study"
@@ -406,7 +405,6 @@
               "medications.medication_code_system",
               "medications.medication_manufacturer",
               "medications.medication_name",
-              "medications.medication_status",
               "medications.medication_type"
             ]
           },
@@ -432,8 +430,6 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id"
@@ -461,7 +457,6 @@
           "imaging_studies.loinc_method",
           "imaging_studies.loinc_system",
           "imaging_studies.study_description",
-          "imaging_studies.study_location",
           "imaging_studies.study_modality",
           "imaging_studies.study_uid",
           "measurements.test_name",
@@ -475,7 +470,6 @@
           "medications.medication_code_system",
           "medications.medication_manufacturer",
           "medications.medication_name",
-          "medications.medication_status",
           "medications.medication_type",
           "procedures.breathing_support_type",
           "procedures.days_to_procedure_start",
@@ -486,8 +480,6 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -771,8 +763,6 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
-              "airspace_disease_grading",
-              "class_covid19_pneumonia",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -785,8 +775,6 @@
         "enabled": true,
         "fields": [
           "case_ids",
-          "airspace_disease_grading",
-          "class_covid19_pneumonia",
           "midrc_mRALE_score",
           "annotation_method",
           "annotator_id",
@@ -970,7 +958,6 @@
               "study_year",
               "study_year_shifted",
               "body_part_examined",
-              "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
               "project_id"
@@ -1009,8 +996,6 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id"
@@ -1044,8 +1029,6 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1237,7 +1220,6 @@
               "age_at_imaging",
               "study_year",
               "study_year_shifted",
-              "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
               "loinc_code",
