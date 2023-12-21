@@ -533,6 +533,18 @@
         "link": "/dashboard/Public/notebooks/How_to_access_data.html"
       },
       {
+        "title": "Multi-Container Nextflow Tutorial",
+        "description": "In this notebook, we will set up and explain each file in a Nextflow workflow which uses Python scripts. Our workflow consists of two Python scripts that are each executed in a different Conda environment.",
+        "imageUrl": "/dashboard/Public/notebooks/nextflow_logo.png",
+        "link": "/dashboard/Public/notebooks/multi_container_nextflow.html"
+      },
+      {
+        "title": "Nextflow Proteome Data Commons (PDC) Clustergram",
+        "description": "In this notebook, we demonstrate how to retrieve, process, and visualize protein relative expression data from the PDC API with Nextflow. We illustrate use of Nextflow features such as channels, parameters, and environment and configuration files",
+        "imageUrl":  "/dashboard/Public/notebooks/nextflow_logo.png",
+        "link": "/dashboard/Public/notebooks/PDC_clustergram_nextflow.html"
+      },
+      {
         "title": "JCOIN MOUD Accessibility Analysis",
         "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States.",
         "imageUrl": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.png",
