@@ -431,8 +431,7 @@
             "title": "Annotations",
             "fields": [
               "imaging_study_annotations.midrc_mRALE_score",
-              "imaging_study_annotations.annotation_method",
-              "imaging_study_annotations.annotator_id"
+              "imaging_study_annotations.annotation_method"
             ]
           }
         ]
@@ -1291,7 +1290,6 @@
                 "source_node",
                 "annotation_method",
                 "annotation_name",
-                "annotator_id",
                 "manufacturer",
                 "manufacturer_model_name",
                 "modality",
