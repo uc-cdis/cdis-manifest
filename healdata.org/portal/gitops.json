@@ -469,9 +469,9 @@
     ]
   },
   "resourceBrowser": {
-    "title": "Static HEAL Jupyter Notebooks",
+    "title": "Static HEAL Tutorial Notebooks",
     "public": true,
-    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Tutorials Workspace. Please note these notebooks are meant for illustrative purposes only, and are not meant to portray peer-reviewed research.",
     "resources": [
       {
         "title": "BACPAC Synthetic Data Analysis",
@@ -484,6 +484,12 @@
         "description": "In this notebook we use a variety of machine learning methods to analyze patterns in 12th grader opiate use as reported in the Monitoring The Future survey results from 2019.",
         "imageUrl": "/dashboard/Public/notebooks/Monitoring_The_Future_Part1.png",
         "link": "/dashboard/Public/notebooks/Monitoring_The_Future_Part1.html"
+      },
+      {
+        "title": "Monitoring The Future: 12th Grader Opiate Use - Part 2",
+        "description": "In this notebook we use a variety of machine learning methods to analyze patterns in 12th grader opiate use as reported in the Monitoring The Future survey results from 2012 through 2021.",
+        "imageUrl": "/dashboard/Public/notebooks/Monitoring_The_Future_Part2.png",
+        "link": "/dashboard/Public/notebooks/Monitoring_The_Future_Part2.html"
       },
       {
         "title": "Opioid Environment Toolkit And OEPS R",
