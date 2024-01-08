@@ -90,7 +90,8 @@
   "featureFlags": {
     "explorer": false,
     "analysis": true,
-    "workspaceTokenServiceRefreshTokenAtLogin": true
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
+    "forceSingleLoginDropdownOptions": ["InCommon Login"]
   },
   "analysisTools": [
     {
