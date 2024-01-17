@@ -1090,6 +1090,7 @@
         "name": "Journal",
         "field": "journal",
         "contentType": "string",
+        "width": 200,
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       },
@@ -1097,6 +1098,7 @@
         "name": "Publication URL",
         "field": "publication_url",
         "contentType": "link",
+        "width": 300,
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       },
@@ -1104,6 +1106,7 @@
         "name": "Condition",
         "field": "condition",
         "contentType": "string",
+        "width": 200,
         "errorIfNotAvailable": false,
         "valueIfNotAvailable": "n/a"
       }
