@@ -30,7 +30,7 @@
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "R Studio",
-      "image": "heliumdatastage/rstudio-server:1",
+      "image": "quay.io/cdis/rstudio:4.2.1",
       "env": {
         "DISABLE_AUTH": "true"
       },
