@@ -52,7 +52,7 @@
           "name": "Example Analysis",
           "link": "/resource-browser",
           "icon": "bar-chart",
-          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the Biomedical Research Hub by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the Biomedical Imaging Hub by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
           "color": "#a2a2a2"
         },
         {
@@ -68,7 +68,7 @@
       ]
     },
     "login": {
-      "title": "Biomedical Research Hub",
+      "title": "Biomedical Imaging Hub",
       "subTitle": "Discover, Analyze, and Share Data",
       "text": "The Biomedical Imaging Hub (BIH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical images to support research communities and collaborations.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -515,8 +515,8 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks are also available in the 'Tutorials' Gen3 Workspace Image.",
     "resources": [
       {
-        "title": "How to access data in Biomedical Research Hub",
-        "description": "In this Jupyter notebook, we will demonstrate to a new user the different ways of accessing data in the Biomedical Research Hub workspace using the Gen3 SDK and GraphQL",
+        "title": "How to access data in Biomedical Imaging Hub",
+        "description": "In this Jupyter notebook, we will demonstrate to a new user the different ways of accessing data in the Biomedical Imaging Hub workspace using the Gen3 SDK and GraphQL",
         "imageUrl": "/dashboard/Public/notebooks/How_to_access_data.png",
         "link": "/dashboard/Public/notebooks/How_to_access_data.html"
       },
@@ -622,7 +622,6 @@
   "showArboristAuthzOnProfile": true,
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
-  "stridesPortalURL": "https://brh-portal.org",
   "registrationConfigs": {
     "features": {
       "workspaceRegistrationConfig" : {
