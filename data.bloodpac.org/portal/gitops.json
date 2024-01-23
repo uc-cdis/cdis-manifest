@@ -1031,57 +1031,86 @@
         "enabled": false,
         "text": "Publication Discovery"
       },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
       "search": {
+        "searchBar": {
+          "enabled": true
+        },
         "tagSearchDropdown": {
           "enabled": true,
           "collapsibleButtonText": "Study Filters"
-        },
-        "searchBar": {
-          "enabled": true
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Available"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": true,
+            "menuText": "Pending"
+          },
+          "notAvailable": {
+            "enabled": true,
+            "menuText": "Not Available"
+          }
+        }
       }
     },
     "aggregations": [{
       "name": "Publications",
       "field": "_publication_id",
       "type": "count"
-    }],
+    }
+  ],
     "tagSelector": {
       "title": "Tags by category"
     },
-    "studyColumns": [{
-      "name": "Title",
-      "field": "title",
-      "contentType": "string",
-      "width": 200,
-      "errorIfNotAvailable": false,
-      "valueIfNotAvailable": "n/a"
-    },
-    {
-      "name": "Journal",
-      "field": "journal",
-      "contentType": "string",
-      "errorIfNotAvailable": false,
-      "valueIfNotAvailable": "n/a"
-    },
-    {
-      "name": "Publication URL",
-      "field": "publication_url",
-      "contentType": "link",
-      "errorIfNotAvailable": false,
-      "valueIfNotAvailable": "n/a"
-    },
-    {
-      "name": "Condition",
-      "field": "condition",
-      "contentType": "string",
-      "errorIfNotAvailable": false,
-      "valueIfNotAvailable": "n/a"
-    }
-  ],
+    "studyColumns": [
+      {
+        "name": "Title",
+        "field": "title",
+        "contentType": "string",
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Journal",
+        "field": "journal",
+        "contentType": "string",
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Publication URL",
+        "field": "publication_url",
+        "contentType": "link",
+        "width": 300,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Condition",
+        "field": "condition",
+        "contentType": "string",
+        "width": 200,
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      }
+    ],
     "studyPreviewField": {
       "name": "Abstract",
       "field": "abstract",
@@ -1097,10 +1126,12 @@
       "downloadLinks": {
         "field": "data_download_links"
       },
-      "fieldsToShow": [{
+      "fieldsToShow": [
+        {
           "groupName": "Publication Identifiers",
           "includeName": false,
-          "fields": [{
+          "fields": [
+            {
               "name": "Authors",
               "field": "authors",
               "contentType": "string",
@@ -1185,19 +1216,19 @@
       "uid": "_publication_id"
     },
     "tagCategories": [
-    {
+      {
         "name": "Study Setting",
         "displayName": "Study Setting",
         "color": "#532565",
         "display": true
       },
-    {
+      {
         "name": "Study Type",
         "displayName": "Study Type",
         "color": "#981f32",
         "display": true
       },
-    {
+      {
         "name": "Study Objectives",
         "displayName": "Study Objectives",
         "color": "#532565",
@@ -1208,30 +1239,31 @@
           "displayName": "Cancer Type",
           "color": "#e07c3e",
           "display": true
-        },
+      },
       {
           "name": "Cancer Stage",
           "displayName": "Cancer Stage",
           "color": "#982568",
           "display": true
-        },
+      },
       {
           "name": "Specimen Type",
           "displayName": "Specimen Type",
           "color": "#982568",
           "display": true
       },
-    {
+      {
         "name": "Data Type",
         "displayName": "Data Type",
         "color": "#bf362e",
         "display": true
       },
-    {
+      {
         "name": "Analytical Method",
         "displayName": "Analytical Method",
         "color": "#981f32",
         "display": true
-      }]
-    }
+      }
+    ]
   }
+}
