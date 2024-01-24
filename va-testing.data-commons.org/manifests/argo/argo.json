@@ -1,5 +1,5 @@
 {
-    "scaling_groups" : {
+    "scaling_groups": {
         "default": "{{workflow.name}}",
         "custom": {
             "Scott.DuVall@va.gov": "{{workflow.name}}",
@@ -7,7 +7,7 @@
             "Craig.Teerlink@va.gov": "{{workflow.name}}"
         }
     },
-    "s3-bucket": "argo-artifact-storage-downloadable",
+    "s3-bucket": "argo-artifact-storage-downloadable-2024",
     "internal-s3-bucket": "gen3-argo-199578515826-vhdcprod",
     "indexd_admin_user": "fence",
     "environment": "va-testing",
