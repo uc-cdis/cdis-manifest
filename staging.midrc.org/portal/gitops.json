@@ -47,6 +47,12 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
     "resources": [
       {
+        "title": "Build a Patient Cohort and Access Chest CT Scans and Annotations",
+        "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then access all Chest CT scans and any related annotations.",
+        "imageUrl": "/dashboard/Public/notebooks/Chest_CT_Images_for_Cohort.png",
+        "link": "/dashboard/Public/notebooks/Chest_CT_Images_for_Cohort.html"
+      },
+      {
         "title": "Access Files for Specific Case IDs",
         "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then obtain a file download manifest for x-ray and annotation files related to that cohort.",
         "imageUrl": "/dashboard/Public/notebooks/Access_Files_for_Specific_Case_IDs.png",
@@ -75,6 +81,18 @@
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+      },
+      {
+        "title": "Build Balanced Cohorts of Severe and Mild COVID-19 Cases",
+        "description": "This notebook demonstrates how to build a cohort of severe COVID-19 cases using patient clinical data and AI research-based annotations in the MIDRC data commons. Our goal is to download structured data and files for 2 related cohorts: 1) severe COVID cases and 2) a control cohort of non-severe COVID cases. Additionally, we want the cohorts to be somewhat balanced and matched in terms of the demographics: age, sex, race, and ethnicity.",
+        "imageUrl": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.png",
+        "link": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.html"
+      },
+      {
+        "title": "Cohort Building Using Queries of the MIDRC Data Commons",
+        "description": "This notebook briefly demonstrates how to use the MIDRC open APIs to build a cohort of MIDRC imaging studies using patient clinical data and AI-research-based annotations in the MIDRC data commons and then access and view the X-ray image files associated with those imaging studies.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.html"
       }
     ]
   },
@@ -363,7 +381,6 @@
               "imaging_studies.loinc_long_common_name",
               "imaging_studies.loinc_method",
               "imaging_studies.loinc_system",
-              "imaging_studies.study_location",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
               "imaging_studies.days_to_study"
@@ -388,7 +405,6 @@
               "medications.medication_code_system",
               "medications.medication_manufacturer",
               "medications.medication_name",
-              "medications.medication_status",
               "medications.medication_type"
             ]
           },
@@ -414,11 +430,8 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
-              "imaging_study_annotations.annotation_method",
-              "imaging_study_annotations.annotator_id"
+              "imaging_study_annotations.annotation_method"
             ]
           }
         ]
@@ -443,7 +456,6 @@
           "imaging_studies.loinc_method",
           "imaging_studies.loinc_system",
           "imaging_studies.study_description",
-          "imaging_studies.study_location",
           "imaging_studies.study_modality",
           "imaging_studies.study_uid",
           "measurements.test_name",
@@ -457,7 +469,6 @@
           "medications.medication_code_system",
           "medications.medication_manufacturer",
           "medications.medication_name",
-          "medications.medication_status",
           "medications.medication_type",
           "procedures.breathing_support_type",
           "procedures.days_to_procedure_start",
@@ -468,8 +479,6 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -753,8 +762,6 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
-              "airspace_disease_grading",
-              "class_covid19_pneumonia",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -767,8 +774,6 @@
         "enabled": true,
         "fields": [
           "case_ids",
-          "airspace_disease_grading",
-          "class_covid19_pneumonia",
           "midrc_mRALE_score",
           "annotation_method",
           "annotator_id",
@@ -952,7 +957,6 @@
               "study_year",
               "study_year_shifted",
               "body_part_examined",
-              "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
               "project_id"
@@ -991,8 +995,6 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id"
@@ -1026,8 +1028,6 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1219,7 +1219,6 @@
               "age_at_imaging",
               "study_year",
               "study_year_shifted",
-              "study_location",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
               "loinc_code",
@@ -1291,7 +1290,6 @@
                 "source_node",
                 "annotation_method",
                 "annotation_name",
-                "annotator_id",
                 "manufacturer",
                 "manufacturer_model_name",
                 "modality",

@@ -271,6 +271,13 @@
           "leftIcon": "user",
           "rightIcon": "download",
           "fileName": "data.tsv"
+        },
+        {
+          "enabled": true,
+          "type": "export-to-pfb",
+          "title": "Export to PFB",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
       ],
       "guppyConfig": {
