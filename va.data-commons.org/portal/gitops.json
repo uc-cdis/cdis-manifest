@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "G-MNK00L5EG7",
-  "argoTemplate": "gwas-template-sex-added",
+  "argoTemplate": "gwas-template-new-bucket",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -158,7 +158,7 @@
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [
-    "https://argo-artifact-storage-downloadable.s3.amazonaws.com"
+    "https://argo-artifact-storage-downloadable-2024.s3.amazonaws.com"
   ],
   "ddUrl": "ddog-gov.com"
 }
