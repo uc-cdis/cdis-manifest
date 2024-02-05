@@ -98,7 +98,14 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults"
+    "GWASResults",
+    {
+      "appId": "AtlasDataDictionary",
+      "title": "Atlas Data Dictionary",
+      "description": "Use this App to view a tabluar representation of the Atlas data dictionary",
+      "image": "/src/img/analysis-icons/default-app.png",
+      "needsTeamProject": false
+    }
   ],
   "arrangerConfig": {
     "charts": {
