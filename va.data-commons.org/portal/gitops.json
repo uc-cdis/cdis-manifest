@@ -98,7 +98,14 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults"
+    "GWASResults",
+    {
+      "appId": "AtlasDataDictionary",
+      "title": "MVP Data Dictionary",
+      "description": "Use this App to view a tabluar representation of the MVP data dictionary",
+      "image": "/src/img/analysis-icons/default-app.png",
+      "needsTeamProject": false
+    }
   ],
   "arrangerConfig": {
     "charts": {
