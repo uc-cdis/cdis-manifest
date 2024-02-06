@@ -31,6 +31,11 @@
         "graphql": "_mr_series_file_count",
         "name": "Magnetic Resonance (MR) Series",
         "plural": "Magnetic Resonance (MR) Series"
+      },
+      {
+        "graphql": "_dicom_annotation_file_count",
+        "name": "DICOM Annotation File",
+        "plural": "DICOM Annotation Files"
       }
     ],
     "chartCounts": [],
@@ -41,6 +46,18 @@
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
     "resources": [
+      {
+        "title": "Build a Patient Cohort and Access Chest CT Scans and Annotations",
+        "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then access all Chest CT scans and any related annotations.",
+        "imageUrl": "/dashboard/Public/notebooks/Chest_CT_Images_for_Cohort.png",
+        "link": "/dashboard/Public/notebooks/Chest_CT_Images_for_Cohort.html"
+      },
+      {
+        "title": "Access Files for Specific Case IDs",
+        "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then obtain a file download manifest for x-ray and annotation files related to that cohort.",
+        "imageUrl": "/dashboard/Public/notebooks/Access_Files_for_Specific_Case_IDs.png",
+        "link": "/dashboard/Public/notebooks/Access_Files_for_Specific_Case_IDs.html"
+      },
       {
         "title": "Cohort Selection Using Temporal COVID-19 Test Data",
         "description": "This tutorial demonstrates how to use the MIDRC data commons' APIs to access imaging study and COVID-19 test data, how to use temporal properties in those data to select a cohort of COVID-19 positive imaging studies, and how to access those image files using the Gen3 SDK.",
@@ -64,6 +81,18 @@
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+      },
+      {
+        "title": "Build Balanced Cohorts of Severe and Mild COVID-19 Cases",
+        "description": "This notebook demonstrates how to build a cohort of severe COVID-19 cases using patient clinical data and AI research-based annotations in the MIDRC data commons. Our goal is to download structured data and files for 2 related cohorts: 1) severe COVID cases and 2) a control cohort of non-severe COVID cases. Additionally, we want the cohorts to be somewhat balanced and matched in terms of the demographics: age, sex, race, and ethnicity.",
+        "imageUrl": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.png",
+        "link": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.html"
+      },
+      {
+        "title": "Cohort Building Using Queries of the MIDRC Data Commons",
+        "description": "This notebook briefly demonstrates how to use the MIDRC open APIs to build a cohort of MIDRC imaging studies using patient clinical data and AI-research-based annotations in the MIDRC data commons and then access and view the X-ray image files associated with those imaging studies.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.html"
       }
     ]
   },
@@ -247,7 +276,7 @@
           "name": "About"
         },
         {
-          "link": "/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "https://validate.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -255,7 +284,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "/dashboard/Public/documentation/DUA.html",
+          "link": "https://validate.midrc.org/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -328,6 +357,9 @@
         "tabs": [
           {
             "title": "Demographics",
+            "searchFields": [
+              "submitter_id"
+            ],
             "fields": [
               "sex",
               "race",
@@ -400,11 +432,11 @@
           {
             "title": "Annotations",
             "fields": [
-              "case_annotations.airspace_disease_grading",
-              "case_annotations.class_covid19_pneumonia",
-              "case_annotations.midrc_mRALE_score",
-              "case_annotations.annotation_method",
-              "case_annotations.annotator_id"
+              "imaging_study_annotations.airspace_disease_grading",
+              "imaging_study_annotations.class_covid19_pneumonia",
+              "imaging_study_annotations.midrc_mRALE_score",
+              "imaging_study_annotations.annotation_method",
+              "imaging_study_annotations.annotator_id"
             ]
           }
         ]
@@ -454,12 +486,12 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "case_annotations.airspace_disease_grading",
-          "case_annotations.class_covid19_pneumonia",
-          "case_annotations.midrc_mRALE_score",
-          "case_annotations.annotation_method",
-          "case_annotations.annotator_id",
-          "case_annotations.instance_uids",
+          "imaging_study_annotations.airspace_disease_grading",
+          "imaging_study_annotations.class_covid19_pneumonia",
+          "imaging_study_annotations.midrc_mRALE_score",
+          "imaging_study_annotations.annotation_method",
+          "imaging_study_annotations.annotator_id",
+          "imaging_study_annotations.instance_uids",
           "_imaging_studies_count",
           "_ct_series_file_count",
           "_dx_series_file_count",
@@ -522,6 +554,14 @@
         "dataType": "case",
         "nodeCountTitle": "Cases",
         "fieldMapping": [
+          {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Case ID"
+          },
           {
             "field": "imaging_studies.age_at_imaging",
             "name": "Age at Imaging"
@@ -667,36 +707,28 @@
             "name": "Days to Condition End"
           },
           {
-            "field": "case_annotations.airspace_disease_grading",
+            "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
           {
-            "field": "case_annotations.class_covid19_pneumonia",
+            "field": "imaging_study_annotations.class_covid19_pneumonia",
             "name": "Class COVID-19 Pneumonia"
           },
           {
-            "field": "case_annotations.midrc_mRALE_score",
+            "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
           {
-            "field": "case_annotations.annotation_method",
+            "field": "imaging_study_annotations.annotation_method",
             "name": "Annotation Method"
           },
           {
-            "field": "case_annotations.annotator_id",
+            "field": "imaging_study_annotations.annotator_id",
             "name": "Annotator ID"
           },
           {
-            "field": "case_annotations.instance_uids",
+            "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Case ID"
           },
           {
             "field": "_imaging_studies_count",
@@ -737,7 +769,7 @@
       "filters": {
         "tabs": [
           {
-            "title": "Annotations",
+            "title": "Imaging Study Annotations",
             "fields": [
               "airspace_disease_grading",
               "class_covid19_pneumonia",
@@ -928,6 +960,9 @@
         "tabs": [
           {
             "title": "Study Properties",
+            "searchFields": [
+              "study_uid"
+            ],
             "fields": [
               "study_modality",
               "study_description",
@@ -974,11 +1009,10 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
-              "imaging_study_annotations.annotator_id"
+              "imaging_study_annotations.annotator_id",
+              "data_file_annotation_name"
             ]
           }
         ]
@@ -1009,12 +1043,11 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
           "imaging_study_annotations.instance_uids",
+          "data_file_annotation_name",
           "_ct_series_file_count",
           "_dx_series_file_count",
           "_cr_series_file_count",
@@ -1087,6 +1120,22 @@
         "nodeCountTitle": "Imaging Studies",
         "fieldMapping": [
           {
+            "field": "project_id",
+            "name": "Project ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "submitter_id",
+            "name": "Browse in DICOM viewer"
+          },
+          {
+            "field": "case_ids",
+            "name": "Patient ID"
+          },
+          {
             "field": "imaging_study_annotations.airspace_disease_grading",
             "name": "Airspace Disease Grading"
           },
@@ -1109,18 +1158,6 @@
           {
             "field": "imaging_study_annotations.instance_uids",
             "name": "Instance UIDs"
-          },
-          {
-            "field": "project_id",
-            "name": "Project ID"
-          },
-          {
-            "field": "submitter_id",
-            "name": "Browse in DICOM viewer"
-          },
-          {
-            "field": "case_ids",
-            "name": "Patient ID"
           },
           {
             "field": "_ct_series_file_count",
@@ -1179,6 +1216,10 @@
         "tabs": [
           {
             "title": "File Properties",
+            "searchFields": [
+              "file_name",
+              "object_id"
+            ],
             "fields": [
               "source_node",
               "data_format",
@@ -1206,6 +1247,9 @@
           },
           {
             "title": "Series Properties",
+            "searchFields": [
+              "series_uid"
+            ],
             "fields": [
               "source_node",
               "acquisition_type",
@@ -1259,18 +1303,18 @@
           {
             "title": "Annotation Properties",
             "fields": [
-                "source_node",
-                "annotation_method",
-                "annotation_name",
-                "annotator_id",
-                "manufacturer",
-                "manufacturer_model_name",
-                "modality",
-                "series_description",
-                "software_versions",
-                "data_format",
-                "data_category",
-                "data_type"
+              "source_node",
+              "annotation_method",
+              "annotation_name",
+              "annotator_id",
+              "manufacturer",
+              "manufacturer_model_name",
+              "modality",
+              "series_description",
+              "software_versions",
+              "data_format",
+              "data_category",
+              "data_type"
             ]
           }
         ]
@@ -1278,70 +1322,70 @@
       "table": {
         "enabled": true,
         "fields": [
-            "source_node",
-            "acquisition_type",
-            "angio_flag",
-            "contrast_bolus_agent",
-            "convolution_kernel",
-            "detector_type",
-            "diffusion_b_value",
-            "diffusion_gradient_orientation",
-            "echo_number",
-            "echo_time",
-            "echo_train_length",
-            "exposure_modulation_type",
-            "image_type",
-            "imaged_nucleus",
-            "imager_pixel_spacing",
-            "lossy_image_compression",
-            "manufacturer",
-            "manufacturer_model_name",
-            "modality",
-            "number_of_temporal_positions",
-            "patient_position",
-            "pixel_spacing",
-            "radiopharmaceutical",
-            "repetition_time",
-            "scan_options",
-            "sequence_variant",
-            "series_description",
-            "slice_thickness",
-            "software_version",
-            "spacing_between_slices",
-            "spatial_resolution",
-            "transducer_type",
-            "view_position",
-            "study_description",
-            "age_at_imaging",
-            "days_to_study",
-            "study_year",
-            "study_year_shifted",
-            "days_from_study_to_pos_covid_test",
-            "days_from_study_to_neg_covid_test",
-            "loinc_code",
-            "loinc_contrast",
-            "loinc_long_common_name",
-            "loinc_method",
-            "loinc_system",
-            "covid19_positive",
-            "age_at_index",
-            "index_event",
-            "sex",
-            "race",
-            "zip",
-            "data_format",
-            "data_category",
-            "data_type",
-            "annotation_method",
-            "annotation_name",
-            "annotator_id",
-            "software_versions",
-            "series_uid",
-            "study_uid",
-            "case_ids",
-            "object_id",
-            "submitter_id",
-            "project_id"
+          "source_node",
+          "acquisition_type",
+          "angio_flag",
+          "contrast_bolus_agent",
+          "convolution_kernel",
+          "detector_type",
+          "diffusion_b_value",
+          "diffusion_gradient_orientation",
+          "echo_number",
+          "echo_time",
+          "echo_train_length",
+          "exposure_modulation_type",
+          "image_type",
+          "imaged_nucleus",
+          "imager_pixel_spacing",
+          "lossy_image_compression",
+          "manufacturer",
+          "manufacturer_model_name",
+          "modality",
+          "number_of_temporal_positions",
+          "patient_position",
+          "pixel_spacing",
+          "radiopharmaceutical",
+          "repetition_time",
+          "scan_options",
+          "sequence_variant",
+          "series_description",
+          "slice_thickness",
+          "software_version",
+          "spacing_between_slices",
+          "spatial_resolution",
+          "transducer_type",
+          "view_position",
+          "study_description",
+          "age_at_imaging",
+          "days_to_study",
+          "study_year",
+          "study_year_shifted",
+          "days_from_study_to_pos_covid_test",
+          "days_from_study_to_neg_covid_test",
+          "loinc_code",
+          "loinc_contrast",
+          "loinc_long_common_name",
+          "loinc_method",
+          "loinc_system",
+          "covid19_positive",
+          "age_at_index",
+          "index_event",
+          "sex",
+          "race",
+          "zip",
+          "data_format",
+          "data_category",
+          "data_type",
+          "annotation_method",
+          "annotation_name",
+          "annotator_id",
+          "software_versions",
+          "series_uid",
+          "study_uid",
+          "case_ids",
+          "object_id",
+          "submitter_id",
+          "project_id"
         ],
         "dicomViewerId": "submitter_id",
         "linkFields": [
@@ -1409,6 +1453,14 @@
           {
             "field": "case_ids",
             "name": "Patient ID"
+          },
+          {
+            "field": "study_uid",
+            "name": "Study UID"
+          },
+          {
+            "field": "series_UID",
+            "name": "Series UID"
           }
         ],
         "manifestMapping": {
@@ -1695,5 +1747,6 @@
         "display": true
       }
     ]
-  }
+  },
+  "ddUrl": "ddog-gov.com"
 }
