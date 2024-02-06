@@ -81,6 +81,18 @@
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data.html"
+      },
+      {
+        "title": "Build Balanced Cohorts of Severe and Mild COVID-19 Cases",
+        "description": "This notebook demonstrates how to build a cohort of severe COVID-19 cases using patient clinical data and AI research-based annotations in the MIDRC data commons. Our goal is to download structured data and files for 2 related cohorts: 1) severe COVID cases and 2) a control cohort of non-severe COVID cases. Additionally, we want the cohorts to be somewhat balanced and matched in terms of the demographics: age, sex, race, and ethnicity.",
+        "imageUrl": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.png",
+        "link": "/dashboard/Public/notebooks/build_a_cohort_of_severe_covid_19_cases.html"
+      },
+      {
+        "title": "Cohort Building Using Queries of the MIDRC Data Commons",
+        "description": "This notebook briefly demonstrates how to use the MIDRC open APIs to build a cohort of MIDRC imaging studies using patient clinical data and AI-research-based annotations in the MIDRC data commons and then access and view the X-ray image files associated with those imaging studies.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Cohort_Building-DLL_RSNA_2023.html"
       }
     ]
   },
@@ -997,11 +1009,10 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
-              "imaging_study_annotations.annotator_id"
+              "imaging_study_annotations.annotator_id",
+              "data_file_annotation_name"
             ]
           }
         ]
@@ -1032,12 +1043,11 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
           "imaging_study_annotations.instance_uids",
+          "data_file_annotation_name",
           "_ct_series_file_count",
           "_dx_series_file_count",
           "_cr_series_file_count",
