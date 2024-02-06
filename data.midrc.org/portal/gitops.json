@@ -1009,11 +1009,10 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.airspace_disease_grading",
-              "imaging_study_annotations.class_covid19_pneumonia",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
-              "imaging_study_annotations.annotator_id"
+              "imaging_study_annotations.annotator_id",
+              "data_file_annotation_name"
             ]
           }
         ]
@@ -1044,12 +1043,11 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.airspace_disease_grading",
-          "imaging_study_annotations.class_covid19_pneumonia",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
           "imaging_study_annotations.instance_uids",
+          "data_file_annotation_name",
           "_ct_series_file_count",
           "_dx_series_file_count",
           "_cr_series_file_count",
