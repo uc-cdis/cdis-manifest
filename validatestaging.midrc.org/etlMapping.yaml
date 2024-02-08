@@ -35,6 +35,11 @@ mappings:
       - name: case_annotations
         path: annotations
         props:
+          - name: annotation_method
+          - name: annotator_id
+      - name: imaging_study_annotations
+        path: imaging_studies.annotations
+        props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
           - name: midrc_mRALE_score
@@ -200,6 +205,15 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
+          - name: data_file_source_node
+            src: source_node
+            fn: set
+          - name: data_file_annotation_name
+            src: annotation_name
+            fn: set
+          - name: data_file_annotation_method
+            src: annotation_method
+            fn: set
   - name: validatestaging_data_file
     doc_type: data_file
     type: collector
@@ -276,6 +290,9 @@ mappings:
             fn: set
           - name: covid19_positive
             src: covid19_positive
+            fn: set
+          - name: ethnicity
+            src: ethnicity
             fn: set
           - name: index_event
             src: index_event
