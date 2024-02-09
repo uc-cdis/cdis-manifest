@@ -109,7 +109,7 @@
       "name": "(Beta) Nextflow with CPU instances",
       "image": "quay.io/cdis/jupyter-notebook:nextflow-feat_nextflow-welcome",
       "env": {
-        "FRAME_ANCESTORS": "https://qa-brh.planx-pla.net"
+        "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
@@ -166,7 +166,7 @@
       "name": "(Beta) Nextflow with GPU instances",
       "image": "quay.io/cdis/jupyter-notebook:nextflow-feat_nextflow-welcome",
       "env": {
-        "FRAME_ANCESTORS": "https://qa-brh.planx-pla.net"
+        "FRAME_ANCESTORS": "https://brhstaging.data-commons.org"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
