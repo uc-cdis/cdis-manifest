@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "G-MNK00L5EG7",
-  "argoTemplate": "gwas-template-sex-added",
+  "argoTemplate": "gwas-template-new-bucket",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -98,7 +98,14 @@
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
     },
     "GWASUIApp",
-    "GWASResults"
+    "GWASResults",
+    {
+      "appId": "AtlasDataDictionary",
+      "title": "MVP Data Dictionary",
+      "description": "Use this App to view a tabluar representation of the MVP data dictionary",
+      "image": "/src/img/analysis-icons/default-app.png",
+      "needsTeamProject": false
+    }
   ],
   "arrangerConfig": {
     "charts": {
@@ -158,7 +165,8 @@
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [
-    "https://argo-artifact-storage-downloadable.s3.amazonaws.com"
+    "https://argo-artifact-storage-downloadable.s3.amazonaws.com",
+    "https://argo-artifact-storage-downloadable-2024.s3.amazonaws.com"
   ],
   "ddUrl": "ddog-gov.com"
 }

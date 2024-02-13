@@ -1,11 +1,11 @@
 {
-  "user-namespace": "jupyter-pods",
+  "user-namespace": "jupyter-pods-va-testing",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "sidecar": {
     "cpu-limit": "0.1",
     "memory-limit": "128Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2023.10",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2023.11",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "va-testing.data-commons.org"
@@ -30,7 +30,7 @@
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "R Studio",
-      "image": "heliumdatastage/rstudio-server:1",
+      "image": "quay.io/cdis/rstudio:4.2.1",
       "env": {
         "DISABLE_AUTH": "true"
       },
