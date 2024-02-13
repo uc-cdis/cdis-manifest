@@ -2,10 +2,14 @@
   "user-namespace": "jupyter-pods-healpreprod",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
+  "license-user-maps-dynamodb-table": "gen3-license-user-maps",
+  "license-user-maps-global-secondary-index": "activeUsersIndex",
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
   "default-pay-model": {
-    "workspace_type": "Trial Workspace",
-    "local": true
+    "bmh_workspace_id": "blanket_billing_eks",
+    "region": "us-east-1",
+    "account_id": "252835817747",
+    "workspace_type": "healworkspaces"
   },
   "sidecar": {
     "cpu-limit": "1.0",
@@ -101,9 +105,18 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
-      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:1.2.0",
+      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:chore_get-stata-license-from-sidecar",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
+      },
+      "license": {
+        "enabled": true,
+        "license-type": "STATA-HEAL",
+        "max-license-ids": 6,
+        "g3auto-name": "stata-workspace-gen3-license-g3auto",
+        "g3auto-key": "stata_license.txt",
+        "file-path": "stata.lic",
+        "workspace-flavor": "gen3-licensed"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
