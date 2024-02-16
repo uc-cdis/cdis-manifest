@@ -15,19 +15,22 @@
       "introduction": {
         "heading": "Accessing  NIAID  Clinical Trials Data",
         "multiLineTexts": [
-          "AccessClinicalData@NIAID is a NIAID cloud-based, controlled access, secure data platform that enables sharing of and access to reports and data sets from NIAID COVID-19 and other sponsored clinical trials for the basic and clinical research community.",
+          "AccessClinicalData@NIAID is a NIAID cloud-based, secure data platform that enables sharing of and access to data sets from NIAID COVID-19 and other sponsored clinical trials for the basic and clinical research community.",
+          "AccessClinicalData@NIAID can help support your Data Management Plan (DMP) to share clinical research data in compliance with the NIH 2023 Data Management and Sharing Policy.",
+	        "<p style='margin-left: 20px; font-style: italic;'>De-identified human clinical research and trials data can be submitted to accessclinicaldata@NIAID, which is a NIAID cloud-based, controlled access, secure data platform that enables sharing of and access to human clinical research and trials data sets and related metadata for the basic and clinical research community.  There is no cost to share and access data in this NIAID supported data platform.</p><br />",
+          "<p style='margin-left: 20px; font-style: italic;'>If you are interested in making your data available, please <a href='mailto:accessclinicaldatasupport@niaid.nih.gov'>contact us</a> at accessclinicaldatasupport@niaid.nih.gov.</p>",
           "<h2 style=color:#BC3231>New Data</h2>",
            "<div class='border-l-8 border-nct-red ml-1 pl-8 mb-4'><p class='prose sm:prose-base 2xl:prose-lg !mt-0'><strong>Now Available:</strong> ACTIV-1 IM - Immune Modulators for Treating COVID-19, sponsored by U.S. Department of Health and Human Services Biomedical Advanced Research and Development Authority and the National Center for Advancing Translational Sciences, National Institutes of Health</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/NCT04593940'>Click here!</a></div></div><br />",
-          "<b>How to View Available Data</b>",
-          "Go to <a href='https://accessclinicaldata.niaid.nih.gov/study-viewer/clinical_trials'>View Clinical Trials</a>. For each study listed, open the details and select the \"Learn More\" button to review a description of the clinical trial and data dictionary.",
-          "<b>How to Request Data</b>",
+          "<h3>How to View Available Data</h3>",
+          "<p>Click the button below and for each study listed, open the details and select the \"Learn More\" button to review a description of the clinical trial and data dictionary.</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='https://https://accessclinicaldata.niaid.nih.gov/study-viewer/clinical_trials'>View Clinical Trials</a></div></div><br />",
+          "<h3>How to Request Data</h3>",
           "Researchers looking to access NIAID COVID-19 and other sponsored clinical trials data may start the request process by completing the following steps:",
           "1. On the study page of the data set you are interested in, select the \"Login to Request Access\" button to login to the AccessClinicalData@NIAID platform and fill in and submit the Data Access Request (DAR) online form.",
           "2. Your DAR will be reviewed by the NIAID Clinical Trials Data Access Committee. ",
           "3. Upon approval of the DAR, the primary data requestor and their institution will be notified and required to agree to and sign a NIAID Data Use Agreement (DUA) online via DocuSign that outlines the terms of the use of the data.",
           "4. Upon NIAID’s receipt of the NIAID DUA, data requestors will be notified on how to download the approved data.",
           "5. Please note you can review a blank <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/NIAID_DAR.pdf'>DAR</a> and <a href='https://accessclinicaldata.niaid.nih.gov/dashboard/Public/files/NIAIDDUA2023Accessclinicaldata@NIAID.pdf'>DUA</a> prior to viewing and requesting the available data, but the request must be done using a DAR online form found on the data platform, as outlined above.",
-          "<b>About the Platform</b>",
+          "<h3>About the Platform</h3>",
           "By using this platform, the research community can request access to clinical data to generate new knowledge to understand, treat, and prevent infectious diseases such as COVID-19.",
           "Access to clinical data sets coupled with powerful data analytical tools provide innovative opportunities to accelerate the development of new and improved therapeutic interventions and diagnostics and inform new clinical research and trials, prevention strategies and disease surveillance.",
           "This resource provides a foundation with potential to improve the health of people in the United States and around the world."
@@ -47,7 +50,7 @@
           "icon": "query",
           "link": "/study-viewer/clinical_trials",
           "color": "#a2a2a2",
-          "name": "Study Viewer"
+          "name": "View Clinical Trials"
         },
         {
           "icon": "workspace",
@@ -71,7 +74,8 @@
       "text": "Data access to de-identified and anonymous individual patient level data from NIAID sponsored clinical trials will be available to approved users and their institution through a data access request and data use agreement to assure protection of patient privacy and data security.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "accessclinicaldatasupport@niaid.nih.gov",
-      "image": ""
+      "image": "",
+      "hideNavLink": true
     },
     "footerLogos": [{
       "src": "/custom/sponsors/gitops-sponsors/niaid_dark.png",
