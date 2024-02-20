@@ -36,7 +36,7 @@
   "indexd": {
     "dist": [
       {
-        "name": "DataSTAGE",
+        "name": "Biodata Catalyst",
         "host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
         "hints": [
           ".*dg\\.4503.*"
@@ -138,34 +138,10 @@
         "type": "indexd"
       },
       {
-        "name": "Genomeldata",
+        "name": "GenoMEL",
         "host": "https://genomel.bionimbus.org/index/",
         "hints": [
           ".*dg\\.80B6.*"
-        ],
-        "type": "indexd"
-      },
-      {
-        "name": "ibdgcdata",
-        "host": "https://ibdgc.datacommons.io/index/",
-        "hints": [
-          ".*dg\\.EA80.*"
-        ],
-        "type": "indexd"
-      },
-      {
-        "name": "Stageprod",
-        "host": "https://gen3.biodatacatalyst.nhlbi.nih.gov/index/",
-        "hints": [
-          ".*dg\\.4503.*"
-        ],
-        "type": "indexd"
-      },
-      {
-        "name": "occ-edc",
-        "host": "https://portal.occ-data.org/index/",
-        "hints": [
-          ".*dg\\.7C5B.*"
         ],
         "type": "indexd"
       },
@@ -226,7 +202,7 @@
         "type": "indexd"
       },
       {
-        "name": "OADC",
+        "name": "Gen3 Data Hub",
         "host": "https://gen3.datacommons.io/index/",
         "hints": [
           ".*dg\\.OADC.*"
