@@ -17,7 +17,7 @@
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.02",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.02",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:fix_cryptography",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.02",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2024.02",
