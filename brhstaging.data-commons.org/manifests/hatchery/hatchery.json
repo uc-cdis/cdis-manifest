@@ -151,7 +151,7 @@
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-037963b5486a5071f",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-fips",
         "instance-type": "optimal",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9
@@ -206,7 +206,7 @@
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-0f8fe124b6d65015d",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-gpu-ami",
         "instance-type": "g4dn.xlarge",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9
