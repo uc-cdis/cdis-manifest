@@ -357,9 +357,14 @@
           "tabName": "Data",
           "groups": [
             {
+              "header": "Data Files",
               "fields": [
                 {
                   "type": "accessDescriptor"
+                },
+                {
+                  "type": "dataDownloadList",
+                  "sourceField": "__manifest"
                 }
               ]
             },
