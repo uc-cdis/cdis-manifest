@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "0.1",
     "memory-limit": "128Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:vadc-jupyter-vadc-1.0.0",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2024.03",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "va-testing.data-commons.org"
@@ -45,7 +45,7 @@
       "cpu-limit": "0.5",
       "memory-limit": "512Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-vadc:2024-02-26",
+      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/jupyter-vadc:vadc-jupyter-vadc-1.0.0",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va-testing.data-commons.org",
@@ -78,7 +78,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "8192Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
-      "image": "quay.io/cdis/jupyter-vadc:notebook-6.4.8",
+      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/jupyter-vadc:vadc-jupyter-vadc-1.0.0",
       "env": {
         "NAMESPACE": "default",
         "HOSTNAME": "va-testing.data-commons.org",
