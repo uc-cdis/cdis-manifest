@@ -147,7 +147,7 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "143731057154.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
+          "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
@@ -202,7 +202,7 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "143731057154.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
+          "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
