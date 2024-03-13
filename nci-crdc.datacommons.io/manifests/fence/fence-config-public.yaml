@@ -131,6 +131,9 @@ S3_BUCKETS:
   cds-54-phs000178:
     cred: "fence_bot"
     region: "us-east-1"
+  cgci-htmcp-dlbcl-phs000235-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
   dcfprod-data-bucket:
     cred: "fence_bot"
     region: "us-east-1"
@@ -383,6 +386,6 @@ S3_BUCKETS:
   mp2prt-all-phs002005-controlled:
     cred: "fence_bot"
     region: "us-east-1"
-  cgci-htmcp-dlbcl-phs000235-controlled:
+  nci-cbiit-clinical-cmb-prod:
     cred: "fence_bot"
     region: "us-east-1"
