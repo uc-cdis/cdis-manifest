@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "G-ENMRJKCVSY",
-  "argoTemplate": "gwas-template-new-bucket-va-testing",
+  "argoTemplate": "gwas-template-configurable-buckets",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -102,14 +102,27 @@
       "title": "OHDSI Atlas",
       "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
       "applicationUrl": "https://atlas.va-testing.data-commons.org/atlas/",
-      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png",
+      "needsTeamProject": true
     },
-    "GWASUIApp",
-    "GWASResults",
+    {
+      "appId": "GWASUIApp",
+      "title": "Gen3 GWAS",
+      "description": "Use this App to perform high throughput GWAS on Million Veteran Program (MVP) data, using the University of Washington Genesis pipeline",
+      "image": "/src/img/analysis-icons/gwas.svg",
+      "needsTeamProject": true
+    },
+    {
+      "appId": "GWASResults",
+      "title": "GWAS Results",
+      "description": "Use this App to view status & results of submitted workflows",
+      "image": "/src/img/analysis-icons/gwasResults.svg",
+      "needsTeamProject": true
+    },
     {
       "appId": "AtlasDataDictionary",
-      "title": "Atlas Data Dictionary",
-      "description": "Use this App to view a tabluar representation of the Atlas data dictionary",
+      "title": "MVP Data Dictionary",
+      "description": "Use this App to view a tabluar representation of the MVP data dictionary",
       "image": "/src/img/analysis-icons/default-app.png",
       "needsTeamProject": false
     }

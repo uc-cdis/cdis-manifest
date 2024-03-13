@@ -158,6 +158,10 @@
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download Manifest",
+        "variableMetadataFieldName": "data_dictionaries",
+        "enableDownloadVariableMetadata": true,
+        "studyMetadataFieldName": "study_metadata",
+        "enableDownloadStudyMetadata": true,
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
@@ -203,11 +207,11 @@
             "menuText": "Available"
           },
           "unaccessible": {
-            "enabled": false,
+            "enabled": true,
             "menuText": "Not Accessible"
           },
           "pending": {
-            "enabled": true,
+            "enabled": false,
             "menuText": "Pending"
           },
           "notAvailable": {
@@ -353,9 +357,14 @@
           "tabName": "Data",
           "groups": [
             {
+              "header": "Data Files",
               "fields": [
                 {
                   "type": "accessDescriptor"
+                },
+                {
+                  "type": "dataDownloadList",
+                  "sourceField": "__manifest"
                 }
               ]
             },
