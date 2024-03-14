@@ -49,7 +49,8 @@
     "argocd": "true",
     "pdb": "on",
     "waf_enabled": "true",
-    "es7": true
+    "es7": true,
+    "ecr-access-job-role-arn": "arn:aws:iam::590183957759:role/EcrRepoPolicyUpdateRole"
   },
   "metadata": {
     "USE_AGG_MDS": true,
