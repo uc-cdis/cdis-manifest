@@ -103,8 +103,8 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-          - name: file_id
-            src: file_id
+          - name: _file_id
+            src: _file_id
             fn: set
   - name: flu_follow_up
     doc_type: follow_up
