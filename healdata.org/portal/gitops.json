@@ -11,6 +11,12 @@
   "components": {
     "appName": "HEAL Data Platform",
     "metaDescription": "The HEAL Platform shares data from the NIH HEAL Initiative&reg; with the community of researchers, healthcare providers, community leaders, policy makers, and other stakeholders.",
+    "banner": [
+      {
+        "type": "warning",
+        "message": "The HEAL Data Platform currently experiencing technical difficulties with the Study Registration process. Please contact heal-support@datacommons.io for assistance with registering your study."
+      }
+    ],
     "index": {
       "introduction": {
         "heading": "HEAL Data Platform",
