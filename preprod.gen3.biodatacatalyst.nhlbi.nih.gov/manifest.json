@@ -52,7 +52,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:1.0.1",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2024.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -116,7 +116,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:1.0.1",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2024.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -174,200 +174,6 @@
           "name": "peregrine-creds-volume",
           "secret": {
             "secretName": "peregrine-creds"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "ingest-metadata-manifest",
-      "action": "ingest-metadata-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-manifest-ingestion:4.0.1",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "get-dbgap-metadata",
-      "action": "get-dbgap-metadata",
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/get-dbgap-metadata:4.0.1",
-        "pull_policy": "Always",
-        "env": [],
-        "volumeMounts": [
-          {
-            "name": "creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "manifest-indexing",
-      "action": "index-object-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifest-indexing:4.0.1",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "manifest-merging",
-      "action": "merge-manifests",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cdis/manifest-merging:4.0.1",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
-          }
-        }
-      ],
-      "restart_policy": "Never"
-    },
-    {
-      "name": "indexd-manifest",
-      "action": "download-indexd-manifest",
-      "activeDeadlineSeconds": 86400,
-      "serviceAccountName": "jobs-preprod-gen3-biodatacatalyst-nhlbi-nih-gov",
-      "container": {
-        "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/download-indexd-manifest:4.0.1",
-        "pull_policy": "Always",
-        "env": [
-          {
-            "name": "GEN3_HOSTNAME",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "manifest-global",
-                "key": "hostname"
-              }
-            }
-          }
-        ],
-        "volumeMounts": [
-          {
-            "name": "sower-jobs-creds-volume",
-            "readOnly": true,
-            "mountPath": "/creds.json",
-            "subPath": "creds.json"
-          }
-        ],
-        "cpu-limit": "1",
-        "memory-limit": "1Gi"
-      },
-      "volumes": [
-        {
-          "name": "sower-jobs-creds-volume",
-          "secret": {
-            "secretName": "sower-jobs-g3auto"
           }
         }
       ],
