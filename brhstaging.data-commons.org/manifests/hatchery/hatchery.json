@@ -33,6 +33,9 @@
       "root"
     ]
   },
+  "nextflow-global": {
+    "imagebuilder-reader-role-arn": "arn:aws:iam::143731057154:role/nextflow-imagebuilder-reader"
+  },
   "containers": [
     {
       "target-port": 8888,
@@ -147,11 +150,12 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
+          "public.ecr.aws/l5b8a5z6/nextflow-approved/public:*",
           "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-037963b5486a5071f",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-fips",
         "instance-type": "optimal",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9
@@ -202,11 +206,12 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
+          "public.ecr.aws/l5b8a5z6/nextflow-approved/public:*",
           "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-0f8fe124b6d65015d",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-gpu-ami",
         "instance-type": "g4dn.xlarge",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9
