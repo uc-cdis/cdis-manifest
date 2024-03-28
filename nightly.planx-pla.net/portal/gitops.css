@@ -1,1 +1,145 @@
-/* gitops default css */
+:root {
+  --blue: #035C94;
+  --teal: #7ebac0;
+  --navy-blue: #012840;
+  --dark-gray: #25445A;
+}
+
+/* Buttons */
+
+.g3-button--primary,
+.g3-dropdown-button__button--primary,
+.data-dictionary__switch-button--active,
+.popup__title, .button-primary-orange {
+  background-color: var(--blue);
+}
+
+.g3-button--primary:hover,
+.g3-dropdown-button__button--primary:hover,
+.data-dictionary__switch-button:hover,
+.button-primary-orange:hover {
+  background-color: var(--teal)
+}
+
+.g3-button--default:active, .g3-button--default:active svg path {
+  border: 1px solid var(--blue);
+  color: 1px solid var(--blue);
+  fill: 1px solid var(--blue);
+}
+
+/* Nav Bars and Footer */
+
+.top-bar,
+.top-bar__header,
+.top-icon-button.body-typo {
+  background-color: var(--navy-blue);
+}
+
+.top-bar__link {
+  border-right: 2px solid #fff;
+}
+
+.nav-button:hover,
+.button-active,
+.nav-bar__link--home:hover {
+  border-bottom: 3px solid var(--blue);
+}
+
+.nav-bar__logo {
+  padding: 15px 0;
+}
+
+.nav-bar__logo-img {
+  height: 50px;
+}
+
+.footer__version-area {
+  width: 600px;
+}
+
+.footer {
+  background-color: var(--dark-gray);
+}
+
+.footer__nav {
+  background-color: var(--dark-gray);
+}
+
+/* Data Explorer */
+
+.filter-group__tab,
+.g3-filter-group__tab {
+  border-top: 1px solid var(--blue);
+  border-right: 1px solid var(--blue);
+  border-left: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.tier-access-selector__radio-input:checked + .tier-access-selector__customized-radio-input::after {
+  background-color: var(--blue);
+}
+
+.filter-group__tab--selected,
+.g3-filter-group__tab--selected {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.aggregation-card .bucket-item .bucket-count {
+  color: var(--blue);
+}
+
+.aggregation-card input[type='checkbox']:checked {
+  background: var(--teal);
+}
+
+.g3-single-select-filter__checkbox:checked {
+  background: var(--blue);
+}
+
+.sqon-clear {
+  background-color: var(--blue);
+}
+
+.sqon-value {
+  background-color: var(--teal);
+}
+
+.sqon-value-group, .sqon-more, .sqon-less {
+  color: var(--blue);
+}
+
+.input-range__track--active,
+.rc-slider-track,
+.g3-single-select-filter__count .g3-icon--under {
+  background-color: var(--blue);
+}
+
+/* Charts */
+
+tspan.special-number,
+.special-number,
+.form-special-number,
+.g3-single-select-filter__count {
+  color: var(--blue);
+}
+
+.special-number {
+  fill: var(--blue);
+}
+
+.data-explorer__charts {
+  tspan.special-number,
+  .special-number,
+  .form-special-number {
+    color: var(--blue);
+  }
+
+  .special-number {
+    fill: var(--blue);
+  }
+}
+
+.explorer-button-group__dropdown {
+  margin-right: 10px;
+}
