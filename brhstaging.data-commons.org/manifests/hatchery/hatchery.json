@@ -34,6 +34,7 @@
     ]
   },
   "nextflow-global": {
+    "sample-config-public-image": "public.ecr.aws/u5x5h6w3/nextflow-approved/public:gen3-amazonlinux-base-AL2023fix",
     "imagebuilder-reader-role-arn": "arn:aws:iam::143731057154:role/nextflow-imagebuilder-reader"
   },
   "containers": [
@@ -150,7 +151,7 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "public.ecr.aws/l5b8a5z6/nextflow-approved/public:*",
+          "public.ecr.aws/u5x5h6w3/nextflow-approved/public:*",
           "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
@@ -206,7 +207,7 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "public.ecr.aws/l5b8a5z6/nextflow-approved/public:*",
+          "public.ecr.aws/u5x5h6w3/nextflow-approved/public:*",
           "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
