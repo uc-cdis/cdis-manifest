@@ -7,6 +7,8 @@
     "workspace_type": "Trial Workspace",
     "local": true
   },
+  "license-user-maps-dynamodb-table": "gen3-license-user-maps-preprod-heal",
+  "license-user-maps-global-secondary-index": "activeUsersIndex",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
@@ -101,9 +103,18 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
-      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:1.2.0",
+      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:1.3.3",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
+      },
+      "license": {
+        "enabled": true,
+        "license-type": "STATA-HEAL",
+        "max-license-ids": 6,
+        "g3auto-name": "stata-workspace-gen3-license-g3auto",
+        "g3auto-key": "stata_license.txt",
+        "file-path": "stata.lic",
+        "workspace-flavor": "gen3-licensed"
       },
       "args": [
         "--NotebookApp.base_url=/lw-workspace/proxy/",
