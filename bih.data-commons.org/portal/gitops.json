@@ -1,0 +1,653 @@
+{
+  "gaTrackingId": "G-WM3JV9YMW3",
+  "ddEnv": "brhprod",
+  "ddUrl": "ddog-gov.com",
+  "graphql": {
+    "boardCounts": [],
+    "chartCounts": [],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "Biomedical Research Hub",
+    "index": {
+      "introduction": {
+        "heading": "",
+        "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations."
+      },
+      "buttons": [
+        {
+          "name": "Discover Data",
+          "icon": "data-explore",
+          "body": "Discover Data",
+          "link": "/discovery",
+          "label": "Discover Data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "stage-analyze",
+          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "link": "/workspace",
+          "label": "Run analysis"
+        }
+      ],
+      "homepageChartNodes": []
+    },
+    "navigation": {
+      "items": [
+        {
+          "name": "Discovery",
+          "link": "/discovery",
+          "icon": "query",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Workspace",
+          "link": "/workspace",
+          "icon": "workspace",
+          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Example Analysis",
+          "link": "/resource-browser",
+          "icon": "bar-chart",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the Biomedical Research Hub by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Profile",
+          "link": "/identity",
+          "icon": "profile",
+          "color": "#a2a2a2"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://uc-cdis.github.io/BRH-documentation/",
+          "name": "Documentation"
+        },
+        {
+          "link": "brhsupport@datacommons.io",
+          "name": "Email Support"
+        },
+        {
+          "link": "https://uc-cdis.github.io/platform-citation/brh-cite/",
+          "name": "Cite BRH"
+        }
+      ]
+    },
+    "login": {
+      "title": "Biomedical Research Hub",
+      "subTitle": "Discover, Analyze, and Share Data",
+      "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "contact_link": {
+        "href": "brhsupport@datacommons.io"
+      },
+      "image": "stage-icons/stage-gene"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      }
+    ],
+    "footer": {
+      "links": []
+    },
+    "categorical9Colors": [
+      "#c0143c",
+      "#616265",
+      "#59CD90",
+      "#F2DC5D",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#1A535C",
+      "#462255"
+    ],
+    "categorical2Colors": [
+      "#616265",
+      "#c0143c"
+    ]
+  },
+  "requiredCerts": [],
+  "featureFlags": {
+    "explorer": false,
+    "discovery": true,
+    "discoveryUseAggMDS": true,
+    "discoveryUseAggWTS": true,
+    "workspaceRegistration": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true
+  },
+  "discoveryConfig": {
+    "features": {
+      "advSearchFilters": {
+        "enabled": false,
+        "field": "advSearchFilters",
+        "filters": [
+          {
+            "key": "Research Focus Area"
+          },
+          {
+            "key": "Administering IC(s)"
+          },
+          {
+            "key": "Simulated vs. Real Data"
+          },
+          {
+            "key": "Year Grant Awarded"
+          },
+          {
+            "key": "Study Description"
+          }
+        ]
+      },
+      "tagsColumn": {
+        "enabled": false
+      },
+      "tagsInDescription": {
+        "enabled": true
+      },
+      "exportToWorkspace": {
+        "enabled": true,
+        "manifestFieldName": "__manifest",
+        "enableDownloadManifest": true,
+        "downloadManifestButtonText": "Download",
+        "documentationLinks": {
+          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+        }
+      },
+      "pageTitle": {
+        "enabled": false,
+        "text": "Study Discovery"
+      },
+      "search": {
+        "searchBar": {
+          "enabled": true
+        },
+        "tagSearchDropdown": {
+          "enabled": true,
+          "collapsibleButtonText": "Data Commons"
+        }
+      },
+      "authorization": {
+        "enabled": true,
+	"columnTooltip": "Filter by data access. Accessible indicates you are authorized to access. Not accessible indicates you are not authorized to access.",
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Accessible"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": false
+          },
+          "notAvailable": {
+            "enabled": false
+          }
+        }
+      }
+    },
+    "aggregations": [
+      {
+        "name": "Studies",
+        "field": "frontend_uid",
+        "type": "count"
+      },
+      {
+        "name": "Total Subjects",
+        "field": "_subjects_count",
+        "type": "sum"
+      }
+    ],
+    "tagSelector": {
+      "title": "Tags by category"
+    },
+    "studyColumns": [
+      {
+        "name": "Study Name",
+        "field": "short_name",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a",
+        "width": "157px"
+      },
+      {
+        "name": "Full Name",
+        "field": "full_name",
+        "contentType": "string",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a",
+        "width": "400px"
+      },
+      {
+        "name": "Number of Subjects",
+        "field": "_subjects_count",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a",
+        "contentType": "number",
+        "width": "98px"
+      },
+      {
+        "name": "ID Number",
+        "field": "study_id",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a",
+        "width": "152px"
+      },
+      {
+        "name": "Data Commons",
+        "field": "commons",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a",
+        "hrefValueFromField": "commons_url"
+      },
+      {
+        "name": "DATA ACCESS METHOD",
+        "field": "data_access_method",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "API"
+      }
+    ],
+    "studyPreviewField": {
+      "name": "Description",
+      "field": "study_description",
+      "contentType": "string",
+      "includeName": false,
+      "includeIfNotAvailable": true,
+      "valueIfNotAvailable": "No description has been provided for this study."
+    },
+    "studyPageFields": {
+      "showAllAvailableFields": false,
+      "header": {
+        "field": "name"
+      },
+      "fieldsToShow": [
+        {
+          "groupName": "Study Identifiers",
+          "groupWidth": "half",
+          "includeName": false,
+          "fields": [
+            {
+              "name": "Number of Subjects",
+              "field": "_subjects_count",
+              "contentType": "number"
+            },
+            {
+              "name": "Full Name",
+              "field": "full_name",
+              "contentType": "string"
+            },
+            {
+              "name": "Short Name",
+              "field": "short_name",
+              "contentType": "string",
+              "includeName": true,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "N/A"
+            },
+            {
+              "name": "dbGaP Accession Number",
+              "field": "dbgap_accession",
+              "contentType": "string",
+              "includeName": true,
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Project ID",
+              "field": "project_id",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Data Commons",
+              "field": "commons",
+              "contentType": "string",
+              "includeIfNotAvailable": false
+            },
+            {
+              "name": "Tutorial Notebook",
+              "field": "tutorial_notebook",
+              "contentType": "string",
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "NO"
+            }
+          ]
+        },
+        {
+          "groupWidth": "full",
+          "fields": [
+            {
+              "name": "Description",
+              "field": "study_description",
+              "contentType": "paragraphs",
+              "includeName": true,
+              "includeIfNotAvailable": true,
+              "valueIfNotAvailable": "No description has been provided for this study."
+            }
+          ]
+        }
+      ]
+    },
+    "minimalFieldMapping": {
+      "tagsListFieldName": "tags",
+      "authzField": "authz",
+      "uid": "_unique_id"
+    },
+    "tagCategories": [
+      {
+        "name": "Commons",
+        "displayName": "Data Commons",
+        "color": "rgba(129, 211, 248, 1)",
+        "display": true
+      },
+      {
+        "name": "Program",
+        "color": "rgba(129, 211, 248, 1)",
+        "display": false
+      },
+      {
+        "name": "Study Registration",
+        "color": "rgba(236, 128, 141, 1)",
+        "display": false
+      },
+      {
+        "name": "Data Type",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": false
+      },
+      {
+        "name": "primary_site",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": false
+      },
+      {
+        "name": "disease_type",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": false
+      },
+      {
+        "name": "data_type",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": false
+      },
+      {
+        "name": "clinical_study_type",
+        "color": "rgba(112, 182, 3, 1)",
+        "display": false
+      }
+    ],
+    "studies": [
+      {
+        "match": {
+          "short_name": "Methodology and Advanced Analytics Resource Center"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Manifest"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Prescription Drug Abuse Policy System (NIDA)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Cholangiocarcinoma"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "CPTAC CCRCC Discovery Study - Proteome"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/PDC_clustergram.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "study_id": "tutorial-biolincc_framingham"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Amerispeak Brief Stigma Survey (JCOIN 026)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Manifest"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Adaptive COVID-19 Treatment Trial (ACTT-1)"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API, Single File"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/ACTT1_accessclinical_notebook.html"
+          }
+        ]
+      },
+      {
+        "match": {
+          "full_name": "Prostate Adenocarcinoma"
+        },
+        "fieldsToValues": [
+          {
+            "data_access_method": "API"
+          },
+          {
+            "tutorial_notebook": "YES"
+          },
+          {
+            "tutorial_notebook_link": "/dashboard/Public/notebooks/TCGA_PRAD_Analysis.html"
+          }
+        ]
+      }
+    ]
+  },
+  "resourceBrowser": {
+    "title": "Jupyter Notebook Tutorials",
+    "public": true,
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks are also available in the 'Tutorials' Gen3 Workspace Image.",
+    "resources": [
+      {
+        "title": "How to access data in Biomedical Research Hub",
+        "description": "In this Jupyter notebook, we will demonstrate to a new user the different ways of accessing data in the Biomedical Research Hub workspace using the Gen3 SDK and GraphQL",
+        "imageUrl": "/dashboard/Public/notebooks/How_to_access_data.png",
+        "link": "/dashboard/Public/notebooks/How_to_access_data.html"
+      },
+      {
+        "title": "Multi-Container Nextflow Tutorial",
+        "description": "In this notebook, we will set up and explain each file in a Nextflow workflow which uses Python scripts. Our workflow consists of two Python scripts that are each executed in a different Conda environment.",
+        "imageUrl": "/dashboard/Public/notebooks/nextflow_logo.png",
+        "link": "/dashboard/Public/notebooks/multi_container_nextflow.html"
+      },
+      {
+        "title": "Nextflow Proteome Data Commons (PDC) Clustergram",
+        "description": "In this notebook, we demonstrate how to retrieve, process, and visualize protein relative expression data from the PDC API with Nextflow. We illustrate use of Nextflow features such as channels, parameters, and environment and configuration files",
+        "imageUrl":  "/dashboard/Public/notebooks/nextflow_logo.png",
+        "link": "/dashboard/Public/notebooks/PDC_clustergram_nextflow.html"
+      },
+      {
+        "title": "JCOIN MOUD Accessibility Analysis",
+        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States.",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.png",
+        "link": "/dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html"
+      },
+      {
+        "title": "Graphing the Pandemic Era: Unraveling Opioid Treatment Policy Shifts Amidst COVID-19",
+        "description": "In this notebook we use data from NIDA-PDAPS, hosted on the JCOIN Data Commons, to visualize three pandemic-era changes in opioid treatment policy at state levels across the US.",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.png",
+        "link": "/dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes_v2.html"
+      },
+      {
+        "title": "Gene Expression Analysis of Project TCGA-CHOL",
+        "description": "In this notebook, we demonstrated how to retrieve RNA expression data of project TCGA-CHOL from Genomic Data Commons (GDC) data portal, and perform data analysis and visualization using a pipeline provided by an R package GDCRNATools.",
+        "imageUrl": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.png",
+        "link": "/dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html"
+      },
+      {
+        "title": "Proteome Data Commons (PDC) Clustergram",
+        "description": "This notebook attempts to demonstrate the use the PDC API to retrieve the associated clinical metadata for all samples, format the data for analysis using pandas and cluster and visualize the data using the Seaborn clustermap package.",
+        "imageUrl": "/dashboard/Public/notebooks/PDC_clustergram.png",
+        "link": "/dashboard/Public/notebooks/PDC_clustergram.html"
+      },
+      {
+        "title": "MIDRC CT Scan",
+        "description": "In this notebook we demonstrate how to pull in MIDRC CT scan data, how to view the CT scan images, how to convert the image file format, and how to extract clinical data and file metadata from the DICOM file headers.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.html"
+      },
+      {
+        "title": "Data Exploration using Python of Framingham Heart Study Teaching Dataset",
+        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
+        "imageUrl": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png",
+        "link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
+      },
+      {
+        "title": "Data Exploration using R of Framingham Heart Study Teaching Dataset",
+        "description": "In this tutorial, using R code, we will demonstrate how to pull the object file of the Framingham teaching dataset from the BioData Catalyst data commons into a BRH workspace and perform data exploration and visualization using R packages.",
+        "link": "/dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.html",
+        "imageUrl": "/dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.png"
+      },
+      {
+        "title": "Data Exploration of CAMP Study Teaching Dataset",
+        "description": "In this tutorial, we demonstrate how to pull the object file of CAMP study from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
+        "imageUrl": "/dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.png",
+        "link": "/dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.html"
+      },
+      {
+        "title": "Canine Data Commons FASTQ Reader",
+        "description": "In this tutorial notebook, we demonstrate how to use Gen3 SDK and API to explore and retrieve data from Canine Data Commons. This tutorial also includes a simple example to explore sequence information from a FASTQ file.",
+        "imageUrl": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.png",
+        "link": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.html"
+      },
+      {
+        "title": "MIDRC Open-R1 Clinical Data Analysis",
+        "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
+        "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
+        "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.html"
+      },
+      {
+        "title": "JCOIN Tracking Opioid Stigma",
+        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
+        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
+      },
+      {
+        "title": "Identification of Potential Drug Targets of Inflammatory Bowel Disease",
+        "description": "This notebook demonstrates an approach to query data in EpiGraphDB to prioritize potential alternative drug targets in the same protein-protein interaction network for Inflammatory Bowel Disease",
+        "link": "/dashboard/Public/notebooks/IBD_notebook.html",
+        "imageUrl": "/dashboard/Public/notebooks/IBD_notebook.png"
+      },
+      {
+        "title": "Predictive Insights into Heart Health: Investigating the Framingham Heart Study Dataset",
+        "description": "In this Jupyter notebook, we'll delve into the Framingham dataset, analyzing its contents, performing exploratory data analysis, and leveraging linear and logistic regression.",
+        "link": "/dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.html",
+        "imageUrl": "/dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.png"
+      },
+      {
+        "title": "OADC Unsupervised Data Exploration on Cancer Cell Line Encyclopedia (CCLE)",
+        "description": "Principal component analysis (PCA) and t-distributed stochastic neighbor embedding (t-SNE) has become valuable tools for unsupervised data exploration. This notebook explores the application of unsupervised learning on Cancer Cell Line Encyclopedia (CCLE) gene expression profile. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png"
+      }
+    ]
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true,
+  "stridesPortalURL": "https://brh-portal.org",
+  "registrationConfigs": {
+    "features": {
+      "workspaceRegistrationConfig" : {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The BRH workspace provides a standardized computational environment for accessing and analyzing data from multiple data commons. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect" : {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
+      }
+    },
+    "kayakoConfig": {
+      "kayakoDepartmentId": 22
+    }
+  }
+}
