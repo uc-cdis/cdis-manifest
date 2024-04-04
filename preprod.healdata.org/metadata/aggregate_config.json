@@ -194,7 +194,7 @@
         },
         "ICPSR": {
             "mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
-            "commons_url": "https://www.icpsr.umich.edu",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "icpsr",
             "keep_original_fields": false,
             "filters": {
@@ -361,7 +361,7 @@
         },
         "ClinicalTrials.gov": {
             "mds_url": "https://clinicaltrials.gov/api/query/full_studies",
-            "commons_url": "http://clinicaltrials.gov",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "clinicaltrials",
             "filters": {
                 "term": "OUD",
@@ -483,7 +483,7 @@
         },
         "PDAPS": {
             "mds_url": "https://api.monqcle.com/",
-            "commons_url": "https://pdaps.org",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "pdaps",
             "filters": {
                 "datasets": [
