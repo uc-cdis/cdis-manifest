@@ -33,6 +33,10 @@
       "root"
     ]
   },
+  "nextflow-global": {
+    "sample-config-public-image": "public.ecr.aws/u5x5h6w3/nextflow-approved/public:gen3-amazonlinux-base-AL2023fix",
+    "imagebuilder-reader-role-arn": "arn:aws:iam::143731057154:role/nextflow-imagebuilder-reader"
+  },
   "containers": [
     {
       "target-port": 8888,
@@ -133,13 +137,13 @@
         "version": 0.1,
         "or": [
           {
-            "resource_paths": [
-              "/workspace/jupyter-nextflow"
+            "pay_models": [
+              "Direct Pay"
             ]
           },
           {
-            "pay_models": [
-              "Direct Pay"
+            "resource_paths": [
+              "/workspace/jupyter-nextflow"
             ]
           }
         ]
@@ -147,11 +151,12 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "143731057154.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
+          "public.ecr.aws/u5x5h6w3/nextflow-approved/public:*",
+          "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-037963b5486a5071f",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-fips",
         "instance-type": "optimal",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9
@@ -188,13 +193,13 @@
         "version": 0.1,
         "or": [
           {
-            "resource_paths": [
-              "/workspace/jupyter-nextflow"
+            "pay_models": [
+              "Direct Pay"
             ]
           },
           {
-            "pay_models": [
-              "Direct Pay"
+            "resource_paths": [
+              "/workspace/jupyter-nextflow"
             ]
           }
         ]
@@ -202,11 +207,12 @@
       "nextflow": {
         "enabled": true,
         "job-image-whitelist": [
-          "143731057154.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
+          "public.ecr.aws/u5x5h6w3/nextflow-approved/public:*",
+          "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
         "compute-environment-type": "SPOT",
-        "instance-ami": "ami-0f8fe124b6d65015d",
+        "instance-ami-builder-arn": "arn:aws:imagebuilder:us-east-1:143731057154:image-pipeline/nextflow-gpu-ami",
         "instance-type": "g4dn.xlarge",
         "instance-min-vcpus": 0,
         "instance-max-vcpus": 9

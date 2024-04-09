@@ -118,6 +118,8 @@
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
+    "discoveryUseAggWTS": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
     "studyRegistration": true,
     "workspaceRegistration": true
   },
@@ -158,6 +160,10 @@
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download Manifest",
+        "variableMetadataFieldName": "data_dictionaries",
+        "enableDownloadVariableMetadata": true,
+        "studyMetadataFieldName": "study_metadata",
+        "enableDownloadStudyMetadata": true,
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
@@ -264,6 +270,7 @@
     },
     "detailView": {
       "headerField": "study_metadata.minimal_info.study_name",
+      "subHeaderField": "_hdp_uid",
       "tabs": [
         {
           "tabName": "Summary",
@@ -353,9 +360,14 @@
           "tabName": "Data",
           "groups": [
             {
+              "header": "Data Files",
               "fields": [
                 {
                   "type": "accessDescriptor"
+                },
+                {
+                  "type": "dataDownloadList",
+                  "sourceField": "__manifest"
                 }
               ]
             },
