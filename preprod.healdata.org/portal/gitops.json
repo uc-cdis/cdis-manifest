@@ -118,6 +118,8 @@
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
+    "discoveryUseAggWTS": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
     "studyRegistration": true,
     "workspaceRegistration": true
   },
@@ -268,6 +270,7 @@
     },
     "detailView": {
       "headerField": "study_metadata.minimal_info.study_name",
+      "subHeaderField": "_hdp_uid",
       "tabs": [
         {
           "tabName": "Summary",

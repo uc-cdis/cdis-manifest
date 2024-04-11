@@ -91,20 +91,6 @@
         }
     },
     "adapter_commons": {
-        "SAMHDA": {
-            "mds_url": "https://preprod.healdata.org/",
-            "commons_url": "preprod.healdata.org",
-            "adapter": "gen3",
-            "keep_original_fields": true,
-            "config": {
-                "filters": "gen3_discovery.data_resource=SAMHDA"
-            },
-            "field_mappings": {
-                "manifest": "path:__manifest",
-                "_hdp_uid": "path:project_number",
-                "commons_url": "https://preprod.healdata.org"
-            }
-        },
         "HEAL": {
             "mds_url": "https://preprod.healdata.org",
             "commons_url": "preprod.healdata.org",
@@ -194,7 +180,7 @@
         },
         "ICPSR": {
             "mds_url": "https://www.icpsr.umich.edu/icpsrweb/neutral/oai/studies",
-            "commons_url": "https://www.icpsr.umich.edu",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "icpsr",
             "keep_original_fields": false,
             "filters": {
@@ -361,7 +347,7 @@
         },
         "ClinicalTrials.gov": {
             "mds_url": "https://clinicaltrials.gov/api/query/full_studies",
-            "commons_url": "http://clinicaltrials.gov",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "clinicaltrials",
             "filters": {
                 "term": "OUD",
@@ -483,7 +469,7 @@
         },
         "PDAPS": {
             "mds_url": "https://api.monqcle.com/",
-            "commons_url": "https://pdaps.org",
+            "commons_url": "externaldata.healdata.org",
             "adapter": "pdaps",
             "filters": {
                 "datasets": [
