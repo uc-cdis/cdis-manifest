@@ -4,7 +4,7 @@ metadata:
   name: default
 spec:
   amiSelector:
-    aws::ids: ami-054dd16ce00e26c34
+    aws::ids: ami-0d3eabf74e1e2258b
   subnetSelector:
     karpenter.sh/discovery: VPC_NAME
   securityGroupSelector:
@@ -67,7 +67,7 @@ metadata:
   name: jupyter
 spec:
   amiSelector:
-    aws::ids: ami-054dd16ce00e26c34
+    aws::ids: ami-0d3eabf74e1e2258b
   subnetSelector:
     karpenter.sh/discovery: VPC_NAME
   securityGroupSelector:
