@@ -1,4 +1,7 @@
 S3_BUCKETS:
+  cds-54-phs000178:
+    cred: "fence_bot"
+    region: "us-east-1"
   cds-207-phs001787:
     cred: "fence_bot"
     region: "us-east-1"
@@ -33,6 +36,9 @@ S3_BUCKETS:
     cred: "fence_bot"
     region: "us-east-1"
   cds-243-phs002371:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cds-246-phs002517-imagingfiles-p30-fy20:
     cred: "fence_bot"
     region: "us-east-1"
   cds-246-phs002517-sequencefiles-p30-fy20:
@@ -98,6 +104,12 @@ S3_BUCKETS:
   cds-260-phs002790-sequencefiles-ccdi-ctsmc:
     cred: "fence_bot"
     region: "us-east-1"
+  cds-262-phs002431-sequencefiles-p30-fy20:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cds-266-phs002677-p30-fy20:
+    cred: "fence_bot"
+    region: "us-east-1"
   cds-290-htan-x6gj-xr09:
     cred: "fence_bot"
     region: "us-east-1"
@@ -128,9 +140,10 @@ S3_BUCKETS:
   cds-450-phs003519:
     cred: "fence_bot"
     region: "us-east-1"
-  cds-54-phs000178:
+  cds-474-phs003164-pivot-ccia:
     cred: "fence_bot"
     region: "us-east-1"
+
   cgci-htmcp-dlbcl-phs000235-controlled:
     cred: "fence_bot"
     region: "us-east-1"
@@ -262,7 +275,7 @@ S3_BUCKETS:
     region: "us-east-1"
   gdc-match-z1a-phs001973-controlled:
     cred: "fence_bot"
-    region: "us-east-1"                   
+    region: "us-east-1"
   gdc-match-z1d-phs001859-2-open:
     cred: "fence_bot"
     region: "us-east-1"
