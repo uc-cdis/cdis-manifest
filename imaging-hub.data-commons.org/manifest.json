@@ -15,6 +15,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2.1.2",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.02",
+    "guppy": "quay.io/cdis/guppy:feat_skip_disabled_fields",
     "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.2.0",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.02",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.02",
@@ -23,6 +24,7 @@
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.02",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
+    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.02"
   },
   "arborist": {
@@ -33,8 +35,8 @@
   },
   "global": {
     "environment": "bihprod",
-    "hostname": "bih.data-commons.org",
-    "revproxy_arn": "arn:aws:acm:us-east-1:533267425233:certificate/dcb6f91b-6e4c-4458-a9d7-3750ba92b754",
+    "hostname": "imaging-hub.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:533267425233:certificate/ee917704-e7c3-4a25-8317-ef1e9e250747",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
     "dispatcher_job_num": "10",
     "portal_app": "gitops",
@@ -42,16 +44,26 @@
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
     "useryaml_s3path": "s3://cdis-gen3-users/brh/user.yaml",
-    "tier_access_level": "regular",
-    "tier_access_limit": 50,
+    "tier_access_level": "libre",
+    "tier_access_limit": 1000,
     "public_datasets": true,
     "netpolicy": "on",
     "argocd": "true",
     "waf_enabled": "true",
     "pdb": "on",
     "karpenter": "true",
+    "frontend_root": "gen3ff",
     "es7": true,
     "ecr-access-job-role-arn": "arn:aws:iam::654654631253:role/EcrRepoPolicyUpdateRole"
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "default-commons-index",
+        "type": "metadata"
+      }
+    ],
+   "config_index": "default-commons-config-index"
   },
   "metadata": {
     "USE_AGG_MDS": true,
