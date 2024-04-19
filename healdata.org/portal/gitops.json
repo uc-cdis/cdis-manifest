@@ -122,7 +122,9 @@
     "discovery": true,
     "discoveryUseAggMDS": true,
     "studyRegistration": true,
-    "workspaceRegistration": true
+    "workspaceRegistration": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
+    "discoveryUseAggWTS": true
   },
   "discoveryConfig": {
     "features": {
