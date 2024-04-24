@@ -67,7 +67,7 @@ metadata:
   name: jupyter
 spec:
   amiSelector:
-    aws::ids: ami-0d3eabf74e1e2258b
+    aws::ids: ami-0d3eabf74e1e2258b 
   subnetSelector:
     karpenter.sh/discovery: VPC_NAME
   securityGroupSelector:
