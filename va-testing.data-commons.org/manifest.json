@@ -7,11 +7,11 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:1.14.4",
+    "ambassador": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ambassador:1.14.4",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2024.02",
-    "argo-wrapper": "quay.io/cdis/argo-wrapper:2.0.2",
+    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:2.0.2",
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2024.02",
-    "cohort-middleware": "quay.io/cdis/cohort-middleware:0.3.7",
+    "cohort-middleware": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/cohort-middleware:0.3.7",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.02",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.02",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
@@ -22,7 +22,7 @@
     "ohdsi-atlas": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohdsi-atlas:VA-pre-2024.04",
     "ohdsi-webapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ohdsi-webapi:VA-pre-2024.02.27",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.02",
-    "portal": "quay.io/cdis/data-portal:va_202404",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:va_202404",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.02",
