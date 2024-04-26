@@ -63,7 +63,6 @@ mappings:
           - name: medication_code_system
           - name: medication_manufacturer
           - name: medication_name
-          - name: medication_status
           - name: medication_type
       - name: conditions
         path: conditions
@@ -94,7 +93,6 @@ mappings:
           - name: loinc_method
           - name: loinc_system
           - name: study_description
-          - name: study_location
           - name: study_modality
           - name: study_year
           - name: study_uid
@@ -159,7 +157,6 @@ mappings:
       - name: loinc_method
       - name: loinc_system
       - name: study_description
-      - name: study_location
       - name: study_modality
       - name: study_year
       - name: study_year_shifted
@@ -331,9 +328,6 @@ mappings:
             fn: set
           - name: study_modality
             src: study_modality
-            fn: set
-          - name: study_location
-            src: study_location
             fn: set
           - name: study_year
             src: study_year
