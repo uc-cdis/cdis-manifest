@@ -35,6 +35,11 @@ mappings:
       - name: case_annotations
         path: annotations
         props:
+          - name: annotation_method
+          - name: annotator_id
+      - name: imaging_study_annotations
+        path: imaging_studies.annotations
+        props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
           - name: midrc_mRALE_score
@@ -58,7 +63,6 @@ mappings:
           - name: medication_code_system
           - name: medication_manufacturer
           - name: medication_name
-          - name: medication_status
           - name: medication_type
       - name: conditions
         path: conditions
@@ -89,7 +93,6 @@ mappings:
           - name: loinc_method
           - name: loinc_system
           - name: study_description
-          - name: study_location
           - name: study_modality
           - name: study_year
           - name: study_uid
@@ -154,7 +157,6 @@ mappings:
       - name: loinc_method
       - name: loinc_system
       - name: study_description
-      - name: study_location
       - name: study_modality
       - name: study_year
       - name: study_year_shifted
@@ -199,6 +201,15 @@ mappings:
             fn: set
           - name: data_category
             src: data_category
+            fn: set
+          - name: data_file_source_node
+            src: source_node
+            fn: set
+          - name: data_file_annotation_name
+            src: annotation_name
+            fn: set
+          - name: data_file_annotation_method
+            src: annotation_method
             fn: set
   - name: validate_data_file
     doc_type: data_file
@@ -277,6 +288,9 @@ mappings:
           - name: covid19_positive
             src: covid19_positive
             fn: set
+          - name: ethnicity
+            src: ethnicity
+            fn: set
           - name: index_event
             src: index_event
             fn: set
@@ -314,9 +328,6 @@ mappings:
             fn: set
           - name: study_modality
             src: study_modality
-            fn: set
-          - name: study_location
-            src: study_location
             fn: set
           - name: study_year
             src: study_year
