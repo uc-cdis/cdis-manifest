@@ -34,7 +34,7 @@
     ]
   },
   "nextflow-global": {
-    "sample-config-public-image": "public.ecr.aws/u5x5h6w3/nextflow-approved/public:gen3-amazonlinux-base-AL2023fix",
+    "sample-config-public-image": "public.ecr.aws/u5x5h6w3/nextflow-approved/public:amazonlinux-base",
     "imagebuilder-reader-role-arn": "arn:aws:iam::143731057154:role/nextflow-imagebuilder-reader"
   },
   "containers": [
@@ -111,7 +111,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "10Gi",
       "name": "(Beta) Nextflow with CPU instances",
-      "image": "quay.io/cdis/jupyter-notebook:nextflow-1.3.1",
+      "image": "quay.io/cdis/jupyter-notebook:nextflow-1.3.4",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
@@ -167,7 +167,7 @@
       "cpu-limit": "4.0",
       "memory-limit": "10Gi",
       "name": "(Beta) Nextflow with GPU instances",
-      "image": "quay.io/cdis/jupyter-notebook:nextflow-1.3.1",
+      "image": "quay.io/cdis/jupyter-notebook:nextflow-1.3.4",
       "env": {
         "FRAME_ANCESTORS": "https://brh.data-commons.org"
       },
