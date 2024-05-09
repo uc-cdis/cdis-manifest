@@ -223,7 +223,7 @@ mappings:
             fn: set
           - name: data_file_image_data_modified
             src: image_data_modified
-            src: set
+            fn: set
   - name: midrcstaging_data_file
     doc_type: data_file
     type: collector
