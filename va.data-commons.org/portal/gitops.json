@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "G-MNK00L5EG7",
-  "argoTemplate": "gwas-template-fix-timeout",
+  "argoTemplate": "gwas-template-deadline",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -9,6 +9,12 @@
   },
   "components": {
     "appName": "VA Data Commons",
+    "banner": [
+      {
+        "type": "warning",
+        "message": "AccessVA login functionality is currently tested and will be available starting May 24th"
+      }
+    ],
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
