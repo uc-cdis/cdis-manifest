@@ -30,7 +30,7 @@
       "cpu-limit": "2.0",
       "memory-limit": "2048Mi",
       "name": "R Studio",
-      "image": "quay.io/cdis/rstudio:4.2.1",
+      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/vadc-rstudio:vadc-rstudio-1.0.0",
       "env": {
         "DISABLE_AUTH": "true"
       },
