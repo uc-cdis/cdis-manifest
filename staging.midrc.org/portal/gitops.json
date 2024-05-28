@@ -383,8 +383,8 @@
               "imaging_studies.loinc_system",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
-              "imaging_studies.days_to_study"
-              "imaging_studies.image_data_modified"
+              "imaging_studies.days_to_study",
+              "imaging_studies.image_data_modified",
               "imaging_studies.data_file_image_data_modified"
             ]
           },
@@ -1206,9 +1206,9 @@
               "source_node",
               "data_format",
               "data_category",
-              "data_type"
-              "image_data_modified"
-              "image_data_modification_name"
+              "data_type",
+              "image_data_modified",
+              "image_data_modification_name",
               "image_data_modification_method"
             ]
           },
