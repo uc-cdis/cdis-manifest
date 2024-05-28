@@ -1,5 +1,5 @@
 {
-  "user-namespace": "jupyter-pods-va-testing",
+  "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "sidecar": {
@@ -27,10 +27,10 @@
   "containers": [
     {
       "target-port": 8787,
-      "cpu-limit": "0.5",
-      "memory-limit": "512Mi",
+      "cpu-limit": "2.0",
+      "memory-limit": "2048Mi",
       "name": "R Studio",
-      "image": "quay.io/cdis/rstudio:4.2.1",
+      "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/vadc-rstudio:vadc-rstudio-1.0.0",
       "env": {
         "DISABLE_AUTH": "true"
       },
@@ -42,8 +42,8 @@
     },
     {
       "target-port": 8888,
-      "cpu-limit": "0.5",
-      "memory-limit": "512Mi",
+      "cpu-limit": "2.0",
+      "memory-limit": "2048Mi",
       "name": "Bioinfo - Python/R (Lab Edition)",
       "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/jupyter-vadc:vadc-jupyter-vadc-1.0.0",
       "env": {

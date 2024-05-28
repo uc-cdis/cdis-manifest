@@ -4,8 +4,10 @@
   "user-volume-size": "10Gi",
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
   "default-pay-model": {
-    "workspace_type": "Trial Workspace",
-    "local": true
+    "bmh_workspace_id": "blanket_billing_eks",
+    "region": "us-east-1",
+    "account_id": "252835817747",
+    "workspace_type": "healworkspaces"
   },
   "license-user-maps-dynamodb-table": "gen3-license-user-maps-preprod-heal",
   "license-user-maps-global-secondary-index": "activeUsersIndex",
@@ -110,7 +112,7 @@
       "license": {
         "enabled": true,
         "license-type": "STATA-HEAL",
-        "max-license-ids": 6,
+        "max-license-ids": 5,
         "g3auto-name": "stata-workspace-gen3-license-g3auto",
         "g3auto-key": "stata_license.txt",
         "file-path": "stata.lic",

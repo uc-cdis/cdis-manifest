@@ -13,7 +13,7 @@
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.05",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.05",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2.1.3",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:feat_nextflow-kms",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.05",
     "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.2.0",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.05",
@@ -23,6 +23,8 @@
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.05",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.05",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.05",
+    "gen3-discovery-ai": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-discovery-ai:1.0.0",
+    "frontend-framework": "quay.io/cdis/brh-data-commons:main",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.05"
   },
   "arborist": {

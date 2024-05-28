@@ -9,12 +9,6 @@
   },
   "components": {
     "appName": "VA Data Commons",
-    "banner": [
-      {
-        "type": "warning",
-        "message": "AccessVA login functionality is currently tested and will be available starting May 24th"
-      }
-    ],
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
@@ -49,7 +43,7 @@
     "topBar": {
       "items": [
         {
-          "link": "https://va.data-commons.org/dashboard/Public/documentation/index.html",
+          "link": "https://uc-cdis.github.io/vadc-mkdocs/",
           "name": "Help and Guidance"
         },
         {
