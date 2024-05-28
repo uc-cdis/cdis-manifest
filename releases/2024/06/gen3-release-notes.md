@@ -1,4 +1,10 @@
 # Core Gen3 Release 2024.06 (Bayldonite)
+## Release Highlights
+We have enhanced the Workspace Token Service (WTS) to enable the linking of non-Gen3 repositories into a Gen3 workspace. To use this feature, WTS must be configured with a client and connection information for an (OIDC compliant) external repository. If a user with access to that repository links their account, WTS will securely manage access and refresh tokens for the user according to the rules of the external repository. The user can then easily pull data from the repository into their Gen3 workspace. 
+
+Details about setting up WTS can be found in the [README](https://github.com/uc-cdis/workspace-token-service/blob/master/README.md).
+
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
