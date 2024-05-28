@@ -224,7 +224,7 @@ S3_BUCKETS:
     cred: 'gen3strides'
     region: 'us-east-1'
   'kf-strides-controlled-vwb-prd':
-    cred: 'gen3prod'
+    cred: 'gen3strides'
     region: 'us-east-1'
 
 # `DATA_UPLOAD_BUCKET` specifies an S3 bucket to which data files are uploaded,
