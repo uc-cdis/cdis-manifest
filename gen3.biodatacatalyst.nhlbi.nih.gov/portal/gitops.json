@@ -31,7 +31,7 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "NHLBI BioData Catalyst®",
+    "appName": "NHLBI BioData Catalyst\u00ae",
     "index": {
       "introduction": {
         "heading": "",
@@ -274,7 +274,7 @@
       {
         "enabled": true,
         "type": "export-pfb-to-url",
-        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to CGC",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -282,7 +282,7 @@
       {
         "enabled": true,
         "type": "export-pfb-to-url",
-        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to CAVATICA",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -290,7 +290,7 @@
       {
         "enabled": true,
         "type": "export-pfb-to-url",
-        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to BDC (Seven Bridges)",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -559,7 +559,7 @@
       {
         "enabled": true,
         "type": "export-file-pfb-to-url",
-        "targetURLTemplate": "https://cgc.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://cgc-staging.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to CGC",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -567,7 +567,7 @@
       {
         "enabled": true,
         "type": "export-file-pfb-to-url",
-        "targetURLTemplate": "https://cavatica.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://cavatica-staging-vayu.sbgenomics.com/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to CAVATICA",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -575,7 +575,7 @@
       {
         "enabled": true,
         "type": "export-file-pfb-to-url",
-        "targetURLTemplate": "https://platform.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
+        "targetURLTemplate": "https://f4c-staging-vayu.sb.biodatacatalyst.nhlbi.nih.gov/import/pfb?URL={{PRESIGNED_URL}}&source=bdc",
         "title": "Export to BDC (Seven Bridges)",
         "rightIcon": "external-link",
         "dropdownId": "sevenBridges"
@@ -625,7 +625,28 @@
       },
       "search": {
         "searchBar": {
-          "enabled": true
+          "enabled": true,
+          "searchableTextFields": [
+            "name",
+            "full_name",
+            "_subjects_count",
+            "study_id",
+            "released",
+            "study_description",
+            "doi_titles",
+            "doi_version_information",
+            "doi_citation",
+            "doi_creators",
+            "doi_publisher",
+            "doi_identifier",
+            "doi_alternateIdentifiers",
+            "doi_contributors",
+            "doi_descriptions",
+            "doi_publication_year",
+            "doi_resolvable_link",
+            "doi_fundingReferences",
+            "doi_relatedIdentifiers"
+          ]
         },
         "tagSearchDropdown": {
           "enabled": true,
@@ -760,6 +781,133 @@
     "detailView": {
       "headerField": "project_id",
       "tabs": [
+        {
+          "tabName": "DOI",
+          "groups": [
+            {
+              "header": "Dataset Information",
+              "fields": [
+                {
+                  "type": "block",
+                  "label": "",
+                  "sourceField": "doi_disclaimer",
+                  "default": ""
+                },
+                {
+                  "type": "text",
+                  "label": "Title:",
+                  "sourceField": "doi_titles",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "DOI:",
+                  "sourceField": "doi_resolvable_link",
+                  "default": "None"
+                },
+                {
+                  "type": "text",
+                  "label": "Data available:",
+                  "sourceField": "doi_is_available",
+                  "default": "None"
+                },
+                {
+                  "type": "text",
+                  "label": "Creators:",
+                  "sourceField": "doi_creators",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Citation:",
+                  "sourceField": "doi_citation",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "Contact:",
+                  "sourceField": "doi_contact",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "How to Access the Data",
+              "fields": [
+                {
+                  "type": "block",
+                  "label": "How to access the data:",
+                  "sourceField": "doi_access_information",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "link",
+                  "label": "Data and access information:",
+                  "sourceField": "doi_access_information_link",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Additional Information",
+              "fields": [
+                {
+                  "type": "text",
+                  "label": "Publisher:",
+                  "sourceField": "doi_publisher",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Funded by:",
+                  "sourceField": "doi_fundingReferences",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Publication Year:",
+                  "sourceField": "doi_publication_year",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Resource Type:",
+                  "sourceField": "doi_resource_type",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Version:",
+                  "sourceField": "doi_version_information",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Contributors:",
+                  "sourceField": "doi_contributors",
+                  "default": "Not specified"
+                },
+                {
+                  "type": "text",
+                  "label": "Related Identifiers:",
+                  "sourceField": "doi_relatedIdentifiers",
+                  "default": "Not specified"
+                }
+              ]
+            },
+            {
+              "header": "Description",
+              "fields": [
+                {
+                  "type": "block",
+                  "label": "Description:",
+                  "sourceField": "doi_descriptions",
+                  "default": "Not specified"
+                }
+              ]
+            }
+          ]
+        },
         {
           "tabName": "Study",
           "groups": [
@@ -1041,6 +1189,5 @@
     "subjectThreshold": 120000,
     "title": "Warning: Data Transfer May Fail in Terra",
     "message": "Warning: Your selected cohort contains more subjects than are currently supported for import by Terra. It is recommended that you slice your data into segments of no more than 120,000 subjects and then export each segment separately. Would you like to continue anyway?"
-  },
-  "ddUrl": "ddog-gov.com"
+  }
 }
