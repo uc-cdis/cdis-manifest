@@ -152,7 +152,6 @@
         "enabled": true,
         "job-image-whitelist": [
           "public.ecr.aws/u5x5h6w3/nextflow-approved/public:*",
-          "public.ecr.aws/g3j5p1p3/nextflow-approved-testing:*",
           "590183957759.dkr.ecr.us-east-1.amazonaws.com/nextflow-approved/{{username}}:*"
         ],
         "s3-bucket-whitelist": [],
