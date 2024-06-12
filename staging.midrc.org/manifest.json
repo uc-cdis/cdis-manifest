@@ -246,6 +246,10 @@
       "max": 10,
       "targetCpu": 40
     },
+    "dicom-server": {
+      "strategy": "pin",
+      "num": 1
+    },
     "orthanc": {
       "strategy": "pin",
       "num": 1
