@@ -245,6 +245,10 @@
       "min": 1,
       "max": 10,
       "targetCpu": 40
+    },
+    "orthanc": {
+      "strategy": "pin",
+      "num": 1
     }
   }
 }
