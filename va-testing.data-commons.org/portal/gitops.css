@@ -15,13 +15,20 @@
   justify-content: center;
 }
 
+.login-page .login-page__central-content > div {
+  flex-basis: 100%;
+}
+
+.login-page .login-page__central-content > div.login-page__entries {
+  flex-basis: auto;
+}
+
 .login-page .login-page__title {
   display: block;
   background-image: url(/custom/sponsors/gitops-sponsors/login-logo.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  width: 100%;
   height: 59px;
   overflow: hidden;
   text-indent: -9999px;
