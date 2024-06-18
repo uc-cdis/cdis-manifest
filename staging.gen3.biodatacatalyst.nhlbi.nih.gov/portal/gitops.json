@@ -655,6 +655,12 @@
         "searchBar": {
           "enabled": true,
           "searchableTextFields": [
+            "name",
+            "full_name",
+            "_subjects_count",
+            "study_id",
+            "released",
+            "study_description",
             "doi_titles",
             "doi_version_information",
             "doi_citation",

@@ -19,16 +19,16 @@
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:0.5.0",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.04",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.04",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:chore_updateGetClinicalTrialMetadataFunction",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.27.0",
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.04",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.04",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.04",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.04",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2024.04",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.04",
-    "frontend-framework": "quay.io/cdis/frontend-framework:0.6.0",
+    "frontend-framework": "quay.io/cdis/frontend-framework:0.7.0",
     "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.2.3",
-    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.4.0"
+    "cedar-wrapper": "quay.io/cdis/cedar-wrapper-service:0.5.0"
   },
   "arborist": {
     "deployment_version": "2"
