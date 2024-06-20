@@ -56,12 +56,6 @@ S3_BUCKETS:
   cds-252-phs002529-v1-p1-sequencefiles-p30-fy20:
     cred: "fence_bot"
     region: "us-east-1"
-  cds-252-phs002529.v1.p1-p30-fy20:
-    cred: "fence_bot"
-    region: "us-east-1"
-  cds-252-phs002529.v1.p1-sequencefiles-p30-fy20:
-    cred: "fence_bot"
-    region: "us-east-1"
   cds-253-phs002620-sequencefiles-p30-fy20:
     cred: "fence_bot"
     region: "us-east-1"
@@ -97,6 +91,9 @@ S3_BUCKETS:
     region: "us-east-1"
   cds-258-phs002479:
     cred: "fence_bot"
+    region: "us-east-1"
+  cds-259-phs002293:
+    cred: "fence-bot"
     region: "us-east-1"
   cds-260-phs002790-ccdi-ctsmc:
     cred: "fence_bot"
