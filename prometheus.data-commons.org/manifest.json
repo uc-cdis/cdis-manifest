@@ -23,7 +23,8 @@
     "requestor": "quay.io/cdis/requestor:2024.05",
     "revproxy": "quay.io/cdis/nginx:2024.05",
     "sheepdog": "quay.io/cdis/sheepdog:2024.05",
-    "wts": "quay.io/cdis/workspace-token-service:2024.05"
+    "wts": "quay.io/cdis/workspace-token-service:2024.05",
+    "frontend-framework": "quay.io/cdis/prometheus-data-platform:main"
   },
   "arborist": {
     "deployment_version": "2"
@@ -50,7 +51,8 @@
     "waf_enabled": "true",
     "pdb": "on",
     "karpenter": "true",
-    "ecr-access-job-role-arn": "arn:aws:iam::654654631253:role/EcrRepoPolicyUpdateRole"
+    "ecr-access-job-role-arn": "arn:aws:iam::654654631253:role/EcrRepoPolicyUpdateRole",
+    "frontend_root": "gen3ff"
   },
   "metadata": {
     "USE_AGG_MDS": true,
