@@ -1,6 +1,6 @@
 {
   "gaTrackingId": "G-MNK00L5EG7",
-  "argoTemplate": "gwas-template-memory",
+  "argoTemplate": "gwas-template-team-project",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -92,7 +92,7 @@
     ]
   },
   "featureFlags": {
-    "explorer": true,
+    "explorer": false,
     "analysis": true,
     "workspaceTokenServiceRefreshTokenAtLogin": true
   },
@@ -101,10 +101,23 @@
       "title": "OHDSI Atlas",
       "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
       "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
-      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png"
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png",
+      "needsTeamProject": true
     },
-    "GWASUIApp",
-    "GWASResults",
+    {
+      "appId": "GWASUIApp",
+      "title": "Gen3 GWAS",
+      "description": "Use this App to perform high throughput GWAS on Million Veteran Program (MVP) data, using the University of Washington Genesis pipeline",
+      "image": "/src/img/analysis-icons/gwas.svg",
+      "needsTeamProject": true
+    },
+    {
+      "appId": "GWASResults",
+      "title": "GWAS Results",
+      "description": "Use this App to view status & results of submitted workflows",
+      "image": "/src/img/analysis-icons/gwasResults.svg",
+      "needsTeamProject": true
+    },
     {
       "appId": "AtlasDataDictionary",
       "title": "MVP Data Dictionary",
@@ -113,61 +126,6 @@
       "needsTeamProject": false
     }
   ],
-  "arrangerConfig": {
-    "charts": {
-      "node_id": {
-        "chartType": "count",
-        "title": "Demographics"
-      },
-      "Gender": {
-        "chartType": "bar",
-        "title": "Gender"
-      },
-      "Race": {
-        "chartType": "pie",
-        "title": "Race"
-      },
-      "Ethnicity": {
-        "chartType": "bar",
-        "title": "Ethnicity"
-      }
-    },
-    "filters": {
-      "tabs": [
-        {
-          "title": "Demographic",
-          "fields": [
-            "Gender",
-            "Race",
-            "Ethnicity"
-          ]
-        }
-      ]
-    },
-    "table": {
-      "buttons": [
-        {
-          "enabled": false,
-          "type": "data",
-          "title": "Download Clinical",
-          "leftIcon": "user",
-          "rightIcon": "download",
-          "fileName": "clinical.json"
-        },
-        {
-          "enabled": false,
-          "type": "manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "manifest.json"
-        }
-      ]
-    },
-    "projectId": "search",
-    "graphqlField": "demographic",
-    "index": ""
-  },
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [
