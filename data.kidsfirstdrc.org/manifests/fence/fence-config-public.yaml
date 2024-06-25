@@ -3,7 +3,7 @@ APP_NAME: Gen3 Data Commons
 BASE_URL: https://data.kidsfirstdrc.org/user
 # flask's debug setting
 # WARNING: DO NOT ENABLE IN PRODUCTION
-DEBUG: true
+DEBUG: false
 # if true, will automatically login a user with username "test"
 MOCK_AUTH: false
 # if true, will only fake a successful login response from Google in /login/google
