@@ -9,6 +9,12 @@
   },
   "components": {
     "appName": "VA Data Commons",
+    "banner": [
+      {
+        "type": "warning",
+        "message": "When login in for the first time after deployment on 6/24 please clear your browser's cache through your browser's settings"
+      }
+    ],    
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
