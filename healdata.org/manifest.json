@@ -115,5 +115,8 @@
   },
   "canary": {
     "default": 0
+  },
+  "argo": {
+    "argo_server_service_url": "http://argo-argo-workflows-server.argo.svc.cluster.local:2746"
   }
 }
