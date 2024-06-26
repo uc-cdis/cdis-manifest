@@ -5,5 +5,6 @@
     "downloadable-s3-bucket": "argo-artifact-storage-downloadable-healprod",
     "indexd_admin_user": "fence",
     "environment": "default",
-    "pvc": "parallel-test-pvc"
+    "pvc": "parallel-test-pvc",
+    "argo_namespace": "argo"
 }
