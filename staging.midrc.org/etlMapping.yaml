@@ -121,6 +121,9 @@ mappings:
           - name: image_data_modification_method
             src: image_data_modification_method
             fn: set
+          - name: data_file_count
+            src: _data_file_id
+            fn: count
   - name: midrcstaging_measurement
     doc_type: measurement
     type: aggregator
