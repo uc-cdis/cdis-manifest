@@ -383,7 +383,11 @@
               "imaging_studies.loinc_system",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
-              "imaging_studies.days_to_study"
+              "imaging_studies.days_to_study",
+              "imaging_studies.image_data_modified",
+              "data_file_image_data_modified",
+              "data_file_image_data_modification_name",
+              "data_file_image_data_modification_method"
             ]
           },
           {
@@ -458,6 +462,10 @@
           "imaging_studies.study_description",
           "imaging_studies.study_modality",
           "imaging_studies.study_uid",
+          "imaging_studies.image_data_modified",
+          "data_file_image_data_modified",
+          "data_file_image_data_modification_name",
+          "data_file_image_data_modification_method",
           "measurements.test_name",
           "measurements.test_result_text",
           "measurements.test_method",
@@ -970,7 +978,10 @@
             "fields": [
               "data_format",
               "data_category",
-              "data_type"
+              "data_type",
+              "data_file_image_data_modified",
+              "data_file_image_data_modification_name",
+              "data_file_image_data_modification_method"
             ]
           },
           {
@@ -1014,7 +1025,7 @@
           "loinc_code",
           "days_from_study_to_pos_covid_test",
           "days_from_study_to_neg_covid_test",
-          "data_format",
+          "image_data_modified",
           "covid19_positive",
           "age_at_index",
           "index_event",
@@ -1034,6 +1045,9 @@
           "data_format",
           "data_category",
           "data_type",
+          "data_file_image_data_modified",
+          "data_file_image_data_modification_name",
+          "data_file_image_data_modification_method",
           "study_uid",
           "case_ids",
           "object_id",
@@ -1204,7 +1218,10 @@
               "source_node",
               "data_format",
               "data_category",
-              "data_type"
+              "data_type",
+              "image_data_modified",
+              "image_data_modification_name",
+              "image_data_modification_method"
             ]
           },
           {
@@ -1354,6 +1371,9 @@
           "data_format",
           "data_category",
           "data_type",
+          "image_data_modified",
+          "image_data_modification_name",
+          "image_data_modification_method",
           "annotation_method",
           "annotation_name",
           "annotator_id",
