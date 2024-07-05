@@ -1,4 +1,11 @@
 # Core Gen3 Release 2024.07 (Beryllonite)
+## Release Highlights and Announcements
+
+### Advance Notice of Upcoming Breaking Change in _Next_ Release (2024.08) 
+Please be advised the the _next_ release of Gen3 will include a breaking change to Fence due to a major upgrade to the underlying OIDC library. The Fence changes have been merged but will be part of the 2024.08 release, not the current release. Gen3 administrators will need to run a Fence database migration when they update. 
+
+More information will be provided with the 2024.08 release.
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
