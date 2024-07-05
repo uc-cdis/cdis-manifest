@@ -210,11 +210,11 @@
           },
           "unaccessible": {
             "enabled": true,
-            "menuText": "Not Accessible"
+            "menuText": "Request Access"
           },
-          "pending": {
-            "enabled": false,
-            "menuText": "Pending"
+          "waiting": {
+            "enabled": true,
+            "menuText": "Waiting"
           },
           "notAvailable": {
             "enabled": true,
