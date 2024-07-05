@@ -18,7 +18,8 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.02",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
-    "frontend-framework": "quay.io/cdis/bih-data-commons:main"
+    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.02"
   },
   "arborist": {
     "deployment_version": "2"
