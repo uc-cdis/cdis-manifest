@@ -100,7 +100,7 @@
     {
       "title": "OHDSI Atlas",
       "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
-      "applicationUrl": "https://atlas.va.data-commons.org/atlas/",
+      "applicationUrl": "https://atlas.va.data-commons.org",
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png",
       "needsTeamProject": true
     },
@@ -132,5 +132,9 @@
     "https://argo-artifact-storage-downloadable.s3.amazonaws.com",
     "https://argo-artifact-storage-downloadable-2024.s3.amazonaws.com"
   ],
-  "ddUrl": "ddog-gov.com"
+  "ddUrl": "ddog-gov.com",
+  "userAccessToSite": {
+    "enabled": true,
+    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+  }
 }
