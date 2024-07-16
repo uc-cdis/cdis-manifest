@@ -36,7 +36,7 @@
 		}
 	},
 	"adapter_commons": {		
-		"BloodPAC": {
+		"BloodPAC-subject-level-metadata": {
 			"mds_url": "https://data.bloodpac.org/",
 			"commons_url" : "data.bloodpac.org",
 			"adapter": "gen3",
@@ -48,8 +48,8 @@
 			"field_mappings" : {
 				"authz": "path:auth_resource_path",
 				"tags": "path:tags",
-				"_unique_id": "path:study_id",
-				"study_id": "path:study_id",
+				"_unique_id": "path:_unique_id",
+				"study_id": "path:_unique_id",
 				"study_description": "path:data_description",
 				"full_name": "path:full_name",
 				"short_name": "path:short_name",
@@ -58,6 +58,30 @@
 				"_subjects_count" : {"path":"_cases_count", "default" : 0 },
 				"__manifest": "path:__manifest",
 				"commons_url" : "data.bloodpac.org"
+			}
+		},
+		"VPODC-study-level-metadata": {
+			"mds_url": "https://vpodc.data-commons.org/",
+			"commons_url" : "vpodc.data-commons.org",
+			"adapter": "gen3",
+			"config" : {
+				"guid_type": "discovery_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"keep_original_fields": false,
+			"field_mappings" : {
+				"authz": "/VA",
+				"tags": "path:tags",
+				"_unique_id": "path:_unique_id",
+				"study_id": "path:id_number",
+				"study_description": "path:title",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
+				"commons": "path:commons",
+				"study_url": "",
+				"_subjects_count" : {"path":"_cases_count", "default" : 0 },
+				"__manifest": "",
+				"commons_url" : "vpodc.data-commons.org"
 			}
 		}
 	}
