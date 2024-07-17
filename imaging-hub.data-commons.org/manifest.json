@@ -18,7 +18,9 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.02",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
-    "frontend-framework": "quay.io/cdis/bih-data-commons:main"
+    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.06",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.06"
   },
   "arborist": {
     "deployment_version": "2"
@@ -54,7 +56,7 @@
         "type": "imaging_series"
       }
     ],
-   "config_index": "default-commons-config-index"
+   "config_index": "bih_array-config"
   },
   "metadata": {
     "USE_AGG_MDS": true,
