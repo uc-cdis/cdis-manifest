@@ -12,9 +12,7 @@ mappings:
       - name: Modality
       - name: SeriesDescription
       - name: SeriesInstanceUID
-      - name: StudyDescription
-      - name: StudyInstanceUID
       - name: dicom_viewer_url
     parent_props:
-      - path: imaging_studies[PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[commons_name,collection_id,primary_site,disease_type]
+      - path: imaging_studies[StudyDescription,StudyInstanceUID,PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[commons_name,collection_id,primary_site,disease_type]
 
