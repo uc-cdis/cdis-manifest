@@ -18,6 +18,10 @@
 			"tags": {
 				"type": "array"
 			},
+			"advSearchFilters": {
+                "type": "array",
+                "default": []
+            },
 			"_unique_id": {},
 			"study_description": {},
 			"study_id": {},
@@ -131,6 +135,9 @@
 			"field_mappings" : {
 				"authz": "path:authz",
 				"tags": "path:tags",
+				"advSearchFilters": {
+                    "path": "path:filters"
+                },
 				"_unique_id": "",
 				"commons": "path:platform_id",
 				"subject_id": "",
