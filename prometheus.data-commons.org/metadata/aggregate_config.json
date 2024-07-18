@@ -32,6 +32,7 @@
 			"commons_url": {},
 			"commons" : {},
 			"disease_type": {},
+			"primary_site": {},
 			"authz": {},
 			"subject_id": {}, 
 			"subject_race": {}, 
@@ -137,7 +138,7 @@
 				"authz": "path:authz",
 				"tags": "path:tags",
 				"advSearchFilters": {
-                    "path": "path:filters"
+                    "path": "filters"
                 },
 				"_unique_id": "",
 				"commons": {"path":"path:platform_id", "default" : "" },
@@ -155,7 +156,7 @@
 			}
 		},
 		"APOLLO-subject-level-metadata": {
-			"mds_url": "https://api.gdc.cancer.gov/cases?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22cases.project.program.name%22,%22value%22:[%22APOLLO%22]%7D%7D]%7D&fields=id,submitter_id,demographic.gender,demographic.race,demographic.ethnicity,diagnoses.ajcc_pathologic_m,diagnoses.tumor_grade,diagnoses.ajcc_pathologic_stage,exposures.tobacco_smoking_status,exposures.pack_years_smoked,disease_type,diagnoses.primary_diagnosis",
+			"mds_url": "https://api.gdc.cancer.gov/cases?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22cases.project.program.name%22,%22value%22:[%22APOLLO%22]%7D%7D]%7D&fields=id,submitter_id,demographic.gender,demographic.race,demographic.ethnicity,diagnoses.ajcc_pathologic_m,diagnoses.tumor_grade,diagnoses.ajcc_pathologic_stage,exposures.tobacco_smoking_status,exposures.pack_years_smoked,disease_type,diagnoses.primary_diagnosis,primary_site",
 			"commons_url" : "api.gdc.cancer.gov",
 			"adapter": "gdc",
 			"filters" : {
@@ -168,6 +169,7 @@
 				"_unique_id": "path:id",
 				"commons": "gdc",
 				"disease_type": "path:disease_type",
+				"primary_site": "path:primary_site",
 				"subject_id": "path:submitter_id",
 				"subject_race": "path:demographic.race",
 				"subject_gender": "path:demographic.gender",
