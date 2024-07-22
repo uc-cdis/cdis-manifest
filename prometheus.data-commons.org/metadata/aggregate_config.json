@@ -35,6 +35,7 @@
 			"primary_site": {},
 			"authz": {},
 			"subject_id": {}, 
+			"subject_apollo_id" : {},
 			"subject_race": {}, 
 			"subject_gender": {}, 
 			"subject_ethnicity": {}, 
@@ -43,7 +44,9 @@
 			"subject_cancer_grade": {}, 
 			"subject_cancer_stage": {}, 
 			"subject_year_of_birth": {}, 
-			"subject_primary_disease": {}
+			"subject_primary_disease": {},
+			"subject_type_of_exposure": {},
+			"subject_chemical_agents_of_exposure": {}
 		},
 		"settings" : {
 			"cache_drs" : true
@@ -136,6 +139,7 @@
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:_unique_id",
+				"subject_apollo_id" : "",
 				"subject_race": "path:race",
 				"subject_gender": "path:gender",
 				"subject_ethnicity": "path:ethnicity",
@@ -166,6 +170,7 @@
 				"_unique_id": "",
 				"commons": {"path":"platform_id", "default" : "" },
 				"subject_id": "",
+				"subject_apollo_id" : "",
 				"subject_race": {"path": "race", "default": ""},
 				"subject_gender": {"path": "gender", "default": ""},
 				"subject_ethnicity": {"path": "ethnicity", "default": ""},
@@ -194,6 +199,7 @@
 				"disease_type": "path:disease_type",
 				"primary_site": "path:primary_site",
 				"subject_id": "path:submitter_id",
+				"subject_apollo_id" : "",
 				"subject_race": "path:demographic.race",
 				"subject_gender": "path:demographic.gender",
 				"subject_ethnicity": "path:demographic.ethnicity",
@@ -203,6 +209,7 @@
 				"subject_cancer_stage": "path:diagnoses.ajcc_pathologic_stage",
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:diagnoses.primary_diagnosis",
+				"subject_type_of_exposure": "path:exposures.tobacco_smoking_status",
 				"commons_url" : "api.gdc.cancer.gov"
 			}
 		}
