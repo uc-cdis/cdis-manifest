@@ -98,6 +98,29 @@
 				"commons_url" : "vpodc.data-commons.org"
 			}
 		},
+		"APOLLO-study-level-metadata": {
+			"mds_url": "https://api.gdc.cancer.gov/projects?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22projects.project_id%22,%22value%22:[%22APOLLO-LUAD%22]%7D%7D]%7D&size=100&fields=name,project_id",
+			"commons_url" : "api.gdc.cancer.gov",
+			"adapter": "gdc",
+			"filters" : {
+				"size" : 100
+			},
+			"keep_original_fields": false,
+			"field_mappings" : {
+				"authz": "/VA",
+				"tags": ["APOLLO"],
+				"_unique_id": "path:id",
+				"study_id": "path:id",
+				"study_description": "path:name",
+				"full_name": "",
+				"short_name": "",
+				"commons": "gdc",
+				"study_url": "",
+				"_subjects_count" : {"path":"summary.case_count", "default" : 0 },
+				"__manifest": "",
+				"commons_url" : "api.gdc.cancer.gov"
+			}
+		},
 		"BloodPAC-subject-level-metadata": {
 			"mds_url": "https://data.bloodpac.org/",
 			"commons_url" : "data.bloodpac.org",
