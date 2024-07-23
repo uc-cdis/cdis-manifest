@@ -118,7 +118,14 @@
 			"field_mappings": {
 				"authz": "/VA",
 				"tags": [
-					"APOLLO"
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
 				],
 				"_unique_id": "path:id",
 				"disease_type": "path:disease_type",
@@ -237,7 +244,14 @@
 			"field_mappings": {
 				"authz": "/VA",
 				"tags": [
-					"APOLLO"
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
 				],
 				"_unique_id": "path:id",
 				"commons": "gdc",
