@@ -152,6 +152,7 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "/VA",
+				"commons": "pdc",
 				"tags": [
 					{
 						"name": "path:disease_type",
@@ -162,13 +163,21 @@
 						"category": "primary_site"
 					}
 				],
-				"_unique_id": "path:study_id",
+				"_unique_id": "path:pdc_study_id",
 				"pdc_study_id": "path:pdc_study_id",
-				"submitter_id_name": "path:submitter_id_name",
+				"study_id": "path:id_number",
 				"study_description": "path:study_description",
+				"full_name": "path:program_name",
+				"short_name": "path:project_name",
+				"study_url": "",
+				"_subjects_count": {
+					"path": "_cases_count",
+					"default": 0
+				},
+				"__manifest": "",
+				"commons_url": "proteomic.datacommons.cancer.gov",
+				"submitter_id_name": "path:submitter_id_name",
 				"study_submitter_id": "path:study_submitter_id",
-				"program_name": "path:program_name",
-				"project_name": "path:project_name",
 				"disease_type": "path:disease_type",
 				"primary_site": "path:primary_site",
 				"analytical_fraction": "path:analytical_fraction",
@@ -180,8 +189,7 @@
 				"supplementaryFilesCount": "path:supplementaryFilesCount",
 				"nonSupplementaryFilesCount": "path:nonSupplementaryFilesCount",
 				"contacts": "path:contacts",
-				"versions": "path:versions",
-				"__typename": "path:__typename"
+				"versions": "path:versions"
 			}
 		},
 		"BloodPAC-subject-level-metadata": {
