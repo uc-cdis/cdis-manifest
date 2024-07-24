@@ -118,7 +118,14 @@
 			"field_mappings": {
 				"authz": "/VA",
 				"tags": [
-					"APOLLO"
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
 				],
 				"_unique_id": "path:id",
 				"disease_type": "path:disease_type",
@@ -237,7 +244,46 @@
 			"field_mappings": {
 				"authz": "/VA",
 				"tags": [
-					"APOLLO"
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					},
+					{
+						"name": "path:diagnoses[*].primary_diagnosis",
+						"category": "Cancer Type"
+					},
+					{
+						"name": "path:diagnoses[*].tumor_grade",
+						"category": "Cancer Grade"
+					},
+					{
+						"name": "path:diagnoses[*].ajcc_pathologic_stage",
+						"category": "Cancer Stage"
+					},
+					{
+						"name": "path:demographic.gender",
+						"category": "Gender"
+					},
+					{
+						"name": "path:demographic.race",
+						"category": "Race"
+					},
+					{
+						"name": "path:demographic.ethnicity",
+						"category": "Ethnicity"
+					},
+					{
+						"name": "path:diagnoses[*].ajcc_pathologic_m",
+						"category": "Metastasis"
+					},
+					{
+						"name": "path:exposures[*].tobacco_smoking_status",
+						"category": "Type of Exposure"
+					}
 				],
 				"_unique_id": "path:id",
 				"commons": "gdc",
