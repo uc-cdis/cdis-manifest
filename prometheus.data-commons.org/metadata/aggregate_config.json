@@ -144,6 +144,46 @@
 				"commons_url": "api.gdc.cancer.gov"
 			}
 		},
+		"Proteomic-Data-Commons-study-level-metadata": {
+			"mds_url": "https://proteomic.datacommons.cancer.gov/graphql",
+			"commons_url": "https://pdc.cancer.gov/pdc/",
+			"adapter": "pdcstudy",
+			"filters": {},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "/VA",
+				"tags": [
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
+				],
+				"_unique_id": "path:study_id",
+				"pdc_study_id": "path:pdc_study_id",
+				"submitter_id_name": "path:submitter_id_name",
+				"study_description": "path:study_description",
+				"study_submitter_id": "path:study_submitter_id",
+				"program_name": "path:program_name",
+				"project_name": "path:project_name",
+				"disease_type": "path:disease_type",
+				"primary_site": "path:primary_site",
+				"analytical_fraction": "path:analytical_fraction",
+				"experiment_type": "path:experiment_type",
+				"embargo_date": "path:embargo_date",
+				"cases_count": "path:cases_count",
+				"aliquots_count": "path:aliquots_count",
+				"filesCount": "path:filesCount",
+				"supplementaryFilesCount": "path:supplementaryFilesCount",
+				"nonSupplementaryFilesCount": "path:nonSupplementaryFilesCount",
+				"contacts": "path:contacts",
+				"versions": "path:versions",
+				"__typename": "path:__typename"
+			}
+		},
 		"BloodPAC-subject-level-metadata": {
 			"mds_url": "https://data.bloodpac.org/",
 			"commons_url": "data.bloodpac.org",
@@ -303,6 +343,72 @@
 				"subject_type_of_exposure": "path:exposures[*].tobacco_smoking_status",
 				"commons_url": "api.gdc.cancer.gov"
 			}
+		}
+	},
+	"Proteomic-Data-Commons-subject-level-metadata": {
+		"mds_url": "https://proteomic.datacommons.cancer.gov/graphql",
+		"commons_url": "https://pdc.cancer.gov/pdc/",
+		"adapter": "pdcsubject",
+		"filters": {},
+		"keep_original_fields": false,
+		"field_mappings": {
+			"authz": "/VA",
+			"tags": [
+				{
+					"name": "path:disease_type",
+					"category": "disease_type"
+				},
+				{
+					"name": "path:primary_site",
+					"category": "primary_site"
+				}
+			],
+			"_unique_id": "path:case_id",
+			"subject_apollo_id": "path:sample_submitter_id",
+			"aliquot_id": "path:aliquot_id",
+			"sample_id": "path:sample_id",
+			"aliquot_submitter_id": "path:aliquot_submitter_id",
+			"aliquot_is_ref": "path:aliquot_is_ref",
+			"aliquot_status": "path:aliquot_status",
+			"aliquot_quantity": "path:aliquot_quantity",
+			"aliquot_volume": "path:aliquot_volume",
+			"amount": "path:amount",
+			"analyte_type": "path:analyte_type",
+			"concentration": "path:concentration",
+			"case_status": "path:case_status",
+			"sample_status": "path:sample_status",
+			"sample_is_ref": "path:sample_is_ref",
+			"biospecimen_anatomic_site": "path:biospecimen_anatomic_site",
+			"biospecimen_laterality": "path:biospecimen_laterality",
+			"composition": "path:composition",
+			"current_weight": "path:current_weight",
+			"days_to_collection": "path:days_to_collection",
+			"days_to_sample_procurement": "path:days_to_sample_procurement",
+			"diagnosis_pathologically_confirmed": "path:diagnosis_pathologically_confirmed",
+			"freezing_method": "path:freezing_method",
+			"initial_weight": "path:initial_weight",
+			"intermediate_dimension": "path:intermediate_dimension",
+			"longest_dimension": "path:longest_dimension",
+			"method_of_sample_procurement": "path:method_of_sample_procurement",
+			"pathology_report_uuid": "path:pathology_report_uuid",
+			"preservation_method": "path:preservation_method",
+			"sample_type_id": "path:sample_type_id",
+			"shortest_dimension": "path:shortest_dimension",
+			"time_between_clamping_and_freezing": "path:time_between_clamping_and_freezing",
+			"time_between_excision_and_freezing": "path:time_between_excision_and_freezing",
+			"tissue_type": "path:tissue_type",
+			"tumor_code": "path:tumor_code",
+			"tumor_code_id": "path:tumor_code_id",
+			"tumor_descriptor": "path:tumor_descriptor",
+			"case_submitter_id": "path:case_submitter_id",
+			"program_name": "path:program_name",
+			"project_name": "path:project_name",
+			"sample_type": "path:sample_type",
+			"disease_type": "path:disease_type",
+			"primary_site": "path:primary_site",
+			"tissue_collection_type": "path:tissue_collection_type",
+			"sample_ordinal": "path:sample_ordinal",
+			"__typename": "path:__typename"
 		}
 	}
 }
