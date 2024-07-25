@@ -144,6 +144,54 @@
 				"commons_url": "api.gdc.cancer.gov"
 			}
 		},
+		"Proteomic-Data-Commons-study-level-metadata": {
+			"mds_url": "https://proteomic.datacommons.cancer.gov/graphql",
+			"commons_url": "https://pdc.cancer.gov/pdc/",
+			"adapter": "pdcstudy",
+			"filters": {},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "/VA",
+				"commons": "pdc",
+				"tags": [
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
+				],
+				"_unique_id": "path:pdc_study_id",
+				"pdc_study_id": "path:pdc_study_id",
+				"study_id": "path:id_number",
+				"study_description": "path:study_description",
+				"full_name": "path:program_name",
+				"short_name": "path:project_name",
+				"study_url": "",
+				"_subjects_count": {
+					"path": "_cases_count",
+					"default": 0
+				},
+				"__manifest": "",
+				"commons_url": "proteomic.datacommons.cancer.gov",
+				"submitter_id_name": "path:submitter_id_name",
+				"study_submitter_id": "path:study_submitter_id",
+				"disease_type": "path:disease_type",
+				"primary_site": "path:primary_site",
+				"analytical_fraction": "path:analytical_fraction",
+				"experiment_type": "path:experiment_type",
+				"embargo_date": "path:embargo_date",
+				"cases_count": "path:cases_count",
+				"aliquots_count": "path:aliquots_count",
+				"filesCount": "path:filesCount",
+				"supplementaryFilesCount": "path:supplementaryFilesCount",
+				"nonSupplementaryFilesCount": "path:nonSupplementaryFilesCount",
+				"contacts": "path:contacts",
+				"versions": "path:versions"
+			}
+		},
 		"BloodPAC-subject-level-metadata": {
 			"mds_url": "https://data.bloodpac.org/",
 			"commons_url": "data.bloodpac.org",
@@ -302,6 +350,43 @@
 				"subject_primary_disease": "path:diagnoses[*].primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].tobacco_smoking_status",
 				"commons_url": "api.gdc.cancer.gov"
+			}
+		},
+		"Proteomic-Data-Commons-subject-level-metadata": {
+			"mds_url": "https://proteomic.datacommons.cancer.gov/graphql",
+			"commons_url": "https://pdc.cancer.gov/pdc/",
+			"adapter": "pdcsubject",
+			"filters": {},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "/VA",
+				"tags": [
+					{
+						"name": "path:disease_type",
+						"category": "disease_type"
+					},
+					{
+						"name": "path:primary_site",
+						"category": "primary_site"
+					}
+				],
+				"_unique_id": "path:case_submitter_id",
+				"commons": "pdc",
+				"disease_type": "path:disease_type",
+				"primary_site": "path:primary_site",
+				"subject_id": "path:case_submitter_id",
+				"subject_apollo_id": "path:case_submitter_id",
+				"subject_race": "path:race",
+				"subject_gender": "path:gender",
+				"subject_ethnicity": "path:ethnicity",
+				"subject_metastasis": "path:metastasis_at_diagnosis",
+				"subject_cancer_type": "",
+				"subject_cancer_grade": "path:tumor_grade",
+				"subject_cancer_stage": "path:tumor_stage",
+				"subject_year_of_birth": "",
+				"subject_primary_disease": "path:primary_diagnosis",
+				"subject_type_of_exposure": "path:exposures[*].exposure_type",
+				"commons_url": "proteomic.datacommons.cancer.gov"
 			}
 		}
 	}
