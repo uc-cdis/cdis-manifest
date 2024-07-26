@@ -80,8 +80,8 @@
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
-      "name": "User-licensed Stata Notebook",
-      "image": "quay.io/cdis/stata-heal:master",
+      "name": "(Generic, User-licensed) Stata Notebook ",
+      "image": "quay.io/cdis/jupyter-pystata-user-licensed:1.2.0",
       "env": {
         "FRAME_ANCESTORS": "https://jcoin.datacommons.io"
       },
@@ -101,7 +101,40 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "(while true; do [ -d ~/pd ] && [ -f ~/pd/stata.lic ] && cp ~/pd/stata.lic /usr/local/stata17/; sleep 1; done) & export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "1.0",
+      "memory-limit": "2Gi",
+      "name": "(Generic, Limited Gen3-licensed) Stata Notebook",
+      "image": "quay.io/cdis/jupyter-pystata-gen3-licensed:1.2.0",
+      "env": {
+        "FRAME_ANCESTORS": "https://jcoin.datacommons.io"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "/bin/bash",
+        "/tmp/wait_for_license.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
