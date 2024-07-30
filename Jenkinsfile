@@ -1,5 +1,5 @@
 #!groovy
-@Library('cdis-jenkins-lib@chore/fix_pfbexport_test') _
+@Library('cdis-jenkins-lib@master') _
 testPipeline {
   MANIFEST = "True"
 }
