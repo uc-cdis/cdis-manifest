@@ -87,6 +87,7 @@ mappings:
           - name: days_from_study_to_neg_covid_test
           - name: days_from_study_to_pos_covid_test
           - name: days_to_study
+          - name: image_data_modified
           - name: loinc_code
           - name: loinc_contrast
           - name: loinc_long_common_name
@@ -112,13 +113,13 @@ mappings:
           - name: data_category
             src: data_category
             fn: set
-          - name: image_data_modified
+          - name: data_file_image_data_modified
             src: image_data_modified
             fn: set
-          - name: image_data_modification_name
+          - name: data_file_image_data_modification_name
             src: image_data_modification_name
             fn: set
-          - name: image_data_modification_method
+          - name: data_file_image_data_modification_method
             src: image_data_modification_method
             fn: set
           - name: data_file_count
@@ -226,6 +227,12 @@ mappings:
             fn: set
           - name: data_file_image_data_modified
             src: image_data_modified
+            fn: set
+          - name: data_file_image_data_modification_name
+            src: image_data_modification_name
+            fn: set
+          - name: data_file_image_data_modification_method
+            src: image_data_modification_method
             fn: set
   - name: midrc_data_file
     doc_type: data_file
