@@ -197,7 +197,7 @@ Thanks to Liam from OHSU for contributing this to the Gen3 product codebase!
 
 ## uc-cdis/sower
 
-#### New Feature
+#### New Features
   - Support for configurable Job TTL ([#42](https://github.com/uc-cdis/sower/pull/42)) 
 
 #### Improvements
