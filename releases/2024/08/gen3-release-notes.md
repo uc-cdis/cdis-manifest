@@ -4,7 +4,7 @@
 
 #### Breaking change in Fence
 This release of Gen3 includes a breaking change to Fence due to a major upgrade to the underlying OIDC library. 
-When updating to Gen3 2024.08 (or Fence 10.0), Gen3 administrators must run a Fence database migration when they update the version of fence. 
+When updating to Gen3 2024.08 (Fence 10.0.0 or newer), Gen3 administrators must run a Fence database migration when they update the version of Fence. 
 
 Fence database migrations can be run using the `fence-create` client included with Fence. See `fence-create --help` for the commands.  If you need assistance, please ask on the Gen3 Community Slack channel.  The release is here: https://github.com/uc-cdis/fence/releases/tag/10.0.0 .
 
