@@ -12,7 +12,7 @@ Since Fence uses the database library `alembic` for safe upgrades and downgrades
 
 #### Community Contributions
 
-Sower has been updated with [support for configurable job TTL]([#uc-cdissower](#new-features-2).
+Sower has been updated with [support for configurable job TTL](#new-features-2).
 Thanks to Liam from OHSU for contributing this to the Gen3 product codebase!
 
 ## uc-cdis/arborist
