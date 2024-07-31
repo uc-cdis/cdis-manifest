@@ -1,4 +1,21 @@
 # Core Gen3 Release 2024.08 (Brazilianite)
+
+## Release Highlights and Announcements
+
+#### Breaking change in Fence
+This release of Gen3 includes a breaking change to Fence due to a major upgrade to the underlying OIDC library. 
+When updating to Gen3 2024.08 (or Fence 10.0), Gen3 administrators must run a Fence database migration when they update.
+
+Fence database migrations can be run using the `fence-create` client included with Fence. See `fence-create --help` for the commands. 
+The release is here: https://github.com/uc-cdis/fence/releases/tag/10.0.0 .
+
+Since Fence uses the database library `alembic` for safe upgrades and downgrades of db schemas, there is a way to downgrade Fence if necessary after the upgrade. Nonetheless, we recommend a snapshot or backup before any major migration, like this one. 
+
+#### Community Contributions
+
+Sower has been updated with [support for configurable job TTL](#uc-cdissower).
+Thanks to Liam from OHSU for contributing this to the Gen3 product codebase!
+
 ## uc-cdis/arborist
 
 #### Improvements
@@ -181,7 +198,7 @@
 
 ## uc-cdis/sower
 
-#### New Features
+#### New Feature
   - Support for configurable Job TTL ([#42](https://github.com/uc-cdis/sower/pull/42)) 
 
 #### Improvements
