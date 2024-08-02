@@ -34,6 +34,7 @@
     ]
   },
   "nextflow-global": {
+    "s3-objects-expiration-days": 60,
     "sample-config-public-image": "public.ecr.aws/u5x5h6w3/nextflow-approved/public:amazonlinux-base",
     "imagebuilder-reader-role-arn": "arn:aws:iam::143731057154:role/nextflow-imagebuilder-reader"
   },
