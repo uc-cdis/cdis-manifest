@@ -1,5 +1,5 @@
 APP_NAME: 'Gen3 Data Commons'
-BASE_URL: 'https://imaging-hub.data-commons.org/user'
+BASE_URL: 'https://bihstaging.data-commons.org/user'
 DEBUG: false
 
 DEFAULT_LOGIN_IDP: google
@@ -7,6 +7,3 @@ DEFAULT_LOGIN_URL: '{{BASE_URL}}/login/google'
 LOGIN_OPTIONS:
   - name: 'Login from Google'
     idp: google
-
-S3_BUCKETS: {}
-DATA_UPLOAD_BUCKET: ''
