@@ -1,0 +1,124 @@
+{
+  "gaTrackingId": "G-WM3JV9YMW3",
+  "ddEnv": "bihprod",
+  "ddUrl": "ddog-gov.com",
+  "graphql": {
+    "boardCounts": [],
+    "chartCounts": [],
+    "projectDetails": "boardCounts"
+  },
+  "components": {
+    "appName": "MIDRC BDF Imaging Hub (BIH)",
+    "index": {
+      "introduction": {
+        "heading": "",
+        "text": "The MIDRC BDF Imaging Hub (BIH) is a data hub, which is a federated data search, discovery, and analysis platform that allows researchers to query and analyze data from independent data repositories or resources related to medical imaging."
+      },
+      "buttons": [
+        {
+          "name": "Discover Data",
+          "icon": "data-explore",
+          "body": "Discover Data",
+          "link": "/discovery",
+          "label": "Discover Data"
+        },
+        {
+          "name": "Analyze Data",
+          "icon": "stage-analyze",
+          "body": "Analyze your selected cases using Jupyter Notebooks in our secure cloud environment",
+          "link": "/workspace",
+          "label": "Run analysis"
+        }
+      ],
+      "homepageChartNodes": []
+    },
+    "navigation": {
+      "items": [
+        {
+          "name": "Discovery",
+          "link": "/discovery",
+          "icon": "query",
+          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Workspace",
+          "link": "/workspace",
+          "icon": "workspace",
+          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Example Analysis",
+          "link": "/resource-browser",
+          "icon": "bar-chart",
+          "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the Biomedical Research Hub by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
+          "color": "#a2a2a2"
+        },
+        {
+          "name": "Profile",
+          "link": "/identity",
+          "icon": "profile",
+          "color": "#a2a2a2"
+        }
+      ]
+    },
+    "topBar": {
+      "items": [
+      ]
+    },
+    "login": {
+      "title": "MIDRC BDF Imaging Hub (BIH)",
+      "subTitle": "Discover, Analyze, and Share Data",
+      "text": "The MIDRC BDF Imaging Hub (BIH) is a data hub, which is a federated data search, discovery, and analysis platform that allows researchers to query and analyze data from independent data repositories or resources related to medical imaging.",
+      "contact": "If you have any questions about access or the registration process, please contact ",
+      "contact_link": {
+        "href": "midrc-support@datacommons.io"
+      },
+      "image": "stage-icons/stage-gene"
+    },
+    "footerLogos": [
+      {
+        "src": "/src/img/gen3.png",
+        "href": "https://ctds.uchicago.edu/gen3",
+        "alt": "Gen3 Data Commons"
+      },
+      {
+        "src": "/src/img/createdby.png",
+        "href": "https://ctds.uchicago.edu/",
+        "alt": "Center for Translational Data Science at the University of Chicago"
+      }
+    ],
+    "footer": {
+      "links": []
+    },
+    "categorical9Colors": [
+      "#c0143c",
+      "#616265",
+      "#59CD90",
+      "#F2DC5D",
+      "#40476D",
+      "#FFA630",
+      "#AE8799",
+      "#1A535C",
+      "#462255"
+    ],
+    "categorical2Colors": [
+      "#616265",
+      "#c0143c"
+    ]
+  },
+  "requiredCerts": [],
+  "featureFlags": {
+    "explorer": false,
+    "discovery": true,
+    "discoveryUseAggMDS": true,
+    "discoveryUseAggWTS": true,
+    "workspaceRegistration": true,
+    "workspaceTokenServiceRefreshTokenAtLogin": true
+  },
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
+  "showExternalLoginsOnProfile": true
+}
