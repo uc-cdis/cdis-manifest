@@ -20,6 +20,16 @@
   },
   "sheepdog": {
     "strategy": "pin",
-    "num": 2
+    "num": 1
+  },
+  "metadata": {
+    "strategy": "auto",
+    "min": 1,
+    "max": 2
+  },
+  "wts": {
+    "strategy": "auto",
+    "min": 1,
+    "max": 2
   }
 }
