@@ -42,6 +42,7 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
+          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -147,6 +148,7 @@ mappings:
       - name: case_ids
       - name: airspace_disease_grading
       - name: class_covid19_pneumonia
+      - name: annotation_name
       - name: midrc_mRALE_score
       - name: annotation_method
       - name: annotator_id
@@ -181,6 +183,7 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
+          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -278,6 +281,7 @@ mappings:
       - name: manufacturer
       - name: manufacturer_model_name
       - name: modality
+      - name: number_of_instances
       - name: number_of_temporal_positions
       - name: patient_position
       - name: pixel_spacing
