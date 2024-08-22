@@ -1,5 +1,5 @@
 mappings:
-  - name: midrc_case
+  - name: midrcstaging_case
     doc_type: case
     type: aggregator
     root: case
@@ -42,7 +42,6 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
-          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -126,7 +125,7 @@ mappings:
           - name: data_file_count
             src: _data_file_id
             fn: count
-  - name: midrc_measurement
+  - name: midrcstaging_measurement
     doc_type: measurement
     type: aggregator
     root: measurement
@@ -138,7 +137,7 @@ mappings:
       - name: test_method
       - name: test_name
       - name: test_result_text
-  - name: midrc_annotation
+  - name: midrcstaging_annotation
     doc_type: annotation
     type: aggregator
     root: annotation
@@ -148,12 +147,11 @@ mappings:
       - name: case_ids
       - name: airspace_disease_grading
       - name: class_covid19_pneumonia
-      - name: annotation_name
       - name: midrc_mRALE_score
       - name: annotation_method
       - name: annotator_id
       - name: instance_uids
-  - name: midrc_imaging_study
+  - name: midrcstaging_imaging_study
     doc_type: imaging_study
     type: aggregator
     root: imaging_study
@@ -183,7 +181,6 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
-          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -237,7 +234,7 @@ mappings:
           - name: data_file_image_data_modification_method
             src: image_data_modification_method
             fn: set
-  - name: midrc_data_file
+  - name: midrcstaging_data_file
     doc_type: data_file
     type: collector
     root: None
@@ -281,7 +278,6 @@ mappings:
       - name: manufacturer
       - name: manufacturer_model_name
       - name: modality
-      - name: number_of_instances
       - name: number_of_temporal_positions
       - name: patient_position
       - name: pixel_spacing

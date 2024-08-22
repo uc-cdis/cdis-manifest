@@ -1,5 +1,5 @@
 {
-  "gaTrackingId": "G-6DXBMERLMK",
+  "gaTrackingId": "UA-119127212-1",
   "graphql": {
     "boardCounts": [
       {
@@ -14,23 +14,23 @@
       },
       {
         "graphql": "_ct_series_file_count",
-        "name": "Computed Tomography (CT) Series",
-        "plural": "Computed Tomography (CT) Series"
+        "name": "CT Series",
+        "plural": "CT Series"
       },
       {
         "graphql": "_dx_series_file_count",
-        "name": "Digital X-ray (DX) Series",
-        "plural": "Digital X-ray (DX) Series"
+        "name": "DX Series",
+        "plural": "DX Series"
       },
       {
         "graphql": "_cr_series_file_count",
-        "name": "Computed Radiography (CR) Series",
-        "plural": "Computed Radiography (CR) Series"
+        "name": "CR Series",
+        "plural": "CR Series"
       },
       {
         "graphql": "_mr_series_file_count",
-        "name": "Magnetic Resonance (MR) Series",
-        "plural": "Magnetic Resonance (MR) Series"
+        "name": "MR Series",
+        "plural": "MR Series"
       },
       {
         "graphql": "_dicom_annotation_file_count",
@@ -276,7 +276,7 @@
           "name": "About"
         },
         {
-          "link": "https://data.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf",
           "name": "Get Started"
         },
         {
@@ -284,7 +284,7 @@
           "name": "Cite MIDRC"
         },
         {
-          "link": "https://data.midrc.org/dashboard/Public/documentation/DUA.html",
+          "link": "https://staging.midrc.org/dashboard/Public/documentation/DUA.html",
           "name": "DUA"
         },
         {
@@ -434,7 +434,6 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method"
             ]
@@ -488,7 +487,6 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
-          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -709,10 +707,6 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
-            "field": "imaging_study_annotations.annotation_name",
-            "name": "Annotation Name"
-          },
-          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -769,7 +763,6 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
-              "annotation_name",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -782,7 +775,6 @@
         "enabled": true,
         "fields": [
           "case_ids",
-          "annotation_name",
           "midrc_mRALE_score",
           "annotation_method",
           "annotator_id",
@@ -1007,7 +999,6 @@
           {
             "title": "Annotations",
             "fields": [
-              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id",
@@ -1042,7 +1033,6 @@
           "race",
           "ethnicity",
           "zip",
-          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1148,10 +1138,6 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
-            "field": "imaging_study_annotations.annotation_name",
-            "name": "Annotation Name"
-          },
-          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -1233,7 +1219,7 @@
               "data_format",
               "data_category",
               "data_type",
-               "image_data_modified",
+              "image_data_modified",
               "image_data_modification_name",
               "image_data_modification_method"
             ]
@@ -1280,7 +1266,6 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
-              "number_of_instances",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1315,7 +1300,6 @@
             "title": "Annotation Properties",
             "fields": [
               "source_node",
-              "data_type",
               "annotation_method",
               "annotation_name",
               "manufacturer",
@@ -1324,7 +1308,8 @@
               "series_description",
               "software_versions",
               "data_format",
-              "data_category"
+              "data_category",
+              "data_type"
             ]
           }
         ]
@@ -1351,7 +1336,6 @@
           "manufacturer",
           "manufacturer_model_name",
           "modality",
-          "number_of_instances",
           "number_of_temporal_positions",
           "patient_position",
           "pixel_spacing",
@@ -1762,6 +1746,5 @@
         "display": true
       }
     ]
-  },
-  "ddUrl": "ddog-gov.com"
+  }
 }
