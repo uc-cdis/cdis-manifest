@@ -11,7 +11,7 @@
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2024.08",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.08",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.08",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:10.2.0",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.08",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.08",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.08",
@@ -37,7 +37,7 @@
   "global": {
     "environment": "niaiddata",
     "hostname": "accessclinicaldata.niaid.nih.gov",
-    "revproxy_arn": "arn:aws:iam::636151780898:server-certificate/accessclinical-2024",
+    "revproxy_arn": "arn:aws:acm:us-east-1:636151780898:certificate/6e7a2cb3-e770-47b1-bfcb-3cd041a02d18",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/niaid-clinical-trials-dictionary/0.5.7/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-niaiddata-gen3",
