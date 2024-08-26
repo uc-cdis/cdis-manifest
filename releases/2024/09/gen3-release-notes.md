@@ -1,4 +1,21 @@
 # Core Gen3 Release 2024.09 (Bytownite)
+
+## Release Highlights and Announcements
+
+### Required database migration to update Fence
+If the ENABLE_DB_MIGRATION setting is enabled in your Fence configuration, the migration will run automatically. Otherwise, for cloud-automation deployments, run `gen3 job run fence-db-migrate`, or for any kubernetes deployment, run `kubectl exec <fence pod name> -- fence-create migrate`. 
+
+#### Authorization change: case insensitive comparison of usernames in Arborist
+Arborist has been updated to make case-insensitive comparisons of usernames. This complies with the assumptions of many authorization systems and gen3 installations.
+
+#### Community Contribution - force cluster-local URLs in Hatchery
+You can now set a configuration option to [force hatchery to use cluster-local URLs](#new-features-6) (like http://fence-service/) even when the `GEN3_ENDPOINT` environmental variable is set.
+
+Thanks to Andrzej Grzelak of  for contributing this to the Gen3 product codebase!
+
+### Multiple enhancements to Fence
+We've added support for deleting files from non-AWS S3 compatible endpoints, given admins more flexibility to choose their preferred data storage while keeping AWS S3 as the default, and added support for an optional guid in the request body for the '/upload' and '/multipart/init' endpoints so that blank records can be created if the guid does not exist. We've also cleaned up the documentation to make it easier to find information.
+
 ## uc-cdis/arborist
 
 #### New Features
