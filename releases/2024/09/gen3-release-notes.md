@@ -2,7 +2,7 @@
 
 ## Release Highlights and Announcements
 
-#### Required database migration to update Fence to 10.0.0 or later from an earlier version
+#### Required database migration to update Fence
 If the ENABLE_DB_MIGRATION setting is enabled in your Fence configuration, the migration will run automatically. Otherwise, for cloud-automation deployments, run `gen3 job run fence-db-migrate`, or for any kubernetes deployment, run `kubectl exec <fence pod name> -- fence-create migrate`. 
 
 #### Authorization change: case-insensitive comparison of usernames in Arborist
