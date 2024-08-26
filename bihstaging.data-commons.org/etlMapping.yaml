@@ -1,0 +1,17 @@
+mappings:
+  - name: bih_imaging_series
+    doc_type: imaging_series
+    type: aggregator
+    root: imaging_series
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: object_ids
+      - name: BodyPartExamined
+      - name: Manufacturer
+      - name: Modality
+      - name: SeriesDescription
+      - name: SeriesInstanceUID
+      - name: dicom_viewer_url
+    parent_props:
+      - path: imaging_studies[StudyDescription,StudyInstanceUID,PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[commons_name,collection_id,primary_site,disease_type]
