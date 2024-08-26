@@ -9,7 +9,7 @@ If the ENABLE_DB_MIGRATION setting is enabled in your Fence configuration, the m
 Arborist has been updated to make case-insensitive comparisons of usernames. This complies with the assumptions of many authorization systems and gen3 installations.
 
 #### Community Contribution - force cluster-local URLs in Hatchery
-You can now set a configuration option to [force hatchery to use cluster-local URLs](#new-features-6) (like http://fence-service/) even when the `GEN3_ENDPOINT` environmental variable is set.
+You can now set a configuration option to [force hatchery to use cluster-local URLs](#improvements-4) (like http://fence-service/) even when the `GEN3_ENDPOINT` environmental variable is set.
 
 Thanks to Andrzej Grzelak of  for contributing this to the Gen3 product codebase!
 
