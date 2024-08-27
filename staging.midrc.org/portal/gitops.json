@@ -44,6 +44,12 @@
   "resourceBrowser": {
     "title": "Jupyter Notebook Tutorials",
     "public": true,
+    "banner": [
+      {
+        "type": "warning",
+        "message": "Our helpdesk has moved! Starting 8/21, please contact us at midrc-support@gen3.org."
+      }
+    ],
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>. If you’d like to browse the machine learning-related algorithms and code being developed by MIDRC, please visit <a href='https://midrc.org/algorithms'>the algorithms page</a> on our website.",
     "resources": [
       {
@@ -301,7 +307,7 @@
           "name": "Submit Data"
         },
         {
-          "link": "midrc-support@datacommons.io",
+          "link": "midrc-support@gen3.org",
           "name": "Email Support"
         }
       ],
@@ -312,7 +318,7 @@
       "subTitle": "Explore, Analyze, and Share Medical Imaging Data to Improve Patient Outcomes",
       "text": "",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "midrc-support@datacommons.io",
+      "email": "midrc-support@gen3.org",
       "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
     },
     "categorical9Colors": [
