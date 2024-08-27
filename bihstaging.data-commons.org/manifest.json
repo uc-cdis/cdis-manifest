@@ -11,6 +11,8 @@
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:10.2.0",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
+    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2024.06",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.02",
     "guppy": "quay.io/cdis/guppy:feat_skip_disabled_fields",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.02",
@@ -18,7 +20,7 @@
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.02",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
-    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.06",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:1.0.5",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.05"
   },
@@ -32,7 +34,7 @@
     "environment": "bihprod",
     "hostname": "bihstaging.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:533267425233:certificate/dcb6f91b-6e4c-4458-a9d7-3750ba92b754",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bih_dictionary/0.1.0/schema.json",
     "dispatcher_job_num": "10",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
@@ -61,9 +63,6 @@
   "metadata": {
     "USE_AGG_MDS": true,
     "AGG_MDS_NAMESPACE": "bihstaging"
-  },
-  "portal": {
-    "GEN3_BUNDLE": "ecosystem"
   },
   "canary": {
     "default": 0
