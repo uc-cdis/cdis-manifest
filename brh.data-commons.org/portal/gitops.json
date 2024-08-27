@@ -193,7 +193,7 @@
             "enabled": true,
             "menuText": "Not Accessible"
           },
-          "pending": {
+          "waiting": {
             "enabled": false
           },
           "notAvailable": {
@@ -646,8 +646,8 @@
         }
       }
     },
-    "kayakoConfig": {
-      "kayakoDepartmentId": 22
+    "zendeskConfig": {
+      "zendeskSubdomainName": "brh-support"
     }
   }
 }
