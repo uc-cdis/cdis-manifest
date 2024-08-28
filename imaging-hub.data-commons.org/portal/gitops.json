@@ -111,11 +111,11 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": false,
-    "discovery": true,
-    "discoveryUseAggMDS": true,
-    "discoveryUseAggWTS": true,
-    "workspaceRegistration": true,
-    "workspaceTokenServiceRefreshTokenAtLogin": true
+    "discovery": false,
+    "discoveryUseAggMDS": false,
+    "discoveryUseAggWTS": false,
+    "workspaceRegistration": false,
+    "workspaceTokenServiceRefreshTokenAtLogin": false
   },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true,
