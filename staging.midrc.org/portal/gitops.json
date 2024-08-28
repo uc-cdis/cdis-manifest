@@ -440,6 +440,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method"
             ]
@@ -493,6 +494,7 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -713,6 +715,10 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
+          },
+          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -769,6 +775,7 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
+              "annotation_name",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -1005,6 +1012,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id",
@@ -1039,6 +1047,7 @@
           "race",
           "ethnicity",
           "zip",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1142,6 +1151,10 @@
           {
             "field": "imaging_study_annotations.class_covid19_pneumonia",
             "name": "Class COVID-19 Pneumonia"
+          },
+          {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
           },
           {
             "field": "imaging_study_annotations.midrc_mRALE_score",
@@ -1272,6 +1285,7 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
+              "number_of_instances",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1306,6 +1320,7 @@
             "title": "Annotation Properties",
             "fields": [
               "source_node",
+              "data_type",
               "annotation_method",
               "annotation_name",
               "manufacturer",
@@ -1314,8 +1329,7 @@
               "series_description",
               "software_versions",
               "data_format",
-              "data_category",
-              "data_type"
+              "data_category"
             ]
           }
         ]
@@ -1342,6 +1356,7 @@
           "manufacturer",
           "manufacturer_model_name",
           "modality",
+          "number_of_instances",
           "number_of_temporal_positions",
           "patient_position",
           "pixel_spacing",
