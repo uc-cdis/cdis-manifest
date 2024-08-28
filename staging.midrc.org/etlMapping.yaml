@@ -138,7 +138,7 @@ mappings:
       - name: test_name
       - name: test_result_text
     parent_props:
-      - path: datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
+      - path: cases.datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
   - name: midrcstaging_annotation
     doc_type: annotation
     type: aggregator
@@ -300,6 +300,15 @@ mappings:
           - name: _dataset_id
             src: id
             fn: set
+          - name: license
+            src: license
+            fn: set
+          - name: data_url_doi
+            src: data_url_doi
+            fn: set
+          - name: data_contributor
+            src: data_contributor
+            fn: set
       annotation:
         props:
           - name: _annotation_id
@@ -381,5 +390,3 @@ mappings:
           - name: loinc_system
             src: loinc_system
             fn: set
-    parent_props:
-      - path: datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
