@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "UA-119127212-1",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroEnv": "midrcstaging"
+  },
   "graphql": {
     "boardCounts": [
       {
