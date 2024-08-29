@@ -22,7 +22,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.08",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.08",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2024.08",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:0.19.0",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2024.08",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2024.08",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
