@@ -465,6 +465,9 @@
           "imaging_studies.age_at_imaging",
           "imaging_studies.body_part_examined",
           "imaging_studies.days_to_study",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "imaging_studies.loinc_code",
           "imaging_studies.loinc_contrast",
           "imaging_studies.loinc_long_common_name",
@@ -757,6 +760,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
@@ -897,7 +912,10 @@
           "test_name",
           "test_days_from_index",
           "submitter_id",
-          "project_id"
+          "project_id",
+          "license",
+          "data_url_doi",
+          "data_contributor"
         ]
       },
       "dropdowns": {
@@ -950,6 +968,18 @@
           {
             "field": "case_ids",
             "name": "Case ID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "accessibleFieldCheckList": [
@@ -1036,6 +1066,9 @@
           "days_to_study",
           "study_year",
           "study_year_shifted",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_long_common_name",
           "loinc_method",
           "loinc_system",
@@ -1191,6 +1224,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           },
           {
             "field": "loinc_long_common_name",
@@ -1382,6 +1427,9 @@
           "study_year_shifted",
           "days_from_study_to_pos_covid_test",
           "days_from_study_to_neg_covid_test",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_code",
           "loinc_contrast",
           "loinc_long_common_name",
@@ -1485,6 +1533,18 @@
           {
             "field": "series_UID",
             "name": "Series UID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
