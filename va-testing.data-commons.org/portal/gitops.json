@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "G-ENMRJKCVSY",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "vhdcprod"
+  },
   "argoTemplate": "gwas-template-zip",
   "graphql": {
     "boardCounts": [],
