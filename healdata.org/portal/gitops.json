@@ -2,6 +2,10 @@
   "gaTrackingId": "G-GNM3E850VR",
   "ddEnv": "healprod",
   "ddUrl": "ddog-gov.com",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "healprod"
+  },
   "homepageHref": "https://healdata.org",
   "graphql": {
     "boardCounts": [],
