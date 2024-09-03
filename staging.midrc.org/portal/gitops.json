@@ -512,7 +512,11 @@
           "_cr_series_file_count",
           "_mr_series_file_count",
           "project_id"
-        ]
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
+      ]
       },
       "dropdowns": {
         "download-table": {
@@ -916,7 +920,11 @@
           "license",
           "data_url_doi",
           "data_contributor"
-        ]
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
+      ]
       },
       "dropdowns": {
         "download-table": {
@@ -1108,7 +1116,9 @@
         "dicomViewerId": "submitter_id",
         "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -1461,7 +1471,9 @@
         "dicomViewerId": "submitter_id",
         "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
