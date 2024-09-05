@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "UA-119127212-5",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "bdcatprod"
+  },
   "graphql": {
     "boardCounts": [
       {
