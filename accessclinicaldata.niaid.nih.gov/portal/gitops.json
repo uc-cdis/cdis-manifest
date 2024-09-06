@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "G-PYX1509S24",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "accessclinicaldataprod"
+  },
   "DAPTrackingURL": "https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIH&subagency=NIAID",
   "ddEnv": "NIAID",
   "ddUrl": "ddog-gov.com",

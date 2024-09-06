@@ -1,6 +1,9 @@
 {
   "gaTrackingId": "G-CRDLB4FGKF",
-  "ddEnv": "brhprod",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "brhstaging"
+  },
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
