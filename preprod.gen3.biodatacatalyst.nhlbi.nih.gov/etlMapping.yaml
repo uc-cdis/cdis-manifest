@@ -150,7 +150,9 @@ mappings:
           - name: project_id
       project:
         props:
-        - name: dbgap_accession_number
+          - name: dbgap_accession_number
+            src: dbgap_accession_number
+            fn: set
       program:
         props:
           - name: programs_name
@@ -182,7 +184,9 @@ mappings:
           - name: project_id
       project:
         props:
-        - name: dbgap_accession_number
+          - name: dbgap_accession_number
+            src: dbgap_accession_number
+            fn: set
       program:
         props:
           - name: programs_name
