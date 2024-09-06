@@ -153,6 +153,7 @@ mappings:
           - name: programs_name
             src: name
             fn: set
+          - name: dbgap_accession_number
   - name: internalstaging_index_file
     doc_type: index_file
     type: collector
