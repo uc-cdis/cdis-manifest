@@ -148,12 +148,14 @@ mappings:
             src: id
             fn: set
           - name: project_id
+      project:
+        props:
+        - name: dbgap_accession_number
       program:
         props:
           - name: programs_name
             src: name
             fn: set
-          - name: dbgap_accession_number
   - name: internalstaging_index_file
     doc_type: index_file
     type: collector
@@ -178,9 +180,11 @@ mappings:
             src: id
             fn: set
           - name: project_id
+      project:
+        props:
+        - name: dbgap_accession_number
       program:
         props:
           - name: programs_name
             src: name
             fn: set
-          - name: dbgap_accession_number
