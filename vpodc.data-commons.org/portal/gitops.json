@@ -1,5 +1,10 @@
 {
   "gaTrackingId": "G-LJWLJXVBCW",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "vpodc"
+  },
+
   "graphql": {
     "boardCounts": [
       {
@@ -162,7 +167,13 @@
     "analysis": true
   },
   "analysisTools": [
-    "vaGWAS"
+    {
+      "title": "OHDSI Atlas",
+      "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
+      "applicationUrl": "https://atlas.vpodc.data-commons.org",
+      "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png",
+      "needsTeamProject": true
+    }
   ],
   "explorerConfig": [
     {
