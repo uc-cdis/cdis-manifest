@@ -1,7 +1,9 @@
 {
   "gaTrackingId": "G-WM3JV9YMW3",
-  "ddEnv": "brhprod",
-  "ddUrl": "ddog-gov.com",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "brhprod"
+  },
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],

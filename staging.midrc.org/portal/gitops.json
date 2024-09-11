@@ -2,7 +2,7 @@
   "gaTrackingId": "UA-119127212-1",
   "grafanaFaroConfig": {
     "grafanaFaroEnable": true,
-    "grafanaFaroEnv": "midrcstaging"
+    "grafanaFaroNamespace": "midrcstaging"
   },
   "graphql": {
     "boardCounts": [
@@ -50,6 +50,12 @@
     "public": true,
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>. If you’d like to browse the machine learning-related algorithms and code being developed by MIDRC, please visit <a href='https://midrc.org/algorithms'>the algorithms page</a> on our website.",
     "resources": [
+      {
+        "title": "Cohort Building Using LOINC Terms",
+        "description": "This notebook demonstrates how to build a cohort of patients based on LOINC terms derived by harmonizing original DICOM study descriptions, modalities, and body parts examined using the LOINC playbook. Imaging study DICOM data element harmonization using the LOINC playbook is the result of an effort by MIDRC's Technology and Development Project 3b (TDP3b) and the Collaborative Research Project 12 (CRP-12). Links to the GitHub repository where the code for performing LOINC harmonization is maintained is included in the notebook.",
+        "imageUrl": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.png",
+        "link": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.html"
+      },
       {
         "title": "Build a Patient Cohort and Access Chest CT Scans and Annotations",
         "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then access all Chest CT scans and any related annotations.",
@@ -1015,6 +1021,7 @@
               "body_part_examined",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
+              "image_data_modified",
               "project_id"
             ]
           },
