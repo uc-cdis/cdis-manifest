@@ -29,6 +29,13 @@
   "showFenceAuthzOnProfile": false,
   "components": {
     "appName": "NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL)",
+    "banner": [ 
+      {
+        "type": "warning", 
+        "message": "gen3.theanvil.io is being decommissioned and will be unavailable beginning on 1 October 2024. During the transition, performance is not expected to be impacted, but is a possibility. Please use regular channels to communicate any issues.", 
+        "resetMsgDays": 1
+      }
+    ],
     "index": {
       "introduction": {
         "heading": "The AnVIL",
