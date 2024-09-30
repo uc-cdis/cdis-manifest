@@ -171,7 +171,7 @@
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download Manifest",
-        "variableMetadataFieldName": "data_dictionaries",
+        "variableMetadataFieldName": "variable_level_metadata",
         "enableDownloadVariableMetadata": true,
         "studyMetadataFieldName": "study_metadata",
         "enableDownloadStudyMetadata": true,
@@ -613,7 +613,8 @@
         ],
         "dataDictionarySubmissionBucket": "",
         "dataDictionarySubmissionDisclaimerField": "All submitted data dictionaries will be available to public.",
-        "dataDictionaryField": "data_dictionaries"
+        "cdeSubmissionDisclaimerField": "All submitted CDEs will be openly accessible to all users.",
+        "variableMetadataField": "variable_level_metadata"
       },
       "workspaceRegistrationConfig" : {
         "workspacePolicyId": "workspace_strides_integrated",
