@@ -155,6 +155,9 @@
           },
           {
             "key": "Age"
+          },
+          {
+            "key": "Common Data Elements"
           }
         ]
       },
@@ -171,7 +174,7 @@
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download Manifest",
-        "variableMetadataFieldName": "data_dictionaries",
+        "variableMetadataFieldName": "variable_level_metadata",
         "enableDownloadVariableMetadata": true,
         "studyMetadataFieldName": "study_metadata",
         "enableDownloadStudyMetadata": true,
@@ -467,18 +470,23 @@
       },
       {
         "name": "Research Program",
+        "color": "#c0b3c5",
+        "display": false
+      },
+      {
+        "name": "Common Data Elements",
         "color": "#532565",
+        "display": false
+      },
+      {
+        "name": "Other",
+        "color": "#982568",
         "display": false
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
         "color": "#981f32",
-        "display": false
-      },
-      {
-        "name": "Other",
-        "color": "#bf362e",
         "display": false
       },
       {
@@ -613,7 +621,8 @@
         ],
         "dataDictionarySubmissionBucket": "",
         "dataDictionarySubmissionDisclaimerField": "All submitted data dictionaries will be available to public.",
-        "dataDictionaryField": "data_dictionaries"
+        "cdeSubmissionDisclaimerField": "All submitted CDEs will be openly accessible to all users.",
+        "variableMetadataField": "variable_level_metadata"
       },
       "workspaceRegistrationConfig" : {
         "workspacePolicyId": "workspace_strides_integrated",
