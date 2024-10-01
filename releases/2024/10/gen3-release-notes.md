@@ -1,4 +1,4 @@
-# Core Gen3 Release 2024.10 (Bytownite)
+# Core Gen3 Release 2024.10 (Cassiterite)
 
 ## Release Highlights and Announcements
 
