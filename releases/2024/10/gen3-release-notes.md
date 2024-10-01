@@ -1,4 +1,18 @@
 # Core Gen3 Release 2024.10 (Bytownite)
+
+## Release Highlights and Announcements
+
+#### Single-table option for IndexD
+IndexD has a new configuration option that consolidates multiple relational tables into a [single record table](#new-features-4). The single-table 
+option can provide a significant performance advantage.  Switching an existing commons to this configuration requires 
+migration of the database to the new schema.
+
+#### Support in Fence for generating presigned URLs for requester-pays S3 buckets
+  - We've added the capability for Fence to (generating presigned URLs for data in requester pays enabled AWS S3 buckets)[#new-features-3] 
+
+#### Integration of Grafana Faro for frontend RUM
+  - Data portal now has [integrated support](#new-features-1) for gathering user metrics via Grafana Faro.
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
