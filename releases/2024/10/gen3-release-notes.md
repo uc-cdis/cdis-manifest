@@ -3,7 +3,7 @@
 ## Release Highlights and Announcements
 
 #### Single-table option for IndexD
-IndexD has a new configuration option that consolidates multiple relational tables into a [single record table](#new-features-4). The single-table 
+  - IndexD has a new configuration option that consolidates multiple relational tables into a [single record table](#new-features-4). The single-table 
 option can provide a significant performance advantage.  Switching an existing commons to this configuration requires 
 migration of the database to the new schema.
 
