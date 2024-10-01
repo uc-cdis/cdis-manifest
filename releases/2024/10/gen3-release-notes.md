@@ -8,7 +8,7 @@ option can provide a significant performance advantage.  Switching an existing c
 migration of the database to the new schema.
 
 #### Support in Fence for generating presigned URLs for requester-pays S3 buckets
-  - We've added the capability for Fence to (generating presigned URLs for data in requester pays enabled AWS S3 buckets)[#new-features-3] 
+  - We've added the capability for Fence to [generating presigned URLs for data in requester pays enabled AWS S3 buckets](#new-features-3).
 
 #### Integration of Grafana Faro for frontend RUM
   - Data portal now has [integrated support](#new-features-1) for gathering user metrics via Grafana Faro.
