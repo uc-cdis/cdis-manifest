@@ -3,12 +3,7 @@
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
-  "default-pay-model": {
-    "bmh_workspace_id": "blanket_billing_eks",
-    "region": "us-east-1",
-    "account_id": "252835817747",
-    "workspace_type": "healworkspaces"
-  },
+  "karpenter": true,
   "license-user-maps-dynamodb-table": "gen3-license-user-maps-preprod-heal",
   "license-user-maps-global-secondary-index": "activeUsersIndex",
   "sidecar": {
@@ -62,7 +57,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+	"export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; wget -O /data/qdr_data_download.ipynb https://raw.githubusercontent.com/uc-cdis/heal-platform-sdk/refs/heads/master/notebooks/qdr_data_download.ipynb; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,

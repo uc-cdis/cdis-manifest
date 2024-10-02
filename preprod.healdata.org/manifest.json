@@ -14,12 +14,12 @@
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.08",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:10.3.1",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2024.08",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:feat_karpenter-for-cost",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.08",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.08",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.08",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.08",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.33.1",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.34.0",
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.08",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.08",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.08",
@@ -34,6 +34,7 @@
   },
   "metadata": {
     "USE_AGG_MDS": true,
+    "AGG_MDS_DEFAULT_DATA_DICT_FIELD": "variable_level_metadata",
     "AGG_MDS_NAMESPACE": "healpreprod"
   },
   "portal": {
