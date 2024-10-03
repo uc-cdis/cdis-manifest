@@ -44,8 +44,14 @@
   "resourceBrowser": {
     "title": "Jupyter Notebook Tutorials",
     "public": true,
-    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>.",
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>. If you’d like to browse the machine learning-related algorithms and code being developed by MIDRC, please visit <a href='https://midrc.org/algorithms'>the algorithms page</a> on our website.",
     "resources": [
+      {
+        "title": "Cohort Building Using LOINC Terms",
+        "description": "This notebook demonstrates how to build a cohort of patients based on LOINC terms derived by harmonizing original DICOM study descriptions, modalities, and body parts examined using the LOINC playbook. Imaging study DICOM data element harmonization using the LOINC playbook is the result of an effort by MIDRC's Technology and Development Project 3b (TDP3b) and the Collaborative Research Project 12 (CRP-12). Links to the GitHub repository where the code for performing LOINC harmonization is maintained is included in the notebook.",
+        "imageUrl": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.png",
+        "link": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.html"
+      },
       {
         "title": "Build a Patient Cohort and Access Chest CT Scans and Annotations",
         "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then access all Chest CT scans and any related annotations.",
@@ -124,6 +130,12 @@
   },
   "components": {
     "appName": "The Medical Imaging and Data Resource Center Commons",
+    "banner": [
+      {
+        "type": "warning",
+        "message": "Our helpdesk has moved! Starting 8/21, please contact us at midrc-support@gen3.org."
+      }
+    ],
     "index": {
       "introduction": {
         "heading": "MIDRC Data Commons",
@@ -301,7 +313,7 @@
           "name": "Submit Data"
         },
         {
-          "link": "midrc-support@datacommons.io",
+          "link": "midrc-support@gen3.org",
           "name": "Email Support"
         }
       ],
@@ -312,7 +324,7 @@
       "subTitle": "Explore, Analyze, and Share Medical Imaging Data to Improve Patient Outcomes",
       "text": "",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "midrc-support@datacommons.io",
+      "email": "midrc-support@gen3.org",
       "image": "/../../../../custom/sponsors/gitops-sponsors/covid_gene"
     },
     "categorical9Colors": [
@@ -383,7 +395,11 @@
               "imaging_studies.loinc_system",
               "imaging_studies.age_at_imaging",
               "imaging_studies.body_part_examined",
-              "imaging_studies.days_to_study"
+              "imaging_studies.days_to_study",
+              "imaging_studies.image_data_modified",
+              "data_file_image_data_modified",
+              "data_file_image_data_modification_name",
+              "data_file_image_data_modification_method"
             ]
           },
           {
@@ -430,6 +446,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method"
             ]
@@ -450,6 +467,9 @@
           "imaging_studies.age_at_imaging",
           "imaging_studies.body_part_examined",
           "imaging_studies.days_to_study",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "imaging_studies.loinc_code",
           "imaging_studies.loinc_contrast",
           "imaging_studies.loinc_long_common_name",
@@ -458,6 +478,10 @@
           "imaging_studies.study_description",
           "imaging_studies.study_modality",
           "imaging_studies.study_uid",
+          "imaging_studies.image_data_modified",
+          "data_file_image_data_modified",
+          "data_file_image_data_modification_name",
+          "data_file_image_data_modification_method",
           "measurements.test_name",
           "measurements.test_result_text",
           "measurements.test_method",
@@ -479,6 +503,7 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -489,6 +514,10 @@
           "_cr_series_file_count",
           "_mr_series_file_count",
           "project_id"
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -544,6 +573,7 @@
       "guppyConfig": {
         "dataType": "case",
         "nodeCountTitle": "Cases",
+        "fileCountField": "data_file_count",
         "fieldMapping": [
           {
             "field": "project_id",
@@ -598,10 +628,6 @@
             "name": "Study Description"
           },
           {
-            "field": "imaging_studies.study_location",
-            "name": "Study Location"
-          },
-          {
             "field": "imaging_studies.study_modality",
             "name": "Study Modality"
           },
@@ -654,10 +680,6 @@
             "name": "Medication Name"
           },
           {
-            "field": "medications.medication_status",
-            "name": "Medication Status"
-          },
-          {
             "field": "medications.medication_type",
             "name": "Medication Type"
           },
@@ -706,6 +728,10 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
+          },
+          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -740,6 +766,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
@@ -762,6 +800,7 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
+              "annotation_name",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -879,7 +918,14 @@
           "test_name",
           "test_days_from_index",
           "submitter_id",
-          "project_id"
+          "project_id",
+          "license",
+          "data_url_doi",
+          "data_contributor"
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -932,6 +978,18 @@
           {
             "field": "case_ids",
             "name": "Case ID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "accessibleFieldCheckList": [
@@ -959,6 +1017,7 @@
               "body_part_examined",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
+              "image_data_modified",
               "project_id"
             ]
           },
@@ -977,7 +1036,10 @@
             "fields": [
               "data_format",
               "data_category",
-              "data_type"
+              "data_type",
+              "data_file_image_data_modified",
+              "data_file_image_data_modification_name",
+              "data_file_image_data_modification_method"
             ]
           },
           {
@@ -995,6 +1057,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id",
@@ -1014,6 +1077,9 @@
           "days_to_study",
           "study_year",
           "study_year_shifted",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_long_common_name",
           "loinc_method",
           "loinc_system",
@@ -1021,7 +1087,7 @@
           "loinc_code",
           "days_from_study_to_pos_covid_test",
           "days_from_study_to_neg_covid_test",
-          "data_format",
+          "image_data_modified",
           "covid19_positive",
           "age_at_index",
           "index_event",
@@ -1029,6 +1095,7 @@
           "race",
           "ethnicity",
           "zip",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1041,14 +1108,20 @@
           "data_format",
           "data_category",
           "data_type",
+          "data_file_image_data_modified",
+          "data_file_image_data_modification_name",
+          "data_file_image_data_modification_method",
           "study_uid",
           "case_ids",
           "object_id",
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -1130,6 +1203,10 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
+          },
+          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -1160,6 +1237,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           },
           {
             "field": "loinc_long_common_name",
@@ -1210,7 +1299,10 @@
               "source_node",
               "data_format",
               "data_category",
-              "data_type"
+              "data_type",
+              "image_data_modified",
+              "image_data_modification_name",
+              "image_data_modification_method"
             ]
           },
           {
@@ -1255,6 +1347,7 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
+              "number_of_instances",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1289,6 +1382,7 @@
             "title": "Annotation Properties",
             "fields": [
               "source_node",
+              "data_type",
               "annotation_method",
               "annotation_name",
               "manufacturer",
@@ -1297,8 +1391,7 @@
               "series_description",
               "software_versions",
               "data_format",
-              "data_category",
-              "data_type"
+              "data_category"
             ]
           }
         ]
@@ -1325,6 +1418,7 @@
           "manufacturer",
           "manufacturer_model_name",
           "modality",
+          "number_of_instances",
           "number_of_temporal_positions",
           "patient_position",
           "pixel_spacing",
@@ -1346,6 +1440,9 @@
           "study_year_shifted",
           "days_from_study_to_pos_covid_test",
           "days_from_study_to_neg_covid_test",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_code",
           "loinc_contrast",
           "loinc_long_common_name",
@@ -1360,6 +1457,9 @@
           "data_format",
           "data_category",
           "data_type",
+          "image_data_modified",
+          "image_data_modification_name",
+          "image_data_modification_method",
           "annotation_method",
           "annotation_name",
           "annotator_id",
@@ -1372,8 +1472,11 @@
           "project_id"
         ],
         "dicomViewerId": "submitter_id",
+        "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -1445,6 +1548,18 @@
           {
             "field": "series_UID",
             "name": "Series UID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
