@@ -31,6 +31,7 @@ jobs:
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
+          github-token: ${{ secrets.GEN3_RELEASE_GH_TOKEN }}
           script: |
             async function removeComments() {
               const { owner, repo, number } = context.issue;
