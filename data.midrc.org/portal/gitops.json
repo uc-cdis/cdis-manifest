@@ -817,6 +817,7 @@
         "enabled": true,
         "fields": [
           "case_ids",
+          "annotation_name",
           "midrc_mRALE_score",
           "annotation_method",
           "annotator_id",
@@ -1386,6 +1387,7 @@
             "title": "Annotation Properties",
             "fields": [
               "source_node",
+              "data_type",
               "annotation_method",
               "annotation_name",
               "manufacturer",
@@ -1394,8 +1396,7 @@
               "series_description",
               "software_versions",
               "data_format",
-              "data_category",
-              "data_type"
+              "data_category"
             ]
           }
         ]
