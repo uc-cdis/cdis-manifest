@@ -5,9 +5,13 @@
   --g3-color__highlight-orange-white-text: #994A03;
   --g3-color__highlight-orange-white-text-light: #B35F05;
   
-  --g3-primary-btn__bg-color: var(--g3-color__highlight-orange-white-text);
-  --g3-primary-btn__bg-color--hover: var(--g3-color__highlight-orange-white-text-light);
+  --g3-primary-btn__bg-color: var(--g3-color__highlight-orange-white-text-light);
+  --g3-primary-btn__bg-color--hover: var(--g3-color__highlight-orange-white-text);
 
+}
+
+.popup__title {
+  background-color: var(--g3-color__base-blue);
 }
 
 .nav-bar__logo {
