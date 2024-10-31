@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>build_a_cohort_of_severe_covid_19_cases</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Cohort_Building_Using_LOINC_Terms</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7482,21 +7482,11 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Build-a-Cohort-of-Severe-COVID-19-Cases-Using-the-MIDRC-Data-Commons">How to Build a Cohort of Severe COVID-19 Cases Using the MIDRC Data Commons<a class="anchor-link" href="#How-to-Build-a-Cohort-of-Severe-COVID-19-Cases-Using-the-MIDRC-Data-Commons">¶</a></h1><hr/>
-<p>This notebook demonstrates how to build a cohort of severe COVID-19 cases using patient clinical data and AI research-based annotations in the MIDRC data commons.</p>
-<p>Our goal is to download structured data and files for 2 related cohorts: 1) severe COVID cases and 2) a control cohort of non-severe COVID cases.</p>
-<p>Luckily for the patients, there are many more non-severe cases; but that presents a challenge for building a balanced dataset that is optimal for AI/ML training and evaluation.</p>
-<ul>
-<li><p>Cohort 1: All chest x-rays (CXR) with an mRALE score of 10 or higher obtained within 2 days after a positive COVID test.</p>
-</li>
-<li><p>Cohort 2: Matching number of CXRs with an mRALE score &lt;10 obtained within 2 days after a positive COVID test.</p>
-</li>
-<li><p>Additionally, we want the cohorts to be somewhat balanced and matched in terms of the demographics: age, sex, race, and ethnicity.</p>
-</li>
-</ul>
-<p>by Chris Meyer, PhD</p>
-<p>Manager of Data and User Services at the Center for Translational Data Science at University of Chicago</p>
-<p>August 2023</p>
+<h1 id="Cohort-Building-Using-LOINC-Terms-in-the-MIDRC-Data-Commons">Cohort Building Using LOINC Terms in the MIDRC Data Commons<a class="anchor-link" href="#Cohort-Building-Using-LOINC-Terms-in-the-MIDRC-Data-Commons">¶</a></h1><hr/>
+<p>This notebook briefly demonstrates how to use the MIDRC open APIs to build a cohort of MIDRC imaging studies using LOINC properties derived from <a href="https://github.com/MIDRC/midrc_dicom_harmonization">MIDRC's LOINC Harmonization process</a> using the <a href="https://loinc.org/search/?t=1&amp;s=playbook">LOINC Playbook</a>.</p>
+<p>All cohort selection possible in the <a href="https://data.midrc.org/explorer">MIDRC data explorer UI</a> can also be achieved programmatically using API requests. In this notebook, we'll select a small cohort of imaging studies based on LOINC properties.</p>
+<p>by Chris Meyer, PhD, Director of Data Services and Scientific Support at the Center for Translational Data Science at the University of Chicago</p>
+<p>Presented at the 2024 LOINC Conference on September 20, 2024.</p>
 </div>
 </div>
 </div>
@@ -7512,6 +7502,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ffc85bb2-3ed6-4eef-a943-724eef02c41b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Download-an-API-key-file-containing-your-credentials">Download an API key file containing your credentials<a class="anchor-link" href="#Download-an-API-key-file-containing-your-credentials">¶</a></h3><hr/>
+<ol>
+<li>Navigate to the MIDRC data portal in your browser: <a href="https://data.midrc.org">https://data.midrc.org</a>.</li>
+<li>Read and accept the DUA (if you haven't already).</li>
+<li>Navigate to the user profile page: <a href="https://data.midrc.org/identity">https://data.midrc.org/identity</a></li>
+<li>Click on the button "Create API Key" and save the <code>credentials.json</code> file somewhere safe</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1bffd5d4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7519,7 +7526,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Set-local-variables">Set local variables<a class="anchor-link" href="#Set-local-variables">¶</a></h3><hr/>
-<p>Change the following directory paths to a valid working directories where you're running this notebook.</p>
+<p>Change the following <code>cred</code> variable path to point to your credentials file downloaded from the MIDRC data portal following the instructions above.</p>
 </div>
 </div>
 </div>
@@ -7528,10 +7535,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cred</span> <span class="o">=</span> <span class="s2">"/content/credentials.json"</span> <span class="c1"># location of your MIDRC credentials, downloaded from https://data.midrc.org/identity by clicking "Create API key" button and saving the credentials.json locally; then upload to Colab Files browser</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cred</span> <span class="o">=</span> <span class="s2">"/Users/christopher/Downloads/midrc-credentials.json"</span> <span class="c1"># location of your MIDRC credentials, downloaded from https://data.midrc.org/identity by clicking "Create API key" button and saving the credentials.json locally</span>
 <span class="n">api</span> <span class="o">=</span> <span class="s2">"https://data.midrc.org"</span> <span class="c1"># The base URL of the data commons being queried. This shouldn't change for MIDRC.</span>
 </pre></div>
 </div>
@@ -7549,12 +7556,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e1a7935">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8e1a7935">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## The packages below may be necessary for users to install according to the imports necessary in the subsequent cells.</span>
@@ -7564,21 +7571,23 @@ a.anchor-link {
 <span class="c1">#!{sys.executable} -m pip install --upgrade pandas</span>
 <span class="c1">#!{sys.executable} -m pip install --upgrade --ignore-installed PyYAML</span>
 <span class="c1">#!{sys.executable} -m pip install --upgrade pip</span>
-<span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>gen3
+<span class="c1">#!{sys.executable} -m pip install --upgrade gen3</span>
 <span class="c1">#!{sys.executable} -m pip install pydicom</span>
+<span class="c1">#!{sys.executable} -m pip install --upgrade Pillow</span>
 <span class="c1">#!{sys.executable} -m pip install psmpy</span>
+<span class="c1">#!{sys.executable} -m pip install python-gdcm --upgrade</span>
+<span class="c1">#!{sys.executable} -m pip install pylibjpeg --upgrade</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7ea2fa09">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Import Python Packages and scripts</span>
@@ -7586,7 +7595,11 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1">#import pydicom</span>
+<span class="kn">import</span> <span class="nn">pydicom</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="c1">#import gdcm</span>
+<span class="c1">#import pylibjpeg</span>
 
 <span class="c1"># import some Gen3 packages</span>
 <span class="kn">import</span> <span class="nn">gen3</span>
@@ -7614,7 +7627,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">auth</span> <span class="o">=</span> <span class="n">Gen3Auth</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">refresh_file</span><span class="o">=</span><span class="n">cred</span><span class="p">)</span> <span class="c1"># authentication class</span>
@@ -7631,14 +7644,13 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Build-Cohorts-by-Sending-Queries-to-the-MIDRC-APIs">2) Build Cohorts by Sending Queries to the MIDRC APIs<a class="anchor-link" href="#2)-Build-Cohorts-by-Sending-Queries-to-the-MIDRC-APIs">¶</a></h2><h4 id="General-notes-on-sending-queries:">General notes on sending queries:<a class="anchor-link" href="#General-notes-on-sending-queries:">¶</a></h4><ul>
+<h2 id="2)-Build-Cohorts-by-Sending-Queries-to-the-MIDRC-Search-APIs">2) Build Cohorts by Sending Queries to the MIDRC Search APIs<a class="anchor-link" href="#2)-Build-Cohorts-by-Sending-Queries-to-the-MIDRC-Search-APIs">¶</a></h2><h4 id="General-notes-on-sending-queries:">General notes on sending queries:<a class="anchor-link" href="#General-notes-on-sending-queries:">¶</a></h4><ul>
 <li>There are many ways to query and access metadata for cohort building in MIDRC, but this notebook will focus on using the <a href="https://gen3.org">Gen3</a> graphQL query service <a href="https://github.com/uc-cdis/guppy/#readme">"guppy"</a>. This is the backend query service that <a href="https://data.midrc.org/explorer">MIDRC's data explorer GUI</a> uses. So, anything you can do in the explorer GUI, you can do with guppy queries, and more!</li>
-<li>The guppy graphQL service has more functionality than is demonstrated in this simple example with extensive documentation in GitHub <a href="https://github.com/uc-cdis/guppy/blob/master/doc/queries.md">here</a> in case you'd like to build your own queries from scratch.</li>
-<li>The Gen3 SDK (intialized as "query" above in this notebook) has Python wrapper scripts to make sending queries to the guppy graphQL API simpler. The guppy SDK package can be viewed in GitHub <a href="https://github.com/uc-cdis/gen3sdk-python/blob/master/gen3/query.py">here</a>.</li>
-<li>Guppy queries focus on a particular type of data (cases, imaging studies, files, etc.) and include arguments that are akin to selecting filter values in <a href="https://data.midrc.org/explorer">MIDRC's data explorer GUI</a>.</li>
-<li>To see more documentation about to use and combine filters with various operator logic (like AND/OR/IN, etc.) see <a href="https://github.com/uc-cdis/guppy/blob/master/doc/queries.md#filter">this page</a>.</li>
-<li>We then send our query to MIDRC's guppy API endpoint using <a href="https://github.com/uc-cdis/gen3sdk-python/blob/master/gen3/query.py">the Gen3Query SDK package</a> we initialized earlier.</li>
-<li>If our query request is successful, the API response should be in JSON format, and it should contain a list of patient IDs along with any other patient data we ask for.</li>
+<li>The guppy graphQL service has more functionality than is demonstrated in this simple example. You can find extensive documentation in GitHub <a href="https://github.com/uc-cdis/guppy/blob/master/doc/queries.md">here</a> in case you'd like to build your own queries from scratch.</li>
+<li>The Gen3 SDK (intialized as <code>query</code> above in this notebook) has Python wrapper scripts to make sending queries to the guppy graphQL API simpler. The guppy SDK package can be viewed in GitHub <a href="https://github.com/uc-cdis/gen3sdk-python/blob/master/gen3/query.py">here</a>.</li>
+<li>Guppy queries focus on a particular type of data (cases, imaging studies, files, etc.), which corresponds to the major tabs in <a href="https://data.midrc.org/explorer">MIDRC's data explorer GUI</a>.</li>
+<li>Queries include arguments that are akin to selecting filter values in <a href="https://data.midrc.org/explorer">MIDRC's data explorer GUI</a>.</li>
+<li>To see more documentation about how to use and combine filters with various operator logic (like AND/OR/IN, etc.) see <a href="https://github.com/uc-cdis/guppy/blob/master/doc/queries.md#filter">this page</a>.</li>
 </ul>
 <hr/>
 </div>
@@ -7651,7 +7663,12 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Cohort-1:-All-chest-x-rays-(CXR)-with-an-mRALE-score-of-10-or-higher-obtained-within-2-days-after-a-positive-COVID-test.">Cohort 1: All chest x-rays (CXR) with an mRALE score of 10 or higher obtained within 2 days after a positive COVID test.<a class="anchor-link" href="#Cohort-1:-All-chest-x-rays-(CXR)-with-an-mRALE-score-of-10-or-higher-obtained-within-2-days-after-a-positive-COVID-test.">¶</a></h4><hr/>
+<h4 id="Set-query-parameters">Set query parameters<a class="anchor-link" href="#Set-query-parameters">¶</a></h4><hr/>
+<ul>
+<li>Here, we'll send a query to the <code>imaging_study</code> guppy index, which corresponds to the "Imaging Studies" tab of <a href="https://data.midrc.org/explorer">MIDRC's data explorer GUI</a>.</li>
+<li>The filters defined below can be modified to return different subsets of imaging studies. Here, we'll use a combination of LOINC method (Modality), system (body part), and long common name (descrition) to narrow our selected imaging studies to show the diversity of study descriptions for a single loinc code.</li>
+<li>If our query request is successful, the API response should be in JSON format, and it should contain a list of patient IDs along with any other patient data we ask for.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7660,59 +7677,54 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Set some "imaging_study" query parameters</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Set some "imaging_study" query parameters to select Chest X-rays (CXR) imaging studies in MIDRC</span>
 
-<span class="c1">## mRALE filter: we'll select all imaging studies annotated with an mRAle scores greater than or equal to this threshold number</span>
-<span class="n">mRALE_threshold</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1">## Here we select imaging studies with a LOINC System of "Chest", which is the harmonized BodyPartExamined</span>
+<span class="n">loinc_system</span> <span class="o">=</span> <span class="s2">"Chest"</span>
 
-<span class="c1">## days from study to positive COVID-19 test filter: we want imaging studies performed within two days after a positive test</span>
-<span class="n">min_days_from_study_to_test</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
-<span class="n">max_days_from_study_to_test</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">## Here we select imaging studies with a LOINC Method of "XR", which is the harmonized Modality</span>
+<span class="n">loinc_method</span> <span class="o">=</span> <span class="s2">"CT"</span>
+<span class="n">loinc_method</span> <span class="o">=</span> <span class="s2">"XR"</span>
 
-<span class="c1">## Imaging study modality filter: we want chest x-rays, so we want studies with a modality of either DX or CR</span>
-<span class="n">study_modalities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"DX"</span><span class="p">,</span> <span class="s2">"CR"</span><span class="p">]</span>
-
-<span class="c1">## Imaging study body part filter: here we select "chest" as the "LOINC system" filter, which is the body part examined</span>
-<span class="n">body_part_examined</span> <span class="o">=</span> <span class="s2">"Chest"</span>
+<span class="c1">## Here we select imaging studies with a LOINC Long Common Name of "", which is the harmonized StudyDescription</span>
+<span class="n">loinc_long_common_name</span> <span class="o">=</span> <span class="s2">"CT Chest W contrast IV"</span>
+<span class="n">loinc_long_common_name</span> <span class="o">=</span> <span class="s2">"XR Chest Single view"</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8910b3e4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8910b3e4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Note: the "fields" option defines what fields we want the query to return. If set to "None", returns all available fields.</span>
 
-<span class="n">severe_studies</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
+<span class="n">imaging_studies</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
                     <span class="n">data_type</span><span class="o">=</span><span class="s2">"imaging_study"</span><span class="p">,</span>
                     <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">filter_object</span><span class="o">=</span><span class="p">{</span>
                         <span class="s2">"AND"</span><span class="p">:</span> <span class="p">[</span>
-                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_system"</span><span class="p">:</span> <span class="p">[</span><span class="n">body_part_examined</span><span class="p">]}},</span>
-                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"study_modality"</span><span class="p">:</span> <span class="n">study_modalities</span><span class="p">}},</span>
-                            <span class="p">{</span><span class="s2">"nested"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"path"</span><span class="p">:</span> <span class="s2">"imaging_study_annotations"</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"midrc_mRALE_score"</span><span class="p">:</span> <span class="n">mRALE_threshold</span><span class="p">}}},</span>
-                            <span class="p">{</span><span class="s2">"AND"</span><span class="p">:</span> <span class="p">[</span>
-                                <span class="p">{</span><span class="s2">"&gt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"days_from_study_to_pos_covid_test"</span><span class="p">:</span> <span class="n">min_days_from_study_to_test</span><span class="p">}},</span>
-                                <span class="p">{</span><span class="s2">"&lt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"days_from_study_to_pos_covid_test"</span><span class="p">:</span> <span class="n">max_days_from_study_to_test</span><span class="p">}}</span>
-                            <span class="p">]}</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_method"</span><span class="p">:</span> <span class="n">loinc_method</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_system"</span><span class="p">:</span> <span class="n">loinc_system</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_long_common_name"</span><span class="p">:</span> <span class="n">loinc_long_common_name</span><span class="p">}},</span>
                         <span class="p">]</span>
                     <span class="p">},</span>
                     <span class="n">sort_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">"submitter_id"</span><span class="p">:</span> <span class="s2">"asc"</span><span class="p">}]</span>
                 <span class="p">)</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">severe_studies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">"submitter_id"</span> <span class="ow">in</span> <span class="n">severe_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-    <span class="n">severe_study_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'submitter_id'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">severe_studies</span><span class="p">]</span> <span class="c1">## make a list of the imaging study IDs returned</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Query returned </span><span class="si">{}</span><span class="s2"> study IDs."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">severe_studies</span><span class="p">)))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Data is a list with rows like this:</span><span class="se">\n\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">severe_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">"submitter_id"</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">imaging_studies_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'submitter_id'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">]</span> <span class="c1">## make a list of the imaging study IDs returned</span>
+    <span class="n">case_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">])))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Query returned </span><span class="si">{}</span><span class="s2"> imaging studies for </span><span class="si">{}</span><span class="s2"> cases."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">),</span><span class="n">case_count</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Data is a list with rows like this:</span><span class="se">\n\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Your query returned no data! Please, check that query parameters are valid."</span><span class="p">)</span>
 </pre></div>
@@ -7720,48 +7732,91 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=33093eff-621f-452b-a0af-89af1940c65f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">imaging_studies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">)</span>
 
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8df88d18-e709-44a8-a395-98a05126cff3">
+<span class="c1">## Look at diversity of original DICOM Imaging Study Descriptions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"For these LOINC Long Common names: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">There are these </span><span class="si">{}</span><span class="s2"> study descriptions:"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'loinc_long_common_name'</span><span class="p">])),</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'study_description'</span><span class="p">])))))</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'study_description'</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0df3cf2b-f1e7-4139-a86c-f1de2e91c105">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Cohort-2:-CXRs-with-an-mRALE-score-%3C10-obtained-within-2-days-after-a-positive-COVID-test.">Cohort 2: CXRs with an mRALE score &lt;10 obtained within 2 days after a positive COVID test.<a class="anchor-link" href="#Cohort-2:-CXRs-with-an-mRALE-score-%3C10-obtained-within-2-days-after-a-positive-COVID-test.">¶</a></h4><hr/>
-<p>We don't need to set any new parameters for our filters this time. We just need to reverse the operator on the mRALE threshold from greater than or equal to (<code>&gt;=</code>) to less than (<code>&lt;</code>).</p>
+<h2 id="Add-some-patient-demographics-to-our-query-in-order-to-narrow-down-the-selection">Add some patient demographics to our query in order to narrow down the selection<a class="anchor-link" href="#Add-some-patient-demographics-to-our-query-in-order-to-narrow-down-the-selection">¶</a></h2><hr/>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eee1ce8c-ccd3-468d-8df3-c435c5e83148">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0489f3d7-530e-4ea8-8e75-469f2c6ac60c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mild_studies</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## LOINC terms</span>
+<span class="n">loinc_system</span> <span class="o">=</span> <span class="s2">"Chest"</span>
+<span class="n">loinc_method</span> <span class="o">=</span> <span class="s2">"XR"</span>
+<span class="n">loinc_long_common_name</span> <span class="o">=</span> <span class="s2">"XR Chest Single view"</span>
+
+<span class="c1">## Case filters: we will select Hispanic males 70 years of age and older</span>
+<span class="n">ethnicity</span> <span class="o">=</span> <span class="s2">"Hispanic or Latino"</span>
+<span class="n">race</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Asian"</span><span class="p">,</span><span class="s2">"Black or African American"</span><span class="p">]</span>
+<span class="n">sex</span> <span class="o">=</span> <span class="s2">"Male"</span>
+<span class="n">age_threshold</span> <span class="o">=</span> <span class="mi">70</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=54e9af2e-0809-4529-8df5-9d979c080467">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Note: the "fields" option defines what fields we want the query to return. If set to "None", returns all available fields.</span>
+
+<span class="n">imaging_studies</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
                     <span class="n">data_type</span><span class="o">=</span><span class="s2">"imaging_study"</span><span class="p">,</span>
                     <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">filter_object</span><span class="o">=</span><span class="p">{</span>
                         <span class="s2">"AND"</span><span class="p">:</span> <span class="p">[</span>
-                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_system"</span><span class="p">:</span> <span class="p">[</span><span class="n">body_part_examined</span><span class="p">]}},</span>
-                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"study_modality"</span><span class="p">:</span> <span class="n">study_modalities</span><span class="p">}},</span>
-                            <span class="p">{</span><span class="s2">"nested"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"path"</span><span class="p">:</span> <span class="s2">"imaging_study_annotations"</span><span class="p">,</span> <span class="s2">"&lt;"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"midrc_mRALE_score"</span><span class="p">:</span> <span class="n">mRALE_threshold</span><span class="p">}}},</span>
-                            <span class="p">{</span><span class="s2">"AND"</span><span class="p">:</span> <span class="p">[</span>
-                                <span class="p">{</span><span class="s2">"&gt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"days_from_study_to_pos_covid_test"</span><span class="p">:</span> <span class="n">min_days_from_study_to_test</span><span class="p">}},</span>
-                                <span class="p">{</span><span class="s2">"&lt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"days_from_study_to_pos_covid_test"</span><span class="p">:</span> <span class="n">max_days_from_study_to_test</span><span class="p">}}</span>
-                            <span class="p">]}</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_method"</span><span class="p">:</span> <span class="n">loinc_method</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_system"</span><span class="p">:</span> <span class="n">loinc_system</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"loinc_long_common_name"</span><span class="p">:</span> <span class="n">loinc_long_common_name</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sex"</span><span class="p">:</span> <span class="n">sex</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"ethnicity"</span><span class="p">:</span> <span class="n">ethnicity</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"race"</span><span class="p">:</span> <span class="n">race</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"&gt;="</span><span class="p">:</span> <span class="p">{</span><span class="s2">"age_at_index"</span><span class="p">:</span> <span class="n">age_threshold</span><span class="p">}},</span>
                         <span class="p">]</span>
                     <span class="p">},</span>
                     <span class="n">sort_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">"submitter_id"</span><span class="p">:</span> <span class="s2">"asc"</span><span class="p">}]</span>
                 <span class="p">)</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mild_studies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">"submitter_id"</span> <span class="ow">in</span> <span class="n">mild_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-    <span class="n">mild_study_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'submitter_id'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mild_studies</span><span class="p">]</span> <span class="c1">## make a list of the imaging study IDs returned</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Query returned </span><span class="si">{}</span><span class="s2"> study IDs."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mild_studies</span><span class="p">)))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Data is a list with rows like this:</span><span class="se">\n\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mild_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">"submitter_id"</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">imaging_studies_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'submitter_id'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">]</span> <span class="c1">## make a list of the imaging study IDs returned</span>
+    <span class="n">case_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">])))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Query returned </span><span class="si">{}</span><span class="s2"> imaging studies for </span><span class="si">{}</span><span class="s2"> cases."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">),</span><span class="n">case_count</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Data is a list with rows like this:</span><span class="se">\n\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Your query returned no data! Please, check that query parameters are valid."</span><span class="p">)</span>
 </pre></div>
@@ -7769,375 +7824,371 @@ a.anchor-link {
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=33093eff-621f-452b-a0af-89af1940c65f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=579056bd-efab-4a9c-a11d-f2458de99a89">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">severe_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">severe_studies</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">severe_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="n">mild_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mild_studies</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">mild_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">imaging_studies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imaging_studies</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"For these LOINC Long Common names: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">There are these </span><span class="si">{}</span><span class="s2"> study descriptions: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'loinc_long_common_name'</span><span class="p">])),</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'study_description'</span><span class="p">]))),</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">imaging_studies_df</span><span class="p">[</span><span class="s1">'study_description'</span><span class="p">]))))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a9f12059-e9c5-4dda-9844-8d88c8f3671c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Label cases as mild or severe and then combine the dataframes into a single dataframe</span>
-<span class="n">mild_df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mild'</span>
-<span class="n">severe_df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'severe'</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">mild_df</span><span class="p">,</span><span class="n">severe_df</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9c6eac91-594b-4532-8612-040518dc768d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># convert patient demographic columns in lists to strings</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'ethnicity'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'ethnicity'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'race'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'race'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-
-<span class="c1"># add binned ages for calculating age distributions later</span>
-<span class="n">age_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'age_bin'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">age_bins</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f7a61074-2105-4b10-93de-f1baec4f31ee">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The dataset is inbalanced with more mild COVID patients than severe</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a150187-a6d7-4e94-8f0e-e952ba73de09">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c0f29ab-ab87-4fe5-859b-d5158c0fa3d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Now-we-use-re-sampling-techniques-to-balance-the-dataset">3) Now we use re-sampling techniques to balance the dataset<a class="anchor-link" href="#3)-Now-we-use-re-sampling-techniques-to-balance-the-dataset">¶</a></h2><hr/>
-<p>In order to create a mild COVID cohort of the same size as the smaller severe COVID cohort that roughly matches the demographics of the smaller cohort, we need to sample cases from the larger mild COVID cohort through a process called "undersampling" until the size of the two cohorts is equal.</p>
-<p>"Undersampling" refers to a group of techniques designed to balance the class distribution for a classification dataset that has a skewed class distribution and is a common technique used in machine learning to balance imbalanced datasets. In this case, we want to undersample the larger patient cohort while ensuring that the resulting two cohorts have a similar distribution of four demographic variables: sex, race, ethnicity, and age.</p>
-<p>The following column headers in the Pandas DataFrame we created above will be used for our sampling script: <code>sex</code>, <code>ethnicity</code>, <code>race</code>, and <code>age_at_index</code>.</p>
+<h2 id="3)-Send-another-query-to-get-data-file-details-for-our-cohort-/-case-ID">3) Send another query to get data file details for our cohort / case ID<a class="anchor-link" href="#3)-Send-another-query-to-get-data-file-details-for-our-cohort-/-case-ID">¶</a></h2><hr/>
+<p>The <code>object_id</code> field in each imaging study record above contains the file identifiers for all files associated with each imaging study, which could include files like third-party annotations. If we simply want to access all files associated with our list of cases, we can use those object_ids.</p>
+<p>However, in this example, we'll ask for specific types of files and get more detailed information about each of the files. This is achieved by querying the <code>data_file</code> guppy index, which corresponds to the "Data Files" tab of the MIDRC data explorer GUID.</p>
+<p>All MIDRC data files, including both images and annotations, are listed in the guppy index "data_file", which is queried in a similar manner to our query of the <code>imaging_study</code> index above. The query parameter <code>data_type</code> below determines which guppy (Elasticsearch) index we're querying.</p>
+<p>To get only <code>data_file</code> records that correspond to our imaging study cohort built previously, we'll use the list of study UIDs as a query filter.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ee79442-e1f3-4575-ad3e-10de028da958">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2959c0ed-adde-4f34-8308-ca0f61c599cf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Calculate-the-Size-of-the-Smaller-Cohort:">Calculate the Size of the Smaller Cohort:<a class="anchor-link" href="#Calculate-the-Size-of-the-Smaller-Cohort:">¶</a></h3><p>Determine the size you want for the smaller cohort. If both cohorts need to be of the same size, you can calculate the size as the minimum size of the two cohorts. You can do this by using the <code>min</code> function.</p>
+<h3 id="Set-'data_file'-query-parameters">Set 'data_file' query parameters<a class="anchor-link" href="#Set-'data_file'-query-parameters">¶</a></h3><hr/>
+<p>Here, we'll utilize the property <code>source_node</code> to filter the list of files for our cohort to only those matching the type of files we're interested in. In this example, we ask only for CR and DX (x-ray) images, which will exclude any other types of files like annotations.</p>
+<p>We're also using the property <code>study_uid</code> as a filter to restrict the <code>data_file</code> records returned down to those associated with the imaging studies in our cohort built above.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f7040419-ed23-4cee-ac72-b03abb18184f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=07f33bd1-7393-4e0a-902a-771783568280">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mild'</span><span class="p">,</span> <span class="s1">'severe'</span><span class="p">]</span>
-<span class="n">cohort_sizes</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">cohort</span> <span class="ow">in</span> <span class="n">cohorts</span><span class="p">:</span>
-    <span class="n">cohort_sizes</span><span class="p">[</span><span class="n">cohort</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span><span class="o">==</span><span class="n">cohort</span><span class="p">])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Build a list of study UIDs to use as a filter in our data_file query</span>
+<span class="n">study_uids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'study_uid'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imaging_studies</span><span class="p">]</span>
+<span class="n">study_uids</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=55b7cd74-6583-4812-a0ad-e18c4b3e3559">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2efabbc8-c9cb-481a-9847-50659918b6d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">smaller_cohort_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="n">smaller_cohort_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="nb">list</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">smaller_cohort_size</span><span class="p">)]</span>
-<span class="n">sdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span><span class="o">==</span><span class="n">smaller_cohort_name</span><span class="p">]</span> <span class="c1"># smaller cohort DataFrame</span>
-
-<span class="n">larger_cohort_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="n">larger_cohort_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="nb">list</span><span class="p">(</span><span class="n">cohort_sizes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">larger_cohort_size</span><span class="p">)]</span>
-<span class="n">ldf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'cohort'</span><span class="p">]</span><span class="o">==</span><span class="n">larger_cohort_name</span><span class="p">]</span> <span class="c1"># larger cohort DataFrame</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The smaller cohort is '</span><span class="si">{}</span><span class="s2">' with a size of '</span><span class="si">{}</span><span class="s2">'."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smaller_cohort_name</span><span class="p">,</span><span class="n">smaller_cohort_size</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The larger cohort is '</span><span class="si">{}</span><span class="s2">' with a size of '</span><span class="si">{}</span><span class="s2">'."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">larger_cohort_name</span><span class="p">,</span><span class="n">larger_cohort_size</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Choose the types of data we want using "source_node" as a filter</span>
+<span class="n">source_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cr_series_file"</span><span class="p">,</span><span class="s2">"dx_series_file"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d3a2b920-15d0-4399-ab2d-4faa2748a314">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93ee95c5-66ca-4897-89f9-c833a252d511">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Search for specific files associated with our cohort by adding "study_uid" as a filter</span>
+<span class="c1"># * Note: "fields" is set to "None" in this query, which by default returns all the properties available</span>
+<span class="n">data_files</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
+                    <span class="n">data_type</span><span class="o">=</span><span class="s2">"data_file"</span><span class="p">,</span>
+                    <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">filter_object</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s2">"AND"</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"study_uid"</span><span class="p">:</span> <span class="n">study_uids</span><span class="p">}},</span>
+                            <span class="p">{</span><span class="s2">"IN"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"source_node"</span><span class="p">:</span> <span class="n">source_nodes</span><span class="p">}},</span>
+                        <span class="p">]</span>
+                    <span class="p">},</span>
+                    <span class="n">sort_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">"submitter_id"</span><span class="p">:</span> <span class="s2">"asc"</span><span class="p">}]</span>
+                <span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_files</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">object_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">'object_id'</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_files</span> <span class="k">if</span> <span class="s1">'object_id'</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span> <span class="c1">## make a list of the file object_ids returned by our query</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Query returned </span><span class="si">{}</span><span class="s2"> data files with </span><span class="si">{}</span><span class="s2"> object_ids."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_files</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">object_ids</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Data is a list with rows like this:</span><span class="se">\n\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your query returned no data! Please, check that query parameters are valid."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=972b4805-61a3-4c22-8339-93878f201e46">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># object_id (AKA "data GUID") is a globally unique file identifier that points to an actual file object in cloud storage. We'll use the object_ids along with the gen3 command-line tool to download the files these object_ids point to.</span>
+<span class="n">object_ids</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81e35d9b-e8ec-4fc0-9d3c-7485446c15f3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Undersampling:">Undersampling:<a class="anchor-link" href="#Undersampling:">¶</a></h3><p>Now, we undersample the larger cohort to match the smaller cohort's size while maintaining the desired distribution of demographic variables. For this, we'll use the <code>sample</code> function in Pandas.</p>
-<p>To use the Pandas <code>sample</code> function to undersample the larger cohort (mild COVID cases) while considering the four demographic variables and their distribution in the smaller cohort (severe COVID cases), you can create a custom sampling probability based on the distribution of the smaller cohort.</p>
-<h4 id="Strategy">Strategy<a class="anchor-link" href="#Strategy">¶</a></h4><hr/>
-<ol>
-<li>Determine the frequency of all combinations of demographic properties in the smaller cohort,</li>
-<li>Add this frequency to each row in the larger cohort by matching the demographics combinations, and</li>
-<li>Undersample the larger cohort using the inverse of these frequencies as weights</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1b77fb61-addd-4a99-8209-e9e6178158c9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make a list of all combinations of demographic variables found in the master DataFrame using pd.value_counts()</span>
-
-<span class="c1"># list of properties to consider (dprops: "demographic properties")</span>
-<span class="c1">#dprops = ['sex','ethnicity']</span>
-<span class="n">dprops</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sex'</span><span class="p">,</span><span class="s1">'ethnicity'</span><span class="p">,</span><span class="s1">'race'</span><span class="p">,</span><span class="s1">'age_bin'</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Counts of Demographic Property Combinations in Master DataFrame:"</span><span class="p">)</span>
-<span class="n">mvc</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">dprops</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1"># mvc: "master value counts"</span>
-<span class="c1">#mvc[('Male', 'Not Hispanic or Latino')] # this is how you access individual values</span>
-<span class="n">display</span><span class="p">(</span><span class="n">mvc</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">All Combinations of Demographic Properties in Master DataFrame:"</span><span class="p">)</span>
-<span class="n">combos</span> <span class="o">=</span> <span class="n">mvc</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">combos</span><span class="p">)</span>
-</pre></div>
+<h2 id="4)-Access-data-files-using-their-object_id-/-data-GUID-(globally-unique-identifiers)">4) Access data files using their object_id / data GUID (globally unique identifiers)<a class="anchor-link" href="#4)-Access-data-files-using-their-object_id-/-data-GUID-(globally-unique-identifiers)">¶</a></h2><hr/>
+<p>In order to download files stored in MIDRC, users need to reference the file's object_id (AKA data GUID or Globally Unique IDentifier).</p>
+<p>Once we have a list of GUIDs we want to download, we can use either the gen3-client or the gen3 SDK to download the files. You can also access individual files in your browser after logging-in and entering the GUID after the <code>files/</code> endpoint, as in this URL: <a href="https://data.midrc.org/files/GUID">https://data.midrc.org/files/GUID</a></p>
+<p>where GUID is the actual GUID, e.g.: <a href="https://data.midrc.org/files/dg.MD1R/b87d0db3-d95a-43c7-ace1-ab2c130e04ec">https://data.midrc.org/files/dg.MD1R/b87d0db3-d95a-43c7-ace1-ab2c130e04ec</a></p>
+<p>For instructions on how to install and use the gen3-client, please see <a href="https://data.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf">the MIDRC quick-start guide</a>, which can be found linked here and in the MIDRC data portal header as "Get Started".</p>
+<p>Below we use the gen3 SDK command <code>gen3 drs-pull object</code> which is <a href="https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/howto/drsDownloading.md">documented in detail here</a>.</p>
 </div>
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1ec6aa1e-2945-459c-aaa3-daeb455d086f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Now look at the frequencies of each demographic combo in the smaller cohort</span>
-<span class="n">svc</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[</span><span class="n">dprops</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">combos</span><span class="p">)</span> <span class="c1"># svc: "smaller cohort value counts"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Smaller Cohort Demographics Value Counts</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svc</span><span class="p">))</span>
-
-<span class="c1"># use normalize=True to get the relative frequencies (count of a demographic / sum of all demographics)</span>
-<span class="n">svf</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[</span><span class="n">dprops</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">combos</span><span class="p">)</span> <span class="c1"># svf: "smaller cohort value frequencies"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Smaller Cohort Demographics Frequencies</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svf</span><span class="p">))</span>
-
-<span class="c1"># sampling weights should be the inverse of their frequencies; less frequent demographics get a higher probability of sampling</span>
-<span class="n">svw</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">svf</span> <span class="c1"># svw: "smaller cohort value weights"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Smaller Cohort Demographics Weights for Undersampling</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svw</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=133b2126-e0c2-44c6-9712-c74b5643f0d5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8449f221-1d8d-4501-86af-111111fc7bf3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Demographics in the larger cohort not represented in the smaller cohort get NaN for counts. Here we'll convert the <code>NaN</code>s to <code>0</code> to use as weights:</p>
+<h3 id="Use-the-Gen3-SDK-command-gen3-drs-pull-object-to-download-an-individual-file">Use the Gen3 SDK command <code>gen3 drs-pull object</code> to download an individual file<a class="anchor-link" href="#Use-the-Gen3-SDK-command-gen3-drs-pull-object-to-download-an-individual-file">¶</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2b737a4c-e4af-4c72-beba-63dddc650a83">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f3462219-202b-4d59-9a3d-14cbdecab77b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Replace NaNs with 0:</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">svw</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">svw</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
-        <span class="n">svw</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">display</span><span class="p">(</span><span class="n">svw</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Make a new directory for downloaded files</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">"rm -r downloads"</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">"mkdir -p downloads"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a7277895-c364-4512-917e-51490b1bb2d7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5b156930-805f-4562-aea7-62798b13e46b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Now apply the weights to each row of the larger cohort (mild COVID cases) to use in undersampling</span>
-<span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">combos</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">combo</span><span class="p">,</span><span class="n">svw</span><span class="p">[</span><span class="n">combo</span><span class="p">]))</span>
-    <span class="n">ldf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ldf</span><span class="p">[</span><span class="n">dprops</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="n">combo</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ldf</span><span class="p">[</span><span class="n">dprops</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">==</span> <span class="n">combo</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ldf</span><span class="p">[</span><span class="n">dprops</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">==</span> <span class="n">combo</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ldf</span><span class="p">[</span><span class="n">dprops</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span> <span class="o">==</span> <span class="n">combo</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span><span class="s1">'weight'</span><span class="p">]</span> <span class="o">=</span> <span class="n">svw</span><span class="p">[</span><span class="n">combo</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## We can use a simple loop to download all files and keep track of successes and failures</span>
+
+<span class="n">success</span><span class="p">,</span><span class="n">failure</span><span class="p">,</span><span class="n">other</span><span class="o">=</span><span class="p">[],[],[]</span>
+<span class="n">count</span><span class="p">,</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">object_ids</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">object_id</span> <span class="ow">in</span> <span class="n">object_ids</span><span class="p">:</span>
+    <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">"gen3 --auth </span><span class="si">{}</span><span class="s2"> --endpoint data.midrc.org drs-pull object </span><span class="si">{}</span><span class="s2"> --output-dir downloads"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cred</span><span class="p">,</span><span class="n">object_id</span><span class="p">)</span>
+    <span class="n">stout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Progress (</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">): </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">,</span><span class="n">total</span><span class="p">,</span><span class="n">stout</span><span class="o">.</span><span class="n">stdout</span><span class="p">))</span>
+    <span class="k">if</span> <span class="s2">"failed"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">stout</span><span class="o">.</span><span class="n">stdout</span><span class="p">):</span>
+        <span class="n">failure</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">object_id</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="s2">"successfully"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">stout</span><span class="o">.</span><span class="n">stdout</span><span class="p">):</span>
+        <span class="n">success</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">object_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">other</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">object_id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=24965406-a2ee-41e4-8e0c-33e231ff8e16">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cd0ebe63-380a-4606-8285-5736ec87ffee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Double check that all rows in the larger cohort were assigned a weight. If this is an empty DataFrame, then each row has a non-NaN weight.</span>
-<span class="n">ldf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ldf</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get a list of all downloaded .dcm files</span>
+<span class="n">image_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pathname</span><span class="o">=</span><span class="s1">'**/*.dcm'</span><span class="p">,</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+<span class="n">image_files</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17a9dad0-d020-471f-8e7f-4eec7aba59f7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d53c1364-aba9-461f-a0f9-e7730875a339">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Undersample-the-Larger-Cohort:">Undersample the Larger Cohort:<a class="anchor-link" href="#Undersample-the-Larger-Cohort:">¶</a></h3><p>Use the <code>sample</code> function with the calculated weights to undersample the larger cohort.</p>
+<h3 id="View-the-DICOM-Images">View the DICOM Images<a class="anchor-link" href="#View-the-DICOM-Images">¶</a></h3><hr/>
+<p>Here we'll use the <a href="https://pydicom.github.io/pydicom/stable/">Python package <code>pydicom</code></a> to view the downloaded DICOM images.</p>
+<p>Note that some of the files may contain compressed pixel data that require other packages to view; so, for this demo we'll simply skip over those using the following loop.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cfbf5f4c-304a-4b20-b297-9183de58483d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=533ce308-3618-47b2-bae1-ad4681feab02">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Undersample the larger cohort (mild COVID cases) using weights</span>
-
-<span class="n">udf</span> <span class="o">=</span> <span class="n">ldf</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">smaller_cohort_size</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">ldf</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">41</span><span class="p">))</span> <span class="c1"># undersampled larger cohort DataFrame, can set random_state in order to have reproducible sampling</span>
-<span class="c1">#udf = ldf.sample(n=smaller_cohort_size, weights=ldf['weight']) # undersampled larger cohort DataFrame, leave random_state out to get a non-reproducible, random sample</span>
-<span class="n">udf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">udf</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">image_files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">new_image</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">pixel_array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">scaled_image</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">new_image</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">new_image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">*</span> <span class="mf">255.0</span>
+        <span class="n">scaled_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">scaled_image</span><span class="p">)</span>
+        <span class="n">final_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">scaled_image</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">final_image</span><span class="p">))</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">final_image</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Couldn't view </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">image_file</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9dc6eaa2-0f66-4a14-9284-63581785e084">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60bb7027-7fb3-47cb-8b4b-2d084287fc20">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Combine-the-Two-Cohorts:">Combine the Two Cohorts:<a class="anchor-link" href="#Combine-the-Two-Cohorts:">¶</a></h3><p>After undersampling, you'll have two cohorts of the same size, and the larger cohort should be balanced with respect to the four demographic variables.</p>
+<h4 id="View-the-DICOM-Headers">View the DICOM Headers<a class="anchor-link" href="#View-the-DICOM-Headers">¶</a></h4><hr/>
+<p>DICOM files have metadata elements embedded in the images. These can also be read and viewed using the <code>pydicom</code> package.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7093ca7c-79e2-478a-8c33-169c034b909a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a1bbb4c1-9ab6-4260-904e-977836b57a01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Combine the undersampled larger cohort with the smaller cohort</span>
-<span class="n">bdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">udf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"weight"</span><span class="p">]),</span> <span class="n">sdf</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># balanced DataFrame</span>
-<span class="n">bdf</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><span class="n">image_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=005b208d-eea3-4ea5-8658-fb18319934c9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Verification:">4) Verification:<a class="anchor-link" href="#4)-Verification:">¶</a></h2><p>Ensure that the demographic distributions of the two cohorts are now balanced for all four variables. You can use the <code>pandas</code> <code>groupby</code> and <code>value_counts</code> methods or other appropriate methods to check the distributions.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a41T5PIOgPPR">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4dec9bce-7f8f-48ee-abe1-6bc380d923c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use pandas groupby and plot functions to view relative counts of different demographics in the balanced cohort</span>
-<span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">dprops</span><span class="p">:</span>
-  <span class="n">dfu</span> <span class="o">=</span> <span class="n">bdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">prop</span><span class="p">],</span><span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">cohort</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-  <span class="n">ax</span> <span class="o">=</span> <span class="n">dfu</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="n">prop</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'Count'</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># change rot=0 or rot=45 to change x-axis label display angle</span>
-  <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'cohort'</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Access individual elements</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="mh">0x0008</span><span class="p">,</span> <span class="mh">0x0016</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ecceb434-83f2-45f1-b1f0-7e1c58fafde9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># View the dicom metadata for all files as a DataFrame</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">image_files</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dataelem</span><span class="o">.</span><span class="n">DataElement_from_raw</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dataelem</span><span class="o">.</span><span class="n">RawDataElement</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'value'</span><span class="p">]]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Pixel Data'</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># drop the pixel data as it's too large and nonsensical to store in a DataFrame</span>
+    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3e55cd95-570b-42d0-80cd-fb47693c49dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make a master dataframe for all images using only headers in all dataframes</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="nb">set</span><span class="p">,</span><span class="n">dfs</span><span class="p">)))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="n">headers</span><span class="p">]</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dfs</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c54f11af-4b8c-4744-bc88-6cd2ced7e102">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5b991196-5298-43b6-987a-90de9bf308e5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Export the file metadata as a TSV file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">"MIDRC_DICOM_metadata.tsv"</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=544761e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8148,20 +8199,6 @@ a.anchor-link {
 <h2 id="The-End">The End<a class="anchor-link" href="#The-End">¶</a></h2><hr/>
 <p>If you have any questions related to this notebook don't hesitate to reach out to the MIDRC Helpdesk at midrc-support@gen3.org or the author directly at cgmeyer@uchicago.edu</p>
 <p>Happy data wrangling!</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f6691638">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
 </div>
 </div>
 </div>
