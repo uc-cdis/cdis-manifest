@@ -15,9 +15,9 @@
 ## uc-cdis/data-portal
 
 #### New Features
-  - Change repo selection option 'ICSPR/NAHDAP' to 'NAHDAP' ([#1571](https://github.com/uc-cdis/data-portal/pull/1571)) 
   - Provides an enhanced page loading experience for Discovery page using batch 
     loading ([#1599](https://github.com/uc-cdis/data-portal/pull/1599))
+  - Change repo selection option 'ICSPR/NAHDAP' to 'NAHDAP' ([#1571](https://github.com/uc-cdis/data-portal/pull/1571))
   - Study Registration: Add a new page for "HEAL CDE submission" ([#1547](https://github.com/uc-cdis/data-portal/pull/1547)) 
   - Lock the CDE submission form for certain studies ([#1547](https://github.com/uc-cdis/data-portal/pull/1547)) 
 
