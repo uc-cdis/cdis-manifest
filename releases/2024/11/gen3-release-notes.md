@@ -2,7 +2,7 @@
 
 ## Release Highlights and Announcements
 #### Improved user experience on Discovery page
-  - The page-loading experience for the Discovery page has been [improved](#L18) in Data Portal.
+  - The page-loading experience for the Discovery page has been [improved](gen3-release-notes.md#L18) in Data Portal.
 
 ## uc-cdis/cloud-automation
 
