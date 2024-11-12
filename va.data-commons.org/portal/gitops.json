@@ -12,7 +12,8 @@
     "chartNodesExcludeFiles": true
   },
   "components": {
-    "appName": "VA Data Commons",    
+    "appName": "VA Data Commons",
+    "logoAltText": "VA logo and Seal, U.S. Department of Veterans Affairs Data Commons",
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
@@ -92,7 +93,8 @@
   "featureFlags": {
     "explorer": false,
     "analysis": true,
-    "workspaceTokenServiceRefreshTokenAtLogin": true
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
+    "legacyVADCDataDictionary": true
   },
   "analysisTools": [
     {
