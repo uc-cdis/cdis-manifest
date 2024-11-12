@@ -1319,7 +1319,7 @@
           }
         ]
       },
-      "guidType": "covid_sample_discovery_metadata",   
+      "guidType": "covid_sample_discovery_metadata",
       "pageTitle": {
         "enabled": false
       },
@@ -1332,7 +1332,7 @@
       },
       "exportToWorkspace": {
         "enabled": false,
-        "manifestFieldName": "_medical_sample_id",
+        "manifestFieldName": "__manifest",
         "downloadManifestButtonText": "Download",
         "enableDownloadManifest": false,
         "downloadZipButtonText": "Download Zip",
@@ -1340,8 +1340,9 @@
         "enableFillRequestForm": true,
         "fillRequestFormDisplayText": "Request Information",
         "fillRequestFormURL": "https://pandemicresponsecommons.org/access-for-samples",
-        "externalWebsiteName" : "Pandemic Response Commons Website", 
-        "externalWebsiteURL" : "https://pandemicresponsecommons.org", 
+        "externalWebsiteName": "Pandemic Response Commons Website",
+        "externalWebsiteURL": "https://pandemicresponsecommons.org",
+        "fillRequestFormCheckField": "_medical_sample_id",
         "documentationLinks": {
           "gen3Client": "https://gen3.org/resources/user/gen3-client/",
           "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
