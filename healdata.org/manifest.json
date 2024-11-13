@@ -48,7 +48,7 @@
       "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/batch-export:feat_GPE-1219",
+        "image": "quay.io/cdis/batch-export:integration202412",
         "pull_policy": "Always",
         "labels": {
           "internet": "yes"
