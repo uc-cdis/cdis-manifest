@@ -160,3 +160,10 @@
   - k8s.io/api to v0.23.14 ([#48](https://github.com/uc-cdis/sower/pull/48))
   - k8s.io/apimachinery to v0.23.14 ([#48](https://github.com/uc-cdis/sower/pull/48)) 
 
+## uc-cdis/sower-jobs
+
+#### Improvements
+  - changing the batch export job to use IRSA instead of access keys. Also, changing the job to use environment variables to read in the bucket name for the batch export job. ([#53](https://github.com/uc-cdis/sower-jobs/pull/53)) 
+
+#### Dependency Updates
+  - Manifest.json files MUST be changed to use the new "batch-export-sa" service account and the "BUCKET" environment variable must be set to the batch-export-g3auto secret with the "bucket_name" key. You also no longer need to mount the batch-export-g3auto secret as this is now deprecated (it is replaced by the batch-export-g3auto configmap). ([#53](https://github.com/uc-cdis/sower-jobs/pull/53))
