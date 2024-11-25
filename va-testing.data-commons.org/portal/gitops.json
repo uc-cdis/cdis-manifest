@@ -13,6 +13,7 @@
   },
   "components": {
     "appName": "VA Data Commons",
+    "logoAltText": "VA logo and Seal, U.S. Department of Veterans Affairs Data Commons",
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
@@ -97,7 +98,7 @@
     "explorer": false,
     "analysis": true,
     "workspaceTokenServiceRefreshTokenAtLogin": true,
-    "legacyVADCDataDictionary": true
+    "legacyVADCDataDictionary": false
   },
   "analysisTools": [
     {
@@ -129,6 +130,8 @@
       "needsTeamProject": false
     }
   ],
+  "profilePageTitle": "Profile",
+  "workspacePageTitle": "Workspace",
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [

@@ -19,7 +19,7 @@
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.10",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.10",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.10",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.34.2",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:5.35.0",
     "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.10",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.10",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.10",
@@ -44,10 +44,11 @@
     {
       "name": "batch-export",
       "action": "batch-export",
+      "serviceAccountName": "batch-export-sa",
       "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/batch-export:2024.10",
+        "image": "quay.io/cdis/batch-export:feat_GPE-1219",
         "pull_policy": "Always",
         "labels": {
           "internet": "yes"
@@ -61,27 +62,20 @@
                 "key": "hostname"
               }
             }
-          }
-        ],
-        "volumeMounts": [
+          },
           {
-            "name": "batch-export-creds-volume",
-            "readOnly": true,
-            "mountPath": "/batch-export-creds.json",
-            "subPath": "config.json"
+            "name": "BUCKET",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "batch-export-g3auto",
+                "key": "bucket_name"
+              }
+            }
           }
         ],
         "cpu-limit": "1",
         "memory-limit": "1Gi"
       },
-      "volumes": [
-        {
-          "name": "batch-export-creds-volume",
-          "secret": {
-            "secretName": "batch-export-g3auto"
-          }
-        }
-      ],
       "restart_policy": "Never"
     }
   ],
