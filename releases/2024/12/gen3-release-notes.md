@@ -165,10 +165,6 @@
 #### Improvements
   - MDS search response now makes use of MDS index on the `data._guid_type` for 
     specific commons (MIDRC) ([#117](https://github.com/uc-cdis/metadata-service/pull/117)) 
-  - Google doc with the observations : [Discovery page loading issue MIDRC 
-    ([#117](https://github.com/uc-cdis/metadata-service/pull/117))
-  - ](https://docs.google.com/document/d/1oCn5rNVKLcq_-6m35OjTJZhRvSPT8NICUOXzlSnX7S0/edit?usp=sharing)
-    ([#117](https://github.com/uc-cdis/metadata-service/pull/117))
 
 ## uc-cdis/requestor
 
