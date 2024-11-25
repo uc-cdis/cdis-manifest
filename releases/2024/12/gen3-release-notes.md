@@ -1,4 +1,25 @@
 # Core Gen3 Release 2024.12 (Charoite)
+
+## Release Highlights and Announcements
+
+#### New option to restrict login to known users
+  - Gen3 typically allows users to log in through one of the configured IdPs so that they can access
+    open data or search public metadata, even if they do not have authorization to see 
+    any non-open data. You now have the [option to prevent such users from logging in](#new-features-2), 
+    restricting platform access to users who are explicitly authorized to access data on the platform. 
+    Operators of Gen3 instances which do not offer open data may prefer to enable this option.
+    We've also added new endpoints to allow properly authorized admins to add or remove users.
+
+#### Community Contribution - new endpoint to refresh Guppy
+  - Properly authorized users can now [restart Guppy via a POST request](#new-features-3), to update configurations
+    to reflect new columns in the elastic indices. This change facilitates the automation of data submissions.
+
+    Thanks to Matthew from OHSU for contributing this to the Gen3 product codebase!
+
+#### Elasticsearch 7 is now the default
+  - Elasticsearch 7 has been available as an option, but is now the [default setting](#deployment-changes-1).
+    You can set a parameter in the manifest.json to keep using ES6.
+
 ## uc-cdis/arborist
 
 #### Bug Fixes
@@ -29,7 +50,7 @@
   - We are also using Poetry to manage virtual environments instead of python, 
     so the command to run alembic needs to be modified. ([#2661](https://github.com/uc-cdis/cloud-automation/pull/2661)) 
   - Elasticsearch 7 endpoint will be the default. If you want to use ES6, make 
-    sure to set "ES7" "false" in the manfist.json. ([#2655](https://github.com/uc-cdis/cloud-automation/pull/2655)) 
+    sure to set "ES7" "false" in the manifest.json. ([#2655](https://github.com/uc-cdis/cloud-automation/pull/2655)) 
 
 ## uc-cdis/data-portal
 
@@ -93,7 +114,7 @@
     endpoint ([#1185](https://github.com/uc-cdis/fence/pull/1185))
   - to make user creation more uniform, reflecting what is also done elsewhere 
     ([#1185](https://github.com/uc-cdis/fence/pull/1185))
-  - in [fence/sync/sync_users.py 
+    , in [fence/sync/sync_users.py 
     _upsert_userinfo()](https://github.com/uc-cdis/fence/blob/eb90523fc544a7704a2e5c1cbc9be592fb280bfc/fence/sync/sync_users.py#L1119)
     for example ([#1185](https://github.com/uc-cdis/fence/pull/1185))
 
