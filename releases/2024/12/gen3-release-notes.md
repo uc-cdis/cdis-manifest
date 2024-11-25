@@ -17,7 +17,7 @@
     Thanks to Matthew from OHSU for contributing this to the Gen3 product codebase!
 
 #### Elasticsearch 7 is now the default
-  - Elasticsearch 7 has been available as an option, but is now the [default setting](#deployment-changes-1).
+  - Elasticsearch 7 has been available as an option, but is now the [default setting](#deployment-changes).
     You can set a parameter in the manifest.json to keep using ES6.
 
 ## uc-cdis/arborist
