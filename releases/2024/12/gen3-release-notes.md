@@ -113,8 +113,8 @@
   - feat: add extra (optional) fields to "create user" `/admin/user` POST 
     endpoint ([#1185](https://github.com/uc-cdis/fence/pull/1185))
   - to make user creation more uniform, reflecting what is also done elsewhere 
-    ([#1185](https://github.com/uc-cdis/fence/pull/1185))
-    , in [fence/sync/sync_users.py 
+    ([#1185](https://github.com/uc-cdis/fence/pull/1185)),
+    in [fence/sync/sync_users.py 
     _upsert_userinfo()](https://github.com/uc-cdis/fence/blob/eb90523fc544a7704a2e5c1cbc9be592fb280bfc/fence/sync/sync_users.py#L1119)
     for example ([#1185](https://github.com/uc-cdis/fence/pull/1185))
 
