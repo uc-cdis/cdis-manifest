@@ -149,14 +149,14 @@
       "service": "jupyterhub"
     },
     "Apps": {
-      "resource": "/dashboard", 
+      "resource": "/workspace", 
       "method": "access",
-      "service": "dashboard"
+      "service": "jupyterhub"
     },
     "Profile": {
-      "resource": "/dashboard", 
+      "resource": "/workspace", 
       "method": "access",
-      "service": "dashboard"
+      "service": "jupyterhub"
     }
   }
 }
