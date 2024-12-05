@@ -1,7 +1,7 @@
 {
   "notes": [
     "DCF Production Manifest. Clients hit endpoints in fence and indexd.",
-    " Other services are left running to showcase the front-end."
+    "Other services are left running to showcase the front-end."
   ],
   "jenkins": {
     "autodeploy": "yes"
@@ -11,7 +11,7 @@
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2024.11",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.11",
-    "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:master",
+    "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:feat_change-validation",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.11",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "google-sa-validation": "placeholder:2024.11",
