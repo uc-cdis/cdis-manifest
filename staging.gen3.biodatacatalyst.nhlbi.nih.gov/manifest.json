@@ -20,14 +20,9 @@
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.10",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.10",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.10",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.10",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2024.10",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2024.10",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.10",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.10",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.10",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.10",
     "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2024.10"
   },
   "google": {
@@ -91,7 +86,7 @@
           }
         ],
         "cpu-limit": "1",
-        "memory-limit": "12Gi"
+        "memory-limit": "4Gi"
       },
       "volumes": [
         {
@@ -160,7 +155,7 @@
           }
         ],
         "cpu-limit": "1",
-        "memory-limit": "12Gi"
+        "memory-limit": "4Gi"
       },
       "volumes": [
         {
@@ -261,29 +256,6 @@
       "restart_policy": "Never"
     }
   ],
-  "jupyterhub": {
-    "enabled": "yes",
-    "containers": [
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 0.5,
-        "memory": "256M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Bioinfo - Python/R",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
-      },
-      {
-        "name": "Helium COPD Demo",
-        "cpu": 1,
-        "memory": "1024M",
-        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
-      }
-    ]
-  },
   "global": {
     "environment": "stagingdatastage",
     "hostname": "staging.gen3.biodatacatalyst.nhlbi.nih.gov",
@@ -342,7 +314,7 @@
     },
     "presigned-url-fence": {
       "strategy": "auto",
-      "min": 20,
+      "min": 5,
       "max": 25,
       "targetCpu": 14
     },
