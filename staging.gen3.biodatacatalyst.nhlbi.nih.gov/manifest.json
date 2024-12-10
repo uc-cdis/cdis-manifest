@@ -7,19 +7,19 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:2024.10",
+ "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:2024.10",
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2024.10",
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2024.10",
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2024.10",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.10",
-    "frontend-framework": "quay.io/cdis/bdc-data-commons:feat_data_library",
+    "frontend-framework": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/bdc-data-commons:feat_data_library",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.10",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.10",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.10",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.10",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.10",
-    "portal": "quay.io/gen3/data-portal:feature_data_library",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feature_data_library",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.10",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.10",
@@ -29,6 +29,7 @@
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.10",
     "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.10",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.10",
+    "gen3-user-data-library": "quay.io/cdis/gen3-user-data-library:fix_authz-checks",
     "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2024.10"
   },
   "google": {
