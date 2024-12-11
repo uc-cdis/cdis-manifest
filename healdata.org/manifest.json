@@ -44,6 +44,7 @@
     {
       "name": "batch-export",
       "action": "batch-export",
+      "serviceAccountName": "batch-export-sa",
       "activeDeadlineSeconds": 600,
       "container": {
         "name": "job-task",
@@ -61,27 +62,20 @@
                 "key": "hostname"
               }
             }
-          }
-        ],
-        "volumeMounts": [
+          },
           {
-            "name": "batch-export-creds-volume",
-            "readOnly": true,
-            "mountPath": "/batch-export-creds.json",
-            "subPath": "config.json"
+            "name": "BUCKET"
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "batch-export-g3auto",
+                "key": "bucket_name"
+              }
+            }
           }
         ],
         "cpu-limit": "1",
         "memory-limit": "1Gi"
       },
-      "volumes": [
-        {
-          "name": "batch-export-creds-volume",
-          "secret": {
-            "secretName": "batch-export-g3auto"
-          }
-        }
-      ],
       "restart_policy": "Never"
     }
   ],
