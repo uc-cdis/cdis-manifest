@@ -64,7 +64,7 @@
             }
           },
           {
-            "name": "BUCKET"
+            "name": "BUCKET",
             "valueFrom": {
               "configMapKeyRef": {
                 "name": "batch-export-g3auto",
