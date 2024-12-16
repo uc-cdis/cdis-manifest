@@ -4,7 +4,7 @@
     "grafanaFaroEnable": true,
     "grafanaFaroNamespace": "vhdcprod"
   },
-  "argoTemplate": "gwas-template-cholesky",
+  "argoTemplate": "gwas-template-genesisupdate",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -143,5 +143,22 @@
   "userAccessToSite": {
     "enabled": true,
     "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+  },
+  "componentToResourceMapping": { 
+    "Workspace": {
+      "resource": "/workspace", 
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Apps": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    },
+    "Profile": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    }
   }
 }
