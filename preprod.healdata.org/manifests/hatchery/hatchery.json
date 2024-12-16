@@ -9,7 +9,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2024.10",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2024.12",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -142,17 +142,19 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__c3f43a1b8e058be76a9d998a7009e270dce04e6f",
+      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__2af985287624f57d2276f4e7eecb8793735b95ed",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
       "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.default_url=/lab",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
+        "--JupyterNotebookApp.base_url=/lw-workspace/proxy/",
+        "--JupyterNotebookApp.default_url=/lab",
+        "--JupyterNotebookApp.password=''",
+        "--JupyterNotebookApp.token=''",
+        "--JupyterNotebookApp.ip='*'",
+        "--JupyterNotebookApp.notebook_dir='/home/jovyan'",
+        "--JupyterNotebookApp.shutdown_no_activity_timeout=3600",
+        "--JupyterNotebookApp.quit_button=False"
       ],
       "command": [
         "start-notebook.sh"
