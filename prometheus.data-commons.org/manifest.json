@@ -24,7 +24,7 @@
     "revproxy": "quay.io/cdis/nginx:2024.05",
     "sheepdog": "quay.io/cdis/sheepdog:2024.05",
     "wts": "quay.io/cdis/workspace-token-service:2024.05",
-    "frontend-framework": "quay.io/cdis/prometheus-data-platform:main"
+    "frontend-framework": "quay.io/cdis/prometheus-data-platform:0.01"
   },
   "arborist": {
     "deployment_version": "2"
