@@ -1,4 +1,22 @@
 # Core Gen3 Release 2025.01 (Chiolite)
+
+Happy New Year!
+
+## Release Highlights and Announcements
+
+#### Standardization of containers 
+  - Multiple services were updated to:
+    - use Amazon Linux as the base image
+    - use the "gen3" user rather than "root"
+    - move to Poetry to manage virtual environments
+    - use multi-stage Docker builds for smaller images
+    - move to Gunicorn
+
+#### Fence changes for user management (some breaking changes)
+  - We've performed some clean-up on fence -- for example, to standardize the use of `username` instead of a mix of `name` and `username` 
+    in the /admin/user endpoints -- and added an endpoint to soft-delete users. For the details and list of other changes, please see the [fence entry](#breaking-changes), below.
+
+
 ## uc-cdis/arborist
 
 #### Improvements
@@ -164,51 +182,6 @@
 #### Dependency Updates
   - Bumps [nanoid](https://github.com/ai/nanoid) from 3.3.7 to 3.3.8. (#307)
   - update cross-spawn ([#303](https://github.com/uc-cdis/guppy/pull/303))
-
-#### Snyk Has Created This Pr To Fix 1 Vulnerabilities In The Npm Dependencies Of This Project.
-  - #### Snyk changed the following file(s): ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - `package.json` ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - `package-lock.json` ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - #### Vulnerabilities that will be fixed with an upgrade: ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - |  | Issue | Score | ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - :-------------------------:|:-------------------------|:-------------------------
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - ![medium 
-    severity](https://res.cloudinary.com/snyk/image/upload/w_20,h_20/v1561977819/icon/m.png
-    'medium severity') | Regular Expression Denial of Service (ReDoS) 
-    <br/>[SNYK-JS-PATHTOREGEXP-8482416](https://snyk.io/vuln/SNYK-JS-PATHTOREGEXP-8482416)
-    | &nbsp;&nbsp;**738**&nbsp;&nbsp; ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - > [!IMPORTANT] ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - > ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - > - Check the changes in this PR to ensure they won't cause issues with 
-    your project. ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - > - Max score is 1000. Note that the real score may have changed since the 
-    PR was raised. ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - > - This PR was automatically created by Snyk using the credentials of a 
-    real user. ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - Note:** _You are seeing this because you or someone else with access to 
-    this repository has authorized Snyk to open fix PRs._ ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - For more information: <img 
-    src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6InJyWmxZcEdHY2RyTHZsb0lYd0dUcVg4WkFRTnNCOUEwIiwiYW5vbnltb3VzSWQiOiIxMDM3MzY0ZC1mMjBiLTQ4MTUtYWI2YS1mNjA5OThkMzQyNWEiLCJldmVudCI6IlBSIHZpZXdlZCIsInByb3BlcnRpZXMiOnsicHJJZCI6IjEwMzczNjRkLWYyMGItNDgxNS1hYjZhLWY2MDk5OGQzNDI1YSJ9fQ=="
-    width="0" height="0"/> ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - 🧐 [View latest project 
-    report](https://app.snyk.io/org/binamb-81n/project/0f7f7e80-9104-42d5-a3b7-6da0f05b9f5c?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;page&#x3D;fix-pr)
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - 📜 [Customise PR 
-    templates](https://docs.snyk.io/scan-using-snyk/pull-requests/snyk-fix-pull-or-merge-requests/customize-pr-templates?utm_source=github&utm_content=fix-pr-template)
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - 🛠 [Adjust project 
-    settings](https://app.snyk.io/org/binamb-81n/project/0f7f7e80-9104-42d5-a3b7-6da0f05b9f5c?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;page&#x3D;fix-pr/settings)
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - 📚 [Read about Snyk's upgrade 
-    logic](https://docs.snyk.io/scan-with-snyk/snyk-open-source/manage-vulnerabilities/upgrade-package-versions-to-fix-vulnerabilities?utm_source=github&utm_content=fix-pr-template)
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
-  - Learn how to fix vulnerabilities with free interactive lessons:** ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - 🦉 [Regular Expression Denial of Service 
-    (ReDoS)](https://learn.snyk.io/lesson/redos/?loc&#x3D;fix-pr) ([#306](https://github.com/uc-cdis/guppy/pull/306)) 
-  - [//]: # 
-    'snyk:metadata:{"customTemplate":{"variablesUsed":[],"fieldsUsed":[]},"dependencies":[{"name":"express","from":"4.21.1","to":"4.21.2"}],"env":"prod","issuesToFix":["SNYK-JS-PATHTOREGEXP-8482416"],"prId":"1037364d-f20b-4815-ab6a-f60998d3425a","prPublicId":"1037364d-f20b-4815-ab6a-f60998d3425a","packageManager":"npm","priorityScoreList":[738],"projectPublicId":"0f7f7e80-9104-42d5-a3b7-6da0f05b9f5c","projectUrl":"https://app.snyk.io/org/binamb-81n/project/0f7f7e80-9104-42d5-a3b7-6da0f05b9f5c?utm_source=github&utm_medium=referral&page=fix-pr","prType":"fix","templateFieldSources":{"branchName":"default","commitMessage":"default","description":"default","title":"default"},"templateVariants":["updated-fix-title","priorityScore"],"type":"auto","upgrade":["SNYK-JS-PATHTOREGEXP-8482416"],"vulns":["SNYK-JS-PATHTOREGEXP-8482416"],"patch":[],"isBreakingChange":false,"remediationStrategy":"vuln"}'
-    ([#306](https://github.com/uc-cdis/guppy/pull/306))
 
 ## uc-cdis/hatchery
 
