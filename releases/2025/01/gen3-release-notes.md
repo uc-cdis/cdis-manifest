@@ -13,7 +13,7 @@ Happy New Year!
     - move to Gunicorn
 
 #### Fence changes for user management (some breaking changes)
-  - We've performed some clean-up on fence -- for example, to standardize the use of `username` instead of a mix of `name` and `username` 
+  - We've performed some clean-up on fence -- for example, to standardize on the use of `username` instead of a mix of `name` and `username` 
     in the /admin/user endpoints -- and added an endpoint to soft-delete users. For the details and list of other changes, please see the [fence entry](#breaking-changes), below.
 
 
@@ -229,7 +229,7 @@ Happy New Year!
 ## uc-cdis/pelican
 
 #### Deployment Changes
-  - Our Helm charts utilize eternal secrets to create and manage our secrets. 
+  - Our Helm charts utilize external secrets to create and manage our secrets. 
     The new Peregrine-dbcreds secret is formatted differently and no longer 
     uses json, so we need to edit the export job so the values can be read via 
     environment variables. ([#89](https://github.com/uc-cdis/pelican/pull/89))
