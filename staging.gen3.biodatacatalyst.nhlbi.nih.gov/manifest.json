@@ -24,11 +24,10 @@
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.10",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2024.10",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2024.10",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.10",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.10",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.10",
-    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2024.10"
+    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2024.10",
+    "gen3-user-data-library": "quay.io/cdis/gen3-user-data-library:1.0.0",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feature_data_library"
   },
   "google": {
     "enabled": "yes"
