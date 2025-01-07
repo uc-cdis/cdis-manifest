@@ -13,12 +13,13 @@
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2024.10",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.10",
+    "frontend-framework": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/bdc-data-commons:main",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.10",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.10",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.10",
     "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.10",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.10",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.10",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feature_data_library",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.10",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.10",
@@ -27,7 +28,6 @@
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.10",
     "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2024.10",
     "gen3-user-data-library": "quay.io/cdis/gen3-user-data-library:1.0.0",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feature_data_library"
   },
   "google": {
     "enabled": "yes"
@@ -287,7 +287,7 @@
     "environment": "stagingdatastage",
     "hostname": "staging.gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/1876fa51-031e-4aa9-ab95-7da182a52c7f",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.5.2/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/master/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
@@ -300,6 +300,7 @@
     "netpolicy": "on",
     "argocd": "true",
     "waf_enabled": "true",
+    "frontend_root": "portal",
     "pdb": "on",
     "es7": true
   },
