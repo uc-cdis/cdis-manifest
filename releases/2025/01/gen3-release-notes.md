@@ -86,39 +86,15 @@ Happy New Year!
   - ensures the old AtlasDictionaryButton behavior is fully restored. ([#1649](https://github.com/uc-cdis/data-portal/pull/1649)) 
   - Fixes eslint-new linting ([#1649](https://github.com/uc-cdis/data-portal/pull/1649)) 
   - Improves accessibility ([#1649](https://github.com/uc-cdis/data-portal/pull/1649)) 
-  - Make front end team project role function look for specific read permission 
-    ([#1633](https://github.com/uc-cdis/data-portal/pull/1633))
-  - QA user without team project permission without fix ([#1633](https://github.com/uc-cdis/data-portal/pull/1633)) 
-  - <img width="1419" alt="Screenshot 2024-11-12 at 2 50 55 PM" 
-    src="https://github.com/user-attachments/assets/e5330267-1d60-42d0-9215-02151437bdbe">
-    ([#1633](https://github.com/uc-cdis/data-portal/pull/1633))
-  - qa user without team project permission with fix ([#1633](https://github.com/uc-cdis/data-portal/pull/1633)) 
-  - <img width="1427" alt="Screenshot 2024-11-12 at 2 52 38 PM" 
-    src="https://github.com/user-attachments/assets/701950f9-79e2-4c44-97fa-d7f6de381921">
-    ([#1633](https://github.com/uc-cdis/data-portal/pull/1633))
+  - Team project role checks for correct permissions ([#1633](https://github.com/uc-cdis/data-portal/pull/1633))
 
 #### Improvements
   - Discovery: display link with title for batch export result ([#1657](https://github.com/uc-cdis/data-portal/pull/1657)) 
-  - update h2s to h1s for main page headings to conform with ADA standards 
-    ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Login page ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Apps page ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Individual Apps ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Workspace page ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Profile page ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
-  - Resource browser ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
+  - Update h2s to h1s for main page headings to conform with ADA standards ([#1641](https://github.com/uc-cdis/data-portal/pull/1641))
   - 508 coloring change for VA mailing link ([#1638](https://github.com/uc-cdis/data-portal/pull/1638)) 
-  - Before: ([#1638](https://github.com/uc-cdis/data-portal/pull/1638))
-  - <img width="2168" alt="Screenshot 2024-11-14 at 3 22 49 PM" 
-    src="https://github.com/user-attachments/assets/5f8d8858-fa22-48af-baa1-7d8a6feb08ab">
-    ([#1638](https://github.com/uc-cdis/data-portal/pull/1638))
-  - After: ([#1638](https://github.com/uc-cdis/data-portal/pull/1638))
-  - <img width="2171" alt="Screenshot 2024-11-14 at 3 20 39 PM" 
-    src="https://github.com/user-attachments/assets/aab811e8-fed2-4f75-b8b3-09989e11e29a">
-    ([#1638](https://github.com/uc-cdis/data-portal/pull/1638))
-  - fix misplaced html ul element ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
-  - refactor header and nav elements ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
-  - add aria labels to nav elements ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
+  - Fix misplaced html ul element ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
+  - Refactor header and nav elements ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
+  - Add aria labels to nav elements ([#1637](https://github.com/uc-cdis/data-portal/pull/1637)) 
   - Introduced the `OpenFillRequestFormButton` in the Discovery action bar 
     component, allowing users to submit a fill request form with dynamic query 
     generation based on selected resources. ([#1551](https://github.com/uc-cdis/data-portal/pull/1551)) 
