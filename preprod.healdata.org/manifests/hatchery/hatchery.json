@@ -3,18 +3,13 @@
   "sub-dir": "/lw-workspace",
   "user-volume-size": "10Gi",
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
-  "default-pay-model": {
-    "bmh_workspace_id": "blanket_billing_eks",
-    "region": "us-east-1",
-    "account_id": "252835817747",
-    "workspace_type": "healworkspaces"
-  },
+  "karpenter": true,
   "license-user-maps-dynamodb-table": "gen3-license-user-maps-preprod-heal",
   "license-user-maps-global-secondary-index": "activeUsersIndex",
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2024.08",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2024.12",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -39,19 +34,19 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/heal-notebooks:generic_rkernel__eac8380b6ebdf8f684cc5852afe3c08b5f31c002",
+      "image": "quay.io/cdis/heal-notebooks:generic_rkernel__ff880f355bfcfbb1b1a8c6e4615e13152c71be2b",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
       "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.default_url=/lab",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.ip='*'",
-        "--NotebookApp.notebook_dir='/home/jovyan'",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
+        "--JupyterNotebookApp.base_url=/lw-workspace/proxy/",
+        "--JupyterNotebookApp.default_url=/lab",
+        "--JupyterNotebookApp.password=''",
+        "--JupyterNotebookApp.token=''",
+        "--JupyterNotebookApp.ip='*'",
+        "--JupyterNotebookApp.notebook_dir='/home/jovyan'",
+        "--JupyterNotebookApp.shutdown_no_activity_timeout=5400",
+        "--JupyterNotebookApp.quit_button=False"
       ],
       "command": [
         "start-notebook.sh"
@@ -62,7 +57,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; wget -O /data/qdr_data_download.ipynb https://raw.githubusercontent.com/uc-cdis/heal-platform-sdk/refs/heads/master/notebooks/qdr_data_download.ipynb; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
@@ -147,17 +142,19 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Tutorials) Example Analysis Jupyter Lab Notebooks",
-      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__c3f43a1b8e058be76a9d998a7009e270dce04e6f",
+      "image": "quay.io/cdis/heal-notebooks:combined_tutorials__2af985287624f57d2276f4e7eecb8793735b95ed",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
       "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.default_url=/lab",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
+        "--JupyterNotebookApp.base_url=/lw-workspace/proxy/",
+        "--JupyterNotebookApp.default_url=/lab",
+        "--JupyterNotebookApp.password=''",
+        "--JupyterNotebookApp.token=''",
+        "--JupyterNotebookApp.ip='*'",
+        "--JupyterNotebookApp.notebook_dir='/home/jovyan'",
+        "--JupyterNotebookApp.shutdown_no_activity_timeout=3600",
+        "--JupyterNotebookApp.quit_button=False"
       ],
       "command": [
         "start-notebook.sh"

@@ -94,6 +94,12 @@
           "name": "Discovery"
         },
         {
+          "icon": "list",
+          "link": "https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/ff/DataLibrary",
+          "color": "#a2a2a2",
+          "name": "Data Library"
+        },
+        {
           "icon": "workspace",
           "link": "/workspace",
           "color": "#a2a2a2",
@@ -650,6 +656,15 @@
       },
       "tagsInDescription": {
         "enabled": true
+      },
+      "exportToWorkspace": {
+        "enabled": false
+      },
+      "exportToDataLibrary": {
+        "enabled": true,
+        "dataObjectFieldName" : "objects",
+        "datesetIdFieldName" : "study_id",
+        "dataObjectIdField" : "guid"
       },
       "search": {
         "searchBar": {

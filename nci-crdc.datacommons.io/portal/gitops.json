@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "undefined",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "dcfprod"
+  },
   "graphql": {
     "boardCounts": [
       {

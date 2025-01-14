@@ -30,7 +30,7 @@ mappings:
         path: imaging_studies.mr_series_files
         fn: count
     parent_props:
-      - path: datasets[dataset_submitter_id:submitter_id]
+      - path: datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
     nested_props:
       - name: case_annotations
         path: annotations
@@ -42,6 +42,7 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
+          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -137,6 +138,8 @@ mappings:
       - name: test_method
       - name: test_name
       - name: test_result_text
+    parent_props:
+      - path: cases.datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
   - name: midrc_annotation
     doc_type: annotation
     type: aggregator
@@ -147,6 +150,7 @@ mappings:
       - name: case_ids
       - name: airspace_disease_grading
       - name: class_covid19_pneumonia
+      - name: annotation_name
       - name: midrc_mRALE_score
       - name: annotation_method
       - name: annotator_id
@@ -181,6 +185,7 @@ mappings:
         props:
           - name: airspace_disease_grading
           - name: class_covid19_pneumonia
+          - name: annotation_name
           - name: midrc_mRALE_score
           - name: annotation_method
           - name: annotator_id
@@ -199,7 +204,7 @@ mappings:
         path: mr_series_files
         fn: count
     parent_props:
-      - path: cases[sex,race,age_at_index,index_event,zip,covid19_positive,ethnicity].datasets[dataset_submitter_id:submitter_id]
+      - path: cases[sex,race,age_at_index,index_event,zip,covid19_positive,ethnicity].datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
     joining_props:
       - index: data_file
         join_on: _imaging_study_id
@@ -278,6 +283,7 @@ mappings:
       - name: manufacturer
       - name: manufacturer_model_name
       - name: modality
+      - name: number_of_instances
       - name: number_of_temporal_positions
       - name: patient_position
       - name: pixel_spacing
@@ -297,6 +303,18 @@ mappings:
         props:
           - name: _dataset_id
             src: id
+            fn: set
+          - name: dataset_submitter_id
+            src: submitter_id
+            fn: set
+          - name: license
+            src: license
+            fn: set
+          - name: data_url_doi
+            src: data_url_doi
+            fn: set
+          - name: data_contributor
+            src: data_contributor
             fn: set
       annotation:
         props:

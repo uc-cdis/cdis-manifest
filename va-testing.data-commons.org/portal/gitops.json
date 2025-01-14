@@ -4,7 +4,7 @@
     "grafanaFaroEnable": true,
     "grafanaFaroNamespace": "va-testing"
   },
-  "argoTemplate": "gwas-template-zip",
+  "argoTemplate": "gwas-template-genesisupdate",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -13,6 +13,7 @@
   },
   "components": {
     "appName": "VA Data Commons",
+    "logoAltText": "VA logo and Seal, U.S. Department of Veterans Affairs Data Commons",
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
@@ -96,7 +97,8 @@
   "featureFlags": {
     "explorer": false,
     "analysis": true,
-    "workspaceTokenServiceRefreshTokenAtLogin": true
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
+    "legacyVADCDataDictionary": false
   },
   "analysisTools": [
     {
@@ -128,6 +130,8 @@
       "needsTeamProject": false
     }
   ],
+  "profilePageTitle": "Profile",
+  "workspacePageTitle": "Workspace",
   "showArboristAuthzOnProfile": false,
   "showFenceAuthzOnProfile": false,
   "connectSrcCSPWhitelist": [
@@ -137,5 +141,22 @@
   "userAccessToSite": {
     "enabled": true,
     "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+  },
+  "componentToResourceMapping": { 
+    "Workspace": {
+      "resource": "/workspace", 
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Apps": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    },
+    "Profile": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    }
   }
 }

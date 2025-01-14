@@ -304,6 +304,9 @@ mappings:
           - name: _dataset_id
             src: id
             fn: set
+          - name: dataset_submitter_id
+            src: submitter_id
+            fn: set
           - name: license
             src: license
             fn: set

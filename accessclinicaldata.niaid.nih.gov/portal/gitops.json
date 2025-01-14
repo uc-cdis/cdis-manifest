@@ -1,5 +1,9 @@
 {
   "gaTrackingId": "G-PYX1509S24",
+  "grafanaFaroConfig": {
+    "grafanaFaroEnable": true,
+    "grafanaFaroNamespace": "accessclinicaldataprod"
+  },
   "DAPTrackingURL": "https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIH&subagency=NIAID",
   "ddEnv": "NIAID",
   "ddUrl": "ddog-gov.com",
@@ -20,7 +24,7 @@
 	        "<p style='margin-left: 20px; font-style: italic;'>De-identified human clinical research and trials data can be submitted to accessclinicaldata@NIAID, which is a NIAID cloud-based, controlled access, secure data platform that enables sharing of and access to human clinical research and trials data sets and related metadata for the basic and clinical research community.  There is no cost to share and access data in this NIAID supported data platform.</p>",
           "<p style='margin-left: 20px; font-style: italic;'>If you are interested in making your data available, please <a href='mailto:accessclinicaldatasupport@niaid.nih.gov'>contact us</a> at accessclinicaldatasupport@niaid.nih.gov.</p>",
           "<h2 style=color:#BC3231>New Data Available</h2>",
-           "<div class='border-l-8 border-nct-red ml-1 pl-8 mb-4'><p class='prose sm:prose-base 2xl:prose-lg !mt-0'>SCRIPT - Successful Clinical Response in Pneumonia Therapy: Sponsored by National Institute of Allergy and Infectious Diseases, National Institutes of Health</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/SCRIPT'>Click here!</a></div><br /><br />MARM-TB-FDT - Tuberculosis Infected Marmosets: Sponsored by U.S. National Institute of Allergy and Infectious Diseases, NIH and University of Oxford</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/MARM-TB-FDT'>Click here!</a></div></div><br />",
+          "<div class='border-l-8 border-nct-red ml-1 pl-8 mb-4'><p class='prose sm:prose-base 2xl:prose-lg !mt-0'> Additional data sets now available for ACTIV-1 IM Immune Modulators for Treating COVID-19</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/NCT04593940'>Click here!</a></div><br /><br />ACTIV-2/A5401 - A Study for Outpatients With COVID-19: Sponsored by U.S. National Institute of Allergy and Infectious Diseases, National Institutes of Health</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/NCT04518410'>Click here!</a></div><br /><br />ACTG - Comparative Study of Three NNRTI-Sparing HAART Regimens: Sponsored by U.S. National Institute of Allergy and Infectious Diseases, National Institutes of Health</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='/study-viewer/clinical_trials/NCT00811954'>Click here!</a></div></div><br />",
           "<h3>How to View Available Data</h3>",
           "<p>Click the button below and for each study listed, open the details and select the \"Learn More\" button to review a description of the clinical trial and data dictionary.</p><div class='nct-btn mr-5'><a class='flex flex-row items-center' href='https://accessclinicaldata.niaid.nih.gov/study-viewer/clinical_trials'>View Clinical Trials</a></div></div><br />",
           "<h3>How to Request Data</h3>",
