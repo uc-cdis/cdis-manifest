@@ -77,7 +77,8 @@
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
-				"commons_url": "data.bloodpac.org"
+				"commons_url": "data.bloodpac.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"VPODC-study-level-metadata": {
@@ -104,7 +105,8 @@
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "vpodc.data-commons.org"
+				"commons_url": "vpodc.data-commons.org",
+				"is_synthetic": "No"
 			}
 		},
 		"APOLLO-study-level-metadata": {
@@ -141,7 +143,8 @@
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "api.gdc.cancer.gov"
+				"commons_url": "api.gdc.cancer.gov",
+				"is_synthetic": "No"
 			}
 		},
 		"Proteomic-Data-Commons-study-level-metadata": {
@@ -189,7 +192,8 @@
 				"supplementaryFilesCount": "path:supplementaryFilesCount",
 				"nonSupplementaryFilesCount": "path:nonSupplementaryFilesCount",
 				"contacts": "path:contacts",
-				"versions": "path:versions"
+				"versions": "path:versions",
+				"is_synthetic": "No"
 			}
 		},
 		"BloodPAC-subject-level-metadata": {
@@ -217,7 +221,8 @@
 				"subject_cancer_stage": "path:cancer_stage",
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "path:primary_disease",
-				"commons_url": "data.bloodpac.org"
+				"commons_url": "data.bloodpac.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"VPODC-subject-level-metadata": {
@@ -347,7 +352,8 @@
 					"path": "primary_disease",
 					"default": ""
 				},
-				"commons_url": "vpodc.data-commons.org"
+				"commons_url": "vpodc.data-commons.org",
+				"is_synthetic": "No"
 			}
 		},
 		"APOLLO-subject-level-metadata": {
@@ -465,7 +471,8 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:diagnoses[*].primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].tobacco_smoking_status",
-				"commons_url": "api.gdc.cancer.gov"
+				"commons_url": "api.gdc.cancer.gov",
+				"is_synthetic": "No"
 			}
 		},
 		"Proteomic-Data-Commons-subject-level-metadata": {
@@ -549,7 +556,8 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].exposure_type",
-				"commons_url": "proteomic.datacommons.cancer.gov"
+				"commons_url": "proteomic.datacommons.cancer.gov",
+				"is_synthetic": "No"
 			}
 		},
 		"VMOAT-study-level-metadata": {
@@ -577,7 +585,8 @@
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"VMOAT-subject-level-metadata": {
@@ -599,7 +608,8 @@
 				"subject_type_of_exposure": "path:exposure_type",
 				"subject_chemical_agents_of_exposure": "path:exposure_agent",
 				"data_source" : "path:data_source",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"Metabolomic-study-level-metadata": {
@@ -627,7 +637,8 @@
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"Metabolomic-subject-level-metadata": {
@@ -656,7 +667,8 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"TCIA-study-level-metadata": {
@@ -688,7 +700,8 @@
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "services.cancerimagingarchive.net"
+				"commons_url": "services.cancerimagingarchive.net",
+				"is_synthetic": "No"
 			}
 		},
 		"TCIA-subject-level-metadata": {
@@ -721,7 +734,8 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:SeriesDescription",
 				"data_source" : "TCIA",
-				"commons_url": "services.cancerimagingarchive.net"
+				"commons_url": "services.cancerimagingarchive.net",
+				"is_synthetic": "No"
 			}
 		}
 	}
