@@ -407,7 +407,7 @@
 				"disease_type": "path:disease_type",
 				"primary_site": "path:primary_site",
 				"subject_id": "path:submitter_id",
-				"subject_apollo_id": "",
+				"subject_apollo_id": "path:submitter_id",
 				"subject_race": "path:demographic.race",
 				"subject_gender": {
 					"path": "demographic.gender",
@@ -550,6 +550,178 @@
 				"subject_primary_disease": "path:primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].exposure_type",
 				"commons_url": "proteomic.datacommons.cancer.gov"
+			}
+		},
+		"VMOAT-study-level-metadata": {
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "VMOAT_promethueus_study_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "path:authz",
+				"tags": "path:tags",
+				"_unique_id": "path:_unique_id",
+				"study_id": "path:study_id",
+				"study_description": "path:study_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
+				"commons": "path:commons",
+				"study_url": "path:study_url",
+				"data_source" : "path:data_source",
+				"_subjects_count": {
+					"path": "_subjects_count",
+					"default": 0
+				},
+				"__manifest": "path:__manifest",
+				"commons_url": "externalgen3.prometheus.data-commons.org"
+			}
+		},
+		"VMOAT-subject-level-metadata": {
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "VMOAT_promethueus_study_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "path:authz",
+				"tags": "path:tags",
+				"_unique_id": "path:_unique_id",
+				"commons": "path:commons",
+				"subject_id": "path:_unique_id",
+				"subject_apollo_id": "path:apollo_id",
+				"subject_type_of_exposure": "path:exposure_type",
+				"subject_chemical_agents_of_exposure": "path:exposure_agent",
+				"data_source" : "path:data_source",
+				"commons_url": "externalgen3.prometheus.data-commons.org"
+			}
+		},
+		"Metabolomic-study-level-metadata": {
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "Metabolomic_promethueus_study_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "path:authz",
+				"tags": "path:tags",
+				"_unique_id": "path:_unique_id",
+				"study_id": "path:study_id",
+				"study_description": "path:study_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
+				"commons": "path:commons",
+				"study_url": "path:study_url",
+				"data_source" : "path:data_source",
+				"_subjects_count": {
+					"path": "_subjects_count",
+					"default": 0
+				},
+				"__manifest": "path:__manifest",
+				"commons_url": "externalgen3.prometheus.data-commons.org"
+			}
+		},
+		"Metabolomic-subject-level-metadata": {
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "Metabolomic_promethueus_subject_metadata",
+				"study_field": "gen3_discovery"
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "path:authz",
+				"tags": "path:tags",
+				"_unique_id": "path:_unique_id",
+				"commons": "path:commons",
+				"subject_id": "path:subject_id",
+				"subject_apollo_id": "path:apollo_id",
+				"subject_race": "",
+				"subject_gender": "path:gender",
+				"subject_ethnicity": "",
+				"subject_metastasis": "",
+				"subject_cancer_type": "",
+				"subject_cancer_grade": "",
+				"subject_cancer_stage": "",
+				"subject_year_of_birth": "path:year_of_birth",
+				"subject_primary_disease": "",
+				"data_source" : "path:data_source",
+				"commons_url": "externalgen3.prometheus.data-commons.org"
+			}
+		},
+		"TCIA-study-level-metadata": {
+			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatientStudy?Collection=VAREPOP-APOLLO",
+			"commons_url": "services.cancerimagingarchive.net",
+			"adapter": "tcia",
+			"filters": {
+				"size": 100
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "",
+				"tags": [
+					{
+						"name": "TCIA",
+						"category": "Data Source"
+				    }
+				],
+				"_unique_id": "path:StudyInstanceUID",
+				"study_id": "path:StudyInstanceUID",
+				"study_description": "path:StudyDescription",
+				"full_name": "",
+				"short_name": "",
+				"commons": "",
+				"study_url": "",
+				"data_source" : "TCIA",
+				"_subjects_count": {
+					"path": "path:SeriesCount",
+					"default": 0
+				},
+				"__manifest": "",
+				"commons_url": "services.cancerimagingarchive.net"
+			}
+		},
+		"TCIA-subject-level-metadata": {
+			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=VAREPOP-APOLLO",
+			"commons_url": "services.cancerimagingarchive.net",
+			"adapter": "tcia",
+			"filters": {
+				"size": 100
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "",
+				"tags": [
+					{
+						"name": "TCIA",
+						"category": "Data Source"
+				   }
+				],
+				"_unique_id": "path:SeriesInstanceUID",
+				"commons": "",
+				"subject_id": "path:SeriesInstanceUID",
+				"subject_apollo_id": "path:PatientID",
+				"subject_race": "",
+				"subject_gender": "",
+				"subject_ethnicity": "",
+				"subject_metastasis": "",
+				"subject_cancer_type": "",
+				"subject_cancer_grade": "",
+				"subject_cancer_stage": "",
+				"subject_year_of_birth": "",
+				"subject_primary_disease": "path:SeriesDescription",
+				"data_source" : "TCIA",
+				"commons_url": "services.cancerimagingarchive.net"
 			}
 		}
 	}
