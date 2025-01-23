@@ -585,7 +585,8 @@
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"VMOAT-subject-level-metadata": {
@@ -607,7 +608,8 @@
 				"subject_type_of_exposure": "path:exposure_type",
 				"subject_chemical_agents_of_exposure": "path:exposure_agent",
 				"data_source" : "path:data_source",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"Metabolomic-study-level-metadata": {
@@ -635,7 +637,8 @@
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"Metabolomic-subject-level-metadata": {
@@ -664,7 +667,8 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
-				"commons_url": "externalgen3.prometheus.data-commons.org"
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"is_synthetic": "Yes"
 			}
 		},
 		"TCIA-study-level-metadata": {
@@ -696,7 +700,8 @@
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "services.cancerimagingarchive.net"
+				"commons_url": "services.cancerimagingarchive.net",
+				"is_synthetic": "No"
 			}
 		},
 		"TCIA-subject-level-metadata": {
@@ -729,7 +734,8 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:SeriesDescription",
 				"data_source" : "TCIA",
-				"commons_url": "services.cancerimagingarchive.net"
+				"commons_url": "services.cancerimagingarchive.net",
+				"is_synthetic": "No"
 			}
 		}
 	}
