@@ -134,7 +134,7 @@
 				"study_description": "path:name",
 				"full_name": "",
 				"short_name": "",
-				"commons": "gdc",
+				"commons": "GDC",
 				"study_url": "",
 				"_subjects_count": {
 					"path": "summary.case_count",
@@ -152,7 +152,7 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "/VA",
-				"commons": "pdc",
+				"commons": "PDC",
 				"tags": [
 					{
 						"name": "path:disease_type",
@@ -213,7 +213,21 @@
 				"subject_ethnicity": "path:ethnicity",
 				"subject_metastasis": "path:metastasis",
 				"subject_cancer_type": "path:cancer_type",
-				"subject_cancer_grade": "path:cancer_grade",
+				"subject_cancer_grade": {
+					"path": "cancer_grade",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"Grade 1": "Grade I",
+							"Grade 2": "Grade II",
+							"Grade 3": "Grade III",
+							"Grade 4": "Grade IV"
+						}
+					},
+					"default": ""
+				},
 				"subject_cancer_stage": "path:cancer_stage",
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "path:primary_disease",
@@ -234,7 +248,7 @@
 				"tags": {
 					"path": "tags",
 					"filters": [
-						"normalize_tags"
+					  "normalize_tags"
 					],
 					"filterParams": {
 						"normalize_tags": {
@@ -284,14 +298,14 @@
 					],
 					"filterParams": {
 						"normalize_value": {
-							"M": "Male",
-							"F": "Female",
-							"male": "Male",
-							"female": "Female",
-							"not reported": "Not Reported"
+						  "M": "Male",
+						  "F": "Female",
+						  "male": "Male",
+						  "female": "Female",
+						  "not reported": "Not Reported"
 						}
 					},
-					"default": ""
+					  "default": ""
 				},
 				"subject_ethnicity": {
 					"path": "ethnicity",
@@ -300,10 +314,10 @@
 					],
 					"filterParams": {
 						"normalize_value": {
-							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
-							"not reported": "Not Reported",
-							"DECLINED TO ANSWER": "Declined to Answer",
-							"HISPANIC OR LATINO": "Hispanic or Latino"
+						  "NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+						  "not reported": "Not Reported",
+						  "DECLINED TO ANSWER": "Declined to Answer",
+						  "HISPANIC OR LATINO": "Hispanic or Latino"
 						}
 					},
 					"default": ""
@@ -323,14 +337,14 @@
 					],
 					"filterParams": {
 						"normalize_value": {
-							"Grade 1": "Grade I",
-							"G1": "Grade I",
-							"Grade 2": "Grade II",
-							"G2": "Grade II",
-							"Grade 3": "Grade III",
-							"G3": "Grade III",
-							"Grade 4": "Grade IV",
-							"G4": "Grade IV"
+						  "Grade 1": "Grade I",
+						  "G1": "Grade I",
+						  "Grade 2": "Grade II",
+						  "G2": "Grade II",
+						  "Grade 3": "Grade III",
+						  "G3": "Grade III",
+						  "Grade 4": "Grade IV",
+						  "G4": "Grade IV"
 						}
 					},
 					"default": ""
@@ -403,7 +417,7 @@
 					}
 				],
 				"_unique_id": "path:id",
-				"commons": "gdc",
+				"commons": "GDC",
 				"disease_type": "path:disease_type",
 				"primary_site": "path:primary_site",
 				"subject_id": "path:submitter_id",
@@ -412,7 +426,7 @@
 				"subject_gender": {
 					"path": "demographic.gender",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
@@ -428,7 +442,7 @@
 				"subject_ethnicity": {
 					"path": "demographic.ethnicity",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
@@ -445,7 +459,7 @@
 				"subject_cancer_grade": {
 					"path": "diagnoses[*].tumor_grade",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
@@ -487,7 +501,7 @@
 					}
 				],
 				"_unique_id": "path:case_submitter_id",
-				"commons": "pdc",
+				"commons": "GDC",
 				"disease_type": "path:disease_type",
 				"primary_site": "path:primary_site",
 				"subject_id": "path:case_submitter_id",
@@ -496,7 +510,7 @@
 				"subject_gender": {
 					"path": "demographic.gender",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
@@ -512,7 +526,7 @@
 				"subject_ethnicity": {
 					"path": "demographic.ethnicity",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
@@ -529,7 +543,7 @@
 				"subject_cancer_grade": {
 					"path": "diagnoses[*].tumor_grade",
 					"filters": [
-						"normalize_value"
+					  "normalize_value"
 					],
 					"filterParams": {
 						"normalize_value": {
