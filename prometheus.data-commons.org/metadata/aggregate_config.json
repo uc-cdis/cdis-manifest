@@ -658,6 +658,71 @@
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org"
 			}
+		},
+		"TCIA-study-level-metadata": {
+			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatientStudy?Collection=VAREPOP-APOLLO",
+			"commons_url": "services.cancerimagingarchive.net",
+			"adapter": "tcia",
+			"filters": {
+				"size": 100
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "",
+				"tags": [
+					{
+						"name": "TCIA",
+						"category": "Data Source"
+				    }
+				],
+				"_unique_id": "path:StudyInstanceUID",
+				"study_id": "path:StudyInstanceUID",
+				"study_description": "path:StudyDescription",
+				"full_name": "",
+				"short_name": "",
+				"commons": "",
+				"study_url": "",
+				"data_source" : "TCIA",
+				"_subjects_count": {
+					"path": "path:SeriesCount",
+					"default": 0
+				},
+				"__manifest": "",
+				"commons_url": "services.cancerimagingarchive.net"
+			}
+		},
+		"TCIA-subject-level-metadata": {
+			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=VAREPOP-APOLLO",
+			"commons_url": "services.cancerimagingarchive.net",
+			"adapter": "tcia",
+			"filters": {
+				"size": 100
+			},
+			"keep_original_fields": false,
+			"field_mappings": {
+				"authz": "",
+				"tags": [
+					{
+						"name": "TCIA",
+						"category": "Data Source"
+				   }
+				],
+				"_unique_id": "path:SeriesInstanceUID",
+				"commons": "",
+				"subject_id": "path:SeriesInstanceUID",
+				"subject_apollo_id": "path:PatientID",
+				"subject_race": "",
+				"subject_gender": "",
+				"subject_ethnicity": "",
+				"subject_metastasis": "",
+				"subject_cancer_type": "",
+				"subject_cancer_grade": "",
+				"subject_cancer_stage": "",
+				"subject_year_of_birth": "",
+				"subject_primary_disease": "path:SeriesDescription",
+				"data_source" : "TCIA",
+				"commons_url": "services.cancerimagingarchive.net"
+			}
 		}
 	}
 }
