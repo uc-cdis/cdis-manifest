@@ -46,7 +46,8 @@
 			"subject_year_of_birth": {},
 			"subject_primary_disease": {},
 			"subject_type_of_exposure": {},
-			"subject_chemical_agents_of_exposure": {}
+			"subject_chemical_agents_of_exposure": {},
+			"prometheus_global_id" : {}
 		},
 		"settings": {
 			"cache_drs": true
@@ -236,6 +237,7 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "path:primary_disease",
 				"commons_url": "data.bloodpac.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -367,6 +369,7 @@
 					"default": ""
 				},
 				"commons_url": "vpodc.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		},
@@ -623,6 +626,7 @@
 				"subject_chemical_agents_of_exposure": "path:exposure_agent",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -682,6 +686,7 @@
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -751,6 +756,7 @@
 				"subject_primary_disease": "path:SeriesDescription",
 				"data_source" : "TCIA",
 				"commons_url": "services.cancerimagingarchive.net",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		}
