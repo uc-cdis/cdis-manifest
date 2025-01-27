@@ -46,7 +46,8 @@
 			"subject_year_of_birth": {},
 			"subject_primary_disease": {},
 			"subject_type_of_exposure": {},
-			"subject_chemical_agents_of_exposure": {}
+			"subject_chemical_agents_of_exposure": {},
+			"prometheus_global_id" : {}
 		},
 		"settings": {
 			"cache_drs": true
@@ -78,6 +79,7 @@
 				},
 				"__manifest": "path:__manifest",
 				"commons_url": "data.bloodpac.org",
+				"data_source" : "BLOODPAC",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -106,12 +108,12 @@
 				},
 				"__manifest": "",
 				"commons_url": "vpodc.data-commons.org",
+				"data_source" : "VPODC",
 				"is_synthetic": "No"
 			}
 		},
 		"APOLLO-study-level-metadata": {
 			"mds_url": "https://api.gdc.cancer.gov/projects?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22projects.project_id%22,%22value%22:[%22APOLLO-LUAD%22]%7D%7D]%7D&size=100&fields=name,project_id,primary_site,disease_type",
-			"commons_url": "api.gdc.cancer.gov",
 			"adapter": "gdc",
 			"filters": {
 				"size": 100
@@ -143,6 +145,7 @@
 					"default": 0
 				},
 				"__manifest": "",
+				"data_source" : "GDC",
 				"commons_url": "api.gdc.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -179,6 +182,7 @@
 				},
 				"__manifest": "",
 				"commons_url": "proteomic.datacommons.cancer.gov",
+				"data_source" : "PDC",
 				"submitter_id_name": "path:submitter_id_name",
 				"study_submitter_id": "path:study_submitter_id",
 				"disease_type": "path:disease_type",
@@ -236,6 +240,8 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "path:primary_disease",
 				"commons_url": "data.bloodpac.org",
+				"data_source" : "BLOODPAC",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -367,6 +373,8 @@
 					"default": ""
 				},
 				"commons_url": "vpodc.data-commons.org",
+				"data_source" : "VPODC",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		},
@@ -485,6 +493,7 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:diagnoses[*].primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].tobacco_smoking_status",
+				"data_source" : "GDC",
 				"commons_url": "api.gdc.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -570,6 +579,7 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].exposure_type",
+				"data_source" : "PDC",
 				"commons_url": "proteomic.datacommons.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -623,6 +633,7 @@
 				"subject_chemical_agents_of_exposure": "path:exposure_agent",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -682,6 +693,7 @@
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -704,13 +716,14 @@
 				"_unique_id": "path:StudyInstanceUID",
 				"study_id": "path:StudyInstanceUID",
 				"study_description": "path:StudyDescription",
+				"program_name": "path:Collection",
 				"full_name": "",
 				"short_name": "",
 				"commons": "",
 				"study_url": "",
 				"data_source" : "TCIA",
 				"_subjects_count": {
-					"path": "path:SeriesCount",
+					"path": "SeriesCount",
 					"default": 0
 				},
 				"__manifest": "",
@@ -736,6 +749,7 @@
 				],
 				"_unique_id": "path:SeriesInstanceUID",
 				"commons": "",
+				"program_name": "path:Collection",
 				"subject_id": "path:SeriesInstanceUID",
 				"subject_apollo_id": "path:PatientID",
 				"subject_race": "",
@@ -749,6 +763,7 @@
 				"subject_primary_disease": "path:SeriesDescription",
 				"data_source" : "TCIA",
 				"commons_url": "services.cancerimagingarchive.net",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		}
