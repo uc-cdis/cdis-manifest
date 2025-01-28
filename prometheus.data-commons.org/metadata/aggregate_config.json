@@ -212,7 +212,38 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:auth_resource_path",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:_unique_id",
@@ -625,7 +656,38 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:authz",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:_unique_id",
@@ -678,17 +740,95 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:authz",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:subject_id",
 				"subject_apollo_id": "path:apollo_id",
 				"subject_race": "",
-				"subject_gender": "path:gender",
-				"subject_ethnicity": "",
+				"subject_gender": {
+					"path": "demographic.gender",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"male": "Male",
+							"female": "Female",
+							"m": "Male",
+							"f": "Female",
+							"not reported": "Not Reported"
+						}
+					},
+					"default": ""
+				},
+				"subject_ethnicity": {
+					"path": "demographic.ethnicity",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+							"not reported": "Not Reported",
+							"DECLINED TO ANSWER": "Declined to Answer",
+							"HISPANIC OR LATINO": "Hispanic or Latino"
+						}
+					},
+					"default": ""
+				},
 				"subject_metastasis": "",
 				"subject_cancer_type": "",
-				"subject_cancer_grade": "",
+				"subject_cancer_grade": {
+					"path": "diagnoses[*].tumor_grade",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"Grade 1": "Grade I",
+							"G1": "Grade I",
+							"Grade 2": "Grade II",
+							"G2": "Grade II",
+							"Grade 3": "Grade III",
+							"G3": "Grade III",
+							"Grade 4": "Grade IV",
+							"G4": "Grade IV"
+						}
+					},
+					"default": ""
+				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "",
@@ -754,11 +894,58 @@
 				"subject_id": "path:SeriesInstanceUID",
 				"subject_apollo_id": "path:PatientID",
 				"subject_race": "",
-				"subject_gender": "",
-				"subject_ethnicity": "",
+				"subject_gender": {
+					"path": "demographic.gender",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"male": "Male",
+							"female": "Female",
+							"m": "Male",
+							"f": "Female",
+							"not reported": "Not Reported"
+						}
+					},
+					"default": ""
+				},
+				"subject_ethnicity": {
+					"path": "demographic.ethnicity",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+							"not reported": "Not Reported",
+							"DECLINED TO ANSWER": "Declined to Answer",
+							"HISPANIC OR LATINO": "Hispanic or Latino"
+						}
+					},
+					"default": ""
+				},
 				"subject_metastasis": "",
 				"subject_cancer_type": "",
-				"subject_cancer_grade": "",
+				"subject_cancer_grade": {
+					"path": "diagnoses[*].tumor_grade",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"Grade 1": "Grade I",
+							"G1": "Grade I",
+							"Grade 2": "Grade II",
+							"G2": "Grade II",
+							"Grade 3": "Grade III",
+							"G3": "Grade III",
+							"Grade 4": "Grade IV",
+							"G4": "Grade IV"
+						}
+					},
+					"default": ""
+				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:SeriesDescription",
