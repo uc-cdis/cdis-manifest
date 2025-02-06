@@ -40,7 +40,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2024.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.01",
         "pull_policy": "Always",
         "env": [
           {
@@ -104,7 +104,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2024.10",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.01",
         "pull_policy": "Always",
         "env": [
           {
@@ -172,7 +172,7 @@
     "environment": "stageprod",
     "hostname": "gen3.biodatacatalyst.nhlbi.nih.gov",
     "revproxy_arn": "arn:aws:acm:us-east-1:895962626746:certificate/472403d1-09a8-4d10-a5de-9b316f7da980",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.4.5/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.6.2/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
