@@ -46,7 +46,8 @@
 			"subject_year_of_birth": {},
 			"subject_primary_disease": {},
 			"subject_type_of_exposure": {},
-			"subject_chemical_agents_of_exposure": {}
+			"subject_chemical_agents_of_exposure": {},
+			"prometheus_global_id" : {}
 		},
 		"settings": {
 			"cache_drs": true
@@ -78,6 +79,7 @@
 				},
 				"__manifest": "path:__manifest",
 				"commons_url": "data.bloodpac.org",
+				"data_source" : "BLOODPAC",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -106,6 +108,7 @@
 				},
 				"__manifest": "",
 				"commons_url": "vpodc.data-commons.org",
+				"data_source" : "VPODC",
 				"is_synthetic": "No"
 			}
 		},
@@ -143,6 +146,7 @@
 					"default": 0
 				},
 				"__manifest": "",
+				"data_source" : "GDC",
 				"commons_url": "api.gdc.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -179,6 +183,7 @@
 				},
 				"__manifest": "",
 				"commons_url": "proteomic.datacommons.cancer.gov",
+				"data_source" : "PDC",
 				"submitter_id_name": "path:submitter_id_name",
 				"study_submitter_id": "path:study_submitter_id",
 				"disease_type": "path:disease_type",
@@ -207,7 +212,38 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:auth_resource_path",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:_unique_id",
@@ -236,6 +272,8 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "path:primary_disease",
 				"commons_url": "data.bloodpac.org",
+				"data_source" : "BLOODPAC",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -367,6 +405,8 @@
 					"default": ""
 				},
 				"commons_url": "vpodc.data-commons.org",
+				"data_source" : "VPODC",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		},
@@ -485,6 +525,7 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:diagnoses[*].primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].tobacco_smoking_status",
+				"data_source" : "GDC",
 				"commons_url": "api.gdc.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -570,6 +611,7 @@
 				"subject_year_of_birth": "",
 				"subject_primary_disease": "path:primary_diagnosis",
 				"subject_type_of_exposure": "path:exposures[*].exposure_type",
+				"data_source" : "PDC",
 				"commons_url": "proteomic.datacommons.cancer.gov",
 				"is_synthetic": "No"
 			}
@@ -614,7 +656,38 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:authz",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:_unique_id",
@@ -623,6 +696,7 @@
 				"subject_chemical_agents_of_exposure": "path:exposure_agent",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
@@ -666,91 +740,208 @@
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "path:authz",
-				"tags": "path:tags",
+				"tags": {
+					"path": "tags",
+					"filters": [
+					  "normalize_tags"
+					],
+					"filterParams": {
+						"normalize_tags": {
+							"gender": {
+								"M": "Male",
+								"F": "Female",
+								"male": "Male",
+								"female": "Female"
+							},
+							"ethnicity": {
+								"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+								"not reported": "Not Reported",
+								"DECLINED TO ANSWER": "Declined to Answer",
+								"HISPANIC OR LATINO": "Hispanic or Latino"
+							},
+							"cancer_grade": {
+								"Grade 1": "Grade I",
+								"G1": "Grade I",
+								"Grade 2": "Grade II",
+								"G2": "Grade II",
+								"Grade 3": "Grade III",
+								"G3": "Grade III",
+								"Grade 4": "Grade IV",
+								"G4": "Grade IV"
+							}
+						}
+					}
+				},
 				"_unique_id": "path:_unique_id",
 				"commons": "path:commons",
 				"subject_id": "path:subject_id",
 				"subject_apollo_id": "path:apollo_id",
 				"subject_race": "",
-				"subject_gender": "path:gender",
-				"subject_ethnicity": "",
+				"subject_gender": {
+					"path": "demographic.gender",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"male": "Male",
+							"female": "Female",
+							"m": "Male",
+							"f": "Female",
+							"not reported": "Not Reported"
+						}
+					},
+					"default": ""
+				},
+				"subject_ethnicity": {
+					"path": "demographic.ethnicity",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+							"not reported": "Not Reported",
+							"DECLINED TO ANSWER": "Declined to Answer",
+							"HISPANIC OR LATINO": "Hispanic or Latino"
+						}
+					},
+					"default": ""
+				},
 				"subject_metastasis": "",
 				"subject_cancer_type": "",
-				"subject_cancer_grade": "",
+				"subject_cancer_grade": {
+					"path": "diagnoses[*].tumor_grade",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"Grade 1": "Grade I",
+							"G1": "Grade I",
+							"Grade 2": "Grade II",
+							"G2": "Grade II",
+							"Grade 3": "Grade III",
+							"G3": "Grade III",
+							"Grade 4": "Grade IV",
+							"G4": "Grade IV"
+						}
+					},
+					"default": ""
+				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "Yes"
 			}
 		},
 		"TCIA-study-level-metadata": {
-			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatientStudy?Collection=VAREPOP-APOLLO",
-			"commons_url": "services.cancerimagingarchive.net",
-			"adapter": "tcia",
-			"filters": {
-				"size": 100
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "TCIA_study_metadata",
+				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "",
-				"tags": [
-					{
-						"name": "TCIA",
-						"category": "Data Source"
-				    }
-				],
-				"_unique_id": "path:StudyInstanceUID",
-				"study_id": "path:StudyInstanceUID",
-				"study_description": "path:StudyDescription",
-				"program_name": "path:Collection",
-				"full_name": "",
-				"short_name": "",
-				"commons": "",
-				"study_url": "",
+				"tags": "path:tags",
+				"_unique_id": "path:study_id",
+				"study_id": "path:study_id",
+				"study_description": "path:study_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
+				"commons": "TCIA",
+				"study_url": "path:study_url",
 				"data_source" : "TCIA",
 				"_subjects_count": {
-					"path": "SeriesCount",
+					"path": "_subjects_count",
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "services.cancerimagingarchive.net",
+				"commons_url": "externalgen3.prometheus.data-commons.org",
 				"is_synthetic": "No"
 			}
 		},
 		"TCIA-subject-level-metadata": {
-			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=VAREPOP-APOLLO",
-			"commons_url": "services.cancerimagingarchive.net",
-			"adapter": "tcia",
-			"filters": {
-				"size": 100
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "TCIA_subject_metadata",
+				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "",
-				"tags": [
-					{
-						"name": "TCIA",
-						"category": "Data Source"
-				   }
-				],
-				"_unique_id": "path:SeriesInstanceUID",
-				"commons": "",
-				"program_name": "path:Collection",
-				"subject_id": "path:SeriesInstanceUID",
-				"subject_apollo_id": "path:PatientID",
-				"subject_race": "",
-				"subject_gender": "",
-				"subject_ethnicity": "",
+				"tags": "path:tags",
+				"_unique_id": "path:guid",
+				"commons": "path:commons",
+				"subject_id": "path:subject_id",
+				"subject_apollo_id": "path:apollo_id",
+				"subject_race": "path:race",
+				"subject_gender": {
+					"path": "path.gender",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"male": "Male",
+							"female": "Female",
+							"m": "Male",
+							"f": "Female",
+							"not reported": "Not Reported"
+						}
+					},
+					"default": ""
+				},
+				"subject_ethnicity": {
+					"path": "path.ethnicity",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
+							"not reported": "Not Reported",
+							"DECLINED TO ANSWER": "Declined to Answer",
+							"HISPANIC OR LATINO": "Hispanic or Latino"
+						}
+					},
+					"default": ""
+				},
 				"subject_metastasis": "",
 				"subject_cancer_type": "",
-				"subject_cancer_grade": "",
+				"subject_cancer_grade": {
+					"path": "diagnoses[*].tumor_grade",
+					"filters": [
+					  "normalize_value"
+					],
+					"filterParams": {
+						"normalize_value": {
+							"Grade 1": "Grade I",
+							"G1": "Grade I",
+							"Grade 2": "Grade II",
+							"G2": "Grade II",
+							"Grade 3": "Grade III",
+							"G3": "Grade III",
+							"Grade 4": "Grade IV",
+							"G4": "Grade IV"
+						}
+					},
+					"default": ""
+				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "",
-				"subject_primary_disease": "path:SeriesDescription",
+				"subject_primary_disease": "year_of_birth",
 				"data_source" : "TCIA",
-				"commons_url": "services.cancerimagingarchive.net",
+				"commons_url": "externalgen3.prometheus.data-commons.org",
+				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
 		}
