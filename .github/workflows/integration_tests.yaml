@@ -11,7 +11,7 @@ jobs:
     name: Integration tests
     uses: uc-cdis/gen3-code-vigil/.github/workflows/shared_integration_tests.yaml@chore/manifest_pr_setup
     with:
-      SERVICE_TO_TEST: graph_submission
+      TEST_REPO_BRANCH: chore/manifest_pr_setup
     secrets:
       CI_AWS_ACCESS_KEY_ID: ${{ secrets.CI_AWS_ACCESS_KEY_ID }}
       CI_AWS_SECRET_ACCESS_KEY: ${{ secrets.CI_AWS_SECRET_ACCESS_KEY }}
