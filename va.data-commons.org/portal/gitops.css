@@ -31,7 +31,8 @@
   justify-content: center;
 }
 
-.login-page .login-page__central-content > div {
+.login-page .login-page__central-content > div,
+.login-page .login-page__central-content > h1 {
   flex-basis: 100%;
 }
 
