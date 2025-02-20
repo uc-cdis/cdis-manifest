@@ -650,7 +650,7 @@
 			"commons_url": "externalgen3.prometheus.data-commons.org",
 			"adapter": "gen3",
 			"config": {
-				"guid_type": "VMOAT_promethueus_study_metadata",
+				"guid_type": "VMOAT_promethueus_subject_metadata",
 				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
@@ -839,63 +839,53 @@
 			}
 		},
 		"TCIA-study-level-metadata": {
-			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatientStudy?Collection=VAREPOP-APOLLO",
-			"commons_url": "services.cancerimagingarchive.net",
-			"adapter": "tcia",
-			"filters": {
-				"size": 100
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "TCIA_study_metadata",
+				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "",
-				"tags": [
-					{
-						"name": "TCIA",
-						"category": "Data Source"
-				    }
-				],
-				"_unique_id": "path:StudyInstanceUID",
-				"study_id": "path:StudyInstanceUID",
-				"study_description": "path:StudyDescription",
-				"program_name": "path:Collection",
-				"full_name": "",
-				"short_name": "",
+				"tags": "path:tags",
+				"_unique_id": "path:study_id",
+				"study_id": "path:study_id",
+				"study_description": "path:study_description",
+				"full_name": "path:full_name",
+				"short_name": "path:short_name",
 				"commons": "TCIA",
-				"study_url": "",
+				"study_url": "path:study_url",
 				"data_source" : "TCIA",
 				"_subjects_count": {
-					"path": "SeriesCount",
+					"path": "_subjects_count",
 					"default": 0
 				},
 				"__manifest": "",
-				"commons_url": "services.cancerimagingarchive.net",
+				"commons_url": "externalgen3.prometheus.data-commons.org",
 				"is_synthetic": "No"
 			}
 		},
 		"TCIA-subject-level-metadata": {
-			"mds_url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=VAREPOP-APOLLO",
-			"commons_url": "services.cancerimagingarchive.net",
-			"adapter": "tcia",
-			"filters": {
-				"size": 100
+			"mds_url": "https://externalgen3.prometheus.data-commons.org/",
+			"commons_url": "externalgen3.prometheus.data-commons.org",
+			"adapter": "gen3",
+			"config": {
+				"guid_type": "TCIA_subject_metadata",
+				"study_field": "gen3_discovery"
 			},
 			"keep_original_fields": false,
 			"field_mappings": {
 				"authz": "",
-				"tags": [
-					{
-						"name": "TCIA",
-						"category": "Data Source"
-				   }
-				],
-				"_unique_id": "path:SeriesInstanceUID",
-				"commons": "TCIA",
-				"program_name": "path:Collection",
-				"subject_id": "path:SeriesInstanceUID",
-				"subject_apollo_id": "path:PatientID",
-				"subject_race": "",
+				"tags": "path:tags",
+				"_unique_id": "path:guid",
+				"commons": "path:commons",
+				"subject_id": "path:subject_id",
+				"subject_apollo_id": "path:apollo_id",
+				"subject_race": "path:race",
 				"subject_gender": {
-					"path": "demographic.gender",
+					"path": "path.gender",
 					"filters": [
 					  "normalize_value"
 					],
@@ -911,7 +901,7 @@
 					"default": ""
 				},
 				"subject_ethnicity": {
-					"path": "demographic.ethnicity",
+					"path": "path.ethnicity",
 					"filters": [
 					  "normalize_value"
 					],
@@ -948,9 +938,9 @@
 				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "",
-				"subject_primary_disease": "path:SeriesDescription",
+				"subject_primary_disease": "year_of_birth",
 				"data_source" : "TCIA",
-				"commons_url": "services.cancerimagingarchive.net",
+				"commons_url": "externalgen3.prometheus.data-commons.org",
 				"prometheus_global_id" : "path:prometheus_global_id",
 				"is_synthetic": "No"
 			}
