@@ -131,7 +131,7 @@
           "name": "Submit Data"
         },
         {
-          "link": "https://gen3.org/resources/user/",
+          "link": "https://docs.gen3.org/gen3-resources/user-guide/",
           "name": "Documentation"
         }
       ],
@@ -170,9 +170,9 @@
     {
       "title": "OHDSI Atlas",
       "description": "Use this app to create cohorts that you can use in the Gen3 GWAS app",
-      "applicationUrl": "https://atlas.vpodc.data-commons.org",
+      "applicationUrl": "https://atlas.vpodc.data-commons.org/WebAPI/user/login/openid",
       "image": "/custom/sponsors/gitops-sponsors/atlas-logo.png",
-      "needsTeamProject": true
+      "needsTeamProject": false
     }
   ],
   "explorerConfig": [

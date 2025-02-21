@@ -4,7 +4,7 @@
     "grafanaFaroEnable": true,
     "grafanaFaroNamespace": "va-testing"
   },
-  "argoTemplate": "gwas-template-genesisupdate",
+  "argoTemplate": "gwas-template-descriptive-stats",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -25,6 +25,12 @@
     },
     "navigation": {
       "items": [
+        {
+          "icon": "query",
+          "link": "/resource-browser",
+          "color": "#a2a2a2",
+          "name": "Resources"
+        },
         {
           "icon": "workspace",
           "link": "/workspace",
@@ -56,7 +62,7 @@
           "name": "Help and Guidance"
         },
         {
-          "link": "vadc@lists.uchicago.edu",
+          "link": "vadc-support@gen3.org",
           "name": "Email Support"
         }
       ],
@@ -67,7 +73,7 @@
       "subTitle": "search, compare, and analyze data",
       "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "vadc@lists.uchicago.edu"
+      "email": "vadc-support@gen3.org"
     },
     "systemUse": {
       "systemUseTitle": "VA systems are intended for Academic and Institutional Users",
@@ -91,6 +97,20 @@
         "src": "/custom/sponsors/gitops-sponsors/OCC.png",
         "href": "https://occ-data.org/",
         "alt": "Open Commons Consortium"
+      }
+    ]
+  },
+  "resourceBrowser": {
+    "title": "Resources",
+    "description": "Some description",
+    "public": false,
+    "resources": [
+      {
+        "title": "MVP Data Dictionary",
+        "category": "",
+        "description": "Data Dictionary for the MVP data. Includes list of all the concepts, information and basic statistics. Basic statistics includes concept values distribution.",
+        "link": "/dashboard/Secure/dd/VADataCommonsDictionary20240213.html",
+        "imageUrl": "/src/img/analysis-icons/default-app.png"
       }
     ]
   },
@@ -140,21 +160,21 @@
   ],
   "userAccessToSite": {
     "enabled": true,
-    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc-support@gen3.org"
   },
-  "componentToResourceMapping": { 
+  "componentToResourceMapping": {
     "Workspace": {
-      "resource": "/workspace", 
+      "resource": "/workspace",
       "method": "access",
       "service": "jupyterhub"
     },
     "Apps": {
-      "resource": "/dashboard", 
+      "resource": "/dashboard",
       "method": "access",
       "service": "dashboard"
     },
     "Profile": {
-      "resource": "/dashboard", 
+      "resource": "/dashboard",
       "method": "access",
       "service": "dashboard"
     }

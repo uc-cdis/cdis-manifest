@@ -5,7 +5,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2024.11",
+    "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3fuse-sidecar:2025.01",
     "env": {
       "NAMESPACE": "default",
       "HOSTNAME": "jcoin.datacommons.io"
@@ -46,19 +46,19 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/jupyter-superslim-r:1.0.1",
+      "image": "quay.io/cdis/heal-notebooks:generic_rkernel__ff880f355bfcfbb1b1a8c6e4615e13152c71be2b",
       "env": {
         "FRAME_ANCESTORS": "https://jcoin.datacommons.io"
       },
       "args": [
-        "--NotebookApp.base_url=/lw-workspace/proxy/",
-        "--NotebookApp.default_url=/lab",
-        "--NotebookApp.password=''",
-        "--NotebookApp.token=''",
-        "--NotebookApp.ip='*'",
-        "--NotebookApp.notebook_dir='/home/jovyan'",
-        "--NotebookApp.shutdown_no_activity_timeout=5400",
-        "--NotebookApp.quit_button=False"
+        "--JupyterNotebookApp.base_url=/lw-workspace/proxy/",
+        "--JupyterNotebookApp.default_url=/lab",
+        "--JupyterNotebookApp.password=''",
+        "--JupyterNotebookApp.token=''",
+        "--JupyterNotebookApp.ip='*'",
+        "--JupyterNotebookApp.notebook_dir='/home/jovyan'",
+        "--JupyterNotebookApp.shutdown_no_activity_timeout=5400",
+        "--JupyterNotebookApp.quit_button=False"
       ],
       "command": [
         "start-notebook.sh"
