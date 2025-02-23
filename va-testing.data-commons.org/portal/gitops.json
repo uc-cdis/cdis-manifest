@@ -26,6 +26,12 @@
     "navigation": {
       "items": [
         {
+          "icon": "query",
+          "link": "/resource-browser",
+          "color": "#a2a2a2",
+          "name": "Resources"
+        },
+        {
           "icon": "workspace",
           "link": "/workspace",
           "color": "#a2a2a2",
@@ -94,6 +100,20 @@
       }
     ]
   },
+  "resourceBrowser": {
+    "title": "Resources",
+    "description": "Some description",
+    "public": false,
+    "resources": [
+      {
+        "title": "MVP Data Dictionary",
+        "category": "",
+        "description": "Data Dictionary for the MVP data. Includes list of all the concepts, information and basic statistics. Basic statistics includes concept values distribution.",
+        "link": "/dashboard/Secure/dd/VADataCommonsDictionary20240213.html",
+        "imageUrl": "/src/img/analysis-icons/default-app.png"
+      }
+    ]
+  },
   "featureFlags": {
     "explorer": false,
     "analysis": true,
@@ -142,19 +162,19 @@
     "enabled": true,
     "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc-support@gen3.org"
   },
-  "componentToResourceMapping": { 
+  "componentToResourceMapping": {
     "Workspace": {
-      "resource": "/workspace", 
+      "resource": "/workspace",
       "method": "access",
       "service": "jupyterhub"
     },
     "Apps": {
-      "resource": "/dashboard", 
+      "resource": "/dashboard",
       "method": "access",
       "service": "dashboard"
     },
     "Profile": {
-      "resource": "/dashboard", 
+      "resource": "/dashboard",
       "method": "access",
       "service": "dashboard"
     }
