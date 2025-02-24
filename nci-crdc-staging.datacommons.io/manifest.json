@@ -5,7 +5,7 @@
     "Environment is configured for Google data access methods including service account ",
     "registration. Data is in multiple Google buckets with both public and *controlled* ",
     "data. The controlled data is actually just public data so there's no sensitive ",
-    "data in this env. "
+    "data in this env."
   ],
   "jenkins": {
     "autodeploy": "yes"
@@ -16,10 +16,10 @@
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2025.01",
     "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:2023.09",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.01",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:11.0.2",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "google-sa-validation": "placeholder:2025.01",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.01",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:5.1.2",
     "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2025.01",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.01",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2025.01",
@@ -135,6 +135,7 @@
     "revproxy_arn": "arn:aws:acm:us-east-1:584476192960:certificate/b1f41138-54c0-4d5f-b2f3-7c5ebb20b555",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "gitops",
+    "indexd_single_table": "true",
     "kube_bucket": "kube-dcf-staging-gen3",
     "logs_bucket": "logs-dcf-staging-gen3",
     "sync_from_dbgap": "True",
