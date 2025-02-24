@@ -173,8 +173,8 @@
         "enableDownloadManifest": true,
         "downloadManifestButtonText": "Download",
         "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+          "gen3Client": "https://docs.gen3.org/gen3-resources/user-guide/access-data/#download-files-using-the-gen3-client",
+          "gen3Workspaces": "https://docs.gen3.org/gen3-resources/user-guide/analyze-data/"
         }
       },
       "pageTitle": {
@@ -494,12 +494,6 @@
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.html"
-      },
-      {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
       },
       {
         "title": "OADC Unsupervised Data Exploration on Cancer Cell Line Encyclopedia (CCLE)",

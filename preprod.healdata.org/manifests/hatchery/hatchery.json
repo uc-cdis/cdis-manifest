@@ -14,7 +14,7 @@
   "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
-    "image": "quay.io/cdis/ecs-ws-sidecar:2024.12",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2025.01",
     "env": {
       "NAMESPACE": "healpreprod",
       "GEN3_ENDPOINT": "preprod.healdata.org"
@@ -62,7 +62,7 @@
       "lifecycle-post-start": [
         "/bin/sh",
         "-c",
-        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; wget -O /data/qdr_data_download.ipynb https://raw.githubusercontent.com/uc-cdis/heal-platform-sdk/refs/heads/master/notebooks/qdr_data_download.ipynb; true"
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; wget -O /data/qdr_data_download.ipynb https://raw.githubusercontent.com/uc-cdis/heal-platform-sdk/refs/heads/master/notebooks/qdr_data_download.ipynb; wget -O /data/NDA_data_package_download.ipynb https://raw.githubusercontent.com/uc-cdis/heal-platform-sdk/refs/heads/master/notebooks/NDA_data_package_download.ipynb; true"
       ],
       "user-uid": 1000,
       "fs-gid": 100,
