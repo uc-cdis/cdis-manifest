@@ -13,13 +13,6 @@
   },
   "components": {
     "appName": "VA Data Commons",
-    "banner": [
-      {
-        "type": "info",
-        "message": "Please note that VADC will be under maintenance Monday, February 17th, 2025 between 10 AM to 1:30 PM CST. During that time users will not be able to access the portal and workflows will be paused.",
-        "resetMsgDays": 7
-      }
-    ],
     "logoAltText": "VA logo and Seal, U.S. Department of Veterans Affairs Data Commons",
     "index": {
       "introduction": {
@@ -59,7 +52,7 @@
           "name": "Help and Guidance"
         },
         {
-          "link": "vadc@lists.uchicago.edu",
+          "link": "vadc-support@gen3.org",
           "name": "Email Support"
         }
       ],
@@ -70,7 +63,7 @@
       "subTitle": "search, compare, and analyze data",
       "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "vadc@lists.uchicago.edu"
+      "email": "vadc-support@gen3.org"
     },
     "systemUse": {
       "systemUseTitle": "VA systems are intended for Academic and Institutional Users",
@@ -142,7 +135,7 @@
   "ddUrl": "ddog-gov.com",
   "userAccessToSite": {
     "enabled": true,
-    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc-support@gen3.org"
   },
   "componentToResourceMapping": { 
     "Workspace": {
