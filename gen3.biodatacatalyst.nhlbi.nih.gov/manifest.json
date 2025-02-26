@@ -13,6 +13,7 @@
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2025.01",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:11.0.2",
+    "frontend-framework": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/bdc-data-commons:main",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.01",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.01",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2025.01",
@@ -24,13 +25,8 @@
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2025.01",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2025.01",
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2025.01",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2025.01",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2025.01",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2025.01",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2025.01",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2025.01",
-    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2025.01"
+    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2025.01",
+    "gen3-user-data-library": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-user-data-library:1.0.1"
   },
   "google": {
     "enabled": "yes"
