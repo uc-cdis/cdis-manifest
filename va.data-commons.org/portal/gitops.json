@@ -26,6 +26,12 @@
     "navigation": {
       "items": [
         {
+          "icon": "query",
+          "link": "/resource-browser",
+          "color": "#a2a2a2",
+          "name": "Resources"
+        },
+        {
           "icon": "workspace",
           "link": "/workspace",
           "color": "#a2a2a2",
@@ -90,6 +96,20 @@
       }
     ]
   },
+  "resourceBrowser": {
+    "title": "Resources",
+    "description": "",
+    "public": false,
+    "resources": [
+      {
+        "title": "MVP Data Dictionary",
+        "category": "",
+        "description": "Data Dictionary for the MVP data. Includes list of all the concepts, information and basic statistics. Basic statistics includes concept values distribution.",
+        "link": "/dashboard/Secure/dd/VADataCommonsDictionary20240213.html",
+        "imageUrl": "/src/img/analysis-icons/default-app.png"
+      }
+    ]
+  },
   "featureFlags": {
     "explorer": false,
     "analysis": true,
@@ -150,6 +170,11 @@
     },
     "Profile": {
       "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    },
+    "Resources": {
+      "resource": "/dashboard",
       "method": "access",
       "service": "dashboard"
     }
