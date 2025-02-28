@@ -96,6 +96,20 @@
       }
     ]
   },
+  "resourceBrowser": {
+    "title": "Resources",
+    "description": "",
+    "public": false,
+    "resources": [
+      {
+        "title": "MVP Data Dictionary",
+        "category": "",
+        "description": "Data Dictionary for the MVP data. Includes list of all the concepts, information and basic statistics. Basic statistics includes concept values distribution.",
+        "link": "/dashboard/Secure/dd/VADataCommonsDictionary20240213.html",
+        "imageUrl": "/src/img/analysis-icons/default-app.png"
+      }
+    ]
+  },
   "featureFlags": {
     "explorer": false,
     "analysis": true,
