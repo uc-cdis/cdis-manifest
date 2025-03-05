@@ -98,17 +98,6 @@
 #### Improvements
   - Add + Fix Parameters for Single Table IndexD Migration ([#384](https://github.com/uc-cdis/indexd/pull/384)) 
 
-## uc-cdis/metadata-service
-
-#### New Features
-  - Adds two new filters to the aggregate MDS ETL adapters. ([#122](https://github.com/uc-cdis/metadata-service/pull/122)) 
-  - Add pdc subject and study adapters ([#113](https://github.com/uc-cdis/metadata-service/pull/113)) 
-  - TCIA Adapter for https://cancerimagingarchive.net/, supports both 
-    https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatientStudy?Collection=VAREPOP-APOLLO
-    and 
-    https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=VAREPOP-APOLLO
-    ([#121](https://github.com/uc-cdis/metadata-service/pull/121))
-
 ## uc-cdis/sheepdog
 
 #### Improvements
