@@ -1,4 +1,6 @@
 {
+  "ddEnv": "brhprod",
+  "ddUrl": "ddog-gov.com",
   "gaTrackingId": "G-WM3JV9YMW3",
   "grafanaFaroConfig": {
     "grafanaFaroEnable": true,
@@ -605,12 +607,6 @@
         "description": "In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center.",
         "imageUrl": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png",
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.html"
-      },
-      {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
       },
       {
         "title": "Identification of Potential Drug Targets of Inflammatory Bowel Disease",
