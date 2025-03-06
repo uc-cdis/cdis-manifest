@@ -163,6 +163,8 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
+        "enableExportFullMetadata": true,
+        "excludedMetadataFields": ["authz", "registration_authz", "registrant_username", "advSearchFilters", "__accessible", "commons_name", "commons_url", "commons", "frontend_uid"],
         "enableDownloadManifest": true,
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
