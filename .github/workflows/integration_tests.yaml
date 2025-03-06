@@ -9,7 +9,7 @@ concurrency:
 jobs:
   integration_tests:
     name: Integration tests
-    uses: uc-cdis/gen3-code-vigil/.github/workflows/shared_integration_tests.yaml@chore/manifest_pr_setup
+    uses: uc-cdis/gen3-code-vigil/.github/workflows/shared_integration_tests.yaml@chore/manifest_pr_setu
     with:
       TEST_REPO_BRANCH: chore/manifest_pr_setup
     secrets:
