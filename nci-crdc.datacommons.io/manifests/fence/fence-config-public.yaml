@@ -158,6 +158,9 @@ S3_BUCKETS:
   cds-563-phs002883-production-ccdi-pedmatch:
     cred: "fence_bot"
     region: "us-east-1"
+  cds-568-phs003161-pivot-msk:
+    cred: "fence_bot"
+    region: "us-east-1"  
   cgci-htmcp-dlbcl-phs000235-controlled:
     cred: "fence_bot"
     region: "us-east-1"
@@ -404,6 +407,9 @@ S3_BUCKETS:
   nci-cbiit-caninedatacommons-file:
     cred: "fence_bot"
     region: "us-east-1"
+  nci-crdc-data-bucket-prod:
+    cred: "fence_bot"
+    region: "us-east-1" 
   pdcdatastore:
     cred: "fence_bot"
     region: "us-east-1"
