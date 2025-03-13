@@ -12,7 +12,7 @@
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2025.01",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.01",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "frontend-framework": "quay.io/cdis/bih-data-commons:1.1.4",
+    "frontend-framework": "quay.io/cdis/bih-data-commons:1.1.5",
     "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2025.01",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.01",
     "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2025.01",
@@ -20,8 +20,9 @@
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.01",
     "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2025.01",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2025.01",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:5.2.0",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2025.01",
     "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2025.01",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2025.01",
     "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2025.01",
     "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2025.01"
   },
@@ -31,17 +32,22 @@
   "indexd": {
     "arborist": "true"
   },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2025.01"
+    }
+  },
   "global": {
     "environment": "bihprod",
     "hostname": "bihstaging.data-commons.org",
     "revproxy_arn": "arn:aws:acm:us-east-1:533267425233:certificate/dcb6f91b-6e4c-4458-a9d7-3750ba92b754",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bih_dictionary/0.1.1/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bih_dictionary/0.1.4/schema.json",
     "dispatcher_job_num": "10",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/midrc-bih/user.yaml",
+    "useryaml_s3path": "s3://cdis-gen3-users/midrc-bih-staging/user.yaml",
     "tier_access_level": "libre",
     "public_datasets": true,
     "netpolicy": "on",

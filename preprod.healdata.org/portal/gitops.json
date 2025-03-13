@@ -12,13 +12,6 @@
   },
   "components": {
     "appName": "HEAL Pre-Prod Data Platform",
-    "banner": [
-      {
-        "type": "warning",
-        "message": "Our helpdesk has moved! Starting 8/21, please contact us at heal-support@gen3.org",
-        "resetMsgDays": 1
-      }
-    ],
     "index": {
       "introduction": {
         "heading": "HEAL Pre-Prod Data Platform",
@@ -170,6 +163,8 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
+        "enableExportFullMetadata": true,
+        "excludedMetadataFields": ["authz", "registration_authz", "registrant_username", "advSearchFilters", "__accessible", "commons_name", "commons_url", "commons", "frontend_uid"],
         "enableDownloadManifest": true,
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
