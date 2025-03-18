@@ -34,7 +34,7 @@
       "cpu-limit": "2.0",
       "memory-limit": "8Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/brh-notebooks:generic_rkernel__cde777374d413c9ca93e582fd31c39952d5a22f6",
+      "image": "quay.io/cdis/jupyter-prometheus:prometheus-master",
       "env": {
         "FRAME_ANCESTORS": "https://prometheus.data-commons.org"
       },

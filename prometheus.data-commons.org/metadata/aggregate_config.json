@@ -895,7 +895,10 @@
 							"female": "Female",
 							"m": "Male",
 							"f": "Female",
-							"not reported": "Not Reported"
+							"Male" : "Male",
+							"Female" : "Female",
+							"not reported": "Not Reported",
+							"Not Reported": "Not Reported"
 						}
 					},
 					"default": ""
@@ -909,6 +912,7 @@
 						"normalize_value": {
 							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
 							"not reported": "Not Reported",
+							"Not Reported": "Not Reported",
 							"DECLINED TO ANSWER": "Declined to Answer",
 							"HISPANIC OR LATINO": "Hispanic or Latino"
 						}
