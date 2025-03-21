@@ -1,18 +1,18 @@
 {
   "arborist": {
     "strategy": "auto",
-    "min": 1,
-    "max": 1
+    "min": 2,
+    "max": 3
   },
   "fence": {
     "strategy": "auto",
-    "min": 1,
-    "max": 1
+    "min": 2,
+    "max": 3
   },
   "indexd": {
     "strategy": "auto",
-    "min": 1,
-    "max": 1
+    "min": 2,
+    "max": 3
   },
   "revproxy": {
     "strategy": "pin",
@@ -24,12 +24,22 @@
   },
   "metadata": {
     "strategy": "auto",
-    "min": 1,
-    "max": 2
+    "min": 2,
+    "max": 3
   },
+  "portal": {
+    "strategy": "auto",
+    "min": 2,
+    "max": 3
+  }
+  "hatchery": {
+    "strategy": "auto",
+    "min": 2,
+    "max": 3
+  }
   "wts": {
     "strategy": "auto",
-    "min": 1,
-    "max": 2
+    "min": 2,
+    "max": 3
   }
 }
