@@ -38,6 +38,7 @@ mappings:
       - name: Modality
       - name: SeriesDescription
       - name: SeriesInstanceUID
+      - name: series_viewer_url
       - name: dicom_viewer_url
     parent_props:
       - path: imaging_studies[StudyDescription,StudyInstanceUID,PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[collection_id,commons_long_name,commons_name,data_contributor,data_host,data_url_doi,disease_type,license,metadata_source_api,metadata_source_date,metadata_source_version,primary_site]
