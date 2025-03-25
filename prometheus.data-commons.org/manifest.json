@@ -54,6 +54,11 @@
     "ecr-access-job-role-arn": "arn:aws:iam::654654631253:role/EcrRepoPolicyUpdateRole",
     "frontend_root": "gen3ff"
   },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2025.01"
+    }
+  },
   "metadata": {
     "USE_AGG_MDS": true,
     "AGG_MDS_NAMESPACE": "pdp-commons"
