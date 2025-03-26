@@ -634,6 +634,9 @@
         "datesetIdFieldName" : "study_id",
         "dataObjectIdField" : "guid"
       },
+      "exportToWorkspace": {
+        "enabled": false
+      },
       "search": {
         "searchBar": {
           "enabled": true,
