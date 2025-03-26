@@ -15,13 +15,6 @@
   "components": {
     "appName": "HEAL Data Platform",
     "metaDescription": "The HEAL Platform shares data from the NIH HEAL Initiative&reg; with the community of researchers, healthcare providers, community leaders, policy makers, and other stakeholders.",
-    "banner": [
-      {
-        "type": "warning",
-        "message": "Our helpdesk has moved! Starting 8/21, please contact us at heal-support@gen3.org",
-        "resetMsgDays": 1
-      }
-    ],
     "index": {
       "introduction": {
         "heading": "HEAL Data Platform",
@@ -173,6 +166,8 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
+        "enableExportFullMetadata": true,
+        "excludedMetadataFields": ["authz", "registration_authz", "registrant_username", "advSearchFilters", "__accessible", "commons_name", "commons_url", "commons", "frontend_uid"],
         "enableDownloadManifest": true,
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
@@ -182,8 +177,8 @@
         "studyMetadataFieldName": "study_metadata",
         "enableDownloadStudyMetadata": true,
         "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+          "gen3Client": "https://docs.gen3.org/gen3-resources/user-guide/access-data/#download-files-using-the-gen3-client",
+          "gen3Workspaces": "https://docs.gen3.org/gen3-resources/user-guide/analyze-data/"
         },
         "verifyExternalLogins": true
       },
@@ -527,12 +522,6 @@
         "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
         "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
         "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
-      },
-      {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
       },
       {
         "title": "Opioid Prevalence And Overdoses",

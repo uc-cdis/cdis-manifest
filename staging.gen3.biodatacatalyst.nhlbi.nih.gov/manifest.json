@@ -11,8 +11,8 @@
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2025.01",
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2025.01",
     "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2025.01",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.01",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:11.0.2",
     "frontend-framework": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/bdc-data-commons:main",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.01",
     "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.01",
@@ -27,7 +27,7 @@
     "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2025.01",
     "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2025.01",
     "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2025.01",
-    "gen3-user-data-library": "quay.io/cdis/gen3-user-data-library:2025.01"
+    "gen3-user-data-library": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-user-data-library:1.0.1"
   },
   "google": {
     "enabled": "yes"
