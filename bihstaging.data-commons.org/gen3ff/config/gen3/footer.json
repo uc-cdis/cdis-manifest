@@ -1,0 +1,43 @@
+{
+  "classNames": {
+    "root": "bg-base-darker",
+    "layout": "flex items-center justify-end"
+  },
+  "rightSection": {
+    "columns": [
+      {
+        "rows": [
+          {
+            "Label": {
+              "text": "The Medical Imaging and Data Resource Center (MIDRC) is funded by the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health under contract 75N92020D00021 and through The Advanced Research Projects Agency for Health (ARPA-H). This repository is under review for potential modification in compliance with Administration directives."
+            }
+          }
+        ]
+      },
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/icons/gen3.png",
+              "width": 132,
+              "height": 60,
+              "description": "Gen3 Logo"
+            }
+          }
+        ]
+      },
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/icons/createdby.png",
+              "width": 170,
+              "height": 60,
+              "description": "Created by CTDS"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

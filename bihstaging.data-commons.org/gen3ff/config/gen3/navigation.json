@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "title": "MIDRC BDF Imaging Hub",
+    "logo": {
+      "src": "/images/BDF-MIDRC Logo-V2.png",
+      "height":128,
+      "width": 256,
+      "href": "/"
+    },
+    "items": [
+      {
+        "icon": "gen3:exploration",
+        "href": "/Explorer",
+        "name": "Exploration",
+        "tooltip": "The Exploration Page enables discovery of the data at the series level and features a cohort builder.",
+        "classNames": {
+          "root": "flex flex-col border-b-4 border-accent flex-nowrap py-4 pt-4 items-center pr-10 px-2",
+          "label" : "text-black font-semibold hover:text-black",
+          "icon" : "text-black hover:text-black"
+        }
+      }
+    ]
+  },
+  "topBar": {
+    "items": [
+    ],
+    "loginButtonVisibility": "logoutOnly",
+    "classNames": {
+      "root": "flex justify-end items-center align-middle w-100 h-10 bg-secondary"
+    }
+  }
+}

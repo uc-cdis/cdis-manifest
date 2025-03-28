@@ -1,0 +1,199 @@
+{
+  "metadataConfig": [
+{
+  "tableConfig": {
+    "selectableRows": true,
+    "expandableRows": true
+  },
+  "features": {
+    "dataFetchFunction": "AggMDSServer",
+    "advSearchFilters": {
+      "enabled": false,
+      "field": "advSearchFilters",
+      "displayName": "Filters",
+      "filters": [
+        {
+          "key": "Project_Description"
+        }
+      ]
+    },
+    "pageTitle": {
+      "enabled": true,
+      "text": "Discover Datasets"
+    },
+    "tagsColumn": {
+      "enabled": false
+    },
+    "tagsInDescription": {
+      "enabled": true
+    },
+    "search": {
+      "searchBar": {
+        "enabled": true
+      },
+      "tagSearchDropdown": {
+        "enabled": true,
+        "collapsibleButtonText": "Study Filters"
+      }
+    },
+    "authorization": {
+      "enabled": true,
+      "columnTooltip": "Filter by data access",
+      "supportedValues": {
+        "accessible": {
+          "enabled": true,
+          "menuText": "Available"
+        },
+        "unaccessible": {
+          "enabled": false,
+          "menuText": "Not Accessible"
+        },
+        "notAvailable": {
+          "enabled": true,
+          "menuText": "Not Available"
+        }
+      }
+    }
+  },
+  "aggregations": [
+    {
+      "name": "Studies",
+      "field": "StudyInstanceUID",
+      "type": "count"
+    }
+  ],
+  "tagSelector": {
+    "title": "Tags by category"
+  },
+  "studyColumns": [
+    {
+      "name": "Study ID",
+      "field": "StudyInstanceUID",
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
+    },
+    {
+      "name": "Series Description ",
+      "field": "SeriesDescription",
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
+    },
+    {
+      "name": "Primary Site",
+      "field": "primary_site",
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
+    },
+    {
+      "name": "Disease Type",
+      "field": "disease_type",
+      "contentType": "string",
+      "errorIfNotAvailable": false,
+      "valueIfNotAvailable": "n/a"
+    }
+  ],
+  "studyPreviewField": {
+    "name": "Study Description",
+    "field": "study_description",
+    "contentType": "string",
+    "includeName": true,
+    "includeIfNotAvailable": false,
+    "valueIfNotAvailable": "No summary has been provided for this study."
+  },
+  "studyPageFields": {
+    "showAllAvailableFields": false,
+    "header": {
+      "field": "study_title"
+    },
+    "downloadLinks": {
+      "field": "data_download_links"
+    },
+    "fieldsToShow": [
+      {
+        "groupName": "Gen3 Studies",
+        "includeName": false,
+        "fields": [
+          {
+            "name": "Study Name",
+            "field": "full_name",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Study Title",
+            "field": "study_title",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Funding",
+            "field": "funding",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Source",
+            "field": "source",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Data Files",
+            "field": "data_files_count",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Subjects",
+            "field": "subjects_count",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Project ID",
+            "field": "project_id",
+            "contentType": "string",
+            "includeIfNotAvailable": false
+          },
+          {
+            "name": "Link",
+            "field": "link",
+            "contentType": "link",
+            "includeIfNotAvailable": false
+          }
+        ]
+      },
+      {
+        "fields": [
+          {
+            "name": "Study Description",
+            "field": "study_description",
+            "contentType": "paragraphs",
+            "includeName": true,
+            "includeIfNotAvailable": false,
+            "valueIfNotAvailable": "No summary has been provided for this study."
+          }
+        ]
+      }
+    ]
+  },
+  "minimalFieldMapping": {
+    "tagsListFieldName": "tags",
+    "authzField": "authz",
+    "uid": "StudyInstanceUID"
+  },
+  "tags": {
+    "tagCategories": [
+      {
+        "name": "Data Type",
+        "color": "rgba(71, 130, 195, 1)",
+        "display": true
+      }
+    ]
+  }
+}
+]
+}

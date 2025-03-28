@@ -1,0 +1,46 @@
+{
+  "body": [
+    {
+      "title": {
+        "text": "MIDRC BDF Imaging Hub",
+        "level": 2
+      }
+    },
+    {
+      "splitarea": {
+        "left": [
+          {
+            "text": "The MIDRC BDF Imaging Hub (BIH) is a federated data hub designed to help researchers search, discover, and analyze biomedical imaging data across multiple medical imaging data repositories at scale. It is part of the ARPA-H Biomedical Data Fabric (BDF)."
+          },
+          {
+            "link": {
+              "href": "/Explorer",
+              "linkType": "portal",
+              "text": "Explore BIH Data"
+            }
+          },
+          {
+            "text": "MIDRC BIH enables researchers to query and analyze structured data aggregated from independent data repositories. Instead of storing data files directly, MIDRC BIH provides unique identifiers that researchers can use to access files from the original data nodes where they are stored."
+          },
+          {
+            "text": "Handling Duplicate Images: Because MIDRC BIH connects multiple independent data sources, some datasets may contain duplicate images. This is especially important to consider when preparing data for AI model training, as duplicates can introduce bias, overfitting, and other issues affecting model performance."
+          },
+          {
+            "text": "To maintain data integrity, researchers should check for duplicate images using unique identifiers such as Imaging Study and Series UIDs. It is essential to validate datasets thoroughly before conducting any analysis or training AI models to prevent biases and overfitting. Additionally, documenting the process, including how duplicates were identified and managed, helps ensure research reproducibility and transparency."
+          }
+        ],
+        "right": [
+          {
+            "image": {
+              "src": "https://gen3.org/figs/kv.svg",
+              "alt": "Gen3 Data Platform"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "break": "standard"
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+[
+  {
+    "tabTitle": "Imaging Studies",
+    "charts": {
+      "commons_name": {
+        "chartType": "fullPie",
+        "title": "Platform"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Imaging Study Selection",
+          "fields": [
+            "StudyDescription",
+            "PatientSex",
+            "PatientAge",
+            "EthnicGroup",
+            "race",
+            "primary_site",
+            "disease_type",
+            "commons_name",
+            "collection_id"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000,
+        "label": "Maximum of 10,000 Total Records. Records per Page:"
+      },
+      "fields": [
+        "StudyDescription",
+        "PatientSex",
+        "PatientAge",
+        "EthnicGroup",
+        "race",
+        "primary_site",
+        "disease_type",
+        "commons_name",
+        "collection_id",
+        "license",
+        "data_url_doi",
+        "metadata_source_date",
+        "metadata_source_version",
+        "study_viewer_url",
+        "StudyInstanceUID",
+        "subject_id"
+      ],
+      "columns": {
+        "StudyDescription": {
+          "title": "Study Description"
+        },
+        "PatientSex": {
+          "title": "Patient Sex"
+        },
+        "PatientAge": {
+          "title": "Patient Age"
+        },
+        "EthnicGroup": {
+          "title": "Ethnic Group"
+        },
+        "race": {
+          "title": "Race"
+        },
+        "primary_site": {
+          "title": "Primary Site"
+        },
+        "disease_type": {
+          "title": "Disease Type"
+        },
+        "commons_name": {
+          "title": "Platform",
+          "type": "link",
+          "cellRenderFunction": "linkWithValueMap",
+          "params": {
+            "valueToURL": {
+              "ACRdart": "https://dart.acr.org/Home/ImagingHub",
+              "IDC": "https://portal.imaging.datacommons.cancer.gov/explore/",
+              "MIDRC": "https://data.midrc.org",
+              "Stanford AIMI": "https://stanfordaimi.azurewebsites.net/",
+              "TCIA": "https://www.cancerimagingarchive.net/"
+            }
+          }
+        },
+        "collection_id": {
+          "title": "Collection ID"
+        },
+        "license": {
+          "title": "License",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        },
+        "data_url_doi": {
+          "title": "DOI",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        },
+        "metadata_source_date": {
+          "title": "Metadata Source Date"
+        },
+        "metadata_source_version": {
+          "title": "Metadata Source Version"
+        },
+        "study_viewer_url": {
+          "title": "DICOM Viewer URL",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        },
+        "StudyInstanceUID": {
+          "title": "Study UID"
+        },
+        "subject_id": {
+          "title": "Subject ID"
+        }
+      }
+    },
+    "guppyConfig": {
+      "dataType": "imaging_study",
+      "nodeCountTitle": "Imaging Studies",
+      "fieldMapping": [
+        {
+          "field": "StudyDescription",
+          "name": "Study Description"
+        },
+        {
+          "field": "PatientSex",
+          "name": "Patient Sex"
+        },
+        {
+          "field": "PatientAge",
+          "name": "Patient Age"
+        },
+        {
+          "field": "EthnicGroup",
+          "name" : "Ethnic Group"
+        },
+        {
+          "field": "race",
+          "title": "Race"
+        },
+        {
+          "field": "primary_site",
+          "name": "Primary Site"
+        },
+        {
+          "field": "disease_type",
+          "name": "Disease Type"
+        },
+        {
+          "field": "commons_name",
+          "name": "Platform"
+        },
+        {
+          "field": "collection_id",
+          "name": "Collection ID"
+        },
+        {
+          "field": "license",
+          "name": "License"
+        },
+        {
+          "field": "data_url_doi",
+          "name": "Data URL/DOI"
+        },
+        {
+          "field": "metadata_source_date",
+          "name": "Metadata Source Date"
+        },
+        {
+          "field": "metadata_source_version",
+          "name": "Metadata Source Version"
+        },
+        {
+          "field": "study_viewer_url",
+          "name": "DICOM Viewer URL"
+        },
+        {
+          "field": "StudyInstanceUID",
+          "name": "Study ID"
+        },
+        {
+          "field": "subject_id",
+          "name": "Subject ID"
+        }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "imaging_study",
+        "resourceIdField": "StudyInstanceUID",
+        "referenceIdFieldInResourceIndex": "StudyInstanceUID",
+        "referenceIdFieldInDataIndex": "StudyInstanceUID"
+      },
+      "accessibleFieldCheckList": ["authz"],
+      "accessibleValidationField": "auth_resource_path"
+    },
+    "loginForDownload": false,
+    "dropdowns": {
+      "download-menu": {
+        "enabled": true,
+        "title": "Download Table",
+        "leftIcon": "gen3:download",
+        "rightIcon": "gen3:chevron-down",
+        "dropdownItems": [
+          {
+            "enabled": true,
+            "type": "data-json",
+            "title": "JSON",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-json",
+            "actionArgs": {
+              "filename": "BIH_imaging_study_table.json"
+            }
+          },
+          {
+            "enabled": true,
+            "type": "data-csv",
+            "title": "CSV",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-csv",
+            "actionArgs": {
+              "filename": "BIH_imaging_study_table.csv"
+            }
+          }
+        ]
+      }
+    },
+    "buttons": []
+  },
+  {
+    "tabTitle": "Subject",
+    "charts": {
+      "commons_name": {
+        "chartType": "fullPie",
+        "title": "Platform"
+      },
+      "primary_site": {
+        "chartType": "fullPie",
+        "title": "Primary Site"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Subject Selection",
+          "fields": [
+            "race",
+            "primary_site",
+            "disease_type",
+            "commons_name",
+            "collection_id"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000,
+        "label": "Maximum of 10,000 Total Records. Records per Page:"
+      },
+      "fields": [
+        "primary_site",
+        "disease_type",
+        "race",
+        "commons_name",
+        "collection_id",
+        "license",
+        "data_url_doi"
+      ],
+      "columns": {
+        "primary_site": {
+          "title": "Primary Site"
+        },
+        "disease_type": {
+          "title": "Disease Type"
+        },
+        "race": {
+          "title": "Race"
+        },
+        "commons_name": {
+          "title": "Platform",
+          "type": "link",
+          "cellRenderFunction": "linkWithValueMap",
+          "params": {
+            "valueToURL": {
+              "ACRdart": "https://dart.acr.org/Home/ImagingHub",
+              "IDC": "https://portal.imaging.datacommons.cancer.gov/explore/",
+              "MIDRC": "https://data.midrc.org",
+              "Stanford AIMI": "https://stanfordaimi.azurewebsites.net/",
+              "TCIA": "https://www.cancerimagingarchive.net/"
+            }
+          }
+        },
+        "collection_id": {
+          "title": "Collection ID"
+        },
+        "license": {
+          "title": "License",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false,
+          "params": {
+            "href": ""
+          }
+        },
+        "data_url_doi": {
+          "title": "DOI",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        }
+      }
+    },
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+        {
+          "field": "primary_site",
+          "name": "Primary Site"
+        },
+        {
+          "field": "disease_type",
+          "name": "Disease Type"
+        },
+        {
+          "field": "commons_name",
+          "name": "Platform"
+        },
+        {
+          "field": "collection_id",
+          "name": "Collection ID"
+        },
+        {
+          "field": "license",
+          "name": "License"
+        },
+        {
+          "field": "data_url_doi",
+          "name": "Data URL/DOI"
+        }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "subject",
+        "resourceIdField": "submitter_id",
+        "referenceIdFieldInResourceIndex": "submitter_id",
+        "referenceIdFieldInDataIndex": "submitter_id"
+      },
+      "accessibleFieldCheckList": ["authz"],
+      "accessibleValidationField": "auth_resource_path"
+    },
+    "loginForDownload": false,
+    "dropdowns": {
+      "download-menu": {
+        "enabled": true,
+        "title": "Download Table",
+        "leftIcon": "gen3:download",
+        "rightIcon": "gen3:chevron-down",
+        "dropdownItems": [
+          {
+            "enabled": true,
+            "type": "data-json",
+            "title": "JSON",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-json",
+            "actionArgs": {
+              "filename": "BIH_subject_table.json"
+            }
+          },
+          {
+            "enabled": true,
+            "type": "data-csv",
+            "title": "CSV",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-csv",
+            "actionArgs": {
+              "filename": "BIH_subject_table.csv"
+            }
+          }
+        ]
+      }
+    },
+    "buttons": []
+  },
+  {
+    "tabTitle": "Imaging Series",
+    "charts": {
+      "commons_name": {
+        "chartType": "fullPie",
+        "title": "Platform"
+      },
+      "primary_site": {
+        "chartType": "fullPie",
+        "title": "Primary Site"
+      },
+      "disease_type": {
+        "chartType": "fullPie",
+        "title": "Disease Type"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Imaging Series Selection",
+          "fields": [
+            "Modality",
+            "BodyPartExamined",
+            "PatientSex",
+            "primary_site",
+            "disease_type",
+            "commons_name",
+            "collection_id",
+            "StudyDescription"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000,
+        "label": "Maximum of 10,000 Total Records. Records per Page:"
+      },
+      "fields": [
+        "Modality",
+        "BodyPartExamined",
+        "PatientSex",
+        "primary_site",
+        "disease_type",
+        "commons_name",
+        "collection_id",
+        "StudyDescription",
+        "SeriesDescription",
+        "license",
+        "data_url_doi",
+        "metadata_source_date",
+        "metadata_source_version",
+        "series_viewer_url",
+        "subject_id",
+        "StudyInstanceUID",
+        "SeriesInstanceUID"
+      ],
+      "columns": {
+        "Modality": {
+          "title": "Modality"
+        },
+        "BodyPartExamined": {
+          "title": "Body Part Examined"
+        },
+        "PatientSex": {
+          "title": "Gender"
+        },
+        "primary_site": {
+          "title": "Primary Site"
+        },
+        "disease_type": {
+          "title": "Disease Type"
+        },
+        "commons_name": {
+          "title": "Platform",
+          "type": "link",
+          "cellRenderFunction": "linkWithValueMap",
+          "params": {
+            "valueToURL": {
+              "ACRdart": "https://dart.acr.org/Home/ImagingHub",
+              "IDC": "https://portal.imaging.datacommons.cancer.gov/explore/",
+              "MIDRC": "https://data.midrc.org",
+              "Stanford AIMI": "https://stanfordaimi.azurewebsites.net/",
+              "TCIA": "https://www.cancerimagingarchive.net/"
+            }
+          }
+        },
+        "collection_id": {
+          "title": "Collection"
+        },
+        "StudyDescription": {
+          "title": "Study Description",
+          "sortable": false
+        },
+        "SeriesDescription": {
+          "title": "Series Description",
+          "sortable": false
+        },
+        "license": {
+          "title": "License",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false,
+          "params": {
+            "href": ""
+          }
+        },
+        "data_url_doi": {
+          "title": "DOI",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        },
+        "metadata_source_date": {
+          "title": "Metadata Source Date"
+        },
+        "metadata_source_version": {
+          "title": "Metadata Source Version"
+        },
+        "series_viewer_url": {
+          "title": "DICOM Viewer URL",
+          "type": "link",
+          "cellRenderFunction": "linkURL",
+          "sortable": false
+        },
+        "subject_id": {
+          "title": "Subject ID"
+        },
+        "StudyInstanceUID": {
+          "title": "Study ID"
+        },
+        "SeriesInstanceUID": {
+          "title": "Series ID"
+        }
+      }
+    },
+    "guppyConfig": {
+      "dataType": "imaging_series",
+      "nodeCountTitle": "Imaging Series",
+      "fieldMapping": [
+        {
+          "field": "Modality",
+          "name": "Modality"
+        },
+        {
+          "field": "BodyPartExamined",
+          "name": "Body Part Examined"
+        },
+        {
+          "field": "PatientSex",
+          "name": "Gender"
+        },
+        {
+          "field": "primary_site",
+          "name": "Primary Site"
+        },
+        {
+          "field": "disease_type",
+          "name": "Disease Type"
+        },
+        {
+          "field": "commons_name",
+          "name": "Platform"
+        },
+        {
+          "field": "collection_id",
+          "name": "Collection ID"
+        },
+        {
+          "field": "StudyDescription",
+          "name": "Study Description"
+        },
+        {
+          "field": "SeriesDescription",
+          "name": "Series Description"
+        },
+        {
+          "field": "license",
+          "name": "License"
+        },
+        {
+          "field": "data_url_doi",
+          "name": "Data URL/DOI"
+        },
+        {
+          "field": "metadata_source_date",
+          "name": "Metadata Source Date"
+        },
+        {
+          "field": "metadata_source_version",
+          "name": "Metadata Source Version"
+        },
+        {
+          "field": "series_viewer_url",
+          "name": "DICOM Viewer URL"
+        },
+        {
+          "field": "subject_id",
+          "name": "Subject ID"
+        },
+        {
+          "field": "StudyInstanceUID",
+          "name": "Study ID"
+        },
+        {
+          "field": "SeriesInstanceUID",
+          "name": "Series ID"
+        }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "imaging_series",
+        "resourceIdField": "SeriesInstanceUID",
+        "referenceIdFieldInResourceIndex": "SeriesInstanceUID",
+        "referenceIdFieldInDataIndex": "SeriesInstanceUID"
+      },
+      "accessibleFieldCheckList": ["authz"],
+      "accessibleValidationField": "auth_resource_path"
+    },
+    "loginForDownload": false,
+    "dropdowns": {
+      "download-menu": {
+        "enabled": true,
+        "title": "Download Table",
+        "leftIcon": "gen3:download",
+        "rightIcon": "gen3:chevron-down",
+        "dropdownItems": [
+          {
+            "enabled": true,
+            "type": "data-json",
+            "title": "JSON",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-json",
+            "actionArgs": {
+              "filename": "BIH_imaging_series_table.json"
+            }
+          },
+          {
+            "enabled": true,
+            "type": "data-csv",
+            "title": "CSV",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-csv",
+            "actionArgs": {
+              "filename": "BIH_imaging_series_table.csv"
+            }
+          }
+        ]
+      }
+    },
+    "buttons": []
+  }
+]

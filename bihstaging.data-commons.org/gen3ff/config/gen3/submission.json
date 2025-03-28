@@ -1,0 +1,30 @@
+{
+  "projectTable": {
+    "columns": [
+      {
+        "name": "Subjects",
+        "field": "_subject_count",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Studies",
+        "field": "_study_count",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Aliquots",
+        "field": "_aliquot_count",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      },
+      {
+        "name": "Files",
+        "field": "_genotyping_array_count",
+        "errorIfNotAvailable": false,
+        "valueIfNotAvailable": "n/a"
+      }
+    ]
+  }
+}
