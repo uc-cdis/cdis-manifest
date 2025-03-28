@@ -158,7 +158,7 @@ mappings:
           - name: programs_name
             src: name
             fn: set
-  - name: internalstaging_index_file
+  - name: gen3.biodatacatalyst.nhlbi.nih.gov_index_file
     doc_type: index_file
     type: collector
     root: None
