@@ -885,7 +885,7 @@
 				"subject_apollo_id": "path:apollo_id",
 				"subject_race": "path:race",
 				"subject_gender": {
-					"path": "path.gender",
+					"path": "gender",
 					"filters": [
 					  "normalize_value"
 					],
@@ -895,13 +895,16 @@
 							"female": "Female",
 							"m": "Male",
 							"f": "Female",
-							"not reported": "Not Reported"
+							"Male" : "Male",
+							"Female" : "Female",
+							"not reported": "Not Reported",
+							"Not Reported": "Not Reported"
 						}
 					},
 					"default": ""
 				},
 				"subject_ethnicity": {
-					"path": "path.ethnicity",
+					"path": "ethnicity",
 					"filters": [
 					  "normalize_value"
 					],
@@ -909,6 +912,7 @@
 						"normalize_value": {
 							"NOT HISPANIC OR LATINO": "Not Hispanic or Latino",
 							"not reported": "Not Reported",
+							"Not Reported": "Not Reported",
 							"DECLINED TO ANSWER": "Declined to Answer",
 							"HISPANIC OR LATINO": "Hispanic or Latino"
 						}
@@ -938,7 +942,7 @@
 				},
 				"subject_cancer_stage": "",
 				"subject_year_of_birth": "",
-				"subject_primary_disease": "year_of_birth",
+				"subject_primary_disease": "",
 				"data_source" : "TCIA",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
 				"prometheus_global_id" : "path:prometheus_global_id",
