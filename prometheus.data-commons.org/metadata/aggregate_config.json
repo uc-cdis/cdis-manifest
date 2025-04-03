@@ -885,7 +885,7 @@
 				"subject_apollo_id": "path:apollo_id",
 				"subject_race": "path:race",
 				"subject_gender": {
-					"path": "path.gender",
+					"path": "gender",
 					"filters": [
 					  "normalize_value"
 					],
@@ -904,7 +904,7 @@
 					"default": ""
 				},
 				"subject_ethnicity": {
-					"path": "path.ethnicity",
+					"path": "ethnicity",
 					"filters": [
 					  "normalize_value"
 					],
