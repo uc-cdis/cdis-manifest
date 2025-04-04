@@ -9,7 +9,7 @@
 #### New Features
   - New job and cronjob to test launching workspaces. ([#2695](https://github.com/uc-cdis/cloud-automation/pull/2695)) 
   - Add map_file option to validation ([#2686](https://github.com/uc-cdis/cloud-automation/pull/2686)) 
-  - Add GDC_poject_map mount on Google Replication ([#2686](https://github.com/uc-cdis/cloud-automation/pull/2686)) 
+  - Add GDC_project_map mount on Google Replication ([#2686](https://github.com/uc-cdis/cloud-automation/pull/2686)) 
 
 #### Improvements
   - Gitops sync currently does not reset all cronjobs causing cronjobs to 
