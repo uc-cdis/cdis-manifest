@@ -91,6 +91,12 @@
           "name": "Exploration"
         },
         {
+          "icon": "list",
+          "link": "https://gen3.biodatacatalyst.nhlbi.nih.gov/ff/DataLibrary",
+          "color": "#a2a2a2",
+          "name": "Data Library"
+        },
+        {
           "icon": "profile",
           "link": "/identity",
           "color": "#a2a2a2",
@@ -626,6 +632,15 @@
       },
       "tagsInDescription": {
         "enabled": true
+      },
+      "exportToWorkspace": {
+        "enabled": false
+      },
+      "exportToDataLibrary": {
+        "enabled": true,
+        "dataObjectFieldName" : "objects",
+        "datesetIdFieldName" : "study_id",
+        "dataObjectIdField" : "guid"
       },
       "search": {
         "searchBar": {
