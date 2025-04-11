@@ -720,13 +720,14 @@
 				"commons": "path:commons",
 				"study_url": "path:study_url",
 				"data_source" : "path:data_source",
+				"sub_data_source" : "path:sub_data_source",
 				"_subjects_count": {
 					"path": "_subjects_count",
 					"default": 0
 				},
 				"__manifest": "path:__manifest",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
-				"is_synthetic": "Yes"
+				"is_synthetic": "No"
 			}
 		},
 		"Metabolomic-subject-level-metadata": {
@@ -833,9 +834,10 @@
 				"subject_year_of_birth": "path:year_of_birth",
 				"subject_primary_disease": "",
 				"data_source" : "path:data_source",
+				"sub_data_source" : "path:sub_data_source",
 				"commons_url": "externalgen3.prometheus.data-commons.org",
 				"prometheus_global_id" : "path:prometheus_global_id",
-				"is_synthetic": "Yes"
+				"is_synthetic": "No"
 			}
 		},
 		"TCIA-study-level-metadata": {
