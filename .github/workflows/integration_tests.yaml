@@ -10,8 +10,6 @@ jobs:
   integration_tests:
     name: Integration tests
     uses: uc-cdis/.github/.github/workflows/integration_tests.yaml@master
-    with:
-      TEST_REPO_BRANCH: mfshao-patch-1
     secrets:
       CI_AWS_ACCESS_KEY_ID: ${{ secrets.CI_AWS_ACCESS_KEY_ID }}
       CI_AWS_SECRET_ACCESS_KEY: ${{ secrets.CI_AWS_SECRET_ACCESS_KEY }}
