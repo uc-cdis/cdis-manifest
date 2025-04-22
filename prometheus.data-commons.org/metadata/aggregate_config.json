@@ -48,7 +48,9 @@
 			"subject_type_of_exposure": {},
 			"subject_chemical_agents_of_exposure": {},
 		        "prometheus_global_id" : {},
-		        "studies": {}
+		        "studies": {
+				"type": "object"
+		        }
 		},
 		"settings": {
 			"cache_drs": true
