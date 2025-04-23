@@ -49,8 +49,8 @@
             "subject_chemical_agents_of_exposure": {},
             "prometheus_global_id": {},
             "studies": {
-                "type": "object"
-            }
+		"type": "array"
+	    }
         },
         "settings": {
             "cache_drs": true
@@ -952,7 +952,7 @@
                 "commons_url": "externalgen3.prometheus.data-commons.org",
                 "prometheus_global_id": "path:prometheus_global_id",
                 "is_synthetic": "No",
-                "studies": "path:studies"
+                "studies": "path:studies.*"
             }
         }
     }
