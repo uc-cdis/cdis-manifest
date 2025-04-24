@@ -7,26 +7,26 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:1.6.1",
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2025.01",
-    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2025.01",
-    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2025.01",
+    "access-backend": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/access-backend:2025.04",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2025.04",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2025.04",
+    "awshelper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/awshelper:2025.04",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:11.0.2",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.04",
     "frontend-framework": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/bdc-data-commons:main",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.01",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.01",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2025.01",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2025.01",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2025.01",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:feature_data_library",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.04",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.04",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2025.04",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2025.04",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2025.04",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2025.04",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2025.01",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2025.01",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2025.01",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2025.01",
-    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2025.01",
-    "gen3-user-data-library": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-user-data-library:1.0.1"
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2025.04",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2025.04",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2025.04",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2025.04",
+    "metadata-delete-expired-objects": "quay.io/cdis/metadata-delete-expired-objects:2025.04",
+    "gen3-user-data-library": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-user-data-library:2025.04"
   },
   "google": {
     "enabled": "yes"
@@ -36,7 +36,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2025.01"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2025.04"
     }
   },
   "arborist": {
@@ -48,7 +48,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.01",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.04",
         "pull_policy": "Always",
         "env": [
           {
@@ -112,7 +112,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.01",
+        "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pelican-export:2025.04",
         "pull_policy": "Always",
         "env": [
           {
