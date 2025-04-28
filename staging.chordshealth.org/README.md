@@ -1,3 +1,9 @@
+
+> [!WARNING]  
+> This environment is managed via helm/argo from this gitops [repository](https://github.com/uc-cdis/gen3-gitops/tree/master/chordsprod/staging.chordshealth.org/values)
+
+
+
 # CHORDS Staging Manifest
 
 
