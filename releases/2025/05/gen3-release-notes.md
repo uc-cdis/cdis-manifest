@@ -42,6 +42,7 @@
 ## uc-cdis/fence
 
 #### Improvements
+  - IP Address of user is now logged ([#1245](https://github.com/uc-cdis/fence/pull/1245))
   - Run gunicorn as a `gen3` user as opposed to `root` user ([#1228](https://github.com/uc-cdis/fence/pull/1228)) 
   - Add the database migrations directory to the unit test coverage report 
     ([#1232](https://github.com/uc-cdis/fence/pull/1232))
