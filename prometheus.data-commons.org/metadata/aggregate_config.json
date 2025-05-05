@@ -411,6 +411,21 @@
                 "data_source": "VPODC",
                 "prometheus_global_id": "path:prometheus_global_id",
                 "is_synthetic": "No"
+            },
+            "per_item_values": {
+                "synth_12345": {
+                    {
+                        "__manifest": [
+                            {
+                                "md5": "44d8497a87b5bb040b09699899b57bff",
+                                "file_name": "synth_12345",
+                                "file_size": 39953,
+                                "object_id": "f5d75619-93fc-4cdb-87e3-4e44523d7a4b",
+                                "commons_url": "vpodc.data-commons.org"
+                            }
+                        ]
+                    }
+                }
             }
         },
         "APOLLO-subject-level-metadata": {
