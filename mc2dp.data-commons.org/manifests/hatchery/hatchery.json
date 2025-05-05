@@ -12,7 +12,7 @@
         "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ecs-ws-sidecar:2025.03",
         "env": {
             "NAMESPACE": "default",
-            "HOSTNAME": "prometheus.data-commons.org"
+            "HOSTNAME": "mc2dp.data-commons.org"
         },
         "args": [],
         "command": [
@@ -36,7 +36,7 @@
             "name": "(Generic) Jupyter Lab Notebook with R Kernel",
             "image": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/jupyter-prometheus:prometheus-master",
             "env": {
-                "FRAME_ANCESTORS": "https://prometheus.data-commons.org"
+                "FRAME_ANCESTORS": "https://mc2dp.data-commons.org"
             },
             "args": [
                 "--NotebookApp.base_url=/lw-workspace/proxy/",
