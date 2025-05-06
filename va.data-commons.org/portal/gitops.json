@@ -20,8 +20,7 @@
         "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons features GWAS analyses on harmonized data."
       },
       "buttons": [],
-      "customHomepageChartConfig": [],
-      "homepageChartNodes": []
+      "customHomepageChartConfig": []
     },
     "navigation": {
       "items": [
@@ -52,16 +51,7 @@
       ]
     },
     "topBar": {
-      "items": [
-        {
-          "link": "https://uc-cdis.github.io/vadc-mkdocs/",
-          "name": "Help and Guidance"
-        },
-        {
-          "link": "vadc-support@gen3.org",
-          "name": "Email Support"
-        }
-      ],
+      "items": [],
       "useProfileDropdown": false
     },
     "login": {
@@ -69,7 +59,8 @@
       "subTitle": "search, compare, and analyze data",
       "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "vadc-support@gen3.org"
+      "email": "vadc-support@gen3.org",
+      "hideNavLink": true
     },
     "systemUse": {
       "systemUseTitle": "VA systems are intended for Academic and Institutional Users",
