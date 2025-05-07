@@ -62,12 +62,14 @@
 
 .login-page .body-typo {
   margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 
 .login-page .login-page__entries {
   width: 200px;
   margin: 40px auto;
+  display: none; /* for hiding login buttons */
 }
 
 .login-page .login-page__entry-button {
