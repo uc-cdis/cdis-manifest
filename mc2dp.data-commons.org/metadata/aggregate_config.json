@@ -49,8 +49,8 @@
             "subject_chemical_agents_of_exposure": {},
             "prometheus_global_id": {},
             "studies": {
-		"type": "array"
-	    }
+                "type": "array"
+            }
         },
         "settings": {
             "cache_drs": true
@@ -414,17 +414,15 @@
             },
             "per_item_values": {
                 "synth_12345": {
-                    {
-                        "__manifest": [
-                            {
-                                "md5": "44d8497a87b5bb040b09699899b57bff",
-                                "file_name": "synth_12345",
-                                "file_size": 39953,
-                                "object_id": "f5d75619-93fc-4cdb-87e3-4e44523d7a4b",
-                                "commons_url": "vpodc.data-commons.org"
-                            }
-                        ]
-                    }
+                    "__manifest": [
+                        {
+                            "md5": "44d8497a87b5bb040b09699899b57bff",
+                            "file_name": "synth_12345",
+                            "file_size": 39953,
+                            "object_id": "f5d75619-93fc-4cdb-87e3-4e44523d7a4b",
+                            "commons_url": "vpodc.data-commons.org"
+                        }
+                    ]
                 }
             }
         },
@@ -972,4 +970,3 @@
         }
     }
 }
-
