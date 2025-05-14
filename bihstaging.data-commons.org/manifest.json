@@ -60,12 +60,16 @@
   "guppy": {
     "indices": [
       {
-        "index": "bih_imaging_study",
-        "type": "imaging_study"
+        "index": "bih_dataset",
+        "type": "dataset"
       },
       {
         "index": "bih_subject",
         "type": "subject"
+      },
+      {
+        "index": "bih_imaging_study",
+        "type": "imaging_study"
       },
       {
         "index": "bih_imaging_series",
