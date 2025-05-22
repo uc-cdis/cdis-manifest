@@ -4,8 +4,10 @@
   "user-volume-size": "10Gi",
   "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-1SZM8FA8IP6F",
   "default-pay-model": {
-    "workspace_type": "Trial Workspace",
-    "local": true
+    "bmh_workspace_id": "blanket_billing_eks",
+    "region": "us-east-1",
+    "account_id": "252835817747",
+    "workspace_type": "healworkspaces"
   },
   "license-user-maps-dynamodb-table": "gen3-license-user-maps-prod-heal",
   "license-user-maps-global-secondary-index": "activeUsersIndex",
