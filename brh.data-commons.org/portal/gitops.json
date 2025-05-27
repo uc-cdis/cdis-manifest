@@ -1,4 +1,6 @@
 {
+  "ddEnv": "brhprod",
+  "ddUrl": "ddog-gov.com",
   "gaTrackingId": "G-WM3JV9YMW3",
   "grafanaFaroConfig": {
     "grafanaFaroEnable": true,
@@ -72,7 +74,7 @@
           "name": "Documentation"
         },
         {
-          "link": "brhsupport@datacommons.io",
+          "link": "brhsupport@gen3.org",
           "name": "Email Support"
         },
         {
@@ -87,7 +89,7 @@
       "text": "The Biomedical Research Hub (BRH) is a standard-based data ecosystem for securely managing, analyzing and sharing biomedical data to support research communities and collaborations.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "contact_link": {
-        "href": "brhsupport@datacommons.io"
+        "href": "brhsupport@gen3.org"
       },
       "image": "stage-icons/stage-gene"
     },
@@ -166,8 +168,8 @@
         "enableDownloadManifest": true,
         "downloadManifestButtonText": "Download",
         "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+          "gen3Client": "https://docs.gen3.org/gen3-resources/user-guide/access-data/#download-files-using-the-gen3-client",
+          "gen3Workspaces": "https://docs.gen3.org/gen3-resources/user-guide/analyze-data/"
         }
       },
       "pageTitle": {
@@ -578,27 +580,21 @@
       },
       {
         "title": "Data Exploration using Python of Framingham Heart Study Teaching Dataset",
-        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
-        "imageUrl": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png",
-        "link": "/dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html"
+        "description": "In this Python tutorial, we demonstrate how to pull the Framingham teaching dataset from the BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
+        "imageUrl": "/dashboard/Public/notebooks/BDC_Biolincc_Framingham_study_exploration.png",
+        "link": "/dashboard/Public/notebooks/BDC_Biolincc_Framingham_study_exploration.html"
       },
       {
         "title": "Data Exploration using R of Framingham Heart Study Teaching Dataset",
         "description": "In this tutorial, using R code, we will demonstrate how to pull the object file of the Framingham teaching dataset from the BioData Catalyst data commons into a BRH workspace and perform data exploration and visualization using R packages.",
-        "link": "/dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.html",
-        "imageUrl": "/dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.png"
+        "link": "/dashboard/Public/notebooks/BDC_Framingham_study_exploration_R.html",
+        "imageUrl": "/dashboard/Public/notebooks/BDC_Framingham_study_exploration_R.png"
       },
       {
         "title": "Data Exploration of CAMP Study Teaching Dataset",
         "description": "In this tutorial, we demonstrate how to pull the object file of CAMP study from BioData Catalyst data commons into a BRH workspace, and perform data exploration and visualization using Python packages.",
-        "imageUrl": "/dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.png",
-        "link": "/dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.html"
-      },
-      {
-        "title": "Canine Data Commons FASTQ Reader",
-        "description": "In this tutorial notebook, we demonstrate how to use Gen3 SDK and API to explore and retrieve data from Canine Data Commons. This tutorial also includes a simple example to explore sequence information from a FASTQ file.",
-        "imageUrl": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.png",
-        "link": "/dashboard/Public/notebooks/canine_datacommons_fastq_reader.html"
+        "imageUrl": "/dashboard/Public/notebooks/BDC_CAMP_study_exploration_notebook.png",
+        "link": "/dashboard/Public/notebooks/BDC_CAMP_study_exploration_notebook.html"
       },
       {
         "title": "MIDRC Open-R1 Clinical Data Analysis",
@@ -607,10 +603,10 @@
         "link": "/dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.html"
       },
       {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
+        "title": "OADC Unsupervised Data Exploration on Cancer Cell Line Encyclopedia (CCLE)",
+        "description": "Principal component analysis (PCA) and t-distributed stochastic neighbor embedding (t-SNE) has become valuable tools for unsupervised data exploration. This notebook explores the application of unsupervised learning on Cancer Cell Line Encyclopedia (CCLE) gene expression profile. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
+        "link": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html",
+        "imageUrl": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png"
       },
       {
         "title": "Identification of Potential Drug Targets of Inflammatory Bowel Disease",
@@ -621,14 +617,8 @@
       {
         "title": "Predictive Insights into Heart Health: Investigating the Framingham Heart Study Dataset",
         "description": "In this Jupyter notebook, we'll delve into the Framingham dataset, analyzing its contents, performing exploratory data analysis, and leveraging linear and logistic regression.",
-        "link": "/dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.html",
-        "imageUrl": "/dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.png"
-      },
-      {
-        "title": "OADC Unsupervised Data Exploration on Cancer Cell Line Encyclopedia (CCLE)",
-        "description": "Principal component analysis (PCA) and t-distributed stochastic neighbor embedding (t-SNE) has become valuable tools for unsupervised data exploration. This notebook explores the application of unsupervised learning on Cancer Cell Line Encyclopedia (CCLE) gene expression profile. All results shown in this notebook are for demonstration purposes and should not be considered scientifically rigorous.",
-        "link": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html",
-        "imageUrl": "/dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png"
+        "link": "/dashboard/Public/notebooks/BDC_Framingham_predictive_insights.html",
+        "imageUrl": "/dashboard/Public/notebooks/BDC_Framingham_predictive_insights.png"
       }
     ]
   },

@@ -51,6 +51,12 @@
     "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. Executable versions of these notebooks can be downloaded from <a href='https://github.com/MIDRC/tutorial_notebooks'> MIDRC's GitHub Repository</a>. If you’d like to browse the machine learning-related algorithms and code being developed by MIDRC, please visit <a href='https://midrc.org/algorithms'>the algorithms page</a> on our website.",
     "resources": [
       {
+        "title": "Cohort Building Using LOINC Terms",
+        "description": "This notebook demonstrates how to build a cohort of patients based on LOINC terms derived by harmonizing original DICOM study descriptions, modalities, and body parts examined using the LOINC playbook. Imaging study DICOM data element harmonization using the LOINC playbook is the result of an effort by MIDRC's Technology and Development Project 3b (TDP3b) and the Collaborative Research Project 12 (CRP-12). Links to the GitHub repository where the code for performing LOINC harmonization is maintained is included in the notebook.",
+        "imageUrl": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.png",
+        "link": "/dashboard/Public/notebooks/Cohort_Building_Using_LOINC_Terms.html"
+      },
+      {
         "title": "Build a Patient Cohort and Access Chest CT Scans and Annotations",
         "description": "This notebook demonstrates how to build a cohort of MIDRC patients based on clinical and demographic data and then access all Chest CT scans and any related annotations.",
         "imageUrl": "/dashboard/Public/notebooks/Chest_CT_Images_for_Cohort.png",
@@ -128,12 +134,6 @@
   },
   "components": {
     "appName": "The Medical Imaging and Data Resource Center Commons",
-    "banner": [
-      {
-        "type": "warning",
-        "message": "Our helpdesk has moved! Starting 8/21, please contact us at midrc-support@gen3.org."
-      }
-    ],
     "index": {
       "introduction": {
         "heading": "MIDRC Data Commons",
@@ -302,7 +302,7 @@
           "name": "Resources"
         },
         {
-          "link": "https://gen3.org/resources/user/",
+          "link": "https://docs.gen3.org/gen3-resources/user-guide/",
           "name": "Gen3"
         },
         {
@@ -341,6 +341,10 @@
         {
           "text": "HHS Responsible Disclosure",
           "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        },
+        {
+          "text": "The Medical Imaging and Data Resource Center (MIDRC) is funded by the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health under contract 75N92020D00021 and through The Advanced Research Projects Agency for Health (ARPA-H) \n This repository is under review for potential modification in compliance with Administration directives.",
+          "href": "#"
         }
       ]
     },
@@ -444,6 +448,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method"
             ]
@@ -464,6 +469,9 @@
           "imaging_studies.age_at_imaging",
           "imaging_studies.body_part_examined",
           "imaging_studies.days_to_study",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "imaging_studies.loinc_code",
           "imaging_studies.loinc_contrast",
           "imaging_studies.loinc_long_common_name",
@@ -497,6 +505,7 @@
           "conditions.condition_code",
           "conditions.days_to_condition_start",
           "conditions.days_to_condition_end",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -507,7 +516,11 @@
           "_cr_series_file_count",
           "_mr_series_file_count",
           "project_id"
-        ]
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
+      ]
       },
       "dropdowns": {
         "download-table": {
@@ -717,6 +730,10 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
+          },
+          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -751,6 +768,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
@@ -773,6 +802,7 @@
           {
             "title": "Imaging Study Annotations",
             "fields": [
+              "annotation_name",
               "midrc_mRALE_score",
               "annotation_method",
               "annotator_id",
@@ -890,8 +920,15 @@
           "test_name",
           "test_days_from_index",
           "submitter_id",
-          "project_id"
-        ]
+          "project_id",
+          "license",
+          "data_url_doi",
+          "data_contributor"
+        ],
+        "linkFields": [
+          "license",
+          "data_url_doi"
+      ]
       },
       "dropdowns": {
         "download-table": {
@@ -943,6 +980,18 @@
           {
             "field": "case_ids",
             "name": "Case ID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "accessibleFieldCheckList": [
@@ -970,6 +1019,7 @@
               "body_part_examined",
               "days_from_study_to_pos_covid_test",
               "days_from_study_to_neg_covid_test",
+              "image_data_modified",
               "project_id"
             ]
           },
@@ -1009,6 +1059,7 @@
           {
             "title": "Annotations",
             "fields": [
+              "imaging_study_annotations.annotation_name",
               "imaging_study_annotations.midrc_mRALE_score",
               "imaging_study_annotations.annotation_method",
               "imaging_study_annotations.annotator_id",
@@ -1028,6 +1079,9 @@
           "days_to_study",
           "study_year",
           "study_year_shifted",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_long_common_name",
           "loinc_method",
           "loinc_system",
@@ -1043,6 +1097,7 @@
           "race",
           "ethnicity",
           "zip",
+          "imaging_study_annotations.annotation_name",
           "imaging_study_annotations.midrc_mRALE_score",
           "imaging_study_annotations.annotation_method",
           "imaging_study_annotations.annotator_id",
@@ -1066,7 +1121,9 @@
         "dicomViewerId": "submitter_id",
         "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -1148,6 +1205,10 @@
             "name": "Class COVID-19 Pneumonia"
           },
           {
+            "field": "imaging_study_annotations.annotation_name",
+            "name": "Annotation Name"
+          },
+          {
             "field": "imaging_study_annotations.midrc_mRALE_score",
             "name": "MIDRC mRALE Score"
           },
@@ -1178,6 +1239,18 @@
           {
             "field": "_mr_series_file_count",
             "name": "MR Series Count"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           },
           {
             "field": "loinc_long_common_name",
@@ -1229,7 +1302,7 @@
               "data_format",
               "data_category",
               "data_type",
-               "image_data_modified",
+              "image_data_modified",
               "image_data_modification_name",
               "image_data_modification_method"
             ]
@@ -1276,6 +1349,7 @@
               "manufacturer",
               "manufacturer_model_name",
               "modality",
+              "number_of_instances",
               "number_of_temporal_positions",
               "patient_position",
               "pixel_spacing",
@@ -1346,6 +1420,7 @@
           "manufacturer",
           "manufacturer_model_name",
           "modality",
+          "number_of_instances",
           "number_of_temporal_positions",
           "patient_position",
           "pixel_spacing",
@@ -1367,6 +1442,9 @@
           "study_year_shifted",
           "days_from_study_to_pos_covid_test",
           "days_from_study_to_neg_covid_test",
+          "license",
+          "data_url_doi",
+          "data_contributor",
           "loinc_code",
           "loinc_contrast",
           "loinc_long_common_name",
@@ -1398,7 +1476,9 @@
         "dicomViewerId": "submitter_id",
         "dicomViewerUrl": "ohif-viewer",
         "linkFields": [
-          "submitter_id"
+          "submitter_id",
+          "license",
+          "data_url_doi"
         ]
       },
       "dropdowns": {
@@ -1470,6 +1550,18 @@
           {
             "field": "series_UID",
             "name": "Series UID"
+          },
+          {
+            "field": "license",
+            "name": "License"
+          },
+          {
+            "field": "data_url_doi",
+            "name": "DOI"
+          },
+          {
+            "field": "data_contributor",
+            "name": "Data Contributor"
           }
         ],
         "manifestMapping": {
