@@ -49,8 +49,8 @@
             "subject_chemical_agents_of_exposure": {},
             "prometheus_global_id": {},
             "studies": {
-		"type": "array"
-	    }
+                "type": "array"
+            }
         },
         "settings": {
             "cache_drs": true
@@ -116,7 +116,7 @@
             }
         },
         "APOLLO-study-level-metadata": {
-            "mds_url": "https://api.gdc.cancer.gov/projects?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22projects.project_id%22,%22value%22:[%22APOLLO-LUAD%22]%7D%7D]%7D&size=100&fields=name,project_id,primary_site,disease_type",
+            "mds_url": "https://api.gdc.cancer.gov/projects?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22projects.project_id%22,%22value%22:[%22APOLLO-LUAD%22,%22VAREPOP-APOLLO%22]%7D%7D]%7D&size=100&fields=name,project_id,primary_site,disease_type",
             "commons_url": "api.gdc.cancer.gov",
             "adapter": "gdc",
             "filters": {
@@ -411,10 +411,23 @@
                 "data_source": "VPODC",
                 "prometheus_global_id": "path:prometheus_global_id",
                 "is_synthetic": "No"
+            },
+            "per_item_values": {
+                "synth_12345": {
+                    "__manifest": [
+                        {
+                            "md5": "44d8497a87b5bb040b09699899b57bff",
+                            "file_name": "synth_12345",
+                            "file_size": 39953,
+                            "object_id": "f5d75619-93fc-4cdb-87e3-4e44523d7a4b",
+                            "commons_url": "vpodc.data-commons.org"
+                        }
+                    ]
+                }
             }
         },
         "APOLLO-subject-level-metadata": {
-            "mds_url": "https://api.gdc.cancer.gov/cases?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22cases.project.program.name%22,%22value%22:[%22APOLLO%22]%7D%7D]%7D&fields=id,submitter_id,demographic.gender,demographic.race,demographic.ethnicity,diagnoses.ajcc_pathologic_m,diagnoses.tumor_grade,diagnoses.ajcc_pathologic_stage,exposures.tobacco_smoking_status,exposures.pack_years_smoked,disease_type,diagnoses.primary_diagnosis,primary_site",
+            "mds_url": "https://api.gdc.cancer.gov/cases?filters=%7B%22op%22:%22and%22,%22content%22:[%7B%22op%22:%22in%22,%22content%22:%7B%22field%22:%22cases.project.program.name%22,%22value%22:[%22APOLLO%22,%22VAREPOP%22]%7D%7D]%7D&fields=id,submitter_id,demographic.gender,demographic.race,demographic.ethnicity,diagnoses.ajcc_pathologic_m,diagnoses.tumor_grade,diagnoses.ajcc_pathologic_stage,exposures.tobacco_smoking_status,exposures.pack_years_smoked,disease_type,diagnoses.primary_diagnosis,primary_site",
             "commons_url": "api.gdc.cancer.gov",
             "adapter": "gdc",
             "filters": {
@@ -957,4 +970,3 @@
         }
     }
 }
-

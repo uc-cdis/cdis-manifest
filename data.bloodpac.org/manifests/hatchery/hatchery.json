@@ -1,7 +1,7 @@
 {
   "user-namespace": "jupyter-pods",
   "sub-dir": "/lw-workspace",
-  "user-volume-size": "500Gi",
+  "user-volume-size": "20Gi",
   "sidecar": {
     "cpu-limit": "0.8",
     "memory-limit": "256Mi",
