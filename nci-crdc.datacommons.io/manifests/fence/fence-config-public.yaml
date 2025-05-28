@@ -113,6 +113,9 @@ S3_BUCKETS:
   cds-295-phs003155:
     cred: "fence_bot"
     region: "us-east-1"
+  cds-296-phs001287:
+    cred: "fence_bot"
+    region: "us-east-1"
   cds-305-phs002790-production-ccdi-ctsmc:
     cred: "fence_bot"
     region: "us-east-1"
@@ -152,7 +155,25 @@ S3_BUCKETS:
   cds-515-phs003163-pivot-chop:
     cred: "fence_bot"
     region: "us-east-1"
+  cds-563-phs002883-production-ccdi-pedmatch:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cds-568-phs003161-pivot-msk:
+    cred: "fence_bot"
+    region: "us-east-1" 
+  cds-572-phs003160-pivot-utsanantonio:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cds-575-phs003975-spatial-transcriptomics:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cds-585-phs004017-cmmrd:
+    cred: "fence_bot"
+    region: "us-east-1"
   cgci-htmcp-dlbcl-phs000235-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  cgci-htmcp-dlbcl-phs000235-2-open:
     cred: "fence_bot"
     region: "us-east-1"
   dcfprod-data-bucket:
@@ -254,6 +275,12 @@ S3_BUCKETS:
   gdc-hcmi-cmdc-phs001486-controlled:
     cred: "fence_bot"
     region: "us-east-1"
+  gdc-match-c1-phs002177-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-c1-phs002177-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
   gdc-match-h-phs001888-2-open:
     cred: "fence_bot"
     region: "us-east-1"
@@ -264,6 +291,30 @@ S3_BUCKETS:
     cred: "fence_bot"
     region: "us-east-1"
   gdc-match-i-phs002181-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-p-phs002152-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-p-phs002152-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-r-phs002029-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-r-phs002029-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-s1-phs002153-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-s1-phs002153-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-s2-phs002178-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-s2-phs002178-controlled:
     cred: "fence_bot"
     region: "us-east-1"
   gdc-match-u-phs002179-2-open:
@@ -284,10 +335,22 @@ S3_BUCKETS:
   gdc-match-z1a-phs001973-controlled:
     cred: "fence_bot"
     region: "us-east-1"
+  gdc-match-z1b-phs002180-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-z1b-phs002180-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
   gdc-match-z1d-phs001859-2-open:
     cred: "fence_bot"
     region: "us-east-1"
   gdc-match-z1d-phs001859-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-z1I-phs002058-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  gdc-match-z1I-phs002058-controlled:
     cred: "fence_bot"
     region: "us-east-1"
   gdc-mmrf-commpass-phs000748-2-open:
@@ -383,6 +446,12 @@ S3_BUCKETS:
   iodc-cimac-hcrngu16257-phs003372:
     cred: "fence_bot"
     region: "us-east-1"
+  iodc-cimac-hcrngu16257-phs003928:
+    cred: "fence_bot"
+    region: "us-east-1"
+  iodc-cimac-hcrngu16257-phs003934:
+    cred: "fence_bot"
+    region: "us-east-1"
   iodc-cimac-nctne4412-phs003450:
     cred: "fence_bot"
     region: "us-east-1"
@@ -395,9 +464,33 @@ S3_BUCKETS:
   iodc-cimac-nctns1400i-phs003412:
     cred: "fence_bot"
     region: "us-east-1"
+  match-b-phs002028-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  match-b-phs002028-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  match-n-phs002151-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  match-n-phs002151-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
+  mp2prt-all-phs002005-controlled:
+    cred: "fence_bot"
+    region: "us-east-1"
+  mp2prt-all-phs002005-2-open:
+    cred: "fence_bot"
+    region: "us-east-1"
   nci-cbiit-caninedatacommons-file:
     cred: "fence_bot"
     region: "us-east-1"
+  nci-cbiit-clinical-cmb-prod:
+    cred: "fence_bot"
+    region: "us-east-1"
+  nci-crdc-data-bucket-prod:
+    cred: "fence_bot"
+    region: "us-east-1" 
   pdcdatastore:
     cred: "fence_bot"
     region: "us-east-1"
@@ -419,69 +512,4 @@ S3_BUCKETS:
   tcga-public-dcf-databucket-gen3:
     cred: "fence_bot"
     region: "us-east-1"
-  match-b-phs002028-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  match-n-phs002151-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  mp2prt-all-phs002005-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  cgci-htmcp-dlbcl-phs000235-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  match-b-phs002028-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  match-n-phs002151-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  mp2prt-all-phs002005-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  nci-cbiit-clinical-cmb-prod:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-r-phs002029-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-s1-phs002153-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-s2-phs002178-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-z1I-phs002058-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-r-phs002029-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-s1-phs002153-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-s2-phs002178-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-z1I-phs002058-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-c1-phs002177-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-p-phs002152-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-z1b-phs002180-2-open:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-c1-phs002177-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-p-phs002152-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
-  gdc-match-z1b-phs002180-controlled:
-    cred: "fence_bot"
-    region: "us-east-1"
+
