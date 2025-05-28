@@ -1,4 +1,30 @@
 mappings:
+  - name: bih_subject
+    doc_type: subject
+    type: aggregator
+    root: subject
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: race
+    parent_props:
+      - path: datasets[collection_id,commons_long_name,commons_name,data_contributor,data_host,data_url_doi,disease_type,license,metadata_source_api,metadata_source_date,metadata_source_version,primary_site]
+  - name: bih_imaging_study
+    doc_type: imaging_study
+    type: aggregator
+    root: imaging_study
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: StudyDescription
+      - name: StudyInstanceUID
+      - name: study_viewer_url
+      - name: PatientAge
+      - name: PatientSex
+      - name: PatientID
+      - name: EthnicGroup
+    parent_props:
+      - path: subjects[race,subject_id:submitter_id].datasets[collection_id,commons_long_name,commons_name,data_contributor,data_host,data_url_doi,disease_type,license,metadata_source_api,metadata_source_date,metadata_source_version,primary_site]
   - name: bih_imaging_series
     doc_type: imaging_series
     type: aggregator
@@ -12,7 +38,7 @@ mappings:
       - name: Modality
       - name: SeriesDescription
       - name: SeriesInstanceUID
+      - name: series_viewer_url
       - name: dicom_viewer_url
     parent_props:
-      - path: imaging_studies[StudyDescription,StudyInstanceUID,PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[commons_name,collection_id,primary_site,disease_type]
-
+      - path: imaging_studies[StudyDescription,StudyInstanceUID,PatientAge,PatientSex,PatientID,EthnicGroup].subjects[race,subject_id:submitter_id].datasets[collection_id,commons_long_name,commons_name,data_contributor,data_host,data_url_doi,disease_type,license,metadata_source_api,metadata_source_date,metadata_source_version,primary_site]

@@ -4,7 +4,7 @@
     "grafanaFaroEnable": true,
     "grafanaFaroNamespace": "vhdcprod"
   },
-  "argoTemplate": "gwas-template-zip",
+  "argoTemplate": "gwas-template-genesisupdate",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -13,17 +13,23 @@
   },
   "components": {
     "appName": "VA Data Commons",
+    "logoAltText": "VA logo and Seal, U.S. Department of Veterans Affairs Data Commons",
     "index": {
       "introduction": {
         "heading": "VA Data Commons",
         "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond. The data commons features GWAS analyses on harmonized data."
       },
       "buttons": [],
-      "customHomepageChartConfig": [],
-      "homepageChartNodes": []
+      "customHomepageChartConfig": []
     },
     "navigation": {
       "items": [
+        {
+          "icon": "query",
+          "link": "/resource-browser",
+          "color": "#a2a2a2",
+          "name": "Resources"
+        },
         {
           "icon": "workspace",
           "link": "/workspace",
@@ -45,16 +51,7 @@
       ]
     },
     "topBar": {
-      "items": [
-        {
-          "link": "https://uc-cdis.github.io/vadc-mkdocs/",
-          "name": "Help and Guidance"
-        },
-        {
-          "link": "vadc@lists.uchicago.edu",
-          "name": "Email Support"
-        }
-      ],
+      "items": [],
       "useProfileDropdown": false
     },
     "login": {
@@ -62,7 +59,8 @@
       "subTitle": "search, compare, and analyze data",
       "text": "The VA Data Commons supports the research and analysis of US military Veteran medical and genomic data and aims to accelerate scientific discovery and development of therapies, diagnostic tests, and other technologies for improving the lives of Veterans and beyond.",
       "contact": "If you have any questions about access or the registration process, please contact ",
-      "email": "vadc@lists.uchicago.edu"
+      "email": "vadc-support@gen3.org",
+      "hideNavLink": true
     },
     "systemUse": {
       "systemUseTitle": "VA systems are intended for Academic and Institutional Users",
@@ -89,10 +87,25 @@
       }
     ]
   },
+  "resourceBrowser": {
+    "title": "Resources",
+    "description": "",
+    "public": false,
+    "resources": [
+      {
+        "title": "MVP Data Dictionary",
+        "category": "",
+        "description": "Data Dictionary for the MVP data. Includes list of all the concepts, information and basic statistics. Basic statistics includes concept values distribution.",
+        "link": "/dashboard/Secure/dd/VADataCommonsDictionary20240213.html",
+        "imageUrl": "/src/img/analysis-icons/default-app.png"
+      }
+    ]
+  },
   "featureFlags": {
     "explorer": false,
     "analysis": true,
-    "workspaceTokenServiceRefreshTokenAtLogin": true
+    "workspaceTokenServiceRefreshTokenAtLogin": true,
+    "legacyVADCDataDictionary": true
   },
   "analysisTools": [
     {
@@ -133,6 +146,28 @@
   "ddUrl": "ddog-gov.com",
   "userAccessToSite": {
     "enabled": true,
-    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc@lists.uchicago.edu"
+    "noAccessMessage": "You are not authorized to access this system. If you have any questions, please contact vadc-support@gen3.org"
+  },
+  "componentToResourceMapping": { 
+    "Workspace": {
+      "resource": "/workspace", 
+      "method": "access",
+      "service": "jupyterhub"
+    },
+    "Apps": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    },
+    "Profile": {
+      "resource": "/dashboard", 
+      "method": "access",
+      "service": "dashboard"
+    },
+    "Resources": {
+      "resource": "/dashboard",
+      "method": "access",
+      "service": "dashboard"
+    }
   }
 }

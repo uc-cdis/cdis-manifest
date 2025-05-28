@@ -14,14 +14,14 @@
   },
   "components": {
     "appName": "HEAL Data Platform",
-    "metaDescription": "The HEAL Platform shares data from the NIH HEAL Initiative&reg; with the community of researchers, healthcare providers, community leaders, policy makers, and other stakeholders.",
     "banner": [
       {
         "type": "warning",
-        "message": "Our helpdesk has moved! Starting 8/21, please contact us at heal-support@gen3.org",
-        "resetMsgDays": 1
+        "message": "This repository is under review for potential modification in compliance with Administration directives.",
+        "resetMsgDays": 0.00001
       }
     ],
+    "metaDescription": "The HEAL Platform shares data from the NIH HEAL Initiative&reg; with the community of researchers, healthcare providers, community leaders, policy makers, and other stakeholders.",
     "index": {
       "introduction": {
         "heading": "HEAL Data Platform",
@@ -154,10 +154,13 @@
             "key": "Subject Type"
           },
           {
-            "key": "Gender"
+            "key": "Age"
           },
           {
-            "key": "Age"
+            "key": "Common Data Elements"
+          },
+          {
+            "key": "Research Program"
           }
         ]
       },
@@ -170,17 +173,19 @@
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
+        "enableExportFullMetadata": true,
+        "excludedMetadataFields": ["authz", "registration_authz", "registrant_username", "advSearchFilters", "__accessible", "commons_name", "commons_url", "commons", "frontend_uid"],
         "enableDownloadManifest": true,
         "enableDownloadZip": true,
         "downloadZipButtonText": "Download Zip",
         "downloadManifestButtonText": "Download Manifest",
-        "variableMetadataFieldName": "data_dictionaries",
+        "variableMetadataFieldName": "variable_level_metadata",
         "enableDownloadVariableMetadata": true,
         "studyMetadataFieldName": "study_metadata",
         "enableDownloadStudyMetadata": true,
         "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+          "gen3Client": "https://docs.gen3.org/gen3-resources/user-guide/access-data/#download-files-using-the-gen3-client",
+          "gen3Workspaces": "https://docs.gen3.org/gen3-resources/user-guide/analyze-data/"
         },
         "verifyExternalLogins": true
       },
@@ -470,18 +475,23 @@
       },
       {
         "name": "Research Program",
+        "color": "#c0b3c5",
+        "display": false
+      },
+      {
+        "name": "Common Data Elements",
         "color": "#532565",
+        "display": false
+      },
+      {
+        "name": "Other",
+        "color": "#982568",
         "display": false
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
         "color": "#981f32",
-        "display": false
-      },
-      {
-        "name": "Other",
-        "color": "#bf362e",
         "display": false
       },
       {
@@ -519,12 +529,6 @@
         "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
         "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
         "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
-      },
-      {
-        "title": "JCOIN Tracking Opioid Stigma",
-        "description": "In this Jupyter notebook, we used the JCOIN-MAARC (Justice Community Opioid Innovation Network - Methodology and Advanced Analytics Resource Center) Survey Core Survey Project 1/4 to track stigma related to Opioid Use Disorder (OUD) and public attitudes towards persons with OUD as well as how treatment of/for persons with OUD may impact the effect of OUD interventions.",
-        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html",
-        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png"
       },
       {
         "title": "Opioid Prevalence And Overdoses",
@@ -616,7 +620,8 @@
         ],
         "dataDictionarySubmissionBucket": "",
         "dataDictionarySubmissionDisclaimerField": "All submitted data dictionaries will be available to public.",
-        "dataDictionaryField": "data_dictionaries"
+        "cdeSubmissionDisclaimerField": "All submitted CDEs will be openly accessible to all users.",
+        "variableMetadataField": "variable_level_metadata"
       },
       "workspaceRegistrationConfig" : {
         "workspacePolicyId": "workspace_strides_integrated",

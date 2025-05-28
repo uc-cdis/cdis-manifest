@@ -99,7 +99,7 @@
             "config": {
                 "guid_type": "discovery_metadata",
                 "study_field": "gen3_discovery",
-                "data_dict_field": "data_dictionaries"
+                "data_dict_field": "variable_level_metadata"
             },
             "keep_original_fields": true,
             "field_mappings": {
@@ -115,54 +115,6 @@
                     "path": "advSearchFilters"
                 },
                 "commons_url": "https://healdata.org"
-            },
-            "per_item_values": {
-                "HDP00258": {
-                    "__manifest": [
-                        {
-                            "md5sum": "459b157ad875428cda0c85e53b38eae9",
-                            "file_name": "physical_function_SMART.tsv",
-                            "file_size": 105534,
-                            "object_id": "dg.H34L/654d7f1f-b61c-49a9-8a74-c82400fa4c27"
-                        },
-                        {
-                            "md5sum": "487c433493e3f89c0c65fc5c6ff62467",
-                            "file_name": "substance_use_SMART.tsv",
-                            "file_size": 37823,
-                            "object_id": "dg.H34L/530fd95c-48b6-488e-a699-9377180bd82d"
-                        },
-                        {
-                            "md5sum": "1fce3aabc9a6cc94687d8de295a15f11",
-                            "file_name": "participant_SMART.tsv",
-                            "file_size": 17471,
-                            "object_id": "dg.H34L/80f0a338-18e0-48de-b70f-cdabd63f67d9"
-                        },
-                        {
-                            "md5sum": "34a00cb6013c20cc037db2ea5754c80d",
-                            "file_name": "visit_SMART.tsv",
-                            "file_size": 18380,
-                            "object_id": "dg.H34L/809ce13a-4004-407f-9ea8-97ceff0ea398"
-                        },
-                        {
-                            "md5sum": "d56323fb6d56b833462a0e47a5c45b9b",
-                            "file_name": "data_dictionary.tsv",
-                            "file_size": 5801,
-                            "object_id": "dg.H34L/0cefb9a4-73d3-4186-9205-da7458959719"
-                        },
-                        {
-                            "md5sum": "5a70a05e0f3911f2b1452bab3af03302",
-                            "file_name": "subject_characteristics_SMART.tsv",
-                            "file_size": 83518,
-                            "object_id": "dg.H34L/ac14daf4-4820-401d-a121-cffc10d23042"
-                        },
-                        {
-                            "md5sum": "735b3010623f6328be8fa0f054f67ad1",
-                            "file_name": "pain_SMART.tsv",
-                            "file_size": 22328,
-                            "object_id": "dg.H34L/802a8ca4-dd69-492b-b0e4-c1e8710a4bde"
-                        }
-                    ]
-                }
             }
         },
         "JCOIN": {

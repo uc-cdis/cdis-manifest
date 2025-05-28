@@ -134,12 +134,6 @@
   },
   "components": {
     "appName": "The Medical Imaging and Data Resource Center Commons",
-    "banner": [
-      {
-        "type": "warning",
-        "message": "Our helpdesk has moved! Starting 8/21, please contact us at midrc-support@gen3.org."
-      }
-    ],
     "index": {
       "introduction": {
         "heading": "MIDRC Data Commons",
@@ -308,7 +302,7 @@
           "name": "Resources"
         },
         {
-          "link": "https://gen3.org/resources/user/",
+          "link": "https://docs.gen3.org/gen3-resources/user-guide/",
           "name": "Gen3"
         },
         {
@@ -347,6 +341,10 @@
         {
           "text": "HHS Responsible Disclosure",
           "href": "https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+        },
+        {
+          "text": "The Medical Imaging and Data Resource Center (MIDRC) is funded by the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health under contract 75N92020D00021 and through The Advanced Research Projects Agency for Health (ARPA-H) \n This repository is under review for potential modification in compliance with Administration directives.",
+          "href": "#"
         }
       ]
     },

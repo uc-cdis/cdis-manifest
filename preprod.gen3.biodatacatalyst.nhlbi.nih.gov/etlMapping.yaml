@@ -1,5 +1,5 @@
 mappings:
-  - name: internalstaging_etl
+  - name: internalstaging_subject
     doc_type: subject
     type: aggregator
     root: subject
@@ -151,6 +151,8 @@ mappings:
       project:
         props:
           - name: dbgap_accession_number
+            src: dbgap_accession_number
+            fn: set
       program:
         props:
           - name: programs_name
@@ -183,6 +185,8 @@ mappings:
       project:
         props:
           - name: dbgap_accession_number
+            src: dbgap_accession_number
+            fn: set
       program:
         props:
           - name: programs_name
