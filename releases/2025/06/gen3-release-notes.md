@@ -53,11 +53,14 @@
 
 #### Bug Fixes
   - Fix user registration by overriding the default digest method used by 
-    itsdangerous for flask wtf ([#1250](https://github.com/uc-cdis/fence/pull/1250)) 
+    itsdangerous for flask wtf ([#1250](https://github.com/uc-cdis/fence/pull/1250))
+  - Ensure prometheus env var and directory exist by adding to Dockerfile
+    (eventually we should do this in the base image) ([#1259](https://github.com/uc-cdis/fence/pull/1259))
 
 #### Improvements
   - Add native docker builds for amd and arm in github actions. ([#1236](https://github.com/uc-cdis/fence/pull/1236)) 
-  - IP Address of user is now logged ([#1245](https://github.com/uc-cdis/fence/pull/1245)) 
+  - IP Address of user is now logged ([#1245](https://github.com/uc-cdis/fence/pull/1245))
+  - Clear out old, unused files and code ([#1259](https://github.com/uc-cdis/fence/pull/1259))
   - Clarify what the `MAX_ACCESS_TOKEN_TTL` setting is for in the configuration 
     comments ([#1247](https://github.com/uc-cdis/fence/pull/1247))
 
