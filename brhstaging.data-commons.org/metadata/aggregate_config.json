@@ -84,33 +84,6 @@
 				"commons_url" : "data.midrc.org"
 			}
 		},
-		"NIAID ClinicalData": {
-			"mds_url": "https://accessclinicaldata.niaid.nih.gov/",
-			"commons_url" : "accessclinicaldata.niaid.nih.gov",
-			"adapter": "gen3",
-			"config" : {
-				"guid_type": "my_metadata",
-				"study_field": "my_metadata"
-			},
-			"keep_original_fields": false,
-			"field_mappings" : {
-				"authz": "/open",
-				"tags": "path:tags",
-				"_unique_id": "path:_unique_id",
-				"study_id": "path:nct_number",
-				"study_description": "path:brief_summary",
-				"full_name": "path:title",
-				"short_name": "path:title",
-				"commons": "NCT",
-				"study_url": "path:publications",
-				"_subjects_count" : {
-					"path":"subjects_count",
-					"default": 0
-				},
-				"__manifest": "path:__manifest",
-				"commons_url" : "accessclinicaldata.niaid.nih.gov"
-			}
-		},
 		"JCOIN": {
 			"mds_url": "https://jcoin.datacommons.io/",
 			"commons_url" : "jcoin.datacommons.io",
