@@ -1,4 +1,22 @@
 mappings:
+  - name: bih_dataset
+    doc_type: dataset
+    type: aggregator
+    root: dataset
+    props:
+      - name: project_id
+      - name: submitter_id
+      - name: collection_id
+      - name: commons_long_name
+      - name: commons_name
+      - name: data_url_doi
+      - name: disease_type
+      - name: full_name
+      - name: license
+      - name: metadata_source_date
+      - name: metadata_source_version
+      - name: primary_site
+      - name: publication_citation
   - name: bih_subject
     doc_type: subject
     type: aggregator
