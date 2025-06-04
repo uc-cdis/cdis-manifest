@@ -207,7 +207,7 @@
     "portal_app": "gitops",
     "kube_bucket": "kube-stageprod-gen3",
     "logs_bucket": "logs-stageprod-gen3",
-    "sync_from_dbgap": "False",
+    "sync_from_dbgap": "True",
     "useryaml_s3path": "s3://cdis-gen3-users/stageprod/user.yaml",
     "public_datasets": true,
     "tier_access_level": "regular",
@@ -239,8 +239,8 @@
   "scaling": {
     "arborist": {
       "strategy": "auto",
-      "min": 4,
-      "max": 8,
+      "min": 2,
+      "max": 4,
       "targetCpu": 40
     },
     "portal": {
