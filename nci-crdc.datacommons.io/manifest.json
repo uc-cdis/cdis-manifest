@@ -10,9 +10,15 @@
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2025.06",
     "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2025.06",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+<<<<<<< chore/apply_202506_to_nci-crdc_datacommons_io_1748980798
     "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2025.06",
     "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:chore_copy_glacier_ir",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.06",
+=======
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2025.05",
+    "datareplicate": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/dcf-dataservice:chore_copy_glacier_ir",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.05",
+>>>>>>> master
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "google-sa-validation": "placeholder:2025.06",
     "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.06",
