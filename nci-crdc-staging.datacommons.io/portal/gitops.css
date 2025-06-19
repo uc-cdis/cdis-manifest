@@ -1,8 +1,0 @@
-/* Hide Data Dictionary information */
-.footer__version-area > div:nth-child(1) {
-  display: none;
-}
-/*Hide Google Login Option*/
-.login-page__entries:has(div.Google-Login) {
-  display: none
-}
