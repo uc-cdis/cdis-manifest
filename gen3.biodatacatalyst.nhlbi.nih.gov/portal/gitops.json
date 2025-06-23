@@ -36,6 +36,11 @@
   },
   "components": {
     "appName": "NHLBI BioData Catalyst®",
+    "banner": {
+      "type": "info",
+      "message": "Login utilizing eRA Commons is currently unavailable due to a service outage associated with the Researcher Auth Service (RAS). This has been escalated to the NIH.",
+      "resetMsgDays": 1
+    },
     "index": {
       "introduction": {
         "heading": "",
