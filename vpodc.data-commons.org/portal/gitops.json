@@ -312,5 +312,11 @@
     ],
     "showArboristAuthzOnProfile": true,
     "showFenceAuthzOnProfile": false,
+    "userAccessToSite": {
+        "enabled": true,
+        "noAccessMessage": "Access to this site requires special permission.",
+        "deniedPageURL": "/access-denied",
+        "userAccessIncludes": ["/argo", "/workspace", "/programs"]
+    },
     "ddUrl": "ddog-gov.com"
 }
