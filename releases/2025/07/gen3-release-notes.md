@@ -7,7 +7,7 @@
     for some other improvements. Please see refer to the full list below in the [Audit Services notes](#improvements).
     
   - **Breaking changes**
-    - Note that the audit-service improvements have introducted breaking changes. For the details and required actions,
+    - Note that the audit-service improvements have introduced breaking changes. For the details and required actions,
       please see the [Audit Service dependency update and breaking changes notes](#dependency-updates) below.
 
 
