@@ -3,12 +3,12 @@
 ## Release Highlights and Announcements
 
 #### We've made significant updates to the audit service.
-  - The major underlying change is a switch to SQLAlchemy from GINO, which provided an opportunity for some other
-    improvements. Please see refer to the full list in the [Audit Services notes](#improvements), below.
+  - The major underlying change is a switch to SQLAlchemy from GINO, which provided an opportunity
+    for some other improvements. Please see refer to the full list below in the [Audit Services notes](#improvements).
     
   - **Breaking changes**
     - Note that the audit-service improvements have introducted breaking changes. For the details and required actions,
-      please see the [Audit Service notes](#breaking-changes), below.
+      please see the [Audit Service dependency update and breaking changes notes](#dependency-updates) below.
 
 
 ## uc-cdis/arborist
