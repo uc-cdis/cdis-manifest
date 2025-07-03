@@ -111,16 +111,6 @@
   "showFenceAuthzOnProfile": true,
   "hideSubmissionIfIneligible": true,
   "componentToResourceMapping": {
-    "Workspace": {
-      "resource": "/workspace",
-      "method": "access",
-      "service": "jupyterhub"
-    },
-    "Analyze Data": {
-      "resource": "/workspace",
-      "method": "access",
-      "service": "jupyterhub"
-    },
     "Query": {
       "resource": "/query_page",
       "method": "access",
@@ -161,13 +151,6 @@
           "body": "Search and download subsets of data from the MIDRC Data Commons using GraphQL queries.",
           "link": "/query",
           "label": "Query Data"
-        },
-        {
-          "name": "Analyze Data",
-          "icon": "data-analyze",
-          "body": "Perform analysis on the MIDRC Data Commons data using Jupyter Notebooks.",
-          "link": "/workspace",
-          "label": "Run Analysis"
         }
       ],
       "homepageChartNodes": [
@@ -270,12 +253,6 @@
           "icon": "bar-chart",
           "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data discovered in the MIDRC Data Commons by running a static tutorial notebook, or use one of these examples as a launching point for your own custom analysis.",
           "color": "#a2a2a2"
-        },
-        {
-          "name": "Workspace",
-          "link": "/workspace",
-          "icon": "workspace",
-          "tooltip": "The Workspace provides a secure cloud environment featuring Jupyter Notebooks and RStudio."
         }
       ]
     },
