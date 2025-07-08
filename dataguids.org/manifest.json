@@ -74,14 +74,6 @@
         "type": "indexd"
       },
       {
-        "name": "AnVIL",
-        "host": "https://gen3.theanvil.io/index/",
-        "hints": [
-          ".*dg\\.ANV0.*"
-        ],
-        "type": "indexd"
-      },
-      {
         "name": "JCOIN",
         "host": "https://jcoin.datacommons.io/index/",
         "hints": [
@@ -126,14 +118,6 @@
         "host": "https://gen3.agha.umccr.org/index/",
         "hints": [
           ".*dg\\.UM33R90.*"
-        ],
-        "type": "indexd"
-      },
-      {
-        "name": "Accessclinicaldata",
-        "host": "https://accessclinicaldata.niaid.nih.gov/index/",
-        "hints": [
-          ".*dg\\.NACD.*"
         ],
         "type": "indexd"
       },
