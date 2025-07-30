@@ -1,6 +1,5 @@
 # Core Gen3 Release 2025.08 (Cuprite)
 
-
 ## Release Highlights and Announcements
 
 #### We've added generic IdP support in Fence. 
