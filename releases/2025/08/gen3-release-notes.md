@@ -5,8 +5,7 @@
 
 #### We've added generic IdP support in Fence. 
 - For details, see the [new features](#new-features-2) section of the Fence release notes, below.
-  (Note that this means some previous configuration options have been deprecated and will
-  eventually be removed.)
+  (Note that some previous configuration options have been deprecated and will _eventually_ be removed.)
 
 ## uc-cdis/audit-service
 
