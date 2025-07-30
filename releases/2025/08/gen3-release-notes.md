@@ -17,7 +17,8 @@
 ## uc-cdis/data-portal
 
 #### New Features
-  - Adds UI for new search functionality ([#1706](https://github.com/uc-cdis/data-portal/pull/1706)) 
+  - Adds UI for new (upcoming) search functionality ([#1706](https://github.com/uc-cdis/data-portal/pull/1706)). The complete
+    feature will be included in a subsequent release.
 
 #### Improvements
   - Clarify the documentation of the `loginForDownload` setting ([#1708](https://github.com/uc-cdis/data-portal/pull/1708)) 
