@@ -1,4 +1,13 @@
 # Core Gen3 Release 2025.08 (Cuprite)
+
+
+## Release Highlights and Announcements
+
+#### We've added generic IdP support in Fence. 
+- For details, see the [new features](#new-features-2) section of the Fence release notes, below.
+  (Note that this means some previous configuration options have been deprecated and will
+  eventually be removed.)
+
 ## uc-cdis/audit-service
 
 #### New Features
