@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MIDRC_Clinical_Data</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Cohort_Selection_Using_MIDRC_Temporal_COVID_Test_Data</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7511,40 +7511,33 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=01f878af">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="MIDRC-Open-R1-Clinical-Data">MIDRC Open-R1 Clinical Data<a class="anchor-link" href="#MIDRC-Open-R1-Clinical-Data">¶</a></h1><p><em>Please note: This notebook uses open access data</em></p>
-<h5 id="Created-By:-J-Montgomery-Maxwell">Created By: J Montgomery Maxwell<a class="anchor-link" href="#Created-By:-J-Montgomery-Maxwell">¶</a></h5>
+<h1 id="Cohort-Selection-Using-MIDRC-Temporal-COVID-Test-Data">Cohort Selection Using MIDRC Temporal COVID Test Data<a class="anchor-link" href="#Cohort-Selection-Using-MIDRC-Temporal-COVID-Test-Data">¶</a></h1><hr/>
+<p>by Chris Meyer, PhD</p>
+<p>Manager of Data and User Services at the Center for Translational Data Science at the University of Chicago</p>
+<p>August 2022</p>
+<hr/>
+<p>This Jupyter notebook tutorial demonstrates how to use the MIDRC data commons' APIs to access imaging study and COVID-19 test data, how to use temporal properties in those data to select a cohort of COVID-19 positive imaging studies, and how to access those image files.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5dfa1c83">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In this notebook we will visualize the distribution of subjects accross a variety demographics and their COVID-19 status in the Open-R1 dataset from The Medical Imaging and Data Resource Center. (MIDRC - <a href="https://data.midrc.org/">https://data.midrc.org/</a>)</p>
+<h1 id="Python-packages:">Python packages:<a class="anchor-link" href="#Python-packages:">¶</a></h1>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bff7dca">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The Open-R1 data set has 1,169 subjects, this notebook will compare the distribution of COVID-19 positive and negative patients across multiple demographic classes. In particular we will focus on the subjects' age groups (-20, 21-30, ..., 90+), sex (Male or Female), race (Black or African American, White, Asian, Pacific Islander, American Indian, Other, or Not Reported), and whether the subject is Hispanic or Latino. Below is a subset of the dataset.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d214a58d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7565,7 +7558,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=112c887d">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Import-Python-Packages-and-scripts">Import Python Packages and scripts<a class="anchor-link" href="#Import-Python-Packages-and-scripts">¶</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7573,25 +7577,26 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import Python Packages and scripts</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">webbrowser</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">gen3</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pydicom</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">gen3.submission</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Submission</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">gen3.auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Auth</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">gen3.index</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Index</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">expansion</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Exansion</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">expansion</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Expansion</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">gen3.query</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gen3Query</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a005ec13">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7599,8 +7604,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import some custom Python scripts from personal GitHub repo.</span>
-<span class="c1"># Change these directory paths to reflect your local working directory.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import some custom Python scripts from personal GitHub repo</span>
+<span class="c1"># change these directory paths to reflect your local working directory</span>
 
 <span class="n">home_dir</span> <span class="o">=</span> <span class="s2">"/Users/christopher"</span> 
 <span class="n">demo_dir</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">/Documents/Notes/MIDRC/tutorials"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">home_dir</span><span class="p">)</span>
@@ -7614,7 +7619,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e4b39ef9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7622,7 +7627,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initiate instances of the Gen3 SDK Classes using credentials file for authentication.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initiate instances of the Gen3 SDK Classes using credentials file for authentication</span>
 <span class="c1"># Change the directory path in "cred" to reflect the location of your credentials file.</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="s2">"https://data.midrc.org"</span>
@@ -7637,7 +7642,32 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ab7c8d1a">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-can-one-associate-the-date-of-an-imaging-exam-with-the-date-of-COVID-19-test-results-for-a-patient?">How can one associate the date of an imaging exam with the date of COVID-19 test results for a patient?<a class="anchor-link" href="#How-can-one-associate-the-date-of-an-imaging-exam-with-the-date-of-COVID-19-test-results-for-a-patient?">¶</a></h2><hr/>
+<p>Specific dates are not allowed in the MIDRC data commons, but given a single "index_event" for a case, "days to X from index event" properties are provided.</p>
+<p>For example, one can query or export the imaging_study node, which has "days_to_study", and the measurement node, which has "test_days_from_index", and merge into a single table on "case_ids" (the unique, de-identified patient identifiers) to create a temporal timeline of imaging studies and COVID-19 tests for a cohort of patients.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Export-metadata-using-submission-API">Export metadata using submission API<a class="anchor-link" href="#Export-metadata-using-submission-API">¶</a></h2><hr/>
+<p>Here we'll utilize the MIDRC submission API to export all the imaging study and measurement (COVID-19 tests) data using the <a href="https://github.com/cgmeyer/gen3sdk-python/blob/2aecc6575b22f9cca279b650914971dd6723a2ce/expansion/expansion.py#L219">"get_node_tsvs" function</a>, which is a wrapper to export and merge all the records in a node across each project in the data commons using the <a href="https://github.com/uc-cdis/gen3sdk-python/">Gen3SDK</a> function <a href="https://github.com/uc-cdis/gen3sdk-python/blob/5d7b5270ff11cf7037f211cf01e410d8e73d6b84/gen3/submission.py#L361">Gen3Submission.export_node()</a>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7645,63 +7675,404 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Function to sort subjects into various age groups</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">age_group</span><span class="p">(</span><span class="n">agelist</span><span class="p">):</span>
-    <span class="n">min_age</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">agelist</span><span class="p">)</span>
-    <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"-20 yr"</span><span class="p">,</span> <span class="s2">"21-30 yr"</span><span class="p">,</span> <span class="s2">"31-40 yr"</span><span class="p">,</span> <span class="s2">"41-50 yr"</span><span class="p">,</span> <span class="s2">"51-60 yr"</span><span class="p">,</span> <span class="s2">"61-70 yr"</span><span class="p">,</span> <span class="s2">"71-80 yr"</span><span class="p">,</span> <span class="s2">"81-90 yr"</span><span class="p">,</span> <span class="s2">"90+ yr"</span><span class="p">]</span>
-    <span class="n">grouplist</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agelist</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">60</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">80</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">90</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">grouplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
-            
-    <span class="k">return</span> <span class="n">grouplist</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Export all the records in the imaging_study node</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">get_node_tsvs</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="s1">'imaging_study'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">rows:</span><span class="si">{}</span><span class="s1">, columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">st</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filter the imaging_study data for only studies that have a non-null "days_to_study" and "DX" study_modality</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="o">~</span><span class="n">st</span><span class="p">[</span><span class="s1">'days_to_study'</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="s1">'study_modality'</span><span class="p">]</span><span class="o">==</span><span class="s1">'DX'</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'rows:</span><span class="si">{}</span><span class="s1">, columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">s</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Export all the data in the measurement node, which is used to store the COVID test data</span>
+<span class="n">meas</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">get_node_tsvs</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="s1">'measurement'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">rows:</span><span class="si">{}</span><span class="s1">, columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">meas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">meas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">meas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Filter the measurements for only COVID-19 tests with a non-null "test_days_from_index" property</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">meas</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="o">~</span><span class="n">meas</span><span class="p">[</span><span class="s1">'test_days_from_index'</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">meas</span><span class="p">[</span><span class="s1">'test_name'</span><span class="p">]</span><span class="o">==</span><span class="s1">'COVID-19'</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">rows:</span><span class="si">{}</span><span class="s1">, columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Check out the properties in each DataFrame to help make a list of properties to merge into a single table</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Merge the imaging_study and measurement data using "case_ids" as a foreign key</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">s</span><span class="p">[[</span><span class="s1">'study_uid'</span><span class="p">,</span><span class="s1">'days_to_study'</span><span class="p">,</span><span class="s1">'case_ids'</span><span class="p">]],</span><span class="n">m</span><span class="p">[[</span><span class="s1">'project_id'</span><span class="p">,</span><span class="s1">'submitter_id'</span><span class="p">,</span><span class="s1">'test_name'</span><span class="p">,</span><span class="s1">'test_result_text'</span><span class="p">,</span><span class="s1">'case_ids'</span><span class="p">,</span><span class="s1">'test_days_from_index'</span><span class="p">]],</span><span class="n">on</span><span class="o">=</span><span class="s1">'case_ids'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">rows:</span><span class="si">{}</span><span class="s1">, columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">temp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Calculate-the-days-from-COVID-19-test-to-an-imaging_study">Calculate the days from COVID-19 test to an imaging_study<a class="anchor-link" href="#Calculate-the-days-from-COVID-19-test-to-an-imaging_study">¶</a></h2><hr/>
+<p>Now that we have the temporal data for imaging studies and COVID-19 tests in a single DataFrame for all cases in MIDRC for which this data is provided, we can calculate the number of days between each imaging study and each COVID-19 test, which we'll call <code>days_from_study_to_test</code>.</p>
+<ul>
+<li>Note: In MIDRC, a negative "days to XYZ" indicates that the event XYZ took place that many days prior to the index event, while a positive "days to" indicates the number of days since the index event. For example, a "days_to_study" of "-10" indicates that the imaging study was performed 10 days <em>before</em> the index event. A value of "365" indicates the imaging study took place one year <em>after</em> the index event.</li>
+</ul>
+<p>In the case of a derived property like <code>days_from_study_to_test</code>, the date of the study can be thought of as the 0 point, and the test takes place in time either before the study, moving backwards on the timeline (negative value) or the test takes place after the study (moving forward in time).</p>
+<p>So, we expect a positive value for <code>days_from_study_to_test</code> if the test was performed after the study.</p>
+<ul>
+<li>For example, if <code>test_days_from_index</code> is <code>1</code> and <code>days_to_study</code> is <code>4</code>, the <code>days_from_study_to_test</code> should be <code>-3</code>, which means the test took place 3 days before the study.</li>
+<li>If the COVID test is on day 4 and the imaging study is on day 1, then the <code>days_from_study_to_test</code> is <code>3</code>, meaning the COVID-19 test took place 3 days after the imaging study.</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Calculate the days from COVID-19 test to an imaging_study</span>
+<span class="n">temp</span><span class="p">[</span><span class="s1">'days_from_study_to_test'</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="s1">'test_days_from_index'</span><span class="p">]</span> <span class="o">-</span> <span class="n">temp</span><span class="p">[</span><span class="s1">'days_to_study'</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Identify-%22COVID-19-positive%22-imaging-studies">Identify "COVID-19 positive" imaging studies<a class="anchor-link" href="#Identify-%22COVID-19-positive%22-imaging-studies">¶</a></h2><hr/>
+<p>Now that we've calculated <code>days_from_study_to_test</code>, we can define a cut-off value and filter the imaging studies using that value to determine which imaging studies were performed within a certain time-frame of receiving a positive COVID-19 test.</p>
+<p>Again, our new derived attribute <code>days_from_study_to_test</code> has a positive value if the COVID test was performed after the imaging study (i.e., from the study date to test date is moving forward in time) and a negative value if the COVID test was performed before the imaging study (i.e., go back in time from the imaging date to the COVID test date).</p>
+<p>For this demo, let's assume that an imaging study was performed when a person was "COVID-positive" if the imaging study was performed within a 7 day window after a positive test result. So, we'll filter the DataFrame of studies for a <code>days_from_study_to_test</code> in the range of -7 to 0 and also require the <code>test_result_text</code> to be <code>Positive</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">temp</span><span class="p">[</span><span class="s1">'days_from_study_to_test'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="s1">'days_from_study_to_test'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="s1">'test_result_text'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Positive'</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Saving the data frame to a csv</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">demo_dir</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'DX_imaging_studies_plus_covid_tests.tsv'</span> 
+<span class="n">ps</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Get-the-imaging-files-for-the-identified-studies-or-cases.">Get the imaging files for the identified studies or cases.<a class="anchor-link" href="#Get-the-imaging-files-for-the-identified-studies-or-cases.">¶</a></h2><hr/>
+<p>Now that we have a list of imaging studies that were deemed to take place soon after a patient was infected with COVID-19, we can use the study_uid, which is a unique identifier for imaging studies, to collect the associated files.</p>
+<p>Note: If we want <em>all</em> the imaging studies for the cohort of identified cases, e.g., to have a "healthy" or "baseline" images for comparison, we can instead use the case_ids to pull all imaging files for the cases, keeping in mind that this will pull any additional imaging studies that may fall outside our defined temporal range.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Make a list of study_uids and case_ids</span>
 
-<span class="c1">#Function to represent various demographics into a precent positivity statistic</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">percent_representation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">demographic_type</span><span class="p">,</span> <span class="n">demographics</span><span class="p">):</span>
+<span class="c1">## read in previously saved DataFrame if restarting notebook:</span>
+<span class="c1"># pd.read_csv(filename, sep='\t', dtype=str)</span>
 
-    <span class="n">positive_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'covid19_positive'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Yes'</span><span class="p">]</span>
-    <span class="n">negative_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'covid19_positive'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'No'</span><span class="p">]</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+
+<span class="n">sids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="s1">'study_uid'</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## This query retrieves ALL imaging_study records, we will next filter these results based on the COVID test data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">raw_data_download</span><span class="p">(</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">"imaging_study"</span><span class="p">,</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">"study_uid"</span><span class="p">,</span>
+        <span class="s2">"case_ids"</span><span class="p">,</span>
+        <span class="s2">"object_id"</span><span class="p">,</span>
+        <span class="s2">"project_id"</span>
+    <span class="p">],</span>
+    <span class="n">sort_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">"study_uid"</span><span class="p">:</span> <span class="s2">"asc"</span><span class="p">}],</span>
+    <span class="n">accessibility</span><span class="o">=</span><span class="s2">"accessible"</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Take a glance at the returned data</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># convert the query data to a DataFrame and remove any records that lack a study_uid or object_id</span>
+<span class="n">studies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">studies</span> <span class="o">=</span> <span class="n">studies</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="o">~</span><span class="n">studies</span><span class="p">[</span><span class="s1">'object_id'</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span><span class="o">&amp;</span><span class="p">(</span><span class="o">~</span><span class="n">studies</span><span class="p">[</span><span class="s1">'study_uid'</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">())]</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">studies</span><span class="p">))</span>
+<span class="n">studies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convert lists to strings; necessary because the properties case_ids and object_id are arrays in the dictionary, and thus are returned as lists.</span>
+<span class="n">studies</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">studies</span><span class="p">[</span><span class="s1">'case_ids'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Now filter the imaging studies based on our temporal results</span>
+<span class="n">covid_studies</span> <span class="o">=</span> <span class="n">studies</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">studies</span><span class="p">[</span><span class="s1">'study_uid'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">sids</span><span class="p">)]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">covid_studies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># save our result to a csv</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">"covid_positive_DX_imaging_studies_7d_window_with_object_ids.tsv"</span>
+<span class="n">covid_studies</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">object_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">a</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">covid_studies</span><span class="o">.</span><span class="n">object_id</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">b</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">object_ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Now-that-we-have-a-list-of-file-object_ids-for-the-desired-imaging-studies,-we-can-use-the-Gen3-SDK-%22drs-pull%22-commands-to-access-the-files-themselves.">Now that we have a list of file object_ids for the desired imaging studies, we can use the Gen3 SDK "drs-pull" commands to access the files themselves.<a class="anchor-link" href="#Now-that-we-have-a-list-of-file-object_ids-for-the-desired-imaging-studies,-we-can-use-the-Gen3-SDK-%22drs-pull%22-commands-to-access-the-files-themselves.">¶</a></h2><hr/>
+<p>First, we'll create a manifest.json file using a <a href="https://github.com/cgmeyer/gen3sdk-python/blob/389e3945482439ace6e4536e6d0e35c6e48de9c9/expansion/expansion.py#L2575">simple script</a>. Then we'll use the <code>gen3 drs-pull manifest</code> command to download the files.</p>
+<p>See the detailed documentation to learn more about the Gen3 SDK drs-pull command: <a href="https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/howto/drsDownloading.md">https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/howto/drsDownloading.md</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save the manifest of file object_ids to a JSON file</span>
+<span class="n">mani_name</span> <span class="o">=</span> <span class="s1">'MIDRC_DX_imaging_studies_covid_positive_manifest.json'</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">write_manifest</span><span class="p">(</span><span class="n">guids</span><span class="o">=</span><span class="n">object_ids</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">mani_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># To download all files in the manifest, use the "gen3 drs-pull manifest" command</span>
+<span class="n">download_dir</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">/images"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">demo_dir</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">download_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">download_dir</span><span class="p">)</span>
     
-    <span class="n">neg_percents</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">pos_percents</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">demographics</span><span class="p">:</span>
-        <span class="n">neg_percents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">negative_df</span><span class="p">[</span><span class="n">negative_df</span><span class="p">[</span><span class="n">demographic_type</span><span class="p">]</span> <span class="o">==</span> <span class="n">demo</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">negative_df</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
-        <span class="n">pos_percents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positive_df</span><span class="p">[</span><span class="n">positive_df</span><span class="p">[</span><span class="n">demographic_type</span><span class="p">]</span> <span class="o">==</span> <span class="n">demo</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">positive_df</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
-        
-    <span class="n">neg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-    <span class="n">pos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>     
-    
-    <span class="n">neg</span><span class="p">[</span><span class="n">demographic_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span>
-    <span class="n">neg</span><span class="p">[</span><span class="s1">'Percent'</span><span class="p">]</span> <span class="o">=</span> <span class="n">neg_percents</span>
-    <span class="n">neg</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Negative'</span>
-    
-    <span class="n">pos</span><span class="p">[</span><span class="n">demographic_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span>
-    <span class="n">pos</span><span class="p">[</span><span class="s1">'Percent'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos_percents</span>
-    <span class="n">pos</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Positive'</span>
-        
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">neg</span><span class="p">,</span> <span class="n">pos</span><span class="p">])</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">"gen3 --auth </span><span class="si">{}</span><span class="s2"> --endpoint data.midrc.org drs-pull manifest </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cred</span><span class="p">,</span> <span class="n">mani_name</span><span class="p">,</span> <span class="n">download_dir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c4095057">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7709,45 +8080,27 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Using the Gen3 connection "sub" data for project R1 is downloaded and converted into a data frame</span>
-<span class="n">cases</span> <span class="o">=</span> <span class="n">sub</span><span class="o">.</span><span class="n">export_node</span><span class="p">(</span><span class="n">program</span><span class="o">=</span><span class="s1">'Open'</span><span class="p">,</span><span class="n">project</span><span class="o">=</span><span class="s1">'R1'</span><span class="p">,</span><span class="n">node_type</span><span class="o">=</span><span class="s1">'case'</span><span class="p">,</span><span class="n">fileformat</span><span class="o">=</span><span class="s1">'tsv'</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">cases</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'zip'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'zip'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'age_group'</span><span class="p">]</span> <span class="o">=</span> <span class="n">age_group</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'age_at_index'</span><span class="p">])</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">race</span> <span class="o">==</span> <span class="s1">'Native Hawaiian or other Pacific Islander'</span><span class="p">,</span> <span class="s1">'race'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Pacific Islander'</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">race</span> <span class="o">==</span> <span class="s1">'American Indian or Alaskan Native'</span><span class="p">,</span> <span class="s1">'race'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'American Indian'</span> 
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">race</span> <span class="o">==</span> <span class="s1">'Black or African American'</span><span class="p">,</span> <span class="s1">'race'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Black or A.A.'</span> 
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'covid19_positive'</span><span class="p">,</span> <span class="s1">'age_group'</span><span class="p">,</span> <span class="s1">'sex'</span><span class="p">,</span> <span class="s1">'ethnicity'</span><span class="p">,</span> <span class="s1">'race'</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Run the manifest download command. </span>
+<span class="c1">## Note that this will take some time if the manifest is very large. It makes more sense to copy the above command and run in your terminal instead of from a Jupyter Notebook to monitor the progress in real-time.</span>
+<span class="c1"># subprocess.run(cmd, shell=True, capture_output=True)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=91a95e69">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Subjects'-COVID-19-Status">Subjects' COVID-19 Status<a class="anchor-link" href="#Subjects'-COVID-19-Status">¶</a></h3>
+<h2 id="Now-download-a-single-DX-image-and-display-it-in-the-notebook">Now download a single DX image and display it in the notebook<a class="anchor-link" href="#Now-download-a-single-DX-image-and-display-it-in-the-notebook">¶</a></h2><hr/>
+<p>Now we'll download a single x-ray file using the <code>gen3 drs-pull object</code> command and display the image and it's embedded metadata on the screen.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce373785">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Approximately 22% of the subjects in the Open-R1 dataset were COVID-19 positive at the time of the dataset indexing.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a28b5a37">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7755,28 +8108,20 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">covid_breakdown</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Number of COVID-19 positive subjects'</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'covid19_positive'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Yes'</span><span class="p">][</span><span class="s1">'covid19_positive'</span><span class="p">]),</span> 
-                   <span class="s1">'Number of COVID-19 negative subjects'</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'covid19_positive'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'No'</span><span class="p">][</span><span class="s1">'covid19_positive'</span><span class="p">]),</span> <span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">covid_breakdown</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Prepare to download a single image file via it's object_id using the gen3 SDK; save object_id to a variable</span>
+<span class="n">case_ids</span> <span class="o">=</span> <span class="n">covid_studies</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'case_ids'</span><span class="p">]</span>
+<span class="n">study_uid</span> <span class="o">=</span> <span class="n">covid_studies</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'study_uid'</span><span class="p">]</span>
+<span class="n">object_id</span> <span class="o">=</span> <span class="n">covid_studies</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'object_id'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Positivity percentage = </span><span class="si">{}</span><span class="s2">%"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">covid_breakdown</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="nb">list</span><span class="p">(</span><span class="n">covid_breakdown</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">case_ids</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">study_uid</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">object_id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99eed950">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Subject-Distribution">Subject Distribution<a class="anchor-link" href="#Subject-Distribution">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=93b2dd2b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7784,47 +8129,18 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">races</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Black or A.A.'</span><span class="p">,</span> 
-         <span class="s1">'White'</span><span class="p">,</span> 
-         <span class="s1">'Asian'</span><span class="p">,</span> 
-         <span class="s1">'Pacific Islander'</span><span class="p">,</span> 
-         <span class="s1">'American Indian'</span><span class="p">,</span> 
-         <span class="s1">'Other'</span><span class="p">,</span> 
-         <span class="s1">'Not Reported'</span><span class="p">]</span>
-<span class="n">plot_df</span> <span class="o">=</span> <span class="n">percent_representation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'race'</span><span class="p">,</span> <span class="n">races</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">races</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Build the SDK command to send to the shell.</span>
+<span class="c1"># Note: "gen3" refers to a Gen3 SDK function that runs at the users command line</span>
+<span class="c1"># Users may experience errors or warnings but may have still downloaded the file. Check this in your working directory.</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Negative'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Negative'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Positive'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Positive'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">races</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Percent'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Race'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Subject Representation By Race'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">"gen3 --auth </span><span class="si">{}</span><span class="s2"> --endpoint data.midrc.org drs-pull object </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cred</span><span class="p">,</span><span class="n">object_id</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10bc59b7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Users can examine the ratio of Negative and Positive COVID cases amoungst various demographics.  At many points thoughout the first two years of the pandemic, desparities of COVID positivity ratios were often noted.  Additionally, since subjects possess the ability to not report their race (Not Reported), differences in positivity ratios can be observed if present.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f1e11218">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7832,42 +8148,14 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">ethnicities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Not Hispanic or Latino'</span><span class="p">,</span> <span class="s1">'Hispanic or Latino'</span><span class="p">]</span> 
-
-<span class="n">plot_df</span> <span class="o">=</span> <span class="n">percent_representation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'ethnicity'</span><span class="p">,</span> <span class="n">ethnicities</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ethnicities</span><span class="p">))</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Negative'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Negative'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Positive'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Positive'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ethnicities</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Percent'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Ethnicity'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Subject Representation By Ethnicity'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run the download command.</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6589c91">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>When reduced to only two groups (Not Hispanic or Latino verse Hispanic or Latino), differences in COVID positivity can be observed if present.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12f528d5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7875,42 +8163,16 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">sexes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Male'</span><span class="p">,</span> <span class="s1">'Female'</span><span class="p">]</span> 
-
-<span class="n">plot_df</span> <span class="o">=</span> <span class="n">percent_representation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'sex'</span><span class="p">,</span> <span class="n">sexes</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sexes</span><span class="p">))</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Negative'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Negative'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Positive'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Positive'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">sexes</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Percent'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Sex'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Subject Representation By Sex'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The above command should have successfully downloaded a new directory with a zipped file.  </span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">"ls -l </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case_ids</span><span class="p">,</span><span class="n">study_uid</span><span class="p">)</span>
+<span class="n">stout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stout</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3834ea41">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>If present, a disparity of COVID positivity can be noted between sexes.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=486dfd08">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7918,42 +8180,151 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Grab the filename and series UID of the downloaded file using RegEx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"-20 yr"</span><span class="p">,</span> <span class="s2">"21-30 yr"</span><span class="p">,</span> <span class="s2">"31-40 yr"</span><span class="p">,</span> <span class="s2">"41-50 yr"</span><span class="p">,</span> <span class="s2">"51-60 yr"</span><span class="p">,</span> <span class="s2">"61-70 yr"</span><span class="p">,</span> <span class="s2">"71-80 yr"</span><span class="p">,</span> <span class="s2">"81-90 yr"</span><span class="p">,</span> <span class="s2">"90+ yr"</span><span class="p">]</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">' ([0-9\.]+.zip)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">stout</span><span class="p">))</span>
 
-<span class="n">plot_df</span> <span class="o">=</span> <span class="n">percent_representation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'age_group'</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
-<span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">zip_file</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No zip found."</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="mf">0.2</span><span class="p">,</span> 
-       <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Negative'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Negative'</span><span class="p">)</span>
+<span class="n">series_uid</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">"(\.zip)"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">series_uid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Unzip the imaging series package</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">zipfile</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZipFile</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> 
-       <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s1">'COVID-19 Status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Positive'</span><span class="p">][</span><span class="s1">'Percent'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Positive'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ages</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">'</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">demo_dir</span><span class="p">,</span><span class="n">case_ids</span><span class="p">,</span><span class="n">study_uid</span><span class="p">,</span><span class="n">zip_file</span><span class="p">),</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipObj</span><span class="p">:</span>
+    <span class="n">zipObj</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Input the name of the newly create .dcm file</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">"ls -l </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case_ids</span><span class="p">,</span><span class="n">study_uid</span><span class="p">,</span><span class="n">series_uid</span><span class="p">)</span>
+<span class="n">stout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the name of the first DICOM file in the extracted imaging series</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">' ([0-9\.]+.dcm)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">stout</span><span class="p">))</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Percent'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Age Group'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">dcm_file</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dcm_file</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No DCM files found."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Read in the DCM file using the python DICOM package pydicom</span>
+<span class="n">dimg</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case_ids</span><span class="p">,</span><span class="n">study_uid</span><span class="p">,</span><span class="n">series_uid</span><span class="p">,</span><span class="n">dcm_file</span><span class="p">),</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dimg</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## tell matplotlib to display our images as 6 x 6 inch image, with resolution of 100 dpi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> 
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Subject Representation By Age Group'</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
+<span class="c1">## tell matplotlib to display our image, using a gray-scale lookup table.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dimg</span><span class="o">.</span><span class="n">pixel_array</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0112e249">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The affect age plays in the prevalence of COVID positivity is displayed above.  It should be noted that this chart is not normalized by the age distribution of the general population.  Typically though, individuals &lt;20 years represent a significant portion of most general populations.</p>
+<h2 id="The-End">The End<a class="anchor-link" href="#The-End">¶</a></h2><hr/>
+<p>If you have any questions related to this notebook don't hesitate to reach out to the MIDRC Helpdesk at midrc-support@gen3.org or the author directly at cgmeyer@uchicago.edu</p>
+<p>Happy data wrangling!</p>
 </div>
 </div>
 </div>
