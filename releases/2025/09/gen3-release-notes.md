@@ -19,7 +19,7 @@
 
 #### Dependency Updates
   - Bumps [store2](https://github.com/nbubna/store) from 2.14.2 to 2.14.4. 
-    (#1667)
+    ([#1667](https://github.com/uc-cdis/data-portal/pull/1667))
 
 ## uc-cdis/fence
 
@@ -56,7 +56,7 @@
 
 #### Dependency Updates
   - Bumps [requests](https://github.com/psf/requests) from 2.32.3 to 2.32.4. 
-    (#133)
+    ([#133](https://github.com/uc-cdis/metadata-service/pull/133))
 
 #### Improvements
   - Add logs to admin authorization logic ([#143](https://github.com/uc-cdis/metadata-service/pull/143)) 
