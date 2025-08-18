@@ -39,7 +39,7 @@
 #### Dependency Updates
   - Bumps [on-headers](https://github.com/jshttp/on-headers) and 
     [compression](https://github.com/expressjs/compression). These dependencies 
-    needed to be updated together. (#324)
+    needed to be updated together. ([#324](https://github.com/uc-cdis/guppy/pull/324))
 
 #### Bug Fixes
   - Fixed a bug causing numeric aggregation query to crash if any of 
