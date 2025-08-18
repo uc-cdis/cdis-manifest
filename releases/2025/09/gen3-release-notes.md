@@ -75,7 +75,7 @@
 
 #### Dependency Updates
   - Bumps [requests](https://github.com/psf/requests) from 2.32.3 to 2.32.4. 
-    (#302)
+    ([#302](https://github.com/uc-cdis/tube/pull/302))
 
 ## uc-cdis/workspace-token-service
 
