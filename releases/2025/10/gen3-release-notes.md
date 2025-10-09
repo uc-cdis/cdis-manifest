@@ -1,4 +1,14 @@
 # Core Gen3 Release 2025.10 (Datolite)
+
+## Release Highlights and Announcements
+
+#### BREAKING CHANGE: Fence Usersync SFTP key management
+  - For enhanced security, the dbGaP/SFTP host key must be provided in the known_hosts file; new keys will no longer be added automatically.
+  - Please see the [breaking changes](#breaking-changes) AND [deployment changes](#deployment-changes) in the Fence notes for details.
+
+#### Faster usersync execution 
+  - Usersync has been dramatically accelerated by [streamlining the logic for updating policies](#improvements-2).
+
 ## uc-cdis/audit-service
 
 #### New Features
