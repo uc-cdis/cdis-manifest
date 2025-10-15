@@ -203,6 +203,9 @@ mappings:
       - name: _mr_series_file_count
         path: mr_series_files
         fn: count
+      - name: _radiology_reports_count
+        path: radiology_reports
+        fn: count
     parent_props:
       - path: cases[sex,race,age_at_index,index_event,zip,covid19_positive,ethnicity].datasets[dataset_submitter_id:submitter_id,license,data_url_doi,data_contributor]
     joining_props:
