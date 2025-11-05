@@ -3,8 +3,8 @@
 ## Release Highlights and Announcements
 
 #### Note: Breaking changes!
-  - ecs-ws-sidecare: environment variable for AL2 images. See [below](#breaking-changes).
-	- hatchery: restrictions on config filepath. See [below](#breaking-changes-1).
+  - ecs-ws-sidecar: environment variable for AL2 images. See [below](#breaking-changes).
+  - hatchery: restrictions on config filepath. See [below](#breaking-changes-1).
 
 #### Better handling of deeply nested queries in Guppy
   - We've made updates to guppy to support deeply nested queries and to the metadata service to support guppy doing so.
