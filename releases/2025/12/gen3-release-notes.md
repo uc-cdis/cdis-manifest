@@ -1,4 +1,9 @@
 # Core Gen3 Release 2025.12 (Enstatite)
+
+## Release Highlights and Announcements
+#### Note the deployment changes for Fence
+  - alembic migration must be run to account for amr and acr columns in the authorization\_code table.
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
