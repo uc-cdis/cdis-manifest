@@ -3,6 +3,7 @@
 ## Release Highlights and Announcements
 #### Note the deployment changes for Fence
   - alembic migration must be run to account for amr and acr columns in the authorization\_code table.
+    - alembic migration is automatically run if ENABLE_DB_MIGRATION is enabled in the fence configuration.
 
 ## uc-cdis/audit-service
 
@@ -46,7 +47,8 @@
 
 #### Deployment Changes
   - alembic migration must be run to account for amr and acr columns in the 
-    `authorization_code` table. ([#1301](https://github.com/uc-cdis/fence/pull/1301)) 
+    `authorization_code` table. ([#1301](https://github.com/uc-cdis/fence/pull/1301))
+    - alembic migration is automatically run if ENABLE_DB_MIGRATION is enabled in the fence configuration.
 
 ## uc-cdis/guppy
 
