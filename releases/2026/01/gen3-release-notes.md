@@ -45,13 +45,13 @@
 
 #### Dependency Updates
   - Bumps [express](https://github.com/expressjs/express) from 4.21.2 to 
-    4.22.1. (#1745)
+    4.22.1. ([#1745](https://github.com/uc-cdis/data-portal/pull/1745))
   - Bumps and [js-yaml](https://github.com/nodeca/js-yaml). These dependencies 
-    needed to be updated together. (#1742)
+    needed to be updated together. ([#1742](https://github.com/uc-cdis/data-portal/pull/1742))
   - Bumps [node-forge](https://github.com/digitalbazaar/forge) from 1.3.1 to 
-    1.3.2. (#1744)
+    1.3.2. ([#1744](https://github.com/uc-cdis/data-portal/pull/1744))
   - Bumps [min-document](https://github.com/Raynos/min-document) from 2.19.0 to 
-    2.19.2. (#1741)
+    2.19.2. ([#1741](https://github.com/uc-cdis/data-portal/pull/1741))
 
 ## uc-cdis/fence
 
@@ -99,13 +99,13 @@
 
 #### Dependency Updates
   - Bumps and [js-yaml](https://github.com/nodeca/js-yaml). These dependencies 
-    needed to be updated together. (#339)
+    needed to be updated together. ([#339](https://github.com/uc-cdis/guppy/pull/339))
 
 ## uc-cdis/hatchery
 
 #### Dependency Updates
   - Bumps [golang.org/x/oauth2](https://github.com/golang/oauth2) from 0.25.0 
-    to 0.27.0. (#136)
+    to 0.27.0. ([#136](https://github.com/uc-cdis/hatchery/pull/136))
 
 ## uc-cdis/metadata-service
 
