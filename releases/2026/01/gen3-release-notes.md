@@ -77,8 +77,6 @@
   - This change will set the default url to Arborist for all fence deployments. 
     If you want to continue to use fence without arborist, you must explicitly 
     set `ARBORIST: null` in your fence configuration. ([#1235](https://github.com/uc-cdis/fence/pull/1235)) 
-  - Deployment changes are being done as a part of this gen3-helm PR ([#426](https://github.com/uc-cdis/gen3-helm/pull/426)) 
-    ([#1302](https://github.com/uc-cdis/fence/pull/1302))
 
 ## uc-cdis/gen3-user-data-library
 
