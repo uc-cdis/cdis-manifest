@@ -1,4 +1,17 @@
 # Core Gen3 Release 2026.01 (Eosphorite)
+
+## Release Highlights and Announcements
+#### Breaking changes for Fence
+  See [Fence notes](#breaking-changes) below.
+  - There is now a default Arborist url for Fence deployments.
+  - If you want to continue to use fence without arborist, you must explicitly set `ARBORIST: null` in your fence configuration.
+  - Support for `local_settings.py` has been removed.
+
+#### Happy New Year 2026!
+We want to take this opportunity to thank the Gen3 community for your engagement and contributions in 2025. We look forward to 
+exciting new features and enhancements in 2026. You can learn about the roadmap in this month's [Community Forum](https://gen3.org/community/events/#gen3-development-roadmap-for-2026).
+
+
 ## uc-cdis/arborist
 
 #### Dependency Updates
