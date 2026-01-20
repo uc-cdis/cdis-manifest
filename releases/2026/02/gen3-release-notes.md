@@ -59,10 +59,10 @@
     dependencies [qs](https://github.com/ljharb/qs), 
     [express](https://github.com/expressjs/express) and 
     [body-parser](https://github.com/expressjs/body-parser). These dependencies 
-    need to be updated together. (#342)
+    need to be updated together. ([#342](https://github.com/uc-cdis/guppy/pull/342))
   - Bumps 
     [storybook](https://github.com/storybookjs/storybook/tree/HEAD/code/core) 
-    from 7.6.20 to 7.6.21. (#341)
+    from 7.6.20 to 7.6.21. ([#341](https://github.com/uc-cdis/guppy/pull/341))
 
 ## uc-cdis/hatchery
 
