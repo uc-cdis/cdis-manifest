@@ -1,0 +1,109 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.12",
+    "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2023.12",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.12",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.12",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.12",
+    "guppy": "quay.io/cdis/guppy:feat_skip_disabled_fields",
+    "kayako-wrapper": "quay.io/cdis/kayako-wrapper-service:0.2.0",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.12",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.12",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.12",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.12",
+    "requestor": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2023.12",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.12",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.12",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.12"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "global": {
+    "environment": "bih",
+    "hostname": "bih.data-commons.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.0.6/schema.json",
+    "dispatcher_job_num": "10",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube_bucket.devplanetv1.gen3",
+    "logs_bucket": "logs-devplanetv1-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/brh/user.yaml",
+    "tier_access_level": "regular",
+    "tier_access_limit": 50,
+    "public_datasets": true,
+    "netpolicy": "on",
+    "argocd": "true",
+    "waf_enabled": "true",
+    "pdb": "on",
+    "karpenter": "true",
+    "es7": true
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "bih"
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "default-commons-index",
+	"type": "metadata"
+      }
+    ],
+   "config_index": "default-commons-config-index"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "ecosystem"
+  },
+  "canary": {
+    "default": 0
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1,
+      "targetCpu": 40
+    },
+    "metadata": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1,
+      "targetCpu": 40
+    }
+  }
+}
