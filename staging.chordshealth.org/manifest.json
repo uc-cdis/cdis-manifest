@@ -7,25 +7,25 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2024.02",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2025.03",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.02",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.02",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.02",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2024.02",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2024.02",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2025.03",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2025.03",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2025.03",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2025.03",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2025.03",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2025.03",
     "frontend-framework": "quay.io/cdis/frontend-framework:feat_n3c",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.02",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2025.03",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2024.02",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2024.02",
-    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2024.02",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2024.02",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2025.03",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2025.03",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2025.03",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2025.03",
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.02",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2024.02",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2024.02"
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2025.03",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2025.03",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2025.03"
   },
   "arborist": {
     "deployment_version": "2"
@@ -41,7 +41,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2024.02"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2025.03"
     }
   },
   "sower": [
@@ -50,7 +50,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2024.02",
+        "image": "quay.io/cdis/pelican-export:2025.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -126,7 +126,7 @@
       "action": "export-files",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:2024.02",
+        "image": "quay.io/cdis/pelican-export:2025.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -192,7 +192,7 @@
       "serviceAccountName": "FIXME",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/metadata-manifest-ingestion:2024.02",
+        "image": "quay.io/cdis/metadata-manifest-ingestion:2025.03",
         "pull_policy": "Always",
         "env": [
           {
@@ -232,7 +232,7 @@
       "serviceAccountName": "FIXME",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/get-dbgap-metadata:2024.02",
+        "image": "quay.io/cdis/get-dbgap-metadata:2025.03",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
