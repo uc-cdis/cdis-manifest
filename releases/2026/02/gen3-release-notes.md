@@ -64,6 +64,9 @@
     [storybook](https://github.com/storybookjs/storybook/tree/HEAD/code/core) 
     from 7.6.20 to 7.6.21. ([#341](https://github.com/uc-cdis/guppy/pull/341))
 
+#### Bug Fixes
+  - Fix introspection = true to allow schema and autocomplete in the GraphQL playground. ([#344](https://github.com/uc-cdis/guppy/pull/344)) 
+
 ## uc-cdis/hatchery
 
 #### New Features
