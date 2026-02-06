@@ -1,4 +1,9 @@
 # Core Gen3 Release 2026.02 (Eudialyte)
+## Release Highlights and Announcements
+#### Note: Python version upgrade
+  - Upgrade to Python 3.13 across Gen3 services:
+audit-service, fence, peregrine, requestor, sheepdog, workspace-token-service
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
