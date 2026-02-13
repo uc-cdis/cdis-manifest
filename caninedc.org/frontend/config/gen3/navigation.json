@@ -1,0 +1,53 @@
+{
+  "navigation": {
+    "classNames": {
+      "root": "pl-1 mr-6 bg-base-max text-primary opacity-100 hover:opacity-100",
+      "item": "py-2 px-4 hover:bg-base-lightest hover:text-base-contrast",
+      "navigationPanel": "bg-base-max text-primary-darker"
+    },
+    "logo": {
+      "src": "/icons/gen3-dark.png",
+      "width": 200,
+      "height": 128,
+      "href": "/"
+    },
+    "items": [
+      {
+        "icon": "gen3:dictionary",
+        "href": "/DataDictionary",
+        "name": "Dictionary",
+        "tooltip": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
+      },
+      {
+        "icon": "gen3:exploration",
+        "href": "/Explorer",
+        "name": "Exploration",
+        "tooltip": "The Exploration Page enables discovery of the data at the subject level and features a cohort builder."
+      },
+      {
+        "icon": "gen3:analysis",
+        "href": "/Analysis",
+        "name": "Analysis",
+        "tooltip": "Learn how to use Jupyter Notebooks to explore and visualize data available by running a tutorial notebook, or use one of these examples as a launching point for your own custom analysis."
+      },
+      {
+        "icon": "gen3:profile",
+        "href": "/Profile",
+        "name": "Profile",
+        "tooltip": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
+      }
+    ]
+  },
+  "topBar": {
+    "classNames" : {
+      "root" : "bg-primary"
+    },
+    "items": [
+      {
+        "href": "https://gen3.org/resources/user/",
+        "name": "Documentation"
+      }
+    ],
+    "loginButtonVisibility": "visible"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mapping" : {
+    "source" : {
+      "id": "prom",
+      "label": "Prometheus",
+      "description" : "PROject for Military Exposures and Toxin History Evaluation in US Service Members"
+    },
+    "external" : [
+      {
+        "id": "GDC",
+        "label": "Genomic Data Commons",
+        "dataPath": "crosswalk->subject->https://portal.gdc.cancer.gov->case.case_id->value",
+        "description": "A repository and computational platform for cancer researchers who need to understand cancer, its clinical progression, and response to therapy."
+      },
+      {
+        "id": "VPOC",
+        "label": "VPOC",
+        "dataPath": "crosswalk->subject->https://vpodc.data-commons.org->case.submitter_id->value",
+        "description": "Veterans Precision Oncology Data Commons® (VPOC) The Veterans Data Commons supports the management, analysis and sharing of veteran oncologic data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies for precision oncology"
+      },
+      {
+        "id": "TCIA",
+        "label": "TCIA",
+        "dataPath": "crosswalk->subject->https://www.cancerimagingarchive.net->subject.subject_id->value",
+        "description": "The Cancer Imaging Archive (TCIA) is a service which de-identifies and hosts a large archive of medical images of cancer accessible for public download"
+      }
+    ]
+  }
+}

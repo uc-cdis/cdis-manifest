@@ -1,0 +1,34 @@
+{
+  "classNames": {
+    "root": "bg-base-darker",
+    "layout": "flex items-center justify-end"
+  },
+  "rightSection": {
+    "columns": [
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/images/gen3.png",
+              "width": 132,
+              "height": 60,
+              "description": "Gen3 Logo"
+            }
+          }
+        ]
+      },
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/images/createdby.png",
+              "width": 170,
+              "height": 60,
+              "description": "Created by CTDS"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

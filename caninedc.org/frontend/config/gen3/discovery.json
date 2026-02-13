@@ -1,0 +1,252 @@
+{
+  "metadataConfig": [
+    {
+      "tableConfig": {
+        "selectableRows": true,
+        "expandableRows": true
+      },
+      "features": {
+        "advSearchFilters": {
+          "enabled": false,
+          "field": "advSearchFilters",
+          "displayName": "Filters",
+          "filters": [
+            {
+              "key": "Study Type"
+            },
+            {
+              "key": "Data Type"
+            },
+            {
+              "key": "Subject Type"
+            },
+            {
+              "key": "Gender"
+            },
+            {
+              "key": "Age"
+            }
+          ]
+        },
+        "tagsColumn": {
+          "enabled": false
+        },
+        "tagsInDescription": {
+          "enabled": true
+        },
+        "exportToWorkspace": {
+          "enabled": true,
+          "manifestFieldName": "__manifest",
+          "enableDownloadManifest": true,
+          "enableDownloadZip": true,
+          "downloadZipButtonText": "Download Zip",
+          "downloadManifestButtonText": "Download Manifest",
+          "documentationLinks": {
+            "gen3Client": "https://gen3.org/resources/user/gen3-client/",
+            "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
+          },
+          "verifyExternalLogins": true
+        },
+        "pageTitle": {
+          "enabled": true,
+          "title": "Discover Datasets"
+        },
+        "search": {
+          "searchBar": {
+            "enabled": true,
+            "inputSubtitle": "Search studies by keywords",
+            "searchableTextFields": [
+              "study_description",
+              "_unique_id",
+              "full_name"
+            ]
+          },
+          "tagSearchDropdown": {
+            "enabled": true,
+            "collapsibleButtonText": "Data Repository"
+          }
+        },
+        "authorization": {
+          "enabled": true,
+          "columnTooltip": "Filter by data access",
+          "supportedValues": {
+            "accessible": {
+              "enabled": true,
+              "menuText": "Available"
+            },
+            "unaccessible": {
+              "enabled": false,
+              "menuText": "Not Accessible"
+            },
+            "pending": {
+              "enabled": true,
+              "menuText": "Pending"
+            },
+            "notAvailable": {
+              "enabled": true,
+              "menuText": "Not Available"
+            }
+          }
+        }
+      },
+      "aggregations": [
+        {
+          "name": "Studies",
+          "field": "_unique_id",
+          "type": "count"
+        }
+      ],
+      "tagSelector": {
+        "showTagCategoryNames": true
+      },
+      "studies": [],
+      "studyColumns": [
+        {
+          "name": "Study ID",
+          "field": "_unique_id",
+          "contentType": "string",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        },
+        {
+          "name": "Study Name",
+          "field": "full_name",
+          "contentType": "string",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        },
+        {
+          "name": "Study Title",
+          "field": "study_title",
+          "contentType": "string",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        },
+        {
+          "name": "Source",
+          "field": "source",
+          "contentType": "string",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        },
+        {
+          "name": "Data Files",
+          "field": "__manifest",
+          "contentType": "manifest",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        },
+        {
+          "name": "Subjects",
+          "field": "subjects_count",
+          "contentType": "string",
+          "errorIfNotAvailable": false,
+          "valueIfNotAvailable": "n/a"
+        }
+      ],
+      "studyPreviewField": {
+        "name": "Study Description",
+        "field": "study_description",
+        "contentType": "string",
+        "includeName": true,
+        "includeIfNotAvailable": false,
+        "valueIfNotAvailable": "No summary has been provided for this study."
+      },
+      "simpleDetailsView": {
+        "header": {
+          "field": "study_title"
+        },
+        "downloadLinks": {
+          "field": "data_download_links"
+        },
+        "fieldsToShow": [
+          {
+            "groupWidth": "half",
+            "fields": [
+              {
+                "name": "Study Name",
+                "field": "full_name",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Study Title",
+                "field": "study_title",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Funding",
+                "field": "funding",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Source",
+                "field": "source",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Data Files",
+                "field": "data_files_count",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Subjects",
+                "field": "subjects_count",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Project ID",
+                "field": "project_id",
+                "contentType": "string",
+                "includeIfNotAvailable": false
+              },
+              {
+                "name": "Link",
+                "field": "link",
+                "contentType": "link",
+                "includeIfNotAvailable": false
+              }
+            ]
+          },
+          {
+            "groupWidth": "half",
+            "fields": [
+              {
+                "name": "Study Description",
+                "field": "study_description",
+                "contentType": "paragraph",
+                "includeIfNotAvailable": false,
+                "valueIfNotAvailable": "No summary has been provided for this study."
+              }
+            ]
+          }
+        ]
+      },
+      "tagsDisplayName": "Study Filters",
+      "tagColumnWidth": "500px",
+      "minimalFieldMapping": {
+        "authzField": "authz",
+        "tagsListFieldName": "tags",
+        "dataAvailabilityField": "data_availability",
+        "uid": "_hdp_uid"
+      },
+      "tagCategories": [
+        {
+          "name": "Condition",
+          "color": "#532565",
+          "display": false
+        },
+        {
+          "name": "Data Type",
+          "color": "#982568",
+          "display": false
+        }
+      ]
+    }
+  ]
+}

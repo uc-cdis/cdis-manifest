@@ -1,0 +1,52 @@
+{
+  "hasExternalLogins" : true,
+  "resourceTable": {
+    "serviceColors": {
+      "guppy": {
+        "service": "guppy",
+        "color": "red.4",
+        "label": "Guppy"
+      },
+      "requestor": {
+        "service": "requestor",
+        "color": "yellow.5",
+        "label": "Requestor"
+      },
+      "dictionary_page": {
+        "service": "dictionary_page",
+        "color": "blue.5",
+        "label": "Dictionary Page"
+      },
+      "job": {
+        "service": "job",
+        "color": "indigo.7",
+        "label": "Job"
+      },
+      "kayako": {
+        "service": "kayako",
+        "color": "yellow.6",
+        "label": "Kayako"
+      },
+      "fence": {
+        "service": "fence",
+        "color": "teal.4",
+        "label": "Fence"
+      },
+      "sheepdog": {
+        "service": "sheepdog",
+        "color": "grape.7",
+        "label": "Sheepdog"
+      },
+      "peregrine": {
+        "service": "peregrine",
+        "color": "lime.7",
+        "label": "Peregrine"
+      },
+      "jupyterhub": {
+        "service": "jupyterhub",
+        "color": "lime.4",
+        "label": "JuptyerHub"
+      }
+    }
+  }
+}
