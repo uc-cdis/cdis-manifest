@@ -43,7 +43,7 @@
 
 #### Dependency Updates
   - Bumps [lodash](https://github.com/lodash/lodash) from 4.17.21 to 4.17.23. 
-    (#347)
+    ([#347](https://github.com/uc-cdis/guppy/pull/347))
 
 #### Bug Fixes
   - Fix introspection = true to allow schema and autocomplete in the GraphQL 
@@ -101,7 +101,7 @@
 
 #### Dependency Updates
   - Bumps the pip group with 1 update in the /export_job directory: 
-    [pillow](https://github.com/python-pillow/Pillow). (#74)
+    [pillow](https://github.com/python-pillow/Pillow). ([#74](https://github.com/uc-cdis/sower-jobs/pull/74))
   - python to 3.13 ([#73](https://github.com/uc-cdis/sower-jobs/pull/73))
   - requests to 2.32.5 in `/export_job` ([#73](https://github.com/uc-cdis/sower-jobs/pull/73)) 
 
