@@ -1,4 +1,11 @@
 # Core Gen3 Release 2026.03 (Fergusonite)
+
+## Release Highlights and Announcements
+
+#### Note: Python version upgrade
+  - Upgrade to Python 3.13 across Gen3 services:
+gen3-workflow, indexd, pelican, sower-jobs
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
