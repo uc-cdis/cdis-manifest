@@ -3,11 +3,20 @@
     {
       "title": "Canine Data Commons Data Visualization Notebook",
       "type": "notebook",
-      "icon": "/icons/apps/jupyter.svg",
-      "image": "/images/apps/canineDataCommons.png",
-      "loginRequired": false,
+      "icon": "jupyter.svg",
+      "image": "canineDataCommons.png",
       "description": "Download node files, show/select data, and plot with this notebook using data hosted on the Canine Data Commons (https://caninedc.org) stored under the NHGRI project.",
+      "loginRequired": false,
       "href": "/notebook/notebook_canine.ipynb"
+    },
+    {
+      "title": "Clinical Data Analysis",
+      "type": "application",
+      "icon": "/images/apps/icons/gen3_app.png",
+      "image": "/images/apps/ClinicalData.png",
+      "description": "Use clinical variables to perform basic statistical analysis of your cohort.",
+      "loginRequired": false,
+      "href": "ClinicalDataAnalysis"
     }
   ]
 }

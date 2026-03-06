@@ -1,5 +1,4 @@
 {
-  "tabsLayout": "left",
   "sharedFilters": {
     "autoCreate": true
   },
@@ -181,11 +180,19 @@
       },
       "table": {
         "enabled": true,
-        "fields": ["project_id", "file_name", "file_size", "object_id"],
+        "fields": ["project_id", "file_name", "data_format","file_size", "object_id" ],
         "columns": {
           "file_size": {
             "type": "value",
             "cellRenderFunction": "filesize"
+          },
+          "object_id": {
+            "type": "link",
+            "cellRenderFunction": "linkOpenApp",
+            "params" : {
+              "tooltip" : "View in IGV",
+              "baseUrl" : "/igv"
+            }
           }
         }
       },
