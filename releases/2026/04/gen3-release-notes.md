@@ -20,27 +20,27 @@
 
 #### Dependency Updates
   - Bumps [flatted](https://github.com/WebReflection/flatted) from 3.2.7 to 
-    3.4.1. (#1779)
+    3.4.1. ([#1779](https://github.com/uc-cdis/data-portal/pull/1779))
   - Bumps [lodash-es](https://github.com/lodash/lodash) from 4.17.21 to 
-    4.17.23. (#1754)
+    4.17.23. ([#1754](https://github.com/uc-cdis/data-portal/pull/1754))
   - Bumps [lodash](https://github.com/lodash/lodash) from 4.17.21 to 4.17.23. 
-    (#1755)
-  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.0 to 2.8.2. (#1772)
+    ([#1755](https://github.com/uc-cdis/data-portal/pull/1755))
+  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.0 to 2.8.2. ([#1772](https://github.com/uc-cdis/data-portal/pull/1772))
   - Bumps [dompurify](https://github.com/cure53/DOMPurify) from 3.3.1 to 3.3.2. 
-    (#1775)
+    ([#1775](https://github.com/uc-cdis/data-portal/pull/1775))
   - Bumps [ajv](https://github.com/ajv-validator/ajv) from 6.12.6 to 6.14.0. 
-    (#1770)
+    ([#1770](https://github.com/uc-cdis/data-portal/pull/1770))
   - Bumps 
     [@apollo/server](https://github.com/apollographql/apollo-server/tree/HEAD/packages/server)
-    from 4.11.0 to 4.13.0. (#1758)
+    from 4.11.0 to 4.13.0. ([#1758](https://github.com/uc-cdis/data-portal/pull/1758))
   - Bumps [bn.js](https://github.com/indutny/bn.js) from 4.12.0 to 4.12.3. 
-    (#1768)
+    ([#1768](https://github.com/uc-cdis/data-portal/pull/1768))
   - Bumps [jsonpath](https://github.com/dchester/jsonpath) from 1.1.1 to 1.2.1. 
-    (#1763)
+    ([#1763](https://github.com/uc-cdis/data-portal/pull/1763))
   - Bumps [dompurify](https://github.com/cure53/DOMPurify) from 3.2.5 to 3.3.1. 
-    (#1771)
+    ([#1771](https://github.com/uc-cdis/data-portal/pull/1771))
   - Bumps and [minimatch](https://github.com/isaacs/minimatch). These 
-    dependencies needed to be updated together. (#1769)
+    dependencies needed to be updated together. ([#1769](https://github.com/uc-cdis/data-portal/pull/1769))
 
 #### Bug Fixes
   - Fixes scrollbar hang edge case on Discovery page ([#1778](https://github.com/uc-cdis/data-portal/pull/1778)) 
@@ -85,12 +85,12 @@
 
 #### Dependency Updates
   - Bumps and [minimatch](https://github.com/isaacs/minimatch). These 
-    dependencies needed to be updated together. (#360)
-  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.0 to 2.8.2. (#361)
+    dependencies needed to be updated together. ([#360](https://github.com/uc-cdis/guppy/pull/360))
+  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.0 to 2.8.2. ([#361](https://github.com/uc-cdis/guppy/pull/361))
   - Bumps [ajv](https://github.com/ajv-validator/ajv) from 6.12.6 to 6.14.0. 
-    (#356)
+    ([#356](https://github.com/uc-cdis/guppy/pull/356))
   - Bumps [webpack](https://github.com/webpack/webpack) from 5.95.0 to 5.105.0. 
-    (#351)
+    ([#351](https://github.com/uc-cdis/guppy/pull/351))
 
 ## uc-cdis/hatchery
 
