@@ -190,8 +190,12 @@
             "type": "link",
             "cellRenderFunction": "linkOpenApp",
             "params" : {
-              "tooltip" : "View in IGV",
-              "baseUrl" : "/igv"
+              "tooltip" : "View BAM File with IGV",
+              "baseUrl" : "app/IGVBamViewer?mode=explorer&returnData=Data Files&bam=",
+              "filter" : {
+                "field" : "data_format",
+                "value" : "BAM"
+              }
             }
           }
         }
