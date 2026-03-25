@@ -162,6 +162,14 @@
         "type": "indexd"
       },
       {
+        "name": "MMRF",
+        "host": "https:/virtuallab.themmrf.org/index/",
+        "hints": [
+          ".*dg\\.MMRF.*"
+        ],
+        "type": "indexd"
+      },
+      {
         "name": "Canine",
         "host": "https://caninedc.org/index/",
         "hints": [
