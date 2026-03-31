@@ -51,15 +51,15 @@
 ## uc-cdis/ecs-ws-sidecar
 
 #### Improvements
-  - each file are now showing up in separate lines in the data download 
+  - Each file is now showing up in a separate line in the data download 
     notebook ([#23](https://github.com/uc-cdis/ecs-ws-sidecar/pull/23))
-  - rename the data download notebook from "data.ipynb" to 
+  - Renamed the data download notebook from "data.ipynb" to 
     "download_data.ipynb" ([#23](https://github.com/uc-cdis/ecs-ws-sidecar/pull/23)) 
 
 ## uc-cdis/fence
 
 #### Dependency Updates
-  - cryptography & protobuf ([#1333](https://github.com/uc-cdis/fence/pull/1333)) 
+  - Update cryptography & protobuf ([#1333](https://github.com/uc-cdis/fence/pull/1333)) 
 
 ## uc-cdis/gen3-workflow
 
@@ -116,7 +116,7 @@
 ## uc-cdis/metadata-service
 
 #### Dependency Updates
-  - authutils ([#168](https://github.com/uc-cdis/metadata-service/pull/168))
+  - Update authutils ([#168](https://github.com/uc-cdis/metadata-service/pull/168))
 
 ## uc-cdis/sower
 
@@ -131,5 +131,5 @@
 ## uc-cdis/tube
 
 #### Dependency Updates
-  - update cryptography to 46.0.5 and above ([#313](https://github.com/uc-cdis/tube/pull/313)) 
+  - Update cryptography to 46.0.5 and above ([#313](https://github.com/uc-cdis/tube/pull/313)) 
 
