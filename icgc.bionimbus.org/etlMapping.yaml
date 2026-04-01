@@ -29,6 +29,9 @@ mappings:
       - index: file
         join_on: _subject_id
         props:
+          - name: object_id
+            src: object_id
+            fn: set
           - name: data_format
             src: data_format
             fn: set
