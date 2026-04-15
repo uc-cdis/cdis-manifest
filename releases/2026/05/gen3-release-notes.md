@@ -43,21 +43,21 @@
     ([#1783](https://github.com/uc-cdis/data-portal/pull/1783))
 
 #### Dependency Updates
-  - Bumps [defu](https://github.com/unjs/defu) from 6.1.2 to 6.1.6. (#1793)
+  - Bumps [defu](https://github.com/unjs/defu) from 6.1.2 to 6.1.6. ([#1793](https://github.com/uc-cdis/data-portal/pull/1793))
   - Bumps [lodash](https://github.com/lodash/lodash) from 4.17.23 to 4.18.1. 
-    (#1792)
+    ([#1792](https://github.com/uc-cdis/data-portal/pull/1792))
   - Bumps [lodash-es](https://github.com/lodash/lodash) from 4.17.23 to 4.18.1. 
-    (#1791)
+    ([#1791](https://github.com/uc-cdis/data-portal/pull/1791))
   - Bumps and 
     [brace-expansion](https://github.com/juliangruber/brace-expansion). These 
-    dependencies needed to be updated together. (#1787)
+    dependencies needed to be updated together. ([#1787](https://github.com/uc-cdis/data-portal/pull/1787))
   - Bumps [picomatch](https://github.com/micromatch/picomatch) from 2.3.1 to 
-    2.3.2. (#1785)
-  - Bumps [yaml](https://github.com/eemeli/yaml) from 1.10.2 to 1.10.3. (#1784)
+    2.3.2. ([#1785](https://github.com/uc-cdis/data-portal/pull/1785))
+  - Bumps [yaml](https://github.com/eemeli/yaml) from 1.10.2 to 1.10.3. ([#1784](https://github.com/uc-cdis/data-portal/pull/1784))
   - Bumps [jsonpath](https://github.com/dchester/jsonpath) from 1.2.1 to 1.3.0. 
-    (#1782)
+    ([#1782](https://github.com/uc-cdis/data-portal/pull/1782))
   - Bumps [flatted](https://github.com/WebReflection/flatted) from 3.4.1 to 
-    3.4.2. (#1781)
+    3.4.2. ([#1781](https://github.com/uc-cdis/data-portal/pull/1781))
 
 ## uc-cdis/fence
 
@@ -116,16 +116,16 @@
   - apollo-server to 5.5.0 ([#377](https://github.com/uc-cdis/guppy/pull/377))
   - qs to 4.16.2 ([#377](https://github.com/uc-cdis/guppy/pull/377))
   - Bumps [brace-expansion](https://github.com/juliangruber/brace-expansion) 
-    from 1.1.12 to 1.1.13. (#375)
+    from 1.1.12 to 1.1.13. ([#375](https://github.com/uc-cdis/guppy/pull/375))
   - Bumps [path-to-regexp](https://github.com/pillarjs/path-to-regexp) from 
-    0.1.12 to 0.1.13. (#372)
+    0.1.12 to 0.1.13. ([#372](https://github.com/uc-cdis/guppy/pull/372))
   - Bumps [handlebars](https://github.com/handlebars-lang/handlebars.js) from 
-    4.7.8 to 4.7.9. (#371)
+    4.7.8 to 4.7.9. ([#371](https://github.com/uc-cdis/guppy/pull/371))
   - Bumps [picomatch](https://github.com/micromatch/picomatch) from 2.3.1 to 
-    2.3.2. (#369)
-  - Bumps [yaml](https://github.com/eemeli/yaml) from 1.10.2 to 1.10.3. (#368)
+    2.3.2. ([#369](https://github.com/uc-cdis/guppy/pull/369))
+  - Bumps [yaml](https://github.com/eemeli/yaml) from 1.10.2 to 1.10.3. ([#368](https://github.com/uc-cdis/guppy/pull/368))
   - Bumps [flatted](https://github.com/WebReflection/flatted) from 3.3.1 to 
-    3.4.2. (#367)
+    3.4.2. ([#367](https://github.com/uc-cdis/guppy/pull/367))
 
 ## uc-cdis/hatchery
 
@@ -183,5 +183,5 @@
 #### Dependency Updates
   - Updated authutils to latest version (7.2.6) ([#136](https://github.com/uc-cdis/workspace-token-service/pull/136)) 
   - Bumps [authlib](https://github.com/authlib/authlib) from 1.6.7 to 1.6.9. 
-    (#128)
+    ([#128](https://github.com/uc-cdis/workspace-token-service/pull/128))
 
