@@ -39,7 +39,7 @@
       "cpu-limit": "1.0",
       "memory-limit": "2Gi",
       "name": "(Generic) Jupyter Lab Notebook with R Kernel",
-      "image": "quay.io/cdis/heal-notebooks:generic_rkernel__a446922e0751453477295f010e18119cee4dd543",
+      "image": "quay.io/cdis/jupyter-superslim-heal:feat_heal-superslim",
       "env": {
         "FRAME_ANCESTORS": "https://preprod.healdata.org"
       },
