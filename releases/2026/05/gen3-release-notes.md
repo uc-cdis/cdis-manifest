@@ -1,4 +1,9 @@
 # Core Gen3 Release 2026.05 (Friedelite)
+
+## Release Highlights and Announcements
+
+#### Amazon kernel updates for CVE-2026-31431 applied to all Gen3 service images. Read [this](https://aws.amazon.com/security/security-bulletins/rss/2026-026-aws/) AWS security bulletin for more details.
+
 ## uc-cdis/arborist
 
 #### Bug Fixes
