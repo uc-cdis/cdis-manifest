@@ -69,6 +69,11 @@
   - reconcile_stats.py can be used in the container for stats reconciliation. 
     Could be a Cronjob? ([#435](https://github.com/uc-cdis/indexd/pull/435))
 
+## uc-cdis/requestor
+
+#### Improvements
+  - Add authorization check when a request's status is set to one of the UPDATE_ACCESS_STATUSES at creation ([#85](https://github.com/uc-cdis/requestor/pull/85))
+
 ## uc-cdis/sower
 
 #### Dependency Updates
