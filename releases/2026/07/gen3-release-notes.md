@@ -119,20 +119,7 @@
     ([#381](https://github.com/uc-cdis/guppy/pull/381))
 
 #### New Features
-  - This is an extension to the filtering features for the guppy graphql 
-    endpoint. Guppy historically supported only the “IN” query so a filter if 
-    any of the value selected is contained in the data or the “!=” so if any 
-    value of the data is in the selected list the data point is excluded. I 
-    called for clarity the former ‘CONTAINS_ANY’ and the latter ‘EXCLUDES_ANY’. 
-    ( 
-    https://github.com/uc-cdis/guppy/blob/77922379ee124da383f8469e482e2c92593a9f74/src/server/es/filter.js#L63-L141
-    ) ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - I would like to add the 'CONTAINS_ALL', so all the value selected have to 
-    be contained in the data for it to match, and the `EXCLUDES_ALL` to exclude 
-    a record only if all the selected values are present in the data. ([#331](https://github.com/uc-cdis/guppy/pull/331)) 
-  - [TEMPLATE_ - Gen3 Community Feature Document \(template 
-    v1.1\).docx](https://github.com/user-attachments/files/22173927/_TEMPLATE_.-.Gen3.Community.Feature.Document.template.v1.1.docx)
-    ([#331](https://github.com/uc-cdis/guppy/pull/331))
+  - Added new filter options CONTAINS_ANY, CONTAINS_ALL, EXCLUDES_ANY, EXCLUDES_ALL. Please refer to [document](https://github.com/user-attachments/files/22173927/_TEMPLATE_.-.Gen3.Community.Feature.Document.template.v1.1.docx) for details ([#331](https://github.com/uc-cdis/guppy/pull/331))
 
 ## uc-cdis/hatchery
 
