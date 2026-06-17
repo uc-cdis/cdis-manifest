@@ -27,16 +27,16 @@
 
 #### Dependency Updates
   - Bumps [launch-editor](https://github.com/vitejs/launch-editor) from 2.6.0 
-    to 2.14.1. (#1814)
+    to 2.14.1. ([#1814](https://github.com/uc-cdis/data-portal/pull/1814))
   - `@babel/preset-env` to 7.29.7 ([#1813](https://github.com/uc-cdis/data-portal/pull/1813)) 
   - Bumps [serialize-javascript](https://github.com/yahoo/serialize-javascript) 
-    from 6.0.1 to 6.0.2. (#1809)
+    from 6.0.1 to 6.0.2. ([#1809](https://github.com/uc-cdis/data-portal/pull/1809))
   - Bumps [@protobufjs/utf8](https://github.com/dcodeIO/protobuf.js) from 1.1.0 
-    to 1.1.1. (#1806)
+    to 1.1.1. ([#1806](https://github.com/uc-cdis/data-portal/pull/1806))
   - Bumps [@xmldom/xmldom](https://github.com/xmldom/xmldom) from 0.8.6 to 
-    0.8.13. (#1805)
+    0.8.13. ([#1805](https://github.com/uc-cdis/data-portal/pull/1805))
   - Bumps [fast-uri](https://github.com/fastify/fast-uri) from 3.1.0 to 3.1.2. 
-    (#1803)
+    ([#1803](https://github.com/uc-cdis/data-portal/pull/1803))
 
 ## uc-cdis/fence
 
@@ -96,14 +96,14 @@
 #### Dependency Updates
   - Bumps the pip group with 2 updates in the / directory: 
     [authlib](https://github.com/authlib/authlib) and 
-    [idna](https://github.com/kjd/idna). (#131)
+    [idna](https://github.com/kjd/idna). ([#131](https://github.com/uc-cdis/gen3-workflow/pull/131))
   - Bumps the pip group with 1 update in the / directory: 
-    [urllib3](https://github.com/urllib3/urllib3). (#124)
+    [urllib3](https://github.com/urllib3/urllib3). ([#124](https://github.com/uc-cdis/gen3-workflow/pull/124))
   - Bumps [uvicorn](https://github.com/Kludex/uvicorn) from 0.45.0 to 0.47.0. 
-    (#129)
+    ([#129](https://github.com/uc-cdis/gen3-workflow/pull/129))
   - Bumps [gunicorn](https://github.com/benoitc/gunicorn) from 23.0.0 to 
-    26.0.0. (#126)
-  - Bumps [moto](https://github.com/getmoto/moto) from 5.1.22 to 5.2.1. (#125)
+    26.0.0. ([#126](https://github.com/uc-cdis/gen3-workflow/pull/126))
+  - Bumps [moto](https://github.com/getmoto/moto) from 5.1.22 to 5.2.1. ([#125](https://github.com/uc-cdis/gen3-workflow/pull/125))
 
 ## uc-cdis/guppy
 
@@ -112,11 +112,11 @@
     dependencies [qs](https://github.com/ljharb/qs), 
     [express](https://github.com/expressjs/express) and 
     [body-parser](https://github.com/expressjs/body-parser). These dependencies 
-    need to be updated together. (#386)
+    need to be updated together. ([#386](https://github.com/uc-cdis/guppy/pull/386))
   - Bumps [@protobufjs/utf8](https://github.com/dcodeIO/protobuf.js) from 1.1.0 
-    to 1.1.1. (#384)
+    to 1.1.1. ([#384](https://github.com/uc-cdis/guppy/pull/384))
   - Bumps [fast-uri](https://github.com/fastify/fast-uri) from 3.1.0 to 3.1.2. 
-    (#381)
+    ([#381](https://github.com/uc-cdis/guppy/pull/381))
 
 #### New Features
   - This is an extension to the filtering features for the guppy graphql 
@@ -203,7 +203,7 @@
 
 #### Dependency Updates
   - Bumps [cryptography](https://github.com/pyca/cryptography) from 46.0.6 to 
-    46.0.7. (#179)
+    46.0.7. ([#179](https://github.com/uc-cdis/metadata-service/pull/179))
 
 #### Improvements
   - increase field size limit for AggMDS indicies ([#175](https://github.com/uc-cdis/metadata-service/pull/175)) 
