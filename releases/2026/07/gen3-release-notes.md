@@ -127,42 +127,12 @@
     ( 
     https://github.com/uc-cdis/guppy/blob/77922379ee124da383f8469e482e2c92593a9f74/src/server/es/filter.js#L63-L141
     ) ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - I would like to add the ‘CONTAINS_ALL`, so all the value selected have to 
+  - I would like to add the 'CONTAINS_ALL', so all the value selected have to 
     be contained in the data for it to match, and the `EXCLUDES_ALL` to exclude 
     a record only if all the selected values are present in the data. ([#331](https://github.com/uc-cdis/guppy/pull/331)) 
-  - [_TEMPLATE_ - Gen3 Community Feature Document (template 
-    v1.1).docx](https://github.com/user-attachments/files/22173927/_TEMPLATE_.-.Gen3.Community.Feature.Document.template.v1.1.docx)
+  - [TEMPLATE_ - Gen3 Community Feature Document \(template 
+    v1.1\).docx](https://github.com/user-attachments/files/22173927/_TEMPLATE_.-.Gen3.Community.Feature.Document.template.v1.1.docx)
     ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - logic high level summary: ([#331](https://github.com/uc-cdis/guppy/pull/331)) 
-  - `CONTAINS_ANY`: ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Filter = [A,B] ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B,C] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [C] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - `CONTAINS_ALL`: ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Filter = [A,B] ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B,C] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - `EXCLUDES_ANY`: ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Filter = [A,B] ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B,C] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [C] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - `EXCLUDES_ALL`: ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Filter = [A,B] ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A,B,C] → ❌ reject ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [A] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - Doc [C] → ✅ include ([#331](https://github.com/uc-cdis/guppy/pull/331))
-  - ``` ([#331](https://github.com/uc-cdis/guppy/pull/331))
 
 ## uc-cdis/hatchery
 
