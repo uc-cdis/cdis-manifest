@@ -163,7 +163,7 @@
     46.0.7. ([#179](https://github.com/uc-cdis/metadata-service/pull/179))
 
 #### Improvements
-  - increase field size limit for AggMDS indicies ([#175](https://github.com/uc-cdis/metadata-service/pull/175)) 
+  - increase field size limit for AggMDS indices ([#175](https://github.com/uc-cdis/metadata-service/pull/175)) 
 
 ## uc-cdis/peregrine
 
