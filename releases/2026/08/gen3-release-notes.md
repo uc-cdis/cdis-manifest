@@ -6,7 +6,8 @@
 
 #### Dependency Updates
   - Update authutils to `>=8.0.0` ([#110](https://github.com/uc-cdis/audit-service/pull/110)) 
-  - Cryptography => 48.0.1 ([#108](https://github.com/uc-cdis/audit-service/pull/108)) 
+  - Cryptography => 48.0.1 ([#108](https://github.com/uc-cdis/audit-service/pull/108))
+  - Starlette >=1.1.0 ([#109](https://github.com/uc-cdis/audit-service/pull/109))
 
 ## uc-cdis/cloud-automation
 
@@ -68,7 +69,7 @@
     ([#387](https://github.com/uc-cdis/guppy/pull/387))
   - Bumps 
     [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) 
-    from 7.29.0 to 7.29.6. (#390)
+    from 7.29.0 to 7.29.6. ([#390](https://github.com/uc-cdis/guppy/pull/390))
 
 ## uc-cdis/hatchery
 
