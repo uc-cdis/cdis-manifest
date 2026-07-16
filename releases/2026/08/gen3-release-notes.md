@@ -136,11 +136,11 @@
 #### Dependency Updates
   - Cryptography => 48.0.1 ([#187](https://github.com/uc-cdis/metadata-service/pull/187))
   - Bumps [starlette](https://github.com/Kludex/starlette) from 0.49.3 to 1.3.1. 
-    [#184](https://github.com/uc-cdis/metadata-service/pull/184)) 
+    ([#184](https://github.com/uc-cdis/metadata-service/pull/184)) 
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
-    [#182](https://github.com/uc-cdis/metadata-service/pull/182))
+    ([#182](https://github.com/uc-cdis/metadata-service/pull/182))
   - Bumps [idna](https://github.com/kjd/idna) from 3.11 to 3.15. 
-    [#180](https://github.com/uc-cdis/metadata-service/pull/180)) 
+    ([#180](https://github.com/uc-cdis/metadata-service/pull/180)) 
 
 ## uc-cdis/peregrine
 
