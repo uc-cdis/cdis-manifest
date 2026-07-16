@@ -66,9 +66,11 @@
   - Update base image to nodejs24 -- 
     [here](https://github.com/uc-cdis/base-images/blob/master/nodejs24-base/Dockerfile)
     ([#387](https://github.com/uc-cdis/guppy/pull/387))
+  - Bumps [pyjwt](https://github.com/form-data/form-data) from 4.0.5 to 4.0.6. 
+    [#389](https://github.com/uc-cdis/guppy/pull/389))
   - Bumps 
     [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) 
-    from 7.29.0 to 7.29.6. (#390)
+    from 7.29.0 to 7.29.6. ([#390](https://github.com/uc-cdis/guppy/pull/390))
 
 ## uc-cdis/hatchery
 
@@ -117,25 +119,37 @@
 
 ## uc-cdis/manifestservice
 
+#### New Features
+  - Make gen3 as the default audience for access token validation ([#89](https://github.com/uc-cdis/manifestservice/pull/89)) 
+
 #### Dependency Updates
   - Bumps [joserfc](https://github.com/authlib/joserfc) from 1.6.5 to 1.6.8. 
-    (#87)
+    ([#87](https://github.com/uc-cdis/manifestservice/pull/87))
   - Bumps [cryptography](https://github.com/pyca/cryptography) from 48.0.0 to 
-    48.0.1. (#85)
+    48.0.1. ([#85](https://github.com/uc-cdis/manifestservice/pull/85))
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
-    (#83)
+    ([#83](https://github.com/uc-cdis/manifestservice/pull/83))
+  - Update authutils to >=8.0.0 ([#89](https://github.com/uc-cdis/manifestservice/pull/89))
 
 ## uc-cdis/metadata-service
 
 #### Dependency Updates
-  - Cryptography => 48.0.1 ([#187](https://github.com/uc-cdis/metadata-service/pull/187)) 
+  - Cryptography => 48.0.1 ([#187](https://github.com/uc-cdis/metadata-service/pull/187))
+  - Bumps [pyjwt](https://github.com/Kludex/starlette) from 0.49.3 to 1.3.1. 
+    [#184](https://github.com/uc-cdis/metadata-service/pull/184)) 
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
-    (#182)
+    [#182](https://github.com/uc-cdis/metadata-service/pull/182))
+  - Bumps [pyjwt](https://github.com/kjd/idna) from 3.11 to 3.15. 
+    [#180](https://github.com/uc-cdis/metadata-service/pull/180)) 
 
 ## uc-cdis/peregrine
 
+#### New Features
+  - Make gen3 as the default audience for access token validation ([#271](https://github.com/uc-cdis/peregrine/pull/271)) 
+
 #### Dependency Updates
   - starlette to 1.3.1 ([#270](https://github.com/uc-cdis/peregrine/pull/270))
+  - Update authutils to >=8.0.0 ([#271](https://github.com/uc-cdis/peregrine/pull/271)) 
 
 ## uc-cdis/requestor
 
@@ -174,7 +188,11 @@
 #### Dependency Updates
   - Update authutils to `>=8.0.0` ([#153](https://github.com/uc-cdis/workspace-token-service/pull/153)) 
   - Bumps [joserfc](https://github.com/authlib/joserfc) from 1.6.5 to 1.6.8. 
-    (#152)
+    ([#152](https://github.com/uc-cdis/workspace-token-service/pull/152))
+  - Bumps [joserfc](https://github.com/Kludex/starlette) from 1.0.0 to 1.3.1. 
+    ([#150](https://github.com/uc-cdis/workspace-token-service/pull/150))
+  - Bumps [pyjwt](https://github.com/pyca/cryptography) from 48.0.0 to 48.0.1. 
+    ([#149](https://github.com/uc-cdis/workspace-token-service/pull/149)) 
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
-    (#148)
+    ([#148](https://github.com/uc-cdis/workspace-token-service/pull/148)) 
 
