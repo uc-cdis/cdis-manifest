@@ -66,7 +66,7 @@
   - Update base image to nodejs24 -- 
     [here](https://github.com/uc-cdis/base-images/blob/master/nodejs24-base/Dockerfile)
     ([#387](https://github.com/uc-cdis/guppy/pull/387))
-  - Bumps [pyjwt](https://github.com/form-data/form-data) from 4.0.5 to 4.0.6. 
+  - Bumps [form-data](https://github.com/form-data/form-data) from 4.0.5 to 4.0.6. 
     [#389](https://github.com/uc-cdis/guppy/pull/389))
   - Bumps 
     [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) 
@@ -135,11 +135,11 @@
 
 #### Dependency Updates
   - Cryptography => 48.0.1 ([#187](https://github.com/uc-cdis/metadata-service/pull/187))
-  - Bumps [pyjwt](https://github.com/Kludex/starlette) from 0.49.3 to 1.3.1. 
+  - Bumps [starlette](https://github.com/Kludex/starlette) from 0.49.3 to 1.3.1. 
     [#184](https://github.com/uc-cdis/metadata-service/pull/184)) 
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
     [#182](https://github.com/uc-cdis/metadata-service/pull/182))
-  - Bumps [pyjwt](https://github.com/kjd/idna) from 3.11 to 3.15. 
+  - Bumps [idna](https://github.com/kjd/idna) from 3.11 to 3.15. 
     [#180](https://github.com/uc-cdis/metadata-service/pull/180)) 
 
 ## uc-cdis/peregrine
@@ -191,7 +191,7 @@
     ([#152](https://github.com/uc-cdis/workspace-token-service/pull/152))
   - Bumps [joserfc](https://github.com/Kludex/starlette) from 1.0.0 to 1.3.1. 
     ([#150](https://github.com/uc-cdis/workspace-token-service/pull/150))
-  - Bumps [pyjwt](https://github.com/pyca/cryptography) from 48.0.0 to 48.0.1. 
+  - Bumps [cryptography](https://github.com/pyca/cryptography) from 48.0.0 to 48.0.1. 
     ([#149](https://github.com/uc-cdis/workspace-token-service/pull/149)) 
   - Bumps [pyjwt](https://github.com/jpadilla/pyjwt) from 2.12.1 to 2.13.0. 
     ([#148](https://github.com/uc-cdis/workspace-token-service/pull/148)) 
