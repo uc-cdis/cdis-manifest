@@ -1,3 +1,7 @@
+## Please Note:
+
+The majority of the functionality of this repository has been replaced by the [gen3-gitops](https://github.com/uc-cdis/gen3-gitops) repository.
+
 ### Pre-commit hook installation:
 
 `ln -s $(pwd)/.githooks/pre-commit $(pwd)/.git/hooks/pre-commit`
