@@ -97,7 +97,7 @@
 #### Dependency Updates
   - js-yaml to 5.2.2 ([#397](https://github.com/uc-cdis/guppy/pull/397))
   - js-yaml 4.1.0 -> 4.3.0 ([#396](https://github.com/uc-cdis/guppy/pull/396))
-  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.2 to 2.8.3. (#395)
+  - Bumps [svgo](https://github.com/svg/svgo) from 2.8.2 to 2.8.3. ([#395](https://github.com/uc-cdis/guppy/pull/395))
   - update `brace-expansion` and `fast-uri` ([#392](https://github.com/uc-cdis/guppy/pull/392)) 
 
 ## uc-cdis/hatchery
