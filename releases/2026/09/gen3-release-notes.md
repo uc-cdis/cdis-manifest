@@ -28,7 +28,7 @@
 ## uc-cdis/data-portal
 
 #### Improvements
-  - remove COVID19Dashbord standalone ([#1849](https://github.com/uc-cdis/data-portal/pull/1849)) 
+  - remove COVID19Dashboard standalone ([#1849](https://github.com/uc-cdis/data-portal/pull/1849)) 
   - allow ticket creation to use zendesk wrapper ([#1837](https://github.com/uc-cdis/data-portal/pull/1837)) 
 
 #### Dependency Updates
