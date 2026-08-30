@@ -28,7 +28,7 @@
 ## uc-cdis/data-portal
 
 #### Improvements
-  - remove COID19Dashbord standalone ([#1849](https://github.com/uc-cdis/data-portal/pull/1849)) 
+  - remove COVID19Dashbord standalone ([#1849](https://github.com/uc-cdis/data-portal/pull/1849)) 
   - allow ticket creation to use zendesk wrapper ([#1837](https://github.com/uc-cdis/data-portal/pull/1837)) 
 
 #### Dependency Updates
@@ -109,15 +109,10 @@
 
 #### New Features
   - Updates indexd DRS to allow for a configurable default preferred_type, 
-    allowing ([#454](https://github.com/uc-cdis/indexd/pull/454))
-  - DRS Servers to set the precedence of credentials that should be tried by 
-    DRS ([#454](https://github.com/uc-cdis/indexd/pull/454))
-  - Clients. ([#454](https://github.com/uc-cdis/indexd/pull/454))
-  - Updates indexd DRS to allow for a per-authz preferred_type, allowing DRS 
-    ([#454](https://github.com/uc-cdis/indexd/pull/454))
-  - Servers to override the default preferred_type for specific authz resource 
-    ([#454](https://github.com/uc-cdis/indexd/pull/454))
-  - paths. ([#454](https://github.com/uc-cdis/indexd/pull/454))
+    allowing DRS Servers to set the precedence of credentials that should 
+    be tried by DRS Clients. ([#454](https://github.com/uc-cdis/indexd/pull/454))
+  - Updates indexd DRS to allow for a per-authz preferred_type, allowing DRS Servers to override
+    the default preferred_type for specific authz resource paths. ([#454](https://github.com/uc-cdis/indexd/pull/454))
 
 #### Dependency Updates
   - Update authutils to `>=8.0.0` ([#449](https://github.com/uc-cdis/indexd/pull/449)) 
