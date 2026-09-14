@@ -81,7 +81,7 @@
   - express to 5 ([#404](https://github.com/uc-cdis/guppy/pull/404))
   - storybook to 10 ([#404](https://github.com/uc-cdis/guppy/pull/404))
   - Bumps [browserslist](https://github.com/browserslist/browserslist) from 
-    4.28.4 to 4.28.8. (#403](https://github.com/uc-cdis/guppy/pull/403))
+    4.28.4 to 4.28.8. ([#403](https://github.com/uc-cdis/guppy/pull/403))
   - fast-uri nanoid brace-expansion ([#401](https://github.com/uc-cdis/guppy/pull/401)) 
 
 ## uc-cdis/hatchery
