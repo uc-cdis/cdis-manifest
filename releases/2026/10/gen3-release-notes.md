@@ -1,4 +1,17 @@
 # Core Gen3 Release 2026.10 (Holtite)
+## uc-cdis/arborist
+
+#### Bug Fixes
+  - Replaces SQL string interpolation with bound query parameters in
+    authorizedResources, selectInStmt, and subresource pruning, closing
+    injection via policy names, group users/policies, and role IDs.
+    ([#193](https://github.com/uc-cdis/arborist/pull/193))
+
+#### Improvements
+  - Adds injection regression tests on /auth/resources, POST /group,
+    and POST /policy, each verified to fail on the pre-change code
+    ([#193](https://github.com/uc-cdis/arborist/pull/193))
+
 ## uc-cdis/audit-service
 
 #### Dependency Updates
@@ -75,6 +88,13 @@
 
 ## uc-cdis/guppy
 
+#### Bug Fixes
+- fixed a bug of generate test data script didn't produce correct mock data ([#405](https://github.com/uc-cdis/guppy/pull/405))
+
+#### Improvements
+- apply tiered access hide number resolver to total count and cardinal count
+  queries on aggregation histograms ([#405](https://github.com/uc-cdis/guppy/pull/405))
+
 #### Dependency Updates
   - Update most dependencies ([#404](https://github.com/uc-cdis/guppy/pull/404))
   - node to 24 ([#404](https://github.com/uc-cdis/guppy/pull/404))
@@ -85,6 +105,12 @@
   - fast-uri nanoid brace-expansion ([#401](https://github.com/uc-cdis/guppy/pull/401)) 
 
 ## uc-cdis/hatchery
+
+#### Changes
+  - Remove the /allCosts route registration from RegisterHatchery ([#167](https://github.com/uc-cdis/hatchery/pull/167))
+  - Remove the allCosts handler ([#167](https://github.com/uc-cdis/hatchery/pull/167))
+  - Remove the PodCostInfo and CostSummary types, which were only used by that handler ([#167](https://github.com/uc-cdis/hatchery/pull/167))
+  - Drop the now-unused metav1 and kubernetes imports from hatchery.go ([#167](https://github.com/uc-cdis/hatchery/pull/167))
 
 #### Improvements
   - The squashfs sidecar path referenced a PersistentVolumeClaim 
@@ -104,7 +130,12 @@
     squashfs_mount.region. A new bucket_prefix option is mapped to the 
     Mountpoint "prefix=" mount option so the .sqsh file can live in a 
     subdirectory; it becomes the root of /image in the sidecar, so source_sqsh 
-    is resolved relative to it. ([#162](https://github.com/uc-cdis/hatchery/pull/162)) 
+    is resolved relative to it. ([#162](https://github.com/uc-cdis/hatchery/pull/162))
+
+#### Notes
+  - Pricing config (Config.Config.Pricing) is left intact — it is still used by hatchery/costTracker.go. ([#167](https://github.com/uc-cdis/hatchery/pull/167))
+  - Per-pod cost accounting remains available through the authenticated pay-model endpoints and the cost tracker. ([#167](https://github.com/uc-cdis/hatchery/pull/167))
+  - go build ./... and go vet ./hatchery/ both pass. ([#167](https://github.com/uc-cdis/hatchery/pull/167))
 
 ## uc-cdis/indexd
 
@@ -154,10 +185,18 @@
 
 ## uc-cdis/peregrine
 
+#### Bug Fixes
+  - Fixes input validation where nodes were not validated when hitting the
+    /api/search/datasets/?nodes= endpoint, allowing the querying of
+    non-existent nodes. ([#273](https://github.com/uc-cdis/peregrine/pull/273))
+
 #### Dependency Updates
   - cryptography >= 50.0.0 ([#272](https://github.com/uc-cdis/peregrine/pull/272)) 
 
 ## uc-cdis/sheepdog
+
+#### Bug Fixes
+- explicitly filter project to restrict IDs on project-specific entity endpoint ([#476](https://github.com/uc-cdis/sheepdog/pull/476))
 
 #### Dependency Updates
   - authutils >= 8.0.1 ([#475](https://github.com/uc-cdis/sheepdog/pull/475))
