@@ -142,12 +142,14 @@
 #### Bug Fixes
   - Update drs endpoint /open behavior when DRS_AUTHORIZATION_METADATA has an 
     entry. ([#458](https://github.com/uc-cdis/indexd/pull/458))
-
+  
 #### Improvements
   - Removes redundant endpoints from DRS blueprint ([#455](https://github.com/uc-cdis/indexd/pull/455)) 
+  - fix unauthenticated blind SQL injection in the single-table driver ([#459](https://github.com/uc-cdis/indexd/pull/459))
 
 #### Dependency Updates
   - Cryptography upgrade to 50.0.0 ([#456](https://github.com/uc-cdis/indexd/pull/456)) 
+  - gitpython to ^3.1.60 ([#460](https://github.com/uc-cdis/indexd/pull/460))
 
 ## uc-cdis/manifestservice
 
