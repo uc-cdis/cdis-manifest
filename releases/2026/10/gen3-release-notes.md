@@ -3,7 +3,7 @@
 ## Release Highlights and Announcements
 #### Security updates
   - We strongly recommend taking this release, as it contains security updates to multiple services. 
-    Additional details are available in the release notes for the various services.
+    Additional details are available below, in the release notes for the various services.
 
 ## uc-cdis/arborist
 
