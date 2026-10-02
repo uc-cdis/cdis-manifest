@@ -1,4 +1,10 @@
 # Core Gen3 Release 2026.10 (Holtite)
+
+## Release Highlights and Announcements
+#### Security updates
+  - We strongly recommend taking this release, as it contains security updates to multiple services. 
+    Additional details are available in the release notes for the various services.
+
 ## uc-cdis/arborist
 
 #### Bug Fixes
