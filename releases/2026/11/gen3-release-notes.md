@@ -99,15 +99,13 @@
   - Drift : 0s ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
   - ## Fix Applied ([#1383](https://github.com/uc-cdis/fence/pull/1383))
   - In get_updated_token(), after signing the new JWT, the decoded payload is 
-    synced back into self.session_token: ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - ```python ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - self.session_token = jwt.decode( ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - token, ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - algorithms=["RS256"], ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - options={"verify_signature": False}, ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - ) ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - ``` ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - Signature verification is intentionally skipped here — the token was just 
+    synced back into self.session_token:
+    ` self.session_token = jwt.decode( 
+         token,
+         algorithms=["RS256"],
+         options={"verify_signature": False}, 
+      )` 
+    Signature verification is intentionally skipped here — the token was just 
     signed by this process, so re-verifying would be redundant. ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
 
 ## uc-cdis/gen3-user-data-library
