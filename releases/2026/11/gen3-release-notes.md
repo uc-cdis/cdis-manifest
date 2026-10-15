@@ -100,7 +100,7 @@
   - ## Fix Applied ([#1383](https://github.com/uc-cdis/fence/pull/1383))
   - In get_updated_token(), after signing the new JWT, the decoded payload is 
     synced back into self.session_token:
-    ` self.session_token = jwt.decode( 
+    `self.session_token = jwt.decode( 
          token,
          algorithms=["RS256"],
          options={"verify_signature": False}, 
