@@ -141,9 +141,9 @@
 
 #### Dependency Updates
   - Bumps [brace-expansion](https://github.com/juliangruber/brace-expansion) 
-    from 1.1.18 to 1.1.21. (#409)
+    from 1.1.18 to 1.1.21. ([#409](https://github.com/uc-cdis/guppy/pull/409))
   - Bumps [fast-uri](https://github.com/fastify/fast-uri) from 3.1.7 to 3.1.8. 
-    (#408)
+    ([#408](https://github.com/uc-cdis/guppy/pull/408))
   - remove momentjs ([#406](https://github.com/uc-cdis/guppy/pull/406))
   - added dayjs ([#406](https://github.com/uc-cdis/guppy/pull/406))
 
