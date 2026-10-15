@@ -9,14 +9,7 @@
     membership. (Note: GET /auth/resources and /auth/request behavior is 
     unchanged; the policies field on /auth/request, a safe filter, is 
     untouched) ([#194](https://github.com/uc-cdis/arborist/pull/194))
-  - Replaces SQL string interpolation with bound query parameters in 
-    authorizedResources, selectInStmt, and subresource pruning, closing 
-    injection via policy names, group users/policies, and role IDs. ([#193](https://github.com/uc-cdis/arborist/pull/193)) 
-
-#### Improvements
-  - Adds injection regression tests on /auth/resources, POST /group, and POST 
-    /policy, each verified to fail on the pre-change code ([#193](https://github.com/uc-cdis/arborist/pull/193)) 
-
+  
 ## uc-cdis/data-portal
 
 #### Bug Fixes
@@ -33,6 +26,15 @@
 
 ## uc-cdis/fence
 
+### New Features
+  - Optional DPoP (RFC 9449) support for task tokens: when `DPOP_ENABLED` is true, 
+    `POST /credentials/api/access_token` requires a valid DPoP proof (with nonce) for 
+    task token requests and issues a key-bound access token with a `cnf.jkt` claim.([#1372](https://github.com/uc-cdis/fence/pull/1372))
+  - DPoP nonce challenge flow: an invalid or missing nonce returns the RFC 9449 error 
+    response plus a fresh `DPoP-Nonce` header so the client can retry.([#1372](https://github.com/uc-cdis/fence/pull/1372))
+  - New `DPOP_SHARED_SECRET`, which must be identical across all Gen3 services that 
+    participate in DPoP. `DPOP_SHARED_SECRET` can be supplied via environment variable.([#1372](https://github.com/uc-cdis/fence/pull/1372))
+
 #### Breaking Changes
   - IdP login callbacks (`/login/<idp>/login`) now require the OAuth `state` 
     issued by `/login/<idp>` in the same session. Logins that start at 
@@ -42,6 +44,7 @@
   - Uploading to an existing GUID (`/data/upload`, `/data/multipart/init`) now 
     requires `write-storage` on that record's `authz`; records with no `authz` 
     (ACL-only) can only be re-uploaded by their original `uploader` ([#1386](https://github.com/uc-cdis/fence/pull/1386)) 
+  - If DPoP is enabled on, Task Tokens now require DPoP flow and issues DPoP-Bound Task Tokens([#1372](https://github.com/uc-cdis/fence/pull/1372))
 
 #### Bug Fixes
   - Security fixes: all-of `authz` checks on bulk DRS access, record `authz` 
@@ -61,14 +64,25 @@
   - The expiration of refresh token is now being set by using the `exp` value 
     from the refresh token (if any), or the `default_refresh_token_exp` value 
     ([#1376](https://github.com/uc-cdis/fence/pull/1376))
+  - `validate_jwt` no longer performs JWKS key discovery against an unverified `iss`: the issuer is
+    checked against the configured allowlist first, and requests with no configured issuers are 
+    rejected instead of triggering an outbound request.([#1372](https://github.com/uc-cdis/fence/pull/1372))
 
 #### Improvements
   - Removed the temporary Prometheus FIXME from the Dockerfile. Fence now 
     inherits `PROMETHEUS_MULTIPROC_DIR` and the metrics directory from the 
     `3.13-pythonnginx` base image (uc-cdis/base-images#81). ([#1385](https://github.com/uc-cdis/fence/pull/1385)) 
+  - Tests for DPoP-bound token issuance on `/credentials/api/access_token` (enabled/disabled, mi retry)
+    and for the issuer allowlist check in `validate_jwt`.([#1372](https://github.com/uc-cdis/fence/pull/1372))
 
 #### Dependency Updates
   - relock `poetry.lock`. ([#1386](https://github.com/uc-cdis/fence/pull/1386))
+  - `authutils` to get DPoP support([#1372](https://github.com/uc-cdis/fence/pull/1372))
+
+#### Deployment changes
+  - To use DPoP Task Tokens, set `DPOP_ENABLED: true` and set `DPOP_SHARED_SECRET` (e.g. `openssl rand -base64 64`)
+    to the same value in every service doing DPoP validation. Fence will refuse to start if DPoP is enabled 
+    without the secret.([#1372](https://github.com/uc-cdis/fence/pull/1372))
 
 #### Example Output:
   - After 1st renewal (buggy): ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
@@ -135,38 +149,35 @@
   - remove momentjs ([#406](https://github.com/uc-cdis/guppy/pull/406))
   - added dayjs ([#406](https://github.com/uc-cdis/guppy/pull/406))
 
-#### Bug Fixes
-  - fixed a bug of generate test data script didn't produce correct mock data 
-    ([#405](https://github.com/uc-cdis/guppy/pull/405))
-
-#### Improvements
-  - apply tiered access hide number resolver to total count and cardinal count 
-    queries on aggregation histograms ([#405](https://github.com/uc-cdis/guppy/pull/405)) 
-
-## uc-cdis/indexd
-
-#### Improvements
-  - fix unauthenticated blind SQL injection in the single-table driver ([#459](https://github.com/uc-cdis/indexd/pull/459)) 
-
-#### Dependency Updates
-  - gitpython to ^3.1.60 ([#460](https://github.com/uc-cdis/indexd/pull/460))
-
 ## uc-cdis/metadata-service
 
 #### Improvements
   - update openapi doc to show alias and object GUID deletion would return 204 
     on success ([#194](https://github.com/uc-cdis/metadata-service/pull/194))
 
-## uc-cdis/peregrine
+## uc-cdis/requestor
 
-#### Bug Fixes
-  - Fixes input validation where nodes were not validated when hitting the ` 
-    /api/search/datasets/?nodes=` endpoint, allowing the querying of 
-    non-existent nodes. ([#273](https://github.com/uc-cdis/peregrine/pull/273))
+#### New Features
+  - Creating an access request for another user requires `create` access on 
+    `/requestor/on_behalf/<username>`, or on `/requestor/on_behalf` for any user([#89](https://github.com/uc-cdis/requestor/pull/89))
 
-## uc-cdis/sheepdog
+#### Breaking Changes
+  - Callers without an on-behalf policy can only create access requests for 
+    themselves, which affects integrations that file requests for other users,
+    including admin revocation requests([#89](https://github.com/uc-cdis/requestor/pull/89))
+  - `POST /request` returns 400 for a `status` that is not in `ALLOWED_REQUEST_STATUSES`([#89](https://github.com/uc-cdis/requestor/pull/89))
 
-#### Bug Fixes
-  - explicitly filter project to restrict IDs on project-specific entity 
-    endpoint ([#476](https://github.com/uc-cdis/sheepdog/pull/476))
+#### Bug fixes
+  - PUT `/request/{request_id}` commits the status change before post-status-update actions
+    run, releasing the row lock([#89](https://github.com/uc-cdis/requestor/pull/89))
 
+#### Improvements
+  - A revoke request for a user who does not have the policy is rejected when it is approved
+    instead of when it is created, so creating one no longer reveals the user's access([#89](https://github.com/uc-cdis/requestor/pull/89))
+
+#### Dependency updates
+  - Updated locked dependencies([#89](https://github.com/uc-cdis/requestor/pull/89))
+
+#### Deployment changes
+  - Grant create on `/requestor/on_behalf` (or `/requestor/on_behalf/<username>`) to any user
+    or client that files access requests for other users; see docs/on_behalf_authz.md([#89](https://github.com/uc-cdis/requestor/pull/89))
