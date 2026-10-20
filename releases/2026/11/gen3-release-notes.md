@@ -67,7 +67,8 @@
   - `validate_jwt` no longer performs JWKS key discovery against an unverified `iss`: the issuer is
     checked against the configured allowlist first, and requests with no configured issuers are 
     rejected instead of triggering an outbound request.([#1372](https://github.com/uc-cdis/fence/pull/1372))
-  - Fix issue where session cookie's expiration does not match JWT token's.([#1383](https://github.com/uc-cdis/fence/pull/1383))
+  - Fix browser discarding cookie well before the JWT in the cookie expires. Cookie expiration time
+    drift caused by incorrect logic for advancing expiration time([#1383](https://github.com/uc-cdis/fence/pull/1383))
 
 #### Improvements
   - Removed the temporary Prometheus FIXME from the Dockerfile. Fence now 
