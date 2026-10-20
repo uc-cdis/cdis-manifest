@@ -84,30 +84,6 @@
     to the same value in every service doing DPoP validation. Fence will refuse to start if DPoP is enabled 
     without the secret.([#1372](https://github.com/uc-cdis/fence/pull/1372))
 
-#### Example Output:
-  - After 1st renewal (buggy): ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - JWT exp in cookie value : 1789780898 ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Cookie Expires attribute: 1789779096 ← old token's exp ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Drift : 1802s ← grows with each renewal ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - After 2nd renewal (buggy): ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - JWT exp in cookie value : 1789782700 ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Cookie Expires attribute: 1789779096 ← still the original exp! ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Drift : 3604s ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - After 1st renewal (fixed): ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - JWT exp in cookie value : 1789780898 ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Cookie Expires attribute: 1789780898 ← always in sync ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - Drift : 0s ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-  - ## Fix Applied ([#1383](https://github.com/uc-cdis/fence/pull/1383))
-  - In get_updated_token(), after signing the new JWT, the decoded payload is 
-    synced back into self.session_token:
-    `self.session_token = jwt.decode( 
-         token,
-         algorithms=["RS256"],
-         options={"verify_signature": False}, 
-      )` 
-    Signature verification is intentionally skipped here — the token was just 
-    signed by this process, so re-verifying would be redundant. ([#1383](https://github.com/uc-cdis/fence/pull/1383)) 
-
 ## uc-cdis/gen3-user-data-library
 
 #### Bug Fixes
