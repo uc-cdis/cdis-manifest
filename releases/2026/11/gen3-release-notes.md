@@ -105,15 +105,50 @@
     output files are up to date in the user's bucket. If not, revert the task 
     state to "running" state until the outputs are ready; wait up to 3h 
     (configuble). ([#194](https://github.com/uc-cdis/gen3-workflow/pull/194))
+  - DPoP (RFC 9449) proof-of-possession on the GA4GH TES and S3 endpoints, 
+    configured through DPOP_REQUIRED, DPOP_EXEMPT_CLIENT_IDS, DPOP_ALLOWED_ISSUERS, 
+    DPOP_EXTERNAL_BASE_URL and DPOP_PROTECTED_PATHS. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - Optional OpenTelemetry tracing (ENABLE_TRACING), Pyroscope continuous profiling 
+    (ENABLE_CONTINUOUS_PROFILING), and Prometheus request count and duration metrics 
+    for every endpoint. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - DEBUG_STUB_EXTERNAL_SERVICES debug mode, which stubs the TES, S3 and storage 
+    endpoints so auth flows can be tested without Funnel or AWS while still authorizing 
+    against Arborist. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+
+#### Breaking Changes
+  - DPoP is required by default: TES and S3 requests without a DPoP-bound token 
+    and a valid proof are rejected, except client_credentials tokens from clients 
+    listed in DPOP_EXEMPT_CLIENT_IDS. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - The gen3_workflow_tasks_created metric now only counts successful task 
+    creations and is labeled by status_code only. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
 
 #### Bug Fixes
-  - Reverse the meaning of view=MINIMAL and view=BASIC ([#198](https://github.com/uc-cdis/gen3-workflow/pull/198)) 
+  - Reverse the meaning of view=MINIMAL and view=BASIC ([#198](https://github.com/uc-cdis/gen3-workflow/pull/198))
+  - add tag_key and tag_value to funnel task query to get only tasks for user.
+    Optional all flag allows getting all tasks in funnel query. ([#187](https://github.com/uc-cdis/gen3-workflow/pull/187)) 
 
 #### Improvements
+  - S3 endpoint: validate 'x-amz-copy-source' header ([#199](https://github.com/uc-cdis/gen3-workflow/pull/199))
+  - S3 endpoint: return errors as XML so details can be parsed by S3 tools
+    and returned to users. ([#199](https://github.com/uc-cdis/gen3-workflow/pull/199))
   - CI on Kind now supports running with network policies enabled. ([#197](https://github.com/uc-cdis/gen3-workflow/pull/197)) 
   - Add `ExpiredObjectDeleteMarker` bucket lifecycle configuration ([#194](https://github.com/uc-cdis/gen3-workflow/pull/194)) 
   - S3 data is now uploaded in streams instead of being buffered into memory to 
-    avoid memory spikes. ([#192](https://github.com/uc-cdis/gen3-workflow/pull/192)) 
+    avoid memory spikes. ([#192](https://github.com/uc-cdis/gen3-workflow/pull/192))
+  - Logs are JSON by default (set ENABLE_JSON_LOGS: false for plain text). ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - The service runs a single uvicorn worker per container instead of gunicorn, 
+    and shuts down gracefully on SIGTERM. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+
+#### Dependency Updates
+  - Replaced cdislogging with gen3logging, removed gunicorn, added opentelemetry-instrumentation-botocore, 
+    and updated authutils (DPoP support) and cdispyutils (observability extra). ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+
+#### Deployment changes
+  - Set DPOP_SHARED_SECRET (config or environment variable) to the same value as Fence's DPOP_SHARED_SECRET, 
+    or set DPOP_REQUIRED: false, otherwise the service fails to start. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - Add any client that calls the TES endpoints with a client_credentials token to DPOP_EXEMPT_CLIENT_IDS, 
+    or its requests are rejected. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
+  - N_WORKERS (helm nWorkers) is no longer used: scale with replicas instead. ([#190](https://github.com/uc-cdis/gen3-workflow/pull/190))
 
 ## uc-cdis/guppy
 
@@ -157,3 +192,15 @@
 #### Deployment changes
   - Grant create on `/requestor/on_behalf` (or `/requestor/on_behalf/<username>`) to any user
     or client that files access requests for other users; see docs/on_behalf_authz.md([#89](https://github.com/uc-cdis/requestor/pull/89))
+
+## uc-cdis/workspace-token-service
+
+#### Improvements
+  - Bind gunicorn to 127.0.0.1:8000 so all requests go through the in-container nginx (port 80). ([#161](https://github.com/uc-cdis/workspace-token-service/pull/161))
+  - Add a unit test for the k8s plugin's client address handling behind nginx ([#161](https://github.com/uc-cdis/workspace-token-service/pull/161))
+  - Document the nginx/gunicorn layout in the README ([#161](https://github.com/uc-cdis/workspace-token-service/pull/161))
+
+#### Deployment changes
+  - gunicorn now only listens on 127.0.0.1:8000 inside the container. Anything that connects 
+    to the WTS container on port 8000 directly must use port 80 instead. The gen3-helm Service 
+    and liveness/readiness probes already use port 80, so no chart changes are needed. ([#161](https://github.com/uc-cdis/workspace-token-service/pull/161))
