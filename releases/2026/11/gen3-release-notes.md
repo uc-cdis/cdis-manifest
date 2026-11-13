@@ -2,6 +2,12 @@
 ## uc-cdis/arborist
 
 #### Bug Fixes
+  - Concurrent creates no longer return a misleading 500 ("may have been created OK"). ([#200](https://github.com/uc-cdis/arborist/pull/200))
+  - Creating a child while its parent is being deleted no longer leaves an orphaned resource. ([#200](https://github.com/uc-cdis/arborist/pull/200))
+  - Transactions that fail with a deadlock or serialization error are retried up to 3 times, then return 503 with Retry-After: 1. ([#200](https://github.com/uc-cdis/arborist/pull/200))
+  - POST/PUT /resource return clearer status codes: 409 if the path is taken, 400 for an invalid path or missing parent,
+    500 for database errors. Before, insert failures came back as 409 or 400 whatever the cause. ([#200](https://github.com/uc-cdis/arborist/pull/200))
+  - PUT /resource now returns an error if updating the description or removing old subresources fails. Before, these failures were ignored. ([#200](https://github.com/uc-cdis/arborist/pull/200))
   - POST /auth/resources no longer allows an undocumented policies field in the 
     request body, and authorizedResources no longer accepts caller-supplied 
     policies at all - resource listing is always scoped to the caller's own 
@@ -9,6 +15,13 @@
     membership. (Note: GET /auth/resources and /auth/request behavior is 
     unchanged; the policies field on /auth/request, a safe filter, is 
     untouched) ([#194](https://github.com/uc-cdis/arborist/pull/194))
+
+#### Dependency Updates
+  - go-authutils >= 0.2.3 ([#201](https://github.com/uc-cdis/arborist/pull/201))
+
+#### Deployment changes
+  - Run DB migration 2026-10-30T170000Z_resource_parent_lock. Deploy the code before or together with the migration: 
+    the old code returns 500 instead of 400 for a missing parent once the migration is applied. ([#200](https://github.com/uc-cdis/arborist/pull/200))
   
 ## uc-cdis/data-portal
 
