@@ -1,4 +1,11 @@
 # Core Gen3 Release 2026.12 (Inderite)
+## uc-cdis/arborist
+
+#### Breaking Changes
+  - The `POST /auth/request`, `GET /auth/mapping` and `POST /auth/mapping` 
+    endpoints now validate the provided token's audience. Note that Gen3 Fence 
+    tokens include the right expected audience since 2026.11/13.2.0. ([#198](https://github.com/uc-cdis/arborist/pull/198))
+
 ## uc-cdis/audit-service
 
 #### New Features
