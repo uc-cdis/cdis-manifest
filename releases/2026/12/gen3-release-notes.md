@@ -1,11 +1,4 @@
 # Core Gen3 Release 2026.12 (Inderite)
-## uc-cdis/arborist
-
-#### Breaking Changes
-  - The `POST /auth/request`, `GET /auth/mapping` and `POST /auth/mapping` 
-    endpoints now validate the provided token's audience. Note that Gen3 Fence 
-    tokens include the right expected audience since 2026.11/13.2.0. ([#195](https://github.com/uc-cdis/arborist/pull/195)) 
-
 ## uc-cdis/audit-service
 
 #### New Features
@@ -73,12 +66,10 @@
     `post_logout_redirect_uri=<next>` (OIDC RP-Initiated Logout). ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
   - Optional `logout_redirect_param_name` for IdPs with a different redirect 
     parameter (e.g. `logout_uri` for Cognito). ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
-  - OPENID_CONNECT: ([#1393](https://github.com/uc-cdis/fence/pull/1393))
-  - generic_oidc_idp: ([#1393](https://github.com/uc-cdis/fence/pull/1393))
-  - client_id: fence-client ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
-  - logout_url: 
-    'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
-    ([#1393](https://github.com/uc-cdis/fence/pull/1393))
+      OPENID_CONNECT:
+        generic_oidc_idp:
+          client_id: fence-client
+          logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
   - IdPs without `logout_url` and the built-in `cognito` key are unchanged. 
     Discussed with the Gen3 team on Slack. ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
   - CILogon login now respects `OPENID_CONNECT.cilogon.user_id_field`. If set, 
@@ -144,12 +135,6 @@
   - authutils >= 9.0.2 ([#1401](https://github.com/uc-cdis/fence/pull/1401))
   - `MAX_BULK_DRS_REQUESTS` now also limits `POST /data/download/bulk`. ([#1395](https://github.com/uc-cdis/fence/pull/1395)) 
   - certifi to 2026.10.23 ([#1399](https://github.com/uc-cdis/fence/pull/1399))
-  
-#### Tests
-  - `tests/test_logout.py`: generic IdP logout URL building, parameter name 
-    override, fallbacks; `cognito` unchanged. ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
-  - Added unit tests for the configured field, the missing-claim error, and 
-    callback fallback behavior. ([#1389](https://github.com/uc-cdis/fence/pull/1389)) 
 
 ## uc-cdis/gen3-spark
 
