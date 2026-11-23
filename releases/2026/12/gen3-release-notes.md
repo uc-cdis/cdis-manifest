@@ -71,16 +71,20 @@
   - Optional `OPENID_CONNECT.<idp>.logout_url`: `/logout` also ends the session 
     at a generic OIDC IdP. Fence adds `client_id` and 
     `post_logout_redirect_uri=<next>` (OIDC RP-Initiated Logout). ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
-  - Optional `logout_redirect_param_name` for IdPs with a different redirect 
-    parameter (e.g. `logout_uri` for Cognito). ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
-        ```yaml
-        OPENID_CONNECT:
-          generic_oidc_idp:
-            client_id: fence-client
-            logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
-        ```
-  - IdPs without `logout_url` and the built-in `cognito` key are unchanged. 
-    Discussed with the Gen3 team on Slack. ([#1393](https://github.com/uc-cdis/fence/pull/1393)) 
+  
+  - Optional `logout_redirect_param_name` for IdPs with a different redirect
+    parameter (e.g. `logout_uri` for Cognito). ([#1393](https://github.com/uc-cdis/fence/pull/1393))
+
+    ```yaml
+    OPENID_CONNECT:
+      generic_oidc_idp:
+        client_id: fence-client
+        logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
+    ```
+
+  - IdPs without `logout_url` and the built-in `cognito` key are unchanged.
+    Discussed with the Gen3 team on Slack. ([#1393](https://github.com/uc-cdis/fence/pull/1393))
+
   - CILogon login now respects `OPENID_CONNECT.cilogon.user_id_field`. If set, 
     that claim is used as the username; if unset or empty, it falls back to the 
     previous hardcoded `sub`. ([#1389](https://github.com/uc-cdis/fence/pull/1389)) 
