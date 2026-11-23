@@ -75,12 +75,12 @@
   - Optional `logout_redirect_param_name` for IdPs with a different redirect
     parameter (e.g. `logout_uri` for Cognito). ([#1393](https://github.com/uc-cdis/fence/pull/1393))
         
-    ```yaml
-    OPENID_CONNECT:
-      generic_oidc_idp:
-        client_id: fence-client
-        logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
-    ```
+  ```yaml
+  OPENID_CONNECT:
+    generic_oidc_idp:
+      client_id: fence-client
+      logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
+  ```
 
   - IdPs without `logout_url` and the built-in `cognito` key are unchanged.
     Discussed with the Gen3 team on Slack. ([#1393](https://github.com/uc-cdis/fence/pull/1393))
