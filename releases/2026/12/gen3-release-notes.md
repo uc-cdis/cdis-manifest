@@ -79,7 +79,7 @@
   OPENID_CONNECT:
     generic_oidc_idp:
       client_id: fence-client
-      logout_url: "'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'"
+      logout_url: 'https://keycloak.example.com/realms/myrealm/protocol/openid-connect/logout'
   ```
 
   - IdPs without `logout_url` and the built-in `cognito` key are unchanged.
